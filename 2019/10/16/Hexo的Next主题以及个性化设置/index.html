@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo，Next,">
+  <meta name="keywords" content="Hexo,Next,">
 
 
 
@@ -99,7 +99,7 @@
 
 
 <meta name="description" content="Hexo配置Next主题Next主题个性化设置音乐播放器配置">
-<meta name="keywords" content="Hexo，Next">
+<meta name="keywords" content="Hexo,Next">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo的Next主题以及个性化设置">
 <meta property="og:url" content="http://yoursite.com/2019/10/16/Hexo的Next主题以及个性化设置/index.html">
@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://yoursite.com/images/gittip.png">
 <meta property="og:image" content="http://yoursite.com/images/netease">
 <meta property="og:image" content="http://yoursite.com/images/netease_url">
-<meta property="og:updated_time" content="2019-10-16T11:58:52.488Z">
+<meta property="og:updated_time" content="2019-10-17T06:46:23.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo的Next主题以及个性化设置">
 <meta name="twitter:description" content="Hexo配置Next主题Next主题个性化设置音乐播放器配置">
@@ -502,7 +502,7 @@
 
 <h2 id="添加顶部加载条"><a href="#添加顶部加载条" class="headerlink" title="添加顶部加载条"></a>添加顶部加载条</h2><p>在主题配置文件中，将<code>pace: false</code>改为<code>true</code>即可，同时包含多种<strong>Themes list</strong>可以选择</p>
 <h2 id="文章加密访问"><a href="#文章加密访问" class="headerlink" title="文章加密访问"></a>文章加密访问</h2><p>在<code>themes/next/layout/_partials/head.swig</code>文件中，<code>if theme.pace</code>前，最后一个<code>&lt;meta&gt;</code>后，添加如下代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    (<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">if</span>(<span class="string">'&#123;&#123; page.password &#125;&#125;'</span>)&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">if</span> (prompt(<span class="string">'请输入文章密码'</span>) !== <span class="string">'&#123;&#123; page.password &#125;&#125;'</span>)&#123;</span></span><br><span class="line"><span class="actionscript">                alert(<span class="string">'密码错误！'</span>);</span></span><br><span class="line">                history.back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    (function()&#123;</span><br><span class="line">        if('&#123;&#123; page.password &#125;&#125;')&#123;</span><br><span class="line">            if (prompt('请输入文章密码') !== '&#123;&#123; page.password &#125;&#125;')&#123;</span><br><span class="line">                alert('密码错误！');</span><br><span class="line">                history.back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>最后在编写文章的时候，在<code>font-matter</code>中添加如下配置信息：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">password：yourpassword</span></span><br></pre></td></tr></table></figure>
@@ -553,7 +553,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo，Next/" rel="tag"># Hexo，Next</a>
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/Next/" rel="tag"># Next</a>
           
         </div>
       
@@ -680,7 +682,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -807,7 +809,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.7k字</span>
+  <span class="post-count">博客全站共4.6k字</span>
 </div>
 
         
@@ -974,6 +976,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
