@@ -98,21 +98,21 @@
 
 
 
-<meta name="description" content="Hexo配置Next主题Next主题个性化设置音乐播放器配置">
+<meta name="description" content="Hexo配置Next主题Next主题个性化设置音乐播放器配置Gitalk评论配置">
 <meta name="keywords" content="Hexo,Next">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo的Next主题以及个性化设置">
 <meta property="og:url" content="http://yoursite.com/2019/10/16/NextAndConfig/index.html">
 <meta property="og:site_name" content="不断努力的Koo">
-<meta property="og:description" content="Hexo配置Next主题Next主题个性化设置音乐播放器配置">
+<meta property="og:description" content="Hexo配置Next主题Next主题个性化设置音乐播放器配置Gitalk评论配置">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/gittip.png">
 <meta property="og:image" content="http://yoursite.com/images/netease">
 <meta property="og:image" content="http://yoursite.com/images/netease_url">
-<meta property="og:updated_time" content="2019-10-17T17:53:30.622Z">
+<meta property="og:updated_time" content="2019-10-17T18:12:51.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo的Next主题以及个性化设置">
-<meta name="twitter:description" content="Hexo配置Next主题Next主题个性化设置音乐播放器配置">
+<meta name="twitter:description" content="Hexo配置Next主题Next主题个性化设置音乐播放器配置Gitalk评论配置">
 <meta name="twitter:image" content="http://yoursite.com/images/gittip.png">
 
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.9k
+                  4k
                 </span>
               
 
@@ -415,7 +415,7 @@
 
           
               <div class="post-description">
-                  Hexo配置Next主题<br>Next主题个性化设置<br>音乐播放器配置
+                  Hexo配置Next主题<br>Next主题个性化设置<br>音乐播放器配置<br>Gitalk评论配置
               </div>
           
 
@@ -432,7 +432,11 @@
       
 
       
-        <h1 id="Hexo使用Next主题"><a href="#Hexo使用Next主题" class="headerlink" title="Hexo使用Next主题"></a>Hexo使用Next主题</h1><h2 id="Next主题安装"><a href="#Next主题安装" class="headerlink" title="Next主题安装"></a>Next主题安装</h2><p>在博客根目录下，输入如下：</p>
+        <style>
+    th{text-align: center}
+    td{text-align: center}
+</style>
+<h1 id="Hexo使用Next主题"><a href="#Hexo使用Next主题" class="headerlink" title="Hexo使用Next主题"></a>Hexo使用Next主题</h1><h2 id="Next主题安装"><a href="#Next主题安装" class="headerlink" title="Next主题安装"></a>Next主题安装</h2><p>在博客根目录下，输入如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
 
 <p>安装完成后，在站点配置文件，即博客根目录下的<code>_config.yml</code>文件中将<code>theme</code>更改为<strong>Next</strong>主题</p>
@@ -551,14 +555,17 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Gitalk</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  githubID:</span> <span class="string">github帐号</span>           <span class="comment"># 例：Blankness</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">仓库名称</span>                 <span class="comment"># 用来存放评论的仓库，例：blanknesses.github.io</span></span><br><span class="line"><span class="attr">  ClientID:</span> <span class="string">Client</span> <span class="string">ID</span>           <span class="comment"># 上文获取的ClientID的值</span></span><br><span class="line"><span class="attr">  ClientSecret:</span> <span class="string">Client</span> <span class="string">Secret</span>   <span class="comment"># 上文获取的ClientSecret的值</span></span><br><span class="line"><span class="attr">  adminUser:</span> <span class="string">github帐号</span>         <span class="comment"># 指定可初始化评论账户, 例：Blankness </span></span><br><span class="line"><span class="attr">  distractionFreeMode:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="开启评论"><a href="#开启评论" class="headerlink" title="开启评论"></a>开启评论</h3><p>博客上传到Github后，任意进入一篇文章的最下面，点击<code>使用GitHub登录</code>完成认证即可</p>
-<h3 id="Gitalk禁用"><a href="#Gitalk禁用" class="headerlink" title="Gitalk禁用"></a>Gitalk禁用</h3><h4 id="文章禁用Gitalk"><a href="#文章禁用Gitalk" class="headerlink" title="文章禁用Gitalk"></a>文章禁用Gitalk</h4><p>在文章的<code>font-matter</code>中加入如下配置：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h3 id="Gitalk禁用"><a href="#Gitalk禁用" class="headerlink" title="Gitalk禁用"></a>Gitalk禁用</h3><p>在<code>themes/hexo-theme-next/layout/_partials/comments.swig</code>中，将如下代码替换：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% elseif theme.gitalk.enable %&#125;</span><br><span class="line"> &lt;div id=&quot;gitalk-container&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
-<h4 id="页面禁用Gitalk"><a href="#页面禁用Gitalk" class="headerlink" title="页面禁用Gitalk"></a>页面禁用Gitalk</h4><p>在页面的<code>font-matter</code>中加入如下配置：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>替换为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% elseif theme.gitalk.enable and !page.no_gitalk%&#125;</span><br><span class="line">   &lt;div id=&quot;gitalk-container&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id><a href="#" class="headerlink" title></a></h3><hr>
-<p>编辑于2019/10/16</p>
+<p>在想要禁用Gitalk的文章或者页面的<code>font-matter</code>中加入如下配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">no_gitalk:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>最后编辑于2019/10/18</p>
 
       
     </div>
@@ -799,7 +806,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo使用Next主题"><span class="nav-number">1.</span> <span class="nav-text">Hexo使用Next主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Next主题安装"><span class="nav-number">1.1.</span> <span class="nav-text">Next主题安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Next-schema选择"><span class="nav-number">1.2.</span> <span class="nav-text">Next schema选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置语言"><span class="nav-number">1.3.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置菜单"><span class="nav-number">1.4.</span> <span class="nav-text">设置菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头像设置"><span class="nav-number">1.5.</span> <span class="nav-text">头像设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Next个性化"><span class="nav-number">2.</span> <span class="nav-text">Next个性化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在左上角或右上角添加fork-me-on-github"><span class="nav-number">2.1.</span> <span class="nav-text">在左上角或右上角添加fork me on github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加RSS"><span class="nav-number">2.2.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文章内链接样式"><span class="nav-number">2.3.</span> <span class="nav-text">修改文章内链接样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在每一篇文章的末尾添加“本文结束”"><span class="nav-number">2.4.</span> <span class="nav-text">在每一篇文章的末尾添加“本文结束”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主页文章添加阴影效果"><span class="nav-number">2.5.</span> <span class="nav-text">主页文章添加阴影效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去掉网页底部由Hexo强力驱动-主题-NexT-xxx"><span class="nav-number">2.6.</span> <span class="nav-text">去掉网页底部由Hexo强力驱动|主题-NexT.xxx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在网站底部添加访问量"><span class="nav-number">2.7.</span> <span class="nav-text">在网站底部添加访问量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站底部字数统计"><span class="nav-number">2.8.</span> <span class="nav-text">网站底部字数统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现文章字数统计功能"><span class="nav-number">2.9.</span> <span class="nav-text">实现文章字数统计功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加顶部加载条"><span class="nav-number">2.10.</span> <span class="nav-text">添加顶部加载条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章加密访问"><span class="nav-number">2.11.</span> <span class="nav-text">文章加密访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章置顶"><span class="nav-number">2.12.</span> <span class="nav-text">文章置顶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为Next主题添加背景音乐"><span class="nav-number">2.13.</span> <span class="nav-text">为Next主题添加背景音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加Gitalk"><span class="nav-number">2.14.</span> <span class="nav-text">添加Gitalk</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加md5-min-js"><span class="nav-number">2.14.1.</span> <span class="nav-text">添加md5.min.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建gitalk-swig"><span class="nav-number">2.14.2.</span> <span class="nav-text">新建gitalk.swig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改comments-swig"><span class="nav-number">2.14.3.</span> <span class="nav-text">修改comments.swig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改index-swig"><span class="nav-number">2.14.4.</span> <span class="nav-text">修改index.swig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建gitalk-styl"><span class="nav-number">2.14.5.</span> <span class="nav-text">新建gitalk.styl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入gitalk-styl"><span class="nav-number">2.14.6.</span> <span class="nav-text">导入gitalk.styl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册OAuth-Application"><span class="nav-number">2.14.7.</span> <span class="nav-text">注册OAuth Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改主题配置文件-config-yml"><span class="nav-number">2.14.8.</span> <span class="nav-text">修改主题配置文件_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启评论"><span class="nav-number">2.14.9.</span> <span class="nav-text">开启评论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gitalk禁用"><span class="nav-number">2.14.10.</span> <span class="nav-text">Gitalk禁用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文章禁用Gitalk"><span class="nav-number">2.14.10.1.</span> <span class="nav-text">文章禁用Gitalk</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面禁用Gitalk"><span class="nav-number">2.14.10.2.</span> <span class="nav-text">页面禁用Gitalk</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.14.11.</span> <span class="nav-text"></span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo使用Next主题"><span class="nav-number">1.</span> <span class="nav-text">Hexo使用Next主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Next主题安装"><span class="nav-number">1.1.</span> <span class="nav-text">Next主题安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Next-schema选择"><span class="nav-number">1.2.</span> <span class="nav-text">Next schema选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置语言"><span class="nav-number">1.3.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置菜单"><span class="nav-number">1.4.</span> <span class="nav-text">设置菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头像设置"><span class="nav-number">1.5.</span> <span class="nav-text">头像设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Next个性化"><span class="nav-number">2.</span> <span class="nav-text">Next个性化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在左上角或右上角添加fork-me-on-github"><span class="nav-number">2.1.</span> <span class="nav-text">在左上角或右上角添加fork me on github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加RSS"><span class="nav-number">2.2.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文章内链接样式"><span class="nav-number">2.3.</span> <span class="nav-text">修改文章内链接样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在每一篇文章的末尾添加“本文结束”"><span class="nav-number">2.4.</span> <span class="nav-text">在每一篇文章的末尾添加“本文结束”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主页文章添加阴影效果"><span class="nav-number">2.5.</span> <span class="nav-text">主页文章添加阴影效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去掉网页底部由Hexo强力驱动-主题-NexT-xxx"><span class="nav-number">2.6.</span> <span class="nav-text">去掉网页底部由Hexo强力驱动|主题-NexT.xxx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在网站底部添加访问量"><span class="nav-number">2.7.</span> <span class="nav-text">在网站底部添加访问量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站底部字数统计"><span class="nav-number">2.8.</span> <span class="nav-text">网站底部字数统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现文章字数统计功能"><span class="nav-number">2.9.</span> <span class="nav-text">实现文章字数统计功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加顶部加载条"><span class="nav-number">2.10.</span> <span class="nav-text">添加顶部加载条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章加密访问"><span class="nav-number">2.11.</span> <span class="nav-text">文章加密访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章置顶"><span class="nav-number">2.12.</span> <span class="nav-text">文章置顶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为Next主题添加背景音乐"><span class="nav-number">2.13.</span> <span class="nav-text">为Next主题添加背景音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加Gitalk"><span class="nav-number">2.14.</span> <span class="nav-text">添加Gitalk</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加md5-min-js"><span class="nav-number">2.14.1.</span> <span class="nav-text">添加md5.min.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建gitalk-swig"><span class="nav-number">2.14.2.</span> <span class="nav-text">新建gitalk.swig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改comments-swig"><span class="nav-number">2.14.3.</span> <span class="nav-text">修改comments.swig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改index-swig"><span class="nav-number">2.14.4.</span> <span class="nav-text">修改index.swig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建gitalk-styl"><span class="nav-number">2.14.5.</span> <span class="nav-text">新建gitalk.styl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入gitalk-styl"><span class="nav-number">2.14.6.</span> <span class="nav-text">导入gitalk.styl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册OAuth-Application"><span class="nav-number">2.14.7.</span> <span class="nav-text">注册OAuth Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改主题配置文件-config-yml"><span class="nav-number">2.14.8.</span> <span class="nav-text">修改主题配置文件_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启评论"><span class="nav-number">2.14.9.</span> <span class="nav-text">开启评论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gitalk禁用"><span class="nav-number">2.14.10.</span> <span class="nav-text">Gitalk禁用</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
