@@ -543,10 +543,7 @@
           
 
   
-    <div class="comments" id="comments">
-      <div id="gitalk-container">
-      </div>
-    </div>
+   <div id="gitalk-container"></div>
 
   
 
@@ -896,6 +893,23 @@
 
 
 
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '671a74b29bdf6595353a',
+          clientSecret: '16404a140b737832473e48993cc3f5ac257621b2',
+          repo: 'blanknesses.github.io',
+          owner: 'blanknesses',
+          admin: ['blanknesses'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
 
 
 
