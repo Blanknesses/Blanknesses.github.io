@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>LaTeX</title>
+    <url>/2019/10/19/LeTaX/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>#记一些用法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\le 或 \leq 为小于等于</span><br><span class="line">\ge 或 \geq 为大于等于</span><br><span class="line">\not= 为不等于</span><br><span class="line">\approx 为约等于</span><br><span class="line">x_1 为x下标1</span><br><span class="line">x^2 为x上标2</span><br><span class="line">\frac&#123;分子&#125;&#123;分母&#125; 为分式表示</span><br><span class="line">\dfrac&#123;分子&#125;&#123;分母&#125; 为分式表示,数字大小不压缩</span><br></pre></td></tr></table></figure>
+
+<h1 id="字母表"><a href="#字母表" class="headerlink" title="字母表"></a>字母表</h1><p><img src="/images/LaTeXLetterList" alt="字母表"></p>
+<h1 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h1><p><a href="https://jingyan.baidu.com/article/4b52d702df537efc5c774bc9.html" target="_blank" rel="noopener">有空重写表格</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>计算方法</title>
+    <url>/2019/10/19/ComputationalMethods/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><style>
+    th{text-align: center}
+    td{text-align: center}
+</style>
+<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="误差来源与分类"><a href="#误差来源与分类" class="headerlink" title="误差来源与分类"></a>误差来源与分类</h2><table>
+<thead>
+<tr>
+<th align="center">阶段</th>
+<th align="center">误差类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">实际问题-&gt;数学模型</td>
+<td align="center">模型误差</td>
+</tr>
+<tr>
+<td align="center">数学模型-&gt;数值计算方法</td>
+<td align="center">截断误差</td>
+</tr>
+<tr>
+<td align="center">数值计算方法-&gt;编程实现算法</td>
+<td align="center">观测误差</td>
+</tr>
+<tr>
+<td align="center">编程实现算法-&gt;计算机数值结果</td>
+<td align="center">舍入误差</td>
+</tr>
+</tbody></table>
+<p><strong>定义1.1</strong> 设$x$为精确值，$a$为$x$的一个近似值，称  <center>$x - a$</center><br>为近似值$a$的<strong>绝对误差</strong>，简称<strong>误差</strong>。误差$x - a$可正可负</p>
+<p><strong>定义1.2</strong> 设$x$为精确值，$a$为$x$的一个近似值，若有常数$e_a$使得  <center>$|x - a| \le e_a$</center><br>则$e_a$叫做近似值$a$的<strong>误差界（限）</strong>。他总是正数</p>
+<p><strong>定义1.3</strong> 若$x \not= 0$，则将近似值的误差与准确值的比值  <center>$\dfrac{x - a}{x}$</center><br>称为近似值$a$的<strong>相对误差</strong>。相对误差也可正可负</p>
+<p>实际计算中，如果真值$x$未知时，通常取  <center>$\dfrac{x - a}{x}\approx\dfrac{x - a}{a}$</center><br>作为$a$的相对误差，条件是$\frac{x - a}{x}$较小</p>
+<p>相对误差的绝对值上界叫做<strong>相对误差界（限）</strong>，记为  <center>$|\dfrac{x - a}{a}| \le \dfrac{e_a}{|a|}$</center></p>
+<p><strong>四舍五入</strong>求误差界，其误差界不超过其末尾的半个单位，例如：</p>
+<center>$|\pi - 3.14| \le \dfrac{1}{2} \times 10^{-2} , |\pi - 3.1416| \le \dfrac{1}{2} \times 10^{-4}$</center>
+
+<h2 id="有效数字的概念"><a href="#有效数字的概念" class="headerlink" title="有效数字的概念"></a>有效数字的概念</h2><p><strong>定义1.4</strong> 设$x$为精确值，$a$为$x$的一个近似值，表示为：  <center>$a = \pm 10^k \times 0.a_1a_2…a_n…$</center><br>可以是有限或无限小数形式，其中$a_i(i = 1,2,…,n)$是0到9中的一个数字，<strong>$a_1 \not= 0$, $k$为整数, $n$为正整数</strong>，如果其绝对误差界  <center>$|x - a| \le \dfrac{1}{2} \times 10^{k-n}$</center><br>则称$a$为$x$的具有<strong>$n$</strong>位有效数字的近似值</p>
+<p>例如：$e = 2.71828182…$, $a = 2.718$，其绝对误差界为：  <center>$|e - a| &lt; \dfrac{1}{2} \times 10^{-3}$</center><br>而$a = 10^1 \times 0.2718$，则$k = 1$，$k - n = -3 \Rightarrow n = 4$，即$a$是$e$的具有4位有效数字的近似值</p>
+<p><strong>有效数字位数与小数点的位置无关</strong></p>
+<p><strong>定理1.1</strong> 设实数$x$为某个精确值，$a$为它的一个近似值，其表达形式如$a = \pm 10^k \times 0.a_1a_2…an…$，则</p>
+<ul>
+<li>如果$a$有$n$位有效数字，则其相对误差界满足  <center>$\dfrac{|x - a|}{|a|} \le \dfrac{1}{2a_1} \times 10^{1-n}$</center><br>  <strong>证明</strong> 首先$|a|$满足  <center>$a_1 \times 10^{k-1} \le |a| \le (a_1 + 1) \times 10^{k-1}$</center><br>  &emsp;&emsp; 如果$a$有$n$位有效数字，则<center>$\dfrac{|x - a|}{|a|} = |x - a| \times \dfrac{1}{|a|} \le \dfrac{1}{2}\times 10^{k - n} \times \dfrac{1}{a_1 \times 10^{k-1}} = \dfrac{1}{2a_1} \times 10^{1 - n}$</center></li>
+<li>如果其相对误差界满足  <center>$\dfrac{|x - a|}{|a|} \le \dfrac{1}{2(a_1 + 1)} \times 10^{1-n}$</center>  则$a$至少具有$n$位有效数字<br>  <strong>证明</strong>  <center></center></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Course</category>
+      </categories>
+      <tags>
+        <tag>Math</tag>
+        <tag>Course</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo日常使用以及Markdown语法</title>
     <url>/2019/10/17/HexoAndMarkdown/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Hexo日常使用"><a href="#Hexo日常使用" class="headerlink" title="Hexo日常使用"></a>Hexo日常使用</h1><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a></p>
@@ -14,6 +80,8 @@
 <h2 id="字体加粗"><a href="#字体加粗" class="headerlink" title="字体加粗"></a>字体加粗</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="斜体字"><a href="#斜体字" class="headerlink" title="斜体字"></a>斜体字</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*倾斜的内容*</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="空格符"><a href="#空格符" class="headerlink" title="空格符"></a>空格符</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&amp;ensp;  //一个空格</span><br><span class="line">&amp;emsp;  //两个空格</span><br></pre></td></tr></table></figure>
 
 <h2 id="居中文本"><a href="#居中文本" class="headerlink" title="居中文本"></a>居中文本</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;center&gt;这是要居中的文本内容&lt;/center&gt;</span><br></pre></td></tr></table></figure>
 
@@ -55,7 +123,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">height</span>=<span class="string">498</span> <span class="attr">width</span>=<span class="string">570</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">"https://www.bilibili.com/html/html5player.html?cid=24237876&amp;aid=14875829&amp;pre_ad=0"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">frameborder</span>=<span class="string">0</span> <span class="attr">allowfullscreen</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>编辑于2019.10.17</p>
+<p>最后编辑于2019.10.19</p>
 ]]></content>
       <categories>
         <category>Blog</category>
@@ -142,7 +210,7 @@
 
 <h2 id="添加顶部加载条"><a href="#添加顶部加载条" class="headerlink" title="添加顶部加载条"></a>添加顶部加载条</h2><p>在主题配置文件中，将<code>pace: false</code>改为<code>true</code>即可，同时包含多种<strong>Themes list</strong>可以选择</p>
 <h2 id="文章加密访问"><a href="#文章加密访问" class="headerlink" title="文章加密访问"></a>文章加密访问</h2><p>在<code>themes/next/layout/_partials/head.swig</code>文件中，<code>if theme.pace</code>前，最后一个<code>&lt;meta&gt;</code>后，添加如下代码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    (function()&#123;</span><br><span class="line">        if('&#123;&#123; page.password &#125;&#125;')&#123;</span><br><span class="line">            if (prompt('请输入文章密码') !== '&#123;&#123; page.password &#125;&#125;')&#123;</span><br><span class="line">                alert('密码错误！');</span><br><span class="line">                history.back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    (<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">if</span>(<span class="string">'&#123;&#123; page.password &#125;&#125;'</span>)&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">if</span> (prompt(<span class="string">'请输入文章密码'</span>) !== <span class="string">'&#123;&#123; page.password &#125;&#125;'</span>)&#123;</span></span><br><span class="line"><span class="actionscript">                alert(<span class="string">'密码错误！'</span>);</span></span><br><span class="line">                history.back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>最后在编写文章的时候，在<code>font-matter</code>中添加如下配置信息：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">password：yourpassword</span></span><br></pre></td></tr></table></figure>
