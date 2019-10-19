@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法一些知识点与错题归纳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-19T04:04:33.168Z">
+<meta property="og:updated_time" content="2019-10-19T16:32:17.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法">
 <meta name="twitter:description" content="计算方法一些知识点与错题归纳">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  699
+                  2.3k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  10
                 </span>
               
             </div>
@@ -502,8 +502,90 @@
 <p><strong>定理1.1</strong> 设实数$x$为某个精确值，$a$为它的一个近似值，其表达形式如$a = \pm 10^k \times 0.a_1a_2…an…$，则</p>
 <ul>
 <li>如果$a$有$n$位有效数字，则其相对误差界满足  <center>$\dfrac{|x - a|}{|a|} \le \dfrac{1}{2a_1} \times 10^{1-n}$</center><br>  <strong>证明</strong> 首先$|a|$满足  <center>$a_1 \times 10^{k-1} \le |a| \le (a_1 + 1) \times 10^{k-1}$</center><br>  &emsp;&emsp; 如果$a$有$n$位有效数字，则<center>$\dfrac{|x - a|}{|a|} = |x - a| \times \dfrac{1}{|a|} \le \dfrac{1}{2}\times 10^{k - n} \times \dfrac{1}{a_1 \times 10^{k-1}} = \dfrac{1}{2a_1} \times 10^{1 - n}$</center></li>
-<li>如果其相对误差界满足  <center>$\dfrac{|x - a|}{|a|} \le \dfrac{1}{2(a_1 + 1)} \times 10^{1-n}$</center>  则$a$至少具有$n$位有效数字<br>  <strong>证明</strong>  <center></center></li>
+<li>如果其相对误差界满足  <center>$\dfrac{|x - a|}{|a|} \le \dfrac{1}{2(a_1 + 1)} \times 10^{1-n}$</center>  则$a$至少具有$n$位有效数字<br>  <strong>证明</strong>  <center>$\dfrac{|x - a|}{|a|} \le \dfrac{1}{2(a_1 + 1)} \times 10^{1-n} \le \dfrac{(a_1 + 1) \times 10^{k - 1}}{2(a_1 + 1)} \times 10^{1 - n} = \dfrac{1}{2} \times 10 ^{k - n}$ </center></li>
 </ul>
+<h2 id="函数计算的误差值"><a href="#函数计算的误差值" class="headerlink" title="函数计算的误差值"></a>函数计算的误差值</h2><p>设一元函数$f(x)$具有二阶连续导数，自变量$x$的一个近似值为$a$，$f(a)$作为$f(x)$的近似，其误差为：</p>
+<ul>
+<li>绝对误差  <center>$|f(x) - f(a)| \approx |f’(a)||x-a|$</center></li>
+<li>相对误差  <center>$\dfrac{|f(x) - f(a)|}{|f(a)|} \approx \dfrac{|f’(a)|}{|f(a)|}|x-a|$</center></li>
+</ul>
+<p>如果$f(x_1, x_2,…, x_n)$为$n$元函数，自变量$x_1, x_2,…, x_n$的近似值分别为$a_1, a_2,…, a_n$，则  <center>$f(x_1, x_2,…, x_n) - f(a_1, a_2,…, a_n) \approx \sum\limits_{k=1}^{n}(\dfrac{\partial f(a_1, a_2,…, a_n)}{\partial x_k})(x_k-a_k)$</center></p>
+<p>由此可以推出误差界为：  <center>$|f(x_1, x_2,…, x_n) - f(a_1, a_2,…, a_n)| \le \sum\limits_{k=1}^{n}|\dfrac{\partial f(a_1, a_2,…, a_n)}{\partial x_k}||x_k-a_k|$</center></p>
+<p>针对2元函数的误差估计四元运算：</p>
+<ul>
+<li><p>$f(x_1, x_2) = x_1 \pm x_2$</p>
+  <center>$|f(x_1, x_2) - f(a_1, a_2)| \le |x_1 - a_1| + |x_2 - a_2|$</center>
+
+<p>  <strong>两个近似数相加减，其运算结果的精度不比原始数据任何一个精度高</strong></p>
+</li>
+<li><p>$f(x_1, x_2) = x_1 \cdot x_2$</p>
+  <center>$|f(x_1, x_2) - f(a_1, a_2)| \le |a_2||x_1 - a_1| + |a_1||x_2 - a_2|$</center></li>
+<li><p>$f(x_1, x_2) = \dfrac{x_1}{x_2}$</p>
+  <center>$|f(x_1, x_2) - f(a_1, a_2)| \le \dfrac{|x_1 - a_1|}{|a_2|} + \dfrac{|a_1||x_2 - a_2|}{|a_2|^2}$</center>
+  <center>$ = \dfrac{|a_2||x_1 - a_1| + |a_1||x_2 - a_2|}{|a_2|^2}$</center>
+
+<p>  <strong>小的数字做除数会导致差得相对误差变很大</strong></p>
+</li>
+</ul>
+<p><strong>计算中应避免出现相近数相减</strong></p>
+<h2 id="数值函数的值稳定性"><a href="#数值函数的值稳定性" class="headerlink" title="数值函数的值稳定性"></a>数值函数的值稳定性</h2><p>计算过程中<strong>放大舍入误差</strong>的方法是<strong>数值不稳定</strong>的，反之<strong>数值稳定</strong></p>
+<h2 id="避免误差危害的基本原则"><a href="#避免误差危害的基本原则" class="headerlink" title="避免误差危害的基本原则"></a>避免误差危害的基本原则</h2><ul>
+<li>避免有效数字损失<br>  即避免两个相近数相减，例如求二次方程的解时求同符号的根，另外根由韦达定理求解</li>
+<li>减少运算次数<br>  有效减少误差累计，例如秦九韶算法</li>
+</ul>
+<h2 id="向量范数"><a href="#向量范数" class="headerlink" title="向量范数"></a>向量范数</h2><p><strong>定义1.4</strong> 定义在$C^n$（n维复向量空间）上的一个非负实值函数，记为$f(x)=\Vert x \Vert$，若该函数满足以下三个条件：<br>    即对任意向量$x$和$y$以及任意复常数$\alpha \in C$满足</p>
+<ul>
+<li>非负性&emsp;&emsp;&emsp;&emsp;$\Vert x \Vert \ge 0$当且仅当$x=0_{n \times 1}$时$\Vert x \Vert =0$</li>
+<li>齐次性&emsp;&emsp;&emsp;&emsp;$\Vert \alpha x \Vert = |\alpha|\Vert x \Vert$</li>
+<li>三角不等式&emsp;&emsp;$\Vert x + y \Vert \le \Vert x \Vert + \Vert y \Vert$<br>则称函数$\Vert \cdot \Vert$为$C^n$上的一个向量范数</li>
+</ul>
+<p>设任意$n$维向量$x = (x_1, x_2,…,x_n)^T$<br>常用的向量范数有：</p>
+<ul>
+<li>向量的一范数，向量元素绝对值的和&emsp;&emsp;&emsp;$\Vert x \Vert_1 = \sum\limits_{i=1}^{n}|x_i|$</li>
+<li>向量的二范数，向量的长度&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$\sqrt{\sum\limits_{i=1}^{n}|x_i|^2} = \sqrt{x^Hx} = \sqrt{(x,x)}$</li>
+<li>向量的无穷范数，向量元素绝对值最大的&emsp;$\Vert x \Vert_\infty = \max \limits_{1\le x \le n}|x_i|$</li>
+<li>向量的p范数&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$\sqrt[p]{\sum\limits_{i=1}^{n}|x_i|^p}$，$1 \le p \le +\infty$</li>
+</ul>
+<p>加权向量范数：$\Vert x \Vert_w = \Vert Wx \Vert_p$<br>即利用一个对角矩阵$W$，为向量每个元素赋权值</p>
+<p>向量范数的等价性</p>
+<ul>
+<li>$\Vert x \Vert_\infty \le \Vert x \Vert_1 \le n\Vert x \Vert_\infty$</li>
+<li>$\dfrac{1}{\sqrt{n}}\Vert x \Vert_1 \le \Vert x \Vert_2 \le \Vert x \Vert_1$</li>
+<li>$\dfrac{1}{\sqrt{n}}\Vert x \Vert_2 \le \Vert x \Vert_\infty \le \Vert x \Vert_2$</li>
+</ul>
+<p>证明：</p>
+<ul>
+<li>$\Vert x \Vert_\infty = \max\limits_{1 \le x \le n}|x_i| \le \sum\limits_{i=1}^{n}|x_i| = \Vert x \Vert_1 \le \sum\limits_{i=1}^{n}\max\limits_{1 \le x \le n}|x_i| = n\Vert x \Vert_\infty$</li>
+<li>$\dfrac{1}{n}\Vert x \Vert_1^2 = \dfrac{1}{n}(\sum\limits_{i=1}^{n}|x_i|)^2 \le \sum\limits_{i=1}^{n}|x_i|^2 = \Vert x \Vert_2^2 \le (\sum\limits_{i=1}^{n}|x_i|)^2 = \Vert x \Vert_1^2$<br>注:第一步证明根据算术平均数$\le$平方平均数得到</li>
+<li>$\dfrac{1}{n}\Vert x \Vert_2^2 = \dfrac{1}{n}\sum\limits_{i=1}^{n}|x_i|^2 \le \sum\limits_{i=1}^{n}\max\limits_{1 \le x \le n}|x_i|^2 = \Vert x \Vert_\infty^2 \le \sum\limits_{i=1}^{n}|x_i|^2 = \Vert x \Vert_2^2$</li>
+</ul>
+<p><strong>定理1.2</strong> 向量范数等价性定理<br>设$\Vert \cdot \Vert_\beta$和$\Vert \cdot \Vert_\alpha$为$C^n$上的任意两种向量范数。则存在两个与向量无关的正常数$c_1 &gt; 0$和$c_2 &gt; 0$，使得下面不等式成立  <center>$c_1 \Vert x \Vert_\beta \le \Vert x \Vert_\alpha \le c_2\Vert x \Vert_\beta$</center><br>并称$\Vert \cdot \Vert_\alpha$和$\Vert \cdot \Vert_\beta$为$C^n$的等价范数。<br>由向量范数的等价性可知  <center>$\lim\limits_{x \to 0} \Vert x \Vert_\alpha = 0 \Leftrightarrow \Vert x \Vert_\beta = 0$</center></p>
+<h2 id="矩阵范数"><a href="#矩阵范数" class="headerlink" title="矩阵范数"></a>矩阵范数</h2><p><strong>定义1.5</strong> 定义在$C^{m \times n}$上的一个非负实值函数，记为$f(A)=\Vert A \Vert$，若该函数满足以下条件：<br>即对于任意矩阵A,B以及任意复常数$\alpha \in C$</p>
+<ul>
+<li>非负性&emsp;&emsp;&emsp;&emsp;&emsp;$\Vert A \Vert \ge 0$当且仅当$A = 0_{m \times n}$时$\Vert A \Vert = 0$</li>
+<li>齐次性&emsp;&emsp;&emsp;&emsp;&emsp;$\Vert \alpha A \Vert = |\alpha|\Vert A \Vert$</li>
+<li>三角不等式&emsp;&emsp;&emsp;$\Vert A + B \Vert \le \Vert A \Vert +\Vert B \Vert$</li>
+<li>相容性&emsp;&emsp;&emsp;&emsp;&emsp;$\Vert AB \Vert \le \Vert A \Vert \cdot \Vert B \Vert$&emsp;&emsp;$A \in C^{m \times l}, B \in C^{l \times n}$</li>
+</ul>
+<p>则称函数$\Vert \cdot \Vert$为$C^{m \times n}$上的一个矩阵范数</p>
+<p>将矩阵$A$按列分块，$A = (A_1, A_2,…, A_n)$</p>
+<ul>
+<li>矩阵的$m_1$范数，矩阵各元素绝对值之和&emsp;&emsp;$\sum\limits_{j=1}^{n} \Vert A_j \Vert_1 = \sum\limits_{j=1}^{n}\sum\limits_{i=1}^{n}|a_ij|$</li>
+<li>矩阵的$F$范数，矩阵各元素平方和开方&ensp;&emsp;&emsp;$\sum\limits_{j=1}^{n} \Vert A_j \Vert_2 = \sqrt{\sum\limits_{j=1}^{n}\sum\limits_{i=1}^{n}|a_ij|^2}$</li>
+</ul>
+<p><strong>定义1.6</strong> 称如下集合为矩阵$A \in C^{n \times n}$的<strong>谱</strong>$\sigma(A)={\lambda|\Delta(\lambda I-A)=0}$，即<strong>谱</strong>为特征值向量<br>称如下实数为矩阵$A \in C^{n \times n}$的<strong>谱半径</strong>$\rho(A) = \max\limits{i}|\lambda_i|$</p>
+<p><strong>补充</strong> </p>
+<ul>
+<li>正定矩阵：设$M$是$n$阶方阵，如果对任何非零向量$x$,都有$x^TMx&gt;0$，则称$M$为正定矩阵</li>
+<li>半正定矩阵：设$M$是$n$阶方阵，如果对任何非零向量$x$,都有$x^TMx \le 0$，则称$M$为半正定矩阵</li>
+<li>共轭转置：矩阵转置后虚部符号相反</li>
+</ul>
+<p>对任给$x = (x_1, x_2,…,x_n)^T \in C^n$，设矩阵$A \in C^{m \times n}$，有</p>
+<ul>
+<li>$(A^HA)^H = A^H(A^H)^H = A^HA$</li>
+<li>$(A^HAx, x)=x^H(A^HAx)=x^HA^HAx$<br>  $=(Ax)^H(Ax)=(Ax, Ax)=\Vert Ax \Vert_2^2 \ge 0$</li>
+</ul>
+<p>即$A^HA$，$AA^H$为半正定复对称（Hermite）矩阵</p>
 
       
     </div>
@@ -744,7 +826,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -791,7 +873,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8k字</span>
+  <span class="post-count">博客全站共9.7k字</span>
 </div>
 
         
