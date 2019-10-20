@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>一些小证明</title>
+    <url>/2019/10/20/Math/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="x-n-前-n-项和"><a href="#x-n-前-n-项和" class="headerlink" title="$x^n$ 前$n$项和"></a>$x^n$ 前$n$项和</h1><p>$x^n$前$n$项和由$(x + 1)^{n+1} - (x - 1)^{n+1}$求得<br>$x$的前$n$项和:n<br>$(x + 1)^2 - (x - 1)^2 = 4x$<br>$((x-1) + 1)^2 - ((x-1) - 1)^2 = 4(x-1)$<br>$…$<br>$2^2 = 4$<br>$(x + 1)^2 + ((x-1) - 1)^2 - 1^2 - 0^2 = 4Sn \Rightarrow Sn = \dfrac{x(x+1)}{2}$</p>
+<p>$x^2$的前$n$项和:<br>$(x + 1)^3 - (x - 1)^3 = 6x^2 + 2$<br>$((x - 1) + 1)^3 - ((x -1) - 1)^3 = 6(x-1)^2 + 2$<br>$…$<br>$2^3 = 8$<br>$(x + 1)^3 + ((x - 1) + 1)^3 - 1^3 - 0^3 = 6Sn + 2x \Rightarrow Sn = \dfrac{2x^3+3x^2+x}{6}$</p>
+]]></content>
+      <categories>
+        <category>Course</category>
+      </categories>
+      <tags>
+        <tag>Math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LaTeX</title>
     <url>/2019/10/19/LeTaX/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>#记一些用法</p>
@@ -139,6 +152,50 @@
 <li>$(A^HAx, x)=x^H(A^HAx)=x^HA^HAx$<br>  $=(Ax)^H(Ax)=(Ax, Ax)=\Vert Ax \Vert_2^2 \ge 0$</li>
 </ul>
 <p>即$A^HA$，$AA^H$为半正定复对称（Hermite）矩阵</p>
+<h2 id="矩阵范数与向量范数的相容性"><a href="#矩阵范数与向量范数的相容性" class="headerlink" title="矩阵范数与向量范数的相容性"></a>矩阵范数与向量范数的相容性</h2><p><strong>定义1.7</strong> 对于一种矩阵范数$\Vert \cdot \Vert_M$和一种向量范数$\Vert \cdot \Vert_V$，如果对任意$m \times n$矩阵$A$和任意$n$维向量$x$，满足  <center>$\Vert Ax \Vert_V \le \Vert A \Vert_M \Vert x \Vert_V$</center><br>则称矩阵范数$\Vert \cdot \Vert_M$与向量范数$\Vert \cdot \Vert_V$是相容的</p>
+<ul>
+<li>矩阵$m_1$范数与向量的$p$范数是相容的，即&emsp;$\Vert Ax \Vert_p \le \Vert A \Vert_{m_1} \Vert x \Vert_p$<br>证明：设$A = (a_ij) \in C^{n \times n}$，$x = [x_1, x_2,…,x_n]^T \in C^n$<br>&emsp;&emsp;&emsp;&emsp;$\Vert Ax \Vert_p^p = \sum\limits_{i = 1}^n|\sum\limits_{j=1}^n a_{ij} x_j|^p \le \sum\limits_{i = 1}^n(\sum\limits_{j=1}^n |a_{ij}||x_j|)^p $<br>&emsp;&emsp;&emsp;&emsp;$\le \sum\limits_{i = 1}^n[(\sum\limits_{j=1}^n |a_{ij}|)(\sum\limits_{j=1}^n|x_j|)]^p = (\sum\limits_{i = 1}^n\sum\limits_{j=1}^n |a_{ij}|)^p(\sum\limits_{j=1}^n|x_j|)^p$<br>&emsp;&emsp;&emsp;&emsp;$=\Vert A \Vert_{m_1}^p \Vert x \Vert_p^p$</li>
+<li>矩阵$F$范数与向量的$2$范数是相容的，即&emsp;&emsp;$\Vert Ax \Vert_2 \le \Vert A \Vert_{F} \Vert x \Vert_2$<br>证明：设$A = (a_ij) \in C^{n \times n}$，$x = [x_1, x_2,…,x_n]^T \in C^n$<br>&emsp;&emsp;&emsp;&emsp;$\Vert Ax \Vert_2^2 = \sum\limits_{i = 1}^n|\sum\limits_{j=1}^n a_{ij} x_j|^2 \le \sum\limits_{i = 1}^n(\sum\limits_{j=1}^n |a_{ij}||x_j|)^2 $<br>&emsp;&emsp;&emsp;&emsp;$\le \sum\limits_{i = 1}^n[(\sum\limits_{j=1}^n |a_{ij}|)(\sum\limits_{j=1}^n|x_j|)]^2 = (\sum\limits_{i = 1}^n\sum\limits_{j=1}^n |a_{ij}|)^2(\sum\limits_{j=1}^n|x_j|)^2$<br>&emsp;&emsp;&emsp;&emsp;$=\Vert A \Vert_{F}^2 \Vert x \Vert_2^2$</li>
+</ul>
+<p>证明方法类似，可以证明任意一种矩阵范数必然存在与之相容的向量范数</p>
+<h2 id="算子范数"><a href="#算子范数" class="headerlink" title="算子范数"></a>算子范数</h2><p><strong>定理1.3</strong> $C^n$上的任何向量范数$f(x) = \Vert x \Vert$，则$f(x)$为$x$的分量$x_1, x_2,…,x_n$的连续函数<br><strong>定理1.4</strong> 已知$C^m$和$C^n$上的同类向量范数$\Vert \cdot \Vert_v$，$A$为$m \times n$矩阵，定义  <center>$\Vert A \Vert_M = \max\limits_{x \not= 0}\dfrac{\Vert Ax \Vert_V}{\Vert x \Vert_V} = \max\limits_{\Vert x \Vert_V = 1}\Vert Ax \Vert_V$</center><br>则$\Vert A \Vert_M$是一种矩阵范数，且与已知的向量范数相容，称由上述关系式定义的矩阵范数为<strong>从属向量范数的矩阵范数</strong>简称<strong>从属范数</strong>或<strong>算子范数</strong><br>证明：</p>
+<ul>
+<li>等价性证明：<br>$\max\limits_{x \not= 0}\dfrac{\Vert Ax \Vert_V}{\Vert x \Vert_V} = \max\limits_{x \not= 0}\dfrac{1}{\Vert x \Vert_V}\cdot\Vert Ax \Vert_V = \max\limits_{x \not= 0}\Vert A(\dfrac{x}{\Vert x \Vert_V})\Vert_V = \max\limits_{\Vert y \Vert_V = 1}\Vert Ay \Vert_V$</li>
+<li>验证$\Vert A \Vert_M$与从属的向量范数相容：<br>$\Vert A \Vert_M \ge \dfrac{\Vert Ax \Vert_V}{\Vert x \Vert_V} \Rightarrow \Vert A \Vert_M\Vert x \Vert_V \ge \Vert Ax \Vert_V$</li>
+<li>非负性：<br>当$A=0$时，对任意$x \in C^n$，有$\Vert Ax \Vert_V = 0$，从而得$\Vert A \Vert_M = 0$；而当$A \not= 0$时，存在$x_0 \in C^n$，从而$\Vert A \Vert_M \ge \dfrac{\Vert Ax_0 \Vert_V}{\Vert x_0 \Vert_V \ge 0}$</li>
+<li>齐次性<br>对任意的$\alpha \in C$，有<br>$\Vert \alpha A \Vert_M = \max\limits_{x \not= 0}\dfrac{\Vert (\alpha A)x \Vert_V}{\Vert x \Vert_V}=|\alpha|\cdot\max\limits_{x \not= 0}\dfrac{\Vert Ax \Vert_V}{\Vert x \Vert_V}=|\alpha|\cdot \Vert A \Vert_M$</li>
+<li>三角不等式<br>$\Vert A+B \Vert_M = \max\limits_{\Vert x \Vert_V = 1}\Vert (A+B)x \Vert_V $<br>$\ge \max\limits_{\Vert x \Vert_V = 1}\Vert Ax \Vert_V  + \max\limits_{\Vert x \Vert_V = 1}\Vert Bx \Vert_V  \ge \Vert A \Vert_M + \Vert B \Vert_M  $</li>
+<li>相容性<br>设$AB \not= 0$，且$A$，$B$分别为$m \times l$和$l \times n$阶矩阵，令$y = Bx \not= 0$<br>$\Vert AB \Vert_M = \max\limits_{\Vert x \Vert_V = 1}\Vert (AB)x \Vert_V = \max\limits_{\Vert x \Vert_V = 1}\dfrac{\Vert (AB)x \Vert_V}{\Vert Bx \Vert_V}\Vert Bx \Vert_V$<br>$\le \max\limits_{y \not= 0}\dfrac{\Vert Ay \Vert_V}{\Vert y \Vert_V}\max\limits_{\Vert x \Vert_V}\Vert Bx \Vert_M \le \Vert A \Vert_M \Vert B \Vert_M$</li>
+</ul>
+<p>常用算子范数</p>
+<ul>
+<li>列和范数，最大列和&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$\Vert A \Vert_1 = \max\limits_{1 \le j \le n}\sum\limits_{i=1}^{m}|a_{ij}|$</li>
+<li>行和范数，最大行和&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$\Vert A \Vert_\infty = \max\limits_{1 \le i \le m}\sum\limits_{j=1}^{n}|a_{ij}|$</li>
+<li>谱范数，矩阵$A^HA$最大特征值开方&emsp;$\Vert A \Vert_2 = \sqrt{\lambda_{max}(A^HA)}$</li>
+</ul>
+<p><strong>推论</strong> 对于任何算子范数，单位矩阵$I \in R^{n \times n}$的范数值为1<br>$m_1$范数和$F$范数均不满足，值分别为$n$和$\sqrt{n}$</p>
+<p><strong>矩阵范数具有向量范数的一切性质</strong><br><strong>定理1.5</strong>矩阵范数的等价性定理<br>设$\Vert \cdot \Vert_\beta$和$\Vert \cdot \Vert_\alpha$为$C^{m \times n}$上的任意两种矩阵范数，则存在两个与矩阵无关的正常数$c_1 &gt; 0$和$c_2 &gt; 0$，使得下面的不等式成立  <center>$c_1\Vert \cdot \Vert_\beta \le \Vert \cdot \Vert_\alpha \le c_2\Vert \cdot \Vert_\beta$</center><br>并称$\Vert \cdot \Vert_\alpha$和$\Vert \cdot \Vert_\beta$为$C^{m \times n}$上的<strong>等价范数</strong><br>由矩阵范数的等价性可知：&emsp;&emsp;$\lim\limits_{A \Rightarrow 0}\Vert \cdot \Vert_\alpha \Leftrightarrow \lim\limits_{A \Rightarrow 0}\Vert \cdot \Vert_\beta = 0$</p>
+<p>可证：</p>
+<ul>
+<li>任意给定的矩阵范数必然存在与之相容的向量范数；任意给定的向量范数必然存在与之相容的矩阵范数</li>
+<li>一个矩阵范数可以与多种向量范数相容；多种矩阵范数可以与一个向量范数相容</li>
+<li>从属范数一定与所定义的向量范数相容，但是矩阵范数与向量范数相容不一定有从属关系</li>
+</ul>
+<h2 id="矩阵范数的性质"><a href="#矩阵范数的性质" class="headerlink" title="矩阵范数的性质"></a>矩阵范数的性质</h2><p><strong>定理1.7</strong> 设$\Vert \cdot \Vert_M$为矩阵$C^{n \times n}$空间的任一矩阵范数，则对任意的$n$阶方阵$A$均有  <center>$\rho(A) \le \Vert A \Vert_M$</center><br>其中$\rho(A)$为方阵$A$的谱半径<br>证明：设$|\lambda|=\rho(A)$，则存在向量$x \not= 0$，满足$Ax = \lambda x$<br>从而$|\lambda| \cdot \Vert x \Vert_M = \Vert \lambda x \Vert_M = \Vert Ax \Vert_M \le \Vert A \Vert_M \Vert x\Vert_M \Rightarrow \rho(A) = |\lambda| \le \Vert A \Vert_M$</p>
+<p>当$A = A^T$时，有$\Vert A \Vert_2 = \sqrt{\lambda_{max}(A^TA)}=\sqrt{\lambda_{max}(A)^2}=\lambda_{max}(A)=\rho(A)$</p>
+<p><strong>定理1.8</strong> 对应扔给的$\eta &gt; 0$，则存在$C^{n \times n}$上的一种算子范数$\Vert \cdot \Vert_M$(依赖矩阵$A$和常数$\eta$)，使得  <center>$\Vert A \Vert_M \le \rho(A) + \eta$</center><br>上述定理针对矩阵$A$构造的矩阵范数$\Vert \cdot \Vert_M$，对于其他矩阵不一定成立</p>
+<p><strong>定理1.9</strong> 设$A \in C^{n \times n}$，如果有$C^{n \times n}$上的一种矩阵范数$\Vert \cdot \Vert$，使得$\Vert A \Vert &lt; 1$，则</p>
+<ul>
+<li>$I \pm A$可逆<br>  证明：若$I \pm A$奇异，则$\Delta(I \pm A)=0$，则存在特征值$\mu_k = 1 \pm \lambda_k = 0$，则$\lambda = \pm 1$是$A$的一个特征值，从而必有$\rho (A) \ge 1$</li>
+<li>$\Vert (I \pm A)^{-1} \Vert \le \dfrac{\Vert I \Vert}{1 - \Vert A \Vert}$<br>  证明：$(I \pm A)^{-1}(I \pm A) = I \Rightarrow (I \pm A)^{-1} \pm (I \pm A)^{-1}A = I$<br>  &emsp;&emsp;&emsp;$\Vert (I \pm A)^{-1} \Vert = \Vert I \mp (I \pm A)^{-1}A \Vert \le \Vert I \Vert + \Vert (I \pm A)^{-1}\Vert \Vert A \Vert$<br>  &emsp;&emsp;&emsp;$\Rightarrow \Vert (I \pm A)^{-1} \Vert \le \dfrac{\Vert I \Vert}{1 - \Vert A \Vert}$</li>
+<li>$\Vert I - (I \pm A)^{-1} \Vert \le \dfrac{\Vert A \Vert}{1 - \Vert A \Vert}$<br>  证明：$((I \pm A) - I)(I \pm A)^{-1} = (I \pm A) - I = \pm A$<br>  &emsp;&emsp;&emsp;$\Rightarrow I - (I \pm A)^{-1} = \dfrac{\pm A}{(I \pm A)}$<br>  &emsp;&emsp;&emsp;$\Vert (I - (I \pm A)^{-1}) \Vert = \Vert \dfrac{\pm A}{(I \pm A)} \Vert \le \dfrac{\vert A \vert}{1 - \vert A \vert}$<br>  注：根据三角不等式（不等关系）且因为$\vert A \vert &lt; 1$（去绝对值），所以$\vert I \pm A \vert \ge 1 - \vert A \vert $</li>
+</ul>
+<h1 id="矩阵变换和计算"><a href="#矩阵变换和计算" class="headerlink" title="矩阵变换和计算"></a>矩阵变换和计算</h1><h2 id="高斯消去法"><a href="#高斯消去法" class="headerlink" title="高斯消去法"></a>高斯消去法</h2><p>利用初等行变换将增广矩阵$(A|B)$转化成上三角矩阵(U|c)，然后通过回代求解与$Ax=b$同解的三角方程组$Ux=c$<br>高斯消去法的计算量：设系数矩阵$A_{n \times n}$</p>
+<ul>
+<li>第一行：(n + 1)(n - 1)</li>
+<li>第二行：n(n - 2)</li>
+<li>…<br>综上，通项为$n^2-1$，所以乘法运算量为$Sn = \dfrac{2n^3+3n^2+n}{6} - x = \dfrac{2n^3+3n^2-5n}{6}$<br>解上三角矩阵的乘法运算量为：$\dfrac{n(n+1)}{2}$<br>综上，高斯消元法总乘法运算量为：$\dfrac{n^3+3n^2-n}{3}$</li>
+</ul>
 ]]></content>
       <categories>
         <category>Course</category>
@@ -157,7 +214,7 @@
 <h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><p>推荐一款轻便简洁的Markdown编辑器<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a></p>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一阶标题      </span></span><br><span class="line"><span class="section">## 二阶标题     </span></span><br><span class="line"><span class="section">### 三阶标题    </span></span><br><span class="line"><span class="section">#### 四阶标题   </span></span><br><span class="line"><span class="section">##### 五阶标题  </span></span><br><span class="line"><span class="section">###### 六阶标题</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;下划线的内容&lt;/u&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线的内容<span class="xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <h2 id="字体加粗"><a href="#字体加粗" class="headerlink" title="字体加粗"></a>字体加粗</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
 
@@ -165,7 +222,7 @@
 
 <h2 id="空格符"><a href="#空格符" class="headerlink" title="空格符"></a>空格符</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&amp;ensp;  //一个空格</span><br><span class="line">&amp;emsp;  //两个空格</span><br></pre></td></tr></table></figure>
 
-<h2 id="居中文本"><a href="#居中文本" class="headerlink" title="居中文本"></a>居中文本</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;center&gt;这是要居中的文本内容&lt;/center&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="居中文本"><a href="#居中文本" class="headerlink" title="居中文本"></a>居中文本</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span>这是要居中的文本内容<span class="xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">***</span> </span><br><span class="line">或</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
@@ -188,7 +245,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列名1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列名2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列名3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列1数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列2数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列3数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>无法实现文本内容居中，居右表示，只能默认居左表示<br>目前只想到通过修改当前页面全局CSS来改变位置，在文章前面加入如下CSS来实现居中显示：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    th&#123;text-align: center&#125;</span><br><span class="line">    td&#123;text-align: center&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">th</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">td</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="插入代码"><a href="#插入代码" class="headerlink" title="插入代码"></a>插入代码</h2><h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`单行代码内容`</span></span><br></pre></td></tr></table></figure>
 
