@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法一些知识点与错题归纳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-21T10:13:59.922Z">
+<meta property="og:updated_time" content="2019-10-21T13:55:16.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法">
 <meta name="twitter:description" content="计算方法一些知识点与错题归纳">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5k
+                  6k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  23
+                  29
                 </span>
               
             </div>
@@ -645,7 +645,7 @@ $\begin{bmatrix}
 {a_{n1}}&{a_{n2}}&{\cdots}&{a_{nn}}\\
 \end{bmatrix} = 
 \begin{bmatrix}
- {l}&{0}&{\cdots}&{0}\\
+ {1}&{0}&{\cdots}&{0}\\
  {l_{21}}&{1}&{\cdots}&{0}\\
  {\vdots}&{\vdots}&{\ddots}&{\vdots}\\
  {l_{n1}}&{l_{n2}}&{\cdots}&{1}\\
@@ -661,23 +661,19 @@ $
 <p>分析$a_{1i}$与$a_{i1}$可得：</p>
 
 $$
-\left \{ 
-\begin{array}{c}
-u_{1j} = a_{1j}, j=1,2,...,n \\ 
-l_{j1} = \dfrac{u_{j1}}{u_{11}} j=2,3,...,n\\ 
-\end{array}
-\right. 
+\begin{cases}
+u_{1j} = a_{1j}\quad j=1,2,...,n \\ 
+l_{j1} = \dfrac{u_{j1}}{u_{11}} \quad j=2,3,...,n\\ 
+\end{cases}
 $$
 
 <p>推广可得：</p>
 
 $$
-\left \{ 
-\begin{array}{c}
-u_{ij} = a_{ij} - \sum\limits_{k=1}^{i-1}l_{ik}u_{kj}, j = i,i+1,...,n \\ 
-l_{ji} = \dfrac{a_{ji}-\sum\limits_{k=1}^{i-1}l_{jk}u_{ki}}{u_{11}}, j = i+1,i+2,...,n\\ 
-\end{array}
-\right. 
+\begin{cases}
+u_{ij} = a_{ij} - \sum\limits_{k=1}^{i-1}l_{ik}u_{kj}\quad j = i,i+1,...,n \\ 
+l_{ji} = \dfrac{a_{ji}-\sum\limits_{k=1}^{i-1}l_{jk}u_{ki}}{u_{11}}\quad j = i+1,i+2,...,n\\ 
+\end{cases}
 $$
 
 
@@ -687,7 +683,109 @@ $$
 <h2 id="利用-LU-分解求矩阵的逆"><a href="#利用-LU-分解求矩阵的逆" class="headerlink" title="利用$LU$分解求矩阵的逆"></a>利用$LU$分解求矩阵的逆</h2><p>如前文所述，令$x = [x_1, x_2,…,x_n], I = [I_1, I_2,…,I_n]$此处可以看成<br>$Ax = LUx_i = I_i \quad i = 1,2,…,n$</p>
 <p>同时，若某步$a_{kk}^{k-1} \not= 0$，但很小，会造成很大的舍入误差，无法使用$LU$分解</p>
 <h2 id="高斯列主元消去法"><a href="#高斯列主元消去法" class="headerlink" title="高斯列主元消去法"></a>高斯列主元消去法</h2><p>高斯列主元消去法即为在高斯消去法的基础上增加选主元的过程，即在第$k \quad k=1,2,…,n-1$步消元时，首先在第$k$列主对角元以下元素中挑选绝对值最大的数，经过初等行变换，使其成为$a_{kk}{k-1}$，再继续消元<br>置换矩阵，左乘行交换，右乘列交换</p>
-<h2 id="带列主元的-LU-分解"><a href="#带列主元的-LU-分解" class="headerlink" title="带列主元的$LU$分解"></a>带列主元的$LU$分解</h2>
+<h2 id="带列主元的-LU-分解"><a href="#带列主元的-LU-分解" class="headerlink" title="带列主元的$LU$分解"></a>带列主元的$LU$分解</h2><p>根据如上定义，经过带列主元的$LU$分解，我们可以得到$L_{n-1}P_{n-1}…L_2P_2L_1P_1A = U$<br>但是$L_{n-1}P_{n-1}…L_2P_2L_1P_1$不是单位下三角矩阵，故经过如下改写：<br>$L_{n-1}(P_{n-1}L_{n-2}P_{n-1}^{-1})(P_{n-1}…P_2L_2P_2^{-1}…P_{n-1}^{-1})(P_{n-1}…P_2P_1)A = U$</p>
+<h2 id="对称正定矩阵的Cholesky分解法"><a href="#对称正定矩阵的Cholesky分解法" class="headerlink" title="对称正定矩阵的Cholesky分解法"></a>对称正定矩阵的Cholesky分解法</h2><p>正定（半正定）对称矩阵的定义和某些性质</p>
+<ul>
+<li>$A$为半正定对称矩阵，对任何$x \in R^n \quad (Ax, x) \ge 0$</li>
+<li>$A$为正定对称矩阵，如果$x \not= 0 \in R^n$，恒有$(Ax, x) &gt; 0$</li>
+<li>$A$为正定(半正定)对称矩阵$\Longleftrightarrow$$A$的特征值为正（非负）</li>
+<li>$A$为正定(半正定)对称矩阵$\Longleftrightarrow$$A$的各阶主子式为正（非负）</li>
+</ul>
+<p>对于对称正定线性方程组，最常用<strong>Cholesky分解法</strong>也叫<strong>平方根法</strong><br>将对称正定矩阵$A$做$LU$分解，得到$L$和$U$，进一步可将$U$化为$D \tilde{U}$<br>因为$A$是对称矩阵，所以有$L(D\tilde{U}) = (L(D\tilde{U}))^T = \tilde{U}^T(DL^T)$<br>因为$LU$分解的唯一性，可得$L = \tilde{U}^T$，即$A = LDL^T$<br>令$\tilde{T} = L^D^{\DFRAC{1}{2}}$，可得$A = \tilde{L}\tilde{L}^T$</p>
+<p><strong>定理2.3</strong> Cholesky分解<br>对任意$n$阶对称正定矩阵A，均存在下三角矩阵$L$使$A=LL^T$成立，称其为对称正定矩阵A的Cholesky分解。进一步，如果规定$L$的对角元为正数，则L是唯一确定的。<br>因此，若线性方程组$Ax=b$的系数矩阵时对称正定的，便可按如下步骤求解：</p>
+<ul>
+<li>A的Cholesky分解：$A = LL^T$</li>
+<li>$Ly=b \Rightarrow y$</li>
+<li>$L^Tx=y \Rightarrow x$</li>
+</ul>
+<h2 id="Cholesky分解的直接分解法"><a href="#Cholesky分解的直接分解法" class="headerlink" title="Cholesky分解的直接分解法"></a>Cholesky分解的直接分解法</h2>
+$\begin{bmatrix}
+{a_{11}}&{a_{12}}&{\cdots}&{a_{1n}}\\
+{a_{21}}&{a_{22}}&{\cdots}&{a_{2n}}\\
+{\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+{a_{n1}}&{a_{n2}}&{\cdots}&{a_{nn}}\\
+\end{bmatrix} = 
+\begin{bmatrix}
+ {l_{11}}&{0}&{\cdots}&{0}\\
+ {l_{21}}&{l_{22}}&{\cdots}&{0}\\
+ {\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+ {l_{n1}}&{l_{n2}}&{\cdots}&{l_{nn}}\\
+ \end{bmatrix} 
+ \begin{bmatrix}
+ {l_{11}}&{l_{21}}&{\cdots}&{l_{n1}}\\
+ {0}&{l_{22}}&{\cdots}&{u_{n2}}\\
+ {\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+ {0}&{0}&{\cdots}&{l_{nn}}\\
+ \end{bmatrix}
+$
+
+<p>分析可得：</p>
+
+$
+\begin{cases}
+a_{ii} = \sum\limits_{k = 1}^{i-1} l_{ik}^2 + l_{ii}^2 \\
+a_{ij} = \sum\limits_{k=1}^{j-1}l_{ik}l_{kj} + l_{ij}l_{jj}\quad j = 1,2,...,i-1 
+\end{cases}
+$
+
+<p>由上可得：</p>
+
+$
+\begin{cases}
+\\
+l_{ii} = \sqrt{a_{ii} - \sum\limits_{k = 1}^{i-1}l_{ik}^2}\\
+l_{ij} = \dfrac{a_{ij}-\sum\limits_{k=1}^{j-1}l_{ik}l_{kj}}{l_{jj}}\quad j = 1,2,...,i-1
+\end{cases}
+$
+
+
+<p>Cholesky分解计算$l$的次序<br>$l_{11},l_{21},..,l_{n1},l_{22},l{32},…,l_{n2},…,l_{nn}$</p>
+<p>因为$l_{ii} = \sqrt{a_{ii} - \sum\limits_{k = 1}^{i-1}l_{ik}^2} \ge 0$<br>所以$|l_ik| \le \sqrt{a_{ii}} \quad k = 1,2,…,i$<br>因此在分解过程中$L$元素的数量级不会增长，故<strong>平方根法</strong>通常是数值稳定的，不需要选取主元<br>其运算量为高斯消去法的一半</p>
+<p>利用$LDL^T$分解可以避免开方运算</p>
+<h2 id="三对角矩阵的三角分解"><a href="#三对角矩阵的三角分解" class="headerlink" title="三对角矩阵的三角分解"></a>三对角矩阵的三角分解</h2><p>三对角矩阵，对其进行$LU$分解</p>
+
+$\begin{bmatrix}
+{b_1}&{c_1}&{\cdots}&{\cdots}&{0}\\
+{a_2}&{b_2}&{c_2}&{\cdots} &{0}\\
+{\vdots}&{\vdots}&{\ddots}&{\ddots} &{\vdots}\\
+{0}&{\cdots}&{a_{n-1}}&{b_{n-1}}&{c_{n-1}}\\
+{0}&{\cdots}&{\cdots}&{a_n}&{b_n}\\
+\end{bmatrix} $
+$= \begin{bmatrix}
+{1}&{0}&{\cdots}&{\cdots}&{0}\\
+{l_2}&{1}&{0}&{\cdots} &{0}\\
+{\vdots}&{\vdots}&{\ddots}&{\ddots} &{\vdots}\\
+{0}&{\cdots}&{l_{n-1}}&{1}&{0}\\
+{0}&{\cdots}&{\cdots}&{l_n}&{1}\\
+\end{bmatrix} 
+\begin{bmatrix}
+{u_1}&{d_1}&{\cdots}&{\cdots}&{0}\\
+{0}&{u_2}&{d_2}&{\cdots} &{0}\\
+{\vdots}&{\vdots}&{\ddots}&{\ddots} &{\vdots}\\
+{0}&{\cdots}&{0}&{u_{n-1}}&{d_{n-1}}\\
+{0}&{\cdots}&{\cdots}&{0}&{u_n}\\
+\end{bmatrix} 
+$
+
+
+<p><strong>追赶法</strong>解三对角型方程组的步骤：</p>
+
+$$\begin{cases}
+d_i = c_i \quad i=1.2....,n-1 \\
+u_1 = b_1 \\
+l_i = \dfrac{a_i}{u_{i-1}} \quad i =2,3,...,n \\
+u_i = b_i - l_ic_{i-1} \quad i=2,3,...,n
+\end{cases}$$
+
+<p>计算次序为：<br>$u_1 \Rightarrow l_2 \Rightarrow u_2 \Rightarrow l_3 \Rightarrow u_3 \Rightarrow … \Rightarrow l_n \Rightarrow u_n$</p>
+<p><strong>定理2.4</strong> 设具有三对角形式的矩阵$A$，满足条件</p>
+<ul>
+<li>$|b_1| &gt; |c_1| &gt; 0$</li>
+<li>$|b_n| &gt; |c_n| &gt; 0$</li>
+<li>$|b_i| \ge |a_i| + |c_i| \quad a_ic_i \not= 0 \quad i = 2,3,…,n-1$</li>
+</ul>
+<p>则方程$Ax=f$可用追赶法，且解存在唯一<br>定理条件中有$a_ic_i \not= 0 $，如果有某个$a_i=0$或$c_i=0$，则可化成低阶方程组求解<br>追赶法整个求解过程仅需$5n-4$次乘除法，$3(n-1)$次加减法，总计$8n-7$次运算，$4$个一维数组即可<br>当$A$<strong>对角占优</strong>时，追赶法通常<strong>数值稳定</strong></p>
+
       
     </div>
     
@@ -884,7 +982,7 @@ $$
 
           
             <div>
-              <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="210" height="110" src="//music.163.com/outchain/player?type=2&id=411921321&auto=1&height=66"></iframe>
+              <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="210" height="110" src="//music.163.com/outchain/player?type=2&id=411907381&auto=1&height=66"></iframe>
             </div>
           
 
@@ -927,7 +1025,7 @@ $$
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -974,7 +1072,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共12.6k字</span>
+  <span class="post-count">博客全站共13.8k字</span>
 </div>
 
         
