@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法一些知识点与错题归纳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-20T09:55:20.341Z">
+<meta property="og:updated_time" content="2019-10-21T10:13:59.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法">
 <meta name="twitter:description" content="计算方法一些知识点与错题归纳">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.2k
+                  5k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  20
+                  23
                 </span>
               
             </div>
@@ -630,7 +630,64 @@
 <li>第二行：n(n - 2)</li>
 <li>…<br>综上，通项为$n^2-1$，所以乘法运算量为$Sn = \dfrac{2n^3+3n^2+n}{6} - x = \dfrac{2n^3+3n^2-5n}{6}$<br>解上三角矩阵的乘法运算量为：$\dfrac{n(n+1)}{2}$<br>综上，高斯消元法总乘法运算量为：$\dfrac{n^3+3n^2-n}{3}$</li>
 </ul>
+<h2 id="矩阵的LU分解"><a href="#矩阵的LU分解" class="headerlink" title="矩阵的LU分解"></a>矩阵的LU分解</h2><p><strong>定义2.1</strong> 对于$n$阶方阵$A$，如果存在$n$阶单位下三角矩阵$L$和$n$阶上三角矩阵$U$，使得$A=LU$，则称其为矩阵$A$的$LU$分解，也称<strong>Doolittle分解</strong></p>
+<p>对于一般$n$阶方阵$A$进行$LU$分解，每一次行变换提出一个$L_i$矩阵，最终使得$L_{n-1}L_{n-2}…L_{2}L_{1}A = U$，令$L = (L_{n-1}L_{n-2}…L_{2}L_{1})^T$，则有$A = LU$</p>
+<p><strong>Doolittle分解</strong>解线性方程组$Ax = b \Leftrightarrow (LU)x = b \Leftrightarrow Ly = b Ux = y$<br>在如下情况可以极大减少计算量</p>
+<ul>
+<li>$A^nB^nx=b$<br>利用高斯消元法做计算量为：&emsp;&emsp;$\dfrac{n^4}{3}$<br>利用$LU$分解做计算量为:&emsp;&emsp;&emsp;&emsp;$\dfrac{2n^3}{3}$</li>
+<li>$Ax = b_k$，$k = 1,2,3…,m$<br>利用高斯消元法做计算量为：&emsp;&emsp;$\dfrac{mn^3}{3}$<br>利用$LU$分解做计算量为:&emsp;&emsp;&emsp;&emsp;$\dfrac{n^3}{3}$</li>
+</ul>
+<h2 id="紧凑格式的-Doolittle-公式"><a href="#紧凑格式的-Doolittle-公式" class="headerlink" title="紧凑格式的$Doolittle$公式"></a>紧凑格式的$Doolittle$公式</h2>
+$\begin{bmatrix}
+{a_{11}}&{a_{12}}&{\cdots}&{a_{1n}}\\
+{a_{21}}&{a_{22}}&{\cdots}&{a_{2n}}\\
+{\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+{a_{n1}}&{a_{n2}}&{\cdots}&{a_{nn}}\\
+\end{bmatrix} = 
+\begin{bmatrix}
+ {l}&{0}&{\cdots}&{0}\\
+ {l_{21}}&{1}&{\cdots}&{0}\\
+ {\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+ {l_{n1}}&{l_{n2}}&{\cdots}&{1}\\
+ \end{bmatrix} 
+ \begin{bmatrix}
+ {u_{11}}&{u_{12}}&{\cdots}&{u_{1n}}\\
+ {0}&{u_{22}}&{\cdots}&{u_{2n}}\\
+ {\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+ {0}&{0}&{\cdots}&{u_{nn}}\\
+ \end{bmatrix}
+$
 
+<p>分析$a_{1i}$与$a_{i1}$可得：</p>
+
+$$
+\left \{ 
+\begin{array}{c}
+u_{1j} = a_{1j}, j=1,2,...,n \\ 
+l_{j1} = \dfrac{u_{j1}}{u_{11}} j=2,3,...,n\\ 
+\end{array}
+\right. 
+$$
+
+<p>推广可得：</p>
+
+$$
+\left \{ 
+\begin{array}{c}
+u_{ij} = a_{ij} - \sum\limits_{k=1}^{i-1}l_{ik}u_{kj}, j = i,i+1,...,n \\ 
+l_{ji} = \dfrac{a_{ji}-\sum\limits_{k=1}^{i-1}l_{jk}u_{ki}}{u_{11}}, j = i+1,i+2,...,n\\ 
+\end{array}
+\right. 
+$$
+
+
+<p>高斯消去法的可行条件为：<strong>$A$的各阶顺序主子式均不为0</strong></p>
+<p><strong>定理2.1</strong> 矩阵$LU$分解的存在和唯一性<br>如果$n$阶矩阵$A$的各阶顺序主子式$D_k \quad k = 1,2,…,n-1$均不为零，则必有单位下三角矩阵$L$和上三角矩阵$U$，使得$A=LU$，且$L$和$U$唯一存在</p>
+<p><strong>Crout分解</strong> $LU$分解中$L$为下三角矩阵$U$为单位上三角矩阵<br><strong>LDU分解</strong> $L$为单位下三角矩阵$D$为非奇异对角矩阵$U$为单位上三角矩阵</p>
+<h2 id="利用-LU-分解求矩阵的逆"><a href="#利用-LU-分解求矩阵的逆" class="headerlink" title="利用$LU$分解求矩阵的逆"></a>利用$LU$分解求矩阵的逆</h2><p>如前文所述，令$x = [x_1, x_2,…,x_n], I = [I_1, I_2,…,I_n]$此处可以看成<br>$Ax = LUx_i = I_i \quad i = 1,2,…,n$</p>
+<p>同时，若某步$a_{kk}^{k-1} \not= 0$，但很小，会造成很大的舍入误差，无法使用$LU$分解</p>
+<h2 id="高斯列主元消去法"><a href="#高斯列主元消去法" class="headerlink" title="高斯列主元消去法"></a>高斯列主元消去法</h2><p>高斯列主元消去法即为在高斯消去法的基础上增加选主元的过程，即在第$k \quad k=1,2,…,n-1$步消元时，首先在第$k$列主对角元以下元素中挑选绝对值最大的数，经过初等行变换，使其成为$a_{kk}{k-1}$，再继续消元<br>置换矩阵，左乘行交换，右乘列交换</p>
+<h2 id="带列主元的-LU-分解"><a href="#带列主元的-LU-分解" class="headerlink" title="带列主元的$LU$分解"></a>带列主元的$LU$分解</h2>
       
     </div>
     
@@ -870,7 +927,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -917,7 +974,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共11.8k字</span>
+  <span class="post-count">博客全站共12.6k字</span>
 </div>
 
         
