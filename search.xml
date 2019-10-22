@@ -174,7 +174,7 @@
 <li>谱范数，矩阵$A^HA$最大特征值开方&emsp;$\Vert A \Vert_2 = \sqrt{\lambda_{max}(A^HA)}$</li>
 </ul>
 <p><strong>推论</strong> 对于任何算子范数，单位矩阵$I \in R^{n \times n}$的范数值为1<br>$m_1$范数和$F$范数均不满足，值分别为$n$和$\sqrt{n}$</p>
-<p><strong>矩阵范数具有向量范数的一切性质</strong><br><strong>定理1.5</strong>矩阵范数的等价性定理<br>设$\Vert \cdot \Vert_\beta$和$\Vert \cdot \Vert_\alpha$为$C^{m \times n}$上的任意两种矩阵范数，则存在两个与矩阵无关的正常数$c_1 &gt; 0$和$c_2 &gt; 0$，使得下面的不等式成立  <center>$c_1\Vert \cdot \Vert_\beta \le \Vert \cdot \Vert_\alpha \le c_2\Vert \cdot \Vert_\beta$</center><br>并称$\Vert \cdot \Vert_\alpha$和$\Vert \cdot \Vert_\beta$为$C^{m \times n}$上的<strong>等价范数</strong><br>由矩阵范数的等价性可知：&emsp;&emsp;$\lim\limits_{A \Rightarrow 0}\Vert \cdot \Vert_\alpha \Leftrightarrow \lim\limits_{A \Rightarrow 0}\Vert \cdot \Vert_\beta = 0$</p>
+<p><strong>矩阵范数具有向量范数的一切性质</strong><br><strong>定理1.5</strong>矩阵范数的等价性定理<br>设$\Vert \cdot \Vert_\beta$和$\Vert \cdot \Vert_\alpha$为$C^{m \times n}$上的任意两种矩阵范数，则存在两个与矩阵无关的正常数$c_1 &gt; 0$和$c_2 &gt; 0$，使得下面的不等式成立  <center>$c_1\Vert \cdot \Vert_\beta \le \Vert \cdot \Vert_\alpha \le c_2\Vert \cdot \Vert_\beta$</center><br>并称$\Vert \cdot \Vert_\alpha$和$\Vert \cdot \Vert_\beta$为$C^{m \times n}$上的<strong>等价范数</strong><br>由矩阵范数的等价性可知：&emsp;&emsp;$\lim\limits_{A \Rightarrow 0}\Vert A \Vert_\alpha \Leftrightarrow \lim\limits_{A \Rightarrow 0}\Vert A \Vert_\beta = 0$</p>
 <p>可证：</p>
 <ul>
 <li>任意给定的矩阵范数必然存在与之相容的向量范数；任意给定的向量范数必然存在与之相容的矩阵范数</li>
@@ -258,7 +258,7 @@ $$
 <li>$A$为正定(半正定)对称矩阵$\Longleftrightarrow$$A$的特征值为正（非负）</li>
 <li>$A$为正定(半正定)对称矩阵$\Longleftrightarrow$$A$的各阶主子式为正（非负）</li>
 </ul>
-<p>对于对称正定线性方程组，最常用<strong>Cholesky分解法</strong>也叫<strong>平方根法</strong><br>将对称正定矩阵$A$做$LU$分解，得到$L$和$U$，进一步可将$U$化为$D \tilde{U}$<br>因为$A$是对称矩阵，所以有$L(D\tilde{U}) = (L(D\tilde{U}))^T = \tilde{U}^T(DL^T)$<br>因为$LU$分解的唯一性，可得$L = \tilde{U}^T$，即$A = LDL^T$<br>令$\tilde{T} = L^D^{\DFRAC{1}{2}}$，可得$A = \tilde{L}\tilde{L}^T$</p>
+<p>对于对称正定线性方程组，最常用<strong>Cholesky分解法</strong>也叫<strong>平方根法</strong><br>将对称正定矩阵$A$做$LU$分解，得到$L$和$U$，进一步可将$U$化为$D \tilde{U}$<br>因为$A$是对称矩阵，所以有$L(D\tilde{U}) = (L(D\tilde{U}))^T = \tilde{U}^T(DL^T)$<br>因为$LU$分解的唯一性，可得$L = \tilde{U}^T$，即$A = LDL^T$<br>令$\tilde{L} = LD^{\frac{1}{2}}$，可得$A = \tilde{L}\tilde{L}^T$</p>
 <p><strong>定理2.3</strong> Cholesky分解<br>对任意$n$阶对称正定矩阵A，均存在下三角矩阵$L$使$A=LL^T$成立，称其为对称正定矩阵A的Cholesky分解。进一步，如果规定$L$的对角元为正数，则L是唯一确定的。<br>因此，若线性方程组$Ax=b$的系数矩阵时对称正定的，便可按如下步骤求解：</p>
 <ul>
 <li>A的Cholesky分解：$A = LL^T$</li>
@@ -355,8 +355,8 @@ u_i = b_i - l_ic_{i-1} \quad i=2,3,...,n
 <p>严格对角占优，即$|b_i| &gt; |a_i| + |c_i| \quad a_ic_i \not= 0 \quad i = 2,3,…,n-1$，一定非奇异，解存在唯一</p>
 <p>注：矩阵可约即为通过初等行列变换可以化成某一块全为0的分块矩阵，否则不可约</p>
 <h2 id="条件数与方程组的性态"><a href="#条件数与方程组的性态" class="headerlink" title="条件数与方程组的性态"></a>条件数与方程组的性态</h2><p><strong>定义2.2</strong> 如果线性方程组$Ax=b$中，$A$或$b$的元素的微小变化，就会引起方程组解的巨大变化，则称方程组为“病态”方程组，矩阵$A$成为“病态”矩阵。否则称方程组为“良态”方程组，矩阵$A$成为“良态”矩阵。</p>
-<p><strong>定义2.3</strong>设A为非奇异矩阵，$\Vert \cdot \Vert$为矩阵的算子范数，则称  <center>cond(A)=\Vert A \Vert \Vert A^{-1} \Vert</center><br>为矩阵$A$的条件数</p>
-<p>相对误差放大因子<br>$A(x + \delta x) = b + \delta x \Rightarrow Ax + A\delta x = b + \delta b \Rightarrow \delta x = A^{-1}\delta b$<br>$\Vert \delta x \Vert \le \Vert A^{-1}\Vert \delta b \Vert $<br>$\Vert b \Vert = \Vert Ax \Vert \le \Vert A \Vert \Vert x \Vert \Rightarrow \dfrac{1}{\Vert x \Vert} \le \dfrac{\Vert A \Vert}{\Vert b \Vert}$<br>$\dfrac{\Vert \delta x \Vert}{\Vert x \Vert} \le \Vert A \Vert \Vert A^{-1} \Vert\dfrac{\Vert \delta b \Vert}{\Vert b \Vert}$<br>其中$\Vert A \Vert \Vert A^{-1} \Vert$被称为误差放大因子</p>
+<p><strong>定义2.3</strong>设A为非奇异矩阵，$\Vert \cdot \Vert$为矩阵的算子范数，则称  <center>$cond(A)=\Vert A \Vert \Vert A^{-1} \Vert$</center><br>为矩阵$A$的条件数</p>
+<p>相对误差放大因子<br>$A(x + \delta x) = b + \delta x \Rightarrow Ax + A\delta x = b + \delta b \Rightarrow \delta x = A^{-1}\delta b$<br>$\Vert \delta x \Vert \le \Vert A^{-1}\Vert \delta b \Vert $<br>$\Vert b \Vert = \Vert Ax \Vert \le \Vert A \Vert \Vert x \Vert \Rightarrow \dfrac{1}{\Vert x \Vert} \le \dfrac{\Vert A \Vert}{\Vert b \Vert}$<br>$\dfrac{\Vert \delta x \Vert}{\Vert x \Vert} \le \Vert A \Vert \Vert A^{-1} \Vert\dfrac{\Vert \delta b \Vert}{\Vert b \Vert}$<br>其中$\Vert A \Vert \Vert A^{-1} \Vert$被称为误差放大因子，令$cond(A) = \Vert A \Vert \Vert A^{-1} \Vert$为条件数</p>
 <p>常用条件数有：</p>
 <ul>
 <li>$cond_\infty(A) = \Vert A \Vert_\infty \Vert A^{-1}\Vert_\infty$</li>
@@ -369,16 +369,41 @@ u_i = b_i - l_ic_{i-1} \quad i=2,3,...,n
 <li>$cond(A) = cond(A^{-1})$<br>  $cond(A^{-1})=\Vert A^{-1}\Vert\Vert (A^{-1})^{-1}\Vert=\Vert A^{-1}\Vert\Vert A \Vert = cond(A)$</li>
 <li>$cond(\alpha A) = cond(A) \quad \alpha \not= 0 \quad \alpha \in R$<br>  $\Vert \alpha A \Vert\Vert (\alpha A)^{-1} \Vert= |\alpha|\Vert A\Vert \dfrac{1}{|\alpha|}\Vert A^{-1} \Vert =\Vert A \Vert\Vert A^{-1}\Vert = cond(A)$</li>
 <li>如果$U$为酉（正交）矩阵，则<br>  $cond_2(U) = 1 \quad cond_2(UA) = cond_2(AU) = cond_2(A)$</li>
-<li>$cond(AB) \le cond(A)cond(B)$<br>  $cond(AB) = \Vert AB \Vert\Vert(AB)^{-1}\Vert \le \Vert A \Vert\Vert A^{-1}\Vert\Vert B \Vert\Vert B^{-1}\Vert = cond(A)cond(B)$</li>
+<li>$cond(AB) \le cond(A)cond(B)$  $cond(AB) = \Vert AB \Vert\Vert(AB)^{-1}\Vert \le \Vert A \Vert\Vert A^{-1}\Vert\Vert B \Vert\Vert B^{-1}\Vert \\ = cond(A)cond(B)$
+
+</li>
 </ul>
 <p>根据矩阵范数的等价性容易推出，$R^{n \times n}$上任意两个范数的条件数$cond_{\alpha}(A)$和$cond_{\beta}(A)$都是等价的，即存在常数$c_1$和$c_2$，使得<br>$c_1cond_{\alpha}(A) \le cond_{\beta}(A) \le c_2cond_{\alpha}(A)$<br>推广到</p>
 <ul>
-<li>$\dfrac{1}{n}cond_2(A) \le cond_2(A) \le ncond_\infty(A)$<br>  证明：</li>
-<li>$\dfrac{1}{n}cond_\infty(A) \le cond_1(A) \le ncond_2(A)$<br>  证明：</li>
-<li>$\dfrac{1}{n^2}cond_1(A) \le cond_\infty(A) \le n^2cond_1(A)$<br>  证明：</li>
+<li>$\dfrac{1}{n}cond_2(A) \le cond_1(A) \le ncond_2(A)$</li>
+<li>$\dfrac{1}{n}cond_\infty(A) \le cond_2(A) \le ncond_\infty(A)$</li>
+<li>$\dfrac{1}{n^2}cond_1(A) \le cond_\infty(A) \le n^2cond_1(A)$</li>
 </ul>
 <p>一个矩阵范数在$\alpha$范数下病态，则其在$\beta$范数下也是病态的<br>$cond(A)$越大，解的相对误差界可能越大，$A$对求解线性方程组来说越可能呈现病态，所以$cond(A)$越小越好</p>
-<p>$n$阶$Hilbert$矩阵<br>$H_n = (h_{ij})<em>{n \times n} = (\dfrac{1}{i + j -1})</em>{n \times n} \quad i,j=1,2,…,n$</p>
+<p>$n$阶$Hilbert$矩阵，随着$n$增大严重病态</p>
+$H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,...,n$
+
+<p><strong>定理2.5</strong> 设$Ax=b$，$A$为非奇异矩阵，$b$为非零向量且$A$与$b$均有扰动。若$A$的扰动$\delta A$非常小，使得$\Vert A^{-1} \Vert \Vert \delta A\Vert &lt; 1$ 则  </p>
+<center>$\dfrac{\Vert \delta x \Vert}{\Vert x \Vert} \le \dfrac{cond(A)}{1-cond(A)\frac{\Vert \delta A \Vert}{\Vert A \Vert}}(\dfrac{\Vert \delta A \Vert}{\Vert A \Vert} + \dfrac{\Vert \delta b \Vert}{\Vert b \Vert})$</center>
+注：当A不存在扰动，即$\delta A = 0$时，原式变为$\dfrac{\Vert \delta x \Vert}{\Vert x \Vert} \le cond(A)\dfrac{\Vert \delta b \Vert}{\Vert b \Vert}$
+
+<p>注：当$\dfrac{\Vert \delta x \Vert}{\Vert x \Vert}$较小时，有$\dfrac{cond(A)}{1-cond(A)\frac{\Vert \delta A \Vert}{\Vert A \Vert}} \approx cond(A)$，从而有</p>
+<center>$\dfrac{\Vert \delta x\Vert}{\Vert x \Vert} < \approx cond(A)(\dfrac{\Vert \delta A \Vert}{\Vert A \Vert} + \dfrac{\Vert \delta b \Vert}{\Vert b \Vert}) $</center>
+
+<p>条件数的几何意义<br><strong>定理2.7</strong> 设$A \in R^{n \times n}$非奇异，则</p>
+<center>$min{\dfrac{\Vert \delta A \Vert_2}{\Vert A \Vert_2}| A+\delta A奇异} = \dfrac{1}{\Vert \delta A \Vert_2\Vert \delta A^{-1} = \dfrac{1}{cond(A)}\Vert_2}$</center>
+
+<p>即在谱范数下，一个矩阵的条件数的倒数正好等于该矩阵与全体奇异矩阵所成集合的相对距离（最小距离）<br>定理表明，当$A\in R^{n \times n}$十分病态时，就说明$A$已与一个奇异矩阵十分接近<br>说明了条件数越大，离奇异矩阵越近</p>
+<h2 id="Householder矩阵"><a href="#Householder矩阵" class="headerlink" title="Householder矩阵"></a>Householder矩阵</h2><p><strong>正交矩阵</strong><br>$AA^T=E$，则$n$阶实对称矩阵A称为正交矩阵，其满足：</p>
+<ul>
+<li>$A^T$为正交矩阵</li>
+<li>$A$各行为单位向量且两两正交</li>
+<li>$A$各列为单位向量且两两正交</li>
+<li>$(Ax,Ay)=y^TA^TAx = (x,y)$</li>
+</ul>
+<p>由矩阵的条件数定义可知，正交矩阵是性态最好的矩阵，例：$cond_2(A) = 1$<br>若能用正交矩阵代替高斯消去过程的单位下三角矩阵，即$Q_{n-1}…Q_2Q_1A = R$，记$Q^T=Q_{n-1}…Q_2Q_1$，则有$A=QR$<br>且$cond_2(A)=cond_2(QR)=cond_2(R)$，因此变换后所得的矩阵$R$条件数不变，故该计算过程具有数值稳定性</p>
+<p><strong>初等矩阵</strong><br>$E(u，v;\alpha) = I - \alpha uv^H \quad u,v \in C^n, \alpha \in C$<br>$uv^H$是一个秩为1的矩阵，$1 \le rank(uv^H) \le rank(u) = 1$，其特征值为$v^Hu,0,0,..,0$<br>$(uv^H)u = u(v^Hu) = (v^Hu)u$ 结合律，数乘列向量等于列向量乘数<br>$\lambda = v^Hu \not= 0$是矩阵$uv^H$的唯一非零特征值</p>
+<p><strong>Householder变换矩阵</strong><br><strong>定义2.4</strong> 设$\omega \in R^n \quad \omega \not= 0 $称初等矩阵  <center>$H(\omega) = I - \dfrac{2}{\omega^T\omega}\omega\omega^T$</center><br>为Householder矩阵（简称H阵），或称其为Householder变换<br>实际上因为$\omega^T\omega = \Vert \omega \Vert_2^2$，所以原式为$$H(\omega) = I - \dfrac{2}{\Vert \omega \Vert_2^2}\omega\omega^T$$<br>特别的，令$\omega = (e_i - e_j)$则$\Vert \omega \Vert_2^2 = 2$，原式为$H(\omega)=I - (e_i - e_j)(e_i - e_j)^T$ 为一个初等<strong>置换矩阵</strong></p>
 ]]></content>
       <categories>
         <category>Course</category>
