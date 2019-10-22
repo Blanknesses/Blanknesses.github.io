@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法一些知识点与错题归纳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-21T13:55:16.811Z">
+<meta property="og:updated_time" content="2019-10-22T03:35:47.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法">
 <meta name="twitter:description" content="计算方法一些知识点与错题归纳">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6k
+                  6.9k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  29
+                  33
                 </span>
               
             </div>
@@ -615,6 +615,7 @@
 <li>一个矩阵范数可以与多种向量范数相容；多种矩阵范数可以与一个向量范数相容</li>
 <li>从属范数一定与所定义的向量范数相容，但是矩阵范数与向量范数相容不一定有从属关系</li>
 </ul>
+<p><strong>酉矩阵$U$</strong><br>对于酉矩阵$U^HU=UU^H=I$，有如下结论：<br>$\Vert U\Vert_2 = 1 \quad \Vert AU \Vert_2 = \Vert UA \Vert_2 = \Vert A \Vert_2$<br>酉矩阵的范数不变性<br>证明：<br>$\Vert U\Vert_2^2 = \rho(U^HU) = \rho(I) = 1$<br>$\Vert UA \Vert_2^2 = \rho[(UA)^H(UA)] = \rho(A^HU^HUA) = \rho(A^HA) = \Vert A\Vert_2^2$<br>$\Vert AU \Vert_2^2 = \rho[(AU)^H(AU)] = \rho(U^HA^HAU) $<br>因为$U$可逆，所以$U^HA^HAU \sim UU^HA^HAUU^H = A^HA$，根据相似矩阵特征值相同，故<br>$\rho(U^HA^HAU) =  \rho(A^HA) = \Vert A\Vert_2^2$</p>
 <h2 id="矩阵范数的性质"><a href="#矩阵范数的性质" class="headerlink" title="矩阵范数的性质"></a>矩阵范数的性质</h2><p><strong>定理1.7</strong> 设$\Vert \cdot \Vert_M$为矩阵$C^{n \times n}$空间的任一矩阵范数，则对任意的$n$阶方阵$A$均有  <center>$\rho(A) \le \Vert A \Vert_M$</center><br>其中$\rho(A)$为方阵$A$的谱半径<br>证明：设$|\lambda|=\rho(A)$，则存在向量$x \not= 0$，满足$Ax = \lambda x$<br>从而$|\lambda| \cdot \Vert x \Vert_M = \Vert \lambda x \Vert_M = \Vert Ax \Vert_M \le \Vert A \Vert_M \Vert x\Vert_M \Rightarrow \rho(A) = |\lambda| \le \Vert A \Vert_M$</p>
 <p>当$A = A^T$时，有$\Vert A \Vert_2 = \sqrt{\lambda_{max}(A^TA)}=\sqrt{\lambda_{max}(A)^2}=\lambda_{max}(A)=\rho(A)$</p>
 <p><strong>定理1.8</strong> 对应扔给的$\eta &gt; 0$，则存在$C^{n \times n}$上的一种算子范数$\Vert \cdot \Vert_M$(依赖矩阵$A$和常数$\eta$)，使得  <center>$\Vert A \Vert_M \le \rho(A) + \eta$</center><br>上述定理针对矩阵$A$构造的矩阵范数$\Vert \cdot \Vert_M$，对于其他矩阵不一定成立</p>
@@ -784,7 +785,34 @@ u_i = b_i - l_ic_{i-1} \quad i=2,3,...,n
 <li>$|b_n| &gt; |c_n| &gt; 0$</li>
 <li>$|b_i| \ge |a_i| + |c_i| \quad a_ic_i \not= 0 \quad i = 2,3,…,n-1$</li>
 </ul>
-<p>则方程$Ax=f$可用追赶法，且解存在唯一<br>定理条件中有$a_ic_i \not= 0 $，如果有某个$a_i=0$或$c_i=0$，则可化成低阶方程组求解<br>追赶法整个求解过程仅需$5n-4$次乘除法，$3(n-1)$次加减法，总计$8n-7$次运算，$4$个一维数组即可<br>当$A$<strong>对角占优</strong>时，追赶法通常<strong>数值稳定</strong></p>
+<p>对角占优且矩阵不可约<br>则方程$Ax=f$可用追赶法，且解存在唯一<br>定理条件中有$a_ic_i \not= 0 $，如果有某个$a_i=0$或$c_i=0$，则可化成低阶方程组求解<br>追赶法整个求解过程仅需$5n-4$次乘除法，$3(n-1)$次加减法，总计$8n-7$次运算，$4$个一维数组即可<br>当$A$<strong>对角占优</strong>时，追赶法通常<strong>数值稳定</strong></p>
+<p>严格对角占优，即$|b_i| &gt; |a_i| + |c_i| \quad a_ic_i \not= 0 \quad i = 2,3,…,n-1$，一定非奇异，解存在唯一</p>
+<p>注：矩阵可约即为通过初等行列变换可以化成某一块全为0的分块矩阵，否则不可约</p>
+<h2 id="条件数与方程组的性态"><a href="#条件数与方程组的性态" class="headerlink" title="条件数与方程组的性态"></a>条件数与方程组的性态</h2><p><strong>定义2.2</strong> 如果线性方程组$Ax=b$中，$A$或$b$的元素的微小变化，就会引起方程组解的巨大变化，则称方程组为“病态”方程组，矩阵$A$成为“病态”矩阵。否则称方程组为“良态”方程组，矩阵$A$成为“良态”矩阵。</p>
+<p><strong>定义2.3</strong>设A为非奇异矩阵，$\Vert \cdot \Vert$为矩阵的算子范数，则称  <center>cond(A)=\Vert A \Vert \Vert A^{-1} \Vert</center><br>为矩阵$A$的条件数</p>
+<p>相对误差放大因子<br>$A(x + \delta x) = b + \delta x \Rightarrow Ax + A\delta x = b + \delta b \Rightarrow \delta x = A^{-1}\delta b$<br>$\Vert \delta x \Vert \le \Vert A^{-1}\Vert \delta b \Vert $<br>$\Vert b \Vert = \Vert Ax \Vert \le \Vert A \Vert \Vert x \Vert \Rightarrow \dfrac{1}{\Vert x \Vert} \le \dfrac{\Vert A \Vert}{\Vert b \Vert}$<br>$\dfrac{\Vert \delta x \Vert}{\Vert x \Vert} \le \Vert A \Vert \Vert A^{-1} \Vert\dfrac{\Vert \delta b \Vert}{\Vert b \Vert}$<br>其中$\Vert A \Vert \Vert A^{-1} \Vert$被称为误差放大因子</p>
+<p>常用条件数有：</p>
+<ul>
+<li>$cond_\infty(A) = \Vert A \Vert_\infty \Vert A^{-1}\Vert_\infty$</li>
+<li>$cond_1(A) = \Vert A \Vert_1 \Vert A^{-1}\Vert_1$</li>
+<li>$cond_2(A) = \Vert A \Vert_2 \Vert A^{-1}\Vert_2 = \sqrt{\dfrac{\lambda_{max}(A^HA)}{\lambda_{min}(A^HA)}}$</li>
+</ul>
+<p>这里因为$AA^{-1}=I$，所以$\lambda_{max}(A^HA)^{-1} = \dfrac{1}{\lambda_{min}(A^HA)}$<br>矩阵条件数性质</p>
+<ul>
+<li>$cond(A) \ge 1$<br>  $cond(A) = \Vert A \Vert \Vert A^{-1} \Vert \ge \Vert AA^{-1} \Vert = \Vert I \Vert = 1$</li>
+<li>$cond(A) = cond(A^{-1})$<br>  $cond(A^{-1})=\Vert A^{-1}\Vert\Vert (A^{-1})^{-1}\Vert=\Vert A^{-1}\Vert\Vert A \Vert = cond(A)$</li>
+<li>$cond(\alpha A) = cond(A) \quad \alpha \not= 0 \quad \alpha \in R$<br>  $\Vert \alpha A \Vert\Vert (\alpha A)^{-1} \Vert= |\alpha|\Vert A\Vert \dfrac{1}{|\alpha|}\Vert A^{-1} \Vert =\Vert A \Vert\Vert A^{-1}\Vert = cond(A)$</li>
+<li>如果$U$为酉（正交）矩阵，则<br>  $cond_2(U) = 1 \quad cond_2(UA) = cond_2(AU) = cond_2(A)$</li>
+<li>$cond(AB) \le cond(A)cond(B)$<br>  $cond(AB) = \Vert AB \Vert\Vert(AB)^{-1}\Vert \le \Vert A \Vert\Vert A^{-1}\Vert\Vert B \Vert\Vert B^{-1}\Vert = cond(A)cond(B)$</li>
+</ul>
+<p>根据矩阵范数的等价性容易推出，$R^{n \times n}$上任意两个范数的条件数$cond_{\alpha}(A)$和$cond_{\beta}(A)$都是等价的，即存在常数$c_1$和$c_2$，使得<br>$c_1cond_{\alpha}(A) \le cond_{\beta}(A) \le c_2cond_{\alpha}(A)$<br>推广到</p>
+<ul>
+<li>$\dfrac{1}{n}cond_2(A) \le cond_2(A) \le ncond_\infty(A)$<br>  证明：</li>
+<li>$\dfrac{1}{n}cond_\infty(A) \le cond_1(A) \le ncond_2(A)$<br>  证明：</li>
+<li>$\dfrac{1}{n^2}cond_1(A) \le cond_\infty(A) \le n^2cond_1(A)$<br>  证明：</li>
+</ul>
+<p>一个矩阵范数在$\alpha$范数下病态，则其在$\beta$范数下也是病态的<br>$cond(A)$越大，解的相对误差界可能越大，$A$对求解线性方程组来说越可能呈现病态，所以$cond(A)$越小越好</p>
+<p>$n$阶$Hilbert$矩阵<br>$H_n = (h_{ij})<em>{n \times n} = (\dfrac{1}{i + j -1})</em>{n \times n} \quad i,j=1,2,…,n$</p>
 
       
     </div>
@@ -1025,7 +1053,7 @@ u_i = b_i - l_ic_{i-1} \quad i=2,3,...,n
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件数与方程组的性态"><span class="nav-number">2.10.</span> <span class="nav-text">条件数与方程组的性态</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1072,7 +1100,7 @@ u_i = b_i - l_ic_{i-1} \quad i=2,3,...,n
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共13.8k字</span>
+  <span class="post-count">博客全站共14.6k字</span>
 </div>
 
         
