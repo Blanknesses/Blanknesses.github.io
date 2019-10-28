@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>TridiumNiagara</title>
+    <url>/2019/10/28/TridiumNiagara/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="JACE"><a href="#JACE" class="headerlink" title="JACE"></a>JACE</h1><p>JACE是一个边缘计算网关，集成200多种协议，具有一定计算能力，其作用为从下面终端设备提取数据上传至服务器，或从服务器获取指令分配到对应设备</p>
+<h1 id="Niagara"><a href="#Niagara" class="headerlink" title="Niagara"></a>Niagara</h1><p>Niagara是Tridium基于Java开发的控制平台</p>
+<h1 id="利用Tridium配置JACE"><a href="#利用Tridium配置JACE" class="headerlink" title="利用Tridium配置JACE"></a>利用Tridium配置JACE</h1><p>Niagara分为服务器部分站点和JACE站点<br>因为JACE与交换机互联，所以先将电脑IP地址修改成与JACE同一网段</p>
+<ul>
+<li>利用JACE的IP打开其Platform，在服务器端新建Station，新建的Station需要设置一个强密码（大小写数字），在服务器端进入Station Copier将新建的Station导入，一次只能同时运行一个Station，默认运行443的Https协议</li>
+<li>利用JACE的IP打开其Platform，新建Station，打开JACE的Platform，找到Station Copier将新建的Station拷贝至JACE，同样只能有一个Station运行</li>
+<li>在JACE的Platform中打开Application Director，双击新建的Station进入，等其加载完成</li>
+<li>进入JACE的Station，配置Drivers，因为配置环境为JACE利用RS-485的Modbus通信协议，所以在Drivers中添加Modbus Network，并在Modbus Network下添加Modbus Device</li>
+<li>在Modbus Device中根据硬件特性，例如硬件地址（1-255，硬件上修改），AI输入还是DI输入，还是输出，对应输入输出端口，数据类型等，新建Point</li>
+<li>JACE中获取数据后，进入服务器端Station，在Niagara Network中DiscoverJACE的station，然后Ping JACE的Station<br>  注：第一次Ping会Ping不通，需要去服务器端进行授权，遇见Device Limit报错是授权限制Station数量，替换Station后需要重启对应JACE Station以及服务器端Station</li>
+<li>完成后，服务器端便可获取JACE的数据，利用其自带的可视化.px文件编程将数据显示或者自行编写HTML</li>
+</ul>
+]]></content>
+      <categories>
+        <category>IIoT</category>
+      </categories>
+      <tags>
+        <tag>Tridium</tag>
+        <tag>Niagara</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一些小证明</title>
     <url>/2019/10/20/Math/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="x-n-前-n-项和"><a href="#x-n-前-n-项和" class="headerlink" title="$x^n$ 前$n$项和"></a>$x^n$ 前$n$项和</h1><p>$x^n$前$n$项和由$(x + 1)^{n+1} - (x - 1)^{n+1}$求得<br>$x$的前$n$项和:n<br>$(x + 1)^2 - (x - 1)^2 = 4x$<br>$((x-1) + 1)^2 - ((x-1) - 1)^2 = 4(x-1)$<br>$…$<br>$2^2 = 4$<br>$(x + 1)^2 + ((x-1) - 1)^2 - 1^2 - 0^2 = 4Sn \Rightarrow Sn = \dfrac{x(x+1)}{2}$</p>
@@ -17,7 +41,7 @@
     <title>LaTeX</title>
     <url>/2019/10/19/LeTaX/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>#记一些用法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\le 或 \leq 为小于等于</span><br><span class="line">\ge 或 \geq 为大于等于</span><br><span class="line">\not= 为不等于</span><br><span class="line">\approx 为约等于</span><br><span class="line">x_1 为x下标1</span><br><span class="line">x^2 为x上标2</span><br><span class="line">\frac&#123;分子&#125;&#123;分母&#125; 为分式表示</span><br><span class="line">\dfrac&#123;分子&#125;&#123;分母&#125; 为分式表示,数字大小不压缩</span><br><span class="line">\partial  偏导符号</span><br><span class="line">\mathrm&#123;d&#125;  正规的导数d（正体）</span><br><span class="line">\sum  求和符号，压缩</span><br><span class="line">\sum\limits  求和符号，不压缩</span><br><span class="line">\prod  求积符号，压缩</span><br><span class="line">\prod\limits  求积符号，不压缩</span><br><span class="line">\lim  求极限符号，压缩</span><br><span class="line">\lim\limits  求极限符号，不压缩</span><br><span class="line">\int  求积分符号，压缩</span><br><span class="line">\int\limits  求积分符号，不压缩</span><br><span class="line">\Vert 范数符号</span><br><span class="line">\cdot 点乘</span><br><span class="line">\sqrt[“几次幂”]&#123; &#125; 开n次根号</span><br><span class="line">\infty 无穷大</span><br><span class="line">\max 最大值</span><br><span class="line">\Leftarrow 左推出</span><br><span class="line">\Rightarrow 右退出</span><br><span class="line">\Leftrightarrow 等价</span><br><span class="line">$$   $$  公式块</span><br><span class="line">\\ 换行，需禁用Markdown渲染</span><br><span class="line">\quad 空格一个字母位</span><br><span class="line">\tilde&#123;&#125; 字母上方加波浪</span><br><span class="line">\\方程组</span><br><span class="line">$$\begin&#123;cases&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br><span class="line">或者</span><br><span class="line">$$</span><br><span class="line">\left \&#123; </span><br><span class="line">\begin&#123;array&#125;&#123;c&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right. </span><br><span class="line">$$</span><br><span class="line">等号对齐</span><br><span class="line">$$</span><br><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;aligned&#125; </span><br><span class="line">a_1x+b_1y+c_1z &amp;= d_1+e_1 \\ </span><br><span class="line">a_2x+b_2y &amp;= d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z &amp;= d_3 </span><br><span class="line">\end&#123;aligned&#125; </span><br><span class="line">\right. </span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\le 或 \leq 为小于等于</span><br><span class="line">\ge 或 \geq 为大于等于</span><br><span class="line">\not= 为不等于</span><br><span class="line">\approx 为约等于</span><br><span class="line">x_1 为x下标1</span><br><span class="line">x^2 为x上标2</span><br><span class="line">\frac&#123;分子&#125;&#123;分母&#125; 为分式表示</span><br><span class="line">\dfrac&#123;分子&#125;&#123;分母&#125; 为分式表示,数字大小不压缩</span><br><span class="line">\partial  偏导符号</span><br><span class="line">\mathrm&#123;d&#125;  正规的导数d（正体）</span><br><span class="line">\sum  求和符号，压缩</span><br><span class="line">\sum\limits  求和符号，不压缩</span><br><span class="line">\prod  求积符号，压缩</span><br><span class="line">\prod\limits  求积符号，不压缩</span><br><span class="line">\lim  求极限符号，压缩</span><br><span class="line">\lim\limits  求极限符号，不压缩</span><br><span class="line">\int  求积分符号，压缩</span><br><span class="line">\int\limits  求积分符号，不压缩</span><br><span class="line">\Vert 范数符号</span><br><span class="line">\cdot 点乘</span><br><span class="line">\sqrt[“几次幂”]&#123; &#125; 开n次根号</span><br><span class="line">\infty 无穷大</span><br><span class="line">\max 最大值</span><br><span class="line">\Leftarrow 左推出</span><br><span class="line">\Rightarrow 右退出</span><br><span class="line">\Leftrightarrow 等价</span><br><span class="line">\perp 垂直</span><br><span class="line">$$   $$  公式块</span><br><span class="line">\\ 换行，需禁用Markdown渲染</span><br><span class="line">\quad 空格一个字母位</span><br><span class="line">\tilde&#123;&#125; 字母上方加波浪</span><br><span class="line">\\方程组</span><br><span class="line">$$\begin&#123;cases&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br><span class="line">或者</span><br><span class="line">$$</span><br><span class="line">\left \&#123; </span><br><span class="line">\begin&#123;array&#125;&#123;c&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right. </span><br><span class="line">$$</span><br><span class="line">等号对齐</span><br><span class="line">$$</span><br><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;aligned&#125; </span><br><span class="line">a_1x+b_1y+c_1z &amp;= d_1+e_1 \\ </span><br><span class="line">a_2x+b_2y &amp;= d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z &amp;= d_3 </span><br><span class="line">\end&#123;aligned&#125; </span><br><span class="line">\right. </span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">      内部公式=改为&amp;=实现等号对齐</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\end&#123;equation&#125;$</span><br></pre></td></tr></table></figure>
 
 <h1 id="字母表"><a href="#字母表" class="headerlink" title="字母表"></a>字母表</h1><p><img src="/images/LaTeXLetterList.png" alt="字母表"></p>
 <h1 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h1><p><a href="https://jingyan.baidu.com/article/4b52d702df537efc5c774bc9.html" target="_blank" rel="noopener">有空重写表格</a></p>
@@ -198,7 +222,7 @@
 <li>…<br>综上，通项为$n^2-1$，所以乘法运算量为$Sn = \dfrac{2n^3+3n^2+n}{6} - x = \dfrac{2n^3+3n^2-5n}{6}$<br>解上三角矩阵的乘法运算量为：$\dfrac{n(n+1)}{2}$<br>综上，高斯消元法总乘法运算量为：$\dfrac{n^3+3n^2-n}{3}$</li>
 </ul>
 <h2 id="矩阵的LU分解"><a href="#矩阵的LU分解" class="headerlink" title="矩阵的LU分解"></a>矩阵的LU分解</h2><p><strong>定义2.1</strong> 对于$n$阶方阵$A$，如果存在$n$阶单位下三角矩阵$L$和$n$阶上三角矩阵$U$，使得$A=LU$，则称其为矩阵$A$的$LU$分解，也称<strong>Doolittle分解</strong></p>
-<p>对于一般$n$阶方阵$A$进行$LU$分解，每一次行变换提出一个$L_i$矩阵，最终使得$L_{n-1}L_{n-2}…L_{2}L_{1}A = U$，令$L = (L_{n-1}L_{n-2}…L_{2}L_{1})^T$，则有$A = LU$</p>
+<p>对于一般$n$阶方阵$A$进行$LU$分解，每一次行变换提出一个$L_i$矩阵，最终使得$L_{n-1}L_{n-2}…L_{2}L_{1}A = U$，令$L = (L_{n-1}L_{n-2}…L_{2}L_{1})^{-1}$，则有$A = LU$</p>
 <p><strong>Doolittle分解</strong>解线性方程组$Ax = b \Leftrightarrow (LU)x = b \Leftrightarrow Ly = b Ux = y$<br>在如下情况可以极大减少计算量</p>
 <ul>
 <li>$A^nB^nx=b$<br>利用高斯消元法做计算量为：&emsp;&emsp;$\dfrac{n^4}{3}$<br>利用$LU$分解做计算量为:&emsp;&emsp;&emsp;&emsp;$\dfrac{2n^3}{3}$</li>
@@ -259,7 +283,7 @@ $$
 <li>$A$为正定(半正定)对称矩阵$\Longleftrightarrow$$A$的各阶主子式为正（非负）</li>
 </ul>
 <p>对于对称正定线性方程组，最常用<strong>Cholesky分解法</strong>也叫<strong>平方根法</strong><br>将对称正定矩阵$A$做$LU$分解，得到$L$和$U$，进一步可将$U$化为$D \tilde{U}$<br>因为$A$是对称矩阵，所以有$L(D\tilde{U}) = (L(D\tilde{U}))^T = \tilde{U}^T(DL^T)$<br>因为$LU$分解的唯一性，可得$L = \tilde{U}^T$，即$A = LDL^T$<br>令$\tilde{L} = LD^{\frac{1}{2}}$，可得$A = \tilde{L}\tilde{L}^T$</p>
-<p><strong>定理2.3</strong> Cholesky分解<br>对任意$n$阶对称正定矩阵A，均存在下三角矩阵$L$使$A=LL^T$成立，称其为对称正定矩阵A的Cholesky分解。进一步，如果规定$L$的对角元为正数，则L是唯一确定的。<br>因此，若线性方程组$Ax=b$的系数矩阵时对称正定的，便可按如下步骤求解：</p>
+<p><strong>定理2.3</strong> Cholesky分解<br>对任意$n$阶对称正定矩阵A，均存在下三角矩阵$L$使$A=LL^T$成立，称其为对称正定矩阵$A$的Cholesky分解。进一步，如果规定$L$的对角元为正数，则L是唯一确定的。<br>因此，若线性方程组$Ax=b$的系数矩阵时对称正定的，便可按如下步骤求解：</p>
 <ul>
 <li>A的Cholesky分解：$A = LL^T$</li>
 <li>$Ly=b \Rightarrow y$</li>
@@ -404,7 +428,82 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
 <p>由矩阵的条件数定义可知，正交矩阵是性态最好的矩阵，例：$cond_2(A) = 1$<br>若能用正交矩阵代替高斯消去过程的单位下三角矩阵，即$Q_{n-1}…Q_2Q_1A = R$，记$Q^T=Q_{n-1}…Q_2Q_1$，则有$A=QR$<br>且$cond_2(A)=cond_2(QR)=cond_2(R)$，因此变换后所得的矩阵$R$条件数不变，故该计算过程具有数值稳定性</p>
 <p><strong>初等矩阵</strong><br>$E(u，v;\alpha) = I - \alpha uv^H \quad u,v \in C^n, \alpha \in C$<br>$uv^H$是一个秩为1的矩阵，$1 \le rank(uv^H) \le rank(u) = 1$，其特征值为$v^Hu,0,0,..,0$<br>$(uv^H)u = u(v^Hu) = (v^Hu)u$ 结合律，数乘列向量等于列向量乘数<br>$\lambda = v^Hu \not= 0$是矩阵$uv^H$的唯一非零特征值</p>
 <p><strong>Householder变换矩阵</strong><br><strong>定义2.4</strong> 设$\omega \in R^n \quad \omega \not= 0 $称初等矩阵  <center>$H(\omega) = I - \dfrac{2}{\omega^T\omega}\omega\omega^T$</center><br>为Householder矩阵（简称H阵），或称其为Householder变换<br>实际上因为$\omega^T\omega = \Vert \omega \Vert_2^2$，所以原式为$$H(\omega) = I - \dfrac{2}{\Vert \omega \Vert_2^2}\omega\omega^T$$<br>特别的，令$\omega = (e_i - e_j)$则$\Vert \omega \Vert_2^2 = 2$，原式为$H(\omega)=I - (e_i - e_j)(e_i - e_j)^T$ 为一个初等<strong>置换矩阵</strong></p>
-]]></content>
+<p><strong>Householder性质</strong></p>
+<ul>
+<li><p>$H$阵为对称阵<br>  $H(\omega)^T = (I - \dfrac{2}{\omega^T\omega}\omega\omega^T)^T = I - \dfrac{2}{\omega^T\omega}(\omega\omega^T)^T = I - \dfrac{2}{\omega^T\omega}\omega\omega^T$</p>
+</li>
+<li><p>$H(\omega)^TH(\omega) = I$，即$H$阵为正交阵 </p>
+  
+    $\begin{equation}
+      \begin{aligned}
+        H(\omega)^TH(\omega) &= (I - \dfrac{2}{\omega^T\omega}\omega\omega^T)^2 \\
+        &=I - \dfrac{4}{\omega^T\omega}\omega\omega^T + \dfrac{4}{\omega^T\omega}\omega\omega^T \\
+        &=I
+    \end{aligned}
+    \end{equation}$
+    </li>
+<li><p>如果$H(\omega)x=y$，则$\Vert y \Vert_2 = \Vert x \Vert_2$</p>
+  
+        $\begin{equation}
+          \begin{aligned}
+            \Vert y \Vert_2^2 = y^Ty &= (H(\omega)x)^T(H(\omega)x) \\
+            &=x^TH(\omega)^TH(\omega)x
+            &=x^Tx = \Vert x \Vert_2^2
+        \end{aligned}
+        \end{equation}$
+     
+<p>   故称Householder矩阵为镜面反射变换</p>
+</li>
+</ul>
+<p><strong>镜面反射变换几何意义</strong><br>对任意$x$，可以找到一个平面$\pi$，使$x$由这个发出，对这个平面取单位法向量$\omega \quad \Vert \omega \Vert = 1$，做$u$垂直于$\pi$，$v \in \pi$，有$u = \lambda \omega \quad x = u + v$<br>$H(\omega)x = (I -2\omega\omega^T)x = u + v -2\omega\omega^Tu - 2\omega\omega^Tv$<br>因为$u = \lambda \omega \quad v \perp \omega$<br>所以$H(\omega)x = u + v - 2 \omega \omega^T \lambda \omega =u + v -2 \lambda \omega = u + v - 2u = -u + v$</p>
+<p>两个<strong>同等长度</strong>的已知向量$x$和$y$，寻找H阵使其构成镜面反射关系，即为寻找法向量$\omega$，而取$\omega = x-y$即可满足<br>计算$H(\omega)$的方法需利用如下性质：</p>
+<ul>
+<li>$\Vert x \Vert_2 = \Vert y \Vert_2$</li>
+<li>$\omega = x-y$</li>
+<li>$H(\omega) = I - \dfrac{2}{\omega^T\omega}\omega\omega^T $</li>
+</ul>
+<p>对$H$阵性质3进行扩展</p>
+<ul>
+<li>设$x = (x_1,x_2,…,x_n)^T \in R^n$且$x\not=0$，取$\omega = x \pm \Vert x \Vert_2e_1$则<br>  $H(\omega) = H(x \pm \Vert x \Vert_2e_1)x = \pm\Vert x \Vert_2e_1$<br>  $e^1$是一个方向向量，$x$的镜面反射在$e_1$方向上，则$y=\Vert x \Vert e_1$，且，这里有两个方向（$e_1$正向与$e_1$反向）<br>  与$e_1$正向时，$\omega = x - y = x - \Vert x \Vert e_1$，与$e_1$反向时，$\omega = x + y = x + \Vert x \Vert e_1$</li>
+</ul>
+<p><strong>推论2.1</strong>设$x=(x_1,x_2,…,x_n)^T\in C^n $且$x\not=0$，则存在Householder矩阵$H(\omega)=I - \dfrac{2}{\omega^T\omega}\omega\omega^T$，使得$H(\omega)x=\alpha e_1$<br>其中$|\alpha|=\Vert x \Vert_2$，且$\alpha x^He_1$为实数，此为复Householder矩阵消元    </p>
+<p>计算复$H(\omega)$的方法需利用如下性质：</p>
+<ul>
+<li>$\Vert x \Vert_2 = \Vert y \Vert_2$</li>
+<li>$|\alpha| = \Vert x \Vert_2$，注此处获取的$|\alpha|$暂定为整</li>
+<li>$|\alpha|x^He_1$ 为实数 $\Rightarrow |\alpha|x_1 $为实数获取$\alpha$实际值</li>
+<li>$\omega = x-|\alpha|e_1$ </li>
+<li>$H(\omega) = I - \dfrac{2}{\omega^T\omega}\omega\omega^T $</li>
+</ul>
+<h2 id="矩阵的QR分解"><a href="#矩阵的QR分解" class="headerlink" title="矩阵的QR分解"></a>矩阵的QR分解</h2><p>令矩阵$A = {x_1,x_2,…,x_n}$<br>求$x_1$的$H$阵，求得后，将$A$分块，求分块后$A^{(1)}$的$x_1$，即原降一阶$x_2$的$H$阵，以此类推，变化过程如下：</p>
+
+$\begin{bmatrix}
+{x_{11}^{(0)}}&{a_{12}^{(0)}}&{\cdots}&{a_{1m}^{(0)}}\\
+{a_{21}^{(0)}}&{a_{22}^{(0)}}&{\cdots}&{a_{2m}^{(0)}}\\
+{\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+{a_{n1}^{(0)}}&{a_{n2}^{(0)}}&{\cdots}&{a_{nm}^{(0)}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+{x_{11}^{(1)}}&{b^T}\\
+{0}&{A^{(1)}}\\
+\end{bmatrix}
+
+\qquad
+$
+
+<p>而经过如此分解获取的$Q_i$也是依次降阶，可以通过分块补齐阶数，例如$Q_2$</p>
+
+$Q_2=
+\begin{bmatrix}
+{1}&{0}\\
+{0}&{H_1}\\
+\end{bmatrix}
+$
+<p>依旧是正交对称矩阵<br>所以有$Q_{n-1}…Q_2Q_1A = R$，$R$为上三角矩阵，$Q_i$为对称正定矩阵<br>令$Q^T=Q_{n-1}…Q_2Q_1$，可得$A=QR$<br>$Q$正定不一定对称</p>
+<p>注$Ax=b \Leftrightarrow (QR)x=b \Leftrightarrow Rx = Q^Tb$<br>所以计算步骤为$A=QR \Rightarrow y=Q^Tb \Rightarrow Rx=y$</p>
+<p>QR分解的数值稳定性比LU分解好，但是计算量远大于LU分解，所以QR分解只适用于求解病态线性方程组<br>QR分解还可对非方阵进行分解</p>
+<h2 id="矩阵的Schur分解"><a href="#矩阵的Schur分解" class="headerlink" title="矩阵的Schur分解"></a>矩阵的Schur分解</h2>]]></content>
       <categories>
         <category>Course</category>
       </categories>
@@ -422,7 +521,7 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
 <h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><p>推荐一款轻便简洁的Markdown编辑器<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a></p>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一阶标题      </span></span><br><span class="line"><span class="section">## 二阶标题     </span></span><br><span class="line"><span class="section">### 三阶标题    </span></span><br><span class="line"><span class="section">#### 四阶标题   </span></span><br><span class="line"><span class="section">##### 五阶标题  </span></span><br><span class="line"><span class="section">###### 六阶标题</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;下划线的内容&lt;/u&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线的内容<span class="xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <h2 id="字体加粗"><a href="#字体加粗" class="headerlink" title="字体加粗"></a>字体加粗</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
 
@@ -430,7 +529,7 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
 
 <h2 id="空格符"><a href="#空格符" class="headerlink" title="空格符"></a>空格符</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&amp;ensp;  //一个空格</span><br><span class="line">&amp;emsp;  //两个空格</span><br></pre></td></tr></table></figure>
 
-<h2 id="居中文本"><a href="#居中文本" class="headerlink" title="居中文本"></a>居中文本</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;center&gt;这是要居中的文本内容&lt;/center&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="居中文本"><a href="#居中文本" class="headerlink" title="居中文本"></a>居中文本</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span>这是要居中的文本内容<span class="xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">***</span> </span><br><span class="line">或</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
@@ -453,7 +552,7 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列名1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列名2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列名3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列1数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列2数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列3数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>无法实现文本内容居中，居右表示，只能默认居左表示<br>目前只想到通过修改当前页面全局CSS来改变位置，在文章前面加入如下CSS来实现居中显示：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    th&#123;text-align: center&#125;</span><br><span class="line">    td&#123;text-align: center&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">th</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">td</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="插入代码"><a href="#插入代码" class="headerlink" title="插入代码"></a>插入代码</h2><h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`单行代码内容`</span></span><br></pre></td></tr></table></figure>
 

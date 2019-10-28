@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法一些知识点与错题归纳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-22T13:42:59.024Z">
+<meta property="og:updated_time" content="2019-10-23T08:26:07.812Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法">
 <meta name="twitter:description" content="计算方法一些知识点与错题归纳">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  7.6k
+                  8.5k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  36
+                  40
                 </span>
               
             </div>
@@ -632,7 +632,7 @@
 <li>…<br>综上，通项为$n^2-1$，所以乘法运算量为$Sn = \dfrac{2n^3+3n^2+n}{6} - x = \dfrac{2n^3+3n^2-5n}{6}$<br>解上三角矩阵的乘法运算量为：$\dfrac{n(n+1)}{2}$<br>综上，高斯消元法总乘法运算量为：$\dfrac{n^3+3n^2-n}{3}$</li>
 </ul>
 <h2 id="矩阵的LU分解"><a href="#矩阵的LU分解" class="headerlink" title="矩阵的LU分解"></a>矩阵的LU分解</h2><p><strong>定义2.1</strong> 对于$n$阶方阵$A$，如果存在$n$阶单位下三角矩阵$L$和$n$阶上三角矩阵$U$，使得$A=LU$，则称其为矩阵$A$的$LU$分解，也称<strong>Doolittle分解</strong></p>
-<p>对于一般$n$阶方阵$A$进行$LU$分解，每一次行变换提出一个$L_i$矩阵，最终使得$L_{n-1}L_{n-2}…L_{2}L_{1}A = U$，令$L = (L_{n-1}L_{n-2}…L_{2}L_{1})^T$，则有$A = LU$</p>
+<p>对于一般$n$阶方阵$A$进行$LU$分解，每一次行变换提出一个$L_i$矩阵，最终使得$L_{n-1}L_{n-2}…L_{2}L_{1}A = U$，令$L = (L_{n-1}L_{n-2}…L_{2}L_{1})^{-1}$，则有$A = LU$</p>
 <p><strong>Doolittle分解</strong>解线性方程组$Ax = b \Leftrightarrow (LU)x = b \Leftrightarrow Ly = b Ux = y$<br>在如下情况可以极大减少计算量</p>
 <ul>
 <li>$A^nB^nx=b$<br>利用高斯消元法做计算量为：&emsp;&emsp;$\dfrac{n^4}{3}$<br>利用$LU$分解做计算量为:&emsp;&emsp;&emsp;&emsp;$\dfrac{2n^3}{3}$</li>
@@ -693,7 +693,7 @@ $$
 <li>$A$为正定(半正定)对称矩阵$\Longleftrightarrow$$A$的各阶主子式为正（非负）</li>
 </ul>
 <p>对于对称正定线性方程组，最常用<strong>Cholesky分解法</strong>也叫<strong>平方根法</strong><br>将对称正定矩阵$A$做$LU$分解，得到$L$和$U$，进一步可将$U$化为$D \tilde{U}$<br>因为$A$是对称矩阵，所以有$L(D\tilde{U}) = (L(D\tilde{U}))^T = \tilde{U}^T(DL^T)$<br>因为$LU$分解的唯一性，可得$L = \tilde{U}^T$，即$A = LDL^T$<br>令$\tilde{L} = LD^{\frac{1}{2}}$，可得$A = \tilde{L}\tilde{L}^T$</p>
-<p><strong>定理2.3</strong> Cholesky分解<br>对任意$n$阶对称正定矩阵A，均存在下三角矩阵$L$使$A=LL^T$成立，称其为对称正定矩阵A的Cholesky分解。进一步，如果规定$L$的对角元为正数，则L是唯一确定的。<br>因此，若线性方程组$Ax=b$的系数矩阵时对称正定的，便可按如下步骤求解：</p>
+<p><strong>定理2.3</strong> Cholesky分解<br>对任意$n$阶对称正定矩阵A，均存在下三角矩阵$L$使$A=LL^T$成立，称其为对称正定矩阵$A$的Cholesky分解。进一步，如果规定$L$的对角元为正数，则L是唯一确定的。<br>因此，若线性方程组$Ax=b$的系数矩阵时对称正定的，便可按如下步骤求解：</p>
 <ul>
 <li>A的Cholesky分解：$A = LL^T$</li>
 <li>$Ly=b \Rightarrow y$</li>
@@ -838,7 +838,82 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
 <p>由矩阵的条件数定义可知，正交矩阵是性态最好的矩阵，例：$cond_2(A) = 1$<br>若能用正交矩阵代替高斯消去过程的单位下三角矩阵，即$Q_{n-1}…Q_2Q_1A = R$，记$Q^T=Q_{n-1}…Q_2Q_1$，则有$A=QR$<br>且$cond_2(A)=cond_2(QR)=cond_2(R)$，因此变换后所得的矩阵$R$条件数不变，故该计算过程具有数值稳定性</p>
 <p><strong>初等矩阵</strong><br>$E(u，v;\alpha) = I - \alpha uv^H \quad u,v \in C^n, \alpha \in C$<br>$uv^H$是一个秩为1的矩阵，$1 \le rank(uv^H) \le rank(u) = 1$，其特征值为$v^Hu,0,0,..,0$<br>$(uv^H)u = u(v^Hu) = (v^Hu)u$ 结合律，数乘列向量等于列向量乘数<br>$\lambda = v^Hu \not= 0$是矩阵$uv^H$的唯一非零特征值</p>
 <p><strong>Householder变换矩阵</strong><br><strong>定义2.4</strong> 设$\omega \in R^n \quad \omega \not= 0 $称初等矩阵  <center>$H(\omega) = I - \dfrac{2}{\omega^T\omega}\omega\omega^T$</center><br>为Householder矩阵（简称H阵），或称其为Householder变换<br>实际上因为$\omega^T\omega = \Vert \omega \Vert_2^2$，所以原式为$$H(\omega) = I - \dfrac{2}{\Vert \omega \Vert_2^2}\omega\omega^T$$<br>特别的，令$\omega = (e_i - e_j)$则$\Vert \omega \Vert_2^2 = 2$，原式为$H(\omega)=I - (e_i - e_j)(e_i - e_j)^T$ 为一个初等<strong>置换矩阵</strong></p>
+<p><strong>Householder性质</strong></p>
+<ul>
+<li><p>$H$阵为对称阵<br>  $H(\omega)^T = (I - \dfrac{2}{\omega^T\omega}\omega\omega^T)^T = I - \dfrac{2}{\omega^T\omega}(\omega\omega^T)^T = I - \dfrac{2}{\omega^T\omega}\omega\omega^T$</p>
+</li>
+<li><p>$H(\omega)^TH(\omega) = I$，即$H$阵为正交阵 </p>
+  
+    $\begin{equation}
+      \begin{aligned}
+        H(\omega)^TH(\omega) &= (I - \dfrac{2}{\omega^T\omega}\omega\omega^T)^2 \\
+        &=I - \dfrac{4}{\omega^T\omega}\omega\omega^T + \dfrac{4}{\omega^T\omega}\omega\omega^T \\
+        &=I
+    \end{aligned}
+    \end{equation}$
+    </li>
+<li><p>如果$H(\omega)x=y$，则$\Vert y \Vert_2 = \Vert x \Vert_2$</p>
+  
+        $\begin{equation}
+          \begin{aligned}
+            \Vert y \Vert_2^2 = y^Ty &= (H(\omega)x)^T(H(\omega)x) \\
+            &=x^TH(\omega)^TH(\omega)x
+            &=x^Tx = \Vert x \Vert_2^2
+        \end{aligned}
+        \end{equation}$
+     
+<p>   故称Householder矩阵为镜面反射变换</p>
+</li>
+</ul>
+<p><strong>镜面反射变换几何意义</strong><br>对任意$x$，可以找到一个平面$\pi$，使$x$由这个发出，对这个平面取单位法向量$\omega \quad \Vert \omega \Vert = 1$，做$u$垂直于$\pi$，$v \in \pi$，有$u = \lambda \omega \quad x = u + v$<br>$H(\omega)x = (I -2\omega\omega^T)x = u + v -2\omega\omega^Tu - 2\omega\omega^Tv$<br>因为$u = \lambda \omega \quad v \perp \omega$<br>所以$H(\omega)x = u + v - 2 \omega \omega^T \lambda \omega =u + v -2 \lambda \omega = u + v - 2u = -u + v$</p>
+<p>两个<strong>同等长度</strong>的已知向量$x$和$y$，寻找H阵使其构成镜面反射关系，即为寻找法向量$\omega$，而取$\omega = x-y$即可满足<br>计算$H(\omega)$的方法需利用如下性质：</p>
+<ul>
+<li>$\Vert x \Vert_2 = \Vert y \Vert_2$</li>
+<li>$\omega = x-y$</li>
+<li>$H(\omega) = I - \dfrac{2}{\omega^T\omega}\omega\omega^T $</li>
+</ul>
+<p>对$H$阵性质3进行扩展</p>
+<ul>
+<li>设$x = (x_1,x_2,…,x_n)^T \in R^n$且$x\not=0$，取$\omega = x \pm \Vert x \Vert_2e_1$则<br>  $H(\omega) = H(x \pm \Vert x \Vert_2e_1)x = \pm\Vert x \Vert_2e_1$<br>  $e^1$是一个方向向量，$x$的镜面反射在$e_1$方向上，则$y=\Vert x \Vert e_1$，且，这里有两个方向（$e_1$正向与$e_1$反向）<br>  与$e_1$正向时，$\omega = x - y = x - \Vert x \Vert e_1$，与$e_1$反向时，$\omega = x + y = x + \Vert x \Vert e_1$</li>
+</ul>
+<p><strong>推论2.1</strong>设$x=(x_1,x_2,…,x_n)^T\in C^n $且$x\not=0$，则存在Householder矩阵$H(\omega)=I - \dfrac{2}{\omega^T\omega}\omega\omega^T$，使得$H(\omega)x=\alpha e_1$<br>其中$|\alpha|=\Vert x \Vert_2$，且$\alpha x^He_1$为实数，此为复Householder矩阵消元    </p>
+<p>计算复$H(\omega)$的方法需利用如下性质：</p>
+<ul>
+<li>$\Vert x \Vert_2 = \Vert y \Vert_2$</li>
+<li>$|\alpha| = \Vert x \Vert_2$，注此处获取的$|\alpha|$暂定为整</li>
+<li>$|\alpha|x^He_1$ 为实数 $\Rightarrow |\alpha|x_1 $为实数获取$\alpha$实际值</li>
+<li>$\omega = x-|\alpha|e_1$ </li>
+<li>$H(\omega) = I - \dfrac{2}{\omega^T\omega}\omega\omega^T $</li>
+</ul>
+<h2 id="矩阵的QR分解"><a href="#矩阵的QR分解" class="headerlink" title="矩阵的QR分解"></a>矩阵的QR分解</h2><p>令矩阵$A = {x_1,x_2,…,x_n}$<br>求$x_1$的$H$阵，求得后，将$A$分块，求分块后$A^{(1)}$的$x_1$，即原降一阶$x_2$的$H$阵，以此类推，变化过程如下：</p>
 
+$\begin{bmatrix}
+{x_{11}^{(0)}}&{a_{12}^{(0)}}&{\cdots}&{a_{1m}^{(0)}}\\
+{a_{21}^{(0)}}&{a_{22}^{(0)}}&{\cdots}&{a_{2m}^{(0)}}\\
+{\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+{a_{n1}^{(0)}}&{a_{n2}^{(0)}}&{\cdots}&{a_{nm}^{(0)}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+{x_{11}^{(1)}}&{b^T}\\
+{0}&{A^{(1)}}\\
+\end{bmatrix}
+
+\qquad
+$
+
+<p>而经过如此分解获取的$Q_i$也是依次降阶，可以通过分块补齐阶数，例如$Q_2$</p>
+
+$Q_2=
+\begin{bmatrix}
+{1}&{0}\\
+{0}&{H_1}\\
+\end{bmatrix}
+$
+<p>依旧是正交对称矩阵<br>所以有$Q_{n-1}…Q_2Q_1A = R$，$R$为上三角矩阵，$Q_i$为对称正定矩阵<br>令$Q^T=Q_{n-1}…Q_2Q_1$，可得$A=QR$<br>$Q$正定不一定对称</p>
+<p>注$Ax=b \Leftrightarrow (QR)x=b \Leftrightarrow Rx = Q^Tb$<br>所以计算步骤为$A=QR \Rightarrow y=Q^Tb \Rightarrow Rx=y$</p>
+<p>QR分解的数值稳定性比LU分解好，但是计算量远大于LU分解，所以QR分解只适用于求解病态线性方程组<br>QR分解还可对非方阵进行分解</p>
+<h2 id="矩阵的Schur分解"><a href="#矩阵的Schur分解" class="headerlink" title="矩阵的Schur分解"></a>矩阵的Schur分解</h2>
       
     </div>
     
@@ -976,7 +1051,7 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -987,7 +1062,7 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -998,7 +1073,7 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1078,7 +1153,7 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件数与方程组的性态"><span class="nav-number">2.10.</span> <span class="nav-text">条件数与方程组的性态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Householder矩阵"><span class="nav-number">2.11.</span> <span class="nav-text">Householder矩阵</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件数与方程组的性态"><span class="nav-number">2.10.</span> <span class="nav-text">条件数与方程组的性态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Householder矩阵"><span class="nav-number">2.11.</span> <span class="nav-text">Householder矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的QR分解"><span class="nav-number">2.12.</span> <span class="nav-text">矩阵的QR分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的Schur分解"><span class="nav-number">2.13.</span> <span class="nav-text">矩阵的Schur分解</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1125,7 +1200,7 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共15.3k字</span>
+  <span class="post-count">博客全站共16.7k字</span>
 </div>
 
         
