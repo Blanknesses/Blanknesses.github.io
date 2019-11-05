@@ -988,8 +988,8 @@ $$
 \begin{equation}
 \begin{aligned}
 |det(A)|&=\sqrt{[det(A)]^2} \\
-&=\sqrt{det(A^H)det(A)}=\sqrt{det(A^HA)}
-&=\sqrt{\prod\limits_{i=1}^n\lambda_i(A^HA)}=\sqrt{\prod\limits_{i=1}^n\sigma_i^2(A)}
+&=\sqrt{det(A^H)det(A)}=\sqrt{det(A^HA)}\\
+&=\sqrt{\prod\limits_{i=1}^n\lambda_i(A^HA)}=\sqrt{\prod\limits_{i=1}^n\sigma_i^2(A)}\\
 &=\prod\limits_{i=1}^n\sigma_i(A)
 \end{aligned}
 \end{equation}
