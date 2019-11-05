@@ -643,7 +643,7 @@ $$\begin{equation}
 \end{equation}$$
 
 
-<h2 id="矩阵是否可对角化的判别法则"><a href="#矩阵是否可对角化的判别法则" class="headerlink" title="矩阵是否可对角化的判别法则"></a>矩阵是否可对角化的判别法则</h2><p><strong>矩阵的Jordan分解介绍</strong><br><strong>定义2.6</strong> 设$A$为$n$阶方阵，$A$的特征多项式为：<br>$$det(\lambda I_n -A)=(\lambda - \lambda_1)^{m_1}(\lambda - \lambda_2)^{m_2}\cdots (\lambda - \lambda_s)^{m_s}$$<br>其中$m_i \quad i=1,2,\cdots,s$均为正整数，$\sum\limits_{i=1}^s m_i = n $，$\lambda_1,\lambda_2,\cdots,\lambda_s$为$A$的不同特征值，称$m_i$为特征值$\lambda_i$的代数重复度；而称与特征值$\lambda_i$对应的线性无关特征向量的个数，记成$\alpha_i$为特征值$\lambda_i$的几何重复度；<br>也是子空间$N(\lambda_i I_n - A) = span{x|(\lambda_i I_n - A)x = 0}$的维数；<br>$N(\lambda_i I_n - A)$称为$\lambda_i I_n - A$的零空间<br>$\alpha_i = n - rank(\lambda_i I_n - A)$</p>
+<h2 id="矩阵是否可对角化的判别法则"><a href="#矩阵是否可对角化的判别法则" class="headerlink" title="矩阵是否可对角化的判别法则"></a>矩阵是否可对角化的判别法则</h2><p><strong>矩阵的Jordan分解介绍</strong><br><strong>定义2.6</strong> 设$A$为$n$阶方阵，$A$的特征多项式为：<br>$$det(\lambda I_n -A)=(\lambda - \lambda_1)^{m_1}(\lambda - \lambda_2)^{m_2}\cdots (\lambda - \lambda_s)^{m_s}$$<br>其中$m_i \quad i=1,2,\cdots,s$均为正整数，$\sum\limits_{i=1}^s m_i = n $，$\lambda_1,\lambda_2,\cdots,\lambda_s$为$A$的不同特征值，称$m_i$为特征值$\lambda_i$的代数重复度；而称与特征值$\lambda_i$对应的线性无关特征向量的个数，记成$\alpha_i$为特征值$\lambda_i$的几何重复度；<br>也是子空间$N(\lambda_i I_n - A) = span\{x|(\lambda_i I_n - A)x = 0\}$的维数；<br>$N(\lambda_i I_n - A)$称为$\lambda_i I_n - A$的零空间<br>$\alpha_i = n - rank(\lambda_i I_n - A)$</p>
 <p><strong>定理2.11</strong> 设$A$为$n$阶方阵，$\lambda_i$为其特征值，$\lambda_i$为其特征值，$m_i$和$\alpha_i$分别为其代数重复度和几何重复度，则$m_i \ge \alpha_i$<br>证明：<br>构造$n \times \alpha_i$阶矩阵$V_1$，其$\alpha_i$列构成了空间$N(\lambda_i I -A)$的一组标准正交基。将$V_1$扩充成酉矩阵$V$，从而可以得到</p>
 
 $$
