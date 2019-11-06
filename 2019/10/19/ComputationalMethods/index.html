@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法知识点归纳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-05T05:00:48.370Z">
+<meta property="og:updated_time" content="2019-11-06T01:10:12.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法知识点">
 <meta name="twitter:description" content="计算方法知识点归纳">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  13.9k
+                  14.2k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  66
+                  68
                 </span>
               
             </div>
@@ -1071,6 +1071,10 @@ $$
 <p>其中$I$为$\alpha_i \times \alpha_i$的单位矩阵，$C$是$\alpha_i \times \alpha_i$的矩阵，$D$是$(n - \alpha_i) \times (n - \alpha_i)$的矩阵，从而有<br>$$det(zI-B)=det(zI-\lambda_i I)det(zI-D)=(z-\lambda_i)^\alpha_idet(zI-D)$$<br>$det()$为求行列式<br>因此，作为$B$的特征值$\lambda_i$的代数重复度至少为$\alpha_i$，由于相似变化不改变重数，所以$A$的特征值$\lambda_i$的代数重复度满足$m_i \ge \alpha_i$<br>解题过程中，$m_i$直接根据求特征值获取，而$\alpha_i$可以通过计算代数余子式，获取秩，利用$\alpha_i=n-r(\lambda_i I -A)$获取，或者直接求解矩阵$A$的零空间$N(\lambda_i I - A)$的维数（非零解向量数）获取</p>
 <p><strong>定义2.7</strong> 设$A$为$n$阶方阵，$\lambda_i$为其特征值，$m_i$和$\alpha_i$分别为其代数重复度和几何重复度。如果$m_i=\alpha_i$，则称$\lambda_i$为<strong>半单</strong>的；如果$m_i &gt; \alpha_i$，则称$\lambda_i$是亏损的<br>如果矩阵$A$的某一个特征值代数重复度为1，则它一定为半单的，大于1，可能是半单的</p>
 <p><strong>定理2.12</strong> $n$阶方阵$A$可对角化的充要条件是每一个特征值$\lambda_i$都是半单的，即$m_i=\alpha_i \quad i=1,2,\cdots,s$。$A$是不可对角化的矩阵的充要条件是它存在亏损的特征值，即存在$i_0$使得$m_i&gt;\alpha_i$<br>所以称不可对角化的矩阵为亏损矩阵</p>
+<h2 id="矩阵的-Jordan-分解"><a href="#矩阵的-Jordan-分解" class="headerlink" title="矩阵的$Jordan$分解"></a>矩阵的$Jordan$分解</h2><p><strong>定理2.13</strong> 设$A$为$n$阶方阵，则存在$n$阶可逆矩阵使得$A=TJT^{-1}$<br>其中$J=diag(J_{n_1}(\lambda_1),J_{n_2}(\lambda_2),\cdots,J_{n_k}(\lambda_k)),n_1+n_2+\cdots+n_k=n$<br>称其为矩阵$A$的$Jordan$分解，$Jordan$阵$J$称为$A$的$Jordan$标准型，$T$称为变化矩阵<br>矩阵$A$的$Jordan$标准型如果不计$Jordan$块的排列次序，则是确定唯一的</p>
+<p>注：根据相似矩阵特征值相同，使用$Jordan$标准型的对角元素就是$A$的特征值，而不同的$Jordan$块的对角元素$\lambda_i$可能相同，所以$\lambda_i$不一定是$A$的$n_i$重特征值。一般特征值$\lambda_i$的重数大于等于$n_i$</p>
+<p><strong>$Jordan$标准型</strong><br>$Jordan$标准型是一个块对角矩阵，其对角元为矩阵$J$的特征值<br>对于特征值$\lambda_i$，其<strong>代数重复度</strong>是$Jordan$标准型中以$\lambda_i$为特征值的$Jordan$块阶数的和，其<strong>几何重复度</strong>为$\lambda_i$为特征值的$Jordan$块个数</p>
+<p><strong>定理2.14</strong>设$A$为$n$阶方阵，$\lambda_i$为其特征值，则$A$的$Jordan$标准型$J$中以$\lambda_i$为特征值，阶数为$l$的$Jardan$块的个数为：<br>$$r_{l+1}+r{l-1}-2r_l$$<br>其中$r_l=rank(\lambda_i I-A)^l, r_0=rank(\lambda_i I -A )^0=rank(I)=n$</p>
 <h2 id="关于变换矩阵-T"><a href="#关于变换矩阵-T" class="headerlink" title="关于变换矩阵$T$"></a>关于变换矩阵$T$</h2><p>在求出$A$的Jordan标准型后，由$A=TJT^{-1}$或$AT=TJ$，将$T$按$J$的对角线上的Jordan块相应分块为$T=(T_1,T_2,\cdots,T_k)$，其中$T_i$为$n\times n_i$型矩阵。则有</p>
 
 $$
@@ -1131,7 +1135,7 @@ $
 <li>变换矩阵：可逆（宽松）$\Longrightarrow U$阵（严格）</li>
 <li>标准型：双对角矩阵（严格）$\Longrightarrow $上三角矩阵（宽松）</li>
 </ul>
-<p><strong>定义2.8</strong>设$A \in C%{n\times n} \quad k = min(m,n)$，$Hermite$半正定矩阵$A^HA$的特征值为<br>$$<br>\lambda_1 \ge \lambda_2 \ge \cdots \lambda_k \ge 0<br>$$<br>称非负实数$\sigma_i(A)=\sqrt(\lambda_i) \quad i = 1,2,\cdots,k$为矩阵A的奇异值<br><strong>定理2.13</strong>设$A,B\in C^{m\times n}$，如果存在$m$阶，$n$阶酉阵$U,V$使得$A=UBV^H$，则矩阵$A,B$的奇异值相同<br>证明：</p>
+<p><strong>定义2.8</strong>设$A \in C%{n\times n} \quad k = min(m,n)$，$Hermite$半正定矩阵$A^HA$的特征值为<br>$$<br>\lambda_1 \ge \lambda_2 \ge \cdots \lambda_k \ge 0<br>$$<br>称非负实数$\sigma_i(A)=\sqrt(\lambda_i) \quad i = 1,2,\cdots,k$为矩阵A的奇异值<br><strong>定理2.15</strong>设$A,B\in C^{m\times n}$，如果存在$m$阶，$n$阶酉阵$U,V$使得$A=UBV^H$，则矩阵$A,B$的奇异值相同<br>证明：</p>
 
 $$
 \begin{equation}
@@ -1144,7 +1148,7 @@ B^B&=(U^HAV)^H(U^HAV)\\
 $$
 
 <p>所以$B^HB \sim A^HA$，所以其特征值相同，故奇异值相同</p>
-<h2 id="矩阵的奇异值分解定理"><a href="#矩阵的奇异值分解定理" class="headerlink" title="矩阵的奇异值分解定理"></a>矩阵的奇异值分解定理</h2><p><strong>定理2.14</strong> 设$A\in C^{n \times n}$，且其秩$rank(A)=r$，则存在$m$阶$n$阶酉阵$U,V$使得</p>
+<h2 id="矩阵的奇异值分解定理"><a href="#矩阵的奇异值分解定理" class="headerlink" title="矩阵的奇异值分解定理"></a>矩阵的奇异值分解定理</h2><p><strong>定理2.16</strong> 设$A\in C^{n \times n}$，且其秩$rank(A)=r$，则存在$m$阶$n$阶酉阵$U,V$使得</p>
 
 $$
 \begin{equation}
@@ -1361,8 +1365,8 @@ $
 
 </li>
 </ul>
-<h2 id="用矩阵的奇异值讨论矩阵的性质"><a href="#用矩阵的奇异值讨论矩阵的性质" class="headerlink" title="用矩阵的奇异值讨论矩阵的性质"></a>用矩阵的奇异值讨论矩阵的性质</h2><p><strong>定理2.15</strong> 矩阵$A$的非零奇异值的个数恰为矩阵$A$的秩，即为计算矩阵$A$的秩的数值方法，同时也是判断一个向量组是否线性相关的数值方法<br><strong>定理2.16</strong> $R(A)=span \{ u_1,u_2,\cdots,u_r \} ,N(A)=span\{v_{r+1},v_{r+2},\cdots,v_{n},\}$，其中$\forall A \in R^{m\times n}$<br>其中$R(A)=\{y\in R^m|Ax=y,\forall x \in R^n\}$称为$A$的<strong>值域</strong>或者<strong>像空间</strong><br> $R(A)=\{y\in R^n|Ax=0\}$称为$A$的<strong>零空间</strong>或者<strong>核</strong><br>该定理表明，借助矩阵的奇异值$(SVD)$分解，可以确定子空间$R(A)$和$N(A)$的一组标准正交基<br>由矩阵$A$的约化奇异值分解：$A=U_1\Sigma V_1^H$可得$AV_1=U_1\Sigma=(\sigma_1u_1,\sigma_2u_2,\cdots,\sigma_ru_r)$<br>又由$V_2^HA^HAV_2=(AV_2)^H(AV_2)=0$得出$AV_2=0$<br>而$U_1=(u_1,u_2,\cdots,u_r),V_2=(v_{r+1},v_{r+2},\cdots,v_{n})$<br>分别构成标准正交向量组，生成$r$维和$n-r$维两个子空间<br>$y=\sum\limits_{i=1}^r \alpha_i u_i \in span{u_1,u_2,\cdots,u_r} \Rightarrow Ax=y$<br>$x=\sum\limits_{i=1}^{n-r} \alpha_i v_{r+i} \in span{v_{r+1},v_{r+2},\cdots,v_n} \Rightarrow Ax=0$</p>
-<p><strong>定理2.17</strong>设$A$的非零奇异值为$\sigma_1 \ge \sigma_2 \ge \cdots \ge \sigma_r \ge 0$，则<br>$$\Vert A \Vert_2 = \sigma_1,\Vert A \Vert_F=\sqrt{\sigma_1^2+\sigma_2^2+\cdots+\sigma_r^2}$$<br>证明：</p>
+<h2 id="用矩阵的奇异值讨论矩阵的性质"><a href="#用矩阵的奇异值讨论矩阵的性质" class="headerlink" title="用矩阵的奇异值讨论矩阵的性质"></a>用矩阵的奇异值讨论矩阵的性质</h2><p><strong>定理2.17</strong> 矩阵$A$的非零奇异值的个数恰为矩阵$A$的秩，即为计算矩阵$A$的秩的数值方法，同时也是判断一个向量组是否线性相关的数值方法<br><strong>定理2.18</strong> $R(A)=span \{ u_1,u_2,\cdots,u_r \} ,N(A)=span\{v_{r+1},v_{r+2},\cdots,v_{n},\}$，其中$\forall A \in R^{m\times n}$<br>其中$R(A)=\{y\in R^m|Ax=y,\forall x \in R^n\}$称为$A$的<strong>值域</strong>或者<strong>像空间</strong><br> $R(A)=\{y\in R^n|Ax=0\}$称为$A$的<strong>零空间</strong>或者<strong>核</strong><br>该定理表明，借助矩阵的奇异值$(SVD)$分解，可以确定子空间$R(A)$和$N(A)$的一组标准正交基<br>由矩阵$A$的约化奇异值分解：$A=U_1\Sigma V_1^H$可得$AV_1=U_1\Sigma=(\sigma_1u_1,\sigma_2u_2,\cdots,\sigma_ru_r)$<br>又由$V_2^HA^HAV_2=(AV_2)^H(AV_2)=0$得出$AV_2=0$<br>而$U_1=(u_1,u_2,\cdots,u_r),V_2=(v_{r+1},v_{r+2},\cdots,v_{n})$<br>分别构成标准正交向量组，生成$r$维和$n-r$维两个子空间<br>$y=\sum\limits_{i=1}^r \alpha_i u_i \in span{u_1,u_2,\cdots,u_r} \Rightarrow Ax=y$<br>$x=\sum\limits_{i=1}^{n-r} \alpha_i v_{r+i} \in span{v_{r+1},v_{r+2},\cdots,v_n} \Rightarrow Ax=0$</p>
+<p><strong>定理2.19</strong>设$A$的非零奇异值为$\sigma_1 \ge \sigma_2 \ge \cdots \ge \sigma_r \ge 0$，则<br>$$\Vert A \Vert_2 = \sigma_1,\Vert A \Vert_F=\sqrt{\sigma_1^2+\sigma_2^2+\cdots+\sigma_r^2}$$<br>证明：</p>
 
 $$\begin{equation}
 \begin{aligned}
@@ -1391,9 +1395,9 @@ $$
 \end{equation}
   
 
-<p>由<strong>定理2.17</strong>可得$\Vert A\Vert_2=\sqrt{\lambda_{max}(A^HA)},\Vert A^{-1}\Vert_2=\sqrt{\dfrac{1}{\lambda_{max}(A^HA)}}$<br>则$cond_2(A)=\Vert A\Vert_2 \Vert A^{-1}\Vert_2=\sqrt{dfrac{\lambda_{max}(A^HA)}{\lambda_{min}(A^HA)}}$</p>
-<p><strong>定理2.18</strong> 如果$A$为$Hermite$矩阵，则$A$的奇异值即为$A^H=A$的特征值的绝对值<br>证明：由$A^HA=A^2$<br>$$\sigma_i(A)=\sqrt{\lambda_{i}(A^HA)}=\sqrt{\lambda_{i}(A^2)}=\sqrt{\lambda_{i}(A)}=|\lambda_i(A)|$$</p>
-<p><strong>定理2.19</strong> 如果$A$为$n$阶方阵，则$|det(A)|=\prod\limits_{i=1}^n\sigma_i(A)$<br>证明：</p>
+<p>由<strong>定理2.19</strong>可得$\Vert A\Vert_2=\sqrt{\lambda_{max}(A^HA)},\Vert A^{-1}\Vert_2=\sqrt{\dfrac{1}{\lambda_{max}(A^HA)}}$<br>则$cond_2(A)=\Vert A\Vert_2 \Vert A^{-1}\Vert_2=\sqrt{dfrac{\lambda_{max}(A^HA)}{\lambda_{min}(A^HA)}}$</p>
+<p><strong>定理2.20</strong> 如果$A$为$Hermite$矩阵，则$A$的奇异值即为$A^H=A$的特征值的绝对值<br>证明：由$A^HA=A^2$<br>$$\sigma_i(A)=\sqrt{\lambda_{i}(A^HA)}=\sqrt{\lambda_{i}(A^2)}=\sqrt{\lambda_{i}(A)}=|\lambda_i(A)|$$</p>
+<p><strong>定理2.21</strong> 如果$A$为$n$阶方阵，则$|det(A)|=\prod\limits_{i=1}^n\sigma_i(A)$<br>证明：</p>
 $$
 \begin{equation}
 \begin{aligned}
@@ -1405,7 +1409,7 @@ $$
 \end{equation}
 $$
 
-<p><strong>定理2.20</strong> 秩为$r$的$m\times n$矩阵$A$可以表示为$r$个秩为1的矩阵的和<br>$$A=\sigma_1u_1v_1+\sigma_2u_2v_2+\cdots+\sigma_ru_rv_r$$<br>证明：由矩阵$A$约化的奇异值分解$A=U\Sigma V_1^H$可知<br>$$U_1=(u_1,u_2,\cdots,u_r)\quad V_1^H=(v_1^H,v_2^H,\cdots,v_r^H)^T$$<br>$$U_1\Sigma=(\sigma_1 u_1,\sigma_2 u_2,\cdots,\sigma_r u_r)$$</p>
+<p><strong>定理2.22</strong> 秩为$r$的$m\times n$矩阵$A$可以表示为$r$个秩为1的矩阵的和<br>$$A=\sigma_1u_1v_1+\sigma_2u_2v_2+\cdots+\sigma_ru_rv_r$$<br>证明：由矩阵$A$约化的奇异值分解$A=U\Sigma V_1^H$可知<br>$$U_1=(u_1,u_2,\cdots,u_r)\quad V_1^H=(v_1^H,v_2^H,\cdots,v_r^H)^T$$<br>$$U_1\Sigma=(\sigma_1 u_1,\sigma_2 u_2,\cdots,\sigma_r u_r)$$</p>
 
 \begin{equation}
 \begin{aligned}
@@ -1659,7 +1663,7 @@ v_r^H
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件数与方程组的性态"><span class="nav-number">2.10.</span> <span class="nav-text">条件数与方程组的性态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Householder矩阵"><span class="nav-number">2.11.</span> <span class="nav-text">Householder矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的QR分解"><span class="nav-number">2.12.</span> <span class="nav-text">矩阵的QR分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的Schur分解"><span class="nav-number">2.13.</span> <span class="nav-text">矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规矩阵的Schur分解"><span class="nav-number">2.14.</span> <span class="nav-text">正规矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的谱半径与矩阵范数关系"><span class="nav-number">2.15.</span> <span class="nav-text">矩阵的谱半径与矩阵范数关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵是否可对角化的判别法则"><span class="nav-number">2.16.</span> <span class="nav-text">矩阵是否可对角化的判别法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于变换矩阵-T"><span class="nav-number">2.17.</span> <span class="nav-text">关于变换矩阵$T$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hamilton-Caylay-定理及其应用"><span class="nav-number">2.18.</span> <span class="nav-text">$Hamilton-Caylay$定理及其应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值定义"><span class="nav-number">2.19.</span> <span class="nav-text">矩阵的奇异值定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解定理"><span class="nav-number">2.20.</span> <span class="nav-text">矩阵的奇异值分解定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解步骤"><span class="nav-number">2.21.</span> <span class="nav-text">矩阵的奇异值分解步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用矩阵的奇异值讨论矩阵的性质"><span class="nav-number">2.22.</span> <span class="nav-text">用矩阵的奇异值讨论矩阵的性质</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件数与方程组的性态"><span class="nav-number">2.10.</span> <span class="nav-text">条件数与方程组的性态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Householder矩阵"><span class="nav-number">2.11.</span> <span class="nav-text">Householder矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的QR分解"><span class="nav-number">2.12.</span> <span class="nav-text">矩阵的QR分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的Schur分解"><span class="nav-number">2.13.</span> <span class="nav-text">矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规矩阵的Schur分解"><span class="nav-number">2.14.</span> <span class="nav-text">正规矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的谱半径与矩阵范数关系"><span class="nav-number">2.15.</span> <span class="nav-text">矩阵的谱半径与矩阵范数关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵是否可对角化的判别法则"><span class="nav-number">2.16.</span> <span class="nav-text">矩阵是否可对角化的判别法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的-Jordan-分解"><span class="nav-number">2.17.</span> <span class="nav-text">矩阵的$Jordan$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于变换矩阵-T"><span class="nav-number">2.18.</span> <span class="nav-text">关于变换矩阵$T$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hamilton-Caylay-定理及其应用"><span class="nav-number">2.19.</span> <span class="nav-text">$Hamilton-Caylay$定理及其应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值定义"><span class="nav-number">2.20.</span> <span class="nav-text">矩阵的奇异值定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解定理"><span class="nav-number">2.21.</span> <span class="nav-text">矩阵的奇异值分解定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解步骤"><span class="nav-number">2.22.</span> <span class="nav-text">矩阵的奇异值分解步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用矩阵的奇异值讨论矩阵的性质"><span class="nav-number">2.23.</span> <span class="nav-text">用矩阵的奇异值讨论矩阵的性质</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1706,7 +1710,7 @@ v_r^H
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共22.1k字</span>
+  <span class="post-count">博客全站共22.4k字</span>
 </div>
 
         

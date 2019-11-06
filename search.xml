@@ -661,6 +661,10 @@ $$
 <p>其中$I$为$\alpha_i \times \alpha_i$的单位矩阵，$C$是$\alpha_i \times \alpha_i$的矩阵，$D$是$(n - \alpha_i) \times (n - \alpha_i)$的矩阵，从而有<br>$$det(zI-B)=det(zI-\lambda_i I)det(zI-D)=(z-\lambda_i)^\alpha_idet(zI-D)$$<br>$det()$为求行列式<br>因此，作为$B$的特征值$\lambda_i$的代数重复度至少为$\alpha_i$，由于相似变化不改变重数，所以$A$的特征值$\lambda_i$的代数重复度满足$m_i \ge \alpha_i$<br>解题过程中，$m_i$直接根据求特征值获取，而$\alpha_i$可以通过计算代数余子式，获取秩，利用$\alpha_i=n-r(\lambda_i I -A)$获取，或者直接求解矩阵$A$的零空间$N(\lambda_i I - A)$的维数（非零解向量数）获取</p>
 <p><strong>定义2.7</strong> 设$A$为$n$阶方阵，$\lambda_i$为其特征值，$m_i$和$\alpha_i$分别为其代数重复度和几何重复度。如果$m_i=\alpha_i$，则称$\lambda_i$为<strong>半单</strong>的；如果$m_i &gt; \alpha_i$，则称$\lambda_i$是亏损的<br>如果矩阵$A$的某一个特征值代数重复度为1，则它一定为半单的，大于1，可能是半单的</p>
 <p><strong>定理2.12</strong> $n$阶方阵$A$可对角化的充要条件是每一个特征值$\lambda_i$都是半单的，即$m_i=\alpha_i \quad i=1,2,\cdots,s$。$A$是不可对角化的矩阵的充要条件是它存在亏损的特征值，即存在$i_0$使得$m_i&gt;\alpha_i$<br>所以称不可对角化的矩阵为亏损矩阵</p>
+<h2 id="矩阵的-Jordan-分解"><a href="#矩阵的-Jordan-分解" class="headerlink" title="矩阵的$Jordan$分解"></a>矩阵的$Jordan$分解</h2><p><strong>定理2.13</strong> 设$A$为$n$阶方阵，则存在$n$阶可逆矩阵使得$A=TJT^{-1}$<br>其中$J=diag(J_{n_1}(\lambda_1),J_{n_2}(\lambda_2),\cdots,J_{n_k}(\lambda_k)),n_1+n_2+\cdots+n_k=n$<br>称其为矩阵$A$的$Jordan$分解，$Jordan$阵$J$称为$A$的$Jordan$标准型，$T$称为变化矩阵<br>矩阵$A$的$Jordan$标准型如果不计$Jordan$块的排列次序，则是确定唯一的</p>
+<p>注：根据相似矩阵特征值相同，使用$Jordan$标准型的对角元素就是$A$的特征值，而不同的$Jordan$块的对角元素$\lambda_i$可能相同，所以$\lambda_i$不一定是$A$的$n_i$重特征值。一般特征值$\lambda_i$的重数大于等于$n_i$</p>
+<p><strong>$Jordan$标准型</strong><br>$Jordan$标准型是一个块对角矩阵，其对角元为矩阵$J$的特征值<br>对于特征值$\lambda_i$，其<strong>代数重复度</strong>是$Jordan$标准型中以$\lambda_i$为特征值的$Jordan$块阶数的和，其<strong>几何重复度</strong>为$\lambda_i$为特征值的$Jordan$块个数</p>
+<p><strong>定理2.14</strong>设$A$为$n$阶方阵，$\lambda_i$为其特征值，则$A$的$Jordan$标准型$J$中以$\lambda_i$为特征值，阶数为$l$的$Jardan$块的个数为：<br>$$r_{l+1}+r{l-1}-2r_l$$<br>其中$r_l=rank(\lambda_i I-A)^l, r_0=rank(\lambda_i I -A )^0=rank(I)=n$</p>
 <h2 id="关于变换矩阵-T"><a href="#关于变换矩阵-T" class="headerlink" title="关于变换矩阵$T$"></a>关于变换矩阵$T$</h2><p>在求出$A$的Jordan标准型后，由$A=TJT^{-1}$或$AT=TJ$，将$T$按$J$的对角线上的Jordan块相应分块为$T=(T_1,T_2,\cdots,T_k)$，其中$T_i$为$n\times n_i$型矩阵。则有</p>
 
 $$
@@ -721,7 +725,7 @@ $
 <li>变换矩阵：可逆（宽松）$\Longrightarrow U$阵（严格）</li>
 <li>标准型：双对角矩阵（严格）$\Longrightarrow $上三角矩阵（宽松）</li>
 </ul>
-<p><strong>定义2.8</strong>设$A \in C%{n\times n} \quad k = min(m,n)$，$Hermite$半正定矩阵$A^HA$的特征值为<br>$$<br>\lambda_1 \ge \lambda_2 \ge \cdots \lambda_k \ge 0<br>$$<br>称非负实数$\sigma_i(A)=\sqrt(\lambda_i) \quad i = 1,2,\cdots,k$为矩阵A的奇异值<br><strong>定理2.13</strong>设$A,B\in C^{m\times n}$，如果存在$m$阶，$n$阶酉阵$U,V$使得$A=UBV^H$，则矩阵$A,B$的奇异值相同<br>证明：</p>
+<p><strong>定义2.8</strong>设$A \in C%{n\times n} \quad k = min(m,n)$，$Hermite$半正定矩阵$A^HA$的特征值为<br>$$<br>\lambda_1 \ge \lambda_2 \ge \cdots \lambda_k \ge 0<br>$$<br>称非负实数$\sigma_i(A)=\sqrt(\lambda_i) \quad i = 1,2,\cdots,k$为矩阵A的奇异值<br><strong>定理2.15</strong>设$A,B\in C^{m\times n}$，如果存在$m$阶，$n$阶酉阵$U,V$使得$A=UBV^H$，则矩阵$A,B$的奇异值相同<br>证明：</p>
 
 $$
 \begin{equation}
@@ -734,7 +738,7 @@ B^B&=(U^HAV)^H(U^HAV)\\
 $$
 
 <p>所以$B^HB \sim A^HA$，所以其特征值相同，故奇异值相同</p>
-<h2 id="矩阵的奇异值分解定理"><a href="#矩阵的奇异值分解定理" class="headerlink" title="矩阵的奇异值分解定理"></a>矩阵的奇异值分解定理</h2><p><strong>定理2.14</strong> 设$A\in C^{n \times n}$，且其秩$rank(A)=r$，则存在$m$阶$n$阶酉阵$U,V$使得</p>
+<h2 id="矩阵的奇异值分解定理"><a href="#矩阵的奇异值分解定理" class="headerlink" title="矩阵的奇异值分解定理"></a>矩阵的奇异值分解定理</h2><p><strong>定理2.16</strong> 设$A\in C^{n \times n}$，且其秩$rank(A)=r$，则存在$m$阶$n$阶酉阵$U,V$使得</p>
 
 $$
 \begin{equation}
@@ -951,8 +955,8 @@ $
 
 </li>
 </ul>
-<h2 id="用矩阵的奇异值讨论矩阵的性质"><a href="#用矩阵的奇异值讨论矩阵的性质" class="headerlink" title="用矩阵的奇异值讨论矩阵的性质"></a>用矩阵的奇异值讨论矩阵的性质</h2><p><strong>定理2.15</strong> 矩阵$A$的非零奇异值的个数恰为矩阵$A$的秩，即为计算矩阵$A$的秩的数值方法，同时也是判断一个向量组是否线性相关的数值方法<br><strong>定理2.16</strong> $R(A)=span \{ u_1,u_2,\cdots,u_r \} ,N(A)=span\{v_{r+1},v_{r+2},\cdots,v_{n},\}$，其中$\forall A \in R^{m\times n}$<br>其中$R(A)=\{y\in R^m|Ax=y,\forall x \in R^n\}$称为$A$的<strong>值域</strong>或者<strong>像空间</strong><br> $R(A)=\{y\in R^n|Ax=0\}$称为$A$的<strong>零空间</strong>或者<strong>核</strong><br>该定理表明，借助矩阵的奇异值$(SVD)$分解，可以确定子空间$R(A)$和$N(A)$的一组标准正交基<br>由矩阵$A$的约化奇异值分解：$A=U_1\Sigma V_1^H$可得$AV_1=U_1\Sigma=(\sigma_1u_1,\sigma_2u_2,\cdots,\sigma_ru_r)$<br>又由$V_2^HA^HAV_2=(AV_2)^H(AV_2)=0$得出$AV_2=0$<br>而$U_1=(u_1,u_2,\cdots,u_r),V_2=(v_{r+1},v_{r+2},\cdots,v_{n})$<br>分别构成标准正交向量组，生成$r$维和$n-r$维两个子空间<br>$y=\sum\limits_{i=1}^r \alpha_i u_i \in span{u_1,u_2,\cdots,u_r} \Rightarrow Ax=y$<br>$x=\sum\limits_{i=1}^{n-r} \alpha_i v_{r+i} \in span{v_{r+1},v_{r+2},\cdots,v_n} \Rightarrow Ax=0$</p>
-<p><strong>定理2.17</strong>设$A$的非零奇异值为$\sigma_1 \ge \sigma_2 \ge \cdots \ge \sigma_r \ge 0$，则<br>$$\Vert A \Vert_2 = \sigma_1,\Vert A \Vert_F=\sqrt{\sigma_1^2+\sigma_2^2+\cdots+\sigma_r^2}$$<br>证明：</p>
+<h2 id="用矩阵的奇异值讨论矩阵的性质"><a href="#用矩阵的奇异值讨论矩阵的性质" class="headerlink" title="用矩阵的奇异值讨论矩阵的性质"></a>用矩阵的奇异值讨论矩阵的性质</h2><p><strong>定理2.17</strong> 矩阵$A$的非零奇异值的个数恰为矩阵$A$的秩，即为计算矩阵$A$的秩的数值方法，同时也是判断一个向量组是否线性相关的数值方法<br><strong>定理2.18</strong> $R(A)=span \{ u_1,u_2,\cdots,u_r \} ,N(A)=span\{v_{r+1},v_{r+2},\cdots,v_{n},\}$，其中$\forall A \in R^{m\times n}$<br>其中$R(A)=\{y\in R^m|Ax=y,\forall x \in R^n\}$称为$A$的<strong>值域</strong>或者<strong>像空间</strong><br> $R(A)=\{y\in R^n|Ax=0\}$称为$A$的<strong>零空间</strong>或者<strong>核</strong><br>该定理表明，借助矩阵的奇异值$(SVD)$分解，可以确定子空间$R(A)$和$N(A)$的一组标准正交基<br>由矩阵$A$的约化奇异值分解：$A=U_1\Sigma V_1^H$可得$AV_1=U_1\Sigma=(\sigma_1u_1,\sigma_2u_2,\cdots,\sigma_ru_r)$<br>又由$V_2^HA^HAV_2=(AV_2)^H(AV_2)=0$得出$AV_2=0$<br>而$U_1=(u_1,u_2,\cdots,u_r),V_2=(v_{r+1},v_{r+2},\cdots,v_{n})$<br>分别构成标准正交向量组，生成$r$维和$n-r$维两个子空间<br>$y=\sum\limits_{i=1}^r \alpha_i u_i \in span{u_1,u_2,\cdots,u_r} \Rightarrow Ax=y$<br>$x=\sum\limits_{i=1}^{n-r} \alpha_i v_{r+i} \in span{v_{r+1},v_{r+2},\cdots,v_n} \Rightarrow Ax=0$</p>
+<p><strong>定理2.19</strong>设$A$的非零奇异值为$\sigma_1 \ge \sigma_2 \ge \cdots \ge \sigma_r \ge 0$，则<br>$$\Vert A \Vert_2 = \sigma_1,\Vert A \Vert_F=\sqrt{\sigma_1^2+\sigma_2^2+\cdots+\sigma_r^2}$$<br>证明：</p>
 
 $$\begin{equation}
 \begin{aligned}
@@ -981,9 +985,9 @@ $$
 \end{equation}
   
 
-<p>由<strong>定理2.17</strong>可得$\Vert A\Vert_2=\sqrt{\lambda_{max}(A^HA)},\Vert A^{-1}\Vert_2=\sqrt{\dfrac{1}{\lambda_{max}(A^HA)}}$<br>则$cond_2(A)=\Vert A\Vert_2 \Vert A^{-1}\Vert_2=\sqrt{dfrac{\lambda_{max}(A^HA)}{\lambda_{min}(A^HA)}}$</p>
-<p><strong>定理2.18</strong> 如果$A$为$Hermite$矩阵，则$A$的奇异值即为$A^H=A$的特征值的绝对值<br>证明：由$A^HA=A^2$<br>$$\sigma_i(A)=\sqrt{\lambda_{i}(A^HA)}=\sqrt{\lambda_{i}(A^2)}=\sqrt{\lambda_{i}(A)}=|\lambda_i(A)|$$</p>
-<p><strong>定理2.19</strong> 如果$A$为$n$阶方阵，则$|det(A)|=\prod\limits_{i=1}^n\sigma_i(A)$<br>证明：</p>
+<p>由<strong>定理2.19</strong>可得$\Vert A\Vert_2=\sqrt{\lambda_{max}(A^HA)},\Vert A^{-1}\Vert_2=\sqrt{\dfrac{1}{\lambda_{max}(A^HA)}}$<br>则$cond_2(A)=\Vert A\Vert_2 \Vert A^{-1}\Vert_2=\sqrt{dfrac{\lambda_{max}(A^HA)}{\lambda_{min}(A^HA)}}$</p>
+<p><strong>定理2.20</strong> 如果$A$为$Hermite$矩阵，则$A$的奇异值即为$A^H=A$的特征值的绝对值<br>证明：由$A^HA=A^2$<br>$$\sigma_i(A)=\sqrt{\lambda_{i}(A^HA)}=\sqrt{\lambda_{i}(A^2)}=\sqrt{\lambda_{i}(A)}=|\lambda_i(A)|$$</p>
+<p><strong>定理2.21</strong> 如果$A$为$n$阶方阵，则$|det(A)|=\prod\limits_{i=1}^n\sigma_i(A)$<br>证明：</p>
 $$
 \begin{equation}
 \begin{aligned}
@@ -995,7 +999,7 @@ $$
 \end{equation}
 $$
 
-<p><strong>定理2.20</strong> 秩为$r$的$m\times n$矩阵$A$可以表示为$r$个秩为1的矩阵的和<br>$$A=\sigma_1u_1v_1+\sigma_2u_2v_2+\cdots+\sigma_ru_rv_r$$<br>证明：由矩阵$A$约化的奇异值分解$A=U\Sigma V_1^H$可知<br>$$U_1=(u_1,u_2,\cdots,u_r)\quad V_1^H=(v_1^H,v_2^H,\cdots,v_r^H)^T$$<br>$$U_1\Sigma=(\sigma_1 u_1,\sigma_2 u_2,\cdots,\sigma_r u_r)$$</p>
+<p><strong>定理2.22</strong> 秩为$r$的$m\times n$矩阵$A$可以表示为$r$个秩为1的矩阵的和<br>$$A=\sigma_1u_1v_1+\sigma_2u_2v_2+\cdots+\sigma_ru_rv_r$$<br>证明：由矩阵$A$约化的奇异值分解$A=U\Sigma V_1^H$可知<br>$$U_1=(u_1,u_2,\cdots,u_r)\quad V_1^H=(v_1^H,v_2^H,\cdots,v_r^H)^T$$<br>$$U_1\Sigma=(\sigma_1 u_1,\sigma_2 u_2,\cdots,\sigma_r u_r)$$</p>
 
 \begin{equation}
 \begin{aligned}
