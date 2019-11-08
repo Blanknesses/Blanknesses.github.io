@@ -1,6 +1,1039 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>计算方法作业</title>
+    <url>/2019/11/06/ComputationalMethodsWork/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="第二章作业题"><a href="#第二章作业题" class="headerlink" title="第二章作业题"></a>第二章作业题</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><p>设$
+\begin{equation}
+\begin{aligned}
+A=
+\begin{bmatrix}
+{-1}&8&-2\\
+{-6}&49&{-10}\\
+{-4}&34&{-5}\\
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$。1，利用消去法求$A^{-1}$。2，先求$A$的$Doolittle$分解，再利用所得到的分解求$A^{-1}$</p>
+<h3 id="消去法"><a href="#消去法" class="headerlink" title="消去法"></a>消去法</h3>$$
+\begin{equation}
+\begin{aligned}
+\quad[A,E] &= 
+\begin{bmatrix}
+{-1}&8&-2&1&0&0\\
+{-6}&49&{-10}&0&1&0\\
+{-4}&34&{-5}&0&0&1\\
+\end{bmatrix} \\
+&=
+\begin{bmatrix}
+{-1}&8&-2&1&0&0\\
+{0}&1&2&{-6}&1&0\\
+{0}&2&{3}&{-4}&0&1
+\end{bmatrix} \\
+&=
+\begin{bmatrix}
+{-1}&8&-2&1&0&0\\
+{0}&1&2&{-6}&1&0\\
+{0}&0&{-1}&{8}&{-2}&1
+\end{bmatrix} \\
+&=
+\begin{bmatrix}
+{-1}&0&-18&49&-8&0\\
+{0}&1&0&{10}&-3&2\\
+{0}&0&{-1}&{8}&{-2}&1
+\end{bmatrix} \\
+&=
+\begin{bmatrix}
+{-1}&0&0&-95&28&-18\\
+{0}&1&0&{10}&-3&2\\
+{0}&0&{-1}&{8}&{-2}&1
+\end{bmatrix} \\
+&=
+\begin{bmatrix}
+{1}&0&0&95&-28&18\\
+{0}&1&0&{10}&-3&2\\
+{0}&0&{1}&{-8}&{2}&-1
+\end{bmatrix} \\
+\Longrightarrow A^{-1} &= 
+\begin{bmatrix}
+95&-28&18\\
+{10}&-3&2\\
+{-8}&{2}&-1
+\end{bmatrix} \\
+\end{aligned}
+\end{equation}
+$$
+
+<h3 id="Doolittle-分解"><a href="#Doolittle-分解" class="headerlink" title="$Doolittle$分解"></a>$Doolittle$分解</h3>$$
+\begin{equation}
+\begin{aligned}
+\quad A &= 
+\begin{bmatrix}
+{-1}&8&-2\\
+{-6}&49&{-10}\\
+{-4}&34&{-5}\\
+\end{bmatrix} \\
+\quad L_1 &= 
+\begin{bmatrix}
+{1}&0&0\\
+{-6}&1&0\\
+{-4}&0&1\\
+\end{bmatrix} \\
+\quad L_1A &= 
+\begin{bmatrix}
+{-1}&-8&2\\
+{0}&1&2\\
+{0}&2&3\\
+\end{bmatrix} \\
+\quad L_2 &= 
+\begin{bmatrix}
+{1}&0&0\\
+{0}&1&0\\
+{0}&-2&1\\
+\end{bmatrix} \\
+\quad L_2L_1A &= 
+\begin{bmatrix}
+{-1}&-8&2\\
+{0}&1&2\\
+{0}&0&-1\\
+\end{bmatrix} \\
+\quad L = L_1^{-1}L_2^{-1} &= 
+\begin{bmatrix}
+{1}&0&0\\
+{6}&1&0\\
+{4}&2&1\\
+\end{bmatrix} \\
+\quad U &= 
+\begin{bmatrix}
+{-1}&8&-2\\
+{0}&1&2\\
+{0}&0&-1\\
+\end{bmatrix} \\
+\quad AA^{-1} &= LUA^{-1} = LU[a1,a2,a3]  \\
+&= 
+\begin{bmatrix}
+{1}&0&0\\
+{0}&1&0\\
+{0}&0&1\\
+\end{bmatrix} \\
+\quad LUa_1 = Ly  &= 
+\begin{bmatrix}
+{1}&0&0\\
+{6}&1&0\\
+{4}&2&1\\
+\end{bmatrix} 
+\begin{bmatrix}
+{y_1}\\
+{y_2}\\
+{y_3}\\
+\end{bmatrix} =
+\begin{bmatrix}
+{1}\\
+{0}\\
+{0}\\
+\end{bmatrix} 
+\Rightarrow 
+y = 
+\begin{bmatrix}
+{1}\\
+{-6}\\
+{8}\\
+\end{bmatrix}\\
+\Rightarrow
+ Ua_1 &= 
+\begin{bmatrix}
+{-1}&8&-2\\
+{0}&1&2\\
+{0}&0&-1\\
+\end{bmatrix}
+\begin{bmatrix}   
+{a_{11}}\\
+{a_{21}}\\
+{a_{31}}\\
+\end{bmatrix}=
+\begin{bmatrix}
+{1}\\
+{-6}\\
+{8}\\
+\end{bmatrix}
+\Rightarrow
+ a_1=
+\begin{bmatrix}
+{95}\\
+{10}\\
+{-8}\\
+\end{bmatrix}\\
+同理可得 a_2&= 
+\begin{bmatrix}
+{-28}\\
+{-3}\\
+{2}\\
+\end{bmatrix}\\
+		a_3&= 
+\begin{bmatrix}
+{18}\\
+{2}\\
+{-1}\\
+\end{bmatrix}\\
+故 A^{-1}&=
+\begin{bmatrix}
+95&-28&18\\
+{10}&-3&2\\
+{-8}&{2}&-1
+\end{bmatrix} \\
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><p>求矩阵</p>
+$
+\begin{equation}
+\begin{aligned}
+A=\begin{bmatrix}
+  4&4&0\\
+  3&3&{-1}\\
+  0&1&1\\
+  \end{bmatrix}
+
+\end{aligned}
+\end{equation}
+$的$QR$分解，使$R$的对角元为正数
+
+$$
+\begin{equation}
+\begin{aligned}
+\quad A = [a_1,a_2,a_3] &= 
+\begin{bmatrix}
+4&4&0\\
+3&3&{-1}\\
+0&1&1\\
+\end{bmatrix} \\
+\omega_1 = a_1 - \Vert a_1 \Vert_2 e_1 &=
+\begin{bmatrix}
+4\\
+3\\
+0\\
+\end{bmatrix} -
+\begin{bmatrix}
+5\\
+0\\
+0\\
+\end{bmatrix}=
+\begin{bmatrix}
+-1\\
+3\\
+0\\
+\end{bmatrix}\\
+H(\omega_1) = I - \dfrac{2}{w^Hw}ww^H &=
+\begin{bmatrix}
+{\dfrac{4}{5}}&{\dfrac{3}{5}}&0\\
+{\dfrac{3}{5}}&{\dfrac{-4}{5}}&0\\
+0&0&1\\
+\end{bmatrix} \\
+Q_1A=H(\omega_1)A&=
+\begin{bmatrix}
+{5}&{5}&{\dfrac{-3}{5}}\\
+{0}&{0}&{\dfrac{4}{5}}\\
+0&1&1\\
+\end{bmatrix} \\
+降阶易得置换矩阵Q_2 &= 
+\begin{bmatrix}
+1&0&0\\
+0&0&{1}\\
+0&1&0\\
+\end{bmatrix} \\
+Q_2Q_1A&=
+\begin{bmatrix}
+{5}&{5}&{\dfrac{-3}{5}}\\
+0&1&1\\
+{0}&{0}&{\dfrac{4}{5}}\\
+\end{bmatrix} \\
+所以有Q=Q_1Q_2&=
+\begin{bmatrix}
+{\dfrac{4}{5}}&0&{\dfrac{3}{5}}\\
+{\dfrac{3}{5}}&0&{\dfrac{-4}{5}}\\
+0&1&0\\
+\end{bmatrix} \\
+R&=
+\begin{bmatrix}
+{5}&{5}&{\dfrac{-3}{5}}\\
+0&1&1\\
+{0}&{0}&{\dfrac{4}{5}}\\
+\end{bmatrix} \\
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2><p>设$
+ \begin{equation}
+ \begin{aligned}
+ A=
+ \begin{bmatrix}
+ 0&1&0\\
+ -4&4&0\\
+ -2&1&2
+ \end{bmatrix}
+ \end{aligned}
+ \end{equation}
+ $，求$T$使$T^{-1}AT$为$Jordan$标准型</p>
+ $$
+ \begin{equation}
+ \begin{aligned}
+ A&=\begin{bmatrix}
+ 0&1&0\\
+ -4&4&0\\
+ -2&1&2
+ \end{bmatrix}\\
+ |\lambda I - A|&=
+ \begin{bmatrix}
+ \lambda&-1&0\\
+ 4&\lambda-4&0\\
+ 2&-1&\lambda-2
+ \end{bmatrix}\\
+ &=(\lambda - 2)^3\\
+ &\Rightarrow\lambda = 2(三重),m=3\\
+ rank(\lambda I-A)=1&\Rightarrow \alpha=3-1=2\\
+ &\Rightarrow J=
+ \begin{bmatrix}
+ 2&0&0\\
+ 0&2&1\\
+ 0&0&2
+ \end{bmatrix}\\
+ &\therefore AT=TJ\\
+ &\because A(T_1,T_2)=(T_1,T_2) 
+ \begin{bmatrix}
+ 2&0&0\\
+ 0&2&1\\
+ 0&0&2
+ \end{bmatrix}\\
+ &令T_1=t^1,T_2=\{t_1^2, t_1^2\} \\
+ (A-\lambda I )t^1=0&\Leftrightarrow
+ \begin{bmatrix}
+ -2&1&0\\
+ -4&2&0\\
+ -2&1&0
+ \end{bmatrix}
+ \begin{bmatrix}
+ x_1\\
+ x_2\\
+ x_3
+ \end{bmatrix}=0\\
+ &\Rightarrow 
+ t_1^1=
+ \begin{bmatrix}
+ 1\\
+ 2\\
+ 0
+ \end{bmatrix},
+ t_2^1=
+ \begin{bmatrix}
+ 0\\
+ 0\\
+ 1
+ \end{bmatrix}\\
+ &所以长度为1的Jardan链可任取t_1^1,t_2^1\\
+ &但在长度为2的Jardan链上，以t_1^2,t_2^2为链首\\&无法求另一个向量构成Jardan链\\
+ &令y=k_1t_1^2+k_2t_2^2=(k_1,2k_1,k_2)^T\\
+ &\Rightarrow\begin{bmatrix}
+ -2&1&0\\
+ -4&2&0\\
+ -2&1&0
+ \end{bmatrix}
+ \begin{bmatrix}
+ z_1\\
+ z_2\\
+ z_3
+ \end{bmatrix}=
+ \begin{bmatrix}
+ k_1\\
+ 2k_1\\
+ k_2
+ \end{bmatrix}\\
+ &\Rightarrow\begin{bmatrix}
+ -2&1&0&k_1\\
+ 0&0&0&0\\
+ 0&0&0&k_2-k_1
+ \end{bmatrix}\\
+ &不妨取k_1=k_2=1,此时具有非零解\\
+ &解得z=
+ \begin{bmatrix}
+ 0\\
+ 1\\
+ 0
+ \end{bmatrix}\\
+ &\Rightarrow 
+ T=
+ \begin{bmatrix}
+ 1&1&0\\
+ 2&2&1\\
+ 0&1&0
+ \end{bmatrix}or
+ \begin{bmatrix}
+ 0&1&0\\
+ 0&2&1\\
+ 1&1&0
+ \end{bmatrix}
+ \end{aligned}
+ \end{equation}
+ $$
+
+<h2 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h2><p> 设$
+   \begin{equation}
+   \begin{aligned}
+   A=
+   \begin{bmatrix}
+   1&0&-1\\
+   0&\omega&i\\
+   0&0&\omega^2
+   \end{bmatrix}
+   \end{aligned}
+   \end{equation}
+   $，其中$\omega=\dfrac{-1+\sqrt{3}i}{2}$，试用$Cayley-Hamilton$定理计算$A^{100}$</p>
+   $$
+  \begin{equation}
+  \begin{aligned}
+  A&=
+  \begin{bmatrix}
+  1&0&-1\\
+  &\omega&i\\
+  &&\omega^2
+  \end{bmatrix},
+  \omega = \dfrac{-1+\sqrt{3}i}{2}\\
+  |\lambda I-A|&=(\lambda-1)(\lambda-\omega)(\lambda-\omega^2)\\
+  \Psi(\lambda)&=(\lambda-1)(\lambda-\omega)(\lambda-\omega^2),\Psi(A)=0\\
+  \lambda^{100} &= g(\lambda)\Psi(\lambda) + a\lambda^2+b\lambda+c\\
+  \Psi(1)&=\Psi(\omega)=\Psi(\omega^2)=0\\
+  &\Rightarrow\begin{cases}
+  1^{100}=a+b+c\\
+  \omega^{100}=\omega^2a+\omega b+c\\
+  \omega^{200}=\omega^4a+\omega^2b+c 
+  \end{cases}\\
+  &\therefore 
+  \omega^2=\dfrac{-1-\sqrt{3}i}{2},\omega^4=\dfrac{-1+\sqrt{3}i}{2}\\
+  &\Rightarrow\begin{cases}
+  1=a+b+c\\
+  \dfrac{-1+\sqrt{3}i}{2}=\dfrac{-1-\sqrt{3}i}{2}a+\dfrac{-1+\sqrt{3}i}{2} b+c\\
+  \dfrac{-1+\sqrt{3}i}{2}=\dfrac{-1+\sqrt{3}i}{2}a+\dfrac{-1-\sqrt{3}i}{2}b+c 
+  \end{cases}\\
+  &\Rightarrow 
+  a=b=\dfrac{3-\sqrt{3}i}{6},c=\dfrac{\sqrt{3}i}{3}\\
+  A^{100}&=g(A)\Psi(A) + \dfrac{3-\sqrt{3}i}{6}A^2+\dfrac{3-\sqrt{3}i}{6}A+\dfrac{\sqrt{3}i}{3}\\
+  &=\dfrac{3-\sqrt{3}i}{6}
+  \begin{bmatrix}
+  1&0&-1-\omega^2\\
+  0&\omega^2&\omega i +\omega^2i\\
+  0&0&\omega^4
+  \end{bmatrix}+
+  \dfrac{3-\sqrt{3}i}{6}
+  \begin{bmatrix}
+  1&0&-1\\
+  0&\omega&i\\
+  0&0&\omega^2
+  \end{bmatrix}+\dfrac{\sqrt{3}i}{3}I\\
+  &=
+  \begin{bmatrix}
+  1&0&-\dfrac{3-\sqrt{3}i}{6}\\
+  0&\dfrac{-1+\sqrt{3}i}{2}&0\\
+  0&0&\dfrac{-1+\sqrt{3}i}{2}
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+  $$
+
+<h2 id="第五题"><a href="#第五题" class="headerlink" title="第五题"></a>第五题</h2><p>  求矩阵$
+     \begin{equation}
+     \begin{aligned}
+     A=
+     \begin{bmatrix}
+     1&0&1\\
+     1&1&0
+     \end{bmatrix}
+     \end{aligned}
+     \end{equation}
+     $ 的奇异值分解</p>
+ $$    
+\begin{equation}
+\begin{aligned}
+A&=
+\begin{bmatrix}
+1&0&1\\
+1&1&0
+\end{bmatrix}\\
+(\lambda I - A^TA)&=
+\begin{bmatrix}
+\lambda-2&-1&-1\\
+-1&\lambda-1&0\\
+-1&0&\lambda-1
+\end{bmatrix}\\
+&\Rightarrow |\lambda I - A^TA|=\lambda(\lambda -1)(\lambda -3)\\
+&\Rightarrow \lambda_1=0,\lambda_2=1,\lambda_3=3\\
+&\quad \sigma_1=0,\sigma_2=1,\sigma_3=\sqrt{3}\\
+&\lambda_3=3时\\
+&\begin{bmatrix}
+1&-1&-1\\
+-1&2&0\\
+-1&0&2
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix}=0\\
+&\Rightarrow 
+p_1=
+\begin{bmatrix}
+2\\
+1\\
+1
+\end{bmatrix}\\
+&同理可得\lambda_2=1时，p_2=
+\begin{bmatrix}
+0\\
+1\\
+-1
+\end{bmatrix}，
+\lambda_1=0时，p_3=
+\begin{bmatrix}
+-1\\
+1\\
+1
+\end{bmatrix}\\
+&\Rightarrow P=
+\begin{bmatrix}
+2&0&-1\\
+1&1&1\\
+1&-1&1
+\end{bmatrix}\\
+&\Rightarrow V=
+\begin{bmatrix}
+\dfrac{2}{\sqrt{6}}&0&-\dfrac{1}{\sqrt{3}}\\
+\dfrac{1}{\sqrt{6}}&\dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{3}}\\
+\dfrac{1}{\sqrt{6}}&-\dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{3}}
+\end{bmatrix}\\
+V_1&=
+\begin{bmatrix}
+\dfrac{2}{\sqrt{6}}&0\\
+\dfrac{1}{\sqrt{6}}&\dfrac{1}{\sqrt{2}}\\
+\dfrac{1}{\sqrt{6}}&-\dfrac{1}{\sqrt{2}}
+\end{bmatrix}\\
+U_1&=AV_1\Sigma^{-1}=
+\begin{bmatrix}
+1&0&1\\
+1&1&0
+\end{bmatrix}
+\begin{bmatrix}
+\dfrac{2}{\sqrt{6}}&0\\
+\dfrac{1}{\sqrt{6}}&\dfrac{1}{\sqrt{2}}\\
+\dfrac{1}{\sqrt{6}}&-\dfrac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+\dfrac{1}{\sqrt{3}}&0\\
+0&1
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+\dfrac{1}{\sqrt{2}}&-\dfrac{1}{\sqrt{2}}\\
+\dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{2}}
+\end{bmatrix}\\
+&\therefore A=
+\begin{bmatrix}
+\dfrac{1}{\sqrt{2}}&-\dfrac{1}{\sqrt{2}}\\
+\dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+\dfrac{1}{\sqrt{3}}&0\\
+0&1
+\end{bmatrix}
+\begin{bmatrix}
+\dfrac{2}{\sqrt{6}}&\dfrac{1}{\sqrt{6}}&\dfrac{1}{\sqrt{6}}\\
+0&\dfrac{1}{\sqrt{2}}&-\dfrac{1}{\sqrt{2}}
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第六题"><a href="#第六题" class="headerlink" title="第六题"></a>第六题</h2><p>设$
+ \begin{equation}
+ \begin{aligned}
+ A=
+ \begin{bmatrix}
+ 2&4&-2\\
+ 1&-1&5\\
+ 4&1&-2
+ \end{bmatrix}
+ 
+ \end{aligned}
+ \end{equation}
+ $，求出$A$的$Doolittle$分解，$Crout$分解和$LDU$分解</p>
+$$
+\begin{equation}
+\begin{aligned}
+A&=
+\begin{bmatrix}
+2&4&-2\\
+1&-1&{5}\\
+4&1&-2\\
+\end{bmatrix} \\
+L_1&=
+\begin{bmatrix}
+1&0&0\\
+{-\dfrac{1}{2}}&1&0\\
+-2&0&1\\
+\end{bmatrix} \\
+L_1A &=
+\begin{bmatrix}
+2&4&-2\\
+0&-3&6\\
+0&-7&2\\
+\end{bmatrix} \\
+L_2&=
+\begin{bmatrix}
+1&0&0\\
+0&1&0\\
+0&{-\dfrac{7}{3}}&1\\
+\end{bmatrix} \\
+L_2L_1A&=
+\begin{bmatrix}
+2&4&-2\\
+0&-3&6\\
+0&0&-12\\
+\end{bmatrix} \\
+Doolittle分解,LU\\
+L=L_1^{-1}L_2^{-1}&=
+\begin{bmatrix}
+1&0&0\\
+{\dfrac{1}{2}}&1&0\\
+2&\dfrac{7}{3}&1\\
+\end{bmatrix} \\
+U&=
+\begin{bmatrix}
+2&4&-2\\
+0&-3&6\\
+0&0&-12\\
+\end{bmatrix} \\
+LDU分解,LDU'\\
+将U化为DU',D&=
+\begin{bmatrix}
+2&0&0\\
+0&-3&0\\
+0&0&-12\\
+\end{bmatrix} \\
+U'&=
+\begin{bmatrix}
+1&2&-1\\
+0&1&-2\\
+0&0&1\\
+\end{bmatrix} \\
+Crout分解L'U'\\
+合并LD得L',L'&=
+\begin{bmatrix}
+2&0&0\\
+1&-3&0\\
+4&-7&-12\\
+\end{bmatrix} \\
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第七题"><a href="#第七题" class="headerlink" title="第七题"></a>第七题</h2><p>利用$Doolittle$分解，$Cholesky$方法和三对角追赶法求解线性方程组</p>
+$$
+\begin{equation}
+\begin{aligned}
+\begin{bmatrix}
+4&1&0\\
+1&5&2\\
+0&2&8
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix}=
+\begin{bmatrix}
+5\\
+8\\
+10
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$$
+
+<h3 id="LU分解"><a href="#LU分解" class="headerlink" title="LU分解"></a>LU分解</h3>$$
+\begin{equation}
+\begin{aligned}
+A&=
+\begin{bmatrix}
+4&1&0\\
+1&5&{2}\\
+0&2&8\\
+\end{bmatrix} \\
+L_1&=
+\begin{bmatrix}
+1&0&0\\
+-\dfrac{1}{4}&1&{0}\\
+0&0&1\\
+\end{bmatrix} \\
+L_1A&=
+\begin{bmatrix}
+4&1&0\\
+0&\dfrac{19}{4}&2\\
+0&2&1\\
+\end{bmatrix} \\
+L_2&=
+\begin{bmatrix}
+1&0&0\\
+0&1&0\\
+0&-\dfrac{8}{19}&1\\
+\end{bmatrix} \\
+L_2L_1A&=
+\begin{bmatrix}
+4&1&0\\
+0&\dfrac{19}{4}&2\\
+0&0&\dfrac{136}{19}\\
+\end{bmatrix} \\
+L=L_1^{-1}L_2^{-1}&=
+\begin{bmatrix}
+1&0&0\\
+\dfrac{1}{4}&1&0\\
+0&\dfrac{8}{19}&1\\
+\end{bmatrix} \\
+U&=
+\begin{bmatrix}
+4&1&0\\
+0&\dfrac{19}{4}&2\\
+0&0&\dfrac{136}{19}\\
+\end{bmatrix} \\
+Ax=b \Rightarrow LUx = b \Rightarrow Ly =b &\Rightarrow 
+\begin{bmatrix}
+1&0&0\\
+\dfrac{1}{4}&1&0\\
+0&\dfrac{8}{19}&1\\
+\end{bmatrix} 
+\begin{bmatrix}
+y_1\\
+y_2\\
+y_3\\
+\end{bmatrix}=
+\begin{bmatrix}
+5\\
+8\\
+10\\
+\end{bmatrix} \\
+\Rightarrow
+ y&=
+\begin{bmatrix}
+5\\
+\dfrac{27}{4}\\
+\dfrac{136}{19}\\
+\end{bmatrix} \\
+Ux=y &\Rightarrow
+ \begin{bmatrix}
+4&1&0\\
+0&\dfrac{19}{4}&2\\
+0&0&\dfrac{136}{19}\\
+\end{bmatrix} 
+\begin{bmatrix}
+y_1\\
+y_2\\
+y_3\\
+\end{bmatrix}=
+\begin{bmatrix}
+5\\
+\dfrac{27}{4}\\
+\dfrac{136}{19}\\
+\end{bmatrix}\\
+\Rightarrow x&=
+\begin{bmatrix}
+1\\
+1\\
+1\\
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$$
+
+<h3 id="Chelesky"><a href="#Chelesky" class="headerlink" title="Chelesky"></a>Chelesky</h3>$$
+\begin{equation}
+\begin{aligned}
+A&=
+\begin{bmatrix}
+4&1&0\\
+1&5&{2}\\
+0&2&8\\
+\end{bmatrix} \\
+因为D_1 &= 4, D_2 = 19, D_3 = 136\\
+所以A&=\tilde L\tilde L^T\\
+\tilde L &=
+\begin{bmatrix}
+2&0&0\\
+\dfrac{1}{2}&\dfrac{\sqrt{19}}{2}&0\\
+0&\dfrac{4}{\sqrt{19}}&\dfrac{\sqrt{136}}{\sqrt{19}}\\
+\end{bmatrix} \\
+Ax=b&\Rightarrow \tilde L\tilde L^Tx =b\Rightarrow \tilde Ly =b\\
+&\Rightarrow
+\begin{bmatrix}
+2&0&0\\
+\dfrac{1}{2}&\dfrac{\sqrt{19}}{2}&0\\
+0&\dfrac{4}{\sqrt{19}}&\dfrac{\sqrt{136}}{\sqrt{19}}\\
+\end{bmatrix} 
+\begin{bmatrix}
+y_1\\
+y_2\\
+y_3\\
+\end{bmatrix}=
+\begin{bmatrix}
+5\\
+8\\
+10\\
+\end{bmatrix} \\
+y &=
+\begin{bmatrix}
+\dfrac{5}{2}\\
+\dfrac{27}{2\sqrt{19}}\\
+\dfrac{\sqrt{136}}{\sqrt{19}}\\
+\end{bmatrix} \\
+\tilde L^Tx=y\Rightarrow x&=
+\begin{bmatrix}
+1\\
+1\\
+1\\
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$$
+
+<h3 id="三对角追赶法"><a href="#三对角追赶法" class="headerlink" title="三对角追赶法"></a>三对角追赶法</h3>$$
+\begin{equation}
+\begin{aligned}
+A &= LU\\
+A&=
+\begin{bmatrix}
+4&1&0\\
+1&5&{2}\\
+0&2&8\\
+\end{bmatrix} \\
+令A'&=\{a_2, a_3\} = \{1, 2\}\\
+B'&=\{b_1, b_2, b_3\} = \{4, 5, 8\}\\
+C'&=\{c_1, c_2\}=\{1, 2\}\\
+D'&=\{d_1, d_2\}=\{c_1, c_2\}=\{1, 2\}\\
+U'&=\{u_1,u_2,u_3\}\\
+L'&=\{l_2,l_3\}\\
+&\Rightarrow u_1 = b_1 = 4 \quad l_2=\dfrac{a_2}{u_1}=\dfrac{1}{4}\\
+&\Rightarrow u_2 = b_2-l_2d_1 = \dfrac{19}{4} \quad l_3 = \dfrac{a_3}{u_2} = \dfrac{8}{19}\\
+&\Rightarrow u_3 = b_3 - l_3d_2 = \dfrac{136}{19}\\
+\Rightarrow L &=
+\begin{bmatrix}
+1&0&0\\
+\dfrac{1}{4}&1&0\\
+0&\dfrac{8}{19}&1\\
+\end{bmatrix} \\
+\Rightarrow U &=
+\begin{bmatrix}
+4&1&0\\
+0&\dfrac{19}{4}&2\\
+0&0&\dfrac{136}{19}\\
+\end{bmatrix} \\
+Ax=b&\Rightarrow LUx=b\\
+Ly=b&\Rightarrow 
+\begin{bmatrix}
+1&0&0\\
+\dfrac{1}{4}&1&0\\
+0&\dfrac{8}{19}&1\\
+\end{bmatrix} 
+\begin{bmatrix}
+y_1\\
+y_2\\
+y_3\\
+\end{bmatrix}=
+\begin{bmatrix}
+5\\
+8\\
+10\\
+\end{bmatrix}\\
+\Rightarrow 
+y &= 
+\begin{bmatrix}
+5\\
+\dfrac{27}{4}\\
+\dfrac{136}{19}\\
+\end{bmatrix}\\
+Ux=y&\Rightarrow  
+\begin{bmatrix}
+4&1&0\\
+0&\dfrac{19}{4}&2\\
+0&0&\dfrac{136}{19}\\
+\end{bmatrix} 
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{bmatrix}=
+\begin{bmatrix}
+5\\
+\dfrac{27}{4}\\
+\dfrac{136}{19}\\
+\end{bmatrix}\\
+\Rightarrow 
+x&=
+\begin{bmatrix}
+1\\
+1\\
+1\\
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第八题"><a href="#第八题" class="headerlink" title="第八题"></a>第八题</h2><p>确定将向量$x=(5,1,12)^T$变换为$y=(0,1,t)^T$的正数$t$以及$Householder$矩阵$H$</p>
+$$
+\begin{aligned}
+	&\quad\because H(\omega)x =y \quad \therefore \Vert x\Vert_2 = \Vert y\Vert_2 \\
+	&\quad\therefore 5^2+1^2+12^2 = 1^2 + t^2 \Rightarrow t = \pm13\\
+    &\quad\because t > 0 \quad \therefore t = 13\\
+    &\quad \therefore\omega = x -y = 
+    \begin{bmatrix}
+	5\\
+	0\\
+	-1\\
+	\end{bmatrix} \\
+	&\quad\therefore H(\omega) = I - \dfrac{2}{\omega^Tw}ww^T = 
+	\begin{bmatrix}
+	1&0&0\\
+	0&1&0\\
+	0&0&1\\
+	\end{bmatrix} -
+	\dfrac{1}{13}
+	\begin{bmatrix}
+	25&0&-5\\
+	0&0&0\\
+	-5&0&1\\
+	\end{bmatrix}\\
+	&=
+	\begin{bmatrix}
+	-\dfrac{12}{13}&0&\dfrac{5}{13}\\
+	0&1&0\\
+	\dfrac{5}{13}&0&\dfrac{12}{13}\\
+	\end{bmatrix}
+\end{aligned}
+$$
+
+<h2 id="第九题"><a href="#第九题" class="headerlink" title="第九题"></a>第九题</h2><p>证明：当$A$为非奇异矩阵时，有$\Vert A^{-1} \Vert_2=\dfrac{1}{\sigma_n}$，其中$\sigma_n$为$A$的最小奇异值</p>
+$$
+\begin{equation}
+\begin{aligned}
+&\because |A|\not=0\\
+&\therefore \exists n阶酉阵U,V使
+A=U
+\begin{bmatrix}
+\sigma_1&&&\\
+&\sigma_2&&\\
+&&\ddots&\\
+&&&\sigma_n
+\end{bmatrix}V^H\\&\quad 不妨设\sigma_1>\sigma_2>\cdots>\sigma_n\\
+&\quad同理有A^{-1}=U_1
+\begin{bmatrix}
+\dfrac{1}{\sigma_n}&&&\\
+&\ddots&&\\
+&&\dfrac{1}{\sigma_2}&\\
+&&&\dfrac{1}{\sigma_1}
+\end{bmatrix}V_1^H\\
+{A^{-1}}^HA^{-1}&=
+V_1
+\begin{bmatrix}
+\dfrac{1}{\sigma_n}&&&\\
+&\ddots&&\\
+&&\dfrac{1}{\sigma_2}&\\
+&&&\dfrac{1}{\sigma_1}
+\end{bmatrix}^HU_1^H
+U_1
+\begin{bmatrix}
+\dfrac{1}{\sigma_n}&&&\\
+&\ddots&&\\
+&&\dfrac{1}{\sigma_2}&\\
+&&&\dfrac{1}{\sigma_1}
+\end{bmatrix}V_1^H\\
+&=V_1
+\begin{bmatrix}
+\dfrac{1}{\sigma_n^2}&&&\\
+&\ddots&&\\
+&&\dfrac{1}{\sigma_2^2}&\\
+&&&\dfrac{1}{\sigma_1^2}
+\end{bmatrix}V_1^H\\
+\Vert A^{-1} \Vert_2^2&=\lambda_{max}({A^{-1}}^HA^{-1})=\sigma_{max}^2({A^{-1}}^HA^{-1})\\
+&\because V_1为酉矩阵\\
+&\therefore {A^{-1}}^HA^{-1} \sim
+\begin{bmatrix}
+\dfrac{1}{\sigma_n^2}&&&\\
+&\ddots&&\\
+&&\dfrac{1}{\sigma_2^2}&\\
+&&&\dfrac{1}{\sigma_1^2}
+\end{bmatrix}\\
+&\therefore \sigma_{max}^2({A^{-1}}^HA^{-1})=\dfrac{1}{\sigma_n^2}\\
+&\quad即\Vert A^{-1} \Vert_2=\dfrac{1}{\sigma_n},其中\sigma_n为A的最小特征值
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第十题"><a href="#第十题" class="headerlink" title="第十题"></a>第十题</h2><p>设$A$的奇异值分解为：</p>
+$$
+\begin{equation}
+\begin{aligned}
+A&=
+\begin{bmatrix}
+\dfrac{3}{5}&-\dfrac{4}{5}&0\\
+\dfrac{-4}{5}&\dfrac{3}{5}&0\\
+0&0&-1
+\end{bmatrix}
+\begin{bmatrix}
+8&0&0\\
+0&6&0\\
+0&0&2
+\end{bmatrix}
+\begin{bmatrix}
+\dfrac{5}{13}&-\dfrac{12}{13}&0\\
+\dfrac{12}{13}&\dfrac{5}{13}&0\\
+0&0&1
+\end{bmatrix}\\
+
+\end{aligned}
+\end{equation}
+$$
+<p>求$\Vert A \Vert_2,\Vert A^{-1} \Vert_2,\Vert A \Vert_F,cond_2(A)$</p>
+$$
+\begin{equation}
+\begin{aligned}
+A&=
+\begin{bmatrix}
+\dfrac{3}{5}&-\dfrac{4}{5}&0\\
+\dfrac{-4}{5}&\dfrac{3}{5}&0\\
+0&0&-1
+\end{bmatrix}
+\begin{bmatrix}
+8&0&0\\
+0&6&0\\
+0&0&2
+\end{bmatrix}
+\begin{bmatrix}
+\dfrac{5}{13}&-\dfrac{12}{13}&0\\
+\dfrac{12}{13}&\dfrac{5}{13}&0\\
+0&0&1
+\end{bmatrix}\\
+\Vert A \Vert_2 &=\sigma_{max}(A) =8\\
+\Vert A^{-1} \Vert_2 &=\dfrac{1}{\sigma_{min}(A)} =\dfrac{1}{2}\\
+\Vert A \Vert_F&= \sqrt{tr(A^HA)}=\sqrt{\sigma_1^2+\sigma_2^2+\sigma_3^2}=2\sqrt{21}\\
+cond_2(A)&=\Vert A \Vert_2\Vert A^{-1} \Vert_2=4
+\end{aligned}
+\end{equation}
+$$]]></content>
+      <categories>
+        <category>Course</category>
+      </categories>
+      <tags>
+        <tag>Math</tag>
+        <tag>Course</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TridiumNiagara</title>
     <url>/2019/10/28/TridiumNiagara/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="JACE"><a href="#JACE" class="headerlink" title="JACE"></a>JACE</h1><p>JACE是一个边缘计算网关，集成200多种协议，具有一定计算能力，其作用为从下面终端设备提取数据上传至服务器，或从服务器获取指令分配到对应设备</p>
@@ -160,8 +1193,8 @@
 <p>则称函数$\Vert \cdot \Vert$为$C^{m \times n}$上的一个矩阵范数</p>
 <p>将矩阵$A$按列分块，$A = (A_1, A_2,…, A_n)$</p>
 <ul>
-<li>矩阵的$m_1$范数，矩阵各元素绝对值之和&emsp;&emsp;$\sum\limits_{j=1}^{n} \Vert A_j \Vert_1 = \sum\limits_{j=1}^{n}\sum\limits_{i=1}^{n}|a_ij|$</li>
-<li>矩阵的$F$范数，矩阵各元素平方和开方&ensp;&emsp;&emsp;$\sum\limits_{j=1}^{n} \Vert A_j \Vert_2 = \sqrt{\sum\limits_{j=1}^{n}\sum\limits_{i=1}^{n}|a_ij|^2}$</li>
+<li>矩阵的$m_1$范数，矩阵各元素绝对值之和&emsp;&emsp;$\sum\limits_{j=1}^{n} \Vert A_j \Vert_1 = \sum\limits_{j=1}^{n}\sum\limits_{i=1}^{n}|a_{ij}|$</li>
+<li>矩阵的$F$范数，矩阵各元素平方和开方&ensp;&emsp;&emsp;$\sum\limits_{j=1}^{n} \Vert A_j \Vert_2 = \sqrt{\sum\limits_{j=1}^{n}\sum\limits_{i=1}^{n}|a_{ij}|^2}$<br>  $\Vert A \Vert_F^2=tr(A^HA)$</li>
 </ul>
 <p><strong>定义1.6</strong> 称如下集合为矩阵$A \in C^{n \times n}$的<strong>谱</strong>$\sigma(A)={\lambda|\Delta(\lambda I-A)=0}$，即<strong>谱</strong>为特征值向量<br>称如下实数为矩阵$A \in C^{n \times n}$的<strong>谱半径</strong>$\rho(A) = \max\limits{i}|\lambda_i|$</p>
 <p><strong>补充</strong> </p>
@@ -178,8 +1211,8 @@
 <p>即$A^HA$，$AA^H$为半正定复对称（Hermite）矩阵</p>
 <h2 id="矩阵范数与向量范数的相容性"><a href="#矩阵范数与向量范数的相容性" class="headerlink" title="矩阵范数与向量范数的相容性"></a>矩阵范数与向量范数的相容性</h2><p><strong>定义1.7</strong> 对于一种矩阵范数$\Vert \cdot \Vert_M$和一种向量范数$\Vert \cdot \Vert_V$，如果对任意$m \times n$矩阵$A$和任意$n$维向量$x$，满足  <center>$\Vert Ax \Vert_V \le \Vert A \Vert_M \Vert x \Vert_V$</center><br>则称矩阵范数$\Vert \cdot \Vert_M$与向量范数$\Vert \cdot \Vert_V$是相容的</p>
 <ul>
-<li>矩阵$m_1$范数与向量的$p$范数是相容的，即&emsp;$\Vert Ax \Vert_p \le \Vert A \Vert_{m_1} \Vert x \Vert_p$<br>证明：设$A = (a_ij) \in C^{n \times n}$，$x = [x_1, x_2,…,x_n]^T \in C^n$<br>&emsp;&emsp;&emsp;&emsp;$\Vert Ax \Vert_p^p = \sum\limits_{i = 1}^n|\sum\limits_{j=1}^n a_{ij} x_j|^p \le \sum\limits_{i = 1}^n(\sum\limits_{j=1}^n |a_{ij}||x_j|)^p $<br>&emsp;&emsp;&emsp;&emsp;$\le \sum\limits_{i = 1}^n[(\sum\limits_{j=1}^n |a_{ij}|)(\sum\limits_{j=1}^n|x_j|)]^p = (\sum\limits_{i = 1}^n\sum\limits_{j=1}^n |a_{ij}|)^p(\sum\limits_{j=1}^n|x_j|)^p$<br>&emsp;&emsp;&emsp;&emsp;$=\Vert A \Vert_{m_1}^p \Vert x \Vert_p^p$</li>
-<li>矩阵$F$范数与向量的$2$范数是相容的，即&emsp;&emsp;$\Vert Ax \Vert_2 \le \Vert A \Vert_{F} \Vert x \Vert_2$<br>证明：设$A = (a_ij) \in C^{n \times n}$，$x = [x_1, x_2,…,x_n]^T \in C^n$<br>&emsp;&emsp;&emsp;&emsp;$\Vert Ax \Vert_2^2 = \sum\limits_{i = 1}^n|\sum\limits_{j=1}^n a_{ij} x_j|^2 \le \sum\limits_{i = 1}^n(\sum\limits_{j=1}^n |a_{ij}||x_j|)^2 $<br>&emsp;&emsp;&emsp;&emsp;$\le \sum\limits_{i = 1}^n[(\sum\limits_{j=1}^n |a_{ij}|)(\sum\limits_{j=1}^n|x_j|)]^2 = (\sum\limits_{i = 1}^n\sum\limits_{j=1}^n |a_{ij}|)^2(\sum\limits_{j=1}^n|x_j|)^2$<br>&emsp;&emsp;&emsp;&emsp;$=\Vert A \Vert_{F}^2 \Vert x \Vert_2^2$</li>
+<li>矩阵$m_1$范数与向量的$p$范数是相容的，即&emsp;$\Vert Ax \Vert_p \le \Vert A \Vert_{m_1} \Vert x \Vert_p$<br>证明：设$A = (a_{ij}) \in C^{n \times n}$，$x = [x_1, x_2,…,x_n]^T \in C^n$<br>&emsp;&emsp;&emsp;&emsp;$\Vert Ax \Vert_p^p = \sum\limits_{i = 1}^n|\sum\limits_{j=1}^n a_{ij} x_j|^p \le \sum\limits_{i = 1}^n(\sum\limits_{j=1}^n |a_{ij}||x_j|)^p $<br>&emsp;&emsp;&emsp;&emsp;$\le \sum\limits_{i = 1}^n[(\sum\limits_{j=1}^n |a_{ij}|)(\sum\limits_{j=1}^n|x_j|)]^p = (\sum\limits_{i = 1}^n\sum\limits_{j=1}^n |a_{ij}|)^p(\sum\limits_{j=1}^n|x_j|)^p$<br>&emsp;&emsp;&emsp;&emsp;$=\Vert A \Vert_{m_1}^p \Vert x \Vert_p^p$</li>
+<li>矩阵$F$范数与向量的$2$范数是相容的，即&emsp;&emsp;$\Vert Ax \Vert_2 \le \Vert A \Vert_{F} \Vert x \Vert_2$<br>证明：设$A = (a_{ij}) \in C^{n \times n}$，$x = [x_1, x_2,…,x_n]^T \in C^n$<br>&emsp;&emsp;&emsp;&emsp;$\Vert Ax \Vert_2^2 = \sum\limits_{i = 1}^n|\sum\limits_{j=1}^n a_{ij} x_j|^2 \le \sum\limits_{i = 1}^n(\sum\limits_{j=1}^n |a_{ij}||x_j|)^2 $<br>&emsp;&emsp;&emsp;&emsp;$\le \sum\limits_{i = 1}^n[(\sum\limits_{j=1}^n |a_{ij}|)(\sum\limits_{j=1}^n|x_j|)]^2 = (\sum\limits_{i = 1}^n\sum\limits_{j=1}^n |a_{ij}|)^2(\sum\limits_{j=1}^n|x_j|)^2$<br>&emsp;&emsp;&emsp;&emsp;$=\Vert A \Vert_{F}^2 \Vert x \Vert_2^2$</li>
 </ul>
 <p>证明方法类似，可以证明任意一种矩阵范数必然存在与之相容的向量范数</p>
 <h2 id="算子范数"><a href="#算子范数" class="headerlink" title="算子范数"></a>算子范数</h2><p><strong>定理1.3</strong> $C^n$上的任何向量范数$f(x) = \Vert x \Vert$，则$f(x)$为$x$的分量$x_1, x_2,…,x_n$的连续函数<br><strong>定理1.4</strong> 已知$C^m$和$C^n$上的同类向量范数$\Vert \cdot \Vert_v$，$A$为$m \times n$矩阵，定义  <center>$\Vert A \Vert_M = \max\limits_{x \not= 0}\dfrac{\Vert Ax \Vert_V}{\Vert x \Vert_V} = \max\limits_{\Vert x \Vert_V = 1}\Vert Ax \Vert_V$</center><br>则$\Vert A \Vert_M$是一种矩阵范数，且与已知的向量范数相容，称由上述关系式定义的矩阵范数为<strong>从属向量范数的矩阵范数</strong>简称<strong>从属范数</strong>或<strong>算子范数</strong><br>证明：</p>
@@ -215,9 +1248,6 @@
 <li>$\Vert (I \pm A)^{-1} \Vert \le \dfrac{\Vert I \Vert}{1 - \Vert A \Vert}$<br>  证明：$(I \pm A)^{-1}(I \pm A) = I \Rightarrow (I \pm A)^{-1} \pm (I \pm A)^{-1}A = I$<br>  &emsp;&emsp;&emsp;$\Vert (I \pm A)^{-1} \Vert = \Vert I \mp (I \pm A)^{-1}A \Vert \le \Vert I \Vert + \Vert (I \pm A)^{-1}\Vert \Vert A \Vert$<br>  &emsp;&emsp;&emsp;$\Rightarrow \Vert (I \pm A)^{-1} \Vert \le \dfrac{\Vert I \Vert}{1 - \Vert A \Vert}$</li>
 <li>$\Vert I - (I \pm A)^{-1} \Vert \le \dfrac{\Vert A \Vert}{1 - \Vert A \Vert}$<br>  证明：$((I \pm A) - I)(I \pm A)^{-1} = (I \pm A) - I = \pm A$<br>  &emsp;&emsp;&emsp;$\Rightarrow I - (I \pm A)^{-1} = \dfrac{\pm A}{(I \pm A)}$<br>  &emsp;&emsp;&emsp;$\Vert (I - (I \pm A)^{-1}) \Vert = \Vert \dfrac{\pm A}{(I \pm A)} \Vert \le \dfrac{\vert A \vert}{1 - \vert A \vert}$<br>  注：根据三角不等式（不等关系）且因为$\vert A \vert &lt; 1$（去绝对值），所以$\vert I \pm A \vert \ge 1 - \vert A \vert $</li>
 </ul>
-<hr>
-<p>title: 计算方法第二章<br>date: 2019-11-03 17:01:32<br>tags: [Math, Course]<br>categories: Course<br>description: <center>计算方法第二章知识点归纳</center></p>
-<hr>
 <h1 id="矩阵变换和计算"><a href="#矩阵变换和计算" class="headerlink" title="矩阵变换和计算"></a>矩阵变换和计算</h1><h2 id="高斯消去法"><a href="#高斯消去法" class="headerlink" title="高斯消去法"></a>高斯消去法</h2><p>利用初等行变换将增广矩阵$(A|B)$转化成上三角矩阵(U|c)，然后通过回代求解与$Ax=b$同解的三角方程组$Ux=c$<br>高斯消去法的计算量：设系数矩阵$A_{n \times n}$</p>
 <ul>
 <li>第一行：(n + 1)(n - 1)</li>
@@ -714,7 +1744,7 @@ $
 <li>Jordan链的链首$t_1^i$不仅要求是一个特征向量，而且还要利用上述公式求出其他向量$t_2^i,\cdots,t_{n_i}^i$（即不是任何一个特征向量都可作为Jordan链链首）</li>
 <li>对于某个特征值\lambda_i的Jordan链虽然一定存在，但当与\lambda_i相对应的线性无关的特征向量的个数大于或等于2时，关于特征值\lambda_i的那些特征向量中的任何一个有可能都不能作为链首<br>所以必须从$\lambda_i$的特征子空间中选取适当的向量做Jordan链链首，根据多个特征向量进行线性组合还是特征向量的特性</li>
 </ul>
-<h2 id="Hamilton-Caylay-定理及其应用"><a href="#Hamilton-Caylay-定理及其应用" class="headerlink" title="$Hamilton-Caylay$定理及其应用"></a>$Hamilton-Caylay$定理及其应用</h2><p>设$A\in C^{n\times n} \quad \psi(\lambda) = det(\lambda I - A)$，则$\psi(A) = 0$<br>$Hamilton-Caylay$定理在简化计算中的应用</p>
+<h2 id="Hamilton-Caylay定理及其应用"><a href="#Hamilton-Caylay定理及其应用" class="headerlink" title="Hamilton-Caylay定理及其应用"></a>Hamilton-Caylay定理及其应用</h2><p>设$A\in C^{n\times n} \quad \psi(\lambda) = det(\lambda I - A)$，则$\psi(A) = 0$<br>$Hamilton-Caylay$定理在简化计算中的应用</p>
 <ul>
 <li>求矩阵多项式$f(A)$<br>  首先根据公式求出$\psi(\lambda)$，然后根据$f(\lambda)=g(\lambda)\psi(\lambda) + h(\lambda)$<br>  由定理可知，$\psi(A)=0$，所以$f(A) = h(A)$</li>
 <li>求矩阵的逆<br>  根据$\psi(A)=0$，可得$\psi(A)=a_nA^n + \cdots + a_1A^1 + a_0I = 0$<br>  可得$A^{-1}=t(A)$，$t(A)$为A的多项式，计算即可得逆矩阵</li>
@@ -955,7 +1985,9 @@ $
 
 </li>
 </ul>
-<h2 id="用矩阵的奇异值讨论矩阵的性质"><a href="#用矩阵的奇异值讨论矩阵的性质" class="headerlink" title="用矩阵的奇异值讨论矩阵的性质"></a>用矩阵的奇异值讨论矩阵的性质</h2><p><strong>定理2.17</strong> 矩阵$A$的非零奇异值的个数恰为矩阵$A$的秩，即为计算矩阵$A$的秩的数值方法，同时也是判断一个向量组是否线性相关的数值方法<br><strong>定理2.18</strong> $R(A)=span \{ u_1,u_2,\cdots,u_r \} ,N(A)=span\{v_{r+1},v_{r+2},\cdots,v_{n},\}$，其中$\forall A \in R^{m\times n}$<br>其中$R(A)=\{y\in R^m|Ax=y,\forall x \in R^n\}$称为$A$的<strong>值域</strong>或者<strong>像空间</strong><br> $R(A)=\{y\in R^n|Ax=0\}$称为$A$的<strong>零空间</strong>或者<strong>核</strong><br>该定理表明，借助矩阵的奇异值$(SVD)$分解，可以确定子空间$R(A)$和$N(A)$的一组标准正交基<br>由矩阵$A$的约化奇异值分解：$A=U_1\Sigma V_1^H$可得$AV_1=U_1\Sigma=(\sigma_1u_1,\sigma_2u_2,\cdots,\sigma_ru_r)$<br>又由$V_2^HA^HAV_2=(AV_2)^H(AV_2)=0$得出$AV_2=0$<br>而$U_1=(u_1,u_2,\cdots,u_r),V_2=(v_{r+1},v_{r+2},\cdots,v_{n})$<br>分别构成标准正交向量组，生成$r$维和$n-r$维两个子空间<br>$y=\sum\limits_{i=1}^r \alpha_i u_i \in span{u_1,u_2,\cdots,u_r} \Rightarrow Ax=y$<br>$x=\sum\limits_{i=1}^{n-r} \alpha_i v_{r+i} \in span{v_{r+1},v_{r+2},\cdots,v_n} \Rightarrow Ax=0$</p>
+<h2 id="用矩阵的奇异值讨论矩阵的性质"><a href="#用矩阵的奇异值讨论矩阵的性质" class="headerlink" title="用矩阵的奇异值讨论矩阵的性质"></a>用矩阵的奇异值讨论矩阵的性质</h2><p><strong>定理2.17</strong> 矩阵$A$的非零奇异值的个数恰为矩阵$A$的秩，即为计算矩阵$A$的秩的数值方法，同时也是判断一个向量组是否线性相关的数值方法<br><strong>定理2.18</strong> </p>
+$R(A)=span \{ u_1,u_2,\cdots,u_r \} ,N(A)=span\{v_{r+1},v_{r+2},\cdots,v_{n},\}$，其中$\forall A \in R^{m\times n}$
+<p>其中$R(A)=\{y\in R^m|Ax=y,\forall x \in R^n\}$称为$A$的<strong>值域</strong>或者<strong>像空间</strong><br> $R(A)=\{y\in R^n|Ax=0\}$称为$A$的<strong>零空间</strong>或者<strong>核</strong><br>该定理表明，借助矩阵的奇异值$(SVD)$分解，可以确定子空间$R(A)$和$N(A)$的一组标准正交基<br>由矩阵$A$的约化奇异值分解：$A=U_1\Sigma V_1^H$可得$AV_1=U_1\Sigma=(\sigma_1u_1,\sigma_2u_2,\cdots,\sigma_ru_r)$<br>又由$V_2^HA^HAV_2=(AV_2)^H(AV_2)=0$得出$AV_2=0$<br>而$U_1=(u_1,u_2,\cdots,u_r),V_2=(v_{r+1},v_{r+2},\cdots,v_{n})$<br>分别构成标准正交向量组，生成$r$维和$n-r$维两个子空间<br>$y=\sum\limits_{i=1}^r \alpha_i u_i \in span{u_1,u_2,\cdots,u_r} \Rightarrow Ax=y$<br>$x=\sum\limits_{i=1}^{n-r} \alpha_i v_{r+i} \in span{v_{r+1},v_{r+2},\cdots,v_n} \Rightarrow Ax=0$</p>
 <p><strong>定理2.19</strong>设$A$的非零奇异值为$\sigma_1 \ge \sigma_2 \ge \cdots \ge \sigma_r \ge 0$，则<br>$$\Vert A \Vert_2 = \sigma_1,\Vert A \Vert_F=\sqrt{\sigma_1^2+\sigma_2^2+\cdots+\sigma_r^2}$$<br>证明：</p>
 
 $$\begin{equation}
@@ -985,7 +2017,7 @@ $$
 \end{equation}
   
 
-<p>由<strong>定理2.19</strong>可得$\Vert A\Vert_2=\sqrt{\lambda_{max}(A^HA)},\Vert A^{-1}\Vert_2=\sqrt{\dfrac{1}{\lambda_{max}(A^HA)}}$<br>则$cond_2(A)=\Vert A\Vert_2 \Vert A^{-1}\Vert_2=\sqrt{dfrac{\lambda_{max}(A^HA)}{\lambda_{min}(A^HA)}}$</p>
+<p>由<strong>定理2.19</strong>可得$\Vert A\Vert_2=\sqrt{\lambda_{max}(A^HA)},\Vert A^{-1}\Vert_2=\sqrt{\dfrac{1}{\lambda_{max}(A^HA)}}$<br>则$cond_2(A)=\Vert A\Vert_2 \Vert A^{-1}\Vert_2=\sqrt{\dfrac{\lambda_{max}(A^HA)}{\lambda_{min}(A^HA)}}$</p>
 <p><strong>定理2.20</strong> 如果$A$为$Hermite$矩阵，则$A$的奇异值即为$A^H=A$的特征值的绝对值<br>证明：由$A^HA=A^2$<br>$$\sigma_i(A)=\sqrt{\lambda_{i}(A^HA)}=\sqrt{\lambda_{i}(A^2)}=\sqrt{\lambda_{i}(A)}=|\lambda_i(A)|$$</p>
 <p><strong>定理2.21</strong> 如果$A$为$n$阶方阵，则$|det(A)|=\prod\limits_{i=1}^n\sigma_i(A)$<br>证明：</p>
 $$
@@ -1031,7 +2063,7 @@ v_r^H
 <h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><p>推荐一款轻便简洁的Markdown编辑器<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a></p>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一阶标题      </span></span><br><span class="line"><span class="section">## 二阶标题     </span></span><br><span class="line"><span class="section">### 三阶标题    </span></span><br><span class="line"><span class="section">#### 四阶标题   </span></span><br><span class="line"><span class="section">##### 五阶标题  </span></span><br><span class="line"><span class="section">###### 六阶标题</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;下划线的内容&lt;/u&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线的内容<span class="xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <h2 id="字体加粗"><a href="#字体加粗" class="headerlink" title="字体加粗"></a>字体加粗</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
 
@@ -1039,7 +2071,7 @@ v_r^H
 
 <h2 id="空格符"><a href="#空格符" class="headerlink" title="空格符"></a>空格符</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&amp;ensp;  //一个空格</span><br><span class="line">&amp;emsp;  //两个空格</span><br></pre></td></tr></table></figure>
 
-<h2 id="居中文本"><a href="#居中文本" class="headerlink" title="居中文本"></a>居中文本</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;center&gt;这是要居中的文本内容&lt;/center&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="居中文本"><a href="#居中文本" class="headerlink" title="居中文本"></a>居中文本</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span>这是要居中的文本内容<span class="xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">***</span> </span><br><span class="line">或</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
@@ -1062,7 +2094,7 @@ v_r^H
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列名1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列名2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列名3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列1数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列2数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列3数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>无法实现文本内容居中，居右表示，只能默认居左表示<br>目前只想到通过修改当前页面全局CSS来改变位置，在文章前面加入如下CSS来实现居中显示：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    th&#123;text-align: center&#125;</span><br><span class="line">    td&#123;text-align: center&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">th</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">td</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="插入代码"><a href="#插入代码" class="headerlink" title="插入代码"></a>插入代码</h2><h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`单行代码内容`</span></span><br></pre></td></tr></table></figure>
 
