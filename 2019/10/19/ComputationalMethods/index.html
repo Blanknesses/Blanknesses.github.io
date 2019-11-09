@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法知识点归纳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-06T07:49:50.788Z">
+<meta property="og:updated_time" content="2019-11-09T15:56:32.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法知识点">
 <meta name="twitter:description" content="计算方法知识点归纳">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  14.2k
+                  15.9k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  68
+                  76
                 </span>
               
             </div>
@@ -683,7 +683,7 @@ $$
 <p><strong>Crout分解</strong> $LU$分解中$L$为下三角矩阵$U$为单位上三角矩阵<br><strong>LDU分解</strong> $L$为单位下三角矩阵$D$为非奇异对角矩阵$U$为单位上三角矩阵</p>
 <h2 id="利用-LU-分解求矩阵的逆"><a href="#利用-LU-分解求矩阵的逆" class="headerlink" title="利用$LU$分解求矩阵的逆"></a>利用$LU$分解求矩阵的逆</h2><p>如前文所述，令$x = [x_1, x_2,…,x_n], I = [I_1, I_2,…,I_n]$此处可以看成<br>$Ax = LUx_i = I_i \quad i = 1,2,…,n$</p>
 <p>同时，若某步$a_{kk}^{k-1} \not= 0$，但很小，会造成很大的舍入误差，无法使用$LU$分解</p>
-<h2 id="高斯列主元消去法"><a href="#高斯列主元消去法" class="headerlink" title="高斯列主元消去法"></a>高斯列主元消去法</h2><p>高斯列主元消去法即为在高斯消去法的基础上增加选主元的过程，即在第$k \quad k=1,2,…,n-1$步消元时，首先在第$k$列主对角元以下元素中挑选绝对值最大的数，经过初等行变换，使其成为$a_{kk}{k-1}$，再继续消元<br>置换矩阵，左乘行交换，右乘列交换</p>
+<h2 id="高斯列主元消去法"><a href="#高斯列主元消去法" class="headerlink" title="高斯列主元消去法"></a>高斯列主元消去法</h2><p>高斯列主元消去法即为在高斯消去法的基础上增加选主元的过程，即在第$k \quad k=1,2,…,n-1$步消元时，首先在第$k$列主对角元以下元素中挑选绝对值最大的数，经过初等行变换，使其成为$a_{kk}^{(k-1)}$，再继续消元<br>置换矩阵，左乘行交换，右乘列交换</p>
 <h2 id="带列主元的-LU-分解"><a href="#带列主元的-LU-分解" class="headerlink" title="带列主元的$LU$分解"></a>带列主元的$LU$分解</h2><p>根据如上定义，经过带列主元的$LU$分解，我们可以得到$L_{n-1}P_{n-1}…L_2P_2L_1P_1A = U$<br>但是$L_{n-1}P_{n-1}…L_2P_2L_1P_1$不是单位下三角矩阵，故经过如下改写：<br>$L_{n-1}(P_{n-1}L_{n-2}P_{n-1}^{-1})(P_{n-1}…P_2L_2P_2^{-1}…P_{n-1}^{-1})(P_{n-1}…P_2P_1)A = U$</p>
 <h2 id="对称正定矩阵的Cholesky分解法"><a href="#对称正定矩阵的Cholesky分解法" class="headerlink" title="对称正定矩阵的Cholesky分解法"></a>对称正定矩阵的Cholesky分解法</h2><p>正定（半正定）对称矩阵的定义和某些性质</p>
 <ul>
@@ -980,7 +980,7 @@ $$
 
 </li>
 </ul>
-<h2 id="矩阵的谱半径与矩阵范数关系"><a href="#矩阵的谱半径与矩阵范数关系" class="headerlink" title="矩阵的谱半径与矩阵范数关系"></a>矩阵的谱半径与矩阵范数关系</h2><p><strong>定理2.9</strong> 设$A$为$n$阶方阵，$\varepsilon &gt; 0$，则在$C^{n\times n}$中存在一种矩阵范数$\Vert cdot \Vert_M$（依赖矩阵$A$$\varepsilon$），满足$\Vert I \Vert_M=1$，且$\Vert A \Vert_M\le \rho(A) + \varepsilon$<br>构造性证明：<br>根据Schur定理，存在$n$阶酉阵$U$，使得$R=U^HAU$为上三角矩阵，其中对角元为矩阵$A$的特征值<br>记矩阵$R$的上三角元素为$R_{ij}(j\ge i)$，对任意的$\varepsilon &gt; 0$，取  </p>
+<h2 id="矩阵的谱半径与矩阵范数关系"><a href="#矩阵的谱半径与矩阵范数关系" class="headerlink" title="矩阵的谱半径与矩阵范数关系"></a>矩阵的谱半径与矩阵范数关系</h2><p><strong>定理2.9</strong> 设$A$为$n$阶方阵，$\varepsilon &gt; 0$，则在$C^{n\times n}$中存在一种矩阵范数$\Vert \cdot \Vert_M$（依赖矩阵$A$$\varepsilon$），满足$\Vert I \Vert_M=1$，且$\Vert A \Vert_M\le \rho(A) + \varepsilon$<br>构造性证明：<br>根据Schur定理，存在$n$阶酉阵$U$，使得$R=U^HAU$为上三角矩阵，其中对角元为矩阵$A$的特征值<br>记矩阵$R$的上三角元素为$R_{ij}(j\ge i)$，对任意的$\varepsilon &gt; 0$，取  </p>
 
 $
 \begin{equation}
@@ -1394,7 +1394,7 @@ $$
 \end{equation}
   
 
-<p>由<strong>定理2.19</strong>可得$\Vert A\Vert_2=\sqrt{\lambda_{max}(A^HA)},\Vert A^{-1}\Vert_2=\sqrt{\dfrac{1}{\lambda_{max}(A^HA)}}$<br>则$cond_2(A)=\Vert A\Vert_2 \Vert A^{-1}\Vert_2=\sqrt{\dfrac{\lambda_{max}(A^HA)}{\lambda_{min}(A^HA)}}$</p>
+<p>由<strong>定理2.19</strong>可得<br>$\Vert A\Vert_2=\sqrt{\lambda_{max}(A^HA)},\Vert A^{-1}\Vert_2=\sqrt{\dfrac{1}{\lambda_{max}(A^HA)}}$<br>则$cond_2(A)=\Vert A\Vert_2 \Vert A^{-1}\Vert_2=\sqrt{\dfrac{\lambda_{max}(A^HA)}{\lambda_{min}(A^HA)}}$</p>
 <p><strong>定理2.20</strong> 如果$A$为$Hermite$矩阵，则$A$的奇异值即为$A^H=A$的特征值的绝对值<br>证明：由$A^HA=A^2$<br>$$\sigma_i(A)=\sqrt{\lambda_{i}(A^HA)}=\sqrt{\lambda_{i}(A^2)}=\sqrt{\lambda_{i}(A)}=|\lambda_i(A)|$$</p>
 <p><strong>定理2.21</strong> 如果$A$为$n$阶方阵，则$|det(A)|=\prod\limits_{i=1}^n\sigma_i(A)$<br>证明：</p>
 $$
@@ -1422,6 +1422,56 @@ v_r^H
 &=\sigma_1u_1v_1+\sigma_2u_2v_2+\cdots+\sigma_ru_rv_r
 \end{aligned}
 \end{equation}
+
+
+<h1 id="矩阵分析基础"><a href="#矩阵分析基础" class="headerlink" title="矩阵分析基础"></a>矩阵分析基础</h1><h2 id="矩阵序列及其收敛定义和性质"><a href="#矩阵序列及其收敛定义和性质" class="headerlink" title="矩阵序列及其收敛定义和性质"></a>矩阵序列及其收敛定义和性质</h2><p><strong>矩阵序列</strong><br>按整数$k$的序列，将$C^{m\times n}$中的矩阵排成一列$A_1,A_2,A_3,\cdots,A_k,\cdots$<br>称这列有序的矩阵为<strong>矩阵序列</strong>，称$A_k$为<strong>矩阵序列的一般项</strong></p>
+<p><strong>定义3.1</strong> $\{A_k\}_{k=1}^\infty$为$C^{m\times n}$中的矩阵序列，其中$A_k=(a_{ij}^{(k)}), A=(a_{ij})\in C^{m\times n}$。如果$\lim\limits_{k\rightarrow \infty} a_{ij}^{(k)}=a_{ij}$对$i=1,2,3,\cdots,m\quad j=1,2,3,\cdots,n$均成立，则称矩阵序列$\{A_k\}_{k=1}^\infty$收敛，而$A$称为矩阵序列$\{A_k\}_{k=1}^\infty$的极限，记为$\lim\limits_{k\rightarrow \infty}A_k=A$。不收敛的矩阵序列称为发散的</p>
+<p><strong>矩阵序列的性质</strong><br><strong>定理3.1</strong> 设$\{A_k\}_{k=1}^\infty$为$C^{m\times n}$中的矩阵序列，$\Vert \cdot\Vert$为$C^{m\times n}$中的一种矩阵范数，则矩阵序列$\{A_k\}_{k=1}^\infty$收敛于矩阵$A$的充要条件是$\Vert A_k - A\Vert$收敛于0.<br>证明：根据范式的等价性可得，对于$C^{m\times n}$中的任意两个矩阵范数$\Vert \cdot\Vert_t$和$\Vert \cdot\Vert_s$，存在常数$c_2\ge c_1\ge 0$，使得<br>$$c_2\cdot \Vert A_k - A\Vert_t \le \Vert A_k - A\Vert_s \le c_1\cdot \Vert A_k - A\Vert_t$$<br>即有$\lim\limits_{k\rightarrow \infty}\Vert A_k - A\Vert_t=0=\lim\limits_{k\rightarrow \infty}\Vert A_k - A\Vert$<br>即任意范数收敛于零是一致的</p>
+<p><strong>推论3.1</strong> 设$\{A_k\}_{k=1}^\infty,A\in C^{m\times n}$，并且$\lim\limits_{k\rightarrow \infty}A_k=A$，则$\lim\limits_{k\rightarrow \infty}\Vert A_k\Vert =\Vert A\Vert$<br>证明：<br>因为$\left\vert \Vert A_k\Vert-\Vert A \Vert \right\vert \le |A_k-A|$，所以结论成立，但反过来不一定成立，例如$A_k$存在元素为$(-1)^k$发散，但是在$F$范数下，与$A$中对应位置元素相等</p>
+<p><strong>性质3.1</strong> 设$\{A_k\}_{k=1}^\infty$和$\{B_k\}_{k=1}^\infty$为$C^{m\times n}$中的矩阵序列，并且$\lim\limits_{k\rightarrow \infty}A_k=A,\lim\limits_{k\rightarrow \infty}B_k=B$则有<br>$$ \lim\limits_{k\rightarrow \infty}(\alpha A_k + \beta B_k)=\alpha A + \beta B\quad \forall \alpha,\beta \in C$$<br>证明：<br>$$\Vert (\alpha A_k + \beta B_k) - (\alpha A + \beta B)\Vert \le |\alpha|\Vert A_k-A \Vert + |\beta|\Vert B_k-B \Vert = \alpha A + \beta B$$</p>
+<p><strong>性质3.2</strong> 设$\{A_k\}_{k=1}^\infty$和$\{B_k\}_{k=1}^\infty$分为$C^{m\times n}$和$C^{n\times l}$中的矩阵序列，并且$\lim\limits_{k\rightarrow \infty}A_k=A,\lim\limits_{k\rightarrow \infty}B_k=B$则有<br>$$ \lim\limits_{k\rightarrow \infty}(A_k B_k)= AB$$<br>证明：</p>
+$$
+\begin{equation}
+\begin{aligned}
+\Vert A_kB_k - AB\Vert &= \Vert A_kB_k - A_kB + A_kB - AB\Vert \\
+&\le  \Vert A_k \Vert\Vert B_k - B\Vert +\Vert B \Vert\Vert A_k - A\Vert
+\end{aligned}
+\end{equation}
+$$
+
+<p><strong>性质3.3</strong> 设$\{A_k\}_{k=1}^\infty \in C^{n\times n}$中的矩阵序列，$\lim\limits_{k\rightarrow \infty}A_k =A$且有$A_k(k=1,2,\cdots)$和$A\in C^{n\times n}$<strong>均为可逆矩阵</strong>，则$\lim\limits_{k\rightarrow \infty}A_k^{-1}=A^{-1}$<br>证明：</p>
+$$
+\begin{equation}
+\begin{aligned}
+&\because (A_k)^{-1}和A^{-1}存在 \\
+&\therefore \lim\limits_{k\rightarrow \infty} det(A_k)=det(A)\not=0 \\
+&\therefore \lim\limits_{k\rightarrow \infty}\tilde{A_k}=\lim\limits_{k\rightarrow \infty}\tilde{A}\not=0 \\
+&\therefore \lim\limits_{k\rightarrow \infty}(A_k)^{-1}=\lim\limits_{k\rightarrow \infty}\dfrac{\tilde{A_k}}{det(A_k)}= \dfrac{\tilde{A}}{det(A)} = A^{-1}
+
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="收敛矩阵"><a href="#收敛矩阵" class="headerlink" title="收敛矩阵"></a>收敛矩阵</h2><p>一般矩阵序列$\{A_k\}_{k=1}^\infty \in C^{m\times n}$，即$A_1, A_2, \cdots, A_k$<br>在矩阵序列中，最常见的是由一个方阵的幂构成的序列：$$\{A_k\}_{k=1}^\infty \in C^{n\times n}$$，即$I,A,A^2,\cdots,A^k$</p>
+<p><strong>定义3.2</strong> 设$A\in C^{n\times n}$，若$\lim\limits_{k\rightarrow \infty}A^k=0$，则称$A$为<strong>收敛矩阵</strong><br><strong>收敛定理</strong> 设$A\in C^{n\times n}$，证明$\lim\limits_{k\rightarrow \infty}A^k=0$的充要条件为$\rho(A) &lt; 1$<br>证明：</p>
+<ul>
+<li>必要性：$\lim\limits_{k\rightarrow \infty}A^k=0$的充要条件为对任意矩阵范数均由$\lim\limits_{k\rightarrow \infty}\Vert A^k - 0 \Vert=\lim\limits_{k\rightarrow \infty}\Vert A^k \Vert=0$。所以对于充分大的$k$，必有$\Vert A^k \Vert &lt; 1$，根据谱半径定义以及相容矩阵范数性质可得<br>  $$(\rho(A))^k=\rho(A^k)\le \Vert A^k \Vert &lt; 1$$<br>  所以有$\rho(A)&lt;1$</li>
+<li>充分性：根据定理2.9，令$\sigma = \dfrac{1}{2}(1-\rho(A))&gt;0$，一定存在一种相容的矩阵范数使$\Vert A \Vert \le \rho(A) + \sigma$<br>  因为$\rho(A) &lt; 1$，所以有$\rho(A) + \sigma = \dfrac{1}{2}(1+\rho(A)) &lt; 1$<br>  则有$\Vert A^k \Vert \le \Vert A \Vert^k \le (\rho(A) + \sigma)^k \le 1$<br>  所以$\lim\limits_{k\rightarrow \infty}\Vert A^k\Vert=0$</li>
+</ul>
+<p><strong>推论3.2</strong> 设$A \in C^{n\times n}$，若对 $C^{m\times n}$上的某种范数有$\Vert A\Vert &lt; 0$，则$\lim\limits_{k\rightarrow \infty}A^k=0$</p>
+<h2 id="矩阵级数"><a href="#矩阵级数" class="headerlink" title="矩阵级数"></a>矩阵级数</h2><p><strong>定义3.3</strong> 设$\{A_k\}_{k=1}^\infty$为$C^{m\times n}$中的矩阵序列，称$A_1+A_2+\cdots+A_k+\cdots$为由矩阵序列$\{A_k\}_{k=1}^\infty$构成的矩阵级数，记为$\sum\limits_{k=1}^{\infty}A_k$</p>
+<p><strong>定义3.4</strong> 记$S_k = \sum\limits_{i=1}^{k}A_i$，称之为矩阵级数$\sum\limits_{k=1}^{\infty}A_k$的前$k$项部分和。若矩阵序列$\{S_k\}_{k=1}^\infty$收敛且$\lim\limits_{k\rightarrow \infty}S_k=S$，则称矩阵级数$\sum\limits_{k=1}^{\infty}A_k$收敛，而矩阵$S$称为矩阵级数的和矩阵，记为$S=\sum\limits_{k=1}^{\infty}A_k$，不收敛的矩阵级数称为发散的<br>显然，和$\sum\limits_{k=1}^{\infty}A_k=S=(s_{ij})$的意义指的是：$\sum\limits_{k=1}^{\infty}a_{ij}^{(k)}=s_{ij}$$ \quad i=1,2,\cdots,m \quad j=1,2,\cdots,n$，即$m\times n$个数项级数$\sum\limits_{k=1}^{\infty}a_{ij}^{(k)}$均为收敛的</p>
+<p><strong>定义3.5</strong> 设$A$为$n$阶方阵，则有</p>
+<ul>
+<li>$\sum\limits_{k=0}^{\infty}A^k = I +A +A^2+\cdots + A^k+ \cdots$收敛的充要条件是$\rho(A)&lt;1$</li>
+<li>当$\sum\limits_{k=0}^{\infty}A^k$收敛时，有$\sum\limits_{k=0}^{\infty}A^k=(I-A)^{-1}$</li>
+</ul>
+<p>而且存在$C^{n\times n}$上的算子范数$\Vert \cdot\Vert$使得<br>$$\left\Vert(I-A)^{-1} - $\sum\limits_{k=0}^{\infty}A_k \right\Vert \le \dfrac{\Vert A\Vert^{m+1}}{1-\Vert A\Vert}$$</p>
+<p>证明：</p>
+<ul>
+<li>必要性：若矩阵级数$\sum\limits_{k=1}^{\infty}A_k$收敛，则有$S = \lim\limits_{k\rightarrow \infty}S_k$<br>  级数$I +A +A^2+\cdots + A^k+ \cdots$的前$k$项部分和与前$k+1$项部分和分别为：<br>  $$S_k = I +A +A^2+\cdots + A^{k-1}\quad S_{k+1}I +A +A^2+\cdots + A^k$$<br>  所以$A_k = S_{k+1}-S_k, \lim\limits_{k\rightarrow \infty}A_k = \lim\limits_{k\rightarrow \infty}(S_{k+1}-S_k)=0$<br>  所以$\rho(A)&lt;1$（由收敛定理得）</li>
+<li>充分性：由$AS_k=A(I +A +A^2+\cdots + A^{k-1})=A+A^2+\cdots+A^k$，可得$S_k-AS_{k-1}=I-A^k$，即$(I_A)S_k=I-A^k$<br>  因为$\rho(A)&lt;1$，可知存在某种矩阵范数，使得$\Vert A\Vert &lt; 1$，且$(I-A)$可逆（定理1.9），又因为$\lim\limits_{k\rightarrow \infty}A^k=0$<br>  $\sum\limits_{k=1}^{\infty}A_k=\lim\limits_{k\rightarrow \infty}S_k=\lim\limits_{k\rightarrow \infty}[(I-A)^{-1}(I-A^k)]=(I-A)^{-1}\lim\limits_{k\rightarrow \infty}(I-A^k)=(I-A)^{-1}$<br>  进一步根据$\sum\limits_{k=0}^{\infty}A_k=(I-A)^{-1}$有<br>  $\left\Vert (I-A)^{-1} -  \sum\limits_{k=0}^{m}A^k\right\Vert = \left\Vert \sum\limits_{k=m+1}^{\infty}A^k\right\Vert \le \sum\limits_{k=m+1}^{\infty}\Vert A\Vert^k = \dfrac{\Vert A\Vert^{m+1}}{1-\Vert A\Vert}$</li>
+</ul>
 
       
     </div>
@@ -1662,7 +1712,7 @@ v_r^H
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件数与方程组的性态"><span class="nav-number">2.10.</span> <span class="nav-text">条件数与方程组的性态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Householder矩阵"><span class="nav-number">2.11.</span> <span class="nav-text">Householder矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的QR分解"><span class="nav-number">2.12.</span> <span class="nav-text">矩阵的QR分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的Schur分解"><span class="nav-number">2.13.</span> <span class="nav-text">矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规矩阵的Schur分解"><span class="nav-number">2.14.</span> <span class="nav-text">正规矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的谱半径与矩阵范数关系"><span class="nav-number">2.15.</span> <span class="nav-text">矩阵的谱半径与矩阵范数关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵是否可对角化的判别法则"><span class="nav-number">2.16.</span> <span class="nav-text">矩阵是否可对角化的判别法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的-Jordan-分解"><span class="nav-number">2.17.</span> <span class="nav-text">矩阵的$Jordan$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于变换矩阵-T"><span class="nav-number">2.18.</span> <span class="nav-text">关于变换矩阵$T$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hamilton-Caylay定理及其应用"><span class="nav-number">2.19.</span> <span class="nav-text">Hamilton-Caylay定理及其应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值定义"><span class="nav-number">2.20.</span> <span class="nav-text">矩阵的奇异值定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解定理"><span class="nav-number">2.21.</span> <span class="nav-text">矩阵的奇异值分解定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解步骤"><span class="nav-number">2.22.</span> <span class="nav-text">矩阵的奇异值分解步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用矩阵的奇异值讨论矩阵的性质"><span class="nav-number">2.23.</span> <span class="nav-text">用矩阵的奇异值讨论矩阵的性质</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件数与方程组的性态"><span class="nav-number">2.10.</span> <span class="nav-text">条件数与方程组的性态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Householder矩阵"><span class="nav-number">2.11.</span> <span class="nav-text">Householder矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的QR分解"><span class="nav-number">2.12.</span> <span class="nav-text">矩阵的QR分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的Schur分解"><span class="nav-number">2.13.</span> <span class="nav-text">矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规矩阵的Schur分解"><span class="nav-number">2.14.</span> <span class="nav-text">正规矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的谱半径与矩阵范数关系"><span class="nav-number">2.15.</span> <span class="nav-text">矩阵的谱半径与矩阵范数关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵是否可对角化的判别法则"><span class="nav-number">2.16.</span> <span class="nav-text">矩阵是否可对角化的判别法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的-Jordan-分解"><span class="nav-number">2.17.</span> <span class="nav-text">矩阵的$Jordan$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于变换矩阵-T"><span class="nav-number">2.18.</span> <span class="nav-text">关于变换矩阵$T$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hamilton-Caylay定理及其应用"><span class="nav-number">2.19.</span> <span class="nav-text">Hamilton-Caylay定理及其应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值定义"><span class="nav-number">2.20.</span> <span class="nav-text">矩阵的奇异值定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解定理"><span class="nav-number">2.21.</span> <span class="nav-text">矩阵的奇异值分解定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解步骤"><span class="nav-number">2.22.</span> <span class="nav-text">矩阵的奇异值分解步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用矩阵的奇异值讨论矩阵的性质"><span class="nav-number">2.23.</span> <span class="nav-text">用矩阵的奇异值讨论矩阵的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵分析基础"><span class="nav-number">3.</span> <span class="nav-text">矩阵分析基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵序列及其收敛定义和性质"><span class="nav-number">3.1.</span> <span class="nav-text">矩阵序列及其收敛定义和性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收敛矩阵"><span class="nav-number">3.2.</span> <span class="nav-text">收敛矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵级数"><span class="nav-number">3.3.</span> <span class="nav-text">矩阵级数</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1709,7 +1759,7 @@ v_r^H
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共25.6k字</span>
+  <span class="post-count">博客全站共27.3k字</span>
 </div>
 
         
