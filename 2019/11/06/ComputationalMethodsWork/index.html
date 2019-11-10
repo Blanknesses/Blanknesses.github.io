@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法作业题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-09T07:48:18.005Z">
+<meta property="og:updated_time" content="2019-11-10T04:25:52.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法作业">
 <meta name="twitter:description" content="计算方法作业题">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.2k
+                  3.1k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  19
+                  18
                 </span>
               
             </div>
@@ -837,66 +837,40 @@ $$
 <h2 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h2><p> 设$
    \begin{equation}
    \begin{aligned}
-   A=
+   A&=
    \begin{bmatrix}
    1&0&-1\\
-   0&\omega&i\\
-   0&0&\omega^2
+   &\omega&i\\
+   &&\omega^2
+   \end{bmatrix},
+   \omega = \dfrac{-1+\sqrt{3}i}{2}\\
+   |\lambda I-A|&=(\lambda-1)(\lambda-\omega)(\lambda-\omega^2)\\
+   \Psi(\lambda)&=(\lambda-1)(\lambda-\omega)(\lambda-\omega^2),\Psi(A)=0\\
+   \lambda^{100} &= g(\lambda)\Psi(\lambda) + a\lambda^2+b\lambda+c\\
+   \Psi(1)&=\Psi(\omega)=\Psi(\omega^2)=0\\
+   &\Rightarrow\begin{cases}
+   1^{100}=a+b+c\\
+   \omega^{100}=\omega^2a+\omega b+c\\
+   \omega^{200}=\omega^4a+\omega^2b+c 
+   \end{cases}\\
+   &\therefore 
+   \omega^2=\dfrac{-1-\sqrt{3}i}{2},\omega^3=1\\
+   &\Rightarrow\begin{cases}
+   1=a+b+c\\
+   \dfrac{-1+\sqrt{3}i}{2}=\dfrac{-1-\sqrt{3}i}{2}a+\dfrac{-1+\sqrt{3}i}{2} b+c\\
+   \dfrac{-1-\sqrt{3}i}{2}=\dfrac{-1+\sqrt{3}i}{2}a+\dfrac{-1-\sqrt{3}i}{2}b+c 
+   \end{cases}\\
+   &\Rightarrow 
+   a=0,b=1,c=0\\
+   A^{100}&=g(A)\Psi(A) + A\\
+   &=\begin{bmatrix}
+   1&0&-1\\
+   0&\dfrac{-1+\sqrt{3}i}{2}&i\\
+   0&0&\dfrac{-1-\sqrt{3}i}{2}
    \end{bmatrix}
    \end{aligned}
    \end{equation}
-   $，其中$\omega=\dfrac{-1+\sqrt{3}i}{2}$，试用$Cayley-Hamilton$定理计算$A^{100}$</p>
-   $$
-  \begin{equation}
-  \begin{aligned}
-  A&=
-  \begin{bmatrix}
-  1&0&-1\\
-  &\omega&i\\
-  &&\omega^2
-  \end{bmatrix},
-  \omega = \dfrac{-1+\sqrt{3}i}{2}\\
-  |\lambda I-A|&=(\lambda-1)(\lambda-\omega)(\lambda-\omega^2)\\
-  \Psi(\lambda)&=(\lambda-1)(\lambda-\omega)(\lambda-\omega^2),\Psi(A)=0\\
-  \lambda^{100} &= g(\lambda)\Psi(\lambda) + a\lambda^2+b\lambda+c\\
-  \Psi(1)&=\Psi(\omega)=\Psi(\omega^2)=0\\
-  &\Rightarrow\begin{cases}
-  1^{100}=a+b+c\\
-  \omega^{100}=\omega^2a+\omega b+c\\
-  \omega^{200}=\omega^4a+\omega^2b+c 
-  \end{cases}\\
-  &\therefore 
-  \omega^2=\dfrac{-1-\sqrt{3}i}{2},\omega^4=\dfrac{-1+\sqrt{3}i}{2}\\
-  &\Rightarrow\begin{cases}
-  1=a+b+c\\
-  \dfrac{-1+\sqrt{3}i}{2}=\dfrac{-1-\sqrt{3}i}{2}a+\dfrac{-1+\sqrt{3}i}{2} b+c\\
-  \dfrac{-1+\sqrt{3}i}{2}=\dfrac{-1+\sqrt{3}i}{2}a+\dfrac{-1-\sqrt{3}i}{2}b+c 
-  \end{cases}\\
-  &\Rightarrow 
-  a=b=\dfrac{3-\sqrt{3}i}{6},c=\dfrac{\sqrt{3}i}{3}\\
-  A^{100}&=g(A)\Psi(A) + \dfrac{3-\sqrt{3}i}{6}A^2+\dfrac{3-\sqrt{3}i}{6}A+\dfrac{\sqrt{3}i}{3}\\
-  &=\dfrac{3-\sqrt{3}i}{6}
-  \begin{bmatrix}
-  1&0&-1-\omega^2\\
-  0&\omega^2&\omega i +\omega^2i\\
-  0&0&\omega^4
-  \end{bmatrix}+
-  \dfrac{3-\sqrt{3}i}{6}
-  \begin{bmatrix}
-  1&0&-1\\
-  0&\omega&i\\
-  0&0&\omega^2
-  \end{bmatrix}+\dfrac{\sqrt{3}i}{3}I\\
-  &=
-  \begin{bmatrix}
-  1&0&-\dfrac{3-\sqrt{3}i}{6}\\
-  0&\dfrac{-1+\sqrt{3}i}{2}&0\\
-  0&0&\dfrac{-1+\sqrt{3}i}{2}
-  \end{bmatrix}
-  \end{aligned}
-  \end{equation}
-  $$
-
+  $$</p>
 <h2 id="第五题"><a href="#第五题" class="headerlink" title="第五题"></a>第五题</h2><p>  求矩阵$
      \begin{equation}
      \begin{aligned}
@@ -1477,7 +1451,7 @@ A&=
 \end{bmatrix}\\
 \Vert A \Vert_2 &=\sigma_{max}(A) =8\\
 \Vert A^{-1} \Vert_2 &=\dfrac{1}{\sigma_{min}(A)} =\dfrac{1}{2}\\
-\Vert A \Vert_F&= \sqrt{tr(A^HA)}=\sqrt{\sigma_1^2+\sigma_2^2+\sigma_3^2}=2\sqrt{21}\\
+\Vert A \Vert_F&= \sqrt{tr(A^HA)}=\sqrt{\sigma_1^2+\sigma_2^2+\sigma_3^2}=2\sqrt{26}\\
 cond_2(A)&=\Vert A \Vert_2\Vert A^{-1} \Vert_2=4
 \end{aligned}
 \end{equation}
@@ -1764,7 +1738,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共27.5k字</span>
+  <span class="post-count">博客全站共27.3k字</span>
 </div>
 
         

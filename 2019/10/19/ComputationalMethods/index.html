@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法知识点归纳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-09T16:04:21.182Z">
+<meta property="og:updated_time" content="2019-11-09T16:13:28.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法知识点">
 <meta name="twitter:description" content="计算方法知识点归纳">
@@ -1470,7 +1470,7 @@ $$
 <p>证明：</p>
 <ul>
 <li>必要性：若矩阵级数$\sum\limits_{k=1}^{\infty}A_k$收敛，则有$S = \lim\limits_{k\rightarrow \infty}S_k$<br>  级数$I +A +A^2+\cdots + A^k+ \cdots$的前$k$项部分和与前$k+1$项部分和分别为：<br>  $$S_k = I +A +A^2+\cdots + A^{k-1}\quad S_{k+1}I +A +A^2+\cdots + A^k$$<br>  所以$A_k = S_{k+1}-S_k, \lim\limits_{k\rightarrow \infty}A_k = \lim\limits_{k\rightarrow \infty}(S_{k+1}-S_k)=0$<br>  所以$\rho(A)&lt;1$（由收敛定理得）</li>
-<li>充分性：由$AS_k=A(I +A +A^2+\cdots + A^{k-1})=A+A^2+\cdots+A^k$，可得$S_k-AS_{k-1}=I-A^k$，即$(I_A)S_k=I-A^k$<br>  因为$\rho(A)&lt;1$，可知存在某种矩阵范数，使得$\Vert A\Vert &lt; 1$，且$(I-A)$可逆（定理1.9），又因为$\lim\limits_{k\rightarrow \infty}A^k=0$<br>  $\sum\limits_{k=1}^{\infty}A_k=\lim\limits_{k\rightarrow \infty}S_k=\lim\limits_{k\rightarrow \infty}[(I-A)^{-1}(I-A^k)]=(I-A)^{-1}\lim\limits_{k\rightarrow \infty}(I-A^k)=(I-A)^{-1}$<br>  进一步根据$\sum\limits_{k=0}^{\infty}A_k=(I-A)^{-1}$有<br>  $\left\Vert (I-A)^{-1} -  \sum\limits_{k=0}^{m}A^k\right\Vert = \left\Vert \sum\limits_{k=m+1}^{\infty}A^k\right\Vert \le \sum\limits_{k=m+1}^{\infty}\Vert A\Vert^k = \dfrac{\Vert A\Vert^{m+1}}{1-\Vert A\Vert}$</li>
+<li>充分性：由$AS_k=A(I +A +A^2+\cdots + A^{k-1})$$=A+A^2+\cdots+A^k$，可得$S_k-AS_{k-1}=I-A^k$，即$(I_A)S_k=I-A^k$<br>  因为$\rho(A)&lt;1$，可知存在某种矩阵范数，使得$\Vert A\Vert &lt; 1$，且$(I-A)$可逆（定理1.9），又因为$\lim\limits_{k\rightarrow \infty}A^k=0$<br>  $\sum\limits_{k=1}^{\infty}A_k=\lim\limits_{k\rightarrow \infty}S_k=\lim\limits_{k\rightarrow \infty}[(I-A)^{-1}(I-A^k)]<br>  =(I-A)^{-1}\lim\limits_{k\rightarrow \infty}(I-A^k)=(I-A)^{-1}$<br>  进一步根据$\sum\limits_{k=0}^{\infty}A_k=(I-A)^{-1}$有<br>  $\left\Vert (I-A)^{-1} -  \sum\limits_{k=0}^{m}A^k\right\Vert = \left\Vert \sum\limits_{k=m+1}^{\infty}A^k\right\Vert \le \sum\limits_{k=m+1}^{\infty}\Vert A\Vert^k = \dfrac{\Vert A\Vert^{m+1}}{1-\Vert A\Vert}$</li>
 </ul>
 <p><strong>性质3.4</strong> 设$\sum\limits_{k=1}^{\infty}A_k =A$和$\sum\limits_{k=1}^{\infty}B_k =B$，其中$A_k,A,B_k,B\inC^{m\times n}$，则<br>$\sum\limits_{k=1}^{\infty}(\alpha A_k + \beta B_k) = \alpha \sum\limits_{k=1}^{\infty}A_k + \beta \sum\limits_{k=1}^{\infty}B_k, \forall \alpha,\beta \in C$<br>证明：<br>因为$S_N=\sum\limits_{k=1}^{N}(\alpha A_k + \beta B_k) = \alpha \sum\limits_{k=1}^{N}A_k + \beta \sum\limits_{k=1}^{N}B_k, \forall \alpha,\beta \in C$<br>所以$\sum\limits_{k=1}^{\infty}(\alpha A_k + \beta B_k) = \lim\limits_{N\rightarrow \infty}S_N= \alpha \lim\limits_{N\rightarrow \infty} \sum\limits_{k=1}^{N}A_k+\beta \lim\limits_{N\rightarrow \infty}\sum\limits_{k=1}^{N}B_k = \alpha A +\beta B$</p>
 
@@ -1760,7 +1760,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共27.5k字</span>
+  <span class="post-count">博客全站共27.3k字</span>
 </div>
 
         
