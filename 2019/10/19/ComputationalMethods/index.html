@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法知识点归纳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-11T04:20:12.139Z">
+<meta property="og:updated_time" content="2019-11-11T15:28:22.644Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法知识点">
 <meta name="twitter:description" content="计算方法知识点归纳">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  19k
+                  20.8k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  92
+                  102
                 </span>
               
             </div>
@@ -491,7 +491,7 @@
 <p><strong>定义1.1</strong> 设$x$为精确值，$a$为$x$的一个近似值，称  <center>$x - a$</center><br>为近似值$a$的<strong>绝对误差</strong>，简称<strong>误差</strong>。误差$x - a$可正可负</p>
 <p><strong>定义1.2</strong> 设$x$为精确值，$a$为$x$的一个近似值，若有常数$e_a$使得  <center>$|x - a| \le e_a$</center><br>则$e_a$叫做近似值$a$的<strong>误差界（限）</strong>。他总是正数</p>
 <p><strong>定义1.3</strong> 若$x \not= 0$，则将近似值的误差与准确值的比值  <center>$\dfrac{x - a}{x}$</center><br>称为近似值$a$的<strong>相对误差</strong>。相对误差也可正可负</p>
-<p>实际计算中，如果真值$x$未知时，通常取  <center>$\dfrac{x - a}{x}\approx\dfrac{x - a}{a}$</center><br>作为$a$的相对误差，条件是$\frac{x - a}{x}$较小</p>
+<p>实际计算中，如果真值$x$未知时，通常取  <center>$\dfrac{x - a}{x}\approx\dfrac{x - a}{a}$</center><br>作为$a$的相对误差，条件是$\dfrac{x - a}{x}$较小</p>
 <p>相对误差的绝对值上界叫做<strong>相对误差界（限）</strong>，记为  <center>$|\dfrac{x - a}{a}| \le \dfrac{e_a}{|a|}$</center></p>
 <p><strong>四舍五入</strong>求误差界，其误差界不超过其末尾的半个单位，例如：</p>
 <center>$|\pi - 3.14| \le \dfrac{1}{2} \times 10^{-2} , |\pi - 3.1416| \le \dfrac{1}{2} \times 10^{-4}$</center>
@@ -1602,11 +1602,164 @@ $$
 <h2 id="计算矩阵函数的有限待定系数法"><a href="#计算矩阵函数的有限待定系数法" class="headerlink" title="计算矩阵函数的有限待定系数法"></a>计算矩阵函数的有限待定系数法</h2><p>利用<strong>$Hamilton-Caylay$定理</strong><br>设$A\in C^{n \times n}$，且<br>$\psi(\lambda)=det(\lambda I -A)=(\lambda-\lambda_1)^{m_1}(\lambda-\lambda_2)^{m_2}\cdots(\lambda-\lambda_s)^{m_s}$<br>其中$m_i(i=1,2,\cdots,s)均为正整数$，$\sum\limits_{k=1}^\infty m_i = n\quad \lambda_1,\lambda_2,\cdots,\lambda_s$为$A$的不同特征值<br>为计算矩阵函数$f(tA)=\sum\limits_{k=0}^\infty a_kt^kA^k$，记$f(t\lambda)=\sum\limits_{k=0}^\infty a_kt^k\lambda^k$，并改写为$f(t\lambda)=p(\lambda,t)\psi(\lambda)+q(\lambda,t)$<br>其中$p(\lambda,t)$是含参数$t$的$\lambda$的幂级数，$q(\lambda,t)$是含参数$t$且次数不超过$n-1$的$\lambda$的多项式，即<br>$q(\lambda,t)=b_{n-1}(t)\lambda^{n-1}+b_{n-2}(t)\lambda^{n-2}+\cdots+b_0(t)$<br>又根据$Hamilton-Caylay$定理有，$\psi(A)=0$，所以有$f(tA)=q(A,t)$<br>以及$\psi^{(j)}(\lambda_i) = 0 \quad(j=0,1,\cdots,m_i-1;i=1,2,\cdots,s)$<br>所以根据$f(t\lambda)=q(\lambda,t)$分别进行$1,2,\cdots,n-1$次求导，解出$b_0(t),b_1(t),\cdots.b_{n-1}(t)$即可求解</p>
 <p>一些规律</p>
 <ul>
-<li>$\forall A \in C^{n \times n}$，总有<br>  1 $sin(-A)=-sin(A),cos(-A)=cos(A)$<br>  2 $e^{iA}=cosA+isinA,cosA=\dfrac{1}{e^{iA}+e^{-iA}}$</li>
-<li>$A,B\in C^{n\times n}$，且$AB=BA$，则<br>  1 $e^{A+B}=e^Ae^B=e^Be^A$<br>  2 $sin(A+B)=sinAcosB+cosAsinB$<br>  3 $cos(A+B)=cosAcosB-sinAsinB$</li>
-<li>$A\in C^{n\times n}$<br>  1 $cos2A=cos^2A-sin^2A$<br>  2 $sin2A=cos^2sinAcosA$</li>
-<li>其他<br>  1 $det(e^A)=e^{trA}$<br>  2 $(e^A)^{-1}=e^{-A}$<br>  3 $\Vert e^A\Vert \le e^{\Vert A\Vert}$<br>  4 若$A$为$Hermite$阵，则$e^{iA}$为酉矩阵</li>
+<li>$\forall A \in C^{n \times n}$，总有<ol>
+<li>$sin(-A)=-sin(A),cos(-A)=cos(A)$</li>
+<li>$e^{iA}=cosA+isinA,cosA=\dfrac{1}{2}(e^{iA}+e^{-iA}),sinA=\dfrac{1}{2}(e^{iA}-e^{-iA})$</li>
+</ol>
+</li>
+<li>$A,B\in C^{n\times n}$，且$AB=BA$，则<ol>
+<li>$e^{A+B}=e^Ae^B=e^Be^A$</li>
+<li>$sin(A+B)=sinAcosB+cosAsinB$</li>
+<li>$cos(A+B)=cosAcosB-sinAsinB$</li>
+</ol>
+</li>
+<li>$A\in C^{n\times n}$<ol>
+<li>$cos2A=cos^2A-sin^2A$</li>
+<li>$sin2A=cos^2sinAcosA$</li>
+</ol>
+</li>
+<li>其他<ol>
+<li>$det(e^A)=e^{trA}$<br> 证明：根据$f(A)$的特征值为$f(\lambda_i)$可得<br> $det(e^A)=e^{\lambda_1}e^{\lambda_2}\cdots e^{\lambda_n}=e^{\lambda_1+\lambda_2+\cdots+\lambda_n}=e^{trA}$</li>
+<li>$(e^A)^{-1}=e^{-A}$<br> 证明：由于$det(e^A)=e^{trA}\not=0$，所以$e^A$总是可逆的，所以有<br> $e^Ae^{-A}=I \Rightarrow (e^A)^{-1}=e^{-A}$</li>
+<li>$\Vert e^A\Vert \le e^{\Vert A\Vert}$<br> 证明：$\Vert S_N\Vert = \Vert \sum\limits_{k=0}^N\dfrac{1}{k!}A^k \Vert\le \sum\limits_{k=0}^N\dfrac{1}{k!}\Vert A\Vert^k $<br> 当$N\rightarrow \infty$时，有$\Vert e^A \Vert \le e^{\Vert A \Vert}$</li>
+<li>若$A$为$Hermite$阵，则$e^{iA}$为酉矩阵<br> 证明：因为$f(A^T)=f(A)^T$，所以<br> $(e^{iA})^H=e^{(iA)^{H}}=e^{-iA^H}=e^{-iA}$<br> $(e^{iA})^He^{iA}=I$<br> 所以$e^{iA}$为酉阵</li>
+</ol>
+</li>
 </ul>
+<h2 id="相对于数量变量的微分与积分"><a href="#相对于数量变量的微分与积分" class="headerlink" title="相对于数量变量的微分与积分"></a>相对于数量变量的微分与积分</h2><p><strong>定义3.7</strong> 如果矩阵$A(t)={(a_{ij}(t))}_{m\times n}$的每一个元素$a_{ij}(t)\quad i=1,2,\cdots,m;j=1,2,\cdots,n$在$[a,b]$上均为变量$t$的可微函数，则称$A(t)$可微，且导数定义为<br>$$A’(t)=\dfrac{\mathrm{d} }{\mathrm{d} t}A(t)=\left( \dfrac{\mathrm{d} }{\mathrm{d} t} a_{ij}(t) \right)_{m\times n}$$</p>
+<p><strong>定理3.4</strong><br>设$A(t),B(t)$是可进行运算的两个可微矩阵，则以下的运算规则成立</p>
+<ul>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}(A(t)+B(t))=\dfrac{\mathrm{d} }{\mathrm{d} t}A(t)+\dfrac{\mathrm{d} }{\mathrm{d} t}B(t)$</li>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}(A(t)B(t))=\left(\dfrac{\mathrm{d} }{\mathrm{d} t}A(t) \right)B(t)+A(t)\left(\dfrac{\mathrm{d} }{\mathrm{d} t}B(t) \right)$</li>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}(\alpha A(t))=\alpha \cdot \dfrac{\mathrm{d} }{\mathrm{d} t}A(t)$，其中$\alpha$为任意常数</li>
+<li>当$u=f(t)$关于$t$可微时，有$\dfrac{\mathrm{d} }{\mathrm{d} t}(A(u))=f’(t)\dfrac{\mathrm{d} }{\mathrm{d} u}A(u)$</li>
+<li>当$A^{-1}(t)$为可微矩阵时，有$\dfrac{\mathrm{d} }{\mathrm{d} t}(A^{-1}(t))=-A^{-1}(t)\left( \dfrac{\mathrm{d} }{\mathrm{d} t}A(t) \right)A^{-1}(t)$</li>
+</ul>
+<p>由于$\dfrac{\mathrm{d} }{\mathrm{d} t}A(t)$仍是矩阵函数，如果它仍是可导函数矩阵，则可定义其高阶导数<br>$$\dfrac{\mathrm{d}^k }{\mathrm{d} t^k}A(t)=\dfrac{\mathrm{d} }{\mathrm{d} t}\left( \dfrac{\mathrm{d}^{k-1} }{\mathrm{d} t^{k-1}} A(t) \right)$$</p>
+<p><strong>定理3.5</strong><br>设$n$阶方阵$A$与$t$无关，则有</p>
+<ul>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}e^{tA}=Ae^{tA}=e^{tA}A$</li>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}sin(tA)=Acos(tA)=cos(tA)A$</li>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}cos(tA)=-Asin(tA)=-sin(tA)A$</li>
+</ul>
+<p><strong>定义3.8</strong> 如果矩阵$A(t)=(a_{ij}(t))_{m\times n}$的每一个元素$a_{ij}(t)$都是区间$[t_0,t_1]$上的可积函数，则定义$A(t)$在区间$[t_0,t_1]$上的积分为<br>$$\int_{t_0}^{t_1}A(t)dt = \left(\int_{t_0}^{t_1}a_{ij}(t)dt\right)_{m\times n}$$</p>
+<p>具有如下运算法则：</p>
+<ul>
+<li>$\int_{t_0}^{t_1} (\alpha A(t)+\beta B(t))dt = \alpha\int_{t_0}^{t_1}A(t)dt + \beta\int_{t_0}^{t_1}B(t)dt \quad \forall \alpha,\beta \in C$</li>
+<li>$\int_{t_0}^{t_1}(A(t)B)=\int_{t_0}^{t_1}A(t)dt\cdot B\quad$其中$B$为常数矩阵</li>
+<li>$\int_{t_0}^{t_1}(AB(t))=A\cdot\int_{t_0}^{t_1}B(t)dt\cdot \quad$其中$A$为常数矩阵</li>
+<li>当$A(t)$在$[a,b]$上连续可微时，对任意$t\in (a,b)$，有<br>  $$\dfrac{\mathrm{d} }{\mathrm{d} t}\left( \int_{a}^{t} A(t)dt = A(t) \right)$$</li>
+<li>当$A(t)$在$[a,b]$上连续可微时，对任意$t\in (a,b)$，有<br>  $$ \int_{a}^{b} \dfrac{\mathrm{d} }{\mathrm{d} t}A(t)dt = A(b) -A(a) $$</li>
+</ul>
+<h2 id="相对于矩阵变量的微分"><a href="#相对于矩阵变量的微分" class="headerlink" title="相对于矩阵变量的微分"></a>相对于矩阵变量的微分</h2><p><strong>定义3.9</strong>设$X=(x_{ij})_{m \times n}$，函数$f(X)=f(x_{11},x_{12},\cdots,x_{1n},x_{21},\cdots,x_{mn})$为$mn$元的多元函数，且$\dfrac{\partial f}{\partial x_{ij}}\quad (i=1,2,\cdots,m;j=1,2,\cdots,n)$都存在，定义$f(X)$对矩阵$X$的导数为：</p>
+$$
+\begin{equation}
+\begin{aligned}
+\dfrac{\partial f(X)}{\partial X}=\left( \dfrac{\partial f}{\partial x_{ij}} \right)_{m\times n}=  
+\begin{bmatrix}
+\dfrac{\partial f}{\partial x_{11}}&\cdots&\dfrac{\partial f}{\partial x_{1n}}\\
+\vdots&\ddots&\vdots\\
+\dfrac{\partial f}{\partial x_{m1}}&\cdots&\dfrac{\partial f}{\partial x_{mn}}
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$$  
+
+<p>设$x=(\xi_1,\xi_2,\cdots,\xi_n)^T$，$n$元函数$f(x)=f(\xi_1,\xi_2,\cdots,\xi_n)$</p>
+<ul>
+<li>$\dfrac{\mathrm{d}f }{\mathrm{d} t^T}=\left( \dfrac{\partial f}{\partial \xi_1},\dfrac{\partial f}{\partial \xi_2},\cdots,\dfrac{\partial f}{\partial \xi_n} \right)$</li>
+<li>$\triangledown f(x)=\dfrac{\mathrm{d}f }{\mathrm{d} x}= \left( \dfrac{\partial f}{\partial \xi_1},\dfrac{\partial f}{\partial \xi_2},\cdots,\dfrac{\partial f}{\partial \xi_n} \right)^T$<br>  称为数量函数对向量变量的导数，即为梯度向量，也记为$gradf$</li>
+</ul>
+<p>设$a=(a_1,a_2,\cdots,a_n)^T$为常向量，$x=(\xi_1,\xi_2,\cdots,\xi_n)^T$为向量变量，且$f(x)=(x,a)=a^Tx=x^Ta$<br>$\dfrac{\mathrm{d}f }{\mathrm{d} x} = a$<br>因为$f(x)=\sum\limits_{i=1}^n a_i\xi_i,\dfrac{\partial f}{\partial x_{j}}=a_j\quad j=1,2,\cdots,n$</p>
+<p>设$x=(\xi_1,\xi_2,\cdots,\xi_n)^T,A=(a_{ij})_{n\times n}$，$n$元函数$f(x)=x^TAx$<br>$\dfrac{\mathrm{d}f }{\mathrm{d} x}=(A+A^T)x$<br>因为$f(x)=\sum\limits_{i=1}^n\sum\limits_{j=1}^n a_{ij}\xi_i\xi_j=\xi_1\sum\limits_{j=1}^n a_{1j}\xi_j+ \cdots+\xi_k\sum\limits_{j=1}^n a_{kj}\xi_j+\cdots+\xi_n\sum\limits_{j=1}^n a_{nj}\xi_j$<br>所以$\dfrac{\partial f(x)}{\partial \xi_{k}}=\xi_1a_{1k}+\xi_{k-1}a_{(k-1)k}+\left( \sum\limits_{j=1}^n a_{kj}\xi_j + \xi_k a_{kk} \right) + \xi_{k+1}a_{(k+1)k} + \cdots + \xi_na_{nk}$<br>$\qquad\qquad=\sum\limits_{j=1}^n a_{kj}\xi_j + \sum\limits_{i=1}^n a_{ik}\xi_i \quad k=1,2,\cdots,n$<br>故有</p>
+$$
+\begin{equation}
+\begin{aligned}
+\dfrac{\mathrm{d}f }{\mathrm{d} x}=
+\begin{bmatrix}
+\dfrac{\partial f(x)}{\partial \xi_{1}}\\
+\dfrac{\partial f(x)}{\partial \xi_{2}}\\
+\vdots \\
+\dfrac{\partial f(x)}{\partial \xi_{n}}
+\end{bmatrix}=
+\begin{bmatrix}
+\sum\limits_{j=1}^n a_{1j}\xi_j\\
+\sum\limits_{j=1}^n a_{2j}\xi_j\\
+\vdots \\
+\sum\limits_{j=1}^n a_{nj}\xi_j
+\end{bmatrix}+
+\begin{bmatrix}
+\sum\limits_{i=1}^n a_{i1}\xi_i\\
+\sum\limits_{i=1}^n a_{i2}\xi_i\\
+\vdots \\
+\sum\limits_{i=1}^n a_{in}\xi_i
+\end{bmatrix}=Ax+A^Tx
+\end{aligned}
+\end{equation}
+$$
+
+<p>特别的，当$A$为对称矩阵时，$\dfrac{\mathrm{d}f }{\mathrm{d} x}=2Ax$</p>
+<h2 id="矩阵在微分方程中的应用"><a href="#矩阵在微分方程中的应用" class="headerlink" title="矩阵在微分方程中的应用"></a>矩阵在微分方程中的应用</h2><p><strong>一阶线性常系数齐次微分方程组</strong></p>
+$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+\dfrac{\mathrm{d} x_1(t)}{\mathrm{d} t}=a_{11}x_1(t)+a_{12}x_2(t)+\cdots+a_{1n}x_n(t) \\
+\dfrac{\mathrm{d} x_2(t)}{\mathrm{d} t}=a_{21}x_1(t)+a_{22}x_2(t)+\cdots+a_{2n}x_n(t) \\
+\qquad \vdots \\ 
+\dfrac{\mathrm{d} x_n(t)}{\mathrm{d} t}=a_{n1}x_1(t)+a_{n2}x_2(t)+\cdots+a_{nn}x_n(t) 
+\end{cases}
+\end{aligned}
+\end{equation}
+$
+
+<p>给定初始条件：$x_i(0)\quad i=1,2,\cdots,n$，记A=(a_{ij})\in C^{n\times n}<br>$X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T$<br>则上述微分方程可写成</p>
+$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+\dfrac{\mathrm{d} X(t)}{\mathrm{d} t}=AX(t) \\
+X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T 
+\end{cases}
+\end{aligned}
+\end{equation}
+$
+
+<p>根据矩阵微分性质有</p>
+$
+\begin{equation}
+\begin{aligned}
+\dfrac{\mathrm{d} (e^{-At}X(t))}{\mathrm{d} t}&=\dfrac{\mathrm{d} e^{-At}}{\mathrm{d} t}X(t)+e^{-At}\dfrac{\mathrm{d}X(t) }{\mathrm{d} t}\\
+&=-e^{-At}AX(t)+e^{-At}\dfrac{\mathrm{d}X(t) }{\mathrm{d} t} \\
+&=e^{-At}\left( \dfrac{\mathrm{d}X(t) }{\mathrm{d} t}-AX(t) \right)=0
+\end{aligned}
+\end{equation}
+$
+<p>所以$e^{-At}X(t)=C,X(t)=e^{At}C$，又因为$X(0)=C$，所以$X(t)=e^{At}X(0)$</p>
+<p><strong>定理3.6</strong> 一阶线性常系数齐次微分方程组的定解问题</p>
+$$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+\dfrac{\mathrm{d} X(t)}{\mathrm{d} t}=AX(t) \\
+X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T 
+\end{cases}
+\end{aligned}
+\end{equation}
+$$
+<p>有唯一解$X(t)=e^{At}X(0)$</p>
+<p><strong>一阶线性常系数非齐次微分方程组</strong></p>
+$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+\dfrac{\mathrm{d} X(t)}{\mathrm{d} t}=AX(t) +F(t)\\
+X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T 
+\end{cases}
+\end{aligned}
+\end{equation}
+$
+<p>其中$F(t)=(f_1(t),f_2(t),\cdots,f_n(t),)^T$是已知向量函数<br>根据一阶线性常系数齐次微分方程组性质，可得<br>$\dfrac{\mathrm{d} (e^{-At}X(t))}{\mathrm{d} t}=e^{-At}F(t)$<br>对此方程在$[t_0,t]$上进行积分，得<br>$e^{-At}X(t)-e^{-At_0}X(t_0)=\int_{t_0}^t e^{-A\tau}F(\tau)d\tau$<br>$X(t)=e^{A(t-t_0)}X(t_0)+\int_{t_0}^t e^A{t-\tau}F(\tau)d\tau$</p>
 
       
     </div>
@@ -1847,7 +2000,7 @@ $$
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件数与方程组的性态"><span class="nav-number">2.10.</span> <span class="nav-text">条件数与方程组的性态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Householder矩阵"><span class="nav-number">2.11.</span> <span class="nav-text">Householder矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的QR分解"><span class="nav-number">2.12.</span> <span class="nav-text">矩阵的QR分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的Schur分解"><span class="nav-number">2.13.</span> <span class="nav-text">矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规矩阵的Schur分解"><span class="nav-number">2.14.</span> <span class="nav-text">正规矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的谱半径与矩阵范数关系"><span class="nav-number">2.15.</span> <span class="nav-text">矩阵的谱半径与矩阵范数关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵是否可对角化的判别法则"><span class="nav-number">2.16.</span> <span class="nav-text">矩阵是否可对角化的判别法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的-Jordan-分解"><span class="nav-number">2.17.</span> <span class="nav-text">矩阵的$Jordan$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于变换矩阵-T"><span class="nav-number">2.18.</span> <span class="nav-text">关于变换矩阵$T$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hamilton-Caylay定理及其应用"><span class="nav-number">2.19.</span> <span class="nav-text">Hamilton-Caylay定理及其应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值定义"><span class="nav-number">2.20.</span> <span class="nav-text">矩阵的奇异值定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解定理"><span class="nav-number">2.21.</span> <span class="nav-text">矩阵的奇异值分解定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解步骤"><span class="nav-number">2.22.</span> <span class="nav-text">矩阵的奇异值分解步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用矩阵的奇异值讨论矩阵的性质"><span class="nav-number">2.23.</span> <span class="nav-text">用矩阵的奇异值讨论矩阵的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵分析基础"><span class="nav-number">3.</span> <span class="nav-text">矩阵分析基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵序列及其收敛定义和性质"><span class="nav-number">3.1.</span> <span class="nav-text">矩阵序列及其收敛定义和性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收敛矩阵"><span class="nav-number">3.2.</span> <span class="nav-text">收敛矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵级数"><span class="nav-number">3.3.</span> <span class="nav-text">矩阵级数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵级数绝对收敛定义及性质"><span class="nav-number">3.4.</span> <span class="nav-text">矩阵级数绝对收敛定义及性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵幂级数"><span class="nav-number">3.5.</span> <span class="nav-text">矩阵幂级数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵函数定义及其相关引理"><span class="nav-number">3.6.</span> <span class="nav-text">矩阵函数定义及其相关引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算矩阵函数-f-tJ-的引理"><span class="nav-number">3.7.</span> <span class="nav-text">计算矩阵函数$f(tJ)$的引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵函数的计算"><span class="nav-number">3.8.</span> <span class="nav-text">矩阵函数的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算矩阵函数的有限待定系数法"><span class="nav-number">3.9.</span> <span class="nav-text">计算矩阵函数的有限待定系数法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件数与方程组的性态"><span class="nav-number">2.10.</span> <span class="nav-text">条件数与方程组的性态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Householder矩阵"><span class="nav-number">2.11.</span> <span class="nav-text">Householder矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的QR分解"><span class="nav-number">2.12.</span> <span class="nav-text">矩阵的QR分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的Schur分解"><span class="nav-number">2.13.</span> <span class="nav-text">矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规矩阵的Schur分解"><span class="nav-number">2.14.</span> <span class="nav-text">正规矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的谱半径与矩阵范数关系"><span class="nav-number">2.15.</span> <span class="nav-text">矩阵的谱半径与矩阵范数关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵是否可对角化的判别法则"><span class="nav-number">2.16.</span> <span class="nav-text">矩阵是否可对角化的判别法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的-Jordan-分解"><span class="nav-number">2.17.</span> <span class="nav-text">矩阵的$Jordan$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于变换矩阵-T"><span class="nav-number">2.18.</span> <span class="nav-text">关于变换矩阵$T$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hamilton-Caylay定理及其应用"><span class="nav-number">2.19.</span> <span class="nav-text">Hamilton-Caylay定理及其应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值定义"><span class="nav-number">2.20.</span> <span class="nav-text">矩阵的奇异值定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解定理"><span class="nav-number">2.21.</span> <span class="nav-text">矩阵的奇异值分解定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解步骤"><span class="nav-number">2.22.</span> <span class="nav-text">矩阵的奇异值分解步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用矩阵的奇异值讨论矩阵的性质"><span class="nav-number">2.23.</span> <span class="nav-text">用矩阵的奇异值讨论矩阵的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵分析基础"><span class="nav-number">3.</span> <span class="nav-text">矩阵分析基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵序列及其收敛定义和性质"><span class="nav-number">3.1.</span> <span class="nav-text">矩阵序列及其收敛定义和性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收敛矩阵"><span class="nav-number">3.2.</span> <span class="nav-text">收敛矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵级数"><span class="nav-number">3.3.</span> <span class="nav-text">矩阵级数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵级数绝对收敛定义及性质"><span class="nav-number">3.4.</span> <span class="nav-text">矩阵级数绝对收敛定义及性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵幂级数"><span class="nav-number">3.5.</span> <span class="nav-text">矩阵幂级数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵函数定义及其相关引理"><span class="nav-number">3.6.</span> <span class="nav-text">矩阵函数定义及其相关引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算矩阵函数-f-tJ-的引理"><span class="nav-number">3.7.</span> <span class="nav-text">计算矩阵函数$f(tJ)$的引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵函数的计算"><span class="nav-number">3.8.</span> <span class="nav-text">矩阵函数的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算矩阵函数的有限待定系数法"><span class="nav-number">3.9.</span> <span class="nav-text">计算矩阵函数的有限待定系数法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对于数量变量的微分与积分"><span class="nav-number">3.10.</span> <span class="nav-text">相对于数量变量的微分与积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对于矩阵变量的微分"><span class="nav-number">3.11.</span> <span class="nav-text">相对于矩阵变量的微分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵在微分方程中的应用"><span class="nav-number">3.12.</span> <span class="nav-text">矩阵在微分方程中的应用</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1894,7 +2047,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共30.3k字</span>
+  <span class="post-count">博客全站共32.2k字</span>
 </div>
 
         

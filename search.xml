@@ -1061,7 +1061,7 @@ $$]]></content>
     <title>LaTeX</title>
     <url>/2019/10/19/LeTaX/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>#记一些用法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\le 或 \leq 为小于等于</span><br><span class="line">\ge 或 \geq 为大于等于</span><br><span class="line">\not= 为不等于</span><br><span class="line">\approx 为约等于</span><br><span class="line">x_1 为x下标1</span><br><span class="line">x^2 为x上标2</span><br><span class="line">\frac&#123;分子&#125;&#123;分母&#125; 为分式表示</span><br><span class="line">\dfrac&#123;分子&#125;&#123;分母&#125; 为分式表示,数字大小不压缩</span><br><span class="line">\partial  偏导符号</span><br><span class="line">\mathrm&#123;d&#125;  正规的导数d（正体）</span><br><span class="line">\sum  求和符号，压缩</span><br><span class="line">\sum\limits  求和符号，不压缩</span><br><span class="line">\prod  求积符号，压缩</span><br><span class="line">\prod\limits  求积符号，不压缩</span><br><span class="line">\lim  求极限符号，压缩</span><br><span class="line">\lim\limits  求极限符号，不压缩</span><br><span class="line">\int  求积分符号，压缩</span><br><span class="line">\int\limits  求积分符号，不压缩</span><br><span class="line">\Vert 范数符号</span><br><span class="line">\cdot 点乘</span><br><span class="line">\sqrt[“几次幂”]&#123; &#125; 开n次根号</span><br><span class="line">\infty 无穷大</span><br><span class="line">\max 最大值</span><br><span class="line">\Leftarrow 左推出</span><br><span class="line">\Rightarrow 右退出</span><br><span class="line">\Leftrightarrow 等价</span><br><span class="line">\perp 垂直</span><br><span class="line">\subset 真包含</span><br><span class="line">\subseteq  包含</span><br><span class="line">\forall 任意</span><br><span class="line">\exists 存在</span><br><span class="line">$$   $$  公式块</span><br><span class="line">\\ 换行，需禁用Markdown渲染</span><br><span class="line">\quad 空格一个字母位</span><br><span class="line">\tilde&#123;&#125; 字母上方加波浪</span><br><span class="line">\triangleq  等号上加三角，定义式</span><br><span class="line">\\方程组</span><br><span class="line">$$\begin&#123;cases&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br><span class="line">或者</span><br><span class="line">$$</span><br><span class="line">\left \&#123; </span><br><span class="line">\begin&#123;array&#125;&#123;c&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right. </span><br><span class="line">$$</span><br><span class="line">等号对齐</span><br><span class="line">$$</span><br><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;aligned&#125; </span><br><span class="line">a_1x+b_1y+c_1z &amp;= d_1+e_1 \\ </span><br><span class="line">a_2x+b_2y &amp;= d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z &amp;= d_3 </span><br><span class="line">\end&#123;aligned&#125; </span><br><span class="line">\right. </span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">      内部公式=改为&amp;=实现等号对齐</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\end&#123;equation&#125;$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\le 或 \leq 为小于等于</span><br><span class="line">\ge 或 \geq 为大于等于</span><br><span class="line">\not= 为不等于</span><br><span class="line">\approx 为约等于</span><br><span class="line">x_1 为x下标1</span><br><span class="line">x^2 为x上标2</span><br><span class="line">\frac&#123;分子&#125;&#123;分母&#125; 为分式表示</span><br><span class="line">\dfrac&#123;分子&#125;&#123;分母&#125; 为分式表示,数字大小不压缩</span><br><span class="line">\partial  偏导符号</span><br><span class="line">\mathrm&#123;d&#125;  正规的导数d（正体）</span><br><span class="line">\sum  求和符号，压缩</span><br><span class="line">\sum\limits  求和符号，不压缩</span><br><span class="line">\prod  求积符号，压缩</span><br><span class="line">\prod\limits  求积符号，不压缩</span><br><span class="line">\lim  求极限符号，压缩</span><br><span class="line">\lim\limits  求极限符号，不压缩</span><br><span class="line">\int  求积分符号，压缩</span><br><span class="line">\int\limits  求积分符号，不压缩</span><br><span class="line">\Vert 范数符号</span><br><span class="line">\cdot 点乘</span><br><span class="line">\sqrt[“几次幂”]&#123; &#125; 开n次根号</span><br><span class="line">\infty 无穷大</span><br><span class="line">\max 最大值</span><br><span class="line">\Leftarrow 左推出</span><br><span class="line">\Rightarrow 右退出</span><br><span class="line">\Leftrightarrow 等价</span><br><span class="line">\perp 垂直</span><br><span class="line">\subset 真包含</span><br><span class="line">\subseteq  包含</span><br><span class="line">\forall 任意</span><br><span class="line">\exists 存在</span><br><span class="line">$$   $$  公式块</span><br><span class="line">\\ 换行，需禁用Markdown渲染</span><br><span class="line">\quad 空格一个字母位</span><br><span class="line">\tilde&#123;&#125; 字母上方加波浪</span><br><span class="line">\triangleq  等号上加三角，定义式</span><br><span class="line">\mathrm&#123;d&#125; x 求导符号dx</span><br><span class="line">\partial x 偏导符号dx</span><br><span class="line">\int 积分符号</span><br><span class="line">\triangleup 三角形</span><br><span class="line">\triangledown 倒三角形</span><br><span class="line"></span><br><span class="line">\\方程组</span><br><span class="line">$$\begin&#123;cases&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br><span class="line">或者</span><br><span class="line">$$</span><br><span class="line">\left \&#123; </span><br><span class="line">\begin&#123;array&#125;&#123;c&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right. </span><br><span class="line">$$</span><br><span class="line">等号对齐</span><br><span class="line">$$</span><br><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;aligned&#125; </span><br><span class="line">a_1x+b_1y+c_1z &amp;= d_1+e_1 \\ </span><br><span class="line">a_2x+b_2y &amp;= d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z &amp;= d_3 </span><br><span class="line">\end&#123;aligned&#125; </span><br><span class="line">\right. </span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">      内部公式=改为&amp;=实现等号对齐</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\end&#123;equation&#125;$</span><br></pre></td></tr></table></figure>
 
 <h1 id="字母表"><a href="#字母表" class="headerlink" title="字母表"></a>字母表</h1><p><img src="/images/LaTeXLetterList.png" alt="字母表"></p>
 <h1 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h1><p><a href="https://jingyan.baidu.com/article/4b52d702df537efc5c774bc9.html" target="_blank" rel="noopener">有空重写表格</a></p>
@@ -1101,7 +1101,7 @@ $$]]></content>
 <p><strong>定义1.1</strong> 设$x$为精确值，$a$为$x$的一个近似值，称  <center>$x - a$</center><br>为近似值$a$的<strong>绝对误差</strong>，简称<strong>误差</strong>。误差$x - a$可正可负</p>
 <p><strong>定义1.2</strong> 设$x$为精确值，$a$为$x$的一个近似值，若有常数$e_a$使得  <center>$|x - a| \le e_a$</center><br>则$e_a$叫做近似值$a$的<strong>误差界（限）</strong>。他总是正数</p>
 <p><strong>定义1.3</strong> 若$x \not= 0$，则将近似值的误差与准确值的比值  <center>$\dfrac{x - a}{x}$</center><br>称为近似值$a$的<strong>相对误差</strong>。相对误差也可正可负</p>
-<p>实际计算中，如果真值$x$未知时，通常取  <center>$\dfrac{x - a}{x}\approx\dfrac{x - a}{a}$</center><br>作为$a$的相对误差，条件是$\frac{x - a}{x}$较小</p>
+<p>实际计算中，如果真值$x$未知时，通常取  <center>$\dfrac{x - a}{x}\approx\dfrac{x - a}{a}$</center><br>作为$a$的相对误差，条件是$\dfrac{x - a}{x}$较小</p>
 <p>相对误差的绝对值上界叫做<strong>相对误差界（限）</strong>，记为  <center>$|\dfrac{x - a}{a}| \le \dfrac{e_a}{|a|}$</center></p>
 <p><strong>四舍五入</strong>求误差界，其误差界不超过其末尾的半个单位，例如：</p>
 <center>$|\pi - 3.14| \le \dfrac{1}{2} \times 10^{-2} , |\pi - 3.1416| \le \dfrac{1}{2} \times 10^{-4}$</center>
@@ -2212,11 +2212,164 @@ $$
 <h2 id="计算矩阵函数的有限待定系数法"><a href="#计算矩阵函数的有限待定系数法" class="headerlink" title="计算矩阵函数的有限待定系数法"></a>计算矩阵函数的有限待定系数法</h2><p>利用<strong>$Hamilton-Caylay$定理</strong><br>设$A\in C^{n \times n}$，且<br>$\psi(\lambda)=det(\lambda I -A)=(\lambda-\lambda_1)^{m_1}(\lambda-\lambda_2)^{m_2}\cdots(\lambda-\lambda_s)^{m_s}$<br>其中$m_i(i=1,2,\cdots,s)均为正整数$，$\sum\limits_{k=1}^\infty m_i = n\quad \lambda_1,\lambda_2,\cdots,\lambda_s$为$A$的不同特征值<br>为计算矩阵函数$f(tA)=\sum\limits_{k=0}^\infty a_kt^kA^k$，记$f(t\lambda)=\sum\limits_{k=0}^\infty a_kt^k\lambda^k$，并改写为$f(t\lambda)=p(\lambda,t)\psi(\lambda)+q(\lambda,t)$<br>其中$p(\lambda,t)$是含参数$t$的$\lambda$的幂级数，$q(\lambda,t)$是含参数$t$且次数不超过$n-1$的$\lambda$的多项式，即<br>$q(\lambda,t)=b_{n-1}(t)\lambda^{n-1}+b_{n-2}(t)\lambda^{n-2}+\cdots+b_0(t)$<br>又根据$Hamilton-Caylay$定理有，$\psi(A)=0$，所以有$f(tA)=q(A,t)$<br>以及$\psi^{(j)}(\lambda_i) = 0 \quad(j=0,1,\cdots,m_i-1;i=1,2,\cdots,s)$<br>所以根据$f(t\lambda)=q(\lambda,t)$分别进行$1,2,\cdots,n-1$次求导，解出$b_0(t),b_1(t),\cdots.b_{n-1}(t)$即可求解</p>
 <p>一些规律</p>
 <ul>
-<li>$\forall A \in C^{n \times n}$，总有<br>  1 $sin(-A)=-sin(A),cos(-A)=cos(A)$<br>  2 $e^{iA}=cosA+isinA,cosA=\dfrac{1}{e^{iA}+e^{-iA}}$</li>
-<li>$A,B\in C^{n\times n}$，且$AB=BA$，则<br>  1 $e^{A+B}=e^Ae^B=e^Be^A$<br>  2 $sin(A+B)=sinAcosB+cosAsinB$<br>  3 $cos(A+B)=cosAcosB-sinAsinB$</li>
-<li>$A\in C^{n\times n}$<br>  1 $cos2A=cos^2A-sin^2A$<br>  2 $sin2A=cos^2sinAcosA$</li>
-<li>其他<br>  1 $det(e^A)=e^{trA}$<br>  2 $(e^A)^{-1}=e^{-A}$<br>  3 $\Vert e^A\Vert \le e^{\Vert A\Vert}$<br>  4 若$A$为$Hermite$阵，则$e^{iA}$为酉矩阵</li>
+<li>$\forall A \in C^{n \times n}$，总有<ol>
+<li>$sin(-A)=-sin(A),cos(-A)=cos(A)$</li>
+<li>$e^{iA}=cosA+isinA,cosA=\dfrac{1}{2}(e^{iA}+e^{-iA}),sinA=\dfrac{1}{2}(e^{iA}-e^{-iA})$</li>
+</ol>
+</li>
+<li>$A,B\in C^{n\times n}$，且$AB=BA$，则<ol>
+<li>$e^{A+B}=e^Ae^B=e^Be^A$</li>
+<li>$sin(A+B)=sinAcosB+cosAsinB$</li>
+<li>$cos(A+B)=cosAcosB-sinAsinB$</li>
+</ol>
+</li>
+<li>$A\in C^{n\times n}$<ol>
+<li>$cos2A=cos^2A-sin^2A$</li>
+<li>$sin2A=cos^2sinAcosA$</li>
+</ol>
+</li>
+<li>其他<ol>
+<li>$det(e^A)=e^{trA}$<br> 证明：根据$f(A)$的特征值为$f(\lambda_i)$可得<br> $det(e^A)=e^{\lambda_1}e^{\lambda_2}\cdots e^{\lambda_n}=e^{\lambda_1+\lambda_2+\cdots+\lambda_n}=e^{trA}$</li>
+<li>$(e^A)^{-1}=e^{-A}$<br> 证明：由于$det(e^A)=e^{trA}\not=0$，所以$e^A$总是可逆的，所以有<br> $e^Ae^{-A}=I \Rightarrow (e^A)^{-1}=e^{-A}$</li>
+<li>$\Vert e^A\Vert \le e^{\Vert A\Vert}$<br> 证明：$\Vert S_N\Vert = \Vert \sum\limits_{k=0}^N\dfrac{1}{k!}A^k \Vert\le \sum\limits_{k=0}^N\dfrac{1}{k!}\Vert A\Vert^k $<br> 当$N\rightarrow \infty$时，有$\Vert e^A \Vert \le e^{\Vert A \Vert}$</li>
+<li>若$A$为$Hermite$阵，则$e^{iA}$为酉矩阵<br> 证明：因为$f(A^T)=f(A)^T$，所以<br> $(e^{iA})^H=e^{(iA)^{H}}=e^{-iA^H}=e^{-iA}$<br> $(e^{iA})^He^{iA}=I$<br> 所以$e^{iA}$为酉阵</li>
+</ol>
+</li>
 </ul>
+<h2 id="相对于数量变量的微分与积分"><a href="#相对于数量变量的微分与积分" class="headerlink" title="相对于数量变量的微分与积分"></a>相对于数量变量的微分与积分</h2><p><strong>定义3.7</strong> 如果矩阵$A(t)={(a_{ij}(t))}_{m\times n}$的每一个元素$a_{ij}(t)\quad i=1,2,\cdots,m;j=1,2,\cdots,n$在$[a,b]$上均为变量$t$的可微函数，则称$A(t)$可微，且导数定义为<br>$$A’(t)=\dfrac{\mathrm{d} }{\mathrm{d} t}A(t)=\left( \dfrac{\mathrm{d} }{\mathrm{d} t} a_{ij}(t) \right)_{m\times n}$$</p>
+<p><strong>定理3.4</strong><br>设$A(t),B(t)$是可进行运算的两个可微矩阵，则以下的运算规则成立</p>
+<ul>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}(A(t)+B(t))=\dfrac{\mathrm{d} }{\mathrm{d} t}A(t)+\dfrac{\mathrm{d} }{\mathrm{d} t}B(t)$</li>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}(A(t)B(t))=\left(\dfrac{\mathrm{d} }{\mathrm{d} t}A(t) \right)B(t)+A(t)\left(\dfrac{\mathrm{d} }{\mathrm{d} t}B(t) \right)$</li>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}(\alpha A(t))=\alpha \cdot \dfrac{\mathrm{d} }{\mathrm{d} t}A(t)$，其中$\alpha$为任意常数</li>
+<li>当$u=f(t)$关于$t$可微时，有$\dfrac{\mathrm{d} }{\mathrm{d} t}(A(u))=f’(t)\dfrac{\mathrm{d} }{\mathrm{d} u}A(u)$</li>
+<li>当$A^{-1}(t)$为可微矩阵时，有$\dfrac{\mathrm{d} }{\mathrm{d} t}(A^{-1}(t))=-A^{-1}(t)\left( \dfrac{\mathrm{d} }{\mathrm{d} t}A(t) \right)A^{-1}(t)$</li>
+</ul>
+<p>由于$\dfrac{\mathrm{d} }{\mathrm{d} t}A(t)$仍是矩阵函数，如果它仍是可导函数矩阵，则可定义其高阶导数<br>$$\dfrac{\mathrm{d}^k }{\mathrm{d} t^k}A(t)=\dfrac{\mathrm{d} }{\mathrm{d} t}\left( \dfrac{\mathrm{d}^{k-1} }{\mathrm{d} t^{k-1}} A(t) \right)$$</p>
+<p><strong>定理3.5</strong><br>设$n$阶方阵$A$与$t$无关，则有</p>
+<ul>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}e^{tA}=Ae^{tA}=e^{tA}A$</li>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}sin(tA)=Acos(tA)=cos(tA)A$</li>
+<li>$\dfrac{\mathrm{d} }{\mathrm{d} t}cos(tA)=-Asin(tA)=-sin(tA)A$</li>
+</ul>
+<p><strong>定义3.8</strong> 如果矩阵$A(t)=(a_{ij}(t))_{m\times n}$的每一个元素$a_{ij}(t)$都是区间$[t_0,t_1]$上的可积函数，则定义$A(t)$在区间$[t_0,t_1]$上的积分为<br>$$\int_{t_0}^{t_1}A(t)dt = \left(\int_{t_0}^{t_1}a_{ij}(t)dt\right)_{m\times n}$$</p>
+<p>具有如下运算法则：</p>
+<ul>
+<li>$\int_{t_0}^{t_1} (\alpha A(t)+\beta B(t))dt = \alpha\int_{t_0}^{t_1}A(t)dt + \beta\int_{t_0}^{t_1}B(t)dt \quad \forall \alpha,\beta \in C$</li>
+<li>$\int_{t_0}^{t_1}(A(t)B)=\int_{t_0}^{t_1}A(t)dt\cdot B\quad$其中$B$为常数矩阵</li>
+<li>$\int_{t_0}^{t_1}(AB(t))=A\cdot\int_{t_0}^{t_1}B(t)dt\cdot \quad$其中$A$为常数矩阵</li>
+<li>当$A(t)$在$[a,b]$上连续可微时，对任意$t\in (a,b)$，有<br>  $$\dfrac{\mathrm{d} }{\mathrm{d} t}\left( \int_{a}^{t} A(t)dt = A(t) \right)$$</li>
+<li>当$A(t)$在$[a,b]$上连续可微时，对任意$t\in (a,b)$，有<br>  $$ \int_{a}^{b} \dfrac{\mathrm{d} }{\mathrm{d} t}A(t)dt = A(b) -A(a) $$</li>
+</ul>
+<h2 id="相对于矩阵变量的微分"><a href="#相对于矩阵变量的微分" class="headerlink" title="相对于矩阵变量的微分"></a>相对于矩阵变量的微分</h2><p><strong>定义3.9</strong>设$X=(x_{ij})_{m \times n}$，函数$f(X)=f(x_{11},x_{12},\cdots,x_{1n},x_{21},\cdots,x_{mn})$为$mn$元的多元函数，且$\dfrac{\partial f}{\partial x_{ij}}\quad (i=1,2,\cdots,m;j=1,2,\cdots,n)$都存在，定义$f(X)$对矩阵$X$的导数为：</p>
+$$
+\begin{equation}
+\begin{aligned}
+\dfrac{\partial f(X)}{\partial X}=\left( \dfrac{\partial f}{\partial x_{ij}} \right)_{m\times n}=  
+\begin{bmatrix}
+\dfrac{\partial f}{\partial x_{11}}&\cdots&\dfrac{\partial f}{\partial x_{1n}}\\
+\vdots&\ddots&\vdots\\
+\dfrac{\partial f}{\partial x_{m1}}&\cdots&\dfrac{\partial f}{\partial x_{mn}}
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$$  
+
+<p>设$x=(\xi_1,\xi_2,\cdots,\xi_n)^T$，$n$元函数$f(x)=f(\xi_1,\xi_2,\cdots,\xi_n)$</p>
+<ul>
+<li>$\dfrac{\mathrm{d}f }{\mathrm{d} t^T}=\left( \dfrac{\partial f}{\partial \xi_1},\dfrac{\partial f}{\partial \xi_2},\cdots,\dfrac{\partial f}{\partial \xi_n} \right)$</li>
+<li>$\triangledown f(x)=\dfrac{\mathrm{d}f }{\mathrm{d} x}= \left( \dfrac{\partial f}{\partial \xi_1},\dfrac{\partial f}{\partial \xi_2},\cdots,\dfrac{\partial f}{\partial \xi_n} \right)^T$<br>  称为数量函数对向量变量的导数，即为梯度向量，也记为$gradf$</li>
+</ul>
+<p>设$a=(a_1,a_2,\cdots,a_n)^T$为常向量，$x=(\xi_1,\xi_2,\cdots,\xi_n)^T$为向量变量，且$f(x)=(x,a)=a^Tx=x^Ta$<br>$\dfrac{\mathrm{d}f }{\mathrm{d} x} = a$<br>因为$f(x)=\sum\limits_{i=1}^n a_i\xi_i,\dfrac{\partial f}{\partial x_{j}}=a_j\quad j=1,2,\cdots,n$</p>
+<p>设$x=(\xi_1,\xi_2,\cdots,\xi_n)^T,A=(a_{ij})_{n\times n}$，$n$元函数$f(x)=x^TAx$<br>$\dfrac{\mathrm{d}f }{\mathrm{d} x}=(A+A^T)x$<br>因为$f(x)=\sum\limits_{i=1}^n\sum\limits_{j=1}^n a_{ij}\xi_i\xi_j=\xi_1\sum\limits_{j=1}^n a_{1j}\xi_j+ \cdots+\xi_k\sum\limits_{j=1}^n a_{kj}\xi_j+\cdots+\xi_n\sum\limits_{j=1}^n a_{nj}\xi_j$<br>所以$\dfrac{\partial f(x)}{\partial \xi_{k}}=\xi_1a_{1k}+\xi_{k-1}a_{(k-1)k}+\left( \sum\limits_{j=1}^n a_{kj}\xi_j + \xi_k a_{kk} \right) + \xi_{k+1}a_{(k+1)k} + \cdots + \xi_na_{nk}$<br>$\qquad\qquad=\sum\limits_{j=1}^n a_{kj}\xi_j + \sum\limits_{i=1}^n a_{ik}\xi_i \quad k=1,2,\cdots,n$<br>故有</p>
+$$
+\begin{equation}
+\begin{aligned}
+\dfrac{\mathrm{d}f }{\mathrm{d} x}=
+\begin{bmatrix}
+\dfrac{\partial f(x)}{\partial \xi_{1}}\\
+\dfrac{\partial f(x)}{\partial \xi_{2}}\\
+\vdots \\
+\dfrac{\partial f(x)}{\partial \xi_{n}}
+\end{bmatrix}=
+\begin{bmatrix}
+\sum\limits_{j=1}^n a_{1j}\xi_j\\
+\sum\limits_{j=1}^n a_{2j}\xi_j\\
+\vdots \\
+\sum\limits_{j=1}^n a_{nj}\xi_j
+\end{bmatrix}+
+\begin{bmatrix}
+\sum\limits_{i=1}^n a_{i1}\xi_i\\
+\sum\limits_{i=1}^n a_{i2}\xi_i\\
+\vdots \\
+\sum\limits_{i=1}^n a_{in}\xi_i
+\end{bmatrix}=Ax+A^Tx
+\end{aligned}
+\end{equation}
+$$
+
+<p>特别的，当$A$为对称矩阵时，$\dfrac{\mathrm{d}f }{\mathrm{d} x}=2Ax$</p>
+<h2 id="矩阵在微分方程中的应用"><a href="#矩阵在微分方程中的应用" class="headerlink" title="矩阵在微分方程中的应用"></a>矩阵在微分方程中的应用</h2><p><strong>一阶线性常系数齐次微分方程组</strong></p>
+$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+\dfrac{\mathrm{d} x_1(t)}{\mathrm{d} t}=a_{11}x_1(t)+a_{12}x_2(t)+\cdots+a_{1n}x_n(t) \\
+\dfrac{\mathrm{d} x_2(t)}{\mathrm{d} t}=a_{21}x_1(t)+a_{22}x_2(t)+\cdots+a_{2n}x_n(t) \\
+\qquad \vdots \\ 
+\dfrac{\mathrm{d} x_n(t)}{\mathrm{d} t}=a_{n1}x_1(t)+a_{n2}x_2(t)+\cdots+a_{nn}x_n(t) 
+\end{cases}
+\end{aligned}
+\end{equation}
+$
+
+<p>给定初始条件：$x_i(0)\quad i=1,2,\cdots,n$，记A=(a_{ij})\in C^{n\times n}<br>$X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T$<br>则上述微分方程可写成</p>
+$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+\dfrac{\mathrm{d} X(t)}{\mathrm{d} t}=AX(t) \\
+X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T 
+\end{cases}
+\end{aligned}
+\end{equation}
+$
+
+<p>根据矩阵微分性质有</p>
+$
+\begin{equation}
+\begin{aligned}
+\dfrac{\mathrm{d} (e^{-At}X(t))}{\mathrm{d} t}&=\dfrac{\mathrm{d} e^{-At}}{\mathrm{d} t}X(t)+e^{-At}\dfrac{\mathrm{d}X(t) }{\mathrm{d} t}\\
+&=-e^{-At}AX(t)+e^{-At}\dfrac{\mathrm{d}X(t) }{\mathrm{d} t} \\
+&=e^{-At}\left( \dfrac{\mathrm{d}X(t) }{\mathrm{d} t}-AX(t) \right)=0
+\end{aligned}
+\end{equation}
+$
+<p>所以$e^{-At}X(t)=C,X(t)=e^{At}C$，又因为$X(0)=C$，所以$X(t)=e^{At}X(0)$</p>
+<p><strong>定理3.6</strong> 一阶线性常系数齐次微分方程组的定解问题</p>
+$$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+\dfrac{\mathrm{d} X(t)}{\mathrm{d} t}=AX(t) \\
+X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T 
+\end{cases}
+\end{aligned}
+\end{equation}
+$$
+<p>有唯一解$X(t)=e^{At}X(0)$</p>
+<p><strong>一阶线性常系数非齐次微分方程组</strong></p>
+$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+\dfrac{\mathrm{d} X(t)}{\mathrm{d} t}=AX(t) +F(t)\\
+X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T 
+\end{cases}
+\end{aligned}
+\end{equation}
+$
+<p>其中$F(t)=(f_1(t),f_2(t),\cdots,f_n(t),)^T$是已知向量函数<br>根据一阶线性常系数齐次微分方程组性质，可得<br>$\dfrac{\mathrm{d} (e^{-At}X(t))}{\mathrm{d} t}=e^{-At}F(t)$<br>对此方程在$[t_0,t]$上进行积分，得<br>$e^{-At}X(t)-e^{-At_0}X(t_0)=\int_{t_0}^t e^{-A\tau}F(\tau)d\tau$<br>$X(t)=e^{A(t-t_0)}X(t_0)+\int_{t_0}^t e^A{t-\tau}F(\tau)d\tau$</p>
 ]]></content>
       <categories>
         <category>Course</category>
