@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法作业题第三章">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-12T10:00:58.840Z">
+<meta property="og:updated_time" content="2019-11-12T11:10:49.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法作业第三章">
 <meta name="twitter:description" content="计算方法作业题第三章">
@@ -582,11 +582,11 @@ sin5t-sint&2sin5t+2sint
 2&2\\
 1&3
 \end{bmatrix}\\
-&[\lambda I-A]=
-\begin{bmatrix}
+&|\lambda I-A|=
+\left |\begin{array}{cccc}
 \lambda-2&-2\\
 -1&\lambda-3
-\end{bmatrix}\\
+  \end{array}\right|=0\\
 &\Rightarrow (\lambda-4)(\lambda-1)=0\\
 &\Rightarrow \lambda_1=4,\lambda_2=1\\
 &\Rightarrow J=
@@ -609,7 +609,7 @@ f(x)&=\Vert Ax-b\Vert_2^2\\
 &=x^TA^TAx-x^T(A^Tb)-(A^Tb)^Tx+b^Tb\\
 \frac{\mathrm{d}f}{\mathrm{d} x}&=2(A^TAx-A^Tb)\\
 当&\frac{\mathrm{d}f}{\mathrm{d} x}=0时，即A^TAx-A^Tb=0时\\
-存在&x^{(0)}为最小二乘解
+存在&x^{(0)}为最小二乘解，方程组为A^TAx-A^Tb=0
 \end{aligned}
 \end{equation}
 $$
@@ -657,8 +657,8 @@ $$
  \end{bmatrix}\\
  &\qquad\qquad\qquad=
  \begin{bmatrix}
- sinu&-cosu\\
- cosu&sinu
+ -sinu&cosu\\
+ -cosu&-sinu
  \end{bmatrix}\\
  &(2)若u=e^{2t},求\frac{\mathrm{d} }{\mathrm{d} t}A(u)\\
  &\frac{\mathrm{d} }{\mathrm{d} t}A(u)={e^{2t}}'\frac{\mathrm{d} }{\mathrm{d} u}A(u)=2e^{2t}
@@ -771,7 +771,7 @@ $$
    \end{equation}
    $$
 
-<p>   ##第八题<br>   证明$f(A^T)=[f(A)]^T$，并利用此结果计算$sintA,e^{tA}$，其中<br>   $$
+<h2 id="第八题"><a href="#第八题" class="headerlink" title="第八题"></a>第八题</h2><p>   证明$f(A^T)=[f(A)]^T$，并利用此结果计算$sintA,e^{tA}$，其中<br>   $$
    A=
    \begin{bmatrix}
    1&&& \\
@@ -786,7 +786,7 @@ $$
    f(A^T)&=\sum\limits_{k=0}^\infty a_k(A^T)^k\\
    &=a_1A^T+a_2(A^T)^2+\cdots+a_j(A^T)^j+\cdots\\
    &=a_1A^T+a_2(A^2)^T+\cdots+a_j(A^j)^T+\cdots\\
-   &=\left(\sum\limits_{k=0}^\infty a_kA^k\right)^T\\
+   &=\left(\sum\limits_{k=0}^\infty a_kA^k\right)^T = [f(A)]^T\\
    A&=
    \begin{bmatrix}
    1&&& \\
@@ -817,17 +817,17 @@ $$
    \end{bmatrix}\\
    \therefore (e^{tA})^T&=e^{tA^T}=
    \begin{bmatrix}
-   e^t&e^t&\dfrac{e^t}{2}&\dfrac{e^t}{6} \\
-   &e^t&e^t&\dfrac{e^t}{2} \\
-   &&e^t&e^t \\
+   e^t&te^t&\dfrac{t^2e^t}{2}&\dfrac{t^3e^t}{6} \\
+   &e^t&te^t&\dfrac{t^2e^t}{2} \\
+   &&e^t&te^t \\
    &&&e^t
    \end{bmatrix}\\
    \therefore e^{tA}&=
    \begin{bmatrix}
    e^t&&& \\
-   e^t&e^t&& \\
-   \dfrac{e^t}{2}&e^t&e^t& \\
-   \dfrac{e^t}{6}&\dfrac{e^t}{2}&e^t&e^t
+   te^t&e^t&& \\
+   \dfrac{t^2e^t}{2}&te^t&e^t& \\
+   \dfrac{t^3e^t}{6}&\dfrac{t^2e^t}{2}&te^t&e^t
    \end{bmatrix}\\
    \end{aligned}
    \end{equation}
@@ -1067,7 +1067,7 @@ $$
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章作业题"><span class="nav-number">1.</span> <span class="nav-text">第三章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题"><span class="nav-number">1.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题"><span class="nav-number">1.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题"><span class="nav-number">1.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题"><span class="nav-number">1.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题"><span class="nav-number">1.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题"><span class="nav-number">1.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题"><span class="nav-number">1.7.</span> <span class="nav-text">第七题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章作业题"><span class="nav-number">1.</span> <span class="nav-text">第三章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题"><span class="nav-number">1.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题"><span class="nav-number">1.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题"><span class="nav-number">1.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题"><span class="nav-number">1.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题"><span class="nav-number">1.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题"><span class="nav-number">1.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题"><span class="nav-number">1.7.</span> <span class="nav-text">第七题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题"><span class="nav-number">1.8.</span> <span class="nav-text">第八题</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1114,7 +1114,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共33.7k字</span>
+  <span class="post-count">博客全站共33.8k字</span>
 </div>
 
         
