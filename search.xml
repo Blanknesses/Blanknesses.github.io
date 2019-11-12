@@ -2323,7 +2323,7 @@ $
 \end{equation}
 $
 
-<p>给定初始条件：$x_i(0)\quad i=1,2,\cdots,n$，记A=(a_{ij})\in C^{n\times n}<br>$X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T$<br>则上述微分方程可写成</p>
+<p>给定初始条件：$x_i(0)\quad i=1,2,\cdots,n$，记$A=(a_{ij})\in C^{n\times n}$<br>$X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T$<br>则上述微分方程可写成</p>
 $
 \begin{equation}
 \begin{aligned}
