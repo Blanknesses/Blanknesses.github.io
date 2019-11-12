@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,Markdown,">
+  <meta name="keywords" content="Math,Course,">
 
 
 
@@ -98,18 +98,18 @@
 
 
 
-<meta name="description" content="Hexo常用指令Markdown语法使用方法使用LaTeX编写公式">
-<meta name="keywords" content="Hexo,Markdown">
+<meta name="description" content="计算方法作业题第三章">
+<meta name="keywords" content="Math,Course">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo日常使用以及Markdown语法">
-<meta property="og:url" content="http://yoursite.com/2019/10/17/HexoAndMarkdown/index.html">
+<meta property="og:title" content="计算方法作业第三章">
+<meta property="og:url" content="http://yoursite.com/2019/11/06/CMW3/index.html">
 <meta property="og:site_name" content="不断努力的Koo">
-<meta property="og:description" content="Hexo常用指令Markdown语法使用方法使用LaTeX编写公式">
+<meta property="og:description" content="计算方法作业题第三章">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-21T08:37:07.423Z">
+<meta property="og:updated_time" content="2019-11-12T10:00:58.840Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo日常使用以及Markdown语法">
-<meta name="twitter:description" content="Hexo常用指令Markdown语法使用方法使用LaTeX编写公式">
+<meta name="twitter:title" content="计算方法作业第三章">
+<meta name="twitter:description" content="计算方法作业题第三章">
 
 
 
@@ -139,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/17/HexoAndMarkdown/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/06/CMW3/">
 
 
 
 
 
-  <title>Hexo日常使用以及Markdown语法 | 不断努力的Koo</title>
+  <title>计算方法作业第三章 | 不断努力的Koo</title>
   
 
 
@@ -336,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/17/HexoAndMarkdown/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/CMW3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Koo">
@@ -353,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo日常使用以及Markdown语法</h1>
+          <h1 class="post-title" itemprop="name headline">计算方法作业第三章</h1>
         
 
         <div class="post-meta">
@@ -365,8 +365,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-17T09:55:50+08:00">
-                2019-10-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-06T15:48:42+08:00">
+                2019-11-06
               </time>
             
 
@@ -388,8 +388,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Blog/" itemprop="url" rel="index">
-                    <span itemprop="name">Blog</span>
+                  <a href="/categories/Course/" itemprop="url" rel="index">
+                    <span itemprop="name">Course</span>
                   </a>
                 </span>
 
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  941
+                  1.6k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  9
                 </span>
               
             </div>
@@ -443,7 +443,7 @@
 
           
               <div class="post-description">
-                  <center>Hexo常用指令<br>Markdown语法使用方法<br>使用LaTeX编写公式</center>
+                  <center>计算方法作业题第三章</center>
               </div>
           
 
@@ -460,64 +460,378 @@
       
 
       
-        <h1 id="Hexo日常使用"><a href="#Hexo日常使用" class="headerlink" title="Hexo日常使用"></a>Hexo日常使用</h1><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//新建页面</span><br><span class="line">hexo new page &quot;page title&quot;</span><br><span class="line">//新建文章</span><br><span class="line">hexo new &quot;post title&quot;</span><br><span class="line">//生成静态文件，可简写为hexo g</span><br><span class="line">hexo generate</span><br><span class="line">//启动服务器，默认本地访问网址为：http://localhost:4000，可简写为hexo s</span><br><span class="line">hexo server</span><br><span class="line">//部署网站，可简写为hexo d -g，-g为部署前生成静态文件</span><br><span class="line">hexo deploy -g</span><br><span class="line">//清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+        <h1 id="第三章作业题"><a href="#第三章作业题" class="headerlink" title="第三章作业题"></a>第三章作业题</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><p>已知四阶矩阵$A$的特征值分别为$\pi,-\pi,0,0$，求$sinA,cosA$</p>
+$$
+\begin{equation}
+\begin{aligned}
+&\because A的特征值为\pi,-\pi,0,0  \\
+&\therefore \psi(\lambda)=\lambda^2(\lambda-\pi)(\lambda+\pi) \\
+&sin(\lambda)=p(\lambda)\psi(\lambda)+b_3\lambda^3+b_2\lambda^2+b_1\lambda^1+b_0\\
+&\begin{cases}
+b_0=sin0=0  \\
+b_1=cos0=1  \\
+b_3\pi^3+b_2\pi^2+\pi=sin\pi=0 \\
+-b_3\pi^3+b_2\pi^2-\pi=sin(-\pi)=0
+\end{cases} \\
+&\Rightarrow b_0=0,b_1=1,b_2=0,b_3=-\dfrac{1}{\pi^2} \\
+&\therefore sin(\lambda)=p(\lambda)\psi(\lambda)-\dfrac{1}{\pi^2}\lambda^3+b_1\lambda^1\\
+&\therefore sin(A)=-\dfrac{1}{\pi^2}A^3+b_1A\\
+&cos(\lambda)=p(\lambda)\psi(\lambda)+b_3\lambda^3+b_2\lambda^2+b_1\lambda^1+b_0\\
+&\begin{cases}
+b_0=cos0=1  \\
+b_1=-sin0=0  \\
+b_3\pi^3+b_2\pi^2+1=cos\pi=-1 \\
+-b_3\pi^3+b_2\pi^2+1=cos(-\pi)=-1
+\end{cases} \\
+&\Rightarrow b_0=1,b_1=0,b_2=-\dfrac{2}{\pi^2},b_3=0\\
+&\therefore cos(\lambda)=p(\lambda)\psi(\lambda)-\dfrac{2}{\pi^2}\lambda^2+1\\
+&\therefore cos(A)=-\dfrac{2}{\pi^2}A^2+I\\
+\end{aligned}
+\end{equation}
+$$
 
-<h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><p>推荐一款轻便简洁的Markdown编辑器<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a></p>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一阶标题      </span></span><br><span class="line"><span class="section">## 二阶标题     </span></span><br><span class="line"><span class="section">### 三阶标题    </span></span><br><span class="line"><span class="section">#### 四阶标题   </span></span><br><span class="line"><span class="section">##### 五阶标题  </span></span><br><span class="line"><span class="section">###### 六阶标题</span></span><br></pre></td></tr></table></figure>
+<h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><p>已知$
+  \begin{equation}
+  \begin{aligned}
+  A=
+  \begin{bmatrix}
+  2&1&0&0&0 \\
+  0&2&0&0&0 \\
+  0&0&3&1&0 \\
+  0&0&0&3&1 \\
+  0&0&0&0&3 
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+  $，$f(z)=4+z+6z^3$，求$f(A)$</p>
+$$
+\begin{equation}
+\begin{aligned}
+&A=
+\begin{bmatrix}
+2&1&0&0&0 \\
+0&2&0&0&0 \\
+0&0&3&1&0 \\
+0&0&0&3&1 \\
+0&0&0&0&3 
+\end{bmatrix}\\
+&\Rightarrow A为Jordan标准型\\
+&\Rightarrow 
+J_1=
+\begin{bmatrix}
+2&1\\
+0&2
+\end{bmatrix},
+J_2=
+\begin{bmatrix}
+3&1&0\\
+0&3&1\\
+0&0&3
+\end{bmatrix}\\
+&f(z)=4+z+6z^3\\
+&\therefore f(A)= 
+\begin{bmatrix}
+f(J_1)&\\
+&f(J_2)
+\end{bmatrix}\\
+&f(J_1)=
+\begin{bmatrix}
+54&73\\
+0&54
+\end{bmatrix},f(J_2)=
+\begin{bmatrix}
+169&163&54\\
+0&169&163\\
+0&0&169
+\end{bmatrix}\\
+&\therefore f(A)=
+\begin{bmatrix}
+54&73&0&0&0\\
+0&54&0&0&0\\
+0&0&169&163&54\\
+0&0&0&169&163\\
+0&0&0&0&169
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$$
 
-<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线的内容<span class="xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2><p>已知$
+  sin(tA)=\dfrac{1}{4}
+  \begin{bmatrix}
+  sin5t+sin3t&2sin5t-2sint\\
+  sin5t-sint&2sin5t+2sint
+  \end{bmatrix}  
+  $，试求出矩阵$A$以及矩阵$A$的$Jordan$标准型</p>
+$$
+\begin{equation}
+\begin{aligned}
+&sin(tA)=\dfrac{1}{4}
+\begin{bmatrix}
+sin5t+sin3t&2sin5t-2sint\\
+sin5t-sint&2sin5t+2sint
+\end{bmatrix}\\
+&sin(tA)'=Acos(tA)=\dfrac{1}{4}
+\begin{bmatrix}
+5cos5t+3cos3t&10cos5t-2cost\\
+5cos5t-cost&10cos5t+2cost
+\end{bmatrix}\\
+&令t=0\\
+&A=
+\begin{bmatrix}
+2&2\\
+1&3
+\end{bmatrix}\\
+&[\lambda I-A]=
+\begin{bmatrix}
+\lambda-2&-2\\
+-1&\lambda-3
+\end{bmatrix}\\
+&\Rightarrow (\lambda-4)(\lambda-1)=0\\
+&\Rightarrow \lambda_1=4,\lambda_2=1\\
+&\Rightarrow J=
+\begin{bmatrix}
+1&0\\
+0&4
+\end{bmatrix}\\
+\end{aligned}
+\end{equation}
+$$
 
-<h2 id="字体加粗"><a href="#字体加粗" class="headerlink" title="字体加粗"></a>字体加粗</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
+<h2 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h2><p>已知$A\in R^{m\times n},b\in R^m$，对于矛盾方程组$Ax=b$，使得$f(x)=\Vert Ax-b\Vert_2^2$为最小的向量$x^{(0)}$称为最小二乘解，导出最小二乘解所满足的方程组</p>
+$$
+\begin{equation}
+\begin{aligned}
+\because A&\in R^{m\times n},b\in R^m\\
+f(x)&=\Vert Ax-b\Vert_2^2\\
+&=(Ax-b,Ax-b)=(Ax-b)^T(Ax-b)\\
+&=x^TA^TAx-x^TA^Tb-b^TAx+b^Tb\\
+&=x^TA^TAx-x^T(A^Tb)-(A^Tb)^Tx+b^Tb\\
+\frac{\mathrm{d}f}{\mathrm{d} x}&=2(A^TAx-A^Tb)\\
+当&\frac{\mathrm{d}f}{\mathrm{d} x}=0时，即A^TAx-A^Tb=0时\\
+存在&x^{(0)}为最小二乘解
+\end{aligned}
+\end{equation}
+$$
 
-<h2 id="斜体字"><a href="#斜体字" class="headerlink" title="斜体字"></a>斜体字</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*倾斜的内容*</span></span><br></pre></td></tr></table></figure>
+<h2 id="第五题"><a href="#第五题" class="headerlink" title="第五题"></a>第五题</h2><p>设$
+ A=
+ \begin{bmatrix}
+ cosu&-sinu\\
+ sinu&cosu
+ \end{bmatrix}
+ $，求<br> （1）$\frac{\mathrm{d} }{\mathrm{d} u}(e^uA),\frac{\mathrm{d} }{\mathrm{d} u}(A^{-1}(u))$<br> （2）$若u=e^{2t},求\frac{\mathrm{d} }{\mathrm{d} t}A(u)$</p>
+ $$
+ \begin{equation}
+ \begin{aligned}
+ &\because A=
+ \begin{bmatrix}
+ cosu&-sinu\\
+ sinu&cosu
+ \end{bmatrix}\\
+ &(1)\frac{\mathrm{d} }{\mathrm{d} u}(e^uA),\frac{\mathrm{d} }{\mathrm{d} u}(A^{-1}(u))\\
+ &\frac{\mathrm{d} }{\mathrm{d} u}(e^uA)=e^uA+e^u\frac{\mathrm{d} A}{\mathrm{d} u}=
+ e^u\begin{bmatrix}
+ cosu-sinu&-sinu-cosu\\
+ sinu+cosu&cosu-sinu
+ \end{bmatrix}\\
+ &\frac{\mathrm{d} }{\mathrm{d} u}(A^{-1}(u))=
+ -A^{-1}(u)\left( \frac{\mathrm{d} }{\mathrm{d} u}A(u) \right)A^{-1}(u)\\
+ &A^{-1}(u)=
+ \begin{bmatrix}
+ cosu&sinu\\
+ -sinu&cosu
+ \end{bmatrix}\\
+ &\therefore \frac{\mathrm{d} }{\mathrm{d} u}(A^{-1}(u))=
+ -\begin{bmatrix}
+ cosu&sinu\\
+ -sinu&cosu
+ \end{bmatrix}
+ \begin{bmatrix}
+ -sinu&-cosu\\
+ cosu&-sinu
+ \end{bmatrix}
+ \begin{bmatrix}
+ cosu&sinu\\
+ -sinu&cosu
+ \end{bmatrix}\\
+ &\qquad\qquad\qquad=
+ \begin{bmatrix}
+ sinu&-cosu\\
+ cosu&sinu
+ \end{bmatrix}\\
+ &(2)若u=e^{2t},求\frac{\mathrm{d} }{\mathrm{d} t}A(u)\\
+ &\frac{\mathrm{d} }{\mathrm{d} t}A(u)={e^{2t}}'\frac{\mathrm{d} }{\mathrm{d} u}A(u)=2e^{2t}
+ \begin{bmatrix}
+ -sinu&-cosu\\
+ cosu&-sinu
+ \end{bmatrix}
+ \end{aligned}
+ \end{equation}
+ $$
 
-<h2 id="空格符"><a href="#空格符" class="headerlink" title="空格符"></a>空格符</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp;ensp;  //一个空格</span><br><span class="line">&amp;emsp;  //两个空格</span><br></pre></td></tr></table></figure>
+<h2 id="第六题"><a href="#第六题" class="headerlink" title="第六题"></a>第六题</h2><p> 设$
+  A=
+  \begin{bmatrix}
+  2&2&1 \\
+  1&3&1 \\
+  1&1&3
+  \end{bmatrix}
+  $，试用有限待定系数法计算$cosA$</p>
+  $$
+  \begin{equation}
+  \begin{aligned}
+  &A=
+  \begin{bmatrix}
+  2&2&1 \\
+  1&3&1 \\
+  1&1&3
+  \end{bmatrix}\\
+  &|\lambda I -A|=
+  \left |\begin{array}{cccc}
+  \lambda-2&-2&-1 \\
+  -1&\lambda-3& -1  \\
+  -1& -1&\lambda-3 \\
+  \end{array}\right|=0\\
+  &\psi(\lambda)=(\lambda-1)(\lambda-2)(\lambda-5)\\
+  &cosA=p(\lambda)\psi(\lambda)+b_2\lambda^2+b_1\lambda+b_0\\
+  &\Rightarrow 
+  \begin{cases}
+  b_2+b_1+b_0=cos1\\
+  4b_2+2b_1+b_0=cos2\\
+  25b_2+5b_1+b_0=cos5
+  \end{cases}\\
+  &\Rightarrow 
+  \begin{cases}
+  b_2=\dfrac{1}{12}(cos5-4cos2+3cos1)\\
+  b_1=\dfrac{1}{12}(-3cos5+24cos2-21cos1)\\
+  b_0=\dfrac{1}{12}(2cos5-20cos2+30cos1)
+  \end{cases}\\
+  &cosA=\dfrac{1}{12}(cos5-4cos2+3cos1)A^2+\dfrac{1}{12}(-3cos5+24cos2-21cos1)A\\
+  &\qquad\quad+\dfrac{1}{12}(2cos5-20cos2+30cos1)\\
+  &\qquad\quad=
+  \dfrac{1}{12}(cos5-4cos2+3cos1)
+  \begin{bmatrix}
+  7&11&7 \\
+  6&12&7 \\
+  6&8&11
+  \end{bmatrix}\\
+  &\qquad\quad+\dfrac{1}{12}(-3cos5+24cos2-21cos1)
+  \begin{bmatrix}
+  2&2&1 \\
+  1&3&1 \\
+  1&1&3
+  \end{bmatrix}\\
+  &\qquad\quad+\dfrac{1}{12}(2cos5-20cos2+30cos1)
+  \begin{bmatrix}
+  1&0&0 \\
+  0&1&0 \\
+  0&0&1 
+  \end{bmatrix}\\
+  &\qquad\quad=
+  \dfrac{1}{12}\begin{bmatrix}
+  3cos5+9cos1&5cos5+4cos2-9cos1&4cos5-4cos2 \\
+  3cos5-3cos1&5cos5+4cos2+3cos1&4cos5-4cos2 \\
+  3cos5-3cos1&5cos5-8cos2+3cos1&4cos5+8cos2 
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+  $$
 
-<h2 id="居中文本"><a href="#居中文本" class="headerlink" title="居中文本"></a>居中文本</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span>这是要居中的文本内容<span class="xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="第七题"><a href="#第七题" class="headerlink" title="第七题"></a>第七题</h2><p>  设$
+   A= 
+   \begin{bmatrix}
+   0.6&0 \\
+   0.4&0.5
+   \end{bmatrix}
+   $，证明$\sum\limits_{k=0}^\infty A^k$收敛，并计算$\sum\limits_{k=0}^\infty A^k$</p>
+   $$
+   \begin{equation}
+   \begin{aligned}
+   &A= 
+   \begin{bmatrix}
+   0.6&0 \\
+   0.4&0.5
+   \end{bmatrix}\\
+   &\because\Vert A \Vert_\infty=0.4+0.5=0.9\\
+   &\therefore \lim\limits_{k\rightarrow\infty}A^k =0\\
+   &\therefore \sum\limits_{k=0}^\infty A^k收敛\\
+   &\therefore \sum\limits_{k=0}^\infty=(I-A)^{-1} \\
+   &\qquad\quad =
+   \begin{bmatrix}
+   0.4&0\\
+   -0.4&0.5
+   \end{bmatrix}^{-1} \\
+   &\qquad\quad =
+   \begin{bmatrix}
+   2.5&0\\
+   2&2
+   \end{bmatrix}
+   \end{aligned}
+   \end{equation}
+   $$
 
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">***</span> </span><br><span class="line">或</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~删除线删除的内容~~</span><br></pre></td></tr></table></figure>
-
-<h2 id="有序表"><a href="#有序表" class="headerlink" title="有序表"></a>有序表</h2><p>使用<code>数字 + . + 空格 + 输入内容</code>，需注意虽然不按如此格式输入显示仍是表的样式，但在HTML源码中不是表的格式</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>数据1</span><br><span class="line"><span class="bullet">    1. </span>数据1的子数据1</span><br><span class="line"><span class="bullet">    2. </span>数据1的子数据2</span><br><span class="line"><span class="code">    ...</span></span><br><span class="line"><span class="bullet">2. </span>数据2</span><br><span class="line"><span class="bullet">3. </span>数据3</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<h2 id="无序表"><a href="#无序表" class="headerlink" title="无序表"></a>无序表</h2><p>使用<code>+</code>，<code>-</code>，<code>*</code>均可</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>数据1</span><br><span class="line"><span class="bullet">    - </span>数据1的子数据1</span><br><span class="line"><span class="bullet">    - </span>数据1的子数据2</span><br><span class="line"><span class="code">    ...</span></span><br><span class="line"><span class="bullet">+ </span>数据2</span><br><span class="line"><span class="bullet">+ </span>数据3</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">图片描述（不会显示在页面中）</span>](<span class="link">图片路径</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="插入链接"><a href="#插入链接" class="headerlink" title="插入链接"></a>插入链接</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">链接描述（带下划线文本形式显示）</span>](<span class="link">链接URL</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>在表格绘制中，<code>|</code>表示分列，<code>-</code>控制分行，<code>:</code>控制对齐方式<br><code>:-</code>表示左对齐，<code>:-:</code>表示居中对齐，<code>-:</code>表示右对齐<br>注意控制分行符号<code>-</code>数量对显示没有影响，下面多个<code>-</code>纯属为了排版好看</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| 列名1    | 列名2    | 列名3   |  </span><br><span class="line">| :------ | :------: | ------: |</span><br><span class="line">| 列1数据1 | 列2数据1 | 列3数据1 |   </span><br><span class="line">| 列1数据2 | 列2数据2 | 列3数据2 | </span><br><span class="line">| 列1数据3 | 列2数据3 | 列3数据3 |</span><br></pre></td></tr></table></figure>
-
-<p>此处需注意在Hexo中，对Markdown表格解析结果为</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列名1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列名2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列名3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列1数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列2数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列3数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>无法实现文本内容居中，居右表示，只能默认居左表示<br>目前只想到通过修改当前页面全局CSS来改变位置，在文章前面加入如下CSS来实现居中显示：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">th</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">td</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="插入代码"><a href="#插入代码" class="headerlink" title="插入代码"></a>插入代码</h2><h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`单行代码内容`</span></span><br></pre></td></tr></table></figure>
-
-<p>在Hexo中会解析为<code>&lt;code&gt;</code>标签的内容，故可在<code>themes/hexo-theme-next/source/css/_custom/custom.styl</code>下修改其CSS样式</p>
-<h3 id="多行代码"><a href="#多行代码" class="headerlink" title="多行代码"></a>多行代码</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```</span></span><br><span class="line"><span class="code">   此处为多行代码填写位置，可以选择Markdown自带的一些代码类型，从而实现部分高亮显示</span></span><br><span class="line"><span class="code">   不存在的类型（例如cmd中命令行语句），选择text格式即可 </span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="LaTeX公式"><a href="#LaTeX公式" class="headerlink" title="LaTeX公式"></a>LaTeX公式</h2><p>数学公式的默认定界符</p>
-<ol>
-<li>行内公式为<code>$...$</code>和<code>\\(..\\)</code></li>
-<li>块级公式为<code>$$...$$</code>和<code>\\[..\\]</code></li>
-</ol>
-<p>使用LaTeX需在站点配置文件中找到<code>mathjax</code>，并将<code>enable</code>改为<strong>true</strong><br><a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="noopener">详细使用方法</a></p>
-<h2 id="插入视频"><a href="#插入视频" class="headerlink" title="插入视频"></a>插入视频</h2><p>将下面src中的链接替换为视频外链即可</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">height</span>=<span class="string">498</span> <span class="attr">width</span>=<span class="string">570</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">"https://www.bilibili.com/html/html5player.html?cid=24237876&amp;aid=14875829&amp;pre_ad=0"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">frameborder</span>=<span class="string">0</span> <span class="attr">allowfullscreen</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="禁用Markdown渲染"><a href="#禁用Markdown渲染" class="headerlink" title="禁用Markdown渲染"></a>禁用Markdown渲染</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">    禁用渲染的内容，如LaTeX换行符\\，常用在矩阵中</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>最后编辑于2019.10.19</p>
-
+<p>   ##第八题<br>   证明$f(A^T)=[f(A)]^T$，并利用此结果计算$sintA,e^{tA}$，其中<br>   $$
+   A=
+   \begin{bmatrix}
+   1&&& \\
+   1&1&& \\
+   &1&1& \\
+   &&1&1
+   \end{bmatrix}
+   $$</p>
+   $$
+   \begin{equation}
+   \begin{aligned}
+   f(A^T)&=\sum\limits_{k=0}^\infty a_k(A^T)^k\\
+   &=a_1A^T+a_2(A^T)^2+\cdots+a_j(A^T)^j+\cdots\\
+   &=a_1A^T+a_2(A^2)^T+\cdots+a_j(A^j)^T+\cdots\\
+   &=\left(\sum\limits_{k=0}^\infty a_kA^k\right)^T\\
+   A&=
+   \begin{bmatrix}
+   1&&& \\
+   1&1&& \\
+   &1&1& \\
+   &&1&1
+   \end{bmatrix}\\
+   A^T&=
+   \begin{bmatrix}
+   1&1&& \\
+   &1&1& \\
+   &&1&1 \\
+   &&&1
+   \end{bmatrix}为Jordan标准型且\lambda=1\\
+   \therefore(sintA)^T&=sintA^T=
+   \begin{bmatrix}
+   sint&tcost&-\dfrac{t^2sint}{2}&-\dfrac{t^3cost}{6} \\
+   &sint&tcost&-\dfrac{t^2sint}{2} \\
+   &&sint&tcost \\
+   &&&sint
+   \end{bmatrix}\\
+   \therefore sintA&=
+   \begin{bmatrix}
+   sint&&& \\
+   tcost&sint&& \\
+   -\dfrac{t^2sint}{2}&tcost&sint& \\
+   -\dfrac{t^3cost}{6}&-\dfrac{t^2sint}{2}&tcost&sint
+   \end{bmatrix}\\
+   \therefore (e^{tA})^T&=e^{tA^T}=
+   \begin{bmatrix}
+   e^t&e^t&\dfrac{e^t}{2}&\dfrac{e^t}{6} \\
+   &e^t&e^t&\dfrac{e^t}{2} \\
+   &&e^t&e^t \\
+   &&&e^t
+   \end{bmatrix}\\
+   \therefore e^{tA}&=
+   \begin{bmatrix}
+   e^t&&& \\
+   e^t&e^t&& \\
+   \dfrac{e^t}{2}&e^t&e^t& \\
+   \dfrac{e^t}{6}&\dfrac{e^t}{2}&e^t&e^t
+   \end{bmatrix}\\
+   \end{aligned}
+   \end{equation}
+   $$
       
     </div>
     
@@ -545,9 +859,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/Math/" rel="tag"># Math</a>
           
-            <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+            <a href="/tags/Course/" rel="tag"># Course</a>
           
         </div>
       
@@ -560,8 +874,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/16/NextAndConfig/" rel="next" title="Hexo的Next主题以及个性化设置">
-                <i class="fa fa-chevron-left"></i> Hexo的Next主题以及个性化设置
+              <a href="/2019/11/06/ComputationalMethodsWork/" rel="next" title="计算方法作业">
+                <i class="fa fa-chevron-left"></i> 计算方法作业
               </a>
             
           </div>
@@ -569,10 +883,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/19/ComputationalMethods/" rel="prev" title="计算方法知识点">
-                计算方法知识点 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -757,7 +1067,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo日常使用"><span class="nav-number">1.</span> <span class="nav-text">Hexo日常使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdown语法"><span class="nav-number">2.</span> <span class="nav-text">Markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标题"><span class="nav-number">2.1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下划线"><span class="nav-number">2.2.</span> <span class="nav-text">下划线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体加粗"><span class="nav-number">2.3.</span> <span class="nav-text">字体加粗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斜体字"><span class="nav-number">2.4.</span> <span class="nav-text">斜体字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空格符"><span class="nav-number">2.5.</span> <span class="nav-text">空格符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#居中文本"><span class="nav-number">2.6.</span> <span class="nav-text">居中文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分割线"><span class="nav-number">2.7.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除线"><span class="nav-number">2.8.</span> <span class="nav-text">删除线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有序表"><span class="nav-number">2.9.</span> <span class="nav-text">有序表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无序表"><span class="nav-number">2.10.</span> <span class="nav-text">无序表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入图片"><span class="nav-number">2.11.</span> <span class="nav-text">插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入链接"><span class="nav-number">2.12.</span> <span class="nav-text">插入链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">2.13.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入代码"><span class="nav-number">2.14.</span> <span class="nav-text">插入代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行代码"><span class="nav-number">2.14.1.</span> <span class="nav-text">单行代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行代码"><span class="nav-number">2.14.2.</span> <span class="nav-text">多行代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LaTeX公式"><span class="nav-number">2.15.</span> <span class="nav-text">LaTeX公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入视频"><span class="nav-number">2.16.</span> <span class="nav-text">插入视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#禁用Markdown渲染"><span class="nav-number">2.17.</span> <span class="nav-text">禁用Markdown渲染</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章作业题"><span class="nav-number">1.</span> <span class="nav-text">第三章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题"><span class="nav-number">1.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题"><span class="nav-number">1.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题"><span class="nav-number">1.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题"><span class="nav-number">1.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题"><span class="nav-number">1.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题"><span class="nav-number">1.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题"><span class="nav-number">1.7.</span> <span class="nav-text">第七题</span></a></li></ol></li></ol></div>
             
 
           </div>
