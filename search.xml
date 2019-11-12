@@ -631,7 +631,7 @@ Q_2Q_1A&=
 0&1&1\\
 {0}&{0}&{\dfrac{4}{5}}\\
 \end{bmatrix} \\
-所以有Q=Q_1Q_2&=
+所以有Q^T=Q_1Q_2&=
 \begin{bmatrix}
 {\dfrac{4}{5}}&0&{\dfrac{3}{5}}\\
 {\dfrac{3}{5}}&0&{\dfrac{-4}{5}}\\
