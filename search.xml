@@ -911,12 +911,13 @@ U_1&=AV_1\Sigma^{-1}=
 \dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{2}}
 \end{bmatrix}
 \begin{bmatrix}
-\dfrac{1}{\sqrt{3}}&0\\
-0&1
+\dfrac{1}{\sqrt{3}}&0&0\\
+0&1&0
 \end{bmatrix}
 \begin{bmatrix}
 \dfrac{2}{\sqrt{6}}&\dfrac{1}{\sqrt{6}}&\dfrac{1}{\sqrt{6}}\\
-0&\dfrac{1}{\sqrt{2}}&-\dfrac{1}{\sqrt{2}}
+0&\dfrac{1}{\sqrt{2}}&-\dfrac{1}{\sqrt{2}}\\
+-\dfrac{1}{\sqrt{3}}&\dfrac{1}{\sqrt{3}}&\dfrac{1}{\sqrt{3}}
 \end{bmatrix}
 \end{aligned}
 \end{equation}
