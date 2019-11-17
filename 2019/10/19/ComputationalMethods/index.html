@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法知识点归纳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-12T09:40:45.942Z">
+<meta property="og:updated_time" content="2019-11-17T09:23:28.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法知识点">
 <meta name="twitter:description" content="计算方法知识点归纳">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  20.8k
+                  23.7k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  102
+                  117
                 </span>
               
             </div>
@@ -1760,6 +1760,218 @@ X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T
 \end{equation}
 $
 <p>其中$F(t)=(f_1(t),f_2(t),\cdots,f_n(t),)^T$是已知向量函数<br>根据一阶线性常系数齐次微分方程组性质，可得<br>$\dfrac{\mathrm{d} (e^{-At}X(t))}{\mathrm{d} t}=e^{-At}F(t)$<br>对此方程在$[t_0,t]$上进行积分，得<br>$e^{-At}X(t)-e^{-At_0}X(t_0)=\int_{t_0}^t e^{-A\tau}F(\tau)d\tau$<br>$X(t)=e^{A(t-t_0)}X(t_0)+\int_{t_0}^t e^A{t-\tau}F(\tau)d\tau$</p>
+<h1 id="逐次迭代法"><a href="#逐次迭代法" class="headerlink" title="逐次迭代法"></a>逐次迭代法</h1><h2 id="简单迭代法"><a href="#简单迭代法" class="headerlink" title="简单迭代法"></a>简单迭代法</h2><p>将$Ax=b$变形为$x=Bx+f$，其中$B\in R^{n\times n},f\in R^n,x\in R^n$，拥有同样的解，称$B$矩阵为迭代矩阵<br>迭代法一般形式为：$x^{(k+1)}=Bx^{(k)}+f\quad (k=0,1,2,\cdots)$<br>如果对任意$x^{(0)}$，都有当$k\rightarrow \infty$时，$x^{(k)}\rightarrow x^{*}$，其中$x^{(k)}=(x_1^{(k)},x_2^{(k)},\cdots,x_n^{(k)})^T,x^{*}=(x_1^{*},x_2^{*},\cdots,x_n^{*})^T$<br>即$\lim\limits_{k \rightarrow \infty}x_i^{(k)}=x_i^{*}\quad i=1,2,\cdots,n$<br>称该迭代法收敛，否则称迭代法发散<br>由于$\lim\limits_{k \rightarrow \infty}x^{(k+1)}=B\lim\limits_{k \rightarrow \infty}x^{(k)}+f$，所以收敛迭代法的极限向量$x^*$满足$x^*=Bx^*+f$</p>
+<h2 id="Jacob-迭代和-G-S-迭代格式"><a href="#Jacob-迭代和-G-S-迭代格式" class="headerlink" title="$Jacob$迭代和$G-S$迭代格式"></a>$Jacob$迭代和$G-S$迭代格式</h2><p>线性方程组的一般形式</p>
+$$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+a_{11}x_1+a_{12}x_2+\cdots +a_{1n}x_n=b_1\\
+a_{21}x_1+a_{22}x_2+\cdots +a_{2n}x_n=b_2\\
+\qquad\qquad \vdots\\
+a_{n1}x_1+a_{n2}x_2+\cdots +a_{nn}x_n=b_n\\
+\end{cases}
+\end{aligned}
+\end{equation}
+$$
+
+<p>其中$A=(a_{ij})_{n\times n}$为非奇异，且$a_{ij} \not= 0(i=1,2,\cdots,n)$<br>将上式变形可得</p>
+$$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+x_1=\dfrac{1}{a_{11}}(b_1-a_{12}x_2-\cdots-a_{1n}x_n)\\
+\qquad\qquad \vdots\\
+x_i=\dfrac{1}{a_{ii}}(b_i-a_{i1}x_1-\cdots-a_{ii-1}x_{i-1}-a_{ii+1}x_{i+1}-\cdots-a_{in}x_n)\\
+\qquad\qquad \vdots\\
+x_n=\dfrac{1}{a_{nn}}(b_1-a_{n1}x_1-\cdots-a_{nn-1}x_{n-1})\\
+\end{cases}
+\end{aligned}
+\end{equation}
+$$
+<p>写成迭代格式有</p>
+$$
+\begin{equation}
+\begin{aligned}
+x_i^{(k+1)}=\dfrac{1}{a_{ii}}\left( b_i - \sum\limits_{\substack{j=1\\j\not=i}}^n a_{ij}x_j^{(k)} \right)(i=1,2,\cdots,n)
+\end{aligned}
+\end{equation}
+$$
+
+<p>或者写成<br>$$x_i^{(k+1)}=x_i^{(k)}\dfrac{1}{a_{ii}}\left( b_i - \sum\limits_{j=1}^n a_{ij}x_j^{(k)} \right)(i=1,2,\cdots,n)$$</p>
+<p>称为<strong>Jacobi迭代法</strong></p>
+<p>而考虑到Jacobi迭代法中，计算$x_{i+1}^{(k+1)}$时用到$x_{i}^{(k)}$，便将Jacobi迭代中的$x_{i}^{(k+1)}$用计算过的$x_{i+1}^{(k+1)}$替代，得到如下迭代格式</p>
+$$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+x_i^{(k+1)}=\dfrac{1}{a_{ii}}\left( b_i-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k+1)}-\sum\limits_{j=i+1}^{n}a_{ij}x_j^{(k)} \right)\\
+k=0,1,2,\cdots\\
+i=1,2,\cdots,n
+\end{cases}
+\end{aligned}
+\end{equation}
+$$
+
+<p>称为$Gauss-Seidel$迭代法</p>
+<h2 id="迭代法的收敛性"><a href="#迭代法的收敛性" class="headerlink" title="迭代法的收敛性"></a>迭代法的收敛性</h2><p><strong>定理4.1</strong> $\lim\limits_{k\rightarrow \infty}\varepsilon^{(k)}=0$（$\varepsilon^{(k)}=x^{(k)}-k^{*}$，即$x_i^{(k)}\rightarrow x_i^{*}, i = 1,2,\cdots,n$）的充要条件是$\lim\limits_{k\rightarrow \infty}B^k=0_{n\times n} \Leftrightarrow \rho(B)&lt;1$<br><strong>定理4.2</strong> 迭代法$x^{(k+1)}=Rx^{(k)}+f$对任意$x^{(0)}$和$f$均收敛的充要条件为$\rho(B)&lt;1$<br><strong>定理4.3</strong> 若$\Vert B\Vert&lt;1$，则迭代法收敛，且有<br>$$\Vert x^{(k)}-x^{*}\Vert \le \dfrac{\Vert B\Vert}{1-\Vert B\Vert}\Vert x^{(k)}-x^{(k-1)}\le \dfrac{\Vert B \Vert^k}{1-\Vert B \Vert}\Vert x^{(1)}-x^{(0)}\Vert$$<br>证明：</p>
+$$
+\begin{equation}
+\begin{aligned}
+x^{(k+1)}-x^{(k)}&=Bx^{(k)}-Bx^{(k-1)}=B(x^{(k)}-x^{(k-1)})\\
+x^{(k)}-x^{*}&=x^{(k)}-x^{(k+1)}+x^{(k+1)}-x^{*}\\
+&=B(x^{(k-1)}-x^{(k)})+B(x^{(k)}-x^{*})\\
+\Vert x^{(k)} -x^{*} \Vert &\le \Vert B\Vert\Vert x^{(k)}-x^{(k-1)}\Vert+\Vert B\Vert\Vert x^{(k)}-x^{*} \Vert\\
+\Vert x^{(k)}-x^{*}\Vert &\le \dfrac{\Vert B\Vert}{1-\Vert B\Vert}\Vert x^{(k)}-x^{(k-1)}\le \dfrac{\Vert B \Vert^k}{1-\Vert B \Vert}\Vert x^{(1)}-x^{(0)}\Vert
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="Jacobi-迭代和-G-S-迭代的收敛性"><a href="#Jacobi-迭代和-G-S-迭代的收敛性" class="headerlink" title="$Jacobi$迭代和$G-S$迭代的收敛性"></a>$Jacobi$迭代和$G-S$迭代的收敛性</h2><p>若$$
+   \begin{equation}
+   \begin{aligned}
+   A=\begin{bmatrix}
+   a_{11}&a_{12}&\cdots&a_{1i}&\cdots&a_{1n}\\
+   a_{21}&a_{22}&\cdots&a_{2i}&\cdots&a_{2n}\\
+   \vdots&\ddots&\ddots&\vdots&\vdots&\vdots\\
+   a_{i1}&\cdots&a_{ii-1}&a_{ii}&\cdots&a_{in}\\
+   \vdots&&\vdots&\ddots&\ddots&\vdots\\
+   a_{n1}&\cdots&a_{ni-1}&\cdots&a_{nn-1}&a_{nn}\\
+   \end{bmatrix}
+   \end{aligned}
+   \end{equation}
+   $$<br>令$D=diag{a_{11},a_{12},\cdots,a_{nn}}$</p>
+$
+   \begin{equation}
+   \begin{aligned}
+   L=\begin{bmatrix}
+   0&&&&&0\\
+   -a_{21}&0&&&&\\
+   \vdots&\ddots&\ddots&&&\\
+   -a_{i1}&\cdots&-a_{ii-1}&0&&\\
+   \vdots&&\vdots&\ddots&\ddots&\\
+   a_{n1}&\cdots&a_{ni-1}&\cdots&a_{nn-1}&0\\
+   \end{bmatrix}\\
+   U=\begin{bmatrix}
+        0&a_{12}&\cdots&a_{1i}&\cdots&a_{1n}\\
+        &\ddots&\ddots&\vdots&&\ddots\\
+        &&0&-a_{i-1i}&\cdots&-a_{i-1n}\\
+        &&&\vdots&\vdots&\ddots\\
+        &&&&0&-a_{n-1n}\\
+        0&&&&&0\\
+        \end{bmatrix}
+   \end{aligned}
+   \end{equation}
+   $
+
+<p>于是有$A=D-L-U$<br>观察$Jacobi$迭代法的矩阵表示形式</p>
+$$
+\begin{equation}
+\begin{aligned}
+\begin{bmatrix}
+x_1^{(k+1)}\\
+x_2^{(k+1)}\\
+\ddots\\
+x_n^{(k+1)}\\
+\end{bmatrix}=
+\begin{bmatrix}
+0&-\dfrac{a_{12}}{a_{11}}&\cdots&-\dfrac{a_{1n}}{a_{11}}\\
+-\dfrac{a_{21}}{a_{22}}&0&\cdots&-\dfrac{a_{2n}}{a_{22}}\\
+\ddots&\ddots&\vdots&\ddots\\
+-\dfrac{a_{n1}}{a_{nn}}&-\dfrac{a_{n2}}{a_{nn}}&\cdots&0\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1^{(k)}\\
+x_2^{(k)}\\
+\ddots\\
+x_n^{(k)}\\
+\end{bmatrix}
++
+\begin{bmatrix}
+\dfrac{b_1}{a_11}\\
+\dfrac{b_2}{a_22}\\
+\ddots\\
+\dfrac{b_n}{a_nn}\\
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$$
+
+<p>所以有$x^{(k+1)}=D^{-1}(L+U)x^{(k)}+D^{-1}b$，其中令$B_J=D^{-1}(L+U),f_J=D^{-1}b$，便可得到等价方程组$x=B_Jx+f_J$<br>同理可得$G-S$迭代为$x^{(k+1)}=(D-L)^{-1}Ux^{(k)}+(D-L)^{-1}b$</p>
+<p><strong>G-S迭代与Jacobi迭代互相独立，Jacobi迭代收敛性与收敛速度与G-S迭代无关</strong></p>
+<h2 id="判别收敛的充分条件"><a href="#判别收敛的充分条件" class="headerlink" title="判别收敛的充分条件"></a>判别收敛的充分条件</h2><p><strong>定义4.1</strong> 如果矩阵$A=(a_{ij})_{n\times n}$的元素满足不等式</p>
+$$
+\begin{equation}
+\begin{aligned}
+|a_{ii}|\ge \sum\limits_{\substack{j=1\\j\not=i}}^n |a_{ij}| \quad (i=1,2,\cdots,n)
+\end{aligned}
+\end{equation}
+$$
+
+<p>则称矩阵$A$为对角占优阵，如果严格不等式成立，称$A$位严格对角占优阵<br>对于严格对角占优阵$A$，其行列式$det(A)\not= 0$<br>证明：<br>假设$A$为奇异矩阵，则$Ax=0$有非零解$c_1,c_2,\cdots,c_n$<br>令$|c_i|=\max\limits_{i\le j\le n}\{|c_j|\}$<br>则有$a_{i1}c_1+a_{i2}c_2+\cdots+a_{in}c_n=0$</p>
+$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+\Rightarrow a_{ii}c_i=-\sum\limits_{j\not= i}a_{ij}c_j\\
+\Rightarrow |a_{ii}||c_i|\le\sum\limits_{j\not= i}|a_{ij}||c_j|\\
+\Rightarrow |a_{ii}|\le\sum\limits_{j\not= i}|a_{ij}|\dfrac{|c_j|}{|c_i|}\le\sum\limits_{j\not= i}|a_{ij}|\\
+\end{cases}
+\end{aligned}
+\end{equation}
+$
+
+<p>与$A$为严格对角占优矩阵矛盾</p>
+<p><strong>定理4.4</strong> 若线性方程组$Ax=b$中的$A$为严格对角占优阵，则$Jacobi$迭代法与$G-S$迭代法均收敛<br>证明：</p>
+<ul>
+<li>$Jacobi$迭代法<br>  因为$B_J=D^{-1}(L+U)$<br>  所以$B_J$的行绝对值和为$\dfrac{1}{|a_{ii}}|\sum\limits_{j\not= i}|a_{ij}|\quad (i=1,2,\cdots,n)$<br>  因为$A$严格对角占优，所以$|a_{ii}&gt;\sum\limits_{j\not= i}|a_{ij}|$<br>  所以有$\Vert B_J\Vert &lt; 1$，故$Jacobi$迭代法收敛</li>
+<li>$G-S$迭代法<br>  因为$B_G=(D-L)^{-1}U$<br>  $det[\lambda I-(D-L)^{-1}U]=det(D-L)^{-1}det[\lambda(D-L)-U]=0$<br>  又因为$det(D-L)^{-1}\not=0$，所以$det[\lambda(D-L)-U]=0$<br>  用反证法证明$|\lambda| &lt; 1$<br>  假设$|\lambda| &gt; 1$，且$A$为严格对角占优，所以有<br>  $|\lambda||a_{ii}|&gt;|\lambda|\sum\limits_{j\not= i}|a_{ij}|=\sum\limits_{j\not= i}|\lambda||a_{ij}|$<br>  $\le\sum\limits_{j=1}^{i-1}|\lambda||a_{ij}|+\sum\limits_{j=i+1}^n|a_{ij}| \quad (i=1,2,\cdots,n)$<br>  所以矩阵$\lambda(D-L)-U$严格对角占优，$det[\lambda(D-L)-U]\not=0$<br>  所以$\lambda &lt; 1$，即$\rho(B_G)&lt;1$，故$G-S$迭代法收敛</li>
+</ul>
+<h2 id="迭代改善法"><a href="#迭代改善法" class="headerlink" title="迭代改善法"></a>迭代改善法</h2><p>对良态或者不十分严重病态的线性方程组，与直接法结合对已得近似解进行精度改善</p>
+<ul>
+<li><p>用带列主元的$LU$分解求$Ax=b$得到计算解$\tilde{x}$</p>
+</li>
+<li><p>求$\tilde{x}$的修正向量$z$<br>  用<strong>双精度</strong>计算余向量<br>  $r=b-A\tilde{x}=Ax-A\tilde{x}=Az$  </p>
+  $
+    \begin{equation}
+    \begin{aligned}
+    PAz=LUz=Pr\Rightarrow 
+    \begin{cases}
+    Ly=Pr\\
+    Uz=y
+    \end{cases}
+    \end{aligned}
+    \end{equation}
+    $
+
+<p>  令$x=\tilde{x}+z\qquad Ax=A\tilde{x}+Az=b-r+Az=b$<br>  故$x=\tilde{x}+z$即为近似解$\tilde{x}$的改进解</p>
+</li>
+<li><p>反复对近似解进行改善，即反复执行上述过程</p>
+</li>
+</ul>
+<h2 id="非线性方程简介"><a href="#非线性方程简介" class="headerlink" title="非线性方程简介"></a>非线性方程简介</h2><p>常见非线性方程有，代数方程（二次，三次等），超越方程（三角方程，指数、对数方程等）<br>如果$f(x)=0$在区间$[a,b]$上仅有一个根，则称$[a,b]$为方程的<strong>单根区间</strong>；若方程在$[a,b]$上仅有多个根，则称$[a,b]$为方程的<strong>多根区间</strong></p>
+<h2 id="简单迭代法的一般性理论"><a href="#简单迭代法的一般性理论" class="headerlink" title="简单迭代法的一般性理论"></a>简单迭代法的一般性理论</h2><p>首先将方程$f(x)=0$化为一个与它同解的方程$x=\varphi(x)$，其中$\varphi(x)$为$x$的连续函数。<br>求解非线性方程的<strong>简单迭代法</strong>或<strong>迭代过程</strong>或<strong>迭代格式</strong>为$x_{k+1}=\varphi(x_k)\quad (k=0,1,2,\cdots)$，$\varphi(x)$称为迭代函数，$x_k$称第$k$步的<strong>迭代值</strong>或<strong>简称迭代值</strong><br>如果由迭代格式产生的数列收敛，即$\lim\limits_{k\rightarrow \infty}x_k = \alpha$，则称迭代法收敛，否则称迭代法发散。若迭代法收敛于$\alpha$，则$\alpha$为方程的根<br><strong>迭代法的收敛与发散，依赖于迭代函数的构造</strong></p>
+<h2 id="迭代收敛的充分条件"><a href="#迭代收敛的充分条件" class="headerlink" title="迭代收敛的充分条件"></a>迭代收敛的充分条件</h2><p>当迭代函数满足$|\varphi’(x)|&lt;1$时，迭代法收敛，当$|\varphi’(x)|&gt;1$时，迭代法发散<br><strong>定理4.5</strong><br>设迭代函数$varphi(x)$满足</p>
+<ul>
+<li>当$x\in [a,b]$时，$a\le \varphi(x)\le b$</li>
+<li>存在正数$0&lt;L&lt;1$，对任意的$x\in [a,b]$均由$|varphi(x)|\le L$</li>
+</ul>
+<p>则$x=varphi(x)$在$[a,b]$内存在唯一根$\alpha$，且对任意初始值$x_0\in [a,b]$，迭代法$x_{k+1}=\varphi(x_k)\quad (k=0,1,2,\cdots)$收敛于$\alpha$，且有</p>
+<ul>
+<li>$|x_k-\alpha|\le \dfrac{L}{1-L}|x_k-x_{k-1}|$</li>
+<li>$|x_k-\alpha|\le \dfrac{L^k}{1-L}|x_1-x_{0}|$</li>
+</ul>
+<p>证明：令$f(x)=x-\varphi(x)$，因为$x\in [a,b]$有$a\le \varphi(x)\le b$<br>$f(a)=a-\varphi(a)\le 0 \quad f(b)=b-\varphi(b)\ge 0$<br>$|\varphi’(x)| \le L &lt; 1 \Rightarrow f’(x)=1-\varphi’(x) &gt; 0$<br>连续函数$f(x)$在$[a,b]$上单调，且在端点取值异号，故在$[a,b]$上有唯一根<br>$0=f(\alpha)=\alpha-\varphi(\alpha)\Leftrightarrow \alpha=\varphi(\alpha)$<br>根据微分中值定理有<br>$x_{k+1}-\alpha = \varphi(x_k)-\varphi(\alpha)=\varphi’(\xi_1)(x_k-\alpha)$<br>$x_{k+1}-x_k = \varphi(x_k)-\varphi(x_{k-1})=\varphi’(\xi_2)(x_k-x_{k-1})$<br>其中$\xi_1,\xi_2\in [a,b]$<br>所以有<br>$|x_{k+1}-\alpha| = |\varphi’(\xi_1)||(x_k-\alpha)|\le L|(x_k-\alpha)|$<br>$|x_{k+1}-x_k| = |\varphi’(\xi_2)||(x_k-x_{k-1})|\le L|(x_k-x_{k-1})|$<br>又因为<br>$|x_{k}-\alpha|\le |x_{k}-x_{k+1}}|+|x_{k+1}}-\alpha|\le L|(x_k-x_{k-1})|+ L|(x_k-\alpha)|$<br>所以得证<br>根据$L&lt;1$可知，$\lim\limits_{k\rightarrow \infty}|x_k-\alpha|=0$，即$\lim\limits_{k\rightarrow\infty}x_k=\alpha$，故迭代法收敛</p>
+<p>可根据$|x_k-\alpha|\le \dfrac{L^k}{1-L}|x_k-x_{0}| &lt; \delta \Rightarrow k\le \log_L\dfrac{\delta(1-L)}{|x_1-x_0|}$</p>
+<h2 id="实用收敛性的判断及收敛阶"><a href="#实用收敛性的判断及收敛阶" class="headerlink" title="实用收敛性的判断及收敛阶"></a>实用收敛性的判断及收敛阶</h2><p>假定$\varphi’(x)$在$\alpha$的附近连续，且满足$|\varphi’(\alpha)|&lt;1$，则根据连续函数的性质，一定存在$\alpha$的某个领域$S:|x-\alpha|\le \delta$，$\varphi(x)$在$S$上满足<strong>定理4.5</strong><br>故在$S$中任取初始值$x_0$，迭代格式$x_k=\varphi(x_{k-1})$收敛于方程的根$\alpha$，即$f(\alpha)\equiv 0$，称此收敛为<strong>局部收敛</strong></p>
+<p>当$L$或者$\varphi’(x)$在$[a,b]$上的值越小，迭代过程的收敛速度就越快。当$L&lt;1$且接近于$1$时，迭代法虽然收敛但是收敛很慢<br><strong>定义4.2</strong> 设迭代格式$x_{k+1}=\varphi(x_k)$，当$k\rightarrow \infty$时，$x_{k+1}\rightarrow \alpha$，并记$e_k=x_k-\alpha$<br>若存在实数$p\ge 1$和$c&gt;0$满足$\lim\limits_{k\rightarrow \infty}\dfrac{|e_{k+1}|}{|e_k|^p}=c$，则称迭代法是<strong>$p$阶收敛</strong>。当$p=1$时，称线性收敛，当$p&gt;1$时，称超线性收敛，当$p=2$时，称平方收敛</p>
+<p>$p$越大迭代法的收敛速度越快。常用$Taylor$展开式是一种常用方法<br>如果$\varphi(x)$在根$\alpha$处充分光滑，则可对$\varphi(x)$在$\alpha$处进行$Taylor$展开，得到<br>$x_{k+1}=\varphi(x_k)=\varphi(\alpha)+\varphi’(\alpha)(x_k-\alpha)+\dfrac{\varphi’’(\alpha)}{2!}(x_k-\alpha)^2+\cdots$<br>$+\dfrac{\varphi^{(p-1)}(\alpha)}{(p-1)!}(x_k-\alpha)^{p-1}+\dfrac{\varphi^{(p)}(\xi_k)}{p!}(x_k-\alpha)^p$<br>若$\varphi’(\alpha)=\varphi’’(\alpha)=\cdots=\varphi^{(p-1)}(\alpha)=0$<br>则有$\dfrac{x_{k+1}-\alpha}{x_k-\alpha}^p = \dfrac{\varphi^{(p)}(\xi_k)}{p!}$<br>从而有$\lim\limits_{k \rightarrow \infty}\dfrac{x_{k+1}-\alpha}{x_k-\alpha}^p = \lim\limits_{k \rightarrow \infty}\dfrac{|e_{k+1}|}{|e_k|^p} = \lim\limits_{k \rightarrow \infty}\dfrac{\varphi^{(p)}(\xi_k)}{p!}=\dfrac{\varphi^{(p)}(\alpha)}{p!}$</p>
+<p>上式说明迭代法具有$p$阶收敛</p>
+<p><strong>定理4.6</strong> 如果$x=\varphi(x)$中的迭代函数$\varphi(x)$在根$\alpha$附近满足</p>
+<ul>
+<li>$\varphi(x)$存在$p$阶导数且连续</li>
+<li>$\varphi’(\alpha)=\varphi’’(\alpha)=\cdots=\varphi^{(p-1)}(\alpha)=0,\varphi^{(p)}(\alpha)\not= 0$<br>则迭代法$x_{k+1}=\varphi(x_k)$是$p$阶收敛</li>
+</ul>
 
       
     </div>
@@ -1909,7 +2121,7 @@ $
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1920,7 +2132,7 @@ $
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2000,7 +2212,7 @@ $
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件数与方程组的性态"><span class="nav-number">2.10.</span> <span class="nav-text">条件数与方程组的性态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Householder矩阵"><span class="nav-number">2.11.</span> <span class="nav-text">Householder矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的QR分解"><span class="nav-number">2.12.</span> <span class="nav-text">矩阵的QR分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的Schur分解"><span class="nav-number">2.13.</span> <span class="nav-text">矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规矩阵的Schur分解"><span class="nav-number">2.14.</span> <span class="nav-text">正规矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的谱半径与矩阵范数关系"><span class="nav-number">2.15.</span> <span class="nav-text">矩阵的谱半径与矩阵范数关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵是否可对角化的判别法则"><span class="nav-number">2.16.</span> <span class="nav-text">矩阵是否可对角化的判别法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的-Jordan-分解"><span class="nav-number">2.17.</span> <span class="nav-text">矩阵的$Jordan$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于变换矩阵-T"><span class="nav-number">2.18.</span> <span class="nav-text">关于变换矩阵$T$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hamilton-Caylay定理及其应用"><span class="nav-number">2.19.</span> <span class="nav-text">Hamilton-Caylay定理及其应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值定义"><span class="nav-number">2.20.</span> <span class="nav-text">矩阵的奇异值定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解定理"><span class="nav-number">2.21.</span> <span class="nav-text">矩阵的奇异值分解定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解步骤"><span class="nav-number">2.22.</span> <span class="nav-text">矩阵的奇异值分解步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用矩阵的奇异值讨论矩阵的性质"><span class="nav-number">2.23.</span> <span class="nav-text">用矩阵的奇异值讨论矩阵的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵分析基础"><span class="nav-number">3.</span> <span class="nav-text">矩阵分析基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵序列及其收敛定义和性质"><span class="nav-number">3.1.</span> <span class="nav-text">矩阵序列及其收敛定义和性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收敛矩阵"><span class="nav-number">3.2.</span> <span class="nav-text">收敛矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵级数"><span class="nav-number">3.3.</span> <span class="nav-text">矩阵级数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵级数绝对收敛定义及性质"><span class="nav-number">3.4.</span> <span class="nav-text">矩阵级数绝对收敛定义及性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵幂级数"><span class="nav-number">3.5.</span> <span class="nav-text">矩阵幂级数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵函数定义及其相关引理"><span class="nav-number">3.6.</span> <span class="nav-text">矩阵函数定义及其相关引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算矩阵函数-f-tJ-的引理"><span class="nav-number">3.7.</span> <span class="nav-text">计算矩阵函数$f(tJ)$的引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵函数的计算"><span class="nav-number">3.8.</span> <span class="nav-text">矩阵函数的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算矩阵函数的有限待定系数法"><span class="nav-number">3.9.</span> <span class="nav-text">计算矩阵函数的有限待定系数法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对于数量变量的微分与积分"><span class="nav-number">3.10.</span> <span class="nav-text">相对于数量变量的微分与积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对于矩阵变量的微分"><span class="nav-number">3.11.</span> <span class="nav-text">相对于矩阵变量的微分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵在微分方程中的应用"><span class="nav-number">3.12.</span> <span class="nav-text">矩阵在微分方程中的应用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#误差来源与分类"><span class="nav-number">1.1.</span> <span class="nav-text">误差来源与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有效数字的概念"><span class="nav-number">1.2.</span> <span class="nav-text">有效数字的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数计算的误差值"><span class="nav-number">1.3.</span> <span class="nav-text">函数计算的误差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数的值稳定性"><span class="nav-number">1.4.</span> <span class="nav-text">数值函数的值稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免误差危害的基本原则"><span class="nav-number">1.5.</span> <span class="nav-text">避免误差危害的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量范数"><span class="nav-number">1.6.</span> <span class="nav-text">向量范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数与向量范数的相容性"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵范数与向量范数的相容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子范数"><span class="nav-number">1.9.</span> <span class="nav-text">算子范数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数的性质"><span class="nav-number">1.10.</span> <span class="nav-text">矩阵范数的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵变换和计算"><span class="nav-number">2.</span> <span class="nav-text">矩阵变换和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯消去法"><span class="nav-number">2.1.</span> <span class="nav-text">高斯消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的LU分解"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵的LU分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑格式的-Doolittle-公式"><span class="nav-number">2.3.</span> <span class="nav-text">紧凑格式的$Doolittle$公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-LU-分解求矩阵的逆"><span class="nav-number">2.4.</span> <span class="nav-text">利用$LU$分解求矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯列主元消去法"><span class="nav-number">2.5.</span> <span class="nav-text">高斯列主元消去法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带列主元的-LU-分解"><span class="nav-number">2.6.</span> <span class="nav-text">带列主元的$LU$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称正定矩阵的Cholesky分解法"><span class="nav-number">2.7.</span> <span class="nav-text">对称正定矩阵的Cholesky分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cholesky分解的直接分解法"><span class="nav-number">2.8.</span> <span class="nav-text">Cholesky分解的直接分解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三对角矩阵的三角分解"><span class="nav-number">2.9.</span> <span class="nav-text">三对角矩阵的三角分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件数与方程组的性态"><span class="nav-number">2.10.</span> <span class="nav-text">条件数与方程组的性态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Householder矩阵"><span class="nav-number">2.11.</span> <span class="nav-text">Householder矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的QR分解"><span class="nav-number">2.12.</span> <span class="nav-text">矩阵的QR分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的Schur分解"><span class="nav-number">2.13.</span> <span class="nav-text">矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规矩阵的Schur分解"><span class="nav-number">2.14.</span> <span class="nav-text">正规矩阵的Schur分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的谱半径与矩阵范数关系"><span class="nav-number">2.15.</span> <span class="nav-text">矩阵的谱半径与矩阵范数关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵是否可对角化的判别法则"><span class="nav-number">2.16.</span> <span class="nav-text">矩阵是否可对角化的判别法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的-Jordan-分解"><span class="nav-number">2.17.</span> <span class="nav-text">矩阵的$Jordan$分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于变换矩阵-T"><span class="nav-number">2.18.</span> <span class="nav-text">关于变换矩阵$T$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hamilton-Caylay定理及其应用"><span class="nav-number">2.19.</span> <span class="nav-text">Hamilton-Caylay定理及其应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值定义"><span class="nav-number">2.20.</span> <span class="nav-text">矩阵的奇异值定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解定理"><span class="nav-number">2.21.</span> <span class="nav-text">矩阵的奇异值分解定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的奇异值分解步骤"><span class="nav-number">2.22.</span> <span class="nav-text">矩阵的奇异值分解步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用矩阵的奇异值讨论矩阵的性质"><span class="nav-number">2.23.</span> <span class="nav-text">用矩阵的奇异值讨论矩阵的性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵分析基础"><span class="nav-number">3.</span> <span class="nav-text">矩阵分析基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵序列及其收敛定义和性质"><span class="nav-number">3.1.</span> <span class="nav-text">矩阵序列及其收敛定义和性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收敛矩阵"><span class="nav-number">3.2.</span> <span class="nav-text">收敛矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵级数"><span class="nav-number">3.3.</span> <span class="nav-text">矩阵级数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵级数绝对收敛定义及性质"><span class="nav-number">3.4.</span> <span class="nav-text">矩阵级数绝对收敛定义及性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵幂级数"><span class="nav-number">3.5.</span> <span class="nav-text">矩阵幂级数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵函数定义及其相关引理"><span class="nav-number">3.6.</span> <span class="nav-text">矩阵函数定义及其相关引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算矩阵函数-f-tJ-的引理"><span class="nav-number">3.7.</span> <span class="nav-text">计算矩阵函数$f(tJ)$的引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵函数的计算"><span class="nav-number">3.8.</span> <span class="nav-text">矩阵函数的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算矩阵函数的有限待定系数法"><span class="nav-number">3.9.</span> <span class="nav-text">计算矩阵函数的有限待定系数法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对于数量变量的微分与积分"><span class="nav-number">3.10.</span> <span class="nav-text">相对于数量变量的微分与积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对于矩阵变量的微分"><span class="nav-number">3.11.</span> <span class="nav-text">相对于矩阵变量的微分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵在微分方程中的应用"><span class="nav-number">3.12.</span> <span class="nav-text">矩阵在微分方程中的应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逐次迭代法"><span class="nav-number">4.</span> <span class="nav-text">逐次迭代法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单迭代法"><span class="nav-number">4.1.</span> <span class="nav-text">简单迭代法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jacob-迭代和-G-S-迭代格式"><span class="nav-number">4.2.</span> <span class="nav-text">$Jacob$迭代和$G-S$迭代格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代法的收敛性"><span class="nav-number">4.3.</span> <span class="nav-text">迭代法的收敛性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jacobi-迭代和-G-S-迭代的收敛性"><span class="nav-number">4.4.</span> <span class="nav-text">$Jacobi$迭代和$G-S$迭代的收敛性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判别收敛的充分条件"><span class="nav-number">4.5.</span> <span class="nav-text">判别收敛的充分条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代改善法"><span class="nav-number">4.6.</span> <span class="nav-text">迭代改善法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非线性方程简介"><span class="nav-number">4.7.</span> <span class="nav-text">非线性方程简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单迭代法的一般性理论"><span class="nav-number">4.8.</span> <span class="nav-text">简单迭代法的一般性理论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代收敛的充分条件"><span class="nav-number">4.9.</span> <span class="nav-text">迭代收敛的充分条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实用收敛性的判断及收敛阶"><span class="nav-number">4.10.</span> <span class="nav-text">实用收敛性的判断及收敛阶</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -2047,7 +2259,7 @@ $
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共33.8k字</span>
+  <span class="post-count">博客全站共37k字</span>
 </div>
 
         

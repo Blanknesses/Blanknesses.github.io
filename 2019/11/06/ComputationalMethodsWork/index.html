@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法作业题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-12T10:12:14.673Z">
+<meta property="og:updated_time" content="2019-11-16T12:09:17.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法作业">
 <meta name="twitter:description" content="计算方法作业题">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.1k
+                  4.7k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  18
+                  28
                 </span>
               
             </div>
@@ -1470,6 +1470,379 @@ cond_2(A)&=\Vert A \Vert_2\Vert A^{-1} \Vert_2=4
 \end{aligned}
 \end{equation}
 $$
+
+<h1 id="第三章作业题"><a href="#第三章作业题" class="headerlink" title="第三章作业题"></a>第三章作业题</h1><h2 id="第一题-1"><a href="#第一题-1" class="headerlink" title="第一题"></a>第一题</h2><p>已知四阶矩阵$A$的特征值分别为$\pi,-\pi,0,0$，求$sinA,cosA$</p>
+$$
+\begin{equation}
+\begin{aligned}
+&\because A的特征值为\pi,-\pi,0,0  \\
+&\therefore \psi(\lambda)=\lambda^2(\lambda-\pi)(\lambda+\pi) \\
+&sin(\lambda)=p(\lambda)\psi(\lambda)+b_3\lambda^3+b_2\lambda^2+b_1\lambda^1+b_0\\
+&\begin{cases}
+b_0=sin0=0  \\
+b_1=cos0=1  \\
+b_3\pi^3+b_2\pi^2+\pi=sin\pi=0 \\
+-b_3\pi^3+b_2\pi^2-\pi=sin(-\pi)=0
+\end{cases} \\
+&\Rightarrow b_0=0,b_1=1,b_2=0,b_3=-\dfrac{1}{\pi^2} \\
+&\therefore sin(\lambda)=p(\lambda)\psi(\lambda)-\dfrac{1}{\pi^2}\lambda^3+b_1\lambda^1\\
+&\therefore sin(A)=-\dfrac{1}{\pi^2}A^3+b_1A\\
+&cos(\lambda)=p(\lambda)\psi(\lambda)+b_3\lambda^3+b_2\lambda^2+b_1\lambda^1+b_0\\
+&\begin{cases}
+b_0=cos0=1  \\
+b_1=-sin0=0  \\
+b_3\pi^3+b_2\pi^2+1=cos\pi=-1 \\
+-b_3\pi^3+b_2\pi^2+1=cos(-\pi)=-1
+\end{cases} \\
+&\Rightarrow b_0=1,b_1=0,b_2=-\dfrac{2}{\pi^2},b_3=0\\
+&\therefore cos(\lambda)=p(\lambda)\psi(\lambda)-\dfrac{2}{\pi^2}\lambda^2+1\\
+&\therefore cos(A)=-\dfrac{2}{\pi^2}A^2+I\\
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第二题-1"><a href="#第二题-1" class="headerlink" title="第二题"></a>第二题</h2><p>已知$
+  \begin{equation}
+  \begin{aligned}
+  A=
+  \begin{bmatrix}
+  2&1&0&0&0 \\
+  0&2&0&0&0 \\
+  0&0&3&1&0 \\
+  0&0&0&3&1 \\
+  0&0&0&0&3 
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+  $，$f(z)=4+z+6z^3$，求$f(A)$</p>
+$$
+\begin{equation}
+\begin{aligned}
+&A=
+\begin{bmatrix}
+2&1&0&0&0 \\
+0&2&0&0&0 \\
+0&0&3&1&0 \\
+0&0&0&3&1 \\
+0&0&0&0&3 
+\end{bmatrix}\\
+&\Rightarrow A为Jordan标准型\\
+&\Rightarrow 
+J_1=
+\begin{bmatrix}
+2&1\\
+0&2
+\end{bmatrix},
+J_2=
+\begin{bmatrix}
+3&1&0\\
+0&3&1\\
+0&0&3
+\end{bmatrix}\\
+&f(z)=4+z+6z^3\\
+&\therefore f(A)= 
+\begin{bmatrix}
+f(J_1)&\\
+&f(J_2)
+\end{bmatrix}\\
+&f(J_1)=
+\begin{bmatrix}
+54&73\\
+0&54
+\end{bmatrix},f(J_2)=
+\begin{bmatrix}
+169&163&54\\
+0&169&163\\
+0&0&169
+\end{bmatrix}\\
+&\therefore f(A)=
+\begin{bmatrix}
+54&73&0&0&0\\
+0&54&0&0&0\\
+0&0&169&163&54\\
+0&0&0&169&163\\
+0&0&0&0&169
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第三题-1"><a href="#第三题-1" class="headerlink" title="第三题"></a>第三题</h2><p>已知$
+  sin(tA)=\dfrac{1}{4}
+  \begin{bmatrix}
+  sin5t+sin3t&2sin5t-2sint\\
+  sin5t-sint&2sin5t+2sint
+  \end{bmatrix}  
+  $，试求出矩阵$A$以及矩阵$A$的$Jordan$标准型</p>
+$$
+\begin{equation}
+\begin{aligned}
+&sin(tA)=\dfrac{1}{4}
+\begin{bmatrix}
+sin5t+sin3t&2sin5t-2sint\\
+sin5t-sint&2sin5t+2sint
+\end{bmatrix}\\
+&sin(tA)'=Acos(tA)=\dfrac{1}{4}
+\begin{bmatrix}
+5cos5t+3cos3t&10cos5t-2cost\\
+5cos5t-cost&10cos5t+2cost
+\end{bmatrix}\\
+&令t=0\\
+&A=
+\begin{bmatrix}
+2&2\\
+1&3
+\end{bmatrix}\\
+&|\lambda I-A|=
+\left |\begin{array}{cccc}
+\lambda-2&-2\\
+-1&\lambda-3
+  \end{array}\right|=0\\
+&\Rightarrow (\lambda-4)(\lambda-1)=0\\
+&\Rightarrow \lambda_1=4,\lambda_2=1\\
+&\Rightarrow J=
+\begin{bmatrix}
+1&0\\
+0&4
+\end{bmatrix}\\
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第四题-1"><a href="#第四题-1" class="headerlink" title="第四题"></a>第四题</h2><p>已知$A\in R^{m\times n},b\in R^m$，对于矛盾方程组$Ax=b$，使得$f(x)=\Vert Ax-b\Vert_2^2$为最小的向量$x^{(0)}$称为最小二乘解，导出最小二乘解所满足的方程组</p>
+$$
+\begin{equation}
+\begin{aligned}
+\because A&\in R^{m\times n},b\in R^m\\
+f(x)&=\Vert Ax-b\Vert_2^2\\
+&=(Ax-b,Ax-b)=(Ax-b)^T(Ax-b)\\
+&=x^TA^TAx-x^TA^Tb-b^TAx+b^Tb\\
+&=x^TA^TAx-x^T(A^Tb)-(A^Tb)^Tx+b^Tb\\
+\frac{\mathrm{d}f}{\mathrm{d} x}&=2(A^TAx-A^Tb)\\
+当&\frac{\mathrm{d}f}{\mathrm{d} x}=0时，即A^TAx-A^Tb=0时\\
+存在&x^{(0)}为最小二乘解，方程组为A^TAx-A^Tb=0
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第五题-1"><a href="#第五题-1" class="headerlink" title="第五题"></a>第五题</h2><p>设$
+ A=
+ \begin{bmatrix}
+ cosu&-sinu\\
+ sinu&cosu
+ \end{bmatrix}
+ $，求<br> （1）$\frac{\mathrm{d} }{\mathrm{d} u}(e^uA),\frac{\mathrm{d} }{\mathrm{d} u}(A^{-1}(u))$<br> （2）$若u=e^{2t},求\frac{\mathrm{d} }{\mathrm{d} t}A(u)$</p>
+ $$
+ \begin{equation}
+ \begin{aligned}
+ &\because A=
+ \begin{bmatrix}
+ cosu&-sinu\\
+ sinu&cosu
+ \end{bmatrix}\\
+ &(1)\frac{\mathrm{d} }{\mathrm{d} u}(e^uA),\frac{\mathrm{d} }{\mathrm{d} u}(A^{-1}(u))\\
+ &\frac{\mathrm{d} }{\mathrm{d} u}(e^uA)=e^uA+e^u\frac{\mathrm{d} A}{\mathrm{d} u}=
+ e^u\begin{bmatrix}
+ cosu-sinu&-sinu-cosu\\
+ sinu+cosu&cosu-sinu
+ \end{bmatrix}\\
+ &\frac{\mathrm{d} }{\mathrm{d} u}(A^{-1}(u))=
+ -A^{-1}(u)\left( \frac{\mathrm{d} }{\mathrm{d} u}A(u) \right)A^{-1}(u)\\
+ &A^{-1}(u)=
+ \begin{bmatrix}
+ cosu&sinu\\
+ -sinu&cosu
+ \end{bmatrix}\\
+ &\therefore \frac{\mathrm{d} }{\mathrm{d} u}(A^{-1}(u))=
+ -\begin{bmatrix}
+ cosu&sinu\\
+ -sinu&cosu
+ \end{bmatrix}
+ \begin{bmatrix}
+ -sinu&-cosu\\
+ cosu&-sinu
+ \end{bmatrix}
+ \begin{bmatrix}
+ cosu&sinu\\
+ -sinu&cosu
+ \end{bmatrix}\\
+ &\qquad\qquad\qquad=
+ \begin{bmatrix}
+ -sinu&cosu\\
+ -cosu&-sinu
+ \end{bmatrix}\\
+ &(2)若u=e^{2t},求\frac{\mathrm{d} }{\mathrm{d} t}A(u)\\
+ &\frac{\mathrm{d} }{\mathrm{d} t}A(u)={e^{2t}}'\frac{\mathrm{d} }{\mathrm{d} u}A(u)=2e^{2t}
+ \begin{bmatrix}
+ -sinu&-cosu\\
+ cosu&-sinu
+ \end{bmatrix}
+ \end{aligned}
+ \end{equation}
+ $$
+
+<h2 id="第六题-1"><a href="#第六题-1" class="headerlink" title="第六题"></a>第六题</h2><p> 设$
+  A=
+  \begin{bmatrix}
+  2&2&1 \\
+  1&3&1 \\
+  1&1&3
+  \end{bmatrix}
+  $，试用有限待定系数法计算$cosA$</p>
+  $$
+  \begin{equation}
+  \begin{aligned}
+  &A=
+  \begin{bmatrix}
+  2&2&1 \\
+  1&3&1 \\
+  1&1&3
+  \end{bmatrix}\\
+  &|\lambda I -A|=
+  \left |\begin{array}{cccc}
+  \lambda-2&-2&-1 \\
+  -1&\lambda-3& -1  \\
+  -1& -1&\lambda-3 \\
+  \end{array}\right|=0\\
+  &\psi(\lambda)=(\lambda-1)(\lambda-2)(\lambda-5)\\
+  &cosA=p(\lambda)\psi(\lambda)+b_2\lambda^2+b_1\lambda+b_0\\
+  &\Rightarrow 
+  \begin{cases}
+  b_2+b_1+b_0=cos1\\
+  4b_2+2b_1+b_0=cos2\\
+  25b_2+5b_1+b_0=cos5
+  \end{cases}\\
+  &\Rightarrow 
+  \begin{cases}
+  b_2=\dfrac{1}{12}(cos5-4cos2+3cos1)\\
+  b_1=\dfrac{1}{12}(-3cos5+24cos2-21cos1)\\
+  b_0=\dfrac{1}{12}(2cos5-20cos2+30cos1)
+  \end{cases}\\
+  &cosA=\dfrac{1}{12}(cos5-4cos2+3cos1)A^2+\dfrac{1}{12}(-3cos5+24cos2-21cos1)A\\
+  &\qquad\quad+\dfrac{1}{12}(2cos5-20cos2+30cos1)\\
+  &\qquad\quad=
+  \dfrac{1}{12}(cos5-4cos2+3cos1)
+  \begin{bmatrix}
+  7&11&7 \\
+  6&12&7 \\
+  6&8&11
+  \end{bmatrix}\\
+  &\qquad\quad+\dfrac{1}{12}(-3cos5+24cos2-21cos1)
+  \begin{bmatrix}
+  2&2&1 \\
+  1&3&1 \\
+  1&1&3
+  \end{bmatrix}\\
+  &\qquad\quad+\dfrac{1}{12}(2cos5-20cos2+30cos1)
+  \begin{bmatrix}
+  1&0&0 \\
+  0&1&0 \\
+  0&0&1 
+  \end{bmatrix}\\
+  &\qquad\quad=
+  \dfrac{1}{12}\begin{bmatrix}
+  3cos5+9cos1&5cos5+4cos2-9cos1&4cos5-4cos2 \\
+  3cos5-3cos1&5cos5+4cos2+3cos1&4cos5-4cos2 \\
+  3cos5-3cos1&5cos5-8cos2+3cos1&4cos5+8cos2 
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+  $$
+
+<h2 id="第七题-1"><a href="#第七题-1" class="headerlink" title="第七题"></a>第七题</h2><p>  设$
+   A= 
+   \begin{bmatrix}
+   0.6&0 \\
+   0.4&0.5
+   \end{bmatrix}
+   $，证明$\sum\limits_{k=0}^\infty A^k$收敛，并计算$\sum\limits_{k=0}^\infty A^k$</p>
+   $$
+   \begin{equation}
+   \begin{aligned}
+   &A= 
+   \begin{bmatrix}
+   0.6&0 \\
+   0.4&0.5
+   \end{bmatrix}\\
+   &\because\Vert A \Vert_\infty=0.4+0.5=0.9\\
+   &\therefore \lim\limits_{k\rightarrow\infty}A^k =0\\
+   &\therefore \sum\limits_{k=0}^\infty A^k收敛\\
+   &\therefore \sum\limits_{k=0}^\infty=(I-A)^{-1} \\
+   &\qquad\quad =
+   \begin{bmatrix}
+   0.4&0\\
+   -0.4&0.5
+   \end{bmatrix}^{-1} \\
+   &\qquad\quad =
+   \begin{bmatrix}
+   2.5&0\\
+   2&2
+   \end{bmatrix}
+   \end{aligned}
+   \end{equation}
+   $$
+
+<h2 id="第八题-1"><a href="#第八题-1" class="headerlink" title="第八题"></a>第八题</h2><p>   证明$f(A^T)=[f(A)]^T$，并利用此结果计算$sintA,e^{tA}$，其中<br>   $$
+   A=
+   \begin{bmatrix}
+   1&&& \\
+   1&1&& \\
+   &1&1& \\
+   &&1&1
+   \end{bmatrix}
+   $$</p>
+   $$
+   \begin{equation}
+   \begin{aligned}
+   f(A^T)&=\sum\limits_{k=0}^\infty a_k(A^T)^k\\
+   &=a_1A^T+a_2(A^T)^2+\cdots+a_j(A^T)^j+\cdots\\
+   &=a_1A^T+a_2(A^2)^T+\cdots+a_j(A^j)^T+\cdots\\
+   &=\left(\sum\limits_{k=0}^\infty a_kA^k\right)^T = [f(A)]^T\\
+   A&=
+   \begin{bmatrix}
+   1&&& \\
+   1&1&& \\
+   &1&1& \\
+   &&1&1
+   \end{bmatrix}\\
+   A^T&=
+   \begin{bmatrix}
+   1&1&& \\
+   &1&1& \\
+   &&1&1 \\
+   &&&1
+   \end{bmatrix}为Jordan标准型且\lambda=1\\
+   \therefore(sintA)^T&=sintA^T=
+   \begin{bmatrix}
+   sint&tcost&-\dfrac{t^2sint}{2}&-\dfrac{t^3cost}{6} \\
+   &sint&tcost&-\dfrac{t^2sint}{2} \\
+   &&sint&tcost \\
+   &&&sint
+   \end{bmatrix}\\
+   \therefore sintA&=
+   \begin{bmatrix}
+   sint&&& \\
+   tcost&sint&& \\
+   -\dfrac{t^2sint}{2}&tcost&sint& \\
+   -\dfrac{t^3cost}{6}&-\dfrac{t^2sint}{2}&tcost&sint
+   \end{bmatrix}\\
+   \therefore (e^{tA})^T&=e^{tA^T}=
+   \begin{bmatrix}
+   e^t&te^t&\dfrac{t^2e^t}{2}&\dfrac{t^3e^t}{6} \\
+   &e^t&te^t&\dfrac{t^2e^t}{2} \\
+   &&e^t&te^t \\
+   &&&e^t
+   \end{bmatrix}\\
+   \therefore e^{tA}&=
+   \begin{bmatrix}
+   e^t&&& \\
+   te^t&e^t&& \\
+   \dfrac{t^2e^t}{2}&te^t&e^t& \\
+   \dfrac{t^3e^t}{6}&\dfrac{t^2e^t}{2}&te^t&e^t
+   \end{bmatrix}\\
+   \end{aligned}
+   \end{equation}
+   $$
       
     </div>
     
@@ -1522,8 +1895,8 @@ $$
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/06/CMW3/" rel="prev" title="计算方法作业第三章">
-                计算方法作业第三章 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/14/leetcode/" rel="prev" title="LeetCode">
+                LeetCode <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1618,7 +1991,7 @@ $$
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1629,7 +2002,7 @@ $$
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1709,7 +2082,7 @@ $$
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章作业题"><span class="nav-number">1.</span> <span class="nav-text">第二章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题"><span class="nav-number">1.1.</span> <span class="nav-text">第一题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消去法"><span class="nav-number">1.1.1.</span> <span class="nav-text">消去法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Doolittle-分解"><span class="nav-number">1.1.2.</span> <span class="nav-text">$Doolittle$分解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题"><span class="nav-number">1.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题"><span class="nav-number">1.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题"><span class="nav-number">1.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题"><span class="nav-number">1.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题"><span class="nav-number">1.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题"><span class="nav-number">1.7.</span> <span class="nav-text">第七题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LU分解"><span class="nav-number">1.7.1.</span> <span class="nav-text">LU分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chelesky"><span class="nav-number">1.7.2.</span> <span class="nav-text">Chelesky</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三对角追赶法"><span class="nav-number">1.7.3.</span> <span class="nav-text">三对角追赶法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题"><span class="nav-number">1.8.</span> <span class="nav-text">第八题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九题"><span class="nav-number">1.9.</span> <span class="nav-text">第九题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十题"><span class="nav-number">1.10.</span> <span class="nav-text">第十题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章作业题"><span class="nav-number">1.</span> <span class="nav-text">第二章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题"><span class="nav-number">1.1.</span> <span class="nav-text">第一题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消去法"><span class="nav-number">1.1.1.</span> <span class="nav-text">消去法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Doolittle-分解"><span class="nav-number">1.1.2.</span> <span class="nav-text">$Doolittle$分解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题"><span class="nav-number">1.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题"><span class="nav-number">1.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题"><span class="nav-number">1.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题"><span class="nav-number">1.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题"><span class="nav-number">1.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题"><span class="nav-number">1.7.</span> <span class="nav-text">第七题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LU分解"><span class="nav-number">1.7.1.</span> <span class="nav-text">LU分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chelesky"><span class="nav-number">1.7.2.</span> <span class="nav-text">Chelesky</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三对角追赶法"><span class="nav-number">1.7.3.</span> <span class="nav-text">三对角追赶法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题"><span class="nav-number">1.8.</span> <span class="nav-text">第八题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九题"><span class="nav-number">1.9.</span> <span class="nav-text">第九题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十题"><span class="nav-number">1.10.</span> <span class="nav-text">第十题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章作业题"><span class="nav-number">2.</span> <span class="nav-text">第三章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-1"><span class="nav-number">2.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题-1"><span class="nav-number">2.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题-1"><span class="nav-number">2.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-1"><span class="nav-number">2.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-1"><span class="nav-number">2.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题-1"><span class="nav-number">2.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题-1"><span class="nav-number">2.7.</span> <span class="nav-text">第七题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题-1"><span class="nav-number">2.8.</span> <span class="nav-text">第八题</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1756,7 +2129,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共33.8k字</span>
+  <span class="post-count">博客全站共37k字</span>
 </div>
 
         
