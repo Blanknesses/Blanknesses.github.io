@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法知识点归纳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-18T10:50:57.576Z">
+<meta property="og:updated_time" content="2019-11-18T13:34:48.533Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法知识点">
 <meta name="twitter:description" content="计算方法知识点归纳">
@@ -573,7 +573,7 @@
 <li>矩阵的$m_1$范数，矩阵各元素绝对值之和&emsp;&emsp;$\sum\limits_{j=1}^{n} \Vert A_j \Vert_1 = \sum\limits_{j=1}^{n}\sum\limits_{i=1}^{n}|a_{ij}|$</li>
 <li>矩阵的$F$范数，矩阵各元素平方和开方&ensp;&emsp;&emsp;$\sum\limits_{j=1}^{n} \Vert A_j \Vert_2 = \sqrt{\sum\limits_{j=1}^{n}\sum\limits_{i=1}^{n}|a_{ij}|^2}$<br>  $\Vert A \Vert_F^2=tr(A^HA)$</li>
 </ul>
-<p><strong>定义1.6</strong> 称如下集合为矩阵$A \in C^{n \times n}$的<strong>谱</strong>$\sigma(A)={\lambda|\Delta(\lambda I-A)=0}$，即<strong>谱</strong>为特征值向量<br>称如下实数为矩阵$A \in C^{n \times n}$的<strong>谱半径</strong>$\rho(A) = \max\limits{i}|\lambda_i|$</p>
+<p><strong>定义1.6</strong> 称如下集合为矩阵$A \in C^{n \times n}$的<strong>谱</strong>$\sigma(A)={\lambda|\Delta(\lambda I-A)=0}$，即<strong>谱</strong>为特征值向量<br>称如下实数为矩阵$A \in C^{n \times n}$的<strong>谱半径</strong>$\rho(A) = \max\limits_{i}|\lambda_i|$</p>
 <p><strong>补充</strong> </p>
 <ul>
 <li>正定矩阵：设$M$是$n$阶方阵，如果对任何非零向量$x$,都有$x^TMx&gt;0$，则称$M$为正定矩阵</li>
@@ -1068,7 +1068,7 @@ $$
 <p>其中$I$为$\alpha_i \times \alpha_i$的单位矩阵，$C$是$\alpha_i \times \alpha_i$的矩阵，$D$是$(n - \alpha_i) \times (n - \alpha_i)$的矩阵，从而有<br>$$det(zI-B)=det(zI-\lambda_i I)det(zI-D)=(z-\lambda_i)^\alpha_idet(zI-D)$$<br>$det()$为求行列式<br>因此，作为$B$的特征值$\lambda_i$的代数重复度至少为$\alpha_i$，由于相似变化不改变重数，所以$A$的特征值$\lambda_i$的代数重复度满足$m_i \ge \alpha_i$<br>解题过程中，$m_i$直接根据求特征值获取，而$\alpha_i$可以通过计算代数余子式，获取秩，利用$\alpha_i=n-r(\lambda_i I -A)$获取，或者直接求解矩阵$A$的零空间$N(\lambda_i I - A)$的维数（非零解向量数）获取</p>
 <p><strong>定义2.7</strong> 设$A$为$n$阶方阵，$\lambda_i$为其特征值，$m_i$和$\alpha_i$分别为其代数重复度和几何重复度。如果$m_i=\alpha_i$，则称$\lambda_i$为<strong>半单</strong>的；如果$m_i &gt; \alpha_i$，则称$\lambda_i$是亏损的<br>如果矩阵$A$的某一个特征值代数重复度为1，则它一定为半单的，大于1，可能是半单的</p>
 <p><strong>定理2.12</strong> $n$阶方阵$A$可对角化的充要条件是每一个特征值$\lambda_i$都是半单的，即$m_i=\alpha_i \quad i=1,2,\cdots,s$。$A$是不可对角化的矩阵的充要条件是它存在亏损的特征值，即存在$i_0$使得$m_i&gt;\alpha_i$<br>所以称不可对角化的矩阵为亏损矩阵</p>
-<h2 id="矩阵的-Jordan-分解"><a href="#矩阵的-Jordan-分解" class="headerlink" title="矩阵的$Jordan$分解"></a>矩阵的$Jordan$分解</h2><p><strong>定理2.13</strong> 设$A$为$n$阶方阵，则存在$n$阶可逆矩阵使得$A=TJT^{-1}$<br>其中$J=diag(J_{n_1}(\lambda_1),J_{n_2}(\lambda_2),\cdots,J_{n_k}(\lambda_k)),n_1+n_2+\cdots+n_k=n$<br>称其为矩阵$A$的$Jordan$分解，$Jordan$阵$J$称为$A$的$Jordan$标准型，$T$称为变化矩阵<br>矩阵$A$的$Jordan$标准型如果不计$Jordan$块的排列次序，则是确定唯一的</p>
+<h2 id="矩阵的-Jordan-分解"><a href="#矩阵的-Jordan-分解" class="headerlink" title="矩阵的$Jordan$分解"></a>矩阵的$Jordan$分解</h2><p><strong>定理2.13</strong> 设$A$为$n$阶方阵，则存在$n$阶可逆矩阵使得$A=TJT^{-1}$<br>其中$J=diag\{J_{n_1}(\lambda_1),J_{n_2}(\lambda_2),\cdots,J_{n_k}(\lambda_k)\},n_1+n_2+\cdots+n_k=n$<br>称其为矩阵$A$的$Jordan$分解，$Jordan$阵$J$称为$A$的$Jordan$标准型，$T$称为变化矩阵<br>矩阵$A$的$Jordan$标准型如果不计$Jordan$块的排列次序，则是确定唯一的</p>
 <p>注：根据相似矩阵特征值相同，使用$Jordan$标准型的对角元素就是$A$的特征值，而不同的$Jordan$块的对角元素$\lambda_i$可能相同，所以$\lambda_i$不一定是$A$的$n_i$重特征值。一般特征值$\lambda_i$的重数大于等于$n_i$</p>
 <p><strong>$Jordan$标准型</strong><br>$Jordan$标准型是一个块对角矩阵，其对角元为矩阵$J$的特征值<br>对于特征值$\lambda_i$，其<strong>代数重复度</strong>是$Jordan$标准型中以$\lambda_i$为特征值的$Jordan$块阶数的和，其<strong>几何重复度</strong>为$\lambda_i$为特征值的$Jordan$块个数</p>
 <p><strong>定理2.14</strong>设$A$为$n$阶方阵，$\lambda_i$为其特征值，则$A$的$Jordan$标准型$J$中以$\lambda_i$为特征值，阶数为$l$的$Jardan$块的个数为：<br>$$r_{l+1}+r{l-1}-2r_l$$<br>其中$r_l=rank(\lambda_i I-A)^l, r_0=rank(\lambda_i I -A )^0=rank(I)=n$</p>
@@ -1840,7 +1840,7 @@ $$
    \end{bmatrix}
    \end{aligned}
    \end{equation}
-   $<br>令$D=diag{a_{11},a_{12},\cdots,a_{nn}}$</p>
+   $<br>令$D=diag\{a_{11},a_{12},\cdots,a_{nn}\}$</p>
 $
    \begin{equation}
    \begin{aligned}
