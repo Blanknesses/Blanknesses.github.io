@@ -1448,7 +1448,7 @@ $$
     <title>LaTeX</title>
     <url>/2019/10/19/LeTaX/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>#记一些用法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\le 或 \leq 为小于等于</span><br><span class="line">\ge 或 \geq 为大于等于</span><br><span class="line">\not= 为不等于</span><br><span class="line">\approx 为约等于</span><br><span class="line">x_1 为x下标1</span><br><span class="line">x^2 为x上标2</span><br><span class="line">\frac&#123;分子&#125;&#123;分母&#125; 为分式表示</span><br><span class="line">\dfrac&#123;分子&#125;&#123;分母&#125; 为分式表示,数字大小不压缩</span><br><span class="line">\partial  偏导符号</span><br><span class="line">\mathrm&#123;d&#125;  正规的导数d（正体）</span><br><span class="line">\sum  求和符号，压缩</span><br><span class="line">\sum\limits  求和符号，不压缩</span><br><span class="line">\prod  求积符号，压缩</span><br><span class="line">\prod\limits  求积符号，不压缩</span><br><span class="line">\lim  求极限符号，压缩</span><br><span class="line">\lim\limits  求极限符号，不压缩</span><br><span class="line">\int  求积分符号，压缩</span><br><span class="line">\int\limits  求积分符号，不压缩</span><br><span class="line">\Vert 范数符号</span><br><span class="line">\cdot 点乘</span><br><span class="line">\sqrt[“几次幂”]&#123; &#125; 开n次根号</span><br><span class="line">\infty 无穷大</span><br><span class="line">\max 最大值</span><br><span class="line">\Leftarrow 左推出</span><br><span class="line">\Rightarrow 右退出</span><br><span class="line">\Leftrightarrow 等价</span><br><span class="line">\perp 垂直</span><br><span class="line">\subset 真包含</span><br><span class="line">\subseteq  包含</span><br><span class="line">\forall 任意</span><br><span class="line">\exists 存在</span><br><span class="line">$$   $$  公式块</span><br><span class="line">\\ 换行，需禁用Markdown渲染</span><br><span class="line">\quad 空格一个字母位</span><br><span class="line">\tilde&#123;&#125; 字母上方加波浪</span><br><span class="line">\triangleq  等号上加三角，定义式</span><br><span class="line">\mathrm&#123;d&#125; x 求导符号dx</span><br><span class="line">\partial x 偏导符号dx</span><br><span class="line">\int 积分符号</span><br><span class="line">\triangleup 三角形</span><br><span class="line">\triangledown 倒三角形</span><br><span class="line">\substack&#123;j=1\\j\not=i&#125; 下标多行</span><br><span class="line">\equiv 恒等</span><br><span class="line">\\方程组</span><br><span class="line">$$\begin&#123;cases&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br><span class="line">或者</span><br><span class="line">$$</span><br><span class="line">\left \&#123; </span><br><span class="line">\begin&#123;array&#125;&#123;c&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right. </span><br><span class="line">$$</span><br><span class="line">等号对齐</span><br><span class="line">$$</span><br><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;aligned&#125; </span><br><span class="line">a_1x+b_1y+c_1z &amp;= d_1+e_1 \\ </span><br><span class="line">a_2x+b_2y &amp;= d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z &amp;= d_3 </span><br><span class="line">\end&#123;aligned&#125; </span><br><span class="line">\right. </span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">      内部公式=改为&amp;=实现等号对齐</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\end&#123;equation&#125;$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\le 或 \leq 为小于等于</span><br><span class="line">\ge 或 \geq 为大于等于</span><br><span class="line">\not= 为不等于</span><br><span class="line">\approx 为约等于</span><br><span class="line">x_1 为x下标1</span><br><span class="line">x^2 为x上标2</span><br><span class="line">\frac&#123;分子&#125;&#123;分母&#125; 为分式表示</span><br><span class="line">\dfrac&#123;分子&#125;&#123;分母&#125; 为分式表示,数字大小不压缩</span><br><span class="line">\partial  偏导符号</span><br><span class="line">\mathrm&#123;d&#125;  正规的导数d（正体）</span><br><span class="line">\sum  求和符号，压缩</span><br><span class="line">\sum\limits  求和符号，不压缩</span><br><span class="line">\prod  求积符号，压缩</span><br><span class="line">\prod\limits  求积符号，不压缩</span><br><span class="line">\lim  求极限符号，压缩</span><br><span class="line">\lim\limits  求极限符号，不压缩</span><br><span class="line">\int  求积分符号，压缩</span><br><span class="line">\int\limits  求积分符号，不压缩</span><br><span class="line">\Vert 范数符号</span><br><span class="line">\cdot 点乘</span><br><span class="line">\sqrt[“几次幂”]&#123; &#125; 开n次根号</span><br><span class="line">\infty 无穷大</span><br><span class="line">\max 最大值</span><br><span class="line">\Leftarrow 左推出</span><br><span class="line">\Rightarrow 右退出</span><br><span class="line">\Leftrightarrow 等价</span><br><span class="line">\perp 垂直</span><br><span class="line">\subset 真包含</span><br><span class="line">\subseteq  包含</span><br><span class="line">\forall 任意</span><br><span class="line">\exists 存在</span><br><span class="line">$$   $$  公式块</span><br><span class="line">\\ 换行，需禁用Markdown渲染</span><br><span class="line">\quad 空格一个字母位</span><br><span class="line">\tilde&#123;&#125; 字母上方加波浪</span><br><span class="line">\overline&#123;&#125; 字母上方加横线</span><br><span class="line">\triangleq  等号上加三角，定义式</span><br><span class="line">\mathrm&#123;d&#125; x 求导符号dx</span><br><span class="line">\partial x 偏导符号dx</span><br><span class="line">\int 积分符号</span><br><span class="line">\triangleup 三角形</span><br><span class="line">\triangledown 倒三角形</span><br><span class="line">\substack&#123;j=1\\j\not=i&#125; 下标多行</span><br><span class="line">\equiv 恒等</span><br><span class="line">\\方程组</span><br><span class="line">$$\begin&#123;cases&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br><span class="line">或者</span><br><span class="line">$$</span><br><span class="line">\left \&#123; </span><br><span class="line">\begin&#123;array&#125;&#123;c&#125;</span><br><span class="line">a_1x+b_1y+c_1z=d_1 \\ </span><br><span class="line">a_2x+b_2y+c_2z=d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right. </span><br><span class="line">$$</span><br><span class="line">等号对齐</span><br><span class="line">$$</span><br><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;aligned&#125; </span><br><span class="line">a_1x+b_1y+c_1z &amp;= d_1+e_1 \\ </span><br><span class="line">a_2x+b_2y &amp;= d_2 \\ </span><br><span class="line">a_3x+b_3y+c_3z &amp;= d_3 </span><br><span class="line">\end&#123;aligned&#125; </span><br><span class="line">\right. </span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">      内部公式=改为&amp;=实现等号对齐</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\end&#123;equation&#125;$</span><br></pre></td></tr></table></figure>
 
 <h1 id="字母表"><a href="#字母表" class="headerlink" title="字母表"></a>字母表</h1><p><img src="/images/LaTeXLetterList.png" alt="字母表"></p>
 <h1 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h1><p><a href="https://jingyan.baidu.com/article/4b52d702df537efc5c774bc9.html" target="_blank" rel="noopener">有空重写表格</a></p>
@@ -2824,7 +2824,7 @@ x^{(k)}-x^{*}&=x^{(k)}-x^{(k+1)}+x^{(k+1)}-x^{*}\\
 \end{equation}
 $$
 
-<h2 id="Jacobi-迭代和-G-S-迭代的收敛性"><a href="#Jacobi-迭代和-G-S-迭代的收敛性" class="headerlink" title="$Jacobi$迭代和$G-S$迭代的收敛性"></a>$Jacobi$迭代和$G-S$迭代的收敛性</h2><p>若$$
+<h2 id="Jacobi-迭代和-G-S-迭代的收敛性"><a href="#Jacobi-迭代和-G-S-迭代的收敛性" class="headerlink" title="$Jacobi$迭代和$G-S$迭代的收敛性"></a>$Jacobi$迭代和$G-S$迭代的收敛性</h2><p>若$
    \begin{equation}
    \begin{aligned}
    A=\begin{bmatrix}
@@ -2837,7 +2837,7 @@ $$
    \end{bmatrix}
    \end{aligned}
    \end{equation}
-   $$<br>令$D=diag{a_{11},a_{12},\cdots,a_{nn}}$</p>
+   $<br>令$D=diag{a_{11},a_{12},\cdots,a_{nn}}$</p>
 $
    \begin{equation}
    \begin{aligned}
@@ -2948,26 +2948,91 @@ $
 </ul>
 <h2 id="非线性方程简介"><a href="#非线性方程简介" class="headerlink" title="非线性方程简介"></a>非线性方程简介</h2><p>常见非线性方程有，代数方程（二次，三次等），超越方程（三角方程，指数、对数方程等）<br>如果$f(x)=0$在区间$[a,b]$上仅有一个根，则称$[a,b]$为方程的<strong>单根区间</strong>；若方程在$[a,b]$上仅有多个根，则称$[a,b]$为方程的<strong>多根区间</strong></p>
 <h2 id="简单迭代法的一般性理论"><a href="#简单迭代法的一般性理论" class="headerlink" title="简单迭代法的一般性理论"></a>简单迭代法的一般性理论</h2><p>首先将方程$f(x)=0$化为一个与它同解的方程$x=\varphi(x)$，其中$\varphi(x)$为$x$的连续函数。<br>求解非线性方程的<strong>简单迭代法</strong>或<strong>迭代过程</strong>或<strong>迭代格式</strong>为$x_{k+1}=\varphi(x_k)\quad (k=0,1,2,\cdots)$，$\varphi(x)$称为迭代函数，$x_k$称第$k$步的<strong>迭代值</strong>或<strong>简称迭代值</strong><br>如果由迭代格式产生的数列收敛，即$\lim\limits_{k\rightarrow \infty}x_k = \alpha$，则称迭代法收敛，否则称迭代法发散。若迭代法收敛于$\alpha$，则$\alpha$为方程的根<br><strong>迭代法的收敛与发散，依赖于迭代函数的构造</strong></p>
-<h2 id="迭代收敛的充分条件"><a href="#迭代收敛的充分条件" class="headerlink" title="迭代收敛的充分条件"></a>迭代收敛的充分条件</h2><p>当迭代函数满足$|\varphi’(x)|&lt;1$时，迭代法收敛，当$|\varphi’(x)|&gt;1$时，迭代法发散<br><strong>定理4.5</strong><br>设迭代函数$varphi(x)$满足</p>
+<h2 id="迭代收敛的充分条件"><a href="#迭代收敛的充分条件" class="headerlink" title="迭代收敛的充分条件"></a>迭代收敛的充分条件</h2><p>当迭代函数满足$|\varphi’(x)|&lt;1$时，迭代法收敛，当$|\varphi’(x)|&gt;1$时，迭代法发散<br><strong>定理4.5</strong><br>设迭代函数$\varphi(x)$满足</p>
 <ul>
 <li>当$x\in [a,b]$时，$a\le \varphi(x)\le b$</li>
-<li>存在正数$0&lt;L&lt;1$，对任意的$x\in [a,b]$均由$|varphi(x)|\le L$</li>
+<li>存在正数$0&lt;L&lt;1$，对任意的$x\in [a,b]$均由$|\varphi(x)|\le L$</li>
 </ul>
-<p>则$x=varphi(x)$在$[a,b]$内存在唯一根$\alpha$，且对任意初始值$x_0\in [a,b]$，迭代法$x_{k+1}=\varphi(x_k)\quad (k=0,1,2,\cdots)$收敛于$\alpha$，且有</p>
+<p>则$x=\varphi(x)$在$[a,b]$内存在唯一根$\alpha$，且对任意初始值$x_0\in [a,b]$，迭代法$x_{k+1}=\varphi(x_k)\quad (k=0,1,2,\cdots)$收敛于$\alpha$，且有</p>
 <ul>
 <li>$|x_k-\alpha|\le \dfrac{L}{1-L}|x_k-x_{k-1}|$</li>
 <li>$|x_k-\alpha|\le \dfrac{L^k}{1-L}|x_1-x_{0}|$</li>
 </ul>
-<p>证明：令$f(x)=x-\varphi(x)$，因为$x\in [a,b]$有$a\le \varphi(x)\le b$<br>$f(a)=a-\varphi(a)\le 0 \quad f(b)=b-\varphi(b)\ge 0$<br>$|\varphi’(x)| \le L &lt; 1 \Rightarrow f’(x)=1-\varphi’(x) &gt; 0$<br>连续函数$f(x)$在$[a,b]$上单调，且在端点取值异号，故在$[a,b]$上有唯一根<br>$0=f(\alpha)=\alpha-\varphi(\alpha)\Leftrightarrow \alpha=\varphi(\alpha)$<br>根据微分中值定理有<br>$x_{k+1}-\alpha = \varphi(x_k)-\varphi(\alpha)=\varphi’(\xi_1)(x_k-\alpha)$<br>$x_{k+1}-x_k = \varphi(x_k)-\varphi(x_{k-1})=\varphi’(\xi_2)(x_k-x_{k-1})$<br>其中$\xi_1,\xi_2\in [a,b]$<br>所以有<br>$|x_{k+1}-\alpha| = |\varphi’(\xi_1)||(x_k-\alpha)|\le L|(x_k-\alpha)|$<br>$|x_{k+1}-x_k| = |\varphi’(\xi_2)||(x_k-x_{k-1})|\le L|(x_k-x_{k-1})|$<br>又因为<br>$|x_{k}-\alpha|\le |x_{k}-x_{k+1}}|+|x_{k+1}}-\alpha|\le L|(x_k-x_{k-1})|+ L|(x_k-\alpha)|$<br>所以得证<br>根据$L&lt;1$可知，$\lim\limits_{k\rightarrow \infty}|x_k-\alpha|=0$，即$\lim\limits_{k\rightarrow\infty}x_k=\alpha$，故迭代法收敛</p>
+<p>证明：令$f(x)=x-\varphi(x)$，因为$x\in [a,b]$有$a\le \varphi(x)\le b$<br>$f(a)=a-\varphi(a)\le 0 \quad f(b)=b-\varphi(b)\ge 0$<br>$|\varphi’(x)| \le L &lt; 1 \Rightarrow f’(x)=1-\varphi’(x) &gt; 0$<br>连续函数$f(x)$在$[a,b]$上单调，且在端点取值异号，故在$[a,b]$上有唯一根<br>$0=f(\alpha)=\alpha-\varphi(\alpha)\Leftrightarrow \alpha=\varphi(\alpha)$<br>根据微分中值定理有<br>$x_{k+1}-\alpha = \varphi(x_k)-\varphi(\alpha)=\varphi’(\xi_1)(x_k-\alpha)$<br>$x_{k+1}-x_k = \varphi(x_k)-\varphi(x_{k-1})=\varphi’(\xi_2)(x_k-x_{k-1})$<br>其中$\xi_1,\xi_2\in [a,b]$<br>所以有<br>$|x_{k+1}-\alpha| = |\varphi’(\xi_1)||(x_k-\alpha)|\le L|(x_k-\alpha)|$<br>$|x_{k+1}-x_k| = |\varphi’(\xi_2)||(x_k-x_{k-1})|\le L|(x_k-x_{k-1})|$<br>又因为<br>$|x_{k}-\alpha|\le |x_{k}-x_{k+1}|+|x_{k+1}-\alpha|\le L|(x_k-x_{k-1})|+ L|(x_k-\alpha)|$<br>所以得证<br>根据$L&lt;1$可知，$\lim\limits_{k\rightarrow \infty}|x_k-\alpha|=0$，即$\lim\limits_{k\rightarrow\infty}x_k=\alpha$，故迭代法收敛</p>
 <p>可根据$|x_k-\alpha|\le \dfrac{L^k}{1-L}|x_k-x_{0}| &lt; \delta \Rightarrow k\le \log_L\dfrac{\delta(1-L)}{|x_1-x_0|}$</p>
 <h2 id="实用收敛性的判断及收敛阶"><a href="#实用收敛性的判断及收敛阶" class="headerlink" title="实用收敛性的判断及收敛阶"></a>实用收敛性的判断及收敛阶</h2><p>假定$\varphi’(x)$在$\alpha$的附近连续，且满足$|\varphi’(\alpha)|&lt;1$，则根据连续函数的性质，一定存在$\alpha$的某个领域$S:|x-\alpha|\le \delta$，$\varphi(x)$在$S$上满足<strong>定理4.5</strong><br>故在$S$中任取初始值$x_0$，迭代格式$x_k=\varphi(x_{k-1})$收敛于方程的根$\alpha$，即$f(\alpha)\equiv 0$，称此收敛为<strong>局部收敛</strong></p>
 <p>当$L$或者$\varphi’(x)$在$[a,b]$上的值越小，迭代过程的收敛速度就越快。当$L&lt;1$且接近于$1$时，迭代法虽然收敛但是收敛很慢<br><strong>定义4.2</strong> 设迭代格式$x_{k+1}=\varphi(x_k)$，当$k\rightarrow \infty$时，$x_{k+1}\rightarrow \alpha$，并记$e_k=x_k-\alpha$<br>若存在实数$p\ge 1$和$c&gt;0$满足$\lim\limits_{k\rightarrow \infty}\dfrac{|e_{k+1}|}{|e_k|^p}=c$，则称迭代法是<strong>$p$阶收敛</strong>。当$p=1$时，称线性收敛，当$p&gt;1$时，称超线性收敛，当$p=2$时，称平方收敛</p>
-<p>$p$越大迭代法的收敛速度越快。常用$Taylor$展开式是一种常用方法<br>如果$\varphi(x)$在根$\alpha$处充分光滑，则可对$\varphi(x)$在$\alpha$处进行$Taylor$展开，得到<br>$x_{k+1}=\varphi(x_k)=\varphi(\alpha)+\varphi’(\alpha)(x_k-\alpha)+\dfrac{\varphi’’(\alpha)}{2!}(x_k-\alpha)^2+\cdots$<br>$+\dfrac{\varphi^{(p-1)}(\alpha)}{(p-1)!}(x_k-\alpha)^{p-1}+\dfrac{\varphi^{(p)}(\xi_k)}{p!}(x_k-\alpha)^p$<br>若$\varphi’(\alpha)=\varphi’’(\alpha)=\cdots=\varphi^{(p-1)}(\alpha)=0$<br>则有$\dfrac{x_{k+1}-\alpha}{x_k-\alpha}^p = \dfrac{\varphi^{(p)}(\xi_k)}{p!}$<br>从而有$\lim\limits_{k \rightarrow \infty}\dfrac{x_{k+1}-\alpha}{x_k-\alpha}^p = \lim\limits_{k \rightarrow \infty}\dfrac{|e_{k+1}|}{|e_k|^p} = \lim\limits_{k \rightarrow \infty}\dfrac{\varphi^{(p)}(\xi_k)}{p!}=\dfrac{\varphi^{(p)}(\alpha)}{p!}$</p>
+<p>$p$越大迭代法的收敛速度越快。常用$Taylor$展开式是一种常用方法<br>如果$\varphi(x)$在根$\alpha$处充分光滑，则可对$\varphi(x)$在$\alpha$处进行$Taylor$展开，得到<br>$x_{k+1}=\varphi(x_k)=\varphi(\alpha)+\varphi’(\alpha)(x_k-\alpha)+\dfrac{\varphi’’(\alpha)}{2!}(x_k-\alpha)^2+\cdots$<br>$+\dfrac{\varphi^{(p-1)}(\alpha)}{(p-1)!}(x_k-\alpha)^{p-1}+\dfrac{\varphi^{(p)}(\xi_k)}{p!}(x_k-\alpha)^p$<br>若$\varphi’(\alpha)=\varphi’’(\alpha)=\cdots=\varphi^{(p-1)}(\alpha)=0$<br>则有$\dfrac{|x_{k+1}-\alpha|}{|x_k-\alpha|^p}= \dfrac{|\varphi^{(p)|}(\xi_k)}{p!}$<br>从而有$\lim\limits_{k \rightarrow \infty}\dfrac{|x_{k+1}-\alpha|}{|x_k-\alpha|^p} = \lim\limits_{k \rightarrow \infty}\dfrac{|e_{k+1}|}{|e_k|^p} = \lim\limits_{k \rightarrow \infty}\dfrac{|\varphi^{(p)}(\xi_k)|}{p!}=\dfrac{|\varphi^{(p)}(\alpha)|}{p!}$</p>
 <p>上式说明迭代法具有$p$阶收敛</p>
 <p><strong>定理4.6</strong> 如果$x=\varphi(x)$中的迭代函数$\varphi(x)$在根$\alpha$附近满足</p>
 <ul>
 <li>$\varphi(x)$存在$p$阶导数且连续</li>
 <li>$\varphi’(\alpha)=\varphi’’(\alpha)=\cdots=\varphi^{(p-1)}(\alpha)=0,\varphi^{(p)}(\alpha)\not= 0$<br>则迭代法$x_{k+1}=\varphi(x_k)$是$p$阶收敛</li>
+</ul>
+<h2 id="Newton-迭代法及其变形"><a href="#Newton-迭代法及其变形" class="headerlink" title="$Newton$迭代法及其变形"></a>$Newton$迭代法及其变形</h2><p>不管非线性方程$f(x)=0$的形式如何，总可以构造<br>$x=\varphi(x)=x-k(x)f(x)\quad (k(x)\not=0)$<br>作为方程$f(x)=0$求解的迭代函数，因为<br>$\varphi’(x)=1-k’(x)f(x)-k(x)f’(x)$<br>而且$|\varphi’(x)|$在根$\alpha$附近越小，其局部收敛速度越快<br>所以可令<br>$\varphi’(\alpha)=1-k’(\alpha)f(\alpha)-k(\alpha)f’(\alpha)=1-k(\alpha)f’(\alpha)=0$<br>若$f’(\alpha)\not= 0$（即$\alpha$不是$f(x)$的重根），则<br>$k(\alpha)=\dfrac{1}{f’(\alpha)}$<br>故可取$k(x)=\dfrac{1}{f’(x)}$，得<br>$x=x-\dfrac{f(x)}{f’(x)}$</p>
+<p><strong>定理4.7</strong> 设方程$f(x)=0$的根为$\alpha$，且$f’(\alpha)\not=0$，则迭代法<br>$$x_{k+1}=x_k-\dfrac{f(x_k)}{f’(x_k)}\quad (k=0,1,2,\cdots)$$<br>至少是平方收敛，并称为<strong>$Newton$迭代法</strong>，也称为切线法</p>
+<p>用导数近似式替代$f’(x)$可得<br>$x_{k+1}=x_k-\dfrac{f(x_k)}{f(x_k)-f(x_{k-1})}(x_k-x_{k-1})\quad (k=0,1,2,\cdots)$<br>称为<strong>弦截法</strong>，也称割线法，其收敛阶为$p=\dfrac{1+\sqrt{5}}{2}\approx 1.618$</p>
+<p><strong>单步弦截法</strong><br>$x_{k+1}=x_k-\dfrac{f(x_k)}{f(x_k)-f(x_{0})}(x_k-x_{0})\quad (k=0,1,2,\cdots)$</p>
+<p><strong>平行线法</strong><br>$x_{k+1}=x_k-\dfrac{f(x_k)}{f’(x_{0})}\quad (k=0,1,2,\cdots)$</p>
+<h2 id="几个数值例子"><a href="#几个数值例子" class="headerlink" title="几个数值例子"></a>几个数值例子</h2><p>使用$Newton$迭代法时，为了防止迭代发散，我们在迭代格式中附加一个条件$|f(x_{k+1})|&lt;|f(x_k)|$<br>即要求$|f(x_k)|$的值单调下降，为此，引入$0&lt;\lambda \le 0$，建立<br>$x_{k+1}=x_k-\lambda\dfrac{f(x_k)}{f’(x_k)}\quad 0&lt;\lambda\le 1$<br>使得$|f(x_{k+1})|\le|f(x_k)|$，其中$\lambda$称为下山因子，称迭代法为$Newton$下山法<br>下山因子的选择一般采用试算法。即由迭代得到计算值$x_k$后，取不同的$\lambda$值试算，例如取$\lambda=1,\dfrac{1}{2},\dfrac{1}{2^2},\dfrac{1}{2^3},\cdots$<br>每次计算$f(x_{k+1})$均需要进行此步骤，如果计算过程中碰到一个迭代值$x_k$取不到满足要求的$\lambda$，则称<strong>下山失败</strong>，需要<strong>重新取初始值$x_0$</strong></p>
+<h2 id="多根区间上的单根计算"><a href="#多根区间上的单根计算" class="headerlink" title="多根区间上的单根计算"></a>多根区间上的单根计算</h2><p>$[a,b]$是$f(x)=0$仅有单根的多根区间<br>    * 求单根区间<br>        设$f(x)=0$在$[a,b]$上有$m$个根。将$[a,b]$分成$n$个小区间：$[b_0,b_1],[b_1,b_2],\cdots,[b_{n-1},b_n]$，（其中$b_0=a,b_n=b$）然后计算$f(b_i)(i=1,2,\cdots,n)$的值，当$f(b_i)f(b_{i+1})&lt;0$时，$f(x)=0$在$[b_i,b_{i+1}]$上至少有一根<br>    * 在单根区间$[c,d]$上求根<br>        利用二分法求根，在二分法求根过程中，有根区间趋于零的速度较慢时，可以从该区间开始使用其他迭代法求解</p>
+<h2 id="重根的计算"><a href="#重根的计算" class="headerlink" title="重根的计算"></a>重根的计算</h2><p>$f(x)=0$在$[a,b]$上有重根<br>设$\alpha$是$f(x)=0$的$m$重根，其中$m\ge 2$且为整数，则有<br>$f(x)=(x-\alpha)^mg(x)$且$g(\alpha)\not= 0$<br>此时$f(\alpha)=f’(\alpha)=f’’(\alpha)=\cdots=f^{(m-1)}(\alpha)=0\quad f^{(m)}(\alpha)\not=0$<br>若使用$Newton$迭代法</p>
+$
+\begin{equation}
+\begin{aligned}
+\varphi(x)&=x-\dfrac{f(x)}{f'(x)}=x-\dfrac{(x-\alpha)^mg(x)}{m(x-\alpha)^{m-1}g(x)+(x-\alpha)^mg'(x)}\\
+\varphi'(x)&=1-\dfrac{g(x)}{mg(x)+(x-\alpha)g'(x)}-(x-\alpha)\left[ \dfrac{g(x)}{mg(x)+(x-\alpha)g'(x)} \right]'\\
+\varphi'(x)&=1-\dfrac{g(\alpha)}{mg(\alpha)+0}-0=1-\dfrac{1}{m}\not=0
+\end{aligned}
+\end{equation}
+$
+<p>若在这种条件下的$Newton$迭代法如果收敛，必定是线性收敛。为了提高收敛阶可取$\varphi(x)=x-m\dfrac{f(x)}{f’(x)}$<br>从而使$\varphi’(x)=1-\dfrac{m}{m}=0$，至少为平方收敛</p>
+<h2 id="迭代的加速-SOR"><a href="#迭代的加速-SOR" class="headerlink" title="迭代的加速-$SOR$"></a>迭代的加速-$SOR$</h2><p>超松弛法（SOR法）<br>G-S迭代格式<br>$\overline{x_i}^{(k+1)}=\dfrac{1}{a_{ii}}\left( b_i - \sum\limits_{j=1}^{i-1} a_{ij}x_j^{(k+1)}-\sum\limits_{j=i+1}^n a_{ij}x_j^{(k)} \right)(i=1,2,\cdots,n)$<br>取$x_i^{(k+1)}=\beta_0x_i^{(k)}+\beta_1\overline{x_i}^{(k+1)}\quad \beta_0+\beta_1=1$<br>令$\beta_1=\omega,\beta_0=1-\omega$其中$\omega$称为松弛因子</p>
+$$
+\begin{equation}
+\begin{aligned}
+x_i^{(k+1)}&=(1-\omega)x_i^{(k)}+\dfrac{\omega}{a_{ii}}\left(  b_i - \sum\limits_{j=1}^{i-1} a_{ij}x_j^{(k+1)}-\sum\limits_{j=i+1}^n a_{ij}x_j^{(k)} \right)\\
+&=x_i^{(k)}+\dfrac{\omega}{a_{ii}}\left( b_i - \sum\limits_{j=1}^{i-1} a_{ij}x_j^{(k+1)}-\sum\limits_{j=i}^n a_{ij}x_j^{(k)} \right)\\
+\end{aligned}
+\end{equation}
+$$
+
+<p>$SOR$法的收敛速度与$\omega$有关，当$\omega=1$时，它就是$G-S$法<br>考虑$SOR$法的矩阵格式和收敛性<br>$a_{ii}x_i^{(k+1)}=(1-\omega)a_{ii}x_i^{(k)}+\omega\left(  b_i - \sum\limits_{j=1}^{i-1} a_{ij}x_j^{(k+1)}-\sum\limits_{j=i+1}^n a_{ij}x_j^{(k)} \right)$<br>设$A=D-L-U$<br>有$Dx_i^{(k+1)}=(1-\omega)Dx_i^{(k)}+\omega(  b - Lx_j^{(k+1)}-Ux_j^{(k)} )$<br>整理后得$(D-\omega L)x^{(k+1)}=[(1-\omega)D+\omega U]x^{(k)}+\omega b$<br>$x^{(k+1)}=(D-\omega L)^{-1}[(1-\omega)D+\omega U]x^{(k)}+\omega (D-\omega L)^{-1}b$<br>令$L_\omega = (D-\omega L)^{-1}[(1-\omega)D+\omega U],f=\omega (D-\omega L)^{-1}$<br>则$x^{(k+1)}=L_\omega x^{(k)}+f$</p>
+<p>$SOR$法收敛的充要条件是$\rho(L_\omega)&lt;1$</p>
+$$
+\begin{equation}
+\begin{aligned}
+det(L_\omega)&=det((D-\omega L)^{-1})det((1-\omega)D+\omega U)\\
+&=1\dot (1-\omega)^n=\lambda_1\cdots \lambda_n
+\end{aligned}
+\end{equation}
+$$
+<p>令$$
+\begin{equation}
+\begin{aligned}
+|\lambda_1|\ge \cdots\ge |\lambda_n|&\Rightarrow|\lambda_1|\cdots|\lambda_n|=(1-\omega)^n\\
+&\Rightarrow\rho(L_\omega)\ge |1-\omega|
+\end{aligned}
+\end{equation}
+$$</p>
+<p>根据收敛充要条件$1-\omega|\le \rho(L_\omega) &lt;1 \Rightarrow 0&lt;\omega&lt;2$</p>
+<p>可以证明的是，如果$A$是对称正定矩阵，则满足$0&lt;\omega&lt;2$的任意$\omega$和初始向量$x^{(0)}$，$SOR$法均收敛。从而有<br><strong>如果$A$是对称正定矩阵，则$G-S$迭代法必收敛</strong><br>使$SOR$法收敛最快的松弛因子称为最优松弛因子，记为$\omega_{opt}$，使得$\rho(L_\omega)$最小</p>
+<h2 id="迭代的加速-Aitken"><a href="#迭代的加速-Aitken" class="headerlink" title="迭代的加速-$Aitken$"></a>迭代的加速-$Aitken$</h2><p>设数列$\{x_k\}$为线性收敛，即$\lim\limits_{k\rightarrow\infty}\dfrac{|x_{k+1}-\alpha|}{|x_{k}-\alpha|}=c&gt;0$</p>
+$$
+\begin{equation}
+\begin{aligned}
+&\dfrac{x_{k+1}-\alpha}{x_{k}-\alpha}\approx c,\dfrac{x_{k}-\alpha}{x_{k-1}-\alpha}\approx c,\dfrac{x_{k+1}-\alpha}{x_{k}-\alpha}\approx\dfrac{x_{k}-\alpha}{x_{k-1}-\alpha}\\
+&\Rightarrow (x_k-\alpha)^2\approx (x_{k+1}-\alpha)(x_{k-1}-\alpha)\\
+&\Rightarrow x_k^2-2\alpha x_k + \alpha^2\approx x_{k+1}x_{k-1}-\alpha (x_{k+1}+x_{k-1})+\alpha^2\\
+&\Rightarrow \alpha\approx \dfrac{x_{k+1}x_{k-1}-x_k^2}{x_{k+1}-2x_k+x_{k-1}}=x_{k+1}-\dfrac{(x_{k+1}-x_k)^2}{x_{k+1}-2x_k+x_{k-1}}
+\end{aligned}
+\end{equation}
+$$
+<p>令$\overline{x_k}=x_{k+1}-\dfrac{(x_{k+1}-x_k)^2}{x_{k+1}-2x_k+x_{k-1}}$即对数列$\{x_k\}$进行$Aitken$加速</p>
+<p>$Aitken$加速的两种基本方式</p>
+<ul>
+<li>对于没有（显式）迭代格式的数列加速后的新数列不改变原数列</li>
+<li>对于有显式迭代格式的数列$x_{k+1}=\varphi(x_k)$，加速引入到迭代过程，原数列被改变</li>
 </ul>
 ]]></content>
       <categories>
