@@ -2758,7 +2758,7 @@ X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T
 $
 <p>其中$F(t)=(f_1(t),f_2(t),\cdots,f_n(t),)^T$是已知向量函数<br>根据一阶线性常系数齐次微分方程组性质，可得<br>$\dfrac{\mathrm{d} (e^{-At}X(t))}{\mathrm{d} t}=e^{-At}F(t)$<br>对此方程在$[t_0,t]$上进行积分，得<br>$e^{-At}X(t)-e^{-At_0}X(t_0)=\int_{t_0}^t e^{-A\tau}F(\tau)d\tau$<br>$X(t)=e^{A(t-t_0)}X(t_0)+\int_{t_0}^t e^A{t-\tau}F(\tau)d\tau$</p>
 <h1 id="逐次迭代法"><a href="#逐次迭代法" class="headerlink" title="逐次迭代法"></a>逐次迭代法</h1><h2 id="简单迭代法"><a href="#简单迭代法" class="headerlink" title="简单迭代法"></a>简单迭代法</h2><p>将$Ax=b$变形为$x=Bx+f$，其中$B\in R^{n\times n},f\in R^n,x\in R^n$，拥有同样的解，称$B$矩阵为迭代矩阵<br>迭代法一般形式为：$x^{(k+1)}=Bx^{(k)}+f\quad (k=0,1,2,\cdots)$<br>如果对任意$x^{(0)}$，都有当$k\rightarrow \infty$时，$x^{(k)}\rightarrow x^{*}$，其中$x^{(k)}=(x_1^{(k)},x_2^{(k)},\cdots,x_n^{(k)})^T,x^{*}=(x_1^{*},x_2^{*},\cdots,x_n^{*})^T$<br>即$\lim\limits_{k \rightarrow \infty}x_i^{(k)}=x_i^{*}\quad i=1,2,\cdots,n$<br>称该迭代法收敛，否则称迭代法发散<br>由于$\lim\limits_{k \rightarrow \infty}x^{(k+1)}=B\lim\limits_{k \rightarrow \infty}x^{(k)}+f$，所以收敛迭代法的极限向量$x^*$满足$x^*=Bx^*+f$</p>
-<h2 id="Jacob-迭代和-G-S-迭代格式"><a href="#Jacob-迭代和-G-S-迭代格式" class="headerlink" title="$Jacob$迭代和$G-S$迭代格式"></a>$Jacob$迭代和$G-S$迭代格式</h2><p>线性方程组的一般形式</p>
+<h2 id="Jacobi-迭代和-G-S-迭代格式"><a href="#Jacobi-迭代和-G-S-迭代格式" class="headerlink" title="$Jacobi$迭代和$G-S$迭代格式"></a>$Jacobi$迭代和$G-S$迭代格式</h2><p>线性方程组的一般形式</p>
 $$
 \begin{equation}
 \begin{aligned}
