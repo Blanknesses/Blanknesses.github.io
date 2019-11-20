@@ -1,6 +1,271 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>计算方法第四章作业题</title>
+    <url>/2019/11/20/work4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2>$$
+\begin{equation}
+\begin{aligned}
+(A)\quad A&=
+\begin{bmatrix}
+1&1&2\\
+0&0&2\\
+2&0&1\\
+\end{bmatrix}\\
+D&=diag\{ 1,0,1 \}\\
+L&=\begin{bmatrix}
+0&0&0\\
+0&0&0\\
+-2&0&0\\
+\end{bmatrix}\\
+U&=\begin{bmatrix}
+0&-1&-2\\
+0&0&-2\\
+0&0&0\\
+\end{bmatrix}\\
+|\lambda I-B_G|&=|\lambda I-(D-L)^{-1}U|\\
+&=|(D-L)^{-1}||\lambda(D-L)-U|=0\\
+&\Rightarrow |\lambda(D-L)-U|=0\\
+|\lambda(D-L)-U|&=
+\left |\begin{array}{cccc}
+\lambda&1&2\\
+0&0&2\\
+2\lambda&0&\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \lambda=0\\
+&\therefore(A)收敛\\
+
+(B)\quad A&=
+\begin{bmatrix}
+3&1&1\\
+0&1&2\\
+1&0&\dfrac{1}{2}\\
+\end{bmatrix}\\
+|\lambda(D-L)-U|&=
+\left |\begin{array}{cccc}
+3\lambda&1&1\\
+0&\lambda&2\\
+\lambda&0&\dfrac{1}{2}\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \dfrac{3}{2}\lambda[(\lambda-\dfrac{1}{3})^2+\dfrac{11}{9}]\\
+&\Rightarrow \lambda=0\\
+&\therefore(B)收敛\\
+
+(C)\quad A&=
+\begin{bmatrix}
+5&2&1\\
+-2&-8&-3\\
+1&-1&-4\\
+\end{bmatrix}\\
+&\because |5|>|2|+|1|,|-8|>|-2|+|-3|\\
+&\quad |-4|>|1|+|-1|\\
+&\therefore A为严格对角占优矩阵，故(C)收敛\\
+
+(D)\quad A&=
+\begin{bmatrix}
+1&-9&-7\\
+0&2&2\\
+0&-2&1\\
+\end{bmatrix}\\
+|\lambda(D-L)-U|&=
+\left |\begin{array}{cccc}
+\lambda&-9&-7\\
+0&2\lambda&2\\
+0&-2\lambda&\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \lambda=0,-2\\
+&\because \rho(\lambda)=|-2|>0\\
+&\therefore (C)发散
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2>$$
+\begin{equation}
+\begin{aligned}
+(1)\quad A&=
+\begin{bmatrix}
+3&7&1\\
+0&4&t-1\\
+0&3-t&-1\\
+\end{bmatrix}\\
+B_J=D^{-1}(L+U)&=
+\begin{bmatrix}
+\dfrac{1}{3}&0&0\\
+0&\dfrac{1}{4}&0\\
+0&0&-1\\
+\end{bmatrix}
+\begin{bmatrix}
+0&-7&-1\\
+0&0&1-t\\
+0&t-3&0\\
+\end{bmatrix}\\
+&=\begin{bmatrix}
+0&-\dfrac{7}{3}&-\dfrac{1}{3}\\
+0&0&\dfrac{1-t}{4}\\
+0&3-t&0\\
+\end{bmatrix}\\
+|\lambda I-B_J|&=
+\left |\begin{array}{cccc}
+\lambda&\dfrac{7}{3}&\dfrac{1}{3}\\
+0&\lambda&\dfrac{t-1}{4}\\
+0&t-3&\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \lambda(\lambda^2-\dfrac{(t-1)(t-3)}{4})=0\\
+&\Rightarrow \lambda=0,\sqrt{\dfrac{(t-1)(t-3)}{4}}\\
+&若Jacobi迭代收敛，则|\lambda|=\left\vert \sqrt{\dfrac{(t-1)(t-3)}{4}} < 1 \right\vert \\
+&\Rightarrow 0 \le (t-1)(t-3) < 4\\
+&\Rightarrow 2 - \sqrt{5} < t \le 1 或 3 \le t  < 2 + \sqrt{5}\\
+(2)\quad |\lambda I-B_G|&=|\lambda(D-L)-U|\\
+&=\left |\begin{array}{cccc}
+3\lambda&7&1\\
+0&4\lambda&t-1\\
+0&(3-t)\lambda&-\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow -3 \lambda^2 (4 \lambda - (t-1)(t-3)) = 0\\
+&\Rightarrow \lambda = 0,\dfrac{(t-1)(t-3)}{4}\\
+&\because -4 < (t-1)(t-3) < 4\\
+&\therefore 2 - \sqrt{5}< \lambda < 2 + \sqrt{5}\\
+&\therefore G-S迭代收敛
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2>$$
+\begin{equation}
+\begin{aligned}
+&\because\begin{bmatrix}
+4&-1&0\\
+-1&1&-1\\
+0&-1&1\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{bmatrix}=
+\begin{bmatrix}
+3\\
+-1\\
+0\\
+\end{bmatrix}\\
+&\because x^{(0)}=[0,0,0]^T\\
+&\begin{cases}
+x_1^{(1)}=\dfrac{1}{4}(3-0)=\dfrac{3}{4}\\
+x_2^{(1)}=(-1+\dfrac{3}{4}-0)=-\dfrac{1}{4}\\
+x_3^{(1)}=(0-\dfrac{1}{4})=-\dfrac{1}{4}\\
+\end{cases}\\
+&\therefore x^{(1)}=[\dfrac{3}{4},-\dfrac{1}{4},-\dfrac{1}{4}]\\
+&\begin{cases}
+x_1^{(2)}=\dfrac{1}{4}(3-\dfrac{1}{4})=\dfrac{11}{16}\\
+x_2^{(2)}=(-1+\dfrac{11}{16}-\dfrac{1}{4})=-\dfrac{9}{16}\\
+x_3^{(1)}=(0-\dfrac{9}{16})=-\dfrac{9}{16}\\
+\end{cases}\\
+&\therefore x^{(2)}=[\dfrac{11}{16},-\dfrac{9}{16},-\dfrac{9}{16}]\\
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h2>$$
+\begin{equation}
+\begin{aligned}
+\phi(x)& = x - \alpha(e^x - e^{-x})\\
+&\because \exists x_0 = 0 \Rightarrow \phi(0)=0 \\
+\phi'(x)& = 1 - \alpha(e^x + e^{-x})\\
+|\phi'(0)|& = |1-2\alpha| < 1时，\phi(x)局部收敛\\
+&\therefore \alpha \in (0,1)\\
+|\phi'(0)|& = |1 - 2 \alpha | = 0时，\phi(x)至少是平方收敛\\
+&\therefore \alpha = \dfrac{1}{2}\\
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第五题"><a href="#第五题" class="headerlink" title="第五题"></a>第五题</h2>$$
+\begin{equation}
+\begin{aligned}
+x^{(k+1)}&=x^{(k)}+\omega(b-Ax^{(k)})\\
+x^{(k+1)}&=(I-\omega A)x^{(k)}+\omega b\\
+令B& = I - \omega A\\
+\rho(B)& = |1 - \omega \rho(A)| \\
+当\rho(B)& < 1时，迭代收敛\\
+&\Rightarrow -1 < 1 - \omega \rho(A) < 1\\
+&\Rightarrow 0 < \omega < \dfrac{2}{\rho(A)}\\
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第六题"><a href="#第六题" class="headerlink" title="第六题"></a>第六题</h2>$$
+\begin{equation}
+\begin{aligned}
+(1)\quad x& = 1+\dfrac{1}{x^2}\\
+\varphi'(x)& = -\dfrac{2}{x^3}\\
+|\varphi'(x_0)|& = \left |-\dfrac{2}{1.5^3}\right | < 1\\
+&\therefore (1)收敛\\
+x_1&=1+ \dfrac{1}{1.5^2}=\dfrac{13}{9} \\
+k &\ge \log_{}\\
+(2)\quad x& = \sqrt[3]{1+x^2}\\
+\varphi'(x)& = \dfrac{2x}{3(1+x)^{\frac{2}{3}}}\\
+|\varphi'(x_0)|&= \left |\dfrac{1}{2.5^{\frac{2}{3}}}\right| < 1\\
+&\therefore (2)收敛\\
+(3)\quad x& = \sqrt{x^3-1}\\
+\varphi'(x)& = \dfrac{3x^2}{2\sqrt{x^3-1}}\\
+|\varphi'(x_0)|& = \left |\dfrac{1.5^3}{\sqrt{1.5^3-1}}\right| > 1\\
+&\therefore (3)发散\\
+(4)\quad x& = \dfrac{1}{\sqrt{x-1}}\\
+\varphi'(x)& = -\dfrac{1}{2(x-1)^{\frac{3}{2}}}\\
+|\varphi'(x_0)|& =\left |-\dfrac{1}{\sqrt{0.5}}\right| > 1\\
+&\therefore (4)发散\\
+&\because x^3 - x^2 - 1 = 0\\
+&\therefore \phi(x) = x-\dfrac{x^3-x^2-1}{3x^2-2x}\\
+&\because x_0 = 1.5\\
+&\therefore x_1 = 1.466666,x_2 = 1.465572 , x_3 = 1.465571\\
+&\because x_2 - x_3 = 0.000001 < \dfrac{1}{2} \times 10^{-3}\\
+&\therefore x \approx 1.465571
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第七题"><a href="#第七题" class="headerlink" title="第七题"></a>第七题</h2>$$
+\begin{equation}
+\begin{aligned}
+f(x)&=x^3+2x^2+10x-20=0\\
+x&=x-\dfrac{x^3+2x^2+10x-20}{3x^2+4x+10}\\
+&取初值x_0=1\\
+x_1&=\dfrac{24}{17}=1.411764\\
+x_2&=1.369336\\
+x_3&=1.368808
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第八题"><a href="#第八题" class="headerlink" title="第八题"></a>第八题</h2>$$
+\begin{equation}
+\begin{aligned}
+&\begin{bmatrix}
+6&3\\
+3&2\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix}=
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}\\
+\because& 系数矩阵对称正定\\
+\therefore& 取x_0=[0,0]^T\\
+r_o&=b-Ax_0=[0,1]^T=p_0\\
+\alpha_0&=\dfrac{(r_0,r_0)}{(p_0,Ap_0)}=\dfrac{1}{2}\\
+x_1&=x_0+\alpha_0p_0=[0,\dfrac{1}{2}]^T\\
+r_1&=r_0-\alpha_0Ap_0=[-\dfrac{3}{2},0]^T\\
+\beta_0&=\dfrac{(r_1,r_1)}{(r_0,r_0)}=\dfrac{9}{4}\\
+p_1&=r_1+\beta_0p_0=[-\dfrac{3}{2},\dfrac{9}{4}]^T\\
+\alpha_1&=\dfrac{(r_1,r_1)}{(p_1,Ap_1)}=\dfrac{2}{3}\\
+x_2&=x_1+\alpha_1p_1=[-1,2]^T\\
+r_2&=r_1-\alpha_1Ap_1=[0,0]^T\\
+&\therefore x=[-1,2]^T
+\end{aligned}
+\end{equation}
+$$]]></content>
+  </entry>
+  <entry>
     <title>LeetCode</title>
     <url>/2019/11/14/leetcode/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="算法1164题"><a href="#算法1164题" class="headerlink" title="算法1164题"></a>算法1164题</h1><h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><p>寻找两个有序数组的中位数<br>时间复杂度要求$O(log(m+n))$<br><a href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-2/" target="_blank" rel="noopener">方法来自扁扁熊</a><br>寻找中位数，即为寻找第$k$小数，因为有序，所以每次排除$k/2$个数，直到$k=1$或某数组为空</p>
@@ -1570,7 +1835,7 @@ $$
 <li>矩阵的$m_1$范数，矩阵各元素绝对值之和&emsp;&emsp;$\sum\limits_{j=1}^{n} \Vert A_j \Vert_1 = \sum\limits_{j=1}^{n}\sum\limits_{i=1}^{n}|a_{ij}|$</li>
 <li>矩阵的$F$范数，矩阵各元素平方和开方&ensp;&emsp;&emsp;$\sum\limits_{j=1}^{n} \Vert A_j \Vert_2 = \sqrt{\sum\limits_{j=1}^{n}\sum\limits_{i=1}^{n}|a_{ij}|^2}$<br>  $\Vert A \Vert_F^2=tr(A^HA)$</li>
 </ul>
-<p><strong>定义1.6</strong> 称如下集合为矩阵$A \in C^{n \times n}$的<strong>谱</strong>$\sigma(A)={\lambda|\Delta(\lambda I-A)=0}$，即<strong>谱</strong>为特征值向量<br>称如下实数为矩阵$A \in C^{n \times n}$的<strong>谱半径</strong>$\rho(A) = \max\limits_{i}|\lambda_i|$</p>
+<p><strong>定义1.6</strong> 称如下集合为矩阵$A \in C^{n \times n}$的<strong>谱</strong>$\sigma(A)=\{\lambda|\Delta(\lambda I-A)=0\}$，即<strong>谱</strong>为特征值向量<br>称如下实数为矩阵$A \in C^{n \times n}$的<strong>谱半径</strong>$\rho(A) = \max\limits_{i}|\lambda_i|$</p>
 <p><strong>补充</strong> </p>
 <ul>
 <li>正定矩阵：设$M$是$n$阶方阵，如果对任何非零向量$x$,都有$x^TMx&gt;0$，则称$M$为正定矩阵</li>
@@ -3034,6 +3299,23 @@ $$
 <li>对于没有（显式）迭代格式的数列加速后的新数列不改变原数列</li>
 <li>对于有显式迭代格式的数列$x_{k+1}=\varphi(x_k)$，加速引入到迭代过程，原数列被改变</li>
 </ul>
+<h2 id="共轭梯度法（-GC-法）"><a href="#共轭梯度法（-GC-法）" class="headerlink" title="共轭梯度法（$GC$法）"></a>共轭梯度法（$GC$法）</h2><p>对于$Ax=b$</p>
+<ul>
+<li>任取$x_0\in R^n$</li>
+<li>$r_0=b-Ax_o$，取$p_0=r_0$</li>
+<li>对$k=0,1,\cdots$  $$
+    \begin{equation}
+    \begin{aligned}
+        \alpha_k=\dfrac{(r_k,r_k)}{p_k,Ap_k}\\
+        x_{k+1}=x_k+\alpha_kp_k\\
+        r_{k+1}=r_k-\alpha_kAp_k\\
+        \beta_k=\dfrac{(r_{k+1},r_{k+1})}{(r_{k},r_{k})}\\
+        p_{k+1}=r_{k+1}+\beta_kp_k\\
+    \end{aligned}
+    \end{equation}
+    $$</li>
+<li>若$r_l=0$或$(p_k,Ap_k)=0$时，计算终止</li>
+</ul>
 ]]></content>
       <categories>
         <category>Course</category>
@@ -3052,7 +3334,7 @@ $$
 <h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><p>推荐一款轻便简洁的Markdown编辑器<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a></p>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一阶标题      </span></span><br><span class="line"><span class="section">## 二阶标题     </span></span><br><span class="line"><span class="section">### 三阶标题    </span></span><br><span class="line"><span class="section">#### 四阶标题   </span></span><br><span class="line"><span class="section">##### 五阶标题  </span></span><br><span class="line"><span class="section">###### 六阶标题</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线的内容<span class="xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;下划线的内容&lt;/u&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="字体加粗"><a href="#字体加粗" class="headerlink" title="字体加粗"></a>字体加粗</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
 
@@ -3060,7 +3342,7 @@ $$
 
 <h2 id="空格符"><a href="#空格符" class="headerlink" title="空格符"></a>空格符</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&amp;ensp;  //一个空格</span><br><span class="line">&amp;emsp;  //两个空格</span><br></pre></td></tr></table></figure>
 
-<h2 id="居中文本"><a href="#居中文本" class="headerlink" title="居中文本"></a>居中文本</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span>这是要居中的文本内容<span class="xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="居中文本"><a href="#居中文本" class="headerlink" title="居中文本"></a>居中文本</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;center&gt;这是要居中的文本内容&lt;/center&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">***</span> </span><br><span class="line">或</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
@@ -3083,7 +3365,7 @@ $$
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列名1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列名2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列名3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列1数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列2数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列3数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>无法实现文本内容居中，居右表示，只能默认居左表示<br>目前只想到通过修改当前页面全局CSS来改变位置，在文章前面加入如下CSS来实现居中显示：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">th</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">td</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    th&#123;text-align: center&#125;</span><br><span class="line">    td&#123;text-align: center&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="插入代码"><a href="#插入代码" class="headerlink" title="插入代码"></a>插入代码</h2><h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`单行代码内容`</span></span><br></pre></td></tr></table></figure>
 
