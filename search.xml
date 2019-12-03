@@ -447,6 +447,266 @@ $\lim\limits_{x\rightarrow x_0^+}s''(x)=f''_0=f_n''=\lim\limits_{x\rightarrow x_
 </ul>
 <p><strong>做题时，先求出$m_1,m_2,\cdots,m_n$，再代入$Hermite$插值多项式得到$S(x)$</strong></p>
 <p><strong>定理5.6</strong> 设$f(x)\in C^2[a,b],S(x)$是以$a=x_0&lt;x_1&lt;\cdots&lt;x_n=b$的节点，满足三种边界条件中的任何一种的三次样条插值函数，记$h=\max\limits_{0\le i\le n-1}(x_{i+1}-x_i)$，则当$h\rightarrow 0$时，$S(x)$和$S’(x)$在$[a,b]$上分别一致收敛于$f(x)$和$f’(x)$</p>
+<h2 id="正交函数在逼近中的应用"><a href="#正交函数在逼近中的应用" class="headerlink" title="正交函数在逼近中的应用"></a>正交函数在逼近中的应用</h2><p>已知在$n$维欧式空间中，任意两个向量$x,y$的內积为$(x,y)=\sum\limits_{i=1}^nx_iy_i$</p>
+<p>对于$[a,b]$上的任意两个连续函数$f(x),g(x)$，任取$[a,b]$的分割之$n$个分点处的函数值：</p>
+<p>$f(x_1),f(x_2),\cdots,f(x_n)\quad g(x_1),g(x_2),\cdots,g(x_n)$</p>
+<p>将其对应相乘做和，即</p>
+<p>$(f,g)=\lim\limits_{\Delta x\rightarrow 0}\left( \sum\limits_{i=1}^n f(x_i)g(x_i)\Delta x \right)=\int_a^bf(x)g(x)dx$</p>
+<p>对于$[a,b]$上的连续函数$f(x),g(x)$定义內积</p>
+<p>$(f,g)=\int_a^b\rho(x)f(x)g(x)dx$</p>
+<p>其中可积函数$\rho(x)\ge 0\quad (x\in [a,b])$是权函数</p>
+<p>连续函数$f(x),g(x),h(x)$內积满足：</p>
+<ul>
+<li><p>$(f,f)\ge 0$，当且仅当$f=0$时，$(f,f)=0$</p>
+</li>
+<li><p>$(f,g)=(g,f)$</p>
+</li>
+<li><p>$(\lambda f,g)=\lambda(f,g)$</p>
+</li>
+<li><p>$(f+g,h)=(f,h)+(g,h)$</p>
+</li>
+</ul>
+<p><strong>若$(f,g)=0$，则称$f(x)$和$g(x)$在$[a,b]$上关于权函数$\rho(x)$正交</strong></p>
+<p><strong>定义在$C[a,b]$上的一个实值函数，即为$\Vert f \Vert$，满足：</strong></p>
+<ul>
+<li><p>非负性$\Vert f \Vert \ge 0$，且$\Vert f \Vert = 0$当且仅当$f(x)=0$</p>
+</li>
+<li><p>齐次性$\Vert \alpha f \Vert=|\alpha|\Vert f \Vert$</p>
+</li>
+<li><p>三角不等式$\Vert f+g \Vert=\Vert f \Vert+\Vert g \Vert$</p>
+</li>
+</ul>
+<p>常用的连续函数范数有：</p>
+<ul>
+<li><p>$\Vert f \Vert_1=\int_a^b|f(x)|dx$</p>
+</li>
+<li><p>$\Vert f \Vert_\infty=\max\limits_{a\le x\le b}|f(x)|$</p>
+</li>
+<li><p>$\Vert f \Vert_2 = \sqrt{(f,f)}=\sqrt{\int_a^b\rho(x)f^2(x)dx}$</p>
+</li>
+</ul>
+<p>可以证明，连续函数的$2-$范数与內积之间的关系满足</p>
+<p>$Cauchy-Schwarz$不等式：$|(f,g)|\le \Vert f \Vert_2\Vert g \Vert_2$</p>
+<p>给定线性无关的函数组$\varphi_0(x),\varphi_1(x),\cdots,\varphi_n(x)$，可通过$Schmidt$正交化过程予以正交化，得到一组正规正交函数系</p>
+<p>具体做法为：令$\phi_0(x)=\varphi_0(x)$</p>
+$\begin{equation}
+\begin{aligned}\phi_i(x)=\left |\begin{array}{cccc}(\varphi_0,\varphi_0)&\cdots&(\varphi_0,\varphi_{i-1})&\varphi_0(x)\\(\varphi_1,\varphi_0)&\cdots&(\varphi_1,\varphi_{i-1})&\varphi_1(x)\\\vdots&&\vdots&\vdots\\(\varphi_i,\varphi_0)&\cdots&(\varphi_i,\varphi_{i-1})&\varphi_i(x)\\\end{array}\right|\quad i=1,2,\cdots,n\end{aligned}
+\end{equation}$
+
+<p>易证</p>
+$
+\begin{equation}
+\begin{aligned}
+(\varphi_i,\phi_j)=
+\begin{cases}
+0\quad j < i\\
+\Delta_i \quad i = j\\
+\end{cases} \quad i,j=0,1,2,\cdots,n
+\end{aligned}
+\end{equation}
+$
+
+<p>其中</p>
+$\begin{equation}
+\begin{aligned}\Delta_i=\left |\begin{array}{cccc}(\varphi_0,\varphi_0)&\cdots&(\varphi_0,\varphi_{i-1})&(\varphi_0,\varphi_{i})\\(\varphi_1,\varphi_0)&\cdots&(\varphi_1,\varphi_{i-1})&(\varphi_1,\varphi_{i})\\\vdots&&\vdots&\vdots\\(\varphi_i,\varphi_0)&\cdots&(\varphi_i,\varphi_{i-1})&(\varphi_i,\varphi_{i})\\\end{array}\right|\quad i=0,1,2,\cdots,n\end{aligned}
+\end{equation}$
+
+<p><strong>注</strong></p>
+$\begin{equation}
+\begin{aligned}\phi_i(x)=\left |\begin{array}{cccc}(\varphi_0,\varphi_0)&\varphi_0(x)\\(\varphi_1,\varphi_0)&\varphi_1(x)\end{array}\right|=\varphi_1(x)(\varphi_0,\varphi_0)-\varphi_0(x)(\varphi_1,\varphi_0)\end{aligned}
+\end{equation}$
+
+<p>$(\phi_1,\varphi_0)=(\varphi_1,\varphi_0)(\varphi_0,\varphi_0)-(\varphi_0,\varphi_0)(\varphi_1,\varphi_0)=0$</p>
+$\begin{equation}
+\begin{aligned}(\phi_1,\varphi_1)=(\varphi_1,\varphi_1)(\varphi_0,\varphi_0)-(\varphi_0,\varphi_1)(\varphi_1,\varphi_0)=\left |\begin{array}{cccc}(\varphi_0,\varphi_0)&(\varphi_0,\varphi_1)\\(\varphi_1,\varphi_0)&(\varphi_1,\varphi_1)\end{array}\right| =\Delta_1\end{aligned}
+\end{equation}$
+
+<p>一般的</p>
+$\begin{equation}
+\begin{aligned}\phi_i(x)&=\left |\begin{array}{cccc}(\varphi_0,\varphi_0)&\cdots&(\varphi_0,\varphi_{j})&\cdots&\varphi_0(x)\\(\varphi_1,\varphi_0)&\cdots&(\varphi_1,\varphi_{j})&\cdots&\varphi_1(x)\\\vdots&&\vdots&&\vdots\\(\varphi_{i-1},\varphi_0)&\cdots&(\varphi_{i-1},\varphi_{j})&\cdots&\varphi_{i-1}(x)\\(\varphi_i,\varphi_0)&\cdots&(\varphi_i,\varphi_{j})&\cdots&\varphi_i(x)\\\end{array}\right|\quad i=1,2,\cdots,n\\&=\varphi_0(x)A_0+\varphi_1(x)A_1+\cdots+\varphi_j(x)A_j+\cdots+\varphi_i(x)A_i\end{aligned}
+\end{equation}$
+
+<p>其中$A_i$为代数余子式</p>
+<p>从而，对于$j&lt;i$有
+$$
+\begin{equation}
+\begin{aligned}
+(\phi_i,\varphi_j)&=(\varphi_0(x),\varphi_j(x))A_0+(\varphi_1(x),\varphi_j(x))A_1+\cdots+(\varphi_i(x),\varphi_j(x))A_i\\
+&=\left |\begin{array}{cccc}(\varphi_0,\varphi_0)&\cdots&(\varphi_0,\varphi_{j})&\cdots&(\varphi_0,\varphi_j)\\(\varphi_1,\varphi_0)&\cdots&(\varphi_1,\varphi_{j})&\cdots&(\varphi_1,\varphi_j)\\\vdots&&\vdots&&\vdots\\(\varphi_{i-1},\varphi_0)&\cdots&(\varphi_{i-1},\varphi_{j})&\cdots&(\varphi_{i-1},\varphi_j)\\(\varphi_i,\varphi_0)&\cdots&(\varphi_i,\varphi_{j})&\cdots&(\varphi_i,\varphi_j)\\\end{array}\right|=0
+\end{aligned}
+\end{equation}
+$$
+'</p>
+<p>对于$j=i$有
+$$
+\begin{equation}
+\begin{aligned}
+(\phi_i,\varphi_i)&=
+(\varphi_0(x),\varphi_i(x))A_0+(\varphi_1(x),\varphi_i(x))A_1+\cdots+(\varphi_i(x),\varphi_i(x))A_i\\
+&=\left |\begin{array}{cccc}
+(\varphi_0,\varphi_0)&(\varphi_0,\varphi_1)&\cdots&(\varphi_0,\varphi_i)\\
+(\varphi_1,\varphi_0)&(\varphi_1,\varphi_1)&\cdots&(\varphi_1,\varphi_i)\\
+\vdots&\vdots&&\vdots\\
+(\varphi_i,\varphi_0)&(\varphi_i,\varphi_1)&\cdots&(\varphi_i,\varphi_i)\\
+\end{array}\right|=\Delta_i
+\end{aligned}
+\end{equation}
+$$
+'</p>
+<p>由$\varphi_0(x),\varphi_1(x),\cdots,\varphi_n(x)$的线性无关性，可证$\Delta_i&gt;0$</p>
+<p>因为$\phi_i(x)$由$\varphi_0(x),\varphi_1(x),\cdots,\varphi_n(x)$线性表示，不难验证$\varphi_0(x),\varphi_1(x),\cdots,\varphi_n(x)$是正交函数系</p>
+<p><strong>注：</strong>对任意$i&gt;j$</p>
+<p>$(\phi_i,\phi_j)=\left( \phi_i,\sum\limits_{k=0}^jA_k\varphi_k \right)=\sum\limits_{k=0}^jA_k(\phi_i,\varphi_k)=0$</p>
+<p>$(\phi_i,\phi_i)=\left( \phi_i,\sum\limits_{k=0}^iA_k\varphi_k \right)=\sum\limits_{k=0}^iA_k(\phi_i,\varphi_k)=A_i(\phi_i,\varphi_i)=\Delta_{i-1}\Delta_i&gt;0$</p>
+<p>$\therefore \Delta_i&gt;0$ </p>
+<p>进一步令</p>
+$\begin{equation}
+\begin{aligned}\begin{cases}\psi_0(x)=\dfrac{\phi_0(x)}{\sqrt{(\phi_0,\phi_0)}}=\dfrac{\phi_0(x)}{\sqrt{\Delta_0}}\\\psi_i(x)=\dfrac{\phi_i(x)}{\sqrt{(\phi_i,\phi_i)}}=\dfrac{\phi_i(x)}{\sqrt{\Delta_{i-1}\Delta_i}}\quad i = 1,2,\cdots,n\\\end{cases}\end{aligned}
+\end{equation}$
+
+<p>那么有</p>
+<p>$(\psi_i,\psi_i)=\dfrac{\phi_i(x)}{\sqrt{\Delta_{i-1}\Delta_i}}\dfrac{\phi_i(x)}{\sqrt{\Delta_{i-1}\Delta_i}}=\dfrac{(\phi_i(x),\phi_i(x))}{\Delta_{i-1}\Delta_i}=1$</p>
+<p>$(\psi_i,\psi_j)=\dfrac{\phi_i(x)}{\sqrt{\Delta_{i-1}\Delta_i}}\dfrac{\phi_j(x)}{\sqrt{\Delta_{j-1}\Delta_j}}=\dfrac{(\phi_i(x),\phi_j(x))}{\sqrt{\Delta_{j-1}\Delta_j}\sqrt{\Delta_{j-1}\Delta_j}}=0$</p>
+<p><strong>则$\psi_0(x),\psi_1(x),\cdots,\psi_n(x)$成为标准正交函数系</strong></p>
+<p>几种常见正交函数系：</p>
+<ul>
+<li><p>三角函数系，于$[-\pi,\pi]$上正交</p>
+<p>$1,cosx,sinx,cos2x,sin2x,\cdots,cosnx,sinnx,\cdots$</p>
+</li>
+<li><p>余弦函数系，于$[0,\pi]$上正交</p>
+<p>$1,cosx,cos2x,\cdots,cosnx,\cdots$</p>
+</li>
+<li><p>正弦函数系，于$[0,\pi]$上正交</p>
+<p>$1,sinx,sin2x,\cdots,sinnx,\cdots$</p>
+</li>
+</ul>
+<h2 id="正交多项式简介"><a href="#正交多项式简介" class="headerlink" title="正交多项式简介"></a>正交多项式简介</h2><p>特别取多项式系$1,x,\cdots,x^m,\cdots$进行正交化即得到正交多项式系</p>
+<p>令$\mu_m=\int_a^b\rho(x)x^mdx\quad m=0,1,\cdots$取$\phi_0(x)=1$</p>
+$\begin{equation}
+\begin{aligned}\phi_i(x)&=\left |\begin{array}{cccc}(1,1)&(1,x)&\cdots&(1,x^{i-1})&1\\(x,1)&(x,x)&\cdots&(x,x^{i-1})&x\\\vdots&\vdots&&\vdots&\vdots\\(x^i,1)&(x^i,x)&\cdots&(x^i,x^{i-1})&x^i\\\end{array}\right|\\&=\left |\begin{array}{cccc}\mu_o&\mu_1&\cdots&\mu_{i-1}&1\\\mu_1&\mu_2&\cdots&\mu_{i}&x\\\vdots&\vdots&&\vdots&\vdots\\\mu_i&\mu_{i+1}&\cdots&\mu_{2i-1}&x^i\\\end{array}\right|\quad i=1,2,\cdots,n\end{aligned}
+\end{equation}$
+
+<p>则$\phi_0(x),\phi_i(x)\quad i=1,2,\cdots$构成正交多项式</p>
+$\begin{equation}
+\begin{aligned}\Delta_i&=\left |\begin{array}{cccc}(1,1)&(1,x)&\cdots&(1,x^{i})\\(x,1)&(x,x)&\cdots&(x,x^{i})\\\vdots&\vdots&&\vdots\\(x^i,1)&(x^i,x)&\cdots&(x^i,x^{i})\\\end{array}\right|\\&=\left |\begin{array}{cccc}\mu_o&\mu_1&\cdots&\mu_{i-1}&1\\\mu_1&\mu_2&\cdots&\mu_{i}&x\\\vdots&\vdots&&\vdots&\vdots\\\mu_i&\mu_{i+1}&\cdots&\mu_{2i-1}&x^i\\\end{array}\right|\quad i=0,1,\cdots,n\end{aligned}
+\end{equation}$
+
+<p>则$\psi_0(x)=\dfrac{\phi_0(x)}{\sqrt{\Delta_0}}\quad \psi_i(x)=\dfrac{\phi_i(x)}{\sqrt{\Delta_{i-1}\Delta_i}}\quad i=1,2,\cdots$构成标准正交多项式</p>
+<p><strong>正交多项式的一些重要性质</strong></p>
+<ul>
+<li><p>$\psi_n(x)$恰好是$n$次多项式，$\psi_0(x),\psi_1(x),\cdots,\psi_n(x)$是$P_n$的一组基底函数</p>
+</li>
+<li><p>$\psi_n(x)$与次数低于$n$次的所有多项式正交</p>
+</li>
+<li><p>$\psi_n(x)$在$(a,b)$内恰有$n$互异零点</p>
+<p>证明：因为$\phi(x)$为非零常数，$\phi_n(x)$为n次多项式</p>
+<p>$(\phi_0,\phi_n)=\int_a^b\rho(x)\phi_0(x)\phi_n(x)dx=\phi_0(x)\int_a^b\rho(x)\phi_n(x)dx=0$</p>
+<p>$\therefore \int_a^b\rho(x)\phi_n(x)dx=0$</p>
+<p>则被积函数在积分开区间上必然变号</p>
+<p>而权函数在区间$[a,b]$上非负，所以$\phi_n(x)$在区间$(a,b)$上必然变号</p>
+<p>则$\phi_n(x)$在区间$(a,b)$上一定存在奇数<strong>重零点</strong></p>
+<p>设$\phi_n(x)$在区间$(a,b)$上有$r$个奇数重零点$\xi_1,\xi_2,\cdots,\xi_r\in(a,b)$</p>
+<p>令$r$次多项式$q(x)=(x-\xi_1)\cdots(x-\xi_r)$</p>
+<p>如果$r&lt;n$，根据性质2得$(q,\phi_n)=\int_a^b\rho(x)q(x)\phi_n(x)dx=0$</p>
+<p>则被积函数在积分开区间上必然变号</p>
+<p>而$q(x)\phi_n(x)$没有奇数重节点，矛盾</p>
+<p>所以$r=n$，得证</p>
+</li>
+<li><p>设$p_k$为首相系数为1的$k$次正交多项式，则有如下三项递推关系式成立</p>
+<p>$p_{k+1}=(x-\alpha_k)p_k-\beta_{k-1}p_{k-1}$</p>
+<p>其中$\alpha_k=\dfrac{(xp_k,p_k)}{(p_k,p_k)}\quad \beta_k=\dfrac{(p_k,p_k)}{(p_{k-1},p_{k-1})}$</p>
+<p>证明$k+1$次多项式$xp_k$可以表示为$xp_k=c_0p_0+\cdots+c_{k-1}p_{k-1}+c_kp_k+c_{k+1}p_{k+1}$</p>
+<p>由首项系数为1知$c_{k+1}=1$</p>
+<p>当$i&lt;k-1$时</p>
+$(xp_k,p_k) = (p_k,xp_k) = 0 = c_i(p_i,p_i)\Rightarrow c_i = 0(i < k-1)
+  $
+
+<p>所以$xp_k=\beta_{k-1}p_{k-1}+\alpha_kp_k+p_{k+1}\Leftrightarrow p_{k+1}=(x-\alpha_k)p_k-\beta_{k-1}p_{k-1}$</p>
+<p>由于$(xp_k,p_k)=\alpha_k(p_k,p_k)\Rightarrow \alpha_k=\dfrac{(xp_k,p_k)}{(p_k,p_k)}$</p>
+<p>再由$(xp_k,p_{k+1})=(p_{k+1},p_{k+1})\Rightarrow (xp_{k-1},p_k)=(p_k,p_k)$</p>
+<p>$(xp_k,p_{k-1})=(p_{k},xp_{k-1})\Rightarrow (p_{k},p_k)=\beta_{k-1}(p_{k-1},p_{k-1})$</p>
+<p>$\Rightarrow \beta_k=\dfrac{(p_k,p_k)}{(p_{k-1},p_{k-1})}$</p>
+</li>
+</ul>
+<p><strong>性质2,3是构造$Gauss$型求积公式的重要依据</strong></p>
+<h2 id="函数的最佳平方逼近"><a href="#函数的最佳平方逼近" class="headerlink" title="函数的最佳平方逼近"></a>函数的最佳平方逼近</h2><p>已知$f(x)\in L^2[a,b]$（$[a,b]$上平方可积函数的集合）和$S=span{\varphi_0(x),\varphi_1(x),\cdots,\varphi_n(x)}\subset C[a,b]$</p>
+<p>若存在$s^*(x)=\sum\limits_{k=0}^n a_k^*\varphi_k(x)\in S$使得</p>
+<p>$\Vert f(x)-s^*(x)\Vert_2=\min\limits_{s(x)\in S}\Vert f(x)-s(x)\Vert_2=\min\limits_{s(x)\in S}\sqrt{\int_a^b\rho(x)[f(x)-s(x)]^2dx }$</p>
+<p>则称$s^*(x)$是$f(x)$在$S$中的<strong>最佳平方逼近</strong>函数，$\Vert f(x)-s^*(x)\Vert_2$称为<strong>均方误差</strong></p>
+<p>显然，求$s^*(x)$等价于求多元函数</p>
+<p>$E(a_0,a_1,\cdots,a_n)=\int_a^b\rho(x)[f(x)-s(x)]^2dx=\int_a^b\rho(x)[f(x)-\sum\limits_{k=0}^na_k\varphi_k(x)]^2dx$</p>
+<p>的最小值点$a_0^*,a_1^*,\cdots,a_n^*$。令$\dfrac{\partial E}{\partial a_j}=0\quad j=0,1,\cdots,n$</p>
+<p>得$2\int_a^b\rho(x)[f(x)-\sum\limits_{k=0}^na_k\varphi_k(x)]\varphi_i(x)dx=0$</p>
+<p>$\Leftrightarrow \sum\limits_{k=0}^n(\varphi_k,\varphi_i)a_k=(f,\varphi_i)\quad i=0,1,\cdots,n$<strong>（法方程组）</strong></p>
+<p>由于$\varphi_0,\varphi_1,\cdots,\varphi_n$线性无关，可知法方程组的系数矩阵非奇异，故法方程组有唯一解</p>
+<p><strong>但该系数矩阵经常是满的病态矩阵，导致解失真</strong></p>
+<p>解决方法：</p>
+<ul>
+<li><p>利用局部支集的基函数，如$B$样条方法（准对角矩阵）</p>
+</li>
+<li><p>利用正交的基函数，如正交多项式（对角矩阵）</p>
+<p>设$\phi_0,\phi_1,\cdots,\phi_n$是$S$的正交基函数，则法方程组系数矩阵为非奇异对角阵，且解为</p>
+$a_k^*=\dfrac{(f,\phi_k)}{(\phi_k,\phi_k)}]\quad k=0,1,\cdots,n$
+
+<p>于是$s^*(x)=\sum\limits_{k=0}^n\dfrac{(f,\phi_k)}{(\phi_k,\phi_k)}]\phi_k(x)$</p>
+<p>若$\psi_0(x),\psi_1(x),\cdots,\psi_n(x)$称为标准正交基，则</p>
+$s^*(x)=\sum\limits_{k=0}^n(f,\psi_k)\psi_k(x)$
+
+$\Vert s^*\Vert^2=(s^*,s^*)=(\sum\limits_{k=0}^na^*_k\psi_k,\sum\limits_{j=0}^na^*_j\psi_j=\sum\limits_{k=0}^n\sum\limits_{j=0}^na^*_ka^*_j(\psi_k,\psi_j)=\sum\limits_{k=0}^n(a_k^*)^2$
+
+</li>
+</ul>
+<h2 id="数据拟合的最小二乘法"><a href="#数据拟合的最小二乘法" class="headerlink" title="数据拟合的最小二乘法"></a>数据拟合的最小二乘法</h2><p>设$(x_i,y_i)(i=0,1,\cdots,n)$为给定的一组数据，$\omega_i&gt;0(i=0,1,\cdots,m)$为各点的权系数，要求在系数空间</p>
+$\begin{equation}
+\begin{aligned}S&=span{\varphi_0(x),\varphi_1(x),\cdots,\varphi_n(x)}\\&={\varphi(x)|\varphi(x)=\sum\limits_{k=0}^n a_k\varphi_k(x),\forall a_0,\cdots,a_n\in R}\end{aligned}
+\end{equation}$
+
+<p>中，求一个函数</p>
+$s^*(x)=\sum\limits_{k=0}^na_k^*\varphi(x)\in S$
+
+<p>使其满足$\sum\limits_{i=0}^m \omega_i(s^*(x_i)-y_i)^2=\min\limits_{s(x)\in s}\sum\limits_{i=0}^m\omega_i(s(x_i)-y_i)^2$</p>
+<p>则称$s^*(x)$为离散数据$(x_i,y_i)(i=0,1,\cdots,m)$在子空间$S$中带权的数据拟合的<strong>最小二乘法（离散最小二乘逼近）</strong>，简称最小二乘法，并称$s^*(x)$为<strong>最小二乘解</strong></p>
+<p>显然，求$s^*(x)$等价于求多元函数</p>
+<p>$E(a_0,a_1,\cdots,a_n)=\sum\limits_{i=0}^m\omega_i(s(x_i)-y_i)^2=\sum\limits_{i=0}^m\omega_i\left( \sum\limits_{i=0}^na_k\varphi_i(x_i)-y_i \right)^2$</p>
+<p>的最小值点$a_0^*,a_1^*,\cdots,a_n^*$。令$\dfrac{\partial E}{\partial a_j}=0\quad j=0,1,\cdots,n$</p>
+<p>得$\sum\limits_{i=0}^m\omega_i\left( \sum\limits_{k=0}^na_k\varphi_k(x_i)-y_i \right)\varphi_j(x_i)=0\quad j=0,1,\cdots,n$</p>
+<p>即为$\sum\limits_{k=0}^n\left( \sum\limits_{i=0}^m\omega_i\varphi_k(x_i)\varphi_j(x_i) \right)a_k=\sum\limits_{i=0}^m\omega_iy_i\varphi_j(x_i)\quad j=0,1,\cdots,n\quad (1)$</p>
+<p>定义內积$y=(y_1,y_2,\cdots,y_n)^T,\varphi_j=(\varphi_j(x_1),\varphi_j(x_2),\cdots,\varphi_j(x_n))^T$</p>
+<p>$(\varphi_k,\varphi_j)=\sum\limits_{i=0}^m\omega_i\varphi_k(x_i)\varphi_j(x_i)\quad (y,\varphi_j)=\sum\limits_{i=0}^m\omega_iy_i\varphi_j(x_i)\quad j=0,1,\cdots,n$</p>
+<p>则方程组$(1)$可简记为$\sum\limits_{i=0}^n(\varphi_k,\varphi_j)=(y,\varphi_j)\quad j=0,1,\cdots,n$</p>
+<p>矩阵形式为：</p>
+
+$$
+\begin{equation}
+\begin{aligned}
+\begin{bmatrix}
+(\varphi_0,\varphi_0)&(\varphi_0,\varphi_1)&\cdots&(\varphi_0,\varphi_n)\\
+(\varphi_1,\varphi_0)&(\varphi_1,\varphi_1)&\cdots&(\varphi_1,\varphi_n)\\
+\vdots&\vdots&&\vdots\\
+(\varphi_n,\varphi_0)&(\varphi_n,\varphi_1)&\cdots&(\varphi_n,\varphi_n)\\
+\end{bmatrix}
+\begin{bmatrix}
+a_0\\
+a_1\\
+\vdots\\
+a_n
+\end{bmatrix}=
+\begin{bmatrix}
+(f,\varphi_0)\\
+(f,\varphi_1)\\
+\vdots\\
+(f,\varphi_n)\\
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+$$
+
+
+
+
+<p>此方程组称为法方程组，求解该方程组得到$a_0^*,a_1^*,\cdots,a_n^*$</p>
+<p>由于$\varphi_0,\varphi_1,\cdots,\varphi_n$线性无关，可知法方程组的系数矩阵非奇异，故法方程组有唯一解</p>
+<p>称$(s^*-y,s^*-y)=\sum\limits_{i=0}^m\omega_i(s^*(x_i)-f(x_i))^2$为最小二乘解$s^*(x)$的<strong>平方误差</strong>，$\sqrt{\sum\limits_{i=0}^m\omega_i(s^*(x_i)-f(x_i))^2}$为<strong>均方差</strong></p>
 ]]></content>
       <categories>
         <category>Course</category>
