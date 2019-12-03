@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法知识点归纳插值部分">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-03T01:36:24.054Z">
+<meta property="og:updated_time" content="2019-12-03T03:11:48.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法知识点（5-）">
 <meta name="twitter:description" content="计算方法知识点归纳插值部分">
@@ -904,7 +904,7 @@ $\lim\limits_{x\rightarrow x_0^+}s''(x)=f''_0=f_n''=\lim\limits_{x\rightarrow x_
 </ul>
 <p><strong>做题时，先求出$m_1,m_2,\cdots,m_n$，再代入$Hermite$插值多项式得到$S(x)$</strong></p>
 <p><strong>定理5.6</strong> 设$f(x)\in C^2[a,b],S(x)$是以$a=x_0&lt;x_1&lt;\cdots&lt;x_n=b$的节点，满足三种边界条件中的任何一种的三次样条插值函数，记$h=\max\limits_{0\le i\le n-1}(x_{i+1}-x_i)$，则当$h\rightarrow 0$时，$S(x)$和$S’(x)$在$[a,b]$上分别一致收敛于$f(x)$和$f’(x)$</p>
-<h2 id="正交函数在逼近中的应用"><a href="#正交函数在逼近中的应用" class="headerlink" title="正交函数在逼近中的应用"></a>正交函数在逼近中的应用</h2><p>已知在$n$维欧式空间中，任意两个向量$x,y$的內积为$(x,y)=\sum\limits_{i=1}^nx_iy_i$</p>
+<h2 id="正交多项式"><a href="#正交多项式" class="headerlink" title="正交多项式"></a>正交多项式</h2><p>已知在$n$维欧式空间中，任意两个向量$x,y$的內积为$(x,y)=\sum\limits_{i=1}^nx_iy_i$</p>
 <p>对于$[a,b]$上的任意两个连续函数$f(x),g(x)$，任取$[a,b]$的分割之$n$个分点处的函数值：</p>
 <p>$f(x_1),f(x_2),\cdots,f(x_n)\quad g(x_1),g(x_2),\cdots,g(x_n)$</p>
 <p>将其对应相乘做和，即</p>
@@ -1037,7 +1037,7 @@ $\begin{equation}
 <p>$1,sinx,sin2x,\cdots,sinnx,\cdots$</p>
 </li>
 </ul>
-<h2 id="正交多项式简介"><a href="#正交多项式简介" class="headerlink" title="正交多项式简介"></a>正交多项式简介</h2><p>特别取多项式系$1,x,\cdots,x^m,\cdots$进行正交化即得到正交多项式系</p>
+<p>特别取多项式系$1,x,\cdots,x^m,\cdots$进行正交化即得到正交多项式系</p>
 <p>令$\mu_m=\int_a^b\rho(x)x^mdx\quad m=0,1,\cdots$取$\phi_0(x)=1$</p>
 $\begin{equation}
 \begin{aligned}\phi_i(x)&=\left |\begin{array}{cccc}(1,1)&(1,x)&\cdots&(1,x^{i-1})&1\\(x,1)&(x,x)&\cdots&(x,x^{i-1})&x\\\vdots&\vdots&&\vdots&\vdots\\(x^i,1)&(x^i,x)&\cdots&(x^i,x^{i-1})&x^i\\\end{array}\right|\\&=\left |\begin{array}{cccc}\mu_o&\mu_1&\cdots&\mu_{i-1}&1\\\mu_1&\mu_2&\cdots&\mu_{i}&x\\\vdots&\vdots&&\vdots&\vdots\\\mu_i&\mu_{i+1}&\cdots&\mu_{2i-1}&x^i\\\end{array}\right|\quad i=1,2,\cdots,n\end{aligned}
@@ -1045,7 +1045,7 @@ $\begin{equation}
 
 <p>则$\phi_0(x),\phi_i(x)\quad i=1,2,\cdots$构成正交多项式</p>
 $\begin{equation}
-\begin{aligned}\Delta_i&=\left |\begin{array}{cccc}(1,1)&(1,x)&\cdots&(1,x^{i})\\(x,1)&(x,x)&\cdots&(x,x^{i})\\\vdots&\vdots&&\vdots\\(x^i,1)&(x^i,x)&\cdots&(x^i,x^{i})\\\end{array}\right|\\&=\left |\begin{array}{cccc}\mu_o&\mu_1&\cdots&\mu_{i-1}&1\\\mu_1&\mu_2&\cdots&\mu_{i}&x\\\vdots&\vdots&&\vdots&\vdots\\\mu_i&\mu_{i+1}&\cdots&\mu_{2i-1}&x^i\\\end{array}\right|\quad i=0,1,\cdots,n\end{aligned}
+\begin{aligned}\Delta_i&=\left |\begin{array}{cccc}(1,1)&(1,x)&\cdots&(1,x^{i})\\(x,1)&(x,x)&\cdots&(x,x^{i})\\\vdots&\vdots&&\vdots\\(x^i,1)&(x^i,x)&\cdots&(x^i,x^{i})\\\end{array}\right|\\&=\left |\begin{array}{cccc}\mu_o&\mu_1&\cdots&\mu_{i}\\\mu_1&\mu_2&\cdots&\mu_{i+1}\\\vdots&\vdots&&\vdots\\\mu_i&\mu_{i+1}&\cdots&\mu_{2i}\\\end{array}\right|\quad i=0,1,\cdots,n\end{aligned}
 \end{equation}$
 
 <p>则$\psi_0(x)=\dfrac{\phi_0(x)}{\sqrt{\Delta_0}}\quad \psi_i(x)=\dfrac{\phi_i(x)}{\sqrt{\Delta_{i-1}\Delta_i}}\quad i=1,2,\cdots$构成标准正交多项式</p>
@@ -1207,8 +1207,8 @@ $$
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/20/work4/" rel="next" title="计算方法第四章作业题">
-                <i class="fa fa-chevron-left"></i> 计算方法第四章作业题
+              <a href="/2019/11/14/leetcode/" rel="next" title="LeetCode">
+                <i class="fa fa-chevron-left"></i> LeetCode
               </a>
             
           </div>
@@ -1216,6 +1216,10 @@ $$
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/03/CMW5/" rel="prev" title="计算方法第五章作业题">
+                计算方法第五章作业题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -1400,7 +1404,7 @@ $$
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插值与逼近"><span class="nav-number">1.</span> <span class="nav-text">插值与逼近</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插值问题"><span class="nav-number">1.1.</span> <span class="nav-text">插值问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lagrange插值公式"><span class="nav-number">1.2.</span> <span class="nav-text">Lagrange插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newton插值公式"><span class="nav-number">1.3.</span> <span class="nav-text">Newton插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插值余项"><span class="nav-number">1.4.</span> <span class="nav-text">插值余项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hermite插值"><span class="nav-number">1.5.</span> <span class="nav-text">Hermite插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分段低次插值"><span class="nav-number">1.6.</span> <span class="nav-text">分段低次插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值"><span class="nav-number">1.7.</span> <span class="nav-text">三次样条插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值及其收敛性"><span class="nav-number">1.8.</span> <span class="nav-text">三次样条插值及其收敛性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正交函数在逼近中的应用"><span class="nav-number">1.9.</span> <span class="nav-text">正交函数在逼近中的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正交多项式简介"><span class="nav-number">1.10.</span> <span class="nav-text">正交多项式简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的最佳平方逼近"><span class="nav-number">1.11.</span> <span class="nav-text">函数的最佳平方逼近</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据拟合的最小二乘法"><span class="nav-number">1.12.</span> <span class="nav-text">数据拟合的最小二乘法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插值与逼近"><span class="nav-number">1.</span> <span class="nav-text">插值与逼近</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插值问题"><span class="nav-number">1.1.</span> <span class="nav-text">插值问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lagrange插值公式"><span class="nav-number">1.2.</span> <span class="nav-text">Lagrange插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newton插值公式"><span class="nav-number">1.3.</span> <span class="nav-text">Newton插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插值余项"><span class="nav-number">1.4.</span> <span class="nav-text">插值余项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hermite插值"><span class="nav-number">1.5.</span> <span class="nav-text">Hermite插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分段低次插值"><span class="nav-number">1.6.</span> <span class="nav-text">分段低次插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值"><span class="nav-number">1.7.</span> <span class="nav-text">三次样条插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值及其收敛性"><span class="nav-number">1.8.</span> <span class="nav-text">三次样条插值及其收敛性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正交多项式"><span class="nav-number">1.9.</span> <span class="nav-text">正交多项式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的最佳平方逼近"><span class="nav-number">1.10.</span> <span class="nav-text">函数的最佳平方逼近</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据拟合的最小二乘法"><span class="nav-number">1.11.</span> <span class="nav-text">数据拟合的最小二乘法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1447,7 +1451,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共49.2k字</span>
+  <span class="post-count">博客全站共50.4k字</span>
 </div>
 
         

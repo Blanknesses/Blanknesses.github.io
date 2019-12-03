@@ -1,6 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>计算方法第五章作业题</title>
+    <url>/2019/12/03/CMW5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><p>求一个4次多项式$p(x)$，使得$p(-1)=1,p(0)=1,p(1)=5,p(2)=13,p(-2)=29$
+$$
+\begin{equation}
+\begin{aligned}
+设p(x)&=a_4x^4+a_3x^3+a_2x^2+a_1x+a_0\\
+&\Leftrightarrow
+\begin{bmatrix}
+1&-1&1&-1&1\\
+0&0&0&0&1\\
+1&1&1&1&1\\
+16&8&4&2&1\\
+16&-8&4&-2&1\\
+\end{bmatrix}
+\begin{bmatrix}
+a_4\\
+a_3\\
+a_2\\
+a_1\\
+a_0\\
+\end{bmatrix}=
+\begin{bmatrix}
+1\\1\\5\\13\\29
+\end{bmatrix}\\
+&\Rightarrow 
+\begin{bmatrix}
+a_4\\
+a_3\\
+a_2\\
+a_1\\
+a_0\\
+\end{bmatrix}=
+\begin{bmatrix}
+\dfrac{8}{3}\\
+-2\\
+-\dfrac{2}{3}\\
+4\\
+1\\
+\end{bmatrix}\\
+&\therefore p(x)=\dfrac{8}{3}x^4-2x^3-\dfrac{2}{3}x^2+4x+1
+\end{aligned}
+\end{equation}
+$$
+</p>
+<h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><p>设$x_0,x_1,\cdots,x_n$是互异的插值节点组，$l_i(x)$是$Lagrange$插值基函数</p>
+$l_i(x)=\dfrac{\omega_{n+1}(x)}{(x-x_i)\omega'_{n+1}(x_i)}\quad \omega_{n+1}(x)=(x-x_0)\cdots(x-x_n)$
+
+<p>试求$\sum\limits_{i=0}^n x_i^kl_i(x)\quad 0\le k\le n$
+$$
+\begin{equation}
+\begin{aligned}
+\sum\limits_{i=0}^n x_i^kl_i(x)&=\sum\limits_{i=0}^n\dfrac{x_i^k\omega_{n+1}(x)}{(x-x_i)\omega'_{n+1}(x_i)}\\
+&=\dfrac{(x-x_1)\cdots(x-x_n)}{(x_0-x_1)\cdots(x_0-x_n)}x_0^k+\cdots+\dfrac{(x-x_0)\cdots(x-x_{n-1})}{(x_n-x_0)\cdots(x_n-x_{n-1})}x_n^k
+\end{aligned}
+\end{equation}
+$$
+</p>
+<h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2><p>求$[0,1]$上以$\rho(x)=1$为权函数的标准正交多项式系$\psi_0(x),\psi_1(x),\psi_2(x)$
+$$
+\begin{equation}
+\begin{aligned}
+&\phi_0(x)=\mu_0=\int_0^1 1dx=1\\
+&\mu_1=\int_0^1 xdx = \dfrac{1}{2}\\
+&\phi_1(x)=
+\left |\begin{array}{cccc}
+1&1\\
+\dfrac{1}{2}&x\\
+\end{array}\right|=
+x-\dfrac{1}{2}\\
+&\mu_2=\int_0^1 x^2dx=\dfrac{1}{3}\\
+&\mu_3=\int_0^1 x^3dx=\dfrac{1}{4}\\
+&\phi_2(x)=
+\left |\begin{array}{cccc}
+1&\dfrac{1}{2}&1\\
+\dfrac{1}{2}&\dfrac{1}{3}&x\\
+\dfrac{1}{3}&\dfrac{1}{4}&x^2\\
+\end{array}\right|=
+\dfrac{1}{12}x^2-\dfrac{1}{12}x+\dfrac{1}{72}\\
+&\psi_0(x)=1\\
+&\Delta_1=
+\left |\begin{array}{cccc}
+1&\dfrac{1}{2}\\
+\dfrac{1}{2}&\dfrac{1}{3}
+\end{array}\right|=\dfrac{1}{12}\quad 
+\psi_1(x)=\dfrac{\phi_1(x)}{\sqrt{\Delta_0\Delta_1}}=2\sqrt{3}x-\sqrt{3}\\
+&\mu_4=\int_0^1 x^4dx=\dfrac{1}{5}\quad \Delta_2=
+\left |\begin{array}{cccc}
+1&\dfrac{1}{2}&\dfrac{1}{3}\\
+\dfrac{1}{2}&\dfrac{1}{3}&\dfrac{1}{4}\\
+\dfrac{1}{3}&\dfrac{1}{4}&\dfrac{1}{5}\\
+\end{array}\right|=\dfrac{1}{2160}\\
+&\psi_2(x)=\dfrac{\phi_2(x)}
+{\sqrt{\Delta_1\Delta_2}}=6\sqrt{5}x^2-6\sqrt{5}x+\sqrt{5}\\
+&\therefore \psi_0(x)=1,\psi_1(x)=2\sqrt{3}x-\sqrt{3},\psi_2(x)=6\sqrt{5}x^2-6\sqrt{5}x+\sqrt{5}
+\end{aligned}
+\end{equation}
+$$
+</p>
+<h2 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h2><p>用最小二乘法求拟合下列数据的二次多项式</p>
+<table>
+<thead>
+<tr>
+<th align="center">$x_i$</th>
+<th align="center">1</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+<th align="center">9</th>
+<th align="center">10</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$y_i$</td>
+<td align="center">10</td>
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+
+$$
+\begin{equation}\begin{aligned}&法方程组为:\begin{bmatrix}9&53\\53&381\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}32\\147\end{bmatrix}\\&\Rightarrow \begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}7.0983\\-0.6016\end{bmatrix}\\&\therefore y=7.0983x-0.6016\end{aligned}\end{equation}
+$$
+
+
+
+
+<h2 id="第五题"><a href="#第五题" class="headerlink" title="第五题"></a>第五题</h2><p>判断下列函数是否为各自定义域上的三次样条函数</p>
+$\begin{equation}
+\begin{aligned}&(1)\quad s(x)=\begin{cases}2+3x+4x^2+x^3\quad x\in[-1,0]\\2+3x+4x^2+4x^3\quad x\in[0,1]\\1+6x+x^2+5x^3\quad x\in[1,2]\\\end{cases}\\&(2)\quad s(x)=\begin{cases}x^3+2x+1\quad x\in[0,1]\\x^3+x^2+2\quad x\in[1,2]\end{cases}\end{aligned}
+\end{equation}$
+
+ 
+$$
+\begin{equation}\begin{aligned}&根据光滑因子进行判断\\(1)\quad &(2+3x+4x^2+4x^3)-(2+3x+4x^2+x^3)=3x^3\\&(1+6x+x^2+5x^3)-(2+3x+4x^2+4x^3)=-1+3x-3x^2+x^3\\&故(1)不满足\\(2)\quad &(x^3+x^2+2)-(x^3+2x+1)=x^2-2x+1\\&故(2)不满足\\\end{aligned}\end{equation}
+$$
+
+
+
+
+<h2 id="第六题"><a href="#第六题" class="headerlink" title="第六题"></a>第六题</h2><p>根据如下离散数据，请用最小二乘法拟合出形如$y=\dfrac{x}{ax+b}$的曲线</p>
+<table>
+<thead>
+<tr>
+<th align="center">$x_{i}$</th>
+<th align="center">1</th>
+<th align="center">$\dfrac{1}{2}$</th>
+<th align="center">$\dfrac{1}{3}$</th>
+<th align="center">$\dfrac{1}{4}$</th>
+<th align="center">$\dfrac{1}{5}$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$y_i$</td>
+<td align="center">$\dfrac{1}{2}$</td>
+<td align="center">$\dfrac{1}{4}$</td>
+<td align="center">$\dfrac{5}{32}$</td>
+<td align="center">$\dfrac{1}{8}$</td>
+<td align="center">$\dfrac{5}{43}$</td>
+</tr>
+</tbody></table>
+
+$$
+\begin{equation}\begin{aligned}&\because y=\dfrac{x}{ax+b}\\&\therefore \dfrac{1}{y}=b\dfrac{1}{x}+a\\&法方程组为:\begin{bmatrix}5&15\\15&25\end{bmatrix}\begin{bmatrix}b\\a\end{bmatrix}=\begin{bmatrix}29\\100.2\end{bmatrix}\\&\Rightarrow \begin{bmatrix}b\\a\end{bmatrix}=\begin{bmatrix}7.78\\-0.66\end{bmatrix}\\&\Rightarrow y=\dfrac{x}{-0.66x+7.78}\end{aligned}\end{equation}
+$$
+
+
+
+
+<h2 id="第七题"><a href="#第七题" class="headerlink" title="第七题"></a>第七题</h2><p>确定下列函数组在指定的区间上是否满足$Haar$条件</p>
+$(1){1,x,x^2,\cdots,x^m}$在任意闭区间$[a,b]$上；
+
+$(2){1,x^2,x^4,x^6}$在闭区间$[0,1]$上；
+
+$(3){1,x^2,x^4}$在闭区间$[-1,1]$上；
+
+
+$$
+\begin{equation}
+\begin{aligned}
+(1)\quad &在[a,b]上\forall取m+1个互异点{x_0,x_1,\cdots,x_m}\\
+&D[x_0,x_1,\cdots,x_m]=
+\left |\begin{array}{cccc}
+1&x_0&x_0^2&\cdots&x_0^m\\
+1&x_1&x_1^2&\cdots&x_1^m\\
+\vdots&\vdots&\vdots&&\vdots\\
+1&x_m&x_m^2&\cdots&x_m^m\\
+\end{array}\right|=
+\prod\limits_{0\le i < j\le m}(x_i-x_j)\not=0\\
+&\therefore (1)满足$Haar$条件\\
+(2)\quad &在[0,1]上取{0=x_0 < x_1 < x_2 < x_3=1}\\&D[x_0,x_1,x_2,x_3]=\left |\begin{array}{cccc}1&0&0&0\\1&x_1^2&x_1^4&x_1^6\\1&x_2^2&x_2^4&x_2^6\\1&1&1&1\end{array}\right|\not=0\\&\therefore (2)满足$Haar$条件\\(3)\quad &在[-1,1]上取{-1,0,1}\\&D[-1,0,1]=\left |\begin{array}{cccc}1&1&1\\1&0&0\\1&1&1\\\end{array}\right|=0\\&\therefore (3)不满足$Haar$条件\\\end{aligned}\end{equation}
+$$
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>计算方法知识点（5-）</title>
     <url>/2019/12/01/ComputationalMethods1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="插值与逼近"><a href="#插值与逼近" class="headerlink" title="插值与逼近"></a>插值与逼近</h1><h2 id="插值问题"><a href="#插值问题" class="headerlink" title="插值问题"></a>插值问题</h2><p><strong>定义5.1</strong> 设 $\varphi_1(x),\varphi_2(x)，\cdots,\varphi_n(x)$是$[a,b]$上的连续函数，并且对$[a,b]$上的任意$n$个互异点$x_1,x_2,\cdots,x_n$，行列式</p>
@@ -447,7 +653,7 @@ $\lim\limits_{x\rightarrow x_0^+}s''(x)=f''_0=f_n''=\lim\limits_{x\rightarrow x_
 </ul>
 <p><strong>做题时，先求出$m_1,m_2,\cdots,m_n$，再代入$Hermite$插值多项式得到$S(x)$</strong></p>
 <p><strong>定理5.6</strong> 设$f(x)\in C^2[a,b],S(x)$是以$a=x_0&lt;x_1&lt;\cdots&lt;x_n=b$的节点，满足三种边界条件中的任何一种的三次样条插值函数，记$h=\max\limits_{0\le i\le n-1}(x_{i+1}-x_i)$，则当$h\rightarrow 0$时，$S(x)$和$S’(x)$在$[a,b]$上分别一致收敛于$f(x)$和$f’(x)$</p>
-<h2 id="正交函数在逼近中的应用"><a href="#正交函数在逼近中的应用" class="headerlink" title="正交函数在逼近中的应用"></a>正交函数在逼近中的应用</h2><p>已知在$n$维欧式空间中，任意两个向量$x,y$的內积为$(x,y)=\sum\limits_{i=1}^nx_iy_i$</p>
+<h2 id="正交多项式"><a href="#正交多项式" class="headerlink" title="正交多项式"></a>正交多项式</h2><p>已知在$n$维欧式空间中，任意两个向量$x,y$的內积为$(x,y)=\sum\limits_{i=1}^nx_iy_i$</p>
 <p>对于$[a,b]$上的任意两个连续函数$f(x),g(x)$，任取$[a,b]$的分割之$n$个分点处的函数值：</p>
 <p>$f(x_1),f(x_2),\cdots,f(x_n)\quad g(x_1),g(x_2),\cdots,g(x_n)$</p>
 <p>将其对应相乘做和，即</p>
@@ -580,7 +786,7 @@ $\begin{equation}
 <p>$1,sinx,sin2x,\cdots,sinnx,\cdots$</p>
 </li>
 </ul>
-<h2 id="正交多项式简介"><a href="#正交多项式简介" class="headerlink" title="正交多项式简介"></a>正交多项式简介</h2><p>特别取多项式系$1,x,\cdots,x^m,\cdots$进行正交化即得到正交多项式系</p>
+<p>特别取多项式系$1,x,\cdots,x^m,\cdots$进行正交化即得到正交多项式系</p>
 <p>令$\mu_m=\int_a^b\rho(x)x^mdx\quad m=0,1,\cdots$取$\phi_0(x)=1$</p>
 $\begin{equation}
 \begin{aligned}\phi_i(x)&=\left |\begin{array}{cccc}(1,1)&(1,x)&\cdots&(1,x^{i-1})&1\\(x,1)&(x,x)&\cdots&(x,x^{i-1})&x\\\vdots&\vdots&&\vdots&\vdots\\(x^i,1)&(x^i,x)&\cdots&(x^i,x^{i-1})&x^i\\\end{array}\right|\\&=\left |\begin{array}{cccc}\mu_o&\mu_1&\cdots&\mu_{i-1}&1\\\mu_1&\mu_2&\cdots&\mu_{i}&x\\\vdots&\vdots&&\vdots&\vdots\\\mu_i&\mu_{i+1}&\cdots&\mu_{2i-1}&x^i\\\end{array}\right|\quad i=1,2,\cdots,n\end{aligned}
@@ -588,7 +794,7 @@ $\begin{equation}
 
 <p>则$\phi_0(x),\phi_i(x)\quad i=1,2,\cdots$构成正交多项式</p>
 $\begin{equation}
-\begin{aligned}\Delta_i&=\left |\begin{array}{cccc}(1,1)&(1,x)&\cdots&(1,x^{i})\\(x,1)&(x,x)&\cdots&(x,x^{i})\\\vdots&\vdots&&\vdots\\(x^i,1)&(x^i,x)&\cdots&(x^i,x^{i})\\\end{array}\right|\\&=\left |\begin{array}{cccc}\mu_o&\mu_1&\cdots&\mu_{i-1}&1\\\mu_1&\mu_2&\cdots&\mu_{i}&x\\\vdots&\vdots&&\vdots&\vdots\\\mu_i&\mu_{i+1}&\cdots&\mu_{2i-1}&x^i\\\end{array}\right|\quad i=0,1,\cdots,n\end{aligned}
+\begin{aligned}\Delta_i&=\left |\begin{array}{cccc}(1,1)&(1,x)&\cdots&(1,x^{i})\\(x,1)&(x,x)&\cdots&(x,x^{i})\\\vdots&\vdots&&\vdots\\(x^i,1)&(x^i,x)&\cdots&(x^i,x^{i})\\\end{array}\right|\\&=\left |\begin{array}{cccc}\mu_o&\mu_1&\cdots&\mu_{i}\\\mu_1&\mu_2&\cdots&\mu_{i+1}\\\vdots&\vdots&&\vdots\\\mu_i&\mu_{i+1}&\cdots&\mu_{2i}\\\end{array}\right|\quad i=0,1,\cdots,n\end{aligned}
 \end{equation}$
 
 <p>则$\psi_0(x)=\dfrac{\phi_0(x)}{\sqrt{\Delta_0}}\quad \psi_i(x)=\dfrac{\phi_i(x)}{\sqrt{\Delta_{i-1}\Delta_i}}\quad i=1,2,\cdots$构成标准正交多项式</p>
@@ -715,271 +921,6 @@ $$
         <tag>Math</tag>
         <tag>Course</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>计算方法第四章作业题</title>
-    <url>/2019/11/20/work4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2>$$
-\begin{equation}
-\begin{aligned}
-(A)\quad A&=
-\begin{bmatrix}
-1&1&2\\
-0&0&2\\
-2&0&1\\
-\end{bmatrix}\\
-D&=diag\{ 1,0,1 \}\\
-L&=\begin{bmatrix}
-0&0&0\\
-0&0&0\\
--2&0&0\\
-\end{bmatrix}\\
-U&=\begin{bmatrix}
-0&-1&-2\\
-0&0&-2\\
-0&0&0\\
-\end{bmatrix}\\
-|\lambda I-B_G|&=|\lambda I-(D-L)^{-1}U|\\
-&=|(D-L)^{-1}||\lambda(D-L)-U|=0\\
-&\Rightarrow |\lambda(D-L)-U|=0\\
-|\lambda(D-L)-U|&=
-\left |\begin{array}{cccc}
-\lambda&1&2\\
-0&0&2\\
-2\lambda&0&\lambda\\
-\end{array}\right|=0\\
-&\Rightarrow \lambda=0\\
-&\therefore(A)收敛\\
-
-(B)\quad A&=
-\begin{bmatrix}
-3&1&1\\
-0&1&2\\
-1&0&\dfrac{1}{2}\\
-\end{bmatrix}\\
-|\lambda(D-L)-U|&=
-\left |\begin{array}{cccc}
-3\lambda&1&1\\
-0&\lambda&2\\
-\lambda&0&\dfrac{1}{2}\lambda\\
-\end{array}\right|=0\\
-&\Rightarrow \dfrac{3}{2}\lambda[(\lambda-\dfrac{1}{3})^2+\dfrac{11}{9}]\\
-&\Rightarrow \lambda=0\\
-&\therefore(B)收敛\\
-
-(C)\quad A&=
-\begin{bmatrix}
-5&2&1\\
--2&-8&-3\\
-1&-1&-4\\
-\end{bmatrix}\\
-&\because |5|>|2|+|1|,|-8|>|-2|+|-3|\\
-&\quad |-4|>|1|+|-1|\\
-&\therefore A为严格对角占优矩阵，故(C)收敛\\
-
-(D)\quad A&=
-\begin{bmatrix}
-1&-9&-7\\
-0&2&2\\
-0&-2&1\\
-\end{bmatrix}\\
-|\lambda(D-L)-U|&=
-\left |\begin{array}{cccc}
-\lambda&-9&-7\\
-0&2\lambda&2\\
-0&-2\lambda&\lambda\\
-\end{array}\right|=0\\
-&\Rightarrow \lambda=0,-2\\
-&\because \rho(\lambda)=|-2|>0\\
-&\therefore (C)发散
-\end{aligned}
-\end{equation}
-$$
-
-<h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2>$$
-\begin{equation}
-\begin{aligned}
-(1)\quad A&=
-\begin{bmatrix}
-3&7&1\\
-0&4&t-1\\
-0&3-t&-1\\
-\end{bmatrix}\\
-B_J=D^{-1}(L+U)&=
-\begin{bmatrix}
-\dfrac{1}{3}&0&0\\
-0&\dfrac{1}{4}&0\\
-0&0&-1\\
-\end{bmatrix}
-\begin{bmatrix}
-0&-7&-1\\
-0&0&1-t\\
-0&t-3&0\\
-\end{bmatrix}\\
-&=\begin{bmatrix}
-0&-\dfrac{7}{3}&-\dfrac{1}{3}\\
-0&0&\dfrac{1-t}{4}\\
-0&3-t&0\\
-\end{bmatrix}\\
-|\lambda I-B_J|&=
-\left |\begin{array}{cccc}
-\lambda&\dfrac{7}{3}&\dfrac{1}{3}\\
-0&\lambda&\dfrac{t-1}{4}\\
-0&t-3&\lambda\\
-\end{array}\right|=0\\
-&\Rightarrow \lambda(\lambda^2-\dfrac{(t-1)(t-3)}{4})=0\\
-&\Rightarrow \lambda=0,\sqrt{\dfrac{(t-1)(t-3)}{4}}\\
-&若Jacobi迭代收敛，则|\lambda|=\left\vert \sqrt{\dfrac{(t-1)(t-3)}{4}} < 1 \right\vert \\
-&\Rightarrow 0 \le (t-1)(t-3) < 4\\
-&\Rightarrow 2 - \sqrt{5} < t \le 1 或 3 \le t  < 2 + \sqrt{5}\\
-(2)\quad |\lambda I-B_G|&=|\lambda(D-L)-U|\\
-&=\left |\begin{array}{cccc}
-3\lambda&7&1\\
-0&4\lambda&t-1\\
-0&(3-t)\lambda&-\lambda\\
-\end{array}\right|=0\\
-&\Rightarrow -3 \lambda^2 (4 \lambda - (t-1)(t-3)) = 0\\
-&\Rightarrow \lambda = 0,\dfrac{(t-1)(t-3)}{4}\\
-&\because -4 < (t-1)(t-3) < 4\\
-&\therefore 2 - \sqrt{5}< \lambda < 2 + \sqrt{5}\\
-&\therefore G-S迭代收敛
-\end{aligned}
-\end{equation}
-$$
-
-<h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2>$$
-\begin{equation}
-\begin{aligned}
-&\because\begin{bmatrix}
-4&-1&0\\
--1&1&-1\\
-0&-1&1\\
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\
-x_2\\
-x_3\\
-\end{bmatrix}=
-\begin{bmatrix}
-3\\
--1\\
-0\\
-\end{bmatrix}\\
-&\because x^{(0)}=[0,0,0]^T\\
-&\begin{cases}
-x_1^{(1)}=\dfrac{1}{4}(3-0)=\dfrac{3}{4}\\
-x_2^{(1)}=(-1+\dfrac{3}{4}-0)=-\dfrac{1}{4}\\
-x_3^{(1)}=(0-\dfrac{1}{4})=-\dfrac{1}{4}\\
-\end{cases}\\
-&\therefore x^{(1)}=[\dfrac{3}{4},-\dfrac{1}{4},-\dfrac{1}{4}]\\
-&\begin{cases}
-x_1^{(2)}=\dfrac{1}{4}(3-\dfrac{1}{4})=\dfrac{11}{16}\\
-x_2^{(2)}=(-1+\dfrac{11}{16}-\dfrac{1}{4})=-\dfrac{9}{16}\\
-x_3^{(1)}=(0-\dfrac{9}{16})=-\dfrac{9}{16}\\
-\end{cases}\\
-&\therefore x^{(2)}=[\dfrac{11}{16},-\dfrac{9}{16},-\dfrac{9}{16}]\\
-\end{aligned}
-\end{equation}
-$$
-<h2 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h2>$$
-\begin{equation}
-\begin{aligned}
-\phi(x)& = x - \alpha(e^x - e^{-x})\\
-&\because \exists x_0 = 0 \Rightarrow \phi(0)=0 \\
-\phi'(x)& = 1 - \alpha(e^x + e^{-x})\\
-|\phi'(0)|& = |1-2\alpha| < 1时，\phi(x)局部收敛\\
-&\therefore \alpha \in (0,1)\\
-|\phi'(0)|& = |1 - 2 \alpha | = 0时，\phi(x)至少是平方收敛\\
-&\therefore \alpha = \dfrac{1}{2}\\
-\end{aligned}
-\end{equation}
-$$
-
-<h2 id="第五题"><a href="#第五题" class="headerlink" title="第五题"></a>第五题</h2>$$
-\begin{equation}
-\begin{aligned}
-x^{(k+1)}&=x^{(k)}+\omega(b-Ax^{(k)})\\
-x^{(k+1)}&=(I-\omega A)x^{(k)}+\omega b\\
-令B& = I - \omega A\\
-\rho(B)& = |1 - \omega \rho(A)| \\
-当\rho(B)& < 1时，迭代收敛\\
-&\Rightarrow -1 < 1 - \omega \rho(A) < 1\\
-&\Rightarrow 0 < \omega < \dfrac{2}{\rho(A)}\\
-\end{aligned}
-\end{equation}
-$$
-<h2 id="第六题"><a href="#第六题" class="headerlink" title="第六题"></a>第六题</h2>$$
-\begin{equation}
-\begin{aligned}
-(1)\quad x& = 1+\dfrac{1}{x^2}\\
-\varphi'(x)& = -\dfrac{2}{x^3}\\
-|\varphi'(x_0)|& = \left |-\dfrac{2}{1.5^3}\right | < 1\\
-&\therefore (1)收敛\\
-x_1&=1+ \dfrac{1}{1.5^2}=\dfrac{13}{9} \\
-k &\ge \log_{}\\
-(2)\quad x& = \sqrt[3]{1+x^2}\\
-\varphi'(x)& = \dfrac{2x}{3(1+x)^{\frac{2}{3}}}\\
-|\varphi'(x_0)|&= \left |\dfrac{1}{2.5^{\frac{2}{3}}}\right| < 1\\
-&\therefore (2)收敛\\
-(3)\quad x& = \sqrt{x^3-1}\\
-\varphi'(x)& = \dfrac{3x^2}{2\sqrt{x^3-1}}\\
-|\varphi'(x_0)|& = \left |\dfrac{1.5^3}{\sqrt{1.5^3-1}}\right| > 1\\
-&\therefore (3)发散\\
-(4)\quad x& = \dfrac{1}{\sqrt{x-1}}\\
-\varphi'(x)& = -\dfrac{1}{2(x-1)^{\frac{3}{2}}}\\
-|\varphi'(x_0)|& =\left |-\dfrac{1}{\sqrt{0.5}}\right| > 1\\
-&\therefore (4)发散\\
-&\because x^3 - x^2 - 1 = 0\\
-&\therefore \phi(x) = x-\dfrac{x^3-x^2-1}{3x^2-2x}\\
-&\because x_0 = 1.5\\
-&\therefore x_1 = 1.466666,x_2 = 1.465572 , x_3 = 1.465571\\
-&\because x_2 - x_3 = 0.000001 < \dfrac{1}{2} \times 10^{-3}\\
-&\therefore x \approx 1.465571
-\end{aligned}
-\end{equation}
-$$
-<h2 id="第七题"><a href="#第七题" class="headerlink" title="第七题"></a>第七题</h2>$$
-\begin{equation}
-\begin{aligned}
-f(x)&=x^3+2x^2+10x-20=0\\
-x&=x-\dfrac{x^3+2x^2+10x-20}{3x^2+4x+10}\\
-&取初值x_0=1\\
-x_1&=\dfrac{24}{17}=1.411764\\
-x_2&=1.369336\\
-x_3&=1.368808
-\end{aligned}
-\end{equation}
-$$
-<h2 id="第八题"><a href="#第八题" class="headerlink" title="第八题"></a>第八题</h2>$$
-\begin{equation}
-\begin{aligned}
-&\begin{bmatrix}
-6&3\\
-3&2\\
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\
-x_2
-\end{bmatrix}=
-\begin{bmatrix}
-0\\
-1
-\end{bmatrix}\\
-\because& 系数矩阵对称正定\\
-\therefore& 取x_0=[0,0]^T\\
-r_o&=b-Ax_0=[0,1]^T=p_0\\
-\alpha_0&=\dfrac{(r_0,r_0)}{(p_0,Ap_0)}=\dfrac{1}{2}\\
-x_1&=x_0+\alpha_0p_0=[0,\dfrac{1}{2}]^T\\
-r_1&=r_0-\alpha_0Ap_0=[-\dfrac{3}{2},0]^T\\
-\beta_0&=\dfrac{(r_1,r_1)}{(r_0,r_0)}=\dfrac{9}{4}\\
-p_1&=r_1+\beta_0p_0=[-\dfrac{3}{2},\dfrac{9}{4}]^T\\
-\alpha_1&=\dfrac{(r_1,r_1)}{(p_1,Ap_1)}=\dfrac{2}{3}\\
-x_2&=x_1+\alpha_1p_1=[-1,2]^T\\
-r_2&=r_1-\alpha_1Ap_1=[0,0]^T\\
-&\therefore x=[-1,2]^T
-\end{aligned}
-\end{equation}
-$$]]></content>
   </entry>
   <entry>
     <title>LeetCode</title>
@@ -2379,7 +2320,269 @@ $$
    \end{bmatrix}\\
    \end{aligned}
    \end{equation}
-   $$]]></content>
+   $$
+
+<h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><h2 id="第一题-2"><a href="#第一题-2" class="headerlink" title="第一题"></a>第一题</h2>$$
+\begin{equation}
+\begin{aligned}
+(A)\quad A&=
+\begin{bmatrix}
+1&1&2\\
+0&0&2\\
+2&0&1\\
+\end{bmatrix}\\
+D&=diag\{ 1,0,1 \}\\
+L&=\begin{bmatrix}
+0&0&0\\
+0&0&0\\
+-2&0&0\\
+\end{bmatrix}\\
+U&=\begin{bmatrix}
+0&-1&-2\\
+0&0&-2\\
+0&0&0\\
+\end{bmatrix}\\
+|\lambda I-B_G|&=|\lambda I-(D-L)^{-1}U|\\
+&=|(D-L)^{-1}||\lambda(D-L)-U|=0\\
+&\Rightarrow |\lambda(D-L)-U|=0\\
+|\lambda(D-L)-U|&=
+\left |\begin{array}{cccc}
+\lambda&1&2\\
+0&0&2\\
+2\lambda&0&\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \lambda=0\\
+&\therefore(A)收敛\\
+
+(B)\quad A&=
+\begin{bmatrix}
+3&1&1\\
+0&1&2\\
+1&0&\dfrac{1}{2}\\
+\end{bmatrix}\\
+|\lambda(D-L)-U|&=
+\left |\begin{array}{cccc}
+3\lambda&1&1\\
+0&\lambda&2\\
+\lambda&0&\dfrac{1}{2}\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \dfrac{3}{2}\lambda[(\lambda-\dfrac{1}{3})^2+\dfrac{11}{9}]\\
+&\Rightarrow \lambda=0\\
+&\therefore(B)收敛\\
+
+(C)\quad A&=
+\begin{bmatrix}
+5&2&1\\
+-2&-8&-3\\
+1&-1&-4\\
+\end{bmatrix}\\
+&\because |5|>|2|+|1|,|-8|>|-2|+|-3|\\
+&\quad |-4|>|1|+|-1|\\
+&\therefore A为严格对角占优矩阵，故(C)收敛\\
+
+(D)\quad A&=
+\begin{bmatrix}
+1&-9&-7\\
+0&2&2\\
+0&-2&1\\
+\end{bmatrix}\\
+|\lambda(D-L)-U|&=
+\left |\begin{array}{cccc}
+\lambda&-9&-7\\
+0&2\lambda&2\\
+0&-2\lambda&\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \lambda=0,-2\\
+&\because \rho(\lambda)=|-2|>0\\
+&\therefore (C)发散
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第二题-2"><a href="#第二题-2" class="headerlink" title="第二题"></a>第二题</h2>$$
+\begin{equation}
+\begin{aligned}
+(1)\quad A&=
+\begin{bmatrix}
+3&7&1\\
+0&4&t-1\\
+0&3-t&-1\\
+\end{bmatrix}\\
+B_J=D^{-1}(L+U)&=
+\begin{bmatrix}
+\dfrac{1}{3}&0&0\\
+0&\dfrac{1}{4}&0\\
+0&0&-1\\
+\end{bmatrix}
+\begin{bmatrix}
+0&-7&-1\\
+0&0&1-t\\
+0&t-3&0\\
+\end{bmatrix}\\
+&=\begin{bmatrix}
+0&-\dfrac{7}{3}&-\dfrac{1}{3}\\
+0&0&\dfrac{1-t}{4}\\
+0&3-t&0\\
+\end{bmatrix}\\
+|\lambda I-B_J|&=
+\left |\begin{array}{cccc}
+\lambda&\dfrac{7}{3}&\dfrac{1}{3}\\
+0&\lambda&\dfrac{t-1}{4}\\
+0&t-3&\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \lambda(\lambda^2-\dfrac{(t-1)(t-3)}{4})=0\\
+&\Rightarrow \lambda=0,\sqrt{\dfrac{(t-1)(t-3)}{4}}\\
+&若Jacobi迭代收敛，则|\lambda|=\left\vert \sqrt{\dfrac{(t-1)(t-3)}{4}} < 1 \right\vert \\
+&\Rightarrow 0 \le (t-1)(t-3) < 4\\
+&\Rightarrow 2 - \sqrt{5} < t \le 1 或 3 \le t  < 2 + \sqrt{5}\\
+(2)\quad |\lambda I-B_G|&=|\lambda(D-L)-U|\\
+&=\left |\begin{array}{cccc}
+3\lambda&7&1\\
+0&4\lambda&t-1\\
+0&(3-t)\lambda&-\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow -3 \lambda^2 (4 \lambda - (t-1)(t-3)) = 0\\
+&\Rightarrow \lambda = 0,\dfrac{(t-1)(t-3)}{4}\\
+&\because -4 < (t-1)(t-3) < 4\\
+&\therefore 2 - \sqrt{5}< \lambda < 2 + \sqrt{5}\\
+&\therefore G-S迭代收敛
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第三题-2"><a href="#第三题-2" class="headerlink" title="第三题"></a>第三题</h2>$$
+\begin{equation}
+\begin{aligned}
+&\because\begin{bmatrix}
+4&-1&0\\
+-1&1&-1\\
+0&-1&1\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{bmatrix}=
+\begin{bmatrix}
+3\\
+-1\\
+0\\
+\end{bmatrix}\\
+&\because x^{(0)}=[0,0,0]^T\\
+&\begin{cases}
+x_1^{(1)}=\dfrac{1}{4}(3-0)=\dfrac{3}{4}\\
+x_2^{(1)}=(-1+\dfrac{3}{4}-0)=-\dfrac{1}{4}\\
+x_3^{(1)}=(0-\dfrac{1}{4})=-\dfrac{1}{4}\\
+\end{cases}\\
+&\therefore x^{(1)}=[\dfrac{3}{4},-\dfrac{1}{4},-\dfrac{1}{4}]\\
+&\begin{cases}
+x_1^{(2)}=\dfrac{1}{4}(3-\dfrac{1}{4})=\dfrac{11}{16}\\
+x_2^{(2)}=(-1+\dfrac{11}{16}-\dfrac{1}{4})=-\dfrac{9}{16}\\
+x_3^{(1)}=(0-\dfrac{9}{16})=-\dfrac{9}{16}\\
+\end{cases}\\
+&\therefore x^{(2)}=[\dfrac{11}{16},-\dfrac{9}{16},-\dfrac{9}{16}]\\
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第四题-2"><a href="#第四题-2" class="headerlink" title="第四题"></a>第四题</h2>$$
+\begin{equation}
+\begin{aligned}
+\phi(x)& = x - \alpha(e^x - e^{-x})\\
+&\because \exists x_0 = 0 \Rightarrow \phi(0)=0 \\
+\phi'(x)& = 1 - \alpha(e^x + e^{-x})\\
+|\phi'(0)|& = |1-2\alpha| < 1时，\phi(x)局部收敛\\
+&\therefore \alpha \in (0,1)\\
+|\phi'(0)|& = |1 - 2 \alpha | = 0时，\phi(x)至少是平方收敛\\
+&\therefore \alpha = \dfrac{1}{2}\\
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第五题-2"><a href="#第五题-2" class="headerlink" title="第五题"></a>第五题</h2>$$
+\begin{equation}
+\begin{aligned}
+x^{(k+1)}&=x^{(k)}+\omega(b-Ax^{(k)})\\
+x^{(k+1)}&=(I-\omega A)x^{(k)}+\omega b\\
+令B& = I - \omega A\\
+\rho(B)& = |1 - \omega \rho(A)| \\
+当\rho(B)& < 1时，迭代收敛\\
+&\Rightarrow -1 < 1 - \omega \rho(A) < 1\\
+&\Rightarrow 0 < \omega < \dfrac{2}{\rho(A)}\\
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第六题-2"><a href="#第六题-2" class="headerlink" title="第六题"></a>第六题</h2>$$
+\begin{equation}
+\begin{aligned}
+(1)\quad x& = 1+\dfrac{1}{x^2}\\
+\varphi'(x)& = -\dfrac{2}{x^3}\\
+|\varphi'(x_0)|& = \left |-\dfrac{2}{1.5^3}\right | < 1\\
+&\therefore (1)收敛\\
+x_1&=1+ \dfrac{1}{1.5^2}=\dfrac{13}{9} \\
+k &\ge \log_{}\\
+(2)\quad x& = \sqrt[3]{1+x^2}\\
+\varphi'(x)& = \dfrac{2x}{3(1+x)^{\frac{2}{3}}}\\
+|\varphi'(x_0)|&= \left |\dfrac{1}{2.5^{\frac{2}{3}}}\right| < 1\\
+&\therefore (2)收敛\\
+(3)\quad x& = \sqrt{x^3-1}\\
+\varphi'(x)& = \dfrac{3x^2}{2\sqrt{x^3-1}}\\
+|\varphi'(x_0)|& = \left |\dfrac{1.5^3}{\sqrt{1.5^3-1}}\right| > 1\\
+&\therefore (3)发散\\
+(4)\quad x& = \dfrac{1}{\sqrt{x-1}}\\
+\varphi'(x)& = -\dfrac{1}{2(x-1)^{\frac{3}{2}}}\\
+|\varphi'(x_0)|& =\left |-\dfrac{1}{\sqrt{0.5}}\right| > 1\\
+&\therefore (4)发散\\
+&\because x^3 - x^2 - 1 = 0\\
+&\therefore \phi(x) = x-\dfrac{x^3-x^2-1}{3x^2-2x}\\
+&\because x_0 = 1.5\\
+&\therefore x_1 = 1.466666,x_2 = 1.465572 , x_3 = 1.465571\\
+&\because x_2 - x_3 = 0.000001 < \dfrac{1}{2} \times 10^{-3}\\
+&\therefore x \approx 1.465571
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第七题-2"><a href="#第七题-2" class="headerlink" title="第七题"></a>第七题</h2>$$
+\begin{equation}
+\begin{aligned}
+f(x)&=x^3+2x^2+10x-20=0\\
+x&=x-\dfrac{x^3+2x^2+10x-20}{3x^2+4x+10}\\
+&取初值x_0=1\\
+x_1&=\dfrac{24}{17}=1.411764\\
+x_2&=1.369336\\
+x_3&=1.368808
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第八题-2"><a href="#第八题-2" class="headerlink" title="第八题"></a>第八题</h2>$$
+\begin{equation}
+\begin{aligned}
+&\begin{bmatrix}
+6&3\\
+3&2\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix}=
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}\\
+\because& 系数矩阵对称正定\\
+\therefore& 取x_0=[0,0]^T\\
+r_o&=b-Ax_0=[0,1]^T=p_0\\
+\alpha_0&=\dfrac{(r_0,r_0)}{(p_0,Ap_0)}=\dfrac{1}{2}\\
+x_1&=x_0+\alpha_0p_0=[0,\dfrac{1}{2}]^T\\
+r_1&=r_0-\alpha_0Ap_0=[-\dfrac{3}{2},0]^T\\
+\beta_0&=\dfrac{(r_1,r_1)}{(r_0,r_0)}=\dfrac{9}{4}\\
+p_1&=r_1+\beta_0p_0=[-\dfrac{3}{2},\dfrac{9}{4}]^T\\
+\alpha_1&=\dfrac{(r_1,r_1)}{(p_1,Ap_1)}=\dfrac{2}{3}\\
+x_2&=x_1+\alpha_1p_1=[-1,2]^T\\
+r_2&=r_1-\alpha_1Ap_1=[0,0]^T\\
+&\therefore x=[-1,2]^T
+\end{aligned}
+\end{equation}
+$$]]></content>
       <categories>
         <category>Course</category>
       </categories>

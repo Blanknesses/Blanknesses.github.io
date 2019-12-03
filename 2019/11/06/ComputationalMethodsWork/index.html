@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法作业题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-16T12:09:17.287Z">
+<meta property="og:updated_time" content="2019-12-03T04:28:26.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法作业">
 <meta name="twitter:description" content="计算方法作业题">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.7k
+                  5.9k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  28
+                  35
                 </span>
               
             </div>
@@ -1843,6 +1843,268 @@ $$
    \end{aligned}
    \end{equation}
    $$
+
+<h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><h2 id="第一题-2"><a href="#第一题-2" class="headerlink" title="第一题"></a>第一题</h2>$$
+\begin{equation}
+\begin{aligned}
+(A)\quad A&=
+\begin{bmatrix}
+1&1&2\\
+0&0&2\\
+2&0&1\\
+\end{bmatrix}\\
+D&=diag\{ 1,0,1 \}\\
+L&=\begin{bmatrix}
+0&0&0\\
+0&0&0\\
+-2&0&0\\
+\end{bmatrix}\\
+U&=\begin{bmatrix}
+0&-1&-2\\
+0&0&-2\\
+0&0&0\\
+\end{bmatrix}\\
+|\lambda I-B_G|&=|\lambda I-(D-L)^{-1}U|\\
+&=|(D-L)^{-1}||\lambda(D-L)-U|=0\\
+&\Rightarrow |\lambda(D-L)-U|=0\\
+|\lambda(D-L)-U|&=
+\left |\begin{array}{cccc}
+\lambda&1&2\\
+0&0&2\\
+2\lambda&0&\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \lambda=0\\
+&\therefore(A)收敛\\
+
+(B)\quad A&=
+\begin{bmatrix}
+3&1&1\\
+0&1&2\\
+1&0&\dfrac{1}{2}\\
+\end{bmatrix}\\
+|\lambda(D-L)-U|&=
+\left |\begin{array}{cccc}
+3\lambda&1&1\\
+0&\lambda&2\\
+\lambda&0&\dfrac{1}{2}\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \dfrac{3}{2}\lambda[(\lambda-\dfrac{1}{3})^2+\dfrac{11}{9}]\\
+&\Rightarrow \lambda=0\\
+&\therefore(B)收敛\\
+
+(C)\quad A&=
+\begin{bmatrix}
+5&2&1\\
+-2&-8&-3\\
+1&-1&-4\\
+\end{bmatrix}\\
+&\because |5|>|2|+|1|,|-8|>|-2|+|-3|\\
+&\quad |-4|>|1|+|-1|\\
+&\therefore A为严格对角占优矩阵，故(C)收敛\\
+
+(D)\quad A&=
+\begin{bmatrix}
+1&-9&-7\\
+0&2&2\\
+0&-2&1\\
+\end{bmatrix}\\
+|\lambda(D-L)-U|&=
+\left |\begin{array}{cccc}
+\lambda&-9&-7\\
+0&2\lambda&2\\
+0&-2\lambda&\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \lambda=0,-2\\
+&\because \rho(\lambda)=|-2|>0\\
+&\therefore (C)发散
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第二题-2"><a href="#第二题-2" class="headerlink" title="第二题"></a>第二题</h2>$$
+\begin{equation}
+\begin{aligned}
+(1)\quad A&=
+\begin{bmatrix}
+3&7&1\\
+0&4&t-1\\
+0&3-t&-1\\
+\end{bmatrix}\\
+B_J=D^{-1}(L+U)&=
+\begin{bmatrix}
+\dfrac{1}{3}&0&0\\
+0&\dfrac{1}{4}&0\\
+0&0&-1\\
+\end{bmatrix}
+\begin{bmatrix}
+0&-7&-1\\
+0&0&1-t\\
+0&t-3&0\\
+\end{bmatrix}\\
+&=\begin{bmatrix}
+0&-\dfrac{7}{3}&-\dfrac{1}{3}\\
+0&0&\dfrac{1-t}{4}\\
+0&3-t&0\\
+\end{bmatrix}\\
+|\lambda I-B_J|&=
+\left |\begin{array}{cccc}
+\lambda&\dfrac{7}{3}&\dfrac{1}{3}\\
+0&\lambda&\dfrac{t-1}{4}\\
+0&t-3&\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow \lambda(\lambda^2-\dfrac{(t-1)(t-3)}{4})=0\\
+&\Rightarrow \lambda=0,\sqrt{\dfrac{(t-1)(t-3)}{4}}\\
+&若Jacobi迭代收敛，则|\lambda|=\left\vert \sqrt{\dfrac{(t-1)(t-3)}{4}} < 1 \right\vert \\
+&\Rightarrow 0 \le (t-1)(t-3) < 4\\
+&\Rightarrow 2 - \sqrt{5} < t \le 1 或 3 \le t  < 2 + \sqrt{5}\\
+(2)\quad |\lambda I-B_G|&=|\lambda(D-L)-U|\\
+&=\left |\begin{array}{cccc}
+3\lambda&7&1\\
+0&4\lambda&t-1\\
+0&(3-t)\lambda&-\lambda\\
+\end{array}\right|=0\\
+&\Rightarrow -3 \lambda^2 (4 \lambda - (t-1)(t-3)) = 0\\
+&\Rightarrow \lambda = 0,\dfrac{(t-1)(t-3)}{4}\\
+&\because -4 < (t-1)(t-3) < 4\\
+&\therefore 2 - \sqrt{5}< \lambda < 2 + \sqrt{5}\\
+&\therefore G-S迭代收敛
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第三题-2"><a href="#第三题-2" class="headerlink" title="第三题"></a>第三题</h2>$$
+\begin{equation}
+\begin{aligned}
+&\because\begin{bmatrix}
+4&-1&0\\
+-1&1&-1\\
+0&-1&1\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{bmatrix}=
+\begin{bmatrix}
+3\\
+-1\\
+0\\
+\end{bmatrix}\\
+&\because x^{(0)}=[0,0,0]^T\\
+&\begin{cases}
+x_1^{(1)}=\dfrac{1}{4}(3-0)=\dfrac{3}{4}\\
+x_2^{(1)}=(-1+\dfrac{3}{4}-0)=-\dfrac{1}{4}\\
+x_3^{(1)}=(0-\dfrac{1}{4})=-\dfrac{1}{4}\\
+\end{cases}\\
+&\therefore x^{(1)}=[\dfrac{3}{4},-\dfrac{1}{4},-\dfrac{1}{4}]\\
+&\begin{cases}
+x_1^{(2)}=\dfrac{1}{4}(3-\dfrac{1}{4})=\dfrac{11}{16}\\
+x_2^{(2)}=(-1+\dfrac{11}{16}-\dfrac{1}{4})=-\dfrac{9}{16}\\
+x_3^{(1)}=(0-\dfrac{9}{16})=-\dfrac{9}{16}\\
+\end{cases}\\
+&\therefore x^{(2)}=[\dfrac{11}{16},-\dfrac{9}{16},-\dfrac{9}{16}]\\
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第四题-2"><a href="#第四题-2" class="headerlink" title="第四题"></a>第四题</h2>$$
+\begin{equation}
+\begin{aligned}
+\phi(x)& = x - \alpha(e^x - e^{-x})\\
+&\because \exists x_0 = 0 \Rightarrow \phi(0)=0 \\
+\phi'(x)& = 1 - \alpha(e^x + e^{-x})\\
+|\phi'(0)|& = |1-2\alpha| < 1时，\phi(x)局部收敛\\
+&\therefore \alpha \in (0,1)\\
+|\phi'(0)|& = |1 - 2 \alpha | = 0时，\phi(x)至少是平方收敛\\
+&\therefore \alpha = \dfrac{1}{2}\\
+\end{aligned}
+\end{equation}
+$$
+
+<h2 id="第五题-2"><a href="#第五题-2" class="headerlink" title="第五题"></a>第五题</h2>$$
+\begin{equation}
+\begin{aligned}
+x^{(k+1)}&=x^{(k)}+\omega(b-Ax^{(k)})\\
+x^{(k+1)}&=(I-\omega A)x^{(k)}+\omega b\\
+令B& = I - \omega A\\
+\rho(B)& = |1 - \omega \rho(A)| \\
+当\rho(B)& < 1时，迭代收敛\\
+&\Rightarrow -1 < 1 - \omega \rho(A) < 1\\
+&\Rightarrow 0 < \omega < \dfrac{2}{\rho(A)}\\
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第六题-2"><a href="#第六题-2" class="headerlink" title="第六题"></a>第六题</h2>$$
+\begin{equation}
+\begin{aligned}
+(1)\quad x& = 1+\dfrac{1}{x^2}\\
+\varphi'(x)& = -\dfrac{2}{x^3}\\
+|\varphi'(x_0)|& = \left |-\dfrac{2}{1.5^3}\right | < 1\\
+&\therefore (1)收敛\\
+x_1&=1+ \dfrac{1}{1.5^2}=\dfrac{13}{9} \\
+k &\ge \log_{}\\
+(2)\quad x& = \sqrt[3]{1+x^2}\\
+\varphi'(x)& = \dfrac{2x}{3(1+x)^{\frac{2}{3}}}\\
+|\varphi'(x_0)|&= \left |\dfrac{1}{2.5^{\frac{2}{3}}}\right| < 1\\
+&\therefore (2)收敛\\
+(3)\quad x& = \sqrt{x^3-1}\\
+\varphi'(x)& = \dfrac{3x^2}{2\sqrt{x^3-1}}\\
+|\varphi'(x_0)|& = \left |\dfrac{1.5^3}{\sqrt{1.5^3-1}}\right| > 1\\
+&\therefore (3)发散\\
+(4)\quad x& = \dfrac{1}{\sqrt{x-1}}\\
+\varphi'(x)& = -\dfrac{1}{2(x-1)^{\frac{3}{2}}}\\
+|\varphi'(x_0)|& =\left |-\dfrac{1}{\sqrt{0.5}}\right| > 1\\
+&\therefore (4)发散\\
+&\because x^3 - x^2 - 1 = 0\\
+&\therefore \phi(x) = x-\dfrac{x^3-x^2-1}{3x^2-2x}\\
+&\because x_0 = 1.5\\
+&\therefore x_1 = 1.466666,x_2 = 1.465572 , x_3 = 1.465571\\
+&\because x_2 - x_3 = 0.000001 < \dfrac{1}{2} \times 10^{-3}\\
+&\therefore x \approx 1.465571
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第七题-2"><a href="#第七题-2" class="headerlink" title="第七题"></a>第七题</h2>$$
+\begin{equation}
+\begin{aligned}
+f(x)&=x^3+2x^2+10x-20=0\\
+x&=x-\dfrac{x^3+2x^2+10x-20}{3x^2+4x+10}\\
+&取初值x_0=1\\
+x_1&=\dfrac{24}{17}=1.411764\\
+x_2&=1.369336\\
+x_3&=1.368808
+\end{aligned}
+\end{equation}
+$$
+<h2 id="第八题-2"><a href="#第八题-2" class="headerlink" title="第八题"></a>第八题</h2>$$
+\begin{equation}
+\begin{aligned}
+&\begin{bmatrix}
+6&3\\
+3&2\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix}=
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}\\
+\because& 系数矩阵对称正定\\
+\therefore& 取x_0=[0,0]^T\\
+r_o&=b-Ax_0=[0,1]^T=p_0\\
+\alpha_0&=\dfrac{(r_0,r_0)}{(p_0,Ap_0)}=\dfrac{1}{2}\\
+x_1&=x_0+\alpha_0p_0=[0,\dfrac{1}{2}]^T\\
+r_1&=r_0-\alpha_0Ap_0=[-\dfrac{3}{2},0]^T\\
+\beta_0&=\dfrac{(r_1,r_1)}{(r_0,r_0)}=\dfrac{9}{4}\\
+p_1&=r_1+\beta_0p_0=[-\dfrac{3}{2},\dfrac{9}{4}]^T\\
+\alpha_1&=\dfrac{(r_1,r_1)}{(p_1,Ap_1)}=\dfrac{2}{3}\\
+x_2&=x_1+\alpha_1p_1=[-1,2]^T\\
+r_2&=r_1-\alpha_1Ap_1=[0,0]^T\\
+&\therefore x=[-1,2]^T
+\end{aligned}
+\end{equation}
+$$
       
     </div>
     
@@ -2082,7 +2344,7 @@ $$
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章作业题"><span class="nav-number">1.</span> <span class="nav-text">第二章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题"><span class="nav-number">1.1.</span> <span class="nav-text">第一题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消去法"><span class="nav-number">1.1.1.</span> <span class="nav-text">消去法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Doolittle-分解"><span class="nav-number">1.1.2.</span> <span class="nav-text">$Doolittle$分解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题"><span class="nav-number">1.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题"><span class="nav-number">1.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题"><span class="nav-number">1.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题"><span class="nav-number">1.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题"><span class="nav-number">1.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题"><span class="nav-number">1.7.</span> <span class="nav-text">第七题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LU分解"><span class="nav-number">1.7.1.</span> <span class="nav-text">LU分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chelesky"><span class="nav-number">1.7.2.</span> <span class="nav-text">Chelesky</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三对角追赶法"><span class="nav-number">1.7.3.</span> <span class="nav-text">三对角追赶法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题"><span class="nav-number">1.8.</span> <span class="nav-text">第八题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九题"><span class="nav-number">1.9.</span> <span class="nav-text">第九题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十题"><span class="nav-number">1.10.</span> <span class="nav-text">第十题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章作业题"><span class="nav-number">2.</span> <span class="nav-text">第三章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-1"><span class="nav-number">2.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题-1"><span class="nav-number">2.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题-1"><span class="nav-number">2.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-1"><span class="nav-number">2.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-1"><span class="nav-number">2.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题-1"><span class="nav-number">2.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题-1"><span class="nav-number">2.7.</span> <span class="nav-text">第七题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题-1"><span class="nav-number">2.8.</span> <span class="nav-text">第八题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章作业题"><span class="nav-number">1.</span> <span class="nav-text">第二章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题"><span class="nav-number">1.1.</span> <span class="nav-text">第一题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消去法"><span class="nav-number">1.1.1.</span> <span class="nav-text">消去法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Doolittle-分解"><span class="nav-number">1.1.2.</span> <span class="nav-text">$Doolittle$分解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题"><span class="nav-number">1.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题"><span class="nav-number">1.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题"><span class="nav-number">1.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题"><span class="nav-number">1.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题"><span class="nav-number">1.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题"><span class="nav-number">1.7.</span> <span class="nav-text">第七题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LU分解"><span class="nav-number">1.7.1.</span> <span class="nav-text">LU分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chelesky"><span class="nav-number">1.7.2.</span> <span class="nav-text">Chelesky</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三对角追赶法"><span class="nav-number">1.7.3.</span> <span class="nav-text">三对角追赶法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题"><span class="nav-number">1.8.</span> <span class="nav-text">第八题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九题"><span class="nav-number">1.9.</span> <span class="nav-text">第九题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十题"><span class="nav-number">1.10.</span> <span class="nav-text">第十题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章作业题"><span class="nav-number">2.</span> <span class="nav-text">第三章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-1"><span class="nav-number">2.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题-1"><span class="nav-number">2.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题-1"><span class="nav-number">2.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-1"><span class="nav-number">2.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-1"><span class="nav-number">2.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题-1"><span class="nav-number">2.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题-1"><span class="nav-number">2.7.</span> <span class="nav-text">第七题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题-1"><span class="nav-number">2.8.</span> <span class="nav-text">第八题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章"><span class="nav-number">3.</span> <span class="nav-text">第四章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-2"><span class="nav-number">3.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题-2"><span class="nav-number">3.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题-2"><span class="nav-number">3.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-2"><span class="nav-number">3.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-2"><span class="nav-number">3.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题-2"><span class="nav-number">3.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题-2"><span class="nav-number">3.7.</span> <span class="nav-text">第七题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题-2"><span class="nav-number">3.8.</span> <span class="nav-text">第八题</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -2129,7 +2391,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共49.2k字</span>
+  <span class="post-count">博客全站共50.4k字</span>
 </div>
 
         
