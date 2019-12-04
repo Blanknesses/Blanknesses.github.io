@@ -3,7 +3,7 @@
   <entry>
     <title>计算方法第五章作业题</title>
     <url>/2019/12/03/CMW5/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><p>求一个4次多项式$p(x)$，使得$p(-1)=1,p(0)=1,p(1)=5,p(2)=13,p(-2)=29$
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><p>求一个4次多项式$p(x)$，使得<br>$p(-1)=1,p(0)=1,p(1)=5,p(2)=13,p(-2)=29$
 $$
 \begin{equation}
 \begin{aligned}
@@ -173,7 +173,7 @@ $$
 </tbody></table>
 
 $$
-\begin{equation}\begin{aligned}&\because y=\dfrac{x}{ax+b}\\&\therefore \dfrac{1}{y}=b\dfrac{1}{x}+a\\&法方程组为:\begin{bmatrix}5&15\\15&25\end{bmatrix}\begin{bmatrix}b\\a\end{bmatrix}=\begin{bmatrix}29\\100.2\end{bmatrix}\\&\Rightarrow \begin{bmatrix}b\\a\end{bmatrix}=\begin{bmatrix}7.78\\-0.66\end{bmatrix}\\&\Rightarrow y=\dfrac{x}{-0.66x+7.78}\end{aligned}\end{equation}
+\begin{equation}\begin{aligned}&\because y=\dfrac{x}{ax+b}\\&\therefore \dfrac{1}{y}=b\dfrac{1}{x}+a\\&法方程组为:\begin{bmatrix}5&15\\15&25\end{bmatrix}\begin{bmatrix}b\\a\end{bmatrix}=\begin{bmatrix}29\\100.2\end{bmatrix}\\&\Rightarrow \begin{bmatrix}b\\a\end{bmatrix}=\begin{bmatrix}0.64\\1.72\end{bmatrix}\\&\Rightarrow y=\dfrac{x}{1.72x+0.64}\end{aligned}\end{equation}
 $$
 
 
@@ -199,8 +199,8 @@ $$
 1&x_m&x_m^2&\cdots&x_m^m\\
 \end{array}\right|=
 \prod\limits_{0\le i < j\le m}(x_i-x_j)\not=0\\
-&\therefore (1)满足$Haar$条件\\
-(2)\quad &在[0,1]上取{0=x_0 < x_1 < x_2 < x_3=1}\\&D[x_0,x_1,x_2,x_3]=\left |\begin{array}{cccc}1&0&0&0\\1&x_1^2&x_1^4&x_1^6\\1&x_2^2&x_2^4&x_2^6\\1&1&1&1\end{array}\right|\not=0\\&\therefore (2)满足$Haar$条件\\(3)\quad &在[-1,1]上取{-1,0,1}\\&D[-1,0,1]=\left |\begin{array}{cccc}1&1&1\\1&0&0\\1&1&1\\\end{array}\right|=0\\&\therefore (3)不满足$Haar$条件\\\end{aligned}\end{equation}
+&\therefore (1)满足Haar条件\\
+(2)\quad &在[0,1]上取{0\le x_0 < x_1 < x_2 < x_3\le 1}\\&D[x_0,x_1,x_2,x_3]=\left |\begin{array}{cccc}1&x_0^2&x_0^4&x_0^6\\1&x_1^2&x_1^4&x_1^6\\1&x_2^2&x_2^4&x_2^6\\1&x_3^2&x_3^4&x_3^6\end{array}\right|\not=0\\&\therefore (2)满足Haar条件\\(3)\quad &在[-1,1]上取{-1,0,1}\\&D[-1,0,1]=\left |\begin{array}{cccc}1&1&1\\1&0&0\\1&1&1\\\end{array}\right|=0\\&\therefore (3)不满足Haar条件\\\end{aligned}\end{equation}
 $$
 
 
