@@ -53,11 +53,12 @@ $l_i(x)=\dfrac{\omega_{n+1}(x)}{(x-x_i)\omega'_{n+1}(x_i)}\quad \omega_{n+1}(x)=
 $$
 \begin{equation}
 \begin{aligned}
-\sum\limits_{i=0}^n x_i^kl_i(x)&=\sum\limits_{i=0}^n\dfrac{x_i^k\omega_{n+1}(x)}{(x-x_i)\omega'_{n+1}(x_i)}\\
-&=\dfrac{(x-x_1)\cdots(x-x_n)}{(x_0-x_1)\cdots(x_0-x_n)}x_0^k+\cdots+\dfrac{(x-x_0)\cdots(x-x_{n-1})}{(x_n-x_0)\cdots(x_n-x_{n-1})}x_n^k
+&\because  l_i(x)是Lagrange插值基函数\\
+&\therefore l_i(x)在其定义域上满足Haar条件\\
+&\therefore l_i(x_j)=\begin{cases}1\quad i=j\\0\quad i\not=j\end{cases}\quad i =1,2,\cdots,n;j=1,2,\cdots,n\\
+&\therefore\sum\limits_{i=0}^n x_i^kl_i(x)=x_i^k\\
 \end{aligned}
-\end{equation}
-$$
+\end{equation}$$
 </p>
 <h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2><p>求$[0,1]$上以$\rho(x)=1$为权函数的标准正交多项式系$\psi_0(x),\psi_1(x),\psi_2(x)$
 $$
