@@ -2999,7 +2999,7 @@ $$
 <p>的阶以及局部截断误差</p>
 
 $$
-\begin{equation}\begin{aligned}&k=2\\&\alpha_0=-b,\alpha_1=b-1,\alpha_2=1\\&\beta_0=\dfrac{(3b+1)}{4},\beta_1=0,\beta_2=\dfrac{(3+b)}{4}\\&\begin{cases}c_0=\alpha_0+\alpha_1+\alpha_0=2\\c_1=(\alpha_1+2\alpha_2)-(\beta_0+\beta_1+\beta_2)=b-1+2-b-1=0\\c_2=\dfrac{1}{2}(\alpha_1+4\alpha_2)-(\beta_1+2\beta_2)=\dfrac{b-1+4}{2}-\dfrac{3+b}{4}=0\\c_3=\dfrac{1}{6}(\alpha_1+8\alpha_2)-\dfrac{1}{2}(\beta_1+4\beta_2)=\dfrac{b-1+8}{6}-\dfrac{3+b}{2}\\\qquad=-\dfrac{b+1}{3}\\\end{cases}\\&阶为2，局部截断误差为R_{n+3}(h)=-\dfrac{b+1}{3}{6}h^3u^{(3)}(t_n)+O(h^4)\end{aligned}\end{equation}
+\begin{equation}\begin{aligned}&k=2\\&\alpha_0=-b,\alpha_1=b-1,\alpha_2=1\\&\beta_0=\dfrac{(3b+1)}{4},\beta_1=0,\beta_2=\dfrac{(3+b)}{4}\\&\begin{cases}c_0=\alpha_0+\alpha_1+\alpha_0=2\\c_1=(\alpha_1+2\alpha_2)-(\beta_0+\beta_1+\beta_2)=b-1+2-b-1=0\\c_2=\dfrac{1}{2}(\alpha_1+4\alpha_2)-(\beta_1+2\beta_2)=\dfrac{b-1+4}{2}-\dfrac{3+b}{4}=0\\c_3=\dfrac{1}{6}(\alpha_1+8\alpha_2)-\dfrac{1}{2}(\beta_1+4\beta_2)=\dfrac{b-1+8}{6}-\dfrac{3+b}{2}\\\qquad=-\dfrac{b+1}{3}\\\end{cases}\\&阶为2，局部截断误差为R_{n+3}(h)=-\dfrac{b+1}{3}h^3u^{(3)}(t_n)+O(h^4)\end{aligned}\end{equation}
 $$
 
 
