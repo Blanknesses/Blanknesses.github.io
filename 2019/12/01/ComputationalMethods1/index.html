@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法知识点归纳插值部分">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-16T14:45:26.687Z">
+<meta property="og:updated_time" content="2019-12-17T07:40:07.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法知识点（5-7）">
 <meta name="twitter:description" content="计算方法知识点归纳插值部分">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  13.4k
+                  14.2k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  69
+                  73
                 </span>
               
             </div>
@@ -1370,6 +1370,67 @@ $\begin{equation}
 <p>同理可得复化$Simpson$公式的余项为：</p>
 <p>$I-S_n=-\dfrac{b-a}{180}(\dfrac{h}{2})^4f^{(4)}(\eta)\quad \eta\in(a,b)$<br>$\lim\limits_{h\rightarrow 0}\dfrac{I-S_n}{h^4}=-\dfrac{1}{180}(\dfrac{h}{2})^4[f’’’(b)-f’’’(a)]$<br>当$n$充分大时，$I-S_n\approx -\dfrac{1}{180}[f’’’(b)-f’’’(a)]$</p>
 <p>对于复化$Cotes$公式<br>$I-C_n=-\dfrac{2(b-a)}{945}(\dfrac{h}{4})^6f^{(6)}(\eta)\quad \eta\in(a,b)$<br>$\lim\limits_{h\rightarrow 0}\dfrac{I-S_n}{h^6}=-\dfrac{2}{945}(\dfrac{h}{4})^6[f^{(5)}(b)-f^{(5)}(a)]$<br>当$n$充分大时，$I-C_n\approx -\dfrac{2}{945}(\dfrac{h}{4})^6[f^{(5)}(b)-f^{(5)}(a)]$</p>
+<h2 id="数值微分公式"><a href="#数值微分公式" class="headerlink" title="数值微分公式"></a>数值微分公式</h2><p>设已知$f(x)$在$n+1$互异节点$a\le x_0 &lt; x_0 &lt; x_1 &lt; \cdots &lt; x_n \le b$上的函数值<br>$f_i=f(x_i)\quad i=0,1,\cdots,n$<br>则有$Lagrange$插值<br>$f(x)=p_n(x)+\dfrac{f^{(n+1)}(\xi_x)}{n+1}\prod\limits_{j=0}^n(x-x_j)\quad \xi_x\in[a,b]$<br>两端求导得</p>
+$
+\begin{equation}
+\begin{aligned}
+f'(x)&=p_n'(x)+\dfrac{1}{n+1}[f^{(n+1)}(\xi_x)\prod\limits_{j=0}^n(x-x_j)]'\\
+&=p_n'(x)+\dfrac{1}{n+1}[\prod\limits_{j=0}^n(x-x_j)]'f^{(n+1)}(\xi_x)+\dfrac{1}{n+1}[f^{(n+1)}(\xi_x)]'\prod\limits_{j=0}^n(x-x_j)
+\end{aligned}
+\end{equation}
+$
+<p>而$[f^{(n+1)}(\xi_x)]’$无法确定</p>
+<p>当$x=x_k\quad k=0,1,\cdots,n$时，有</p>
+$
+\begin{equation}
+\begin{aligned}
+f'(x_k)&=p_n'(x)+\dfrac{1}{n+1}[\prod\limits_{j=0}^n(x-x_j)]'_{x=x_k}f^{(n+1)}(\xi_x)\\
+&=p_n'(x)+\dfrac{1}{n+1}[\prod\limits_{j=0,j\not=k}^n(x_k-x_j)]f^{(n+1)}(\xi_x)
+\end{aligned}
+\end{equation}
+$
+<p>取$f’(x_k)=p_n’(x_k)$<br>截断误差为$\dfrac{1}{n+1}[\prod\limits_{j=0,j\not=k}^n(x_k-x_j)]f^{(n+1)}(\xi_x)$<br>因为高次多项式插值不稳定，故多采用$n=1,2,4$的二，三，五点插值型求导公式</p>
+<ul>
+<li><p>两点公式<br>  当$n=1$时，假设$f’(x)$连续，$f’’(x)$存在，则<br>  $p_1(x)=f_0\dfrac{x-x_1}{x_0-x_1}+f_1\dfrac{x-x_0}{x_1-x_0}$<br>  $p_1’(x)=\dfrac{f_0}{x_0-x_1}+\dfrac{f_1}{x_1-x_0}=\dfrac{f_1-f_0}{x_1-x_0}=f[x_0,x_1]$<br>  记$h=x_1-x_0$，得带余项的两点公式</p>
+  $
+    \begin{equation}
+    \begin{aligned}
+    \begin{cases}
+    f'(x_0)=\dfrac{f_1-f_0}{h}-\dfrac{h}{2}f''(\xi)\\
+    f'(x_1)=\dfrac{f_1-f_0}{h}-\dfrac{h}{2}f''(\xi)\\
+    \end{cases}
+    \end{aligned}
+    \end{equation}
+    $</li>
+<li><p>三点公式<br>  当$n=2$时，取等距节点$x_k=x_0+kh\quad k=0,1,2$，若$f’’(x)$连续，$f’’’(x)$存在，则<br>  $p_1(x)=f_0\dfrac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}+f_1\dfrac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}+f_1\dfrac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}$<br>  $p_1’(x)=f_0\dfrac{2x-(x_1+x_2)}{(x_0-x_1)(x_0-x_2)}+f_1\dfrac{2x-(x_0+x_2)}{(x_1-x_0)(x_1-x_2)}+f_2\dfrac{2x-(x_0+x_1)}{(x_2-x_0)(x_2-x_1)}$<br>  即带余项的三点公式为</p>
+  $
+    \begin{equation}
+    \begin{aligned}
+    \begin{cases}
+    f'(x_0)=\dfrac{1}{2h}(-3f_0+4f_1-f_2)+\dfrac{h^2}{3}f'''(\xi)\\
+    f'(x_1)=\dfrac{1}{2h}(f_2-f_0)+\dfrac{h^2}{6}f'''(\xi)\\
+    f'(x_2)=\dfrac{1}{2h}(f_0-4f_1+3f_2)+\dfrac{h^2}{3}f'''(\xi)\\
+    \end{cases}
+    \end{aligned}
+    \end{equation}
+    $</li>
+<li><p>五点公式<br>  当$n=4$时，取等距节点$x_k=x_0+kh\quad k=0,1,2,3,4$<br>  若$f^{(4)}$连续，$f^{(5)}$存在，则带余项的五点公式为：</p>
+  $
+    \begin{equation}
+    \begin{aligned}
+    \begin{cases}
+    f'(x_0)=\dfrac{1}{12h}(-25f_0+48f_1-36f_2+16f_3-3f_4)+\dfrac{h^4}{5}f^{(5)}(\xi)\\
+    f'(x_1)=\dfrac{1}{12h}(-3f_0-10f_1+18f_2-6f_3+f_4)-\dfrac{h^4}{20}f^{(5)}(\xi)\\
+    f'(x_0)=\dfrac{1}{12h}(f_0-8f_1+8f_3-f_4)+\dfrac{h^4}{30}f^{(5)}(\xi)\\
+    f'(x_0)=\dfrac{1}{12h}(-f_0+6f_1-18f_2+10f_3+3f_4)-\dfrac{h^4}{20}f^{(5)}(\xi)\\
+    f'(x_0)=\dfrac{1}{12h}(3f_0-16f_1+36f_2-48f_3+25f_4)+\dfrac{h^4}{5}f^{(5)}(\xi)\\
+    \end{cases}
+    \end{aligned}
+    \end{equation}
+    $
+
+</li>
+</ul>
 <h2 id="Gauss-型求积公式"><a href="#Gauss-型求积公式" class="headerlink" title="$Gauss$型求积公式"></a>$Gauss$型求积公式</h2><p>形如$I_n(f)=\sum\limits_{k=0}^n A_kf(x_k)$插值型求积公式（节点不需等距）的代数精度至少为$n$</p>
 <p>在区间[-1,1]上的两点的求积公式的一般形式<br>$\int_{-1}^1 f(x)dx \approx A_0f(x_0)+A_1f(x_1)$<br>即两点的$Newton-Cotes$求积公式是<strong>梯形公式</strong><br>$\int_{-1}^1 f(x)dx \approx f(-1)+f(1)$<br>其代数精度为1</p>
 <p>若不限制等距节点，随意选取$x_0,x_1,A_0,A_1$，根据代数精度定义，分别取$f(x)=1,x,x^2,x^3$，并令</p>
@@ -1386,12 +1447,12 @@ A_0x_0^3+A_1x_1^3=\int_{-1}^1 x^3 dx=0\\
 \Rightarrow
 \begin{cases}
 A_0=A_1=1\\
-x_0=-\dfrac{1}{3}\\
-x_1=\dfrac{1}{3}
+x_0=-\dfrac{\sqrt{3}}{3}\\
+x_1=\dfrac{\sqrt{3}}{3}
 \end{cases}
 \end{aligned}
 \end{equation}$
-<p>即$\int_{-1}^1 f(x)dx \approx f(-\dfrac{1}{3})+f(\dfrac{1}{3})$<br>至少具有3次代数精度，取$f(x)=x^4$<br>$\int_{-1}^1 x^4dx=\dfrac{2}{5}\not=\dfrac{2}{9}=(-\dfrac{1}{3})^4+(\dfrac{1}{3})^4$<br>故具有3次代数精度</p>
+<p>即$\int_{-1}^1 f(x)dx \approx f(-\dfrac{\sqrt{3}}{3})+f(\dfrac{\sqrt{3}}{3})$<br>至少具有3次代数精度，取$f(x)=x^4$<br>$\int_{-1}^1 x^4dx=\dfrac{2}{5}\not=\dfrac{2}{9}=(-\dfrac{\sqrt{3}}{3})^4+(\dfrac{\sqrt{3}}{3})^4$<br>故具有3次代数精度，也为<font color="red"><strong>两点的$Gauss-Legendre$公式</strong></font></p>
 <p>如果用代数精度最高原则，通过求解$2n+2$阶非线性方程组来确定所有$x_0,x_1,\cdots,x_n$和$A_0,A_1,\cdots,A_n$共$2n+2$，就可以构造出具有$2n+1$次代数精度的数值积分公式<br>事实上，$n+1$个节点的求积公式，代数精度必小于$2n+2$<br>取$2n+2$次多项式$p_{2n+2}(x)=(x-x_0)^2\cdots(x-x_n)^2$<br>$I(p_{2n+2})=\int_a^b\rho(x)p_{2n+2}(x)dx&gt;0\not=I_n(p_{2n+2})=\sum\limits_{k=0}^nA_kp_{2n+2}(x_k)=0$</p>
 <p><strong>定义6.2</strong> 如果形如$I_n(f)=\sum\limits_{k=0}^n A_kf(x_k)$的求积公式具有代数精度$2n+1$次，则称其为$Gauss$型求积公式，并称其中的求积节点$x_k\quad k=0,1,\cdots,n$为$Gauss$点<br><strong>定理6.2</strong> 要使插值型求积公式<br>$\int_a^b\rho(x)f(x)dx=\sum\limits_{k=0}^nA_kf(x_k)+E_n(f)$<br>具有$2n+1$次代数精度，必须且只须以节点$x_0,x_1,\cdots,x_n$为零点的$n+1$次多项式<br>$\omega_{n+1}(x)=\prod\limits_{j=0}^n(x-x_j)$与所有次数不超过$n$的多项式在[a,b]上关于权函数$\rho(x)$正交<br>即</p>
 <ul>
@@ -1431,6 +1492,11 @@ x_1=\dfrac{1}{3}
 <li>不在$[-1.1]$区间，进行线性变换，变换到该区间 </li>
 <li>构造正交多项式</li>
 <li>求x再求A</li>
+</ul>
+<p><font color="red"><strong>特殊的$Gauss$求积公式</strong></font></p>
+<ul>
+<li>两点的$Gauss-Legendre$公式<br>  $\int_{-1}^1f(x)dx\approx f(\dfrac{\sqrt{3}}{3})+f(-\dfrac{\sqrt{3}}{3})$</li>
+<li>$Gauss-Chebyshev$公式为<br>  $\int_{-1}^1\dfrac{f(x)}{\sqrt{1-x^2}}dx\approx\dfrac{\pi}{n+1}\sum\limits_{k=0}^nf(cos\dfrac{(2k+1)\pi}{2n+2})$</li>
 </ul>
 
       
@@ -1668,7 +1734,7 @@ x_1=\dfrac{1}{3}
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插值与逼近"><span class="nav-number">1.</span> <span class="nav-text">插值与逼近</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插值问题"><span class="nav-number">1.1.</span> <span class="nav-text">插值问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lagrange插值公式"><span class="nav-number">1.2.</span> <span class="nav-text">Lagrange插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newton插值公式"><span class="nav-number">1.3.</span> <span class="nav-text">Newton插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插值余项"><span class="nav-number">1.4.</span> <span class="nav-text">插值余项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hermite插值"><span class="nav-number">1.5.</span> <span class="nav-text">Hermite插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分段低次插值"><span class="nav-number">1.6.</span> <span class="nav-text">分段低次插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值"><span class="nav-number">1.7.</span> <span class="nav-text">三次样条插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值及其收敛性"><span class="nav-number">1.8.</span> <span class="nav-text">三次样条插值及其收敛性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正交多项式"><span class="nav-number">1.9.</span> <span class="nav-text">正交多项式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的最佳平方逼近"><span class="nav-number">1.10.</span> <span class="nav-text">函数的最佳平方逼近</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据拟合的最小二乘法"><span class="nav-number">1.11.</span> <span class="nav-text">数据拟合的最小二乘法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插值函数应用"><span class="nav-number">2.</span> <span class="nav-text">插值函数应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数值求积公式及其代数精度"><span class="nav-number">2.1.</span> <span class="nav-text">数值求积公式及其代数精度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复化求积公式"><span class="nav-number">2.2.</span> <span class="nav-text">复化求积公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss-型求积公式"><span class="nav-number">2.3.</span> <span class="nav-text">$Gauss$型求积公式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插值与逼近"><span class="nav-number">1.</span> <span class="nav-text">插值与逼近</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插值问题"><span class="nav-number">1.1.</span> <span class="nav-text">插值问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lagrange插值公式"><span class="nav-number">1.2.</span> <span class="nav-text">Lagrange插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newton插值公式"><span class="nav-number">1.3.</span> <span class="nav-text">Newton插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插值余项"><span class="nav-number">1.4.</span> <span class="nav-text">插值余项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hermite插值"><span class="nav-number">1.5.</span> <span class="nav-text">Hermite插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分段低次插值"><span class="nav-number">1.6.</span> <span class="nav-text">分段低次插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值"><span class="nav-number">1.7.</span> <span class="nav-text">三次样条插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值及其收敛性"><span class="nav-number">1.8.</span> <span class="nav-text">三次样条插值及其收敛性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正交多项式"><span class="nav-number">1.9.</span> <span class="nav-text">正交多项式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的最佳平方逼近"><span class="nav-number">1.10.</span> <span class="nav-text">函数的最佳平方逼近</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据拟合的最小二乘法"><span class="nav-number">1.11.</span> <span class="nav-text">数据拟合的最小二乘法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插值函数应用"><span class="nav-number">2.</span> <span class="nav-text">插值函数应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数值求积公式及其代数精度"><span class="nav-number">2.1.</span> <span class="nav-text">数值求积公式及其代数精度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复化求积公式"><span class="nav-number">2.2.</span> <span class="nav-text">复化求积公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值微分公式"><span class="nav-number">2.3.</span> <span class="nav-text">数值微分公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss-型求积公式"><span class="nav-number">2.4.</span> <span class="nav-text">$Gauss$型求积公式</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1715,7 +1781,7 @@ x_1=\dfrac{1}{3}
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共54.6k字</span>
+  <span class="post-count">博客全站共57.1k字</span>
 </div>
 
         

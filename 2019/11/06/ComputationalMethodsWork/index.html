@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法作业题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-16T14:45:26.705Z">
+<meta property="og:updated_time" content="2019-12-18T12:49:46.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法作业">
 <meta name="twitter:description" content="计算方法作业题">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  7.1k
+                  8.9k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  41
+                  51
                 </span>
               
             </div>
@@ -460,7 +460,7 @@
       
 
       
-        <h1 id="第二章作业题"><a href="#第二章作业题" class="headerlink" title="第二章作业题"></a>第二章作业题</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><p>设$
+        <h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><p>设$
 \begin{equation}
 \begin{aligned}
 A=
@@ -1471,7 +1471,7 @@ cond_2(A)&=\Vert A \Vert_2\Vert A^{-1} \Vert_2=4
 \end{equation}
 $$
 
-<h1 id="第三章作业题"><a href="#第三章作业题" class="headerlink" title="第三章作业题"></a>第三章作业题</h1><h2 id="第一题-1"><a href="#第一题-1" class="headerlink" title="第一题"></a>第一题</h2><p>已知四阶矩阵$A$的特征值分别为$\pi,-\pi,0,0$，求$sinA,cosA$</p>
+<h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><h2 id="第一题-1"><a href="#第一题-1" class="headerlink" title="第一题"></a>第一题</h2><p>已知四阶矩阵$A$的特征值分别为$\pi,-\pi,0,0$，求$sinA,cosA$</p>
 $$
 \begin{equation}
 \begin{aligned}
@@ -2308,6 +2308,125 @@ $$
 $$
 
 
+<h1 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h1><h2 id="第一题-4"><a href="#第一题-4" class="headerlink" title="第一题"></a>第一题</h2><p>取7个节点的函数值，分别利用复化的梯形公式和复化$Simpson$公式计算积分</p>
+<p>$\int_0^{\frac{\pi}{2}}\dfrac{\sin x}{x}dx$的近似值$(\lim\limits_{x\rightarrow 0}\dfrac{\sin x}{x}=1)$
+
+$$
+\begin{equation}\begin{aligned}(1)\quad &复化梯形公式\\&取7个等距节点0,\dfrac{\pi}{12},\dfrac{2\pi}{12},\dfrac{3\pi}{12},\dfrac{4\pi}{12},\dfrac{5\pi}{12},\dfrac{\pi}{2}\\&\int_0^{\frac{\pi}{2}}\dfrac{\sin x}{x}dx=\dfrac{\pi}{24}(f(0)+2(f(\dfrac{\pi}{12})+f(\dfrac{2\pi}{12})+f(\dfrac{3\pi}{12})+f(\dfrac{4\pi}{12})+f(\dfrac{5\pi}{12}))+f(\dfrac{\pi}{2}))\\&\qquad\qquad\qquad = 1.368446\\(1)\quad &复化Simpson公式\\&7个节点，n=3\\&S_3=\dfrac{\pi}{36}(f(0)+2(f(\dfrac{2\pi}{12})+f(\dfrac{4\pi}{12}))+4(f(\dfrac{\pi}{12})+f(\dfrac{3\pi}{12})+f(\dfrac{5\pi}{12}))+f(\dfrac{\pi}{2}))\\&\quad = 1.370768\end{aligned}\end{equation}
+$$
+</p>
+<h2 id="第二题-4"><a href="#第二题-4" class="headerlink" title="第二题"></a>第二题</h2><p>确定求积公式$\int_{-1}^1f(x)dx\approx Af(-1)+Bf(x_1)$中的待定系数，使其代数精度尽可能高，并指出其代数精度</p>
+
+$$
+\begin{equation}\begin{aligned}&因为有3个未知数，故分别取f(x)=1,x,x^2\\&\begin{cases}\int_{-1}^11dx= 2 = A+B\\\int_{-1}^1xdx= 0 = -A+Bx_1\\\int_{-1}^1x^2dx= \dfrac{2}{3} = A+Bx_1^2\\\end{cases}\\&\Rightarrow\begin{cases}A=\dfrac{3}{2}\\B=\dfrac{1}{2}\\x_1=\dfrac{1}{3}\end{cases}\\&\therefore \int_{-1}^1f(x)dx\approx \dfrac{3}{2}f(-1)+\dfrac{1}{2}f(\dfrac{1}{3})\\&当f(x)=x^3时\\&\int_{-1}^1x^3dx = 0\not= -\dfrac{3}{2}+\dfrac{1}{2}\times\dfrac{1}{27}\\&所以代数精度为2\end{aligned}\end{equation}
+$$
+
+
+
+
+<h2 id="第三题-4"><a href="#第三题-4" class="headerlink" title="第三题"></a>第三题</h2><p>$\omega_0(x),\omega_1(x),\cdots,\omega_n(x),\cdots$是$[a,b]$上以$\rho(x)$为权函数的标准正交多项式系，$x_i(i=0,1,\cdots,n)$是$\omega_{n+1}(x)$的零点，$\int_a^b\rho(x)f(x)dx\approx\sum\limits_{k=0}^nA_kf(x_k)$是以$x_i(i=0,1,\cdots,n)$为节点的$Gauss$型求积公式，证明：当$0\le i &lt; j\le n$时，$\sum\limits_{k=0}^nA_k\omega_i(x_k)\omega_j(x_k)=0$</p>
+
+$$
+\begin{equation}\begin{aligned}&\int_a^b\rho(x)f(x)dx\approx\sum\limits_{k=0}^nA_kf(x_k)\\&具有(2n+1)次代数精度，而当0\le i < j\le n时deg(\omega_j(x)\omega_i(x))=i+j < 2n\\&因此根据正交多项式的正交性有\\&\sum\limits_{k=0}^nA_k\omega_j(x_k)\omega_i(x_k)=\int_a^b\rho(x)\omega_j(x)\omega_i(x)=0\end{aligned}\end{equation}
+$$
+
+
+
+<h2 id="第四题-4"><a href="#第四题-4" class="headerlink" title="第四题"></a>第四题</h2><p>利用$Gauss-Legendre$公式构造$Gauss$型求积公式</p>
+<p>$\int_0^1f(x)dx\approx A_0f(x_0)+A_1f(x_1)$</p>
+
+$$
+\begin{equation}\begin{aligned}&已知，两点Gauss-Legendre公式为\int_{-1}^1f(x)dx\approx f(\dfrac{\sqrt{3}}{3})+f(-\dfrac{\sqrt{3}}{3})\\&令t=2x-1,即x=\dfrac{t+1}{2}\\&\int_0^1f(x)dx=\dfrac{1}{2}\int_{-1}^1f(\dfrac{t+1}{2})dt\approx \dfrac{1}{2}f(\dfrac{\sqrt{3}+3}{6})+\dfrac{1}{2}f(-\dfrac{\sqrt{3}+3}{6})\end{aligned}\end{equation}
+$$
+
+
+
+
+<h2 id="第五题-4"><a href="#第五题-4" class="headerlink" title="第五题"></a>第五题</h2><p>利用三点$Gauss-Chebyshev$求积公式计算定积分：$\displaystyle\int_{-1}^1\dfrac{x^2}{\sqrt{1-x^2}}dx$的近似值</p>
+
+$$
+\begin{equation}\begin{aligned}&Gauss-Chebyshev公式为：\int_{-1}^1\dfrac{f(x)}{\sqrt{1-x^2}}dx\approx\dfrac{\pi}{n+1}\sum\limits_{k=0}^nf(cos\dfrac{(2k+1)\pi}{2n+2})\\&\because 三点Gauss-Chebyshev求积公式\\&\therefore n=2\\&\therefore \int_{-1}^1\dfrac{x^2}{\sqrt{1-x^2}}dx=\dfrac{\pi}{3}(\cos^2\dfrac{\pi}{6}+\cos^2\dfrac{3\pi}{6}+\cos^2\dfrac{5\pi}{6})\\&\qquad \qquad\qquad\qquad=\dfrac{\pi}{3}(\dfrac{3}{4}+0+\dfrac{3}{4})=\dfrac{\pi}{2}\\&因为n=2，所以Gauss-Chebyshev公式具有5次代数精度，故值精确，误差为0\end{aligned}\end{equation}
+$$
+
+
+
+
+<h2 id="第六题-4"><a href="#第六题-4" class="headerlink" title="第六题"></a>第六题</h2><p>用三点公式求$f(x)$求$f(x)=\dfrac{1}{(1+x)^2}$在$x=1.0,1.1,1.2$处的导数值，已知$f(1.0)=0.250000$，$f(1.1)=0.226757$，$f(1.2)=0.206612$</p>
+
+$$
+\begin{equation}\begin{aligned}&因为f(x)在[1.0,1.2]上f''(x)连续，f'''(x)存在\\&\therefore\begin{cases}f'(1.0)=\dfrac{1}{0.2}(-3\times 0.250000+4\times 0.226757-0.206612)=-0.247920\\f'(1.1)=\dfrac{1}{0.2}(0.206612-0.250000)=-0.216940\\f'(1.0)=\dfrac{1}{0.2}(0.250000-4\times 0.226757+3\times 0.206612)=-0.185960\\\end{cases}\end{aligned}\end{equation}
+$$
+
+
+
+
+<h2 id="第七题-4"><a href="#第七题-4" class="headerlink" title="第七题"></a>第七题</h2><p>确定下列插值型求积公式中的待定系数，并求其代数精度</p>
+<p>$\int_{-1}^1f(x)dx\approx A_0f(-1)+A_1f(0)+A_2f(1)$</p>
+
+$$
+\begin{equation}\begin{aligned}&因为存在3个待定系数，故取f(x)=1,x,x^2\\&\begin{cases}\int_{-1}^11dx=2= A_0+A_1+A_2\\\int_{-1}^1xdx=0= -A_0+A_2\\\int_{-1}^1x^2dx=\dfrac{2}{3}= A_0+A_2\\\end{cases}\\&\Rightarrow\begin{cases}A_0=\dfrac{1}{3}\\A_0=\dfrac{4}{3}\\A_0=\dfrac{1}{3}\\\end{cases}\\&取f(x)=x^3,有\\&\int_{-1}^1x^3dx=0= -\dfrac{1}{3}+\dfrac{1}{3}\\&取f(x)=x^4,有\\&\int_{-1}^1x^4dx=\dfrac{2}{5}\not= \dfrac{1}{3}+\dfrac{1}{3}\\&即代数精度为3\\\end{aligned}\end{equation}
+$$
+
+
+
+
+<h1 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h1><h2 id="第一题-5"><a href="#第一题-5" class="headerlink" title="第一题"></a>第一题</h2><p>设初值问题</p>
+$\begin{equation}
+\begin{aligned}
+\begin{cases}
+u'=at+b\quad 0 < t\le1\\
+u(0)=0
+\end{cases}
+\end{aligned}
+\end{equation}$
+
+<p>有解$u(t)=\dfrac{1}{2}at^2+bt$，若$t_n=nh$，$u_n$是由$Euler$方法得到的数值解，证明：</p>
+<p>$Euler$方法的整体截断误差为：$u(t_n)-u_n=\dfrac{1}{2}aht_n$
+$$
+\begin{equation}\begin{aligned}u(t_n)-u_n&=\dfrac{1}{2}at_n^2+bt_n-[u_{n-1}+h(at_{n-1}+b)]\\&=\dfrac{1}{2}at_n^2+bt_n-[u_{0}+h(at_{n-1}+b)+\cdots+h(at_{0}+b)]\\&=\dfrac{1}{2}at_n^2+bt_n-nhb+ah(t_0+\cdots+t_{n-1})\\&=\dfrac{1}{2}at_n^2-ah(t_0+\cdots+t_{n-1})\\&=\dfrac{1}{2}an^2h^2-ah[h+\cdots+(n-1)h]\\&=\dfrac{1}{2}an^2h^2-\dfrac{n(n-1)}{2}ah^2\\&=\dfrac{1}{2}anh^2\\&=\dfrac{1}{2}aht_n\end{aligned}\end{equation}
+$$
+
+
+</p>
+<h2 id="第四题-5"><a href="#第四题-5" class="headerlink" title="第四题"></a>第四题</h2><p>求线性多步法</p>
+<p>$u_{n+2}+(b-1)u_{n+1}-bu_n=\dfrac{h}{4}[(3+b)f_{n+2}+(3b+1)f_n]$</p>
+<p>的阶以及局部截断误差</p>
+
+$$
+\begin{equation}\begin{aligned}&k=2\\&\alpha_0=-b,\alpha_1=b-1,\alpha_2=1\\&\beta_0=\dfrac{(3b+1)}{4},\beta_1=0,\beta_2=\dfrac{(3+b)}{4}\\&\begin{cases}c_0=\alpha_0+\alpha_1+\alpha_0=2\\c_1=(\alpha_1+2\alpha_2)-(\beta_0+\beta_1+\beta_2)=b-1+2-b-1=0\\c_2=\dfrac{1}{2}(\alpha_1+4\alpha_2)-(\beta_1+2\beta_2)=\dfrac{b-1+4}{2}-\dfrac{3+b}{4}=0\\c_3=\dfrac{1}{6}(\alpha_1+8\alpha_2)-\dfrac{1}{2}(\beta_1+4\beta_2)=\dfrac{b-1+8}{6}-\dfrac{3+b}{2}\\\qquad=-\dfrac{b+1}{3}\\\end{cases}\\&阶为2，局部截断误差为R_{n+3}(h)=-\dfrac{b+1}{3}{6}h^3u^{(3)}(t_n)+O(h^4)\end{aligned}\end{equation}
+$$
+
+
+
+
+<h2 id="第五题-5"><a href="#第五题-5" class="headerlink" title="第五题"></a>第五题</h2><p>求线性多步法的绝对稳定区间</p>
+<p>$u_{n+2}-\dfrac{4}{3}u_{n+1}+\dfrac{1}{3}u_n=\dfrac{2h}{3}f_{n+2}$</p>
+<p>$u_{n+2}-\dfrac{4}{5}u_{n+1}-\dfrac{1}{5}u_n=\dfrac{h}{5}(2f_{n+2}+4f_{n+1})$</p>
+
+$$
+\begin{equation}
+\begin{aligned}
+(1)\quad &u_{n+2}-\dfrac{4}{3}u_{n+1}+\dfrac{1}{3}u_n=\dfrac{2h}{3}f_{n+2}\\
+&\rho(\lambda)=\lambda^2-\dfrac{4}{3}\lambda+\dfrac{1}{3},\sigma(\lambda)=\dfrac{2}{3}\lambda^2\\
+&\rho(\lambda)-\overline{h}\sigma(\lambda)=(1-\dfrac{2\overline{h}}{3})\lambda^2-\dfrac{4}{3}\lambda-\dfrac{-1}{3}=0\\
+&\lambda^2-\dfrac{\dfrac{4}{3}}{(1-\dfrac{2\overline{h}}{3})}\lambda-\dfrac{-1}{3(1-\dfrac{2\overline{h}}{3})}=0\\
+&\left|\dfrac{\dfrac{4}{3}}{(1-\dfrac{2\overline{h}}{3})}\right| < 1+\dfrac{1}{3(1-\dfrac{2\overline{h}}{3})} < 2\\
+&\therefore 4 < 3-2\overline{h}+1\\
+&\overline{h} < 0\\
+&即区间为(-\infty,0)\\
+(2)\quad &u_{n+2}-\dfrac{4}{5}u_{n+1}-\dfrac{1}{5}u_n=\dfrac{h}{5}(2f_{n+2}+4f_{n+1})\\
+&\rho(\lambda)=\lambda^2-\dfrac{4}{5}\lambda-\dfrac{1}{5},\sigma(\lambda)=\dfrac{2}{5}\lambda^2+\dfrac{4}{5}\lambda\\
+&\rho(\lambda)-\overline{h}\sigma(\lambda)=(1-\dfrac{2\overline{h}}{5})\lambda^2-\dfrac{4}{5}(1+\overline{h})\lambda-\dfrac{1}{5}=0\\
+&\lambda^2-\dfrac{\dfrac{4}{5}(1+\overline{h})}{(1-\dfrac{2\overline{h}}{5})}\lambda-\dfrac{\dfrac{1}{5}}{(1-\dfrac{2\overline{h}}{5})}=0\\
+&而让|\lambda| < 1的充要条件为\\
+&\left\vert \dfrac{\dfrac{4}{5}(1-\overline{h})}{(1-\dfrac{2\overline{h}}{5})} \right\vert = 1 - \dfrac{\dfrac{1}{5}}{(1-\dfrac{2\overline{h}}{5}\lambda)} < 2\\
+&\dfrac{1}{5}-(1-\dfrac{2\overline{h}}{5}) < \dfrac{4}{5}(1+\overline{h}) < (1-\dfrac{2\overline{h}}{5})-\dfrac{1}{5}\\
+&-4 < \overline{h} < 0\\
+&即区间为(-4,0)
+\end{aligned}
+\end{equation}$$
+
+
 
       
     </div>
@@ -2548,7 +2667,7 @@ $$
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章作业题"><span class="nav-number">1.</span> <span class="nav-text">第二章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题"><span class="nav-number">1.1.</span> <span class="nav-text">第一题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消去法"><span class="nav-number">1.1.1.</span> <span class="nav-text">消去法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Doolittle-分解"><span class="nav-number">1.1.2.</span> <span class="nav-text">$Doolittle$分解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题"><span class="nav-number">1.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题"><span class="nav-number">1.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题"><span class="nav-number">1.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题"><span class="nav-number">1.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题"><span class="nav-number">1.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题"><span class="nav-number">1.7.</span> <span class="nav-text">第七题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LU分解"><span class="nav-number">1.7.1.</span> <span class="nav-text">LU分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chelesky"><span class="nav-number">1.7.2.</span> <span class="nav-text">Chelesky</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三对角追赶法"><span class="nav-number">1.7.3.</span> <span class="nav-text">三对角追赶法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题"><span class="nav-number">1.8.</span> <span class="nav-text">第八题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九题"><span class="nav-number">1.9.</span> <span class="nav-text">第九题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十题"><span class="nav-number">1.10.</span> <span class="nav-text">第十题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章作业题"><span class="nav-number">2.</span> <span class="nav-text">第三章作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-1"><span class="nav-number">2.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题-1"><span class="nav-number">2.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题-1"><span class="nav-number">2.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-1"><span class="nav-number">2.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-1"><span class="nav-number">2.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题-1"><span class="nav-number">2.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题-1"><span class="nav-number">2.7.</span> <span class="nav-text">第七题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题-1"><span class="nav-number">2.8.</span> <span class="nav-text">第八题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章"><span class="nav-number">3.</span> <span class="nav-text">第四章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-2"><span class="nav-number">3.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题-2"><span class="nav-number">3.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题-2"><span class="nav-number">3.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-2"><span class="nav-number">3.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-2"><span class="nav-number">3.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题-2"><span class="nav-number">3.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题-2"><span class="nav-number">3.7.</span> <span class="nav-text">第七题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题-2"><span class="nav-number">3.8.</span> <span class="nav-text">第八题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章"><span class="nav-number">4.</span> <span class="nav-text">第五章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-3"><span class="nav-number">4.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题-3"><span class="nav-number">4.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题-3"><span class="nav-number">4.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-3"><span class="nav-number">4.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-3"><span class="nav-number">4.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题-3"><span class="nav-number">4.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题-3"><span class="nav-number">4.7.</span> <span class="nav-text">第七题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章"><span class="nav-number">1.</span> <span class="nav-text">第二章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题"><span class="nav-number">1.1.</span> <span class="nav-text">第一题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消去法"><span class="nav-number">1.1.1.</span> <span class="nav-text">消去法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Doolittle-分解"><span class="nav-number">1.1.2.</span> <span class="nav-text">$Doolittle$分解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题"><span class="nav-number">1.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题"><span class="nav-number">1.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题"><span class="nav-number">1.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题"><span class="nav-number">1.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题"><span class="nav-number">1.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题"><span class="nav-number">1.7.</span> <span class="nav-text">第七题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LU分解"><span class="nav-number">1.7.1.</span> <span class="nav-text">LU分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chelesky"><span class="nav-number">1.7.2.</span> <span class="nav-text">Chelesky</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三对角追赶法"><span class="nav-number">1.7.3.</span> <span class="nav-text">三对角追赶法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题"><span class="nav-number">1.8.</span> <span class="nav-text">第八题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九题"><span class="nav-number">1.9.</span> <span class="nav-text">第九题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十题"><span class="nav-number">1.10.</span> <span class="nav-text">第十题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章"><span class="nav-number">2.</span> <span class="nav-text">第三章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-1"><span class="nav-number">2.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题-1"><span class="nav-number">2.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题-1"><span class="nav-number">2.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-1"><span class="nav-number">2.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-1"><span class="nav-number">2.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题-1"><span class="nav-number">2.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题-1"><span class="nav-number">2.7.</span> <span class="nav-text">第七题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题-1"><span class="nav-number">2.8.</span> <span class="nav-text">第八题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章"><span class="nav-number">3.</span> <span class="nav-text">第四章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-2"><span class="nav-number">3.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题-2"><span class="nav-number">3.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题-2"><span class="nav-number">3.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-2"><span class="nav-number">3.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-2"><span class="nav-number">3.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题-2"><span class="nav-number">3.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题-2"><span class="nav-number">3.7.</span> <span class="nav-text">第七题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八题-2"><span class="nav-number">3.8.</span> <span class="nav-text">第八题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章"><span class="nav-number">4.</span> <span class="nav-text">第五章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-3"><span class="nav-number">4.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题-3"><span class="nav-number">4.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题-3"><span class="nav-number">4.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-3"><span class="nav-number">4.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-3"><span class="nav-number">4.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题-3"><span class="nav-number">4.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题-3"><span class="nav-number">4.7.</span> <span class="nav-text">第七题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第六章"><span class="nav-number">5.</span> <span class="nav-text">第六章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-4"><span class="nav-number">5.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二题-4"><span class="nav-number">5.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三题-4"><span class="nav-number">5.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-4"><span class="nav-number">5.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-4"><span class="nav-number">5.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六题-4"><span class="nav-number">5.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七题-4"><span class="nav-number">5.7.</span> <span class="nav-text">第七题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第七章"><span class="nav-number">6.</span> <span class="nav-text">第七章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题-5"><span class="nav-number">6.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四题-5"><span class="nav-number">6.2.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五题-5"><span class="nav-number">6.3.</span> <span class="nav-text">第五题</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -2595,7 +2714,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共54.6k字</span>
+  <span class="post-count">博客全站共57.1k字</span>
 </div>
 
         
