@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法知识点归纳插值部分">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-17T07:40:07.941Z">
+<meta property="og:updated_time" content="2019-12-21T13:25:53.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法知识点（5-7）">
 <meta name="twitter:description" content="计算方法知识点归纳插值部分">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  14.2k
+                  17.2k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  73
+                  89
                 </span>
               
             </div>
@@ -1498,6 +1498,153 @@ x_1=\dfrac{\sqrt{3}}{3}
 <li>两点的$Gauss-Legendre$公式<br>  $\int_{-1}^1f(x)dx\approx f(\dfrac{\sqrt{3}}{3})+f(-\dfrac{\sqrt{3}}{3})$</li>
 <li>$Gauss-Chebyshev$公式为<br>  $\int_{-1}^1\dfrac{f(x)}{\sqrt{1-x^2}}dx\approx\dfrac{\pi}{n+1}\sum\limits_{k=0}^nf(cos\dfrac{(2k+1)\pi}{2n+2})$</li>
 </ul>
+<h1 id="常微分方程的数值解法"><a href="#常微分方程的数值解法" class="headerlink" title="常微分方程的数值解法"></a>常微分方程的数值解法</h1><p>考虑常微分方程的初值问题</p>
+$
+    \begin{equation}
+    \begin{aligned}
+    \begin{cases}
+    u' = f(t,u)\quad a\le t \le b\\
+    u(a) = u_0
+    \end{cases}
+    \end{aligned}
+    \end{equation}
+$
+<p>或与其等价的积分方程<br>$u(t)=u_0 + \int_a^t f(\tau,u(\tau))d\tau$<br>若$f(t,u)$满足$Lipschitz$条件，即存在常数$L$，对任意$t\in [a,b]$，均有<br>$|f(t,u)-f(t,\overline{u})|\le L|u-\overline{u}|$，<strong>则解存在且唯一</strong></p>
+<p><strong>数值解法</strong>即为一种<strong>离散化方法</strong>，在一系列事先取定的$[a,b]$中的离散点$a &lt; t_1 &lt; t_2 &lt; \cdots &lt; t_M \le b$<br>通常取称等距，即$t_n = t_0 + nh\quad n = 1,\cdots,M$，$h$称为步长<br>在这些点上求出未知数$u(t)$的值$u(t_1),u(t_2),\cdots,u(t_N)$的近似值<br>$u_1,u_2,\cdots,u_N$，也称初值问题的数值解</p>
+<p>构造数值解一般采用数值积分法和$Taylor$展开法</p>
+<h2 id="线性单步法"><a href="#线性单步法" class="headerlink" title="线性单步法"></a>线性单步法</h2><p>将节点取为$t_n = a + nh\quad h = \dfrac{b-a}{N}\quad n = 0,1,2,\cdots,N$</p>
+$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+u(t_{n+1})=u(t_n)\int_{n-1}^{t_{n+1}} f(t,u(t))dt\\
+u(t_0)=u_0
+\end{cases}
+\end{aligned}
+\end{equation}
+$
+
+<ul>
+<li><p>显式$Euler$法<br>  对右端积分项使用<strong>左矩形求积公式</strong>，有<br>  $u(t_{n+1})=u(t_n)+\int_{n-1}^{t_{n+1}} f(t,u(t))dt\approx u(t_n) + hf(t_n,u(t_n))$<br>  令$u_{n+1} = u_n + hf(t_n,u_n)\quad n=0,1,2,\cdots,N-1$<br>  称为$Euler$求解公式，又称<strong>矩形公式</strong></p>
+</li>
+<li><p>隐式$Euler$法<br>  对右端积分项使用<strong>右矩形求积公式</strong>，有<br>  $u(t_{n+1})=u(t_n)\int_{n-1}^{t_{n+1}} f(t,u(t))dt\approx u(t_n) + hf(t_{n+1},u(t_{n+1}))$<br>  令$u_{n+1} = u_n + hf(t_{n+1},u_{n+1})\quad n=0,1,2,\cdots,N-1$<br>  称为隐$Euler$求解公式，又称<strong>右矩形公式</strong>，<strong>向后$Euler$公式</strong></p>
+</li>
+<li><p>梯形法<br>  对右端积分项使用<strong>梯形求积公式</strong>，有<br>  $u(t_{n+1})=u(t_n)\int_{n-1}^{t_{n+1}} f(t,u(t))dt\approx u(t_n) + \dfrac{h}{2}(f(t_{n},u(t_{n})) + f(t_{n+1},u(t_{n+1})))$<br>  令$u_{n+1} = u_n + \dfrac{h}{2}(f(t_{n},u_{n}) + f(t_{n+1},u_n)))\quad n=0,1,2,\cdots,N-1$<br>  称为梯形公式，又称<strong>梯形法</strong><br>  将显隐$Euler$公式做算术平均即可得梯形公式，即梯形公式也为隐方法</p>
+<p>  为了避免求解非线性代数方程，利用显式$Euler$法将梯形法显化，建立<strong>预测——矫正系统</strong></p>
+  $
+    \begin{equation}
+    \begin{aligned}
+    \begin{cases}
+    u(t_0)=u_0\\
+    \overline{u_{n+1}=u_{n} + hf(t_n,u_n)}\\
+    u_{n+1}=u_n+\dfrac{h}{2}(f(t_n,u_n)+f(t_{n+1},\overline{u_{n+1}}))
+    \end{cases}
+    \end{aligned}
+    \end{equation}
+    $
+<p>  称为改进的$Euler$法，其中$\overline{u_{n+1}}$称为<strong>预测值</strong>，$u_{n+1}$称为<strong>校正值</strong></p>
+</li>
+</ul>
+<p>如果$f(t,u(t))$关于$u$是线性函数，则隐式公式可以显式化<br>若：$u’(t)=tu+b$</p>
+<ul>
+<li>隐$Euler$公式：<br>  $u_{n+1}=u_n+h(t_{n+1}u_{n+1}+b)$<br>  $u_{n+1}=\dfrac{u_n+5h}{1-t_{n+1}h}\quad n=0,1,2.\cdots,N$</li>
+<li>梯形公式<br>  $u_{n+1}=u_n+\dfrac{h}{2}h(t_nu_n+t_{n+1}u_{n+1}+2b)$<br>  $u_{n+1}=\dfrac{1}{1-\dfrac{h}{2}t_{n+1}}((1+\dfrac{h}{2}t_n)u_n+5h)\quad n=0,1,2.\cdots,N$</li>
+</ul>
+<p>单步法一般可写成<br>$u_{n+1} = u_n + h\varphi(t_n,u_n.t_{n+1},u_{n+1};h)\quad n=0,1,2,\cdots,N-1$<br>其中$\varphi$是依赖于$u(t_{n+1})=u(t_n)+\int_{n-1}^{t_{n+1}} f(t,u(t))dt$右端的函数$f(t,u)$<br>当$\varphi = f(t_n,u_n)$时，为$Euler$法<br>当$\varphi = f(t_{n+1},u_{n+1})$时，为后$Euler$法<br>当$\varphi = \dfrac{1}{2}[f(t_n,u_n) + f(t_{n+1},u_{n+1})]$时，为梯形法</p>
+<p>线性单步法共同点：<br>要计算$t_{n+1}$的近似值$u_{n+1}$，每次只要用到前一个节点的值$u_n$<br>且$u_{n+1}=u_n+h\phi(t_n,u_n,t_{n+1},u_{n+1})\quad n=0,1,2,\cdots$关于$u_n,f_n,u_{n+1},f_{n+1}$是线性的</p>
+<p><strong>定义7.1</strong> 假设$u_i = u(t_i)\quad i=0,1,\cdots,n-1$，称$R_n(h)=u(t_n)-u_n$为求解公式第$n$步的局部截断误差<br><strong>定义7.2</strong> $E_n(h) = u(t_n)-u_n = \sum\limits_{i=1}^n R_i(h)$为求解公式在$t_n$点上的整体截断误差</p>
+<p><strong>注</strong>：局部截断误差与整体截断误差的$u_n$不是一个值</p>
+<p>若某求解公式的局部截断误差：$R_n(h)=O(h^{p+1})$，则可以证明其整体截断误差为：$E_n(h)=O(h^p)$，称该求解公式具有<strong>$p$阶精度</strong></p>
+$
+\begin{equation}
+\begin{aligned}
+R_n(h)=O(h^{p+1})\quad i=1,2,\cdots,n\\
+E_n(h)=\sum\limits_{i=1}^{n}R_i(h)=\sum\limits_{i=1}^{n}O(h^{p+1})=\sum\limits_{i=1}^{n}h\cdot O(h^p)\\
+&=h\cdot O(h^p)\cdot n = O(h^p)\cdot n \cdot \dfrac{b-1}{n}=O(h^p)
+\end{aligned}
+\end{equation}
+$
+
+<p>求解公式的精度越高，计算解的精确性可能越好。<br>$Euler$法具有<strong>一阶精度</strong>，梯形法具有<strong>二阶精度</strong></p>
+<h2 id="线性多步法"><a href="#线性多步法" class="headerlink" title="线性多步法"></a>线性多步法</h2><ul>
+<li>$Milne$公式<br>  若在区间$[t_n,t_{n+2}]$上，使用$Simpson$求积公式，得<br>  $\int_{t_n}^{t_{n+2}}f(t,u(t))dt \approx \dfrac{t_{n+2}-t_{n}}{6}[f(t_{n+2},u(t_{n+2}))+4f(t_{n+1},u(t_{n+1}))+f(t_n,u(t_n))]$<br>  令$u_{n+2}=u_n+ \dfrac{h}{3}[f(t_{n+2},u(t_{n+2}))+4f(t_{n+1},u(t_{n+1}))+f(t_n,u(t_n))]$<br>  可写成$u_{n+2}=u_n+ \dfrac{h}{3}(f_{n+2}+4f_{n+1}+f_n)$<br>  此为二步方法，需已知$u_n,u_{n+1}$，才可以计算出$u_{n+2}$的值</li>
+</ul>
+<p>线性多步法，一般公式为：<br>$ \sum\limits_{j=0}^{k}\alpha_j u_{n+j}=h \sum\limits_{k}^{j=0}\beta_jf_{n+1}\quad \alpha_k\not=0$<br>其中$f_{n+j}=f(t_{n+j},u_{n+j}),\alpha_j,\beta_j$是常数，$\alpha_0$和$\beta_0$不同时为0<br>因为上式关于$u_{n+j},f_{n+j}$是线性的，所以称为线性多步法<br>若$\beta_k=0$为显式，$\beta_k\not=0$则为隐式</p>
+<p>当$\alpha_0 = -1,\alpha_1=0,\alpha_2=1,\beta_0=\beta_1=\dfrac{1}{3},\beta_2 = \dfrac{4}{3}$时，就是$Miline$法</p>
+<h2 id="待定系数法"><a href="#待定系数法" class="headerlink" title="待定系数法"></a>待定系数法</h2><p>令$L_k[u(t);h]=\sum\limits_{k}^{j=0}[\alpha_ju_{n+j} - h\beta_ju’(t+jh)]$<br>设$u(t)$是常微分方程的初值问题的解，将$u(t+jh)$和$u’(t+jh)$在$t$点处进行$Taylor$展开<br>$u(t+jh)=u(t)+\dfrac{jh}{1!}u’(t)+\dfrac{(jh)^2}{2!}u’’(t)+\dfrac{(jh)^3}{3!}u^{(3)}(t)+\cdots$<br>$u’(t+jh)=u’(t)+\dfrac{jh}{1!}u’’(t)+\dfrac{(jh)^2}{2!}u^{(3)}(t)+\dfrac{(jh)^3}{3!}u^{(4)}(t)+\cdots$</p>
+<p>代入上式，并按$h$的同幂次合并同类项，得</p>
+$
+\begin{equation}
+\begin{aligned}
+\sum\limits_{k}^{j=0}\alpha_ju(t+jh)&= \sum\limits_{k}^{j=0}\alpha_ju(t)+\sum\limits_{k}^{j=0}\alpha_j \dfrac{jh}{1!}u'(t)+\cdots\\
+&\quad + \sum\limits_{k}^{j=0}\alpha_j \dfrac{(jh)^p}{p!}u^{(p)}(t)+\cdots\\
+\sum\limits_{k}^{j=0}\beta_jhu'(t+jh)&= \sum\limits_{k}^{j=0}\beta_jhu'(t)+\sum\limits_{k}^{j=0}\beta_j h\dfrac{jh}{1!}u''(t)+\cdots\\
+&\quad + \sum\limits_{k}^{j=0}\beta_j h\dfrac{(jh)^{p-1}}{p!}u^{(p)}(t)+\cdots\\
+&\sum\limits_{k}^{j=0}[\alpha_ju(t+jh)-h\beta_ju'(t+jh)]=\sum\limits_{k}^{j=0}\alpha_ju(t)+\sum\limits_{k}^{j=0}(j\alpha_j-beta_j)hu'(t) + \cdots \\
+&\quad + \sum\limits_{k}^{j=0}(\dfrac{1}{p!}j^p\alpha_j - \dfrac{1}{(p-1)!}j^{p-1}\beta_j)h^pu^{(p)}(y)+\cdots
+\end{aligned}
+\end{equation}
+$
+
+<p>整理后有：<br>$L_k[u(t);h]=c_0u(t)+c_1hu’(t)+c_2h^2u’’(t)+\cdots+c_ph^pu^{(p)}(t)+\cdots$<br>其中</p>
+$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+c_0 = \alpha_0 + \alpha_1 + \cdots + \alpha_k\\
+c_1 = \alpha_1 + 2 \alpha_2 + \cdots + k \alpha_k - (\beta_0 + \beta_1 + \cdots + \beta_k)\\
+c_2 = \dfrac{1}{2!}(\alpha_1 + 2^2 \alpha_2 + \cdots +k^2 \alpha_k) - (\beta_1 + 2 \beta_2 +\cdots + k \beta_k)\\
+\quad \vdots\\
+c_p = \dfrac{1}{p!}(\alpha_1 + 2^p \alpha_2 + \cdots + k^p \alpha_k)- \dfrac{1}{(p-1)!}(\beta_1+2^{p-1} \beta_2 + \cdots + k^{p-1} \beta_k)
+\end{cases}
+\end{aligned}
+\end{equation}
+$
+
+<p>若$u(t)$有$p+2$次连续微商，则可选取适当的$k$和$ \alpha_j, \beta_j$使得$c_0=c_1=c_2=\cdots =c_p=0,c_{p+1}\not=0$即可求解$ \alpha_j, \beta_j$的线性方程组<br>此时$L_k[u(t);h]=c_{p+1}h^{p+1}u^{({p+1})}(t)+O(h^{p+2})=R_n$<br>而$u’(t)=f(t,u(t))$，则$ \sum\limits_{k}^{j=0}[ \alpha_j u(t_n + jh) - h \beta_j f(t_n + jh, u(t_n + jh))] = R_n$<br>舍去余项$R_n$，并用$u_{n+j}$代替$u(t_n + jh)$，用$f_{n+j}$记$f(t{n+j},u_{n+j})$（即u’(t{n+j},u_{n+j})）<br>线性多步法的局部线段误差为：$R_{n+k} = L_k[u(t_n);h] = c_{p+1}h^{p+1}u^{(p+1)}(t_n)+O(h^{p+2})$<br>$c_{p+1}h^{p+1}u^{(p+1)}(t_n)$称为<strong>局部截断误差主项</strong><br>$c_{p+1}$称为<strong>局部截断误差主项系数</strong><br>其整体截断误差为$E_n=O(h^p)$，故称为$p$阶$k$步法<br><strong>线性$k$步法最高可达到$2k$阶精度（整体截断误差）</strong></p>
+<p>一般线性二步法公式的待定系数法<br>$k=2,\alpha_2=1$，记$ \alpha_0 = \alpha$，其余四个系数$ \alpha_1,\beta_0,\beta_1,\beta_2$由$c_0=c_1=c_2=c_3=0$确定</p>
+$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+c_0 = \alpha_0 + \alpha_1 + \alpha_2 = 0\\
+c_1 = \alpha_1 + 2 \alpha_2 - (\beta_0 + \beta_1 + \beta_2) = 0\\
+c_2 = \dfrac{1}{2}(\alpha_1 + 4 \alpha_2) - (\beta_1 + 2 \beta_2)\\
+c_3 = \dfrac{1}{6}(\alpha_1 + 8 \alpha_2) - \dfrac{1}{2}(\beta_1 + 4 \beta_2)\\
+\end{cases}\\
+\Rightarrow 
+\begin{cases}
+\alpha_1 = -(1 + \alpha)\\
+\beta_0 = -\dfrac{1}{12}(1+5 \alpha)\\
+\beta_1 = \dfrac{2}{3}(1- \alpha)\\
+\beta_2 = \dfrac{1}{12}(5+ \alpha)
+\end{cases}
+\end{aligned}
+\end{equation}
+$
+<p>所以一般二步法为：<br>$u_{n+2}-(1+\alpha)u_{n+1}+\alpha u_n =\dfrac{h}{12}[(5+\alpha)f_{n+2}+8(1-\alpha)f_{n+1}-(1+5 \alpha)f_n]$</p>
+<p>同理<br>$c_4 = \dfrac{1}{24}(\alpha_1 + 16 \alpha_2) - \dfrac{1}{6}(\beta_1 + 8 \beta_2) = \dfrac{1}{24}(1+\alpha)$<br>$c_5 = \dfrac{1}{120}(\alpha_1 + 32 \alpha_2) - \dfrac{1}{24}(\beta_1 + 16 \beta_2) = -\dfrac{1}{360}(17+13\alpha)$<br>当$ \alpha\not = -1$时$c_4\not=0$，是三阶二步法<br>当$\alpha = -1$时$c_4=0,c_5\not=0$，方法化为$u_{n+2}=u_n+\dfrac{h}{3}(f_{n+2}+4f_{n+2}+f_n)$，为四阶二步法，具有<strong><font color="red">最高阶数的二步法，称为Milne方法(Simpson公式)</font></strong></p>
+<p>此外，若取$ \alpha=0$，则有$u_{n+2}=u_{n+1}+\dfrac{h}{12}(5f_{n+2}+8f_{n1}-f_n)$<br>此为二步隐式$Adams$方法<br>若取$ \alpha=-5$，则有$u_{n+2}+4u_{n+1}-5u_n=2h(2f_{n1}+f_n)$<br>此为二步显式$Adams$方法</p>
+<p>用类似方法可以获得一些常用线性多步法的局部截断误差<br>当$k=1$时，梯形法（二阶隐式方法）<br>$u_{n+1}=u_n+\dfrac{h}{2}(f_{n+1}+f_n)$<br>其中可知$ \alpha_1=1, \alpha_0=-1,\beta_1=\beta_0=\dfrac{1}{2}$，从而有</p>
+$
+\begin{equation}
+\begin{aligned}
+\begin{cases}
+c_0=1-1=0\\
+c_1=1-(\dfrac{1}{2}+\dfrac{1}{2})=0\\
+c_2=(\dfrac{1}{2}-\dfrac{1}{2})=0\\
+c_3=\dfrac{1}{3!}-(\dfrac{1}{2}\times \dfrac{1}{2})=-\dfrac{1}{2}\not=0
+\end{cases}
+\end{aligned}
+\end{equation}
+$
+<p>其局部截断误差为$R_{n+1}(h)=-\dfrac{1}{12}h^3u^{(3)}(t_n)+O(h^4)$<br>同理，后$Euler$法（一阶隐式方法）其局部截断误差为：$R_{n+1}(h)=-\dfrac{1}{2}h^2u^{(2)}(t_n)+O(h^3)$<br>三步三阶显示$Adams$方法其局部截断误差为：$R_{n+3}(h)=\dfrac{3}{8}h^4u^{(4)}(t_n)+O(h^5)$<br>三步四阶隐式$Adams$方法其局部截断误差为：$R_{n+3}(h)=-\dfrac{19}{720}h^5u^{(5)}(t_n)+O(h^6)$<br>三步四阶$Hamming$方法：$u_{n+3}=\dfrac{1}{8}(9u_{n+2}-u_n)+\dfrac{3h}{8}(f_{n+3}+2f_{n+2}-f_{n+1})$<br>其局部截断误差为：$R_{n+3}(h)=-\dfrac{1}{40}h^5u^{(5)}(t_n)+O(h^6)$</p>
+<h2 id="收敛性，绝对稳定性与绝对稳定区域"><a href="#收敛性，绝对稳定性与绝对稳定区域" class="headerlink" title="收敛性，绝对稳定性与绝对稳定区域"></a>收敛性，绝对稳定性与绝对稳定区域</h2><p>对于单步法，当方法的阶$p\ge 1$时，有整体误差$E_n = u(t_n)-u_n=O(h^p)$故有$ \lim\limits_{h \rightarrow 0}E_n=0$，因此方法是收敛的<br>对于多步法，若方法是$k$步$p$阶法，那么是一个$k$阶差分方程，引入多步法的<strong>第一特征多项式</strong>和<strong>第二特征多项式</strong><br>$\rho(\lambda)= \sum\limits_{k}^{j=0}\alpha_j\lambda^j,\sigma(\lambda)= \sum\limits_{k}^{j=0}\beta_j\lambda^j$</p>
+<p><strong>定义7.3</strong> 若第一特征多项式$\rho(\lambda)$的所有根在单位圆内或圆上（|\lambda|\le 1），且位于单位圆周上的根都是单根，称多步法满足<strong>根条件</strong><br>现在考察多步法，将它用于解模型方程$u’=\mu u$可得<br>$ \sum\limits_{k}^{j=0}\alpha_ju_{n+j} = \mu h \sum\limits_{k}^{j=0}\beta_ju_{n+j}$<br>若取$ \overline{h}=\mu h$，则其特征方程为<br>$\rho(\lambda) - \overline{h}\sigma(\lambda)=0$<br>其中$\rho(\lambda)= \sum\limits_{k}^{j=0}\alpha_j\lambda^j \quad \sigma(\lambda)= \sum\limits_{k}^{j=0}\beta_j\lambda^j$</p>
+<p>由$k$阶线性差分方程的性质我们可以得到如下结论，若特征方程的根都在单位圆内$(|\lambda|&lt;1)$，则线性多步法关于$ \overline{h}=\mu h$绝对稳定，其绝对稳定域是复平面$ \overline{h}$上的区域：</p>
+$D={\overline{h}||\lambda_j( \overline{h})| < 1 \quad j=1,2,\cdots,k}$
+
+<p>$\lambda$的次数对应j的值<br><font color="red">实系数二次方程$\lambda^2-b\lambda-c=0$的根在单位圆的充要条件为$|b|&lt;1-c&lt;2$</font></p>
 
       
     </div>
@@ -1734,7 +1881,7 @@ x_1=\dfrac{\sqrt{3}}{3}
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插值与逼近"><span class="nav-number">1.</span> <span class="nav-text">插值与逼近</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插值问题"><span class="nav-number">1.1.</span> <span class="nav-text">插值问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lagrange插值公式"><span class="nav-number">1.2.</span> <span class="nav-text">Lagrange插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newton插值公式"><span class="nav-number">1.3.</span> <span class="nav-text">Newton插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插值余项"><span class="nav-number">1.4.</span> <span class="nav-text">插值余项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hermite插值"><span class="nav-number">1.5.</span> <span class="nav-text">Hermite插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分段低次插值"><span class="nav-number">1.6.</span> <span class="nav-text">分段低次插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值"><span class="nav-number">1.7.</span> <span class="nav-text">三次样条插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值及其收敛性"><span class="nav-number">1.8.</span> <span class="nav-text">三次样条插值及其收敛性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正交多项式"><span class="nav-number">1.9.</span> <span class="nav-text">正交多项式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的最佳平方逼近"><span class="nav-number">1.10.</span> <span class="nav-text">函数的最佳平方逼近</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据拟合的最小二乘法"><span class="nav-number">1.11.</span> <span class="nav-text">数据拟合的最小二乘法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插值函数应用"><span class="nav-number">2.</span> <span class="nav-text">插值函数应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数值求积公式及其代数精度"><span class="nav-number">2.1.</span> <span class="nav-text">数值求积公式及其代数精度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复化求积公式"><span class="nav-number">2.2.</span> <span class="nav-text">复化求积公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值微分公式"><span class="nav-number">2.3.</span> <span class="nav-text">数值微分公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss-型求积公式"><span class="nav-number">2.4.</span> <span class="nav-text">$Gauss$型求积公式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插值与逼近"><span class="nav-number">1.</span> <span class="nav-text">插值与逼近</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插值问题"><span class="nav-number">1.1.</span> <span class="nav-text">插值问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lagrange插值公式"><span class="nav-number">1.2.</span> <span class="nav-text">Lagrange插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newton插值公式"><span class="nav-number">1.3.</span> <span class="nav-text">Newton插值公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插值余项"><span class="nav-number">1.4.</span> <span class="nav-text">插值余项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hermite插值"><span class="nav-number">1.5.</span> <span class="nav-text">Hermite插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分段低次插值"><span class="nav-number">1.6.</span> <span class="nav-text">分段低次插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值"><span class="nav-number">1.7.</span> <span class="nav-text">三次样条插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次样条插值及其收敛性"><span class="nav-number">1.8.</span> <span class="nav-text">三次样条插值及其收敛性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正交多项式"><span class="nav-number">1.9.</span> <span class="nav-text">正交多项式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的最佳平方逼近"><span class="nav-number">1.10.</span> <span class="nav-text">函数的最佳平方逼近</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据拟合的最小二乘法"><span class="nav-number">1.11.</span> <span class="nav-text">数据拟合的最小二乘法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插值函数应用"><span class="nav-number">2.</span> <span class="nav-text">插值函数应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数值求积公式及其代数精度"><span class="nav-number">2.1.</span> <span class="nav-text">数值求积公式及其代数精度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复化求积公式"><span class="nav-number">2.2.</span> <span class="nav-text">复化求积公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值微分公式"><span class="nav-number">2.3.</span> <span class="nav-text">数值微分公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss-型求积公式"><span class="nav-number">2.4.</span> <span class="nav-text">$Gauss$型求积公式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常微分方程的数值解法"><span class="nav-number">3.</span> <span class="nav-text">常微分方程的数值解法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性单步法"><span class="nav-number">3.1.</span> <span class="nav-text">线性单步法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性多步法"><span class="nav-number">3.2.</span> <span class="nav-text">线性多步法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#待定系数法"><span class="nav-number">3.3.</span> <span class="nav-text">待定系数法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收敛性，绝对稳定性与绝对稳定区域"><span class="nav-number">3.4.</span> <span class="nav-text">收敛性，绝对稳定性与绝对稳定区域</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1781,7 +1928,7 @@ x_1=\dfrac{\sqrt{3}}{3}
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共57.1k字</span>
+  <span class="post-count">博客全站共60.1k字</span>
 </div>
 
         
