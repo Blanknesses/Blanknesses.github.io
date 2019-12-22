@@ -3336,7 +3336,7 @@ $$
 <ul>
 <li>$\Vert x \Vert_\infty = \max\limits_{1 \le x \le n}|x_i| \le \sum\limits_{i=1}^{n}|x_i| = \Vert x \Vert_1 \le \sum\limits_{i=1}^{n}\max\limits_{1 \le x \le n}|x_i| = n\Vert x \Vert_\infty$</li>
 <li>$\dfrac{1}{n}\Vert x \Vert_1^2 = \dfrac{1}{n}(\sum\limits_{i=1}^{n}|x_i|)^2 \le \sum\limits_{i=1}^{n}|x_i|^2 = \Vert x \Vert_2^2 \le (\sum\limits_{i=1}^{n}|x_i|)^2 = \Vert x \Vert_1^2$<br>注:第一步证明根据算术平均数$\le$平方平均数得到</li>
-<li>$\dfrac{1}{n}\Vert x \Vert_2^2 = \dfrac{1}{n}\sum\limits_{i=1}^{n}|x_i|^2 \le \sum\limits_{i=1}^{n}\max\limits_{1 \le x \le n}|x_i|^2 = \Vert x \Vert_\infty^2 \le \sum\limits_{i=1}^{n}|x_i|^2 = \Vert x \Vert_2^2$</li>
+<li>$\dfrac{1}{n}\Vert x \Vert_2^2 = \dfrac{1}{n}\sum\limits_{i=1}^{n}|x_i|^2 \le \max\limits_{1 \le x \le n}|x_i|^2 = \Vert x \Vert_\infty^2 \le \sum\limits_{i=1}^{n}|x_i|^2 = \Vert x \Vert_2^2$</li>
 </ul>
 <p><strong>定理1.2</strong> 向量范数等价性定理<br>设$\Vert \cdot \Vert_\beta$和$\Vert \cdot \Vert_\alpha$为$C^n$上的任意两种向量范数。则存在两个与向量无关的正常数$c_1 &gt; 0$和$c_2 &gt; 0$，使得下面不等式成立  <center>$c_1 \Vert x \Vert_\beta \le \Vert x \Vert_\alpha \le c_2\Vert x \Vert_\beta$</center><br>并称$\Vert \cdot \Vert_\alpha$和$\Vert \cdot \Vert_\beta$为$C^n$的等价范数。<br>由向量范数的等价性可知  <center>$\lim\limits_{x \to 0} \Vert x \Vert_\alpha = 0 \Leftrightarrow \Vert x \Vert_\beta = 0$</center></p>
 <h2 id="矩阵范数"><a href="#矩阵范数" class="headerlink" title="矩阵范数"></a>矩阵范数</h2><p><strong>定义1.5</strong> 定义在$C^{m \times n}$上的一个非负实值函数，记为$f(A)=\Vert A \Vert$，若该函数满足以下条件：<br>即对于任意矩阵A,B以及任意复常数$\alpha \in C$</p>
@@ -3367,15 +3367,15 @@ $$
 <p>即$A^HA$，$AA^H$为半正定复对称（Hermite）矩阵</p>
 <h2 id="矩阵范数与向量范数的相容性"><a href="#矩阵范数与向量范数的相容性" class="headerlink" title="矩阵范数与向量范数的相容性"></a>矩阵范数与向量范数的相容性</h2><p><strong>定义1.7</strong> 对于一种矩阵范数$\Vert \cdot \Vert_M$和一种向量范数$\Vert \cdot \Vert_V$，如果对任意$m \times n$矩阵$A$和任意$n$维向量$x$，满足  <center>$\Vert Ax \Vert_V \le \Vert A \Vert_M \Vert x \Vert_V$</center><br>则称矩阵范数$\Vert \cdot \Vert_M$与向量范数$\Vert \cdot \Vert_V$是相容的</p>
 <ul>
-<li>矩阵$m_1$范数与向量的$p$范数是相容的，即&emsp;$\Vert Ax \Vert_p \le \Vert A \Vert_{m_1} \Vert x \Vert_p$<br>证明：设$A = (a_{ij}) \in C^{n \times n}$，$x = [x_1, x_2,…,x_n]^T \in C^n$<br>&emsp;&emsp;&emsp;&emsp;$\Vert Ax \Vert_p^p = \sum\limits_{i = 1}^n|\sum\limits_{j=1}^n a_{ij} x_j|^p \le \sum\limits_{i = 1}^n(\sum\limits_{j=1}^n |a_{ij}||x_j|)^p $<br>&emsp;&emsp;&emsp;&emsp;$\le \sum\limits_{i = 1}^n[(\sum\limits_{j=1}^n |a_{ij}|)(\sum\limits_{j=1}^n|x_j|)]^p = (\sum\limits_{i = 1}^n\sum\limits_{j=1}^n |a_{ij}|)^p(\sum\limits_{j=1}^n|x_j|)^p$<br>&emsp;&emsp;&emsp;&emsp;$=\Vert A \Vert_{m_1}^p \Vert x \Vert_p^p$</li>
-<li>矩阵$F$范数与向量的$2$范数是相容的，即&emsp;&emsp;$\Vert Ax \Vert_2 \le \Vert A \Vert_{F} \Vert x \Vert_2$<br>证明：设$A = (a_{ij}) \in C^{n \times n}$，$x = [x_1, x_2,…,x_n]^T \in C^n$<br>&emsp;&emsp;&emsp;&emsp;$\Vert Ax \Vert_2^2 = \sum\limits_{i = 1}^n|\sum\limits_{j=1}^n a_{ij} x_j|^2 \le \sum\limits_{i = 1}^n(\sum\limits_{j=1}^n |a_{ij}||x_j|)^2 $<br>&emsp;&emsp;&emsp;&emsp;$\le \sum\limits_{i = 1}^n[(\sum\limits_{j=1}^n |a_{ij}|)(\sum\limits_{j=1}^n|x_j|)]^2 = (\sum\limits_{i = 1}^n\sum\limits_{j=1}^n |a_{ij}|)^2(\sum\limits_{j=1}^n|x_j|)^2$<br>&emsp;&emsp;&emsp;&emsp;$=\Vert A \Vert_{F}^2 \Vert x \Vert_2^2$</li>
+<li>矩阵$m_1$范数与向量的$p$范数是相容的，即&emsp;$\Vert Ax \Vert_p \le \Vert A \Vert_{m_1} \Vert x \Vert_p$<br>证明：设$A = (a_{ij}) \in C^{n \times n}$，$x = [x_1, x_2,…,x_n]^T \in C^n$<br>&emsp;&emsp;&emsp;&emsp;$\Vert Ax \Vert_p^p = \sum\limits_{i = 1}^n|\sum\limits_{j=1}^n a_{ij} x_j|^p \le \sum\limits_{i = 1}^n(\sum\limits_{j=1}^n |a_{ij}||x_j|)^p $<br>&emsp;&emsp;&emsp;&emsp;$\le \sum\limits_{i = 1}^n[(\sum\limits_{j=1}^n |a_{ij}|^p)(\sum\limits_{j=1}^n|x_j|^p)] = (\sum\limits_{i = 1}^n\sum\limits_{j=1}^n |a_{ij}|^p)(\sum\limits_{j=1}^n|x_j|^p)$<br>&emsp;&emsp;&emsp;&emsp;$=\Vert A \Vert_{m_1}^p \Vert x \Vert_p^p$</li>
+<li>矩阵$F$范数与向量的$2$范数是相容的，即&emsp;&emsp;$\Vert Ax \Vert_2 \le \Vert A \Vert_{F} \Vert x \Vert_2$<br>证明：设$A = (a_{ij}) \in C^{n \times n}$，$x = [x_1, x_2,…,x_n]^T \in C^n$<br>&emsp;&emsp;&emsp;&emsp;$\Vert Ax \Vert_2^2 = \sum\limits_{i = 1}^n|\sum\limits_{j=1}^n a_{ij} x_j|^2 \le \sum\limits_{i = 1}^n(\sum\limits_{j=1}^n |a_{ij}||x_j|)^2 $<br>&emsp;&emsp;&emsp;&emsp;$\le \sum\limits_{i = 1}^n[(\sum\limits_{j=1}^n |a_{ij}|^2)(\sum\limits_{j=1}^n|x_j|^2)] = (\sum\limits_{i = 1}^n\sum\limits_{j=1}^n |a_{ij}|^2)(\sum\limits_{j=1}^n|x_j|^2)$<br>&emsp;&emsp;&emsp;&emsp;$=\Vert A \Vert_{F}^2 \Vert x \Vert_2^2$</li>
 </ul>
-<p>证明方法类似，可以证明任意一种矩阵范数必然存在与之相容的向量范数</p>
+<p>证明方法类似，可以证明任意一种矩阵范数必然存在与之相容的向量范数<br>证明使用到$Cauchy-Schwarz$不等式：$ \left( \sum\limits_{n}^{i=1}a_kb_k \right) \ le \left( \sum\limits_{n}^{k=1} a_k^2 \right)\left( \sum\limits_{n}^{k=1} b_k^2 \right)$（$F$范数与$2$范数相容）<br>以及其更一般化的$Holder$不等式：$\left( \sum\limits_{n}^{i=1}a_kb_k \right) \ le \left( \sum\limits_{n}^{k=1} a_k^p \right)^{\dfrac{1}{p}}\left( \sum\limits_{n}^{k=1} b_k^2 \right)^{\dfrac{1}{p}}$</p>
 <h2 id="算子范数"><a href="#算子范数" class="headerlink" title="算子范数"></a>算子范数</h2><p><strong>定理1.3</strong> $C^n$上的任何向量范数$f(x) = \Vert x \Vert$，则$f(x)$为$x$的分量$x_1, x_2,…,x_n$的连续函数<br><strong>定理1.4</strong> 已知$C^m$和$C^n$上的同类向量范数$\Vert \cdot \Vert_v$，$A$为$m \times n$矩阵，定义  <center>$\Vert A \Vert_M = \max\limits_{x \not= 0}\dfrac{\Vert Ax \Vert_V}{\Vert x \Vert_V} = \max\limits_{\Vert x \Vert_V = 1}\Vert Ax \Vert_V$</center><br>则$\Vert A \Vert_M$是一种矩阵范数，且与已知的向量范数相容，称由上述关系式定义的矩阵范数为<strong>从属向量范数的矩阵范数</strong>简称<strong>从属范数</strong>或<strong>算子范数</strong><br>证明：</p>
 <ul>
 <li>等价性证明：<br>$\max\limits_{x \not= 0}\dfrac{\Vert Ax \Vert_V}{\Vert x \Vert_V} = \max\limits_{x \not= 0}\dfrac{1}{\Vert x \Vert_V}\cdot\Vert Ax \Vert_V = \max\limits_{x \not= 0}\Vert A(\dfrac{x}{\Vert x \Vert_V})\Vert_V = \max\limits_{\Vert y \Vert_V = 1}\Vert Ay \Vert_V$</li>
 <li>验证$\Vert A \Vert_M$与从属的向量范数相容：<br>$\Vert A \Vert_M \ge \dfrac{\Vert Ax \Vert_V}{\Vert x \Vert_V} \Rightarrow \Vert A \Vert_M\Vert x \Vert_V \ge \Vert Ax \Vert_V$</li>
-<li>非负性：<br>当$A=0$时，对任意$x \in C^n$，有$\Vert Ax \Vert_V = 0$，从而得$\Vert A \Vert_M = 0$；而当$A \not= 0$时，存在$x_0 \in C^n$，从而$\Vert A \Vert_M \ge \dfrac{\Vert Ax_0 \Vert_V}{\Vert x_0 \Vert_V \ge 0}$</li>
+<li>非负性：<br>当$A=0$时，对任意$x \in C^n$，有$\Vert Ax \Vert_V = 0$，从而得$\Vert A \Vert_M = 0$；而当$A \not= 0$时，存在$x_0 \in C^n$，从而$\Vert A \Vert_M \ge \dfrac{\Vert Ax_0 \Vert_V}{\Vert x_0 \Vert_V }\ge 0$</li>
 <li>齐次性<br>对任意的$\alpha \in C$，有<br>$\Vert \alpha A \Vert_M = \max\limits_{x \not= 0}\dfrac{\Vert (\alpha A)x \Vert_V}{\Vert x \Vert_V}=|\alpha|\cdot\max\limits_{x \not= 0}\dfrac{\Vert Ax \Vert_V}{\Vert x \Vert_V}=|\alpha|\cdot \Vert A \Vert_M$</li>
 <li>三角不等式<br>$\Vert A+B \Vert_M = \max\limits_{\Vert x \Vert_V = 1}\Vert (A+B)x \Vert_V $<br>$\ge \max\limits_{\Vert x \Vert_V = 1}\Vert Ax \Vert_V  + \max\limits_{\Vert x \Vert_V = 1}\Vert Bx \Vert_V  \ge \Vert A \Vert_M + \Vert B \Vert_M  $</li>
 <li>相容性<br>设$AB \not= 0$，且$A$，$B$分别为$m \times l$和$l \times n$阶矩阵，令$y = Bx \not= 0$<br>$\Vert AB \Vert_M = \max\limits_{\Vert x \Vert_V = 1}\Vert (AB)x \Vert_V = \max\limits_{\Vert x \Vert_V = 1}\dfrac{\Vert (AB)x \Vert_V}{\Vert Bx \Vert_V}\Vert Bx \Vert_V$<br>$\le \max\limits_{y \not= 0}\dfrac{\Vert Ay \Vert_V}{\Vert y \Vert_V}\max\limits_{\Vert x \Vert_V}\Vert Bx \Vert_M \le \Vert A \Vert_M \Vert B \Vert_M$</li>
@@ -3397,12 +3397,12 @@ $$
 <p><strong>酉矩阵$U$</strong><br>对于酉矩阵$U^HU=UU^H=I$，有如下结论：<br>$\Vert U\Vert_2 = 1 \quad \Vert AU \Vert_2 = \Vert UA \Vert_2 = \Vert A \Vert_2$<br>酉矩阵的范数不变性<br>证明：<br>$\Vert U\Vert_2^2 = \rho(U^HU) = \rho(I) = 1$<br>$\Vert UA \Vert_2^2 = \rho[(UA)^H(UA)] = \rho(A^HU^HUA) = \rho(A^HA) = \Vert A\Vert_2^2$<br>$\Vert AU \Vert_2^2 = \rho[(AU)^H(AU)] = \rho(U^HA^HAU) $<br>因为$U$可逆，所以$U^HA^HAU \sim UU^HA^HAUU^H = A^HA$，根据相似矩阵特征值相同，故<br>$\rho(U^HA^HAU) =  \rho(A^HA) = \Vert A\Vert_2^2$</p>
 <h2 id="矩阵范数的性质"><a href="#矩阵范数的性质" class="headerlink" title="矩阵范数的性质"></a>矩阵范数的性质</h2><p><strong>定理1.7</strong> 设$\Vert \cdot \Vert_M$为矩阵$C^{n \times n}$空间的任一矩阵范数，则对任意的$n$阶方阵$A$均有  <center>$\rho(A) \le \Vert A \Vert_M$</center><br>其中$\rho(A)$为方阵$A$的谱半径<br>证明：设$|\lambda|=\rho(A)$，则存在向量$x \not= 0$，满足$Ax = \lambda x$<br>从而$|\lambda| \cdot \Vert x \Vert_M = \Vert \lambda x \Vert_M = \Vert Ax \Vert_M \le \Vert A \Vert_M \Vert x\Vert_M \Rightarrow \rho(A) = |\lambda| \le \Vert A \Vert_M$</p>
 <p>当$A = A^T$时，有$\Vert A \Vert_2 = \sqrt{\lambda_{max}(A^TA)}=\sqrt{\lambda_{max}(A)^2}=\lambda_{max}(A)=\rho(A)$</p>
-<p><strong>定理1.8</strong> 对应扔给的$\eta &gt; 0$，则存在$C^{n \times n}$上的一种算子范数$\Vert \cdot \Vert_M$(依赖矩阵$A$和常数$\eta$)，使得  <center>$\Vert A \Vert_M \le \rho(A) + \eta$</center><br>上述定理针对矩阵$A$构造的矩阵范数$\Vert \cdot \Vert_M$，对于其他矩阵不一定成立</p>
+<p><strong>定理1.8</strong> 对于任给的$\eta &gt; 0$，则存在$C^{n \times n}$上的一种算子范数$\Vert \cdot \Vert_M$(依赖矩阵$A$和常数$\eta$)，使得  <center>$\Vert A \Vert_M \le \rho(A) + \eta$</center><br>上述定理针对矩阵$A$构造的矩阵范数$\Vert \cdot \Vert_M$，对于其他矩阵不一定成立</p>
 <p><strong>定理1.9</strong> 设$A \in C^{n \times n}$，如果有$C^{n \times n}$上的一种矩阵范数$\Vert \cdot \Vert$，使得$\Vert A \Vert &lt; 1$，则</p>
 <ul>
 <li>$I \pm A$可逆<br>  证明：若$I \pm A$奇异，则$\Delta(I \pm A)=0$，则存在特征值$\mu_k = 1 \pm \lambda_k = 0$，则$\lambda = \pm 1$是$A$的一个特征值，从而必有$\rho (A) \ge 1$</li>
 <li>$\Vert (I \pm A)^{-1} \Vert \le \dfrac{\Vert I \Vert}{1 - \Vert A \Vert}$<br>  证明：$(I \pm A)^{-1}(I \pm A) = I \Rightarrow (I \pm A)^{-1} \pm (I \pm A)^{-1}A = I$<br>  &emsp;&emsp;&emsp;$\Vert (I \pm A)^{-1} \Vert = \Vert I \mp (I \pm A)^{-1}A \Vert \le \Vert I \Vert + \Vert (I \pm A)^{-1}\Vert \Vert A \Vert$<br>  &emsp;&emsp;&emsp;$\Rightarrow \Vert (I \pm A)^{-1} \Vert \le \dfrac{\Vert I \Vert}{1 - \Vert A \Vert}$</li>
-<li>$\Vert I - (I \pm A)^{-1} \Vert \le \dfrac{\Vert A \Vert}{1 - \Vert A \Vert}$<br>  证明：$((I \pm A) - I)(I \pm A)^{-1} = (I \pm A) - I = \pm A$<br>  &emsp;&emsp;&emsp;$\Rightarrow I - (I \pm A)^{-1} = \dfrac{\pm A}{(I \pm A)}$<br>  &emsp;&emsp;&emsp;$\Vert (I - (I \pm A)^{-1}) \Vert = \Vert \dfrac{\pm A}{(I \pm A)} \Vert \le \dfrac{\vert A \vert}{1 - \vert A \vert}$<br>  注：根据三角不等式（不等关系）且因为$\vert A \vert &lt; 1$（去绝对值），所以$\vert I \pm A \vert \ge 1 - \vert A \vert $</li>
+<li>$\Vert I - (I \pm A)^{-1} \Vert \le \dfrac{\Vert A \Vert}{1 - \Vert A \Vert}$<br>  证明：$I - (I \pm A)^{-1} = ((I \pm A) - I)(I \pm A)^{-1} = \pm A(I \pm A)^{-1}$<br>  &emsp;&emsp;&emsp;$\Rightarrow A - A(I \pm A)^{-1} = A[\pm A(I \pm A)^{-1}]$<br>  &emsp;&emsp;&emsp;$\Vert (I - (I \pm A)^{-1}) \Vert = \Vert A(I \pm A)^{-1} \Vert = \Vert \dfrac{A}{I \pm A} \Vert \le \dfrac{\vert A \vert}{1 - \vert A \vert}$<br>  注：根据三角不等式（不等关系）且因为$\vert A \vert &lt; 1$（去绝对值），所以$\vert I \pm A \vert \ge 1 - \vert A \vert $</li>
 </ul>
 <h1 id="矩阵变换和计算"><a href="#矩阵变换和计算" class="headerlink" title="矩阵变换和计算"></a>矩阵变换和计算</h1><h2 id="高斯消去法"><a href="#高斯消去法" class="headerlink" title="高斯消去法"></a>高斯消去法</h2><p>利用初等行变换将增广矩阵$(A|B)$转化成上三角矩阵(U|c)，然后通过回代求解与$Ax=b$同解的三角方程组$Ux=c$<br>高斯消去法的计算量：设系数矩阵$A_{n \times n}$</p>
 <ul>
@@ -3417,7 +3417,7 @@ $$
 <li>$A^nB^nx=b$<br>利用高斯消元法做计算量为：&emsp;&emsp;$\dfrac{n^4}{3}$<br>利用$LU$分解做计算量为:&emsp;&emsp;&emsp;&emsp;$\dfrac{2n^3}{3}$</li>
 <li>$Ax = b_k$，$k = 1,2,3…,m$<br>利用高斯消元法做计算量为：&emsp;&emsp;$\dfrac{mn^3}{3}$<br>利用$LU$分解做计算量为:&emsp;&emsp;&emsp;&emsp;$\dfrac{n^3}{3}$</li>
 </ul>
-<h2 id="紧凑格式的-Doolittle-公式"><a href="#紧凑格式的-Doolittle-公式" class="headerlink" title="紧凑格式的$Doolittle$公式"></a>紧凑格式的$Doolittle$公式</h2>
+<h2 id="紧凑格式的Doolittle公式"><a href="#紧凑格式的Doolittle公式" class="headerlink" title="紧凑格式的Doolittle公式"></a>紧凑格式的Doolittle公式</h2>
 $\begin{bmatrix}
 {a_{11}}&{a_{12}}&{\cdots}&{a_{1n}}\\
 {a_{21}}&{a_{22}}&{\cdots}&{a_{2n}}\\
@@ -3460,10 +3460,11 @@ $$
 <p>高斯消去法的可行条件为：<strong>$A$的各阶顺序主子式均不为0</strong></p>
 <p><strong>定理2.1</strong> 矩阵$LU$分解的存在和唯一性<br>如果$n$阶矩阵$A$的各阶顺序主子式$D_k \quad k = 1,2,…,n-1$均不为零，则必有单位下三角矩阵$L$和上三角矩阵$U$，使得$A=LU$，且$L$和$U$唯一存在</p>
 <p><strong>Crout分解</strong> $LU$分解中$L$为下三角矩阵$U$为单位上三角矩阵<br><strong>LDU分解</strong> $L$为单位下三角矩阵$D$为非奇异对角矩阵$U$为单位上三角矩阵</p>
-<h2 id="利用-LU-分解求矩阵的逆"><a href="#利用-LU-分解求矩阵的逆" class="headerlink" title="利用$LU$分解求矩阵的逆"></a>利用$LU$分解求矩阵的逆</h2><p>如前文所述，令$x = [x_1, x_2,…,x_n], I = [I_1, I_2,…,I_n]$此处可以看成<br>$Ax = LUx_i = I_i \quad i = 1,2,…,n$</p>
+<p>$LU$分解获取$L$阵和$U$阵后，利用$U=DU’$，得$LDU$分解的$D$阵和$U$阵，其中$D$为$U$阵的对角元构成，$U’$为$U$对角元置$1$的单位上三角阵<br>然后利用$LDU$可得$Crout$分解的$L$阵和$U$阵，其中$L’=LD$，$U’=U$</p>
+<h2 id="利用LU分解求矩阵的逆"><a href="#利用LU分解求矩阵的逆" class="headerlink" title="利用LU分解求矩阵的逆"></a>利用LU分解求矩阵的逆</h2><p>如前文所述，令$x = [x_1, x_2,…,x_n], I = [e_1, e_2,…,e_n]$此处可以看成<br>$Ax = LUx_i = e_i \quad i = 1,2,…,n$</p>
 <p>同时，若某步$a_{kk}^{k-1} \not= 0$，但很小，会造成很大的舍入误差，无法使用$LU$分解</p>
 <h2 id="高斯列主元消去法"><a href="#高斯列主元消去法" class="headerlink" title="高斯列主元消去法"></a>高斯列主元消去法</h2><p>高斯列主元消去法即为在高斯消去法的基础上增加选主元的过程，即在第$k \quad k=1,2,…,n-1$步消元时，首先在第$k$列主对角元以下元素中挑选绝对值最大的数，经过初等行变换，使其成为$a_{kk}^{(k-1)}$，再继续消元<br>置换矩阵，左乘行交换，右乘列交换</p>
-<h2 id="带列主元的-LU-分解"><a href="#带列主元的-LU-分解" class="headerlink" title="带列主元的$LU$分解"></a>带列主元的$LU$分解</h2><p>根据如上定义，经过带列主元的$LU$分解，我们可以得到$L_{n-1}P_{n-1}…L_2P_2L_1P_1A = U$<br>但是$L_{n-1}P_{n-1}…L_2P_2L_1P_1$不是单位下三角矩阵，故经过如下改写：<br>$L_{n-1}(P_{n-1}L_{n-2}P_{n-1}^{-1})(P_{n-1}…P_2L_2P_2^{-1}…P_{n-1}^{-1})(P_{n-1}…P_2P_1)A = U$</p>
+<h2 id="带列主元的LU分解"><a href="#带列主元的LU分解" class="headerlink" title="带列主元的LU分解"></a>带列主元的LU分解</h2><p>根据如上定义，经过带列主元的$LU$分解，我们可以得到$L_{n-1}P_{n-1}…L_2P_2L_1P_1A = U$<br>但是$L_{n-1}P_{n-1}…L_2P_2L_1P_1$不是单位下三角矩阵，故经过如下改写：<br>$L_{n-1}(P_{n-1}L_{n-2}P_{n-1}^{-1})(P_{n-1}…P_2L_2P_2^{-1}…P_{n-1}^{-1})(P_{n-1}…P_2P_1)A = U$</p>
 <h2 id="对称正定矩阵的Cholesky分解法"><a href="#对称正定矩阵的Cholesky分解法" class="headerlink" title="对称正定矩阵的Cholesky分解法"></a>对称正定矩阵的Cholesky分解法</h2><p>正定（半正定）对称矩阵的定义和某些性质</p>
 <ul>
 <li>$A$为半正定对称矩阵，对任何$x \in R^n \quad (Ax, x) \ge 0$</li>
@@ -3472,7 +3473,7 @@ $$
 <li>$A$为正定(半正定)对称矩阵$\Longleftrightarrow$$A$的各阶主子式为正（非负）</li>
 </ul>
 <p>对于对称正定线性方程组，最常用<strong>Cholesky分解法</strong>也叫<strong>平方根法</strong><br>将对称正定矩阵$A$做$LU$分解，得到$L$和$U$，进一步可将$U$化为$D \tilde{U}$<br>因为$A$是对称矩阵，所以有$L(D\tilde{U}) = (L(D\tilde{U}))^T = \tilde{U}^T(DL^T)$<br>因为$LU$分解的唯一性，可得$L = \tilde{U}^T$，即$A = LDL^T$<br>令$\tilde{L} = LD^{\frac{1}{2}}$，可得$A = \tilde{L}\tilde{L}^T$</p>
-<p><strong>定理2.3</strong> Cholesky分解<br>对任意$n$阶对称正定矩阵A，均存在下三角矩阵$L$使$A=LL^T$成立，称其为对称正定矩阵$A$的Cholesky分解。进一步，如果规定$L$的对角元为正数，则L是唯一确定的。<br>因此，若线性方程组$Ax=b$的系数矩阵时对称正定的，便可按如下步骤求解：</p>
+<p><strong>定理2.3</strong> $Cholesky$分解<br>对任意$n$阶对称正定矩阵A，均存在下三角矩阵$L$使$A=LL^T$成立，称其为对称正定矩阵$A$的Cholesky分解。进一步，如果规定$L$的对角元为正数，则L是唯一确定的。<br>因此，若线性方程组$Ax=b$的系数矩阵时对称正定的，便可按如下步骤求解：</p>
 <ul>
 <li>A的Cholesky分解：$A = LL^T$</li>
 <li>$Ly=b \Rightarrow y$</li>
@@ -3504,7 +3505,7 @@ $
 $
 \begin{cases}
 a_{ii} = \sum\limits_{k = 1}^{i-1} l_{ik}^2 + l_{ii}^2 \\
-a_{ij} = \sum\limits_{k=1}^{j-1}l_{ik}l_{kj} + l_{ij}l_{jj}\quad j = 1,2,...,i-1 
+a_{ij} = \sum\limits_{k=1}^{j-1}l_{ik}l_{jk} + l_{ij}l_{jj}\quad j = 1,2,...,i-1 
 \end{cases}
 $
 
@@ -3514,12 +3515,12 @@ $
 \begin{cases}
 \\
 l_{ii} = \sqrt{a_{ii} - \sum\limits_{k = 1}^{i-1}l_{ik}^2}\\
-l_{ij} = \dfrac{a_{ij}-\sum\limits_{k=1}^{j-1}l_{ik}l_{kj}}{l_{jj}}\quad j = 1,2,...,i-1
+l_{ij} = \dfrac{a_{ij}-\sum\limits_{k=1}^{j-1}l_{ik}l_{jk}}{l_{jj}}\quad j = 1,2,...,i-1
 \end{cases}
 $
 
 
-<p>Cholesky分解计算$l$的次序<br>$l_{11},l_{21},..,l_{n1},l_{22},l{32},…,l_{n2},…,l_{nn}$</p>
+<p>Cholesky分解计算$l$的次序<br>$l_{11},l_{21},..,l_{n1},l_{22},l_{32},…,l_{n2},…,l_{nn}$</p>
 <p>因为$l_{ii} = \sqrt{a_{ii} - \sum\limits_{k = 1}^{i-1}l_{ik}^2} \ge 0$<br>所以$|l_ik| \le \sqrt{a_{ii}} \quad k = 1,2,…,i$<br>因此在分解过程中$L$元素的数量级不会增长，故<strong>平方根法</strong>通常是数值稳定的，不需要选取主元<br>其运算量为高斯消去法的一半</p>
 <p>利用$LDL^T$分解可以避免开方运算</p>
 <h2 id="三对角矩阵的三角分解"><a href="#三对角矩阵的三角分解" class="headerlink" title="三对角矩阵的三角分解"></a>三对角矩阵的三角分解</h2><p>三对角矩阵，对其进行$LU$分解</p>
@@ -3615,7 +3616,7 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
 <li>$(Ax,Ay)=y^TA^TAx = (x,y)$</li>
 </ul>
 <p>由矩阵的条件数定义可知，正交矩阵是性态最好的矩阵，例：$cond_2(A) = 1$<br>若能用正交矩阵代替高斯消去过程的单位下三角矩阵，即$Q_{n-1}…Q_2Q_1A = R$，记$Q^T=Q_{n-1}…Q_2Q_1$，则有$A=QR$<br>且$cond_2(A)=cond_2(QR)=cond_2(R)$，因此变换后所得的矩阵$R$条件数不变，故该计算过程具有数值稳定性</p>
-<p><strong>初等矩阵</strong><br>$E(u，v;\alpha) = I - \alpha uv^H \quad u,v \in C^n, \alpha \in C$<br>$uv^H$是一个秩为1的矩阵，$1 \le rank(uv^H) \le rank(u) = 1$，其特征值为$v^Hu,0,0,..,0$<br>$(uv^H)u = u(v^Hu) = (v^Hu)u$ 结合律，数乘列向量等于列向量乘数<br>$\lambda = v^Hu \not= 0$是矩阵$uv^H$的唯一非零特征值</p>
+<p><strong>初等矩阵</strong><br>$E(u，v;\alpha) = I - \alpha uv^H \quad u,v \in C^n, \alpha \in C$<br>$uv^H$是一个秩为1的矩阵，$1 \le rank(uv^H) \le rank(u) = 1$，其特征值为$v^Hu,0,0,..,0$<br>$(uv^H)u = u(v^Hu) = (v^Hu)u$ 结合律交换律，数乘列向量等于列向量乘数<br>$\lambda = v^Hu \not= 0$是矩阵$uv^H$的唯一非零特征值</p>
 <p><strong>Householder变换矩阵</strong><br><strong>定义2.4</strong> 设$\omega \in R^n \quad \omega \not= 0 $称初等矩阵  <center>$H(\omega) = I - \dfrac{2}{\omega^T\omega}\omega\omega^T$</center><br>为Householder矩阵（简称H阵），或称其为Householder变换<br>实际上因为$\omega^T\omega = \Vert \omega \Vert_2^2$，所以原式为$$H(\omega) = I - \dfrac{2}{\Vert \omega \Vert_2^2}\omega\omega^T$$<br>特别的，令$\omega = (e_i - e_j)$则$\Vert \omega \Vert_2^2 = 2$，原式为$H(\omega)=I - (e_i - e_j)(e_i - e_j)^T$ 为一个初等<strong>置换矩阵</strong></p>
 <p><strong>Householder性质</strong></p>
 <ul>
@@ -3636,7 +3637,7 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
         $\begin{equation}
           \begin{aligned}
             \Vert y \Vert_2^2 = y^Ty &= (H(\omega)x)^T(H(\omega)x) \\
-            &=x^TH(\omega)^TH(\omega)x
+            &=x^TH(\omega)^TH(\omega)x\\
             &=x^Tx = \Vert x \Vert_2^2
         \end{aligned}
         \end{equation}$
@@ -3644,7 +3645,7 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
 <p>   故称Householder矩阵为镜面反射变换</p>
 </li>
 </ul>
-<p><strong>镜面反射变换几何意义</strong><br>对任意$x$，可以找到一个平面$\pi$，使$x$由这个发出，对这个平面取单位法向量$\omega \quad \Vert \omega \Vert = 1$，做$u$垂直于$\pi$，$v \in \pi$，有$u = \lambda \omega \quad x = u + v$<br>$H(\omega)x = (I -2\omega\omega^T)x = u + v -2\omega\omega^Tu - 2\omega\omega^Tv$<br>因为$u = \lambda \omega \quad v \perp \omega$<br>所以$H(\omega)x = u + v - 2 \omega \omega^T \lambda \omega =u + v -2 \lambda \omega = u + v - 2u = -u + v$</p>
+<p><strong>镜面反射变换几何意义</strong><br>对任意$x$，可以找到一个平面$\pi$，使$x$由这个发出，对这个平面取单位法向量$\omega \quad \Vert \omega \Vert_2 = 1$，做$u$垂直于$\pi$，$v \in \pi$，有$u = \lambda \omega \quad x = u + v$<br>$H(\omega)x = (I -2\omega\omega^T)x = u + v -2\omega\omega^Tu - 2\omega\omega^Tv$<br>因为$u = \lambda \omega \quad v \perp \omega$<br>所以$H(\omega)x = u + v - 2 \omega \omega^T \lambda \omega =u + v -2 \lambda \omega = u + v - 2u = -u + v$</p>
 <p>两个<strong>同等长度</strong>的已知向量$x$和$y$，寻找H阵使其构成镜面反射关系，即为寻找法向量$\omega$，而取$\omega = x-y$即可满足<br>计算$H(\omega)$的方法需利用如下性质：</p>
 <ul>
 <li>$\Vert x \Vert_2 = \Vert y \Vert_2$</li>
@@ -3653,15 +3654,15 @@ $H_n = (h_{ij})_{n \times n} = (\dfrac{1}{i + j -1})_{n \times n} \quad i,j=1,2,
 </ul>
 <p>对$H$阵性质3进行扩展</p>
 <ul>
-<li>设$x = (x_1,x_2,…,x_n)^T \in R^n$且$x\not=0$，取$\omega = x \pm \Vert x \Vert_2e_1$则<br>  $H(\omega) = H(x \pm \Vert x \Vert_2e_1)x = \pm\Vert x \Vert_2e_1$<br>  $e^1$是一个方向向量，$x$的镜面反射在$e_1$方向上，则$y=\Vert x \Vert e_1$，且，这里有两个方向（$e_1$正向与$e_1$反向）<br>  与$e_1$正向时，$\omega = x - y = x - \Vert x \Vert e_1$，与$e_1$反向时，$\omega = x + y = x + \Vert x \Vert e_1$</li>
+<li>设$x = (x_1,x_2,…,x_n)^T \in R^n$且$x\not=0$，取$\omega = x \pm \Vert x \Vert_2e_1$则<br>  $H(\omega) = H(x \pm \Vert x \Vert_2e_1)x = \pm\Vert x \Vert_2e_1$<br>  $e^1$是一个方向向量，$x$的镜面反射在$e_1$方向上，则$y=\Vert x \Vert e_1$，且，这里有两个方向（$e_1$正向与$e_1$反向）<br>  与$e_1$正向时，$\omega = x - y = x - \Vert x \Vert e_1$<br>  与$e_1$反向时，$\omega = x + y = x + \Vert x \Vert e_1$</li>
 </ul>
 <p><strong>推论2.1</strong>设$x=(x_1,x_2,…,x_n)^T\in C^n $且$x\not=0$，则存在Householder矩阵$H(\omega)=I - \dfrac{2}{\omega^T\omega}\omega\omega^T$，使得$H(\omega)x=\alpha e_1$<br>其中$|\alpha|=\Vert x \Vert_2$，且$\alpha x^He_1$为实数，此为复Householder矩阵消元    </p>
 <p>计算复$H(\omega)$的方法需利用如下性质：</p>
 <ul>
 <li>$\Vert x \Vert_2 = \Vert y \Vert_2$</li>
-<li>$|\alpha| = \Vert x \Vert_2$，注此处获取的$|\alpha|$暂定为整</li>
-<li>$|\alpha|x^He_1$ 为实数 $\Rightarrow |\alpha|x_1 $为实数获取$\alpha$实际值</li>
-<li>$\omega = x-|\alpha|e_1$ </li>
+<li>$|\alpha| = \Vert x \Vert_2$，注此处获取的$\alpha$暂定为正</li>
+<li>$\alpha x^He_1$ 为实数 $\Rightarrow \alpha x_1 $为实数获取$\alpha$实际值</li>
+<li>$\omega = x-\alpha e_1$ </li>
 <li>$H(\omega) = I - \dfrac{2}{\omega^T\omega}\omega\omega^T $</li>
 </ul>
 <h2 id="矩阵的QR分解"><a href="#矩阵的QR分解" class="headerlink" title="矩阵的QR分解"></a>矩阵的QR分解</h2><p>令矩阵$A = {x_1,x_2,…,x_n}$<br>求$x_1$的$H$阵，求得后，将$A$分块，求分块后$A^{(1)}$的$x_1$，即原降一阶$x_2$的$H$阵，以此类推，变化过程如下：</p>
@@ -3847,11 +3848,11 @@ $$
 <p>其中$I$为$\alpha_i \times \alpha_i$的单位矩阵，$C$是$\alpha_i \times \alpha_i$的矩阵，$D$是$(n - \alpha_i) \times (n - \alpha_i)$的矩阵，从而有<br>$$det(zI-B)=det(zI-\lambda_i I)det(zI-D)=(z-\lambda_i)^\alpha_idet(zI-D)$$<br>$det()$为求行列式<br>因此，作为$B$的特征值$\lambda_i$的代数重复度至少为$\alpha_i$，由于相似变化不改变重数，所以$A$的特征值$\lambda_i$的代数重复度满足$m_i \ge \alpha_i$<br>解题过程中，$m_i$直接根据求特征值获取，而$\alpha_i$可以通过计算代数余子式，获取秩，利用$\alpha_i=n-r(\lambda_i I -A)$获取，或者直接求解矩阵$A$的零空间$N(\lambda_i I - A)$的维数（非零解向量数）获取</p>
 <p><strong>定义2.7</strong> 设$A$为$n$阶方阵，$\lambda_i$为其特征值，$m_i$和$\alpha_i$分别为其代数重复度和几何重复度。如果$m_i=\alpha_i$，则称$\lambda_i$为<strong>半单</strong>的；如果$m_i &gt; \alpha_i$，则称$\lambda_i$是亏损的<br>如果矩阵$A$的某一个特征值代数重复度为1，则它一定为半单的，大于1，可能是半单的</p>
 <p><strong>定理2.12</strong> $n$阶方阵$A$可对角化的充要条件是每一个特征值$\lambda_i$都是半单的，即$m_i=\alpha_i \quad i=1,2,\cdots,s$。$A$是不可对角化的矩阵的充要条件是它存在亏损的特征值，即存在$i_0$使得$m_i&gt;\alpha_i$<br>所以称不可对角化的矩阵为亏损矩阵</p>
-<h2 id="矩阵的-Jordan-分解"><a href="#矩阵的-Jordan-分解" class="headerlink" title="矩阵的$Jordan$分解"></a>矩阵的$Jordan$分解</h2><p><strong>定理2.13</strong> 设$A$为$n$阶方阵，则存在$n$阶可逆矩阵使得$A=TJT^{-1}$<br>其中$J=diag\{J_{n_1}(\lambda_1),J_{n_2}(\lambda_2),\cdots,J_{n_k}(\lambda_k)\},n_1+n_2+\cdots+n_k=n$<br>称其为矩阵$A$的$Jordan$分解，$Jordan$阵$J$称为$A$的$Jordan$标准型，$T$称为变化矩阵<br>矩阵$A$的$Jordan$标准型如果不计$Jordan$块的排列次序，则是确定唯一的</p>
+<h2 id="矩阵的Jordan分解"><a href="#矩阵的Jordan分解" class="headerlink" title="矩阵的Jordan分解"></a>矩阵的Jordan分解</h2><p><strong>定理2.13</strong> 设$A$为$n$阶方阵，则存在$n$阶可逆矩阵使得$A=TJT^{-1}$<br>其中$J=diag\{J_{n_1}(\lambda_1),J_{n_2}(\lambda_2),\cdots,J_{n_k}(\lambda_k)\},n_1+n_2+\cdots+n_k=n$<br>称其为矩阵$A$的$Jordan$分解，$Jordan$阵$J$称为$A$的$Jordan$标准型，$T$称为变化矩阵<br>矩阵$A$的$Jordan$标准型如果不计$Jordan$块的排列次序，则是确定唯一的</p>
 <p>注：根据相似矩阵特征值相同，使用$Jordan$标准型的对角元素就是$A$的特征值，而不同的$Jordan$块的对角元素$\lambda_i$可能相同，所以$\lambda_i$不一定是$A$的$n_i$重特征值。一般特征值$\lambda_i$的重数大于等于$n_i$</p>
 <p><strong>$Jordan$标准型</strong><br>$Jordan$标准型是一个块对角矩阵，其对角元为矩阵$J$的特征值<br>对于特征值$\lambda_i$，其<strong>代数重复度</strong>是$Jordan$标准型中以$\lambda_i$为特征值的$Jordan$块阶数的和，其<strong>几何重复度</strong>为$\lambda_i$为特征值的$Jordan$块个数</p>
-<p><strong>定理2.14</strong>设$A$为$n$阶方阵，$\lambda_i$为其特征值，则$A$的$Jordan$标准型$J$中以$\lambda_i$为特征值，阶数为$l$的$Jardan$块的个数为：<br>$$r_{l+1}+r{l-1}-2r_l$$<br>其中$r_l=rank(\lambda_i I-A)^l, r_0=rank(\lambda_i I -A )^0=rank(I)=n$</p>
-<h2 id="关于变换矩阵-T"><a href="#关于变换矩阵-T" class="headerlink" title="关于变换矩阵$T$"></a>关于变换矩阵$T$</h2><p>在求出$A$的Jordan标准型后，由$A=TJT^{-1}$或$AT=TJ$，将$T$按$J$的对角线上的Jordan块相应分块为$T=(T_1,T_2,\cdots,T_k)$，其中$T_i$为$n\times n_i$型矩阵。则有</p>
+<p><strong>定理2.14</strong>设$A$为$n$阶方阵，$\lambda_i$为其特征值，则$A$的$Jordan$标准型$J$中以$\lambda_i$为特征值，阶数为$l$的$Jordan$块的个数为：<br>$$r_{l+1}+r{l-1}-2r_l$$<br>其中$r_l=rank(\lambda_i I-A)^l, r_0=rank(\lambda_i I -A )^0=rank(I)=n$</p>
+<h2 id="关于变换矩阵T"><a href="#关于变换矩阵T" class="headerlink" title="关于变换矩阵T"></a>关于变换矩阵T</h2><p>在求出$A$的Jordan标准型后，由$A=TJT^{-1}$或$AT=TJ$，将$T$按$J$的对角线上的Jordan块相应分块为$T=(T_1,T_2,\cdots,T_k)$，其中$T_i$为$n\times n_i$型矩阵。则有</p>
 
 $$
 \begin{equation}
@@ -4348,7 +4349,7 @@ f(\lambda_i)&f'(\lambda_i)&\cdots&\dfrac{f^{(n_i-1)}(\lambda_i)}{(n_i-1)!}\\
 $$
 
 <p>可知，$f(J_i)$与在哪点展开无关</p>
-<h2 id="计算矩阵函数-f-tJ-的引理"><a href="#计算矩阵函数-f-tJ-的引理" class="headerlink" title="计算矩阵函数$f(tJ)$的引理"></a>计算矩阵函数$f(tJ)$的引理</h2><p><strong>推论3.5</strong> 设$f(z)=\sum\limits_{k=1}^\infty a_kz^k$是收敛半径为$r$的幂级数，$J_i$是特征值为$\lambda_i$的$Jordan$块，且$|t\lambda_i|&lt;r$，则有</p>
+<h2 id="计算矩阵函数f-tJ-的引理"><a href="#计算矩阵函数f-tJ-的引理" class="headerlink" title="计算矩阵函数f(tJ)的引理"></a>计算矩阵函数f(tJ)的引理</h2><p><strong>推论3.5</strong> 设$f(z)=\sum\limits_{k=1}^\infty a_kz^k$是收敛半径为$r$的幂级数，$J_i$是特征值为$\lambda_i$的$Jordan$块，且$|t\lambda_i|&lt;r$，则有</p>
 $$
 \begin{equation}
 \begin{aligned}
@@ -4540,7 +4541,7 @@ X(0)=(x_1(0),x_2(0),\cdots,x_n(0))^T
 $
 <p>其中$F(t)=(f_1(t),f_2(t),\cdots,f_n(t),)^T$是已知向量函数<br>根据一阶线性常系数齐次微分方程组性质，可得<br>$\dfrac{\mathrm{d} (e^{-At}X(t))}{\mathrm{d} t}=e^{-At}F(t)$<br>对此方程在$[t_0,t]$上进行积分，得<br>$e^{-At}X(t)-e^{-At_0}X(t_0)=\int_{t_0}^t e^{-A\tau}F(\tau)d\tau$<br>$X(t)=e^{A(t-t_0)}X(t_0)+\int_{t_0}^t e^A{t-\tau}F(\tau)d\tau$</p>
 <h1 id="逐次迭代法"><a href="#逐次迭代法" class="headerlink" title="逐次迭代法"></a>逐次迭代法</h1><h2 id="简单迭代法"><a href="#简单迭代法" class="headerlink" title="简单迭代法"></a>简单迭代法</h2><p>将$Ax=b$变形为$x=Bx+f$，其中$B\in R^{n\times n},f\in R^n,x\in R^n$，拥有同样的解，称$B$矩阵为迭代矩阵<br>迭代法一般形式为：$x^{(k+1)}=Bx^{(k)}+f\quad (k=0,1,2,\cdots)$<br>如果对任意$x^{(0)}$，都有当$k\rightarrow \infty$时，$x^{(k)}\rightarrow x^{*}$，其中$x^{(k)}=(x_1^{(k)},x_2^{(k)},\cdots,x_n^{(k)})^T,x^{*}=(x_1^{*},x_2^{*},\cdots,x_n^{*})^T$<br>即$\lim\limits_{k \rightarrow \infty}x_i^{(k)}=x_i^{*}\quad i=1,2,\cdots,n$<br>称该迭代法收敛，否则称迭代法发散<br>由于$\lim\limits_{k \rightarrow \infty}x^{(k+1)}=B\lim\limits_{k \rightarrow \infty}x^{(k)}+f$，所以收敛迭代法的极限向量$x^*$满足$x^*=Bx^*+f$</p>
-<h2 id="Jacobi-迭代和-G-S-迭代格式"><a href="#Jacobi-迭代和-G-S-迭代格式" class="headerlink" title="$Jacobi$迭代和$G-S$迭代格式"></a>$Jacobi$迭代和$G-S$迭代格式</h2><p>线性方程组的一般形式</p>
+<h2 id="Jacobi迭代和G-S迭代格式"><a href="#Jacobi迭代和G-S迭代格式" class="headerlink" title="Jacobi迭代和G-S迭代格式"></a>Jacobi迭代和G-S迭代格式</h2><p>线性方程组的一般形式</p>
 $$
 \begin{equation}
 \begin{aligned}
@@ -4606,7 +4607,7 @@ x^{(k)}-x^{*}&=x^{(k)}-x^{(k+1)}+x^{(k+1)}-x^{*}\\
 \end{equation}
 $$
 
-<h2 id="Jacobi-迭代和-G-S-迭代的收敛性"><a href="#Jacobi-迭代和-G-S-迭代的收敛性" class="headerlink" title="$Jacobi$迭代和$G-S$迭代的收敛性"></a>$Jacobi$迭代和$G-S$迭代的收敛性</h2><p>若$
+<h2 id="Jacobi迭代和G-S迭代的收敛性"><a href="#Jacobi迭代和G-S迭代的收敛性" class="headerlink" title="Jacobi迭代和G-S迭代的收敛性"></a>Jacobi迭代和G-S迭代的收敛性</h2><p>若$
    \begin{equation}
    \begin{aligned}
    A=\begin{bmatrix}
@@ -4769,7 +4770,7 @@ $
 \end{equation}
 $
 <p>若在这种条件下的$Newton$迭代法如果收敛，必定是线性收敛。为了提高收敛阶可取$\varphi(x)=x-m\dfrac{f(x)}{f’(x)}$<br>从而使$\varphi’(x)=1-\dfrac{m}{m}=0$，至少为平方收敛</p>
-<h2 id="迭代的加速-SOR"><a href="#迭代的加速-SOR" class="headerlink" title="迭代的加速-$SOR$"></a>迭代的加速-$SOR$</h2><p>超松弛法（SOR法）<br>G-S迭代格式<br>$\overline{x_i}^{(k+1)}=\dfrac{1}{a_{ii}}\left( b_i - \sum\limits_{j=1}^{i-1} a_{ij}x_j^{(k+1)}-\sum\limits_{j=i+1}^n a_{ij}x_j^{(k)} \right)(i=1,2,\cdots,n)$<br>取$x_i^{(k+1)}=\beta_0x_i^{(k)}+\beta_1\overline{x_i}^{(k+1)}\quad \beta_0+\beta_1=1$<br>令$\beta_1=\omega,\beta_0=1-\omega$其中$\omega$称为松弛因子</p>
+<h2 id="迭代的加速-SOR"><a href="#迭代的加速-SOR" class="headerlink" title="迭代的加速-SOR"></a>迭代的加速-SOR</h2><p>超松弛法（SOR法）<br>G-S迭代格式<br>$\overline{x_i}^{(k+1)}=\dfrac{1}{a_{ii}}\left( b_i - \sum\limits_{j=1}^{i-1} a_{ij}x_j^{(k+1)}-\sum\limits_{j=i+1}^n a_{ij}x_j^{(k)} \right)(i=1,2,\cdots,n)$<br>取$x_i^{(k+1)}=\beta_0x_i^{(k)}+\beta_1\overline{x_i}^{(k+1)}\quad \beta_0+\beta_1=1$<br>令$\beta_1=\omega,\beta_0=1-\omega$其中$\omega$称为松弛因子</p>
 $$
 \begin{equation}
 \begin{aligned}
@@ -4799,7 +4800,7 @@ $$
 $$</p>
 <p>根据收敛充要条件$1-\omega|\le \rho(L_\omega) &lt;1 \Rightarrow 0&lt;\omega&lt;2$</p>
 <p>可以证明的是，如果$A$是对称正定矩阵，则满足$0&lt;\omega&lt;2$的任意$\omega$和初始向量$x^{(0)}$，$SOR$法均收敛。从而有<br><strong>如果$A$是对称正定矩阵，则$G-S$迭代法必收敛</strong><br>使$SOR$法收敛最快的松弛因子称为最优松弛因子，记为$\omega_{opt}$，使得$\rho(L_\omega)$最小</p>
-<h2 id="迭代的加速-Aitken"><a href="#迭代的加速-Aitken" class="headerlink" title="迭代的加速-$Aitken$"></a>迭代的加速-$Aitken$</h2><p>设数列$\{x_k\}$为线性收敛，即$\lim\limits_{k\rightarrow\infty}\dfrac{|x_{k+1}-\alpha|}{|x_{k}-\alpha|}=c&gt;0$</p>
+<h2 id="迭代的加速-Aitken"><a href="#迭代的加速-Aitken" class="headerlink" title="迭代的加速-Aitken"></a>迭代的加速-Aitken</h2><p>设数列$\{x_k\}$为线性收敛，即$\lim\limits_{k\rightarrow\infty}\dfrac{|x_{k+1}-\alpha|}{|x_{k}-\alpha|}=c&gt;0$</p>
 $$
 \begin{equation}
 \begin{aligned}
@@ -4816,7 +4817,7 @@ $$
 <li>对于没有（显式）迭代格式的数列加速后的新数列不改变原数列</li>
 <li>对于有显式迭代格式的数列$x_{k+1}=\varphi(x_k)$，加速引入到迭代过程，原数列被改变</li>
 </ul>
-<h2 id="共轭梯度法（-GC-法）"><a href="#共轭梯度法（-GC-法）" class="headerlink" title="共轭梯度法（$GC$法）"></a>共轭梯度法（$GC$法）</h2><p>对于$Ax=b$</p>
+<h2 id="共轭梯度法（GC法）"><a href="#共轭梯度法（GC法）" class="headerlink" title="共轭梯度法（GC法）"></a>共轭梯度法（GC法）</h2><p>对于$Ax=b$</p>
 <ul>
 <li>任取$x_0\in R^n$</li>
 <li>$r_0=b-Ax_o$，取$p_0=r_0$</li>
