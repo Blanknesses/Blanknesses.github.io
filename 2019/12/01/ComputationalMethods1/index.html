@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法知识点归纳插值部分">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-21T13:25:53.606Z">
+<meta property="og:updated_time" content="2019-12-23T12:23:05.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法知识点（5-7）">
 <meta name="twitter:description" content="计算方法知识点归纳插值部分">
@@ -498,7 +498,7 @@ $\begin{equation}
 <li>插值基函数决定着插值多项式满足插值条件</li>
 <li>插值基函数与插值节点的次序无关</li>
 </ul>
-<p>设$x_0,x_1,\cdots,x_n$是$[a,b]$上的$n+1$个互异点，取$l_j(x)=\dfrac{(x-x_0)\cdots(x-x_{j-1})(x-x_{j+1})\cdots(x-x_n)}{(x_j-x_0)\cdots(x_j-x_{j-1})(x_j-x_{j+1})\cdots(x_j-x_n)}=\dfrac{\omega_{n+1}(x)}{(x-x_j)\omega’(x_j)}\quad j=0,1,\cdots,n$ </p>
+<p>设$x_0,x_1,\cdots,x_n$是$[a,b]$上的$n+1$个互异点，取<br>$l_j(x)=\dfrac{(x-x_0)\cdots(x-x_{j-1})(x-x_{j+1})\cdots(x-x_n)}{(x_j-x_0)\cdots(x_j-x_{j-1})(x_j-x_{j+1})\cdots(x_j-x_n)}=\dfrac{\omega_{n+1}(x)}{(x-x_j)\omega’(x_j)}$<br>$j=0,1,\cdots,n$ </p>
 <p>其中$\omega_{n+1}(x)=(x-x_0)(x-x_1)\cdots(x-x_n)$</p>
 <p>有$\begin{equation}
 \begin{aligned}l_j(x_i)=\begin{cases}1\quad i=j\\0\quad i\not=j\end{cases} \quad i,j=0,1,\cdots,n\end{aligned}
@@ -509,7 +509,8 @@ $\begin{equation}
 <p>为$f(x)$关于$x_0,x_1,\cdots,x_n$的<strong>$k$阶均差（差商）</strong></p>
 <p><strong>均差的性质</strong></p>
 <ul>
-<li>$f[x_0,x_1,\cdots,x_k]=\sum\limits_{j=0}^k \dfrac{f(x_j)}{\omega'_{k+1}(x_j)}$    其中    $\omega_{k+1}(x)=(x-x_0)(x-x_1)\cdots(x-x_k)$
+<li>$f[x_0,x_1,\cdots,x_k]=\sum\limits_{j=0}^k \dfrac{f(x_j)}{\omega'_{k+1}(x_j)}$    
+<p>  其中$\omega_{k+1}(x)=(x-x_0)(x-x_1)\cdots(x-x_k)$</p>
 </li>
 <li><p>对称性，即在$f[x_0,x_1,\cdots,x_k]$中任意调换$x_0,x_1,\cdots,x_k$的位置时，均差的值不变</p>
 </li>
@@ -568,10 +569,10 @@ $\begin{equation}
 <td align="center"><font color="red">$f[x_0,x_1,x_2,x_3]$</font></td>
 </tr>
 </tbody></table>
-<h2 id="插值余项"><a href="#插值余项" class="headerlink" title="插值余项"></a>插值余项</h2><p><strong>定理5.2</strong> 若$f(x)$在包含着插值节点$x_0,x_1,\cdots,x_n$的区间$[a,b]$上$n+1$次可微，则对任意$x\in [a,b]$，存在与$x$有关的$\xi(a&lt;\xi&lt;b)$使得$r_n(x)=f(x)-p_n(x)=\dfrac{f^{(n+1)}(\xi)}{(n+1)!}\omega_{n+1}(x)$</p>
+<h2 id="插值余项"><a href="#插值余项" class="headerlink" title="插值余项"></a>插值余项</h2><p><strong>定理5.2</strong> 若$f(x)$在包含着插值节点$x_0,x_1,\cdots,x_n$的区间$[a,b]$上$n+1$次可微，则对任意$x\in [a,b]$，存在与$x$有关的$\xi(a&lt;\xi&lt;b)$使得<br>$r_n(x)=f(x)-p_n(x)=\dfrac{f^{(n+1)}(\xi)}{(n+1)!}\omega_{n+1}(x)$</p>
 <p>证明：任取$x\in[a,b]$，当$x=x_0,x_1,\cdots,x_n$时显然成立，设$x\not=x_i(i=0,1,\cdots,n)$，视$x$为一个节点，由一阶均差定义有
 $$
-\begin{equation}\begin{aligned}f(x)&=f(x_0)+f[x,x_0](x-x_0)\\&=f[x_0,x_1]+f[x,x_0,x_1](x-x_1)\\&=f[x_0,x_1,x_2]+f[x,x_0,x_1,x_2](x-x_2)\\&\cdots\end{aligned}\end{equation}
+\begin{equation}\begin{aligned}f(x)&=f(x_0)+f[x,x_0](x-x_0)\\&f[x,x_0]=f[x_0,x_1]+f[x,x_0,x_1](x-x_1)\\&f[x,x_0,x_1]=f[x_0,x_1,x_2]+f[x,x_0,x_1,x_2](x-x_2)\\&\cdots\end{aligned}\end{equation}
 $$
 进一步，当$k=1,2,\cdots,n$时</p>
 $f[x,x_0,\cdots,x_{k-1}]=f[x_0,x_1,\cdots,x_k]+f[x,x_0,x_1,\cdots,x_k](x-x_k)$
@@ -603,7 +604,7 @@ $\begin{equation}
 <p><strong>$Newton$插值公式的极限即为$f(x)$在$x=x_0$点处的$Taylor$级数的前$n+1$项和</strong></p>
 <p>证明：$\sum\limits_{i=0}^nl_i(x)=1 \quad \sum\limits_{i=0}^nl_i(x)x_i^k=x^k\quad 0\le k \le n$</p>
 <p>根据$Lagrange$插值公式$p_n(x)=\sum\limits_{i=0}^nl_i(x)f(x_i)$可知被插值函数应该为$f(x)=1$</p>
-<p>根据插值余项公式$f(x)-p_n(x)=1-\sum\limits_{i=0}^n l_i(x)=\dfrac{f(\xi)^{(n+1)}}{(n+1)!}\omega_{n+1}(x)=0\Rightarrow \sum\limits_{i=0}^nl_i(x)=1 $</p>
+<p>根据插值余项公式<br>$f(x)-p_n(x)=1-\sum\limits_{i=0}^n l_i(x)=\dfrac{f(\xi)^{(n+1)}}{(n+1)!}\omega_{n+1}(x)=0\Rightarrow \sum\limits_{i=0}^nl_i(x)=1 $</p>
 <p>同理，由插值余项公式</p>
 <p>$x^k-\sum\limits_{i=0}^n l_i(x)x_i^k=\dfrac{(\xi^k)^{n+1}}{(n+1)!}\omega_{n+1}(x)=0\Rightarrow \sum\limits_{i=0}^nl_i(x)x_i^k=x^k $</p>
 <p>那么，$\sum\limits_{i=0}^nl_i(0)x_i^k=0$</p>
@@ -659,7 +660,8 @@ p'_n(x_m)&=\sum_{i=1}^s[y_iL'_{i,0}(x)+y'_iL'_{i,1}(x)+\cdots+y_i^{(\alpha_i-1)}
 \end{equation}
 $$
 </p>
-<p>以下构造$L_{i,k}(x)$，令$A(x) = \prod\limits_{i=1}^s(x - x_i)^{\alpha_i} $且令$l_{i,k}(x)=\dfrac{1}{k!}\left\{ \dfrac{(x-x_i)^{\alpha_i}}{A(x)}\right\}_{(x_i)}^{\alpha_i-k-1}$</p>
+<p>以下构造$L_{i,k}(x)$，令$A(x) = \prod\limits_{i=1}^s(x - x_i)^{\alpha_i} $
+且令$l_{i,k}(x)=\dfrac{1}{k!}\left\{ \dfrac{(x-x_i)^{\alpha_i}}{A(x)}\right\}_{(x_i)}^{\alpha_i-k-1}$</p>
 <p>其中$\left \{\dfrac{(x-x_i)^{\alpha_i}}{A(x)}\right \}_{(x_i)}^{\alpha_i-k-1}$代表$\dfrac{(x-x_i)^{\alpha_i}}{A(x)}$在点$x_i$附近的$Taylor$级数中幂次不超过$\alpha_i-k-1$的项之和，即</p>
 $\left[ \dfrac{(x-x_i)^{\alpha_i}}{A(x)} \right]_{x_i}+\left[ \dfrac{(x-x_i)^{\alpha_i}}{A(x)} \right]'_{x_i}(x-x_i)+\dfrac{1}{2!}\left[ \dfrac{(x-x_i)^{\alpha_i}}{A(x)} \right]''_{x_i}(x-x_i)^2$
 
@@ -773,7 +775,12 @@ $\begin{equation}
 <p>其中$p_m(x)\in P_m\quad c_j(j=1,2,\cdots,n)$为实数</p>
 <p><strong>定理5.5</strong> 为使$s(x)\in S_m(x_1,x_2,\cdots,x_n)$必须且只需存在$p_m(x)\in P_m$和$n$个实数$c_1,c_2,\cdots,c_n$,使得</p>
 <p>$s(x)=p_m(x)+\sum\limits_{j=1}^nc_j(x-x_j)^m_+\quad -\infty&lt;x&lt;+\infty$</p>
-$S_m(x_1,x_2,\cdots,x_n)=span\{1,x,\cdots,x^m,(x-x_1)^m_+,(x-x_1)^m_+,(x-x_2)^m_+,\cdots,(x-x_n)^m_+,\}$
+$ \begin{equation}
+\begin{aligned}
+S_m(x_1,x_2,\cdots,x_n)=span\{&1,x,\cdots,x^m,(x-x_1)^m_+,(x-x_1)^m_+,(x-x_2)^m_+,\\
+&\cdots,(x-x_n)^m_+,\}
+\end{aligned}
+\end{equation}$
 
 <p>$m$次样条空间的维数：$dim S_m(x_1,x_2,\cdots,c_n)=m+n+1\quad$($n$个节点，$m$多项式有$m+1$维数)</p>
 <p>设给定节点$a=x_0&lt;x_1&lt;\cdots&lt;x_n=b$及节点上的函数值$f(x_i)=y_i\quad i=0,1,\cdots,n$</p>
@@ -860,14 +867,8 @@ $$
   \begin{equation}\begin{aligned}&\begin{cases}2m_1+\mu_1m_2=g_1-\lambda_1f'_0\\\lambda_km_{k-1}+2m_k+\mu_km_{k+1}=g_k\quad k=2,3,\cdots,n-2\\\lambda_{n-1}m_{n-2}+2m_{n-1}=g_{n-1}-\mu_{n-1}f'_n\end{cases}\\&\begin{bmatrix}2&\mu_1&&&&\\\lambda_2&2&\mu_2&&&\\&\lambda_3&2&\mu_3&&\\&&\ddots&\ddots&\ddots&\\&&&\lambda_{n-2}&\ddots&\mu_{n-2}\\&&&&\lambda_{n-1}&2\\\end{bmatrix}\begin{bmatrix}m_1\\m_2\\m_3\\\vdots\\m_{n-2}\\m_{n-1}\end{bmatrix}\begin{bmatrix}g_1-\lambda_1f'_0\\g_2\\g_3\\\vdots\\g_{n-2}\\g_{n-1}-\mu_{n-1}f'_n\end{bmatrix}\end{aligned}\end{equation}
   $$
   
-
-​		
-
+<p>  因为$\lambda_k=\dfrac{h_k}{h_k+h_{k-1}}&lt;1\quad \mu_k=\dfrac{h_{k-1}}{h_k+h_{k-1}}&lt;1\quad $<br>  所以系数矩阵三对角矩阵严格对角占优，一定是非奇异矩阵，故存在唯一解$m_1,m_2,\cdots,m_{n-1}$</p>
 </li>
-</ul>
-<p>​        因为$\lambda_k=\dfrac{h_k}{h_k+h_{k-1}}&lt;1\quad \mu_k=\dfrac{h_{k-1}}{h_k+h_{k-1}}&lt;1\quad $</p>
-<p>​        所以系数矩阵三对角矩阵严格对角占优，一定是非奇异矩阵，故存在唯一解$m_1,m_2,\cdots,m_{n-1}$</p>
-<ul>
 <li><p>第二类边界条件$\begin{equation}
   \begin{aligned}\begin{cases}s''(x_0)=f''_0\\s''(x_n)=f''_n\end{cases}\end{aligned}
   \end{equation}$</p>
@@ -888,7 +889,11 @@ $\lim\limits_{x\rightarrow x_n^-}s''(x)=f''_n=\dfrac{2}{h_{n-1}}m_{n-1}+\dfrac{4
 <p>$\lim\limits_{x\rightarrow x_0^+}s’’(x)-\dfrac{4}{h_0}m_0-\dfrac{2}{h_0}m_{1}+\dfrac{6}{h_0^2}(y_{1}-y_0)$</p>
 <p>$\lim\limits_{x\rightarrow x_n^-}s’’(x)=\dfrac{2}{h_{n-1}}m_{n-1}+\dfrac{4}{h_{n-1}}m_{n}-\dfrac{6}{h_{n-1}^2}(y_{n}-y_{n-1})$</p>
 <p>再有</p>
-$\lim\limits_{x\rightarrow x_0^+}s''(x)=f''_0=f_n''=\lim\limits_{x\rightarrow x_n^-}s''(x)\quad \lim\limits_{x\rightarrow x_0^+}s'(x)=f'_0=m_0=m_n=f_n'=\lim\limits_{x\rightarrow x_n^-}s'(x)$
+$ \begin{equation}
+  \begin{aligned}
+  \lim\limits_{x\rightarrow x_0^+}s''(x)=f''_0=f_n''=\lim\limits_{x\rightarrow x_n^-}s''(x)\\ \lim\limits_{x\rightarrow x_0^+}s'(x)=f'_0=m_0=m_n=f_n'=\lim\limits_{x\rightarrow x_n^-}s'(x)
+  \end{aligned}
+  \end{equation}$
 
 <p>所以</p>
 <p>$\dfrac{1}{h_0}m_1+\dfrac{1}{h_{n-1}}m_{n-1}+2\left( \dfrac{1}{h_0}+\dfrac{1}{h_{n-1}} \right)m_m=3\left( \dfrac{y_1-y_0}{h_0^2}+\dfrac{y_n-y_{n-1}}{h_{n-1}^2} \right)$</p>
@@ -1086,7 +1091,9 @@ $(xp_k,p_k) = (p_k,xp_k) = 0 = c_i(p_i,p_i)\Rightarrow c_i = 0(i < k-1)
 </li>
 </ul>
 <p><strong>性质2,3是构造$Gauss$型求积公式的重要依据</strong></p>
-<h2 id="函数的最佳平方逼近"><a href="#函数的最佳平方逼近" class="headerlink" title="函数的最佳平方逼近"></a>函数的最佳平方逼近</h2><p>已知$f(x)\in L^2[a,b]$（$[a,b]$上平方可积函数的集合）和$S=span{\varphi_0(x),\varphi_1(x),\cdots,\varphi_n(x)}\subset C[a,b]$</p>
+<h2 id="函数的最佳平方逼近"><a href="#函数的最佳平方逼近" class="headerlink" title="函数的最佳平方逼近"></a>函数的最佳平方逼近</h2><p>已知$f(x)\in L^2[a,b]$（$[a,b]$上平方可积函数的集合）和</p>
+$S=span\{\varphi_0(x),\varphi_1(x),\cdots,\varphi_n(x)\}\subset C[a,b]$
+
 <p>若存在$s^*(x)=\sum\limits_{k=0}^n a_k^*\varphi_k(x)\in S$使得</p>
 <p>$\Vert f(x)-s^*(x)\Vert_2=\min\limits_{s(x)\in S}\Vert f(x)-s(x)\Vert_2=\min\limits_{s(x)\in S}\sqrt{\int_a^b\rho(x)[f(x)-s(x)]^2dx }$</p>
 <p>则称$s^*(x)$是$f(x)$在$S$中的<strong>最佳平方逼近</strong>函数，$\Vert f(x)-s^*(x)\Vert_2$称为<strong>均方误差</strong></p>
@@ -1115,7 +1122,7 @@ $\Vert s^*\Vert^2=(s^*,s^*)=(\sum\limits_{k=0}^na^*_k\psi_k,\sum\limits_{j=0}^na
 </ul>
 <h2 id="数据拟合的最小二乘法"><a href="#数据拟合的最小二乘法" class="headerlink" title="数据拟合的最小二乘法"></a>数据拟合的最小二乘法</h2><p>设$(x_i,y_i)(i=0,1,\cdots,n)$为给定的一组数据，$\omega_i&gt;0(i=0,1,\cdots,m)$为各点的权系数，要求在系数空间</p>
 $\begin{equation}
-\begin{aligned}S&=span{\varphi_0(x),\varphi_1(x),\cdots,\varphi_n(x)}\\&={\varphi(x)|\varphi(x)=\sum\limits_{k=0}^n a_k\varphi_k(x),\forall a_0,\cdots,a_n\in R}\end{aligned}
+\begin{aligned}S&=span\{\varphi_0(x),\varphi_1(x),\cdots,\varphi_n(x)\}\\&=\{\varphi(x)|\varphi(x)=\sum\limits_{k=0}^n a_k\varphi_k(x),\forall a_0,\cdots,a_n\in R\}\end{aligned}
 \end{equation}$
 
 <p>中，求一个函数</p>
@@ -1192,7 +1199,7 @@ $$
 <li>$\int_a^b f(x)dx=\dfrac{(b-a)}{2}[f(a)+f(b)]\quad $梯形求积公式</li>
 </ul>
 <p>$f(x)$在<strong>等距节点</strong>上的插值多项式，得到的数值求积公式称为<font color="red"><strong>插值型求积公式</strong></font></p>
-<p>将$[a,b]$进行$n$等分，令$h=\dfrac{b-a}{n}$（称为步长），将分点$x_k=a+kh\quad k=0,1,\cdots,n$取为插值节点（也是求积节点），则$f(x)$可表示为它的$Lagrange$插值多项式及其余项之和，即</p>
+<p>将$[a,b]$进行$n$等分，令$h=\dfrac{b-a}{n}$（称为步长），将分点<br>$x_k=a+kh\quad k=0,1,\cdots,n$取为插值节点（也是求积节点），则$f(x)$可表示为它的$Lagrange$插值多项式及其余项之和，即</p>
 <p>$f(x)=\sum\limits_{k=0}^nf(x_k)l_k(x)+r_n(x)$</p>
 <p>所以有</p>
 $\begin{equation}
@@ -1491,7 +1498,7 @@ x_1=\dfrac{\sqrt{3}}{3}
 <ul>
 <li>不在$[-1.1]$区间，进行线性变换，变换到该区间 </li>
 <li>构造正交多项式</li>
-<li>求x再求A</li>
+<li>求$x$再求$A$</li>
 </ul>
 <p><font color="red"><strong>特殊的$Gauss$求积公式</strong></font></p>
 <ul>
@@ -1558,8 +1565,8 @@ $
 $
 \begin{equation}
 \begin{aligned}
-R_n(h)=O(h^{p+1})\quad i=1,2,\cdots,n\\
-E_n(h)=\sum\limits_{i=1}^{n}R_i(h)=\sum\limits_{i=1}^{n}O(h^{p+1})=\sum\limits_{i=1}^{n}h\cdot O(h^p)\\
+R_n(h)&=O(h^{p+1})\quad i=1,2,\cdots,n\\
+E_n(h)&=\sum\limits_{i=1}^{n}R_i(h)=\sum\limits_{i=1}^{n}O(h^{p+1})=\sum\limits_{i=1}^{n}h\cdot O(h^p)\\
 &=h\cdot O(h^p)\cdot n = O(h^p)\cdot n \cdot \dfrac{b-1}{n}=O(h^p)
 \end{aligned}
 \end{equation}
@@ -1580,7 +1587,7 @@ $
 &\quad + \sum\limits_{k}^{j=0}\alpha_j \dfrac{(jh)^p}{p!}u^{(p)}(t)+\cdots\\
 \sum\limits_{k}^{j=0}\beta_jhu'(t+jh)&= \sum\limits_{k}^{j=0}\beta_jhu'(t)+\sum\limits_{k}^{j=0}\beta_j h\dfrac{jh}{1!}u''(t)+\cdots\\
 &\quad + \sum\limits_{k}^{j=0}\beta_j h\dfrac{(jh)^{p-1}}{p!}u^{(p)}(t)+\cdots\\
-&\sum\limits_{k}^{j=0}[\alpha_ju(t+jh)-h\beta_ju'(t+jh)]=\sum\limits_{k}^{j=0}\alpha_ju(t)+\sum\limits_{k}^{j=0}(j\alpha_j-beta_j)hu'(t) + \cdots \\
+\sum\limits_{k}^{j=0}[\alpha_ju(t+jh)-&h\beta_ju'(t+jh)]=\sum\limits_{k}^{j=0}\alpha_ju(t)+\sum\limits_{k}^{j=0}(j\alpha_j-beta_j)hu'(t) + \cdots \\
 &\quad + \sum\limits_{k}^{j=0}(\dfrac{1}{p!}j^p\alpha_j - \dfrac{1}{(p-1)!}j^{p-1}\beta_j)h^pu^{(p)}(y)+\cdots
 \end{aligned}
 \end{equation}
@@ -1601,7 +1608,7 @@ c_p = \dfrac{1}{p!}(\alpha_1 + 2^p \alpha_2 + \cdots + k^p \alpha_k)- \dfrac{1}{
 \end{equation}
 $
 
-<p>若$u(t)$有$p+2$次连续微商，则可选取适当的$k$和$ \alpha_j, \beta_j$使得$c_0=c_1=c_2=\cdots =c_p=0,c_{p+1}\not=0$即可求解$ \alpha_j, \beta_j$的线性方程组<br>此时$L_k[u(t);h]=c_{p+1}h^{p+1}u^{({p+1})}(t)+O(h^{p+2})=R_n$<br>而$u’(t)=f(t,u(t))$，则$ \sum\limits_{k}^{j=0}[ \alpha_j u(t_n + jh) - h \beta_j f(t_n + jh, u(t_n + jh))] = R_n$<br>舍去余项$R_n$，并用$u_{n+j}$代替$u(t_n + jh)$，用$f_{n+j}$记$f(t{n+j},u_{n+j})$（即u’(t{n+j},u_{n+j})）<br>线性多步法的局部线段误差为：$R_{n+k} = L_k[u(t_n);h] = c_{p+1}h^{p+1}u^{(p+1)}(t_n)+O(h^{p+2})$<br>$c_{p+1}h^{p+1}u^{(p+1)}(t_n)$称为<strong>局部截断误差主项</strong><br>$c_{p+1}$称为<strong>局部截断误差主项系数</strong><br>其整体截断误差为$E_n=O(h^p)$，故称为$p$阶$k$步法<br><strong>线性$k$步法最高可达到$2k$阶精度（整体截断误差）</strong></p>
+<p>若$u(t)$有$p+2$次连续微商，则可选取适当的$k$和$ \alpha_j, \beta_j$使得<br>$c_0=c_1=c_2=\cdots =c_p=0,c_{p+1}\not=0$即可求解$ \alpha_j, \beta_j$的线性方程组<br>此时$L_k[u(t);h]=c_{p+1}h^{p+1}u^{({p+1})}(t)+O(h^{p+2})=R_n$<br>而$u’(t)=f(t,u(t))$，则$ \sum\limits_{k}^{j=0}[ \alpha_j u(t_n + jh) - h \beta_j f(t_n + jh, u(t_n + jh))] = R_n$<br>舍去余项$R_n$，并用$u_{n+j}$代替$u(t_n + jh)$，用$f_{n+j}$记$f(t{n+j},u_{n+j})$<br>（即$u’(t{n+j},u_{n+j})$）<br>线性多步法的局部线段误差为：<br>$R_{n+k} = L_k[u(t_n);h] = c_{p+1}h^{p+1}u^{(p+1)}(t_n)+O(h^{p+2})$<br>$c_{p+1}h^{p+1}u^{(p+1)}(t_n)$称为<strong>局部截断误差主项</strong><br>$c_{p+1}$称为<strong>局部截断误差主项系数</strong><br>其整体截断误差为$E_n=O(h^p)$，故称为$p$阶$k$步法<br><strong>线性$k$步法最高可达到$2k$阶精度（整体截断误差）</strong></p>
 <p>一般线性二步法公式的待定系数法<br>$k=2,\alpha_2=1$，记$ \alpha_0 = \alpha$，其余四个系数$ \alpha_1,\beta_0,\beta_1,\beta_2$由$c_0=c_1=c_2=c_3=0$确定</p>
 $
 \begin{equation}
@@ -1638,7 +1645,7 @@ c_3=\dfrac{1}{3!}-(\dfrac{1}{2}\times \dfrac{1}{2})=-\dfrac{1}{2}\not=0
 \end{aligned}
 \end{equation}
 $
-<p>其局部截断误差为$R_{n+1}(h)=-\dfrac{1}{12}h^3u^{(3)}(t_n)+O(h^4)$<br>同理，后$Euler$法（一阶隐式方法）其局部截断误差为：$R_{n+1}(h)=-\dfrac{1}{2}h^2u^{(2)}(t_n)+O(h^3)$<br>三步三阶显示$Adams$方法其局部截断误差为：$R_{n+3}(h)=\dfrac{3}{8}h^4u^{(4)}(t_n)+O(h^5)$<br>三步四阶隐式$Adams$方法其局部截断误差为：$R_{n+3}(h)=-\dfrac{19}{720}h^5u^{(5)}(t_n)+O(h^6)$<br>三步四阶$Hamming$方法：$u_{n+3}=\dfrac{1}{8}(9u_{n+2}-u_n)+\dfrac{3h}{8}(f_{n+3}+2f_{n+2}-f_{n+1})$<br>其局部截断误差为：$R_{n+3}(h)=-\dfrac{1}{40}h^5u^{(5)}(t_n)+O(h^6)$</p>
+<p>其局部截断误差为$R_{n+1}(h)=-\dfrac{1}{12}h^3u^{(3)}(t_n)+O(h^4)$<br>同理，后$Euler$法（一阶隐式方法）其局部截断误差为：<br>$R_{n+1}(h)=-\dfrac{1}{2}h^2u^{(2)}(t_n)+O(h^3)$<br>三步三阶显示$Adams$方法其局部截断误差为：<br>$R_{n+3}(h)=\dfrac{3}{8}h^4u^{(4)}(t_n)+O(h^5)$<br>三步四阶隐式$Adams$方法其局部截断误差为：<br>$R_{n+3}(h)=-\dfrac{19}{720}h^5u^{(5)}(t_n)+O(h^6)$<br>三步四阶$Hamming$方法：<br>$u_{n+3}=\dfrac{1}{8}(9u_{n+2}-u_n)+\dfrac{3h}{8}(f_{n+3}+2f_{n+2}-f_{n+1})$<br>其局部截断误差为：<br>$R_{n+3}(h)=-\dfrac{1}{40}h^5u^{(5)}(t_n)+O(h^6)$</p>
 <h2 id="收敛性，绝对稳定性与绝对稳定区域"><a href="#收敛性，绝对稳定性与绝对稳定区域" class="headerlink" title="收敛性，绝对稳定性与绝对稳定区域"></a>收敛性，绝对稳定性与绝对稳定区域</h2><p>对于单步法，当方法的阶$p\ge 1$时，有整体误差$E_n = u(t_n)-u_n=O(h^p)$故有$ \lim\limits_{h \rightarrow 0}E_n=0$，因此方法是收敛的<br>对于多步法，若方法是$k$步$p$阶法，那么是一个$k$阶差分方程，引入多步法的<strong>第一特征多项式</strong>和<strong>第二特征多项式</strong><br>$\rho(\lambda)= \sum\limits_{k}^{j=0}\alpha_j\lambda^j,\sigma(\lambda)= \sum\limits_{k}^{j=0}\beta_j\lambda^j$</p>
 <p><strong>定义7.3</strong> 若第一特征多项式$\rho(\lambda)$的所有根在单位圆内或圆上（|\lambda|\le 1），且位于单位圆周上的根都是单根，称多步法满足<strong>根条件</strong><br>现在考察多步法，将它用于解模型方程$u’=\mu u$可得<br>$ \sum\limits_{k}^{j=0}\alpha_ju_{n+j} = \mu h \sum\limits_{k}^{j=0}\beta_ju_{n+j}$<br>若取$ \overline{h}=\mu h$，则其特征方程为<br>$\rho(\lambda) - \overline{h}\sigma(\lambda)=0$<br>其中$\rho(\lambda)= \sum\limits_{k}^{j=0}\alpha_j\lambda^j \quad \sigma(\lambda)= \sum\limits_{k}^{j=0}\beta_j\lambda^j$</p>
 <p>由$k$阶线性差分方程的性质我们可以得到如下结论，若特征方程的根都在单位圆内$(|\lambda|&lt;1)$，则线性多步法关于$ \overline{h}=\mu h$绝对稳定，其绝对稳定域是复平面$ \overline{h}$上的区域：</p>
@@ -1928,7 +1935,7 @@ $D={\overline{h}||\lambda_j( \overline{h})| < 1 \quad j=1,2,\cdots,k}$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共60.3k字</span>
+  <span class="post-count">博客全站共60.4k字</span>
 </div>
 
         
