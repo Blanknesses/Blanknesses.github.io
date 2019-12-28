@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="计算方法知识点归纳误差，矩阵，迭代部分">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-23T11:03:28.679Z">
+<meta property="og:updated_time" content="2019-12-24T06:16:00.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算方法知识点（1-4）">
 <meta name="twitter:description" content="计算方法知识点归纳误差，矩阵，迭代部分">
@@ -1499,7 +1499,13 @@ $$
     \end{aligned}
     \end{equation}$
 
-<p>  进一步根据$\sum\limits_{k=0}^{\infty}A_k=(I-A)^{-1}$有<br>  $\left\Vert (I-A)^{-1} -  \sum\limits_{k=0}^{m}A^k\right\Vert = \left\Vert \sum\limits_{k=m+1}^{\infty}A^k\right\Vert \le \sum\limits_{k=m+1}^{\infty}\Vert A\Vert^k = \dfrac{\Vert A\Vert^{m+1}(1 - \lim\limits_{k \rightarrow \infty}A^k)}{1-\Vert A\Vert}=\dfrac{\Vert A\Vert^{m+1}}{1-\Vert A\Vert}$</p>
+<p>  进一步根据$\sum\limits_{k=0}^{\infty}A_k=(I-A)^{-1}$有</p>
+  $ \begin{equation}
+    \begin{aligned}
+    \left\Vert (I-A)^{-1} -  \sum\limits_{k=0}^{m}A^k\right\Vert = \left\Vert \sum\limits_{k=m+1}^{\infty}A^k\right\Vert \\ \le \sum\limits_{k=m+1}^{\infty}\Vert A\Vert^k = \dfrac{\Vert A\Vert^{m+1}(1 - \lim\limits_{k \rightarrow \infty}A^k)}{1-\Vert A\Vert}=\dfrac{\Vert A\Vert^{m+1}}{1-\Vert A\Vert}
+    \end{aligned}
+    \end{equation}$
+
 </li>
 </ul>
 <p><strong>性质3.4</strong> 设$\sum\limits_{k=1}^{\infty}A_k =A$和$\sum\limits_{k=1}^{\infty}B_k =B$，其中$A_k,A,B_k,B\in C^{m\times n}$，则<br>$\sum\limits_{k=1}^{\infty}(\alpha A_k + \beta B_k) = \alpha \sum\limits_{k=1}^{\infty}A_k + \beta \sum\limits_{k=1}^{\infty}B_k, \forall \alpha,\beta \in C$<br>证明：<br>因为$S_N=\sum\limits_{k=1}^{N}(\alpha A_k + \beta B_k) = \alpha \sum\limits_{k=1}^{N}A_k + \beta \sum\limits_{k=1}^{N}B_k, \forall \alpha,\beta \in C$<br>所以<br>$\sum\limits_{k=1}^{\infty}(\alpha A_k + \beta B_k) = \lim\limits_{N\rightarrow \infty}S_N= \alpha \lim\limits_{N\rightarrow \infty} \sum\limits_{k=1}^{N}A_k+\beta \lim\limits_{N\rightarrow \infty}\sum\limits_{k=1}^{N}B_k = \alpha A +\beta B$</p>
@@ -1690,7 +1696,7 @@ $$
 <p>设$a=(a_1,a_2,\cdots,a_n)^T$为常向量，$x=(\xi_1,\xi_2,\cdots,\xi_n)^T$为向量变量，<br>且$f(x)=(x,a)=a^Tx=x^Ta$<br>则$\dfrac{\mathrm{d}f }{\mathrm{d} x} = a$<br>因为$f(x)=\sum\limits_{i=1}^n a_i\xi_i,\dfrac{\partial f}{\partial x_{j}}=a_j\quad j=1,2,\cdots,n$</p>
 <p>设$x=(\xi_1,\xi_2,\cdots,\xi_n)^T,A=(a_{ij})_{n\times n}$，$n$元函数$f(x)=x^TAx$<br>$\dfrac{\mathrm{d}f }{\mathrm{d} x}=(A+A^T)x$<br>因为</p>
 $f(x)=\sum\limits_{i=1}^n\sum\limits_{j=1}^n a_{ij}\xi_i\xi_j=\xi_1\sum\limits_{j=1}^n a_{1j}\xi_j+ \cdots+\xi_k\sum\limits_{j=1}^n a_{kj}\xi_j+\cdots+\xi_n\sum\limits_{j=1}^n a_{nj}\xi_j$
-<p>所以<br>$\dfrac{\partial f(x)}{\partial \xi_{k}}=\xi_1a_{1k}+\xi_{k-1}a_{(k-1)k}+\left( \sum\limits_{j=1}^n a_{kj}\xi_j + \xi_k a_{kk} \right) + \xi_{k+1}a_{(k+1)k} + \cdots + \xi_na_{nk}$<br>$\qquad\qquad=\sum\limits_{j=1}^n a_{kj}\xi_j + \sum\limits_{i=1}^n a_{ik}\xi_i \quad k=1,2,\cdots,n$<br>故有</p>
+<p>所以<br>$\dfrac{\partial f(x)}{\partial \xi_{k}}=\xi_1a_{1k}+ \cdots + \xi_{k-1}a_{(k-1)k}+\left( \sum\limits_{j=1}^n a_{kj}\xi_j + \xi_k a_{kk} \right) + \xi_{k+1}a_{(k+1)k} + \cdots + \xi_na_{nk}$<br>$\qquad\qquad=\sum\limits_{j=1}^n a_{kj}\xi_j + \sum\limits_{i=1}^n a_{ik}\xi_i \quad k=1,2,\cdots,n$<br>故有</p>
 $$
 \begin{equation}
 \begin{aligned}
@@ -2215,7 +2221,7 @@ $$
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2226,7 +2232,7 @@ $$
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2364,7 +2370,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共60.4k字</span>
+  <span class="post-count">博客全站共67.8k字</span>
 </div>
 
         
