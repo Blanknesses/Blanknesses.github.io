@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,Markdown,">
+  <meta name="keywords" content="SE,">
 
 
 
@@ -98,18 +98,20 @@
 
 
 
-<meta name="description" content="Hexo常用指令Markdown语法使用方法使用LaTeX编写公式">
-<meta name="keywords" content="Hexo,Markdown">
+<meta name="description" content="Git相关内容（粗略版）">
+<meta name="keywords" content="SE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo日常使用以及Markdown语法">
-<meta property="og:url" content="http://yoursite.com/2019/10/17/HexoAndMarkdown/index.html">
+<meta property="og:title" content="Git">
+<meta property="og:url" content="http://yoursite.com/2020/01/08/Git/index.html">
 <meta property="og:site_name" content="不断努力的Koo">
-<meta property="og:description" content="Hexo常用指令Markdown语法使用方法使用LaTeX编写公式">
+<meta property="og:description" content="Git相关内容（粗略版）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-21T08:37:07.423Z">
+<meta property="og:image" content="http://yoursite.com/images/GitOperation.png">
+<meta property="og:updated_time" content="2020-01-08T13:24:03.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo日常使用以及Markdown语法">
-<meta name="twitter:description" content="Hexo常用指令Markdown语法使用方法使用LaTeX编写公式">
+<meta name="twitter:title" content="Git">
+<meta name="twitter:description" content="Git相关内容（粗略版）">
+<meta name="twitter:image" content="http://yoursite.com/images/GitOperation.png">
 
 
 
@@ -139,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/17/HexoAndMarkdown/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/08/Git/">
 
 
 
 
 
-  <title>Hexo日常使用以及Markdown语法 | 不断努力的Koo</title>
+  <title>Git | 不断努力的Koo</title>
   
 
 
@@ -336,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/17/HexoAndMarkdown/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/08/Git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Koo">
@@ -353,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo日常使用以及Markdown语法</h1>
+          <h1 class="post-title" itemprop="name headline">Git</h1>
         
 
         <div class="post-meta">
@@ -365,8 +367,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-17T09:55:50+08:00">
-                2019-10-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-08T20:38:21+08:00">
+                2020-01-08
               </time>
             
 
@@ -388,8 +390,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Blog/" itemprop="url" rel="index">
-                    <span itemprop="name">Blog</span>
+                  <a href="/categories/SE/" itemprop="url" rel="index">
+                    <span itemprop="name">SE</span>
                   </a>
                 </span>
 
@@ -419,7 +421,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  941
+                  1.8k
                 </span>
               
 
@@ -435,7 +437,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  6
                 </span>
               
             </div>
@@ -443,7 +445,7 @@
 
           
               <div class="post-description">
-                  <center>Hexo常用指令<br>Markdown语法使用方法<br>使用LaTeX编写公式</center>
+                  <center>Git相关内容（粗略版）</center>
               </div>
           
 
@@ -460,63 +462,179 @@
       
 
       
-        <h1 id="Hexo日常使用"><a href="#Hexo日常使用" class="headerlink" title="Hexo日常使用"></a>Hexo日常使用</h1><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//新建页面</span><br><span class="line">hexo new page &quot;page title&quot;</span><br><span class="line">//新建文章</span><br><span class="line">hexo new &quot;post title&quot;</span><br><span class="line">//生成静态文件，可简写为hexo g</span><br><span class="line">hexo generate</span><br><span class="line">//启动服务器，默认本地访问网址为：http://localhost:4000，可简写为hexo s</span><br><span class="line">hexo server</span><br><span class="line">//部署网站，可简写为hexo d -g，-g为部署前生成静态文件</span><br><span class="line">hexo deploy -g</span><br><span class="line">//清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>集中式版本控制系统：CVS, VSS, SVN, ClearCase<br>分布式版本控制系统：Mercurial，Bazaar，BitKeeper，Git</p>
+<p>Git是一款开源的分布式版本控制系统(Distributed Version ControlSystem) ， 诞生于2002年， 由Linux之父Linus Torvalds带领Linux开源社区开发完成。 初衷是用其管理Linux内核的庞大的开源代码</p>
+<p>Git的设计理念包括以下几点：</p>
+<ul>
+<li>速度快</li>
+<li>设计简单</li>
+<li>强力支持非线性开发， 允许上千分支并行开发</li>
+<li>完全的分布式</li>
+<li>有能力高效管理类似Linux内核一样的超大规模项目（速度和数据量）</li>
+</ul>
+<p>Git对比SVN的优势</p>
+<ul>
+<li>版本库安全性高<ul>
+<li>Git<ul>
+<li>分布式系统，每个用户相当于一个备份</li>
+<li>通过SHA1哈希保证数据的完整性， 防止恶意篡改</li>
+</ul>
+</li>
+<li>SVN<ul>
+<li>集中式存在单点故障的风险</li>
+<li>服务器端历史数据被篡改时， 客户端难以发现</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>分支功能强大<ul>
+<li>Git<ul>
+<li>便于查询和追溯分支间的提交历史</li>
+<li>支持双向合并</li>
+</ul>
+</li>
+<li>SVN<ul>
+<li>分支不支持提交隔离</li>
+<li>一次提交可同时更改主线和分支的内容， 无法查询和追溯分支间的提交历史</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>更灵活的发布控制<ul>
+<li>Git<ul>
+<li>设置只有发布管理员才有权限推送的版本库或者分支， 用于稳定发布版本的维护</li>
+<li>设置只有项目经理、 模块管理员才有权推送的版本库或者分支， 用于整合测试        </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>隔离开发、 提交审核<ul>
+<li>Git<ul>
+<li>支持团队成员自建分支和版本库</li>
+<li>通过合并请求或从成员个人版本库、 分支获取提交， 从提交说明、代码规范等方面对提交逐一审核        </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对合并更好的支持： 更少的冲突和更好的解决冲突<ul>
+<li>Git<ul>
+<li>基于DAG（有向非环图） 的设计比SVN的线性提交提供更好的合并追踪， 避免不必要的冲突， 提高工作效率</li>
+<li>基于对内容的追踪而非对文件名追踪， 所以遇到一方或双方对文件名更改时， Git能够很好进行自动合并或提供工具辅助合并。 而SVN遇到同样问题时会产生树冲突， 解决起来很麻烦       </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li>工作拷贝（工作目录） ： 用于存放产品开发数据本地工作目录。</li>
+<li>索引（Index） ： 用于存放待提交数据的缓存区。</li>
+<li>本地库： 远端库的一个完整的拷贝， 包括所有文件的修改记录， 分支等。</li>
+<li>远端库： 本地库clone来源。</li>
+<li>中心库： 远端库的一种， 公司级存放某个项目所有产品数据的仓库。</li>
+<li>快照（snapshot） ： 版本库某个时间点所有文件集合。</li>
+<li>全球版本号（commitID） ： Git库的版本号是通过SHA-1算法根据库中的所有内容计算出一个40位的哈希值， 这个哈希值是全球唯一的， 基本只要前六位就可以唯一标识了。</li>
+</ul>
+<p><strong>文件状态：</strong></p>
+<ul>
+<li>Untracked files： 未被跟踪的文件， 一般指新添加的文件</li>
+<li>Change not staged for commit： 已修改的文件， 包括modified和deleted状态</li>
+<li>Change to be commit： 已缓冲的文件， 即已add的文件， 包括modified、 deleted和new file状态</li>
+<li>Noting to commit： 已提交的文件， 即已commit的文件</li>
+</ul>
+<p><strong>操作模式：</strong><br><img src="/images/GitOperation.png" alt="GitOperation"></p>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><ul>
+<li>本质上是个指向commit对象的可变指针</li>
+<li>分支的默认名字为master（主分支）</li>
+<li>每次提交的时候都会自动向前移动</li>
+<li>作用： 从某个提交对象往回看的历史</li>
+</ul>
+<p>Git分支实质是一个包含所指对象校验和（40 个字符长度 SHA-1 字串）的文件<br>新建一个分支就是向一个文件写入 41 个字节（外加一个换行符）</p>
+<p><strong>Git分支的特点</strong></p>
+<ul>
+<li>操作简单</li>
+<li>操作速度快</li>
+<li>合并分支容易</li>
+<li>创建和销毁分支廉价</li>
+</ul>
+<p><strong>分支合并</strong></p>
+<ul>
+<li>快进式合并(fastforward)<br>  顺着一个分支走下去可以到达另一个分支的合并过程</li>
+<li>非快进式合并(non-fastforward)<br>  使用两个分支的末端以及它们的共同祖先进行一次简单的三方合并计算的合并过程</li>
+<li>分支衍合<br>  和三方合并结果一致， 但能产生更简洁的提交历史</li>
+</ul>
+<p><strong>合并冲突</strong></p>
+<ul>
+<li>修改了同一文件的同一行<br>  人工确认正确的修改，命令行解决</li>
+<li>文件重名<br>  人工确认正确的名字，删除错误的，命令行解决</li>
+</ul>
+<p><strong>分支管理：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//新建一个名为test的分支</span><br><span class="line"> $ git branch test</span><br><span class="line"> </span><br><span class="line">//利用HEAD指针识别当前指针</span><br><span class="line">//每次提交后HEAD随着分支向前移动</span><br><span class="line"></span><br><span class="line">//切换到test分支</span><br><span class="line"> $ git checkout test</span><br><span class="line"> </span><br><span class="line">//查看所有分支</span><br><span class="line"> $ git branch</span><br><span class="line"> </span><br><span class="line">//查看已合并分支</span><br><span class="line"> $ git branch --merged</span><br><span class="line"> </span><br><span class="line">//查看未合并分支</span><br><span class="line"> $ git branch --no-merged</span><br><span class="line"> </span><br><span class="line">//删除名为test的分支</span><br><span class="line"> $ git branch -d test</span><br></pre></td></tr></table></figure>
 
-<h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><p>推荐一款轻便简洁的Markdown编辑器<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a></p>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一阶标题      </span></span><br><span class="line"><span class="section">## 二阶标题     </span></span><br><span class="line"><span class="section">### 三阶标题    </span></span><br><span class="line"><span class="section">#### 四阶标题   </span></span><br><span class="line"><span class="section">##### 五阶标题  </span></span><br><span class="line"><span class="section">###### 六阶标题</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线的内容<span class="xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<h2 id="字体加粗"><a href="#字体加粗" class="headerlink" title="字体加粗"></a>字体加粗</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="斜体字"><a href="#斜体字" class="headerlink" title="斜体字"></a>斜体字</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*倾斜的内容*</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="空格符"><a href="#空格符" class="headerlink" title="空格符"></a>空格符</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp;ensp;  //一个空格</span><br><span class="line">&amp;emsp;  //两个空格</span><br></pre></td></tr></table></figure>
-
-<h2 id="居中文本"><a href="#居中文本" class="headerlink" title="居中文本"></a>居中文本</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span>这是要居中的文本内容<span class="xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">***</span> </span><br><span class="line">或</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~删除线删除的内容~~</span><br></pre></td></tr></table></figure>
-
-<h2 id="有序表"><a href="#有序表" class="headerlink" title="有序表"></a>有序表</h2><p>使用<code>数字 + . + 空格 + 输入内容</code>，需注意虽然不按如此格式输入显示仍是表的样式，但在HTML源码中不是表的格式</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>数据1</span><br><span class="line"><span class="bullet">    1. </span>数据1的子数据1</span><br><span class="line"><span class="bullet">    2. </span>数据1的子数据2</span><br><span class="line"><span class="code">    ...</span></span><br><span class="line"><span class="bullet">2. </span>数据2</span><br><span class="line"><span class="bullet">3. </span>数据3</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<h2 id="无序表"><a href="#无序表" class="headerlink" title="无序表"></a>无序表</h2><p>使用<code>+</code>，<code>-</code>，<code>*</code>均可</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>数据1</span><br><span class="line"><span class="bullet">    - </span>数据1的子数据1</span><br><span class="line"><span class="bullet">    - </span>数据1的子数据2</span><br><span class="line"><span class="code">    ...</span></span><br><span class="line"><span class="bullet">+ </span>数据2</span><br><span class="line"><span class="bullet">+ </span>数据3</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">图片描述（不会显示在页面中）</span>](<span class="link">图片路径</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="插入链接"><a href="#插入链接" class="headerlink" title="插入链接"></a>插入链接</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">链接描述（带下划线文本形式显示）</span>](<span class="link">链接URL</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>在表格绘制中，<code>|</code>表示分列，<code>-</code>控制分行，<code>:</code>控制对齐方式<br><code>:-</code>表示左对齐，<code>:-:</code>表示居中对齐，<code>-:</code>表示右对齐<br>注意控制分行符号<code>-</code>数量对显示没有影响，下面多个<code>-</code>纯属为了排版好看</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| 列名1    | 列名2    | 列名3   |  </span><br><span class="line">| :------ | :------: | ------: |</span><br><span class="line">| 列1数据1 | 列2数据1 | 列3数据1 |   </span><br><span class="line">| 列1数据2 | 列2数据2 | 列3数据2 | </span><br><span class="line">| 列1数据3 | 列2数据3 | 列3数据3 |</span><br></pre></td></tr></table></figure>
-
-<p>此处需注意在Hexo中，对Markdown表格解析结果为</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列名1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列名2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列名3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span>列1数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>列2数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"right"</span>&gt;</span>列3数据1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>无法实现文本内容居中，居右表示，只能默认居左表示<br>目前只想到通过修改当前页面全局CSS来改变位置，在文章前面加入如下CSS来实现居中显示：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">th</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">td</span>&#123;<span class="attribute">text-align</span>: center&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="插入代码"><a href="#插入代码" class="headerlink" title="插入代码"></a>插入代码</h2><h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`单行代码内容`</span></span><br></pre></td></tr></table></figure>
-
-<p>在Hexo中会解析为<code>&lt;code&gt;</code>标签的内容，故可在<code>themes/hexo-theme-next/source/css/_custom/custom.styl</code>下修改其CSS样式</p>
-<h3 id="多行代码"><a href="#多行代码" class="headerlink" title="多行代码"></a>多行代码</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```</span></span><br><span class="line"><span class="code">   此处为多行代码填写位置，可以选择Markdown自带的一些代码类型，从而实现部分高亮显示</span></span><br><span class="line"><span class="code">   不存在的类型（例如cmd中命令行语句），选择text格式即可 </span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="LaTeX公式"><a href="#LaTeX公式" class="headerlink" title="LaTeX公式"></a>LaTeX公式</h2><p>数学公式的默认定界符</p>
-<ol>
-<li>行内公式为<code>$...$</code>和<code>\\(..\\)</code></li>
-<li>块级公式为<code>$$...$$</code>和<code>\\[..\\]</code></li>
-</ol>
-<p>使用LaTeX需在站点配置文件中找到<code>mathjax</code>，并将<code>enable</code>改为<strong>true</strong><br><a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="noopener">详细使用方法</a></p>
-<h2 id="插入视频"><a href="#插入视频" class="headerlink" title="插入视频"></a>插入视频</h2><p>将下面src中的链接替换为视频外链即可</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">height</span>=<span class="string">498</span> <span class="attr">width</span>=<span class="string">570</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">"https://www.bilibili.com/html/html5player.html?cid=24237876&amp;aid=14875829&amp;pre_ad=0"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">frameborder</span>=<span class="string">0</span> <span class="attr">allowfullscreen</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="禁用Markdown渲染"><a href="#禁用Markdown渲染" class="headerlink" title="禁用Markdown渲染"></a>禁用Markdown渲染</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">    禁用渲染的内容，如LaTeX换行符\\，常用在矩阵中</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>最后编辑于2019.10.19</p>
+<p><strong>分支策略</strong></p>
+<ul>
+<li>长期分支<ul>
+<li>master：稳定分支（主分支）</li>
+<li>develop：测试分支</li>
+<li>topic：开发分支</li>
+</ul>
+</li>
+<li>短期分支<br>  用来实现单一特性或与其相关工作的分支</li>
+</ul>
+<h2 id="Git使用的协议"><a href="#Git使用的协议" class="headerlink" title="Git使用的协议"></a>Git使用的协议</h2><ul>
+<li>HTTP<ul>
+<li>版本控制工具普遍采用的协议， 优点： 安全（HTTPS） 、 方便（跨越防火墙） 。</li>
+<li>哑协议<ul>
+<li>Git服务器和客户端的会话过程中只使用了相关协议提供的基本传输功能，而未针对Git的传输特点进行相关优化设计。</li>
+<li>优点： 配置简单。</li>
+<li>缺点： Git客户端和服务器间的通讯缺乏效率， 用户使用时最直观的体验之一就是在操作过程没有进度提示， 应用会一直停在那里直到整个通讯过程处理完毕。</li>
+</ul>
+</li>
+<li>智能协议<ul>
+<li>优点： 打破了以前哑传输协议给HTTP协议带来的恶劣印象， 让HTTP协议成为Git服务的一个重要选项。</li>
+<li>不足： 授权管理能力弱。<ul>
+<li>创建版本库只能在服务器端进行， 不能通过远程客户端进行。</li>
+<li>配置认证和授权， 也只能在服务器端进行， 不能在客户端远程配置。</li>
+<li>版本库的写操作授权只能进行非零即壹的授权， 不能针对分支甚至路径进行授权。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SSH<ul>
+<li>唯一一个同时支持读写操作的网络协议</li>
+<li>是一个验证授权的网络协议</li>
+<li>优点<ul>
+<li>拥有对网络仓库的写权限</li>
+<li>架设相对简单</li>
+<li>安全： 传输过程加密和授权</li>
+<li>高效： 压缩数据传输</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>无法匿名访问仓库</li>
+<li>不利于开源项目</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Git<ul>
+<li>一个包含在 Git 软件包中的特殊守护进程</li>
+<li>监听一个提供类似于SSH服务的特定端口（9418） ， 而无需任何授权</li>
+<li>优点<ul>
+<li>现存最快的传输协议</li>
+<li>使用与 SSH 协议相同的数据传输机制， 但省去了加密和授权的开销</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>缺少授权机制</li>
+<li>最难架设的协议： 要求有单独的守护进程， 需要定制</li>
+<li>要求防火墙开放 9418 端口， 而企业级防火墙一般不允许对这个非标准端口的访问</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -545,9 +663,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-          
-            <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+            <a href="/tags/SE/" rel="tag"># SE</a>
           
         </div>
       
@@ -560,8 +676,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/16/NextAndConfig/" rel="next" title="Hexo的Next主题以及个性化设置">
-                <i class="fa fa-chevron-left"></i> Hexo的Next主题以及个性化设置
+              <a href="/2020/01/08/AgileSoftwareDevelopment/" rel="next" title="敏捷开发与DevOps">
+                <i class="fa fa-chevron-left"></i> 敏捷开发与DevOps
               </a>
             
           </div>
@@ -569,10 +685,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/19/ComputationalMethods/" rel="prev" title="计算方法知识点（1-4）">
-                计算方法知识点（1-4） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -761,7 +873,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo日常使用"><span class="nav-number">1.</span> <span class="nav-text">Hexo日常使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdown语法"><span class="nav-number">2.</span> <span class="nav-text">Markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标题"><span class="nav-number">2.1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下划线"><span class="nav-number">2.2.</span> <span class="nav-text">下划线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体加粗"><span class="nav-number">2.3.</span> <span class="nav-text">字体加粗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斜体字"><span class="nav-number">2.4.</span> <span class="nav-text">斜体字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空格符"><span class="nav-number">2.5.</span> <span class="nav-text">空格符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#居中文本"><span class="nav-number">2.6.</span> <span class="nav-text">居中文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分割线"><span class="nav-number">2.7.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除线"><span class="nav-number">2.8.</span> <span class="nav-text">删除线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有序表"><span class="nav-number">2.9.</span> <span class="nav-text">有序表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无序表"><span class="nav-number">2.10.</span> <span class="nav-text">无序表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入图片"><span class="nav-number">2.11.</span> <span class="nav-text">插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入链接"><span class="nav-number">2.12.</span> <span class="nav-text">插入链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">2.13.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入代码"><span class="nav-number">2.14.</span> <span class="nav-text">插入代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行代码"><span class="nav-number">2.14.1.</span> <span class="nav-text">单行代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行代码"><span class="nav-number">2.14.2.</span> <span class="nav-text">多行代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LaTeX公式"><span class="nav-number">2.15.</span> <span class="nav-text">LaTeX公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入视频"><span class="nav-number">2.16.</span> <span class="nav-text">插入视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#禁用Markdown渲染"><span class="nav-number">2.17.</span> <span class="nav-text">禁用Markdown渲染</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.2.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支"><span class="nav-number">1.3.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git使用的协议"><span class="nav-number">1.4.</span> <span class="nav-text">Git使用的协议</span></a></li></ol></li></ol></div>
             
 
           </div>
