@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="不断努力的Koo">
 <meta property="og:description" content="一些不常用证明">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-20T09:45:55.983Z">
+<meta property="og:updated_time" content="2020-02-24T08:16:28.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些小证明">
 <meta name="twitter:description" content="一些不常用证明">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  124
+                  388
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -462,6 +462,10 @@
       
         <h1 id="x-n-前-n-项和"><a href="#x-n-前-n-项和" class="headerlink" title="$x^n$ 前$n$项和"></a>$x^n$ 前$n$项和</h1><p>$x^n$前$n$项和由$(x + 1)^{n+1} - (x - 1)^{n+1}$求得<br>$x$的前$n$项和:n<br>$(x + 1)^2 - (x - 1)^2 = 4x$<br>$((x-1) + 1)^2 - ((x-1) - 1)^2 = 4(x-1)$<br>$…$<br>$2^2 = 4$<br>$(x + 1)^2 + ((x-1) - 1)^2 - 1^2 - 0^2 = 4Sn \Rightarrow Sn = \dfrac{x(x+1)}{2}$</p>
 <p>$x^2$的前$n$项和:<br>$(x + 1)^3 - (x - 1)^3 = 6x^2 + 2$<br>$((x - 1) + 1)^3 - ((x -1) - 1)^3 = 6(x-1)^2 + 2$<br>$…$<br>$2^3 = 8$<br>$(x + 1)^3 + ((x - 1) + 1)^3 - 1^3 - 0^3 = 6Sn + 2x \Rightarrow Sn = \dfrac{2x^3+3x^2+x}{6}$</p>
+<h1 id="Cauchy-Schwarz不等式"><a href="#Cauchy-Schwarz不等式" class="headerlink" title="Cauchy-Schwarz不等式"></a>Cauchy-Schwarz不等式</h1><ol>
+<li>向量空间中<br> $\vert (x,y) \vert =|x^Ty|\le \Vert x\Vert\Vert y\Vert$<br> 证明：<br> 将向量$x$在水平方向$u$和竖直方向$v$分解<br> $x=u+v$<br> $u=ky$<br> $\Vert x \Vert^2 = (x,x) = (u,u)+2(u,v)+(v,v)$<br> $ \Vert x \Vert \ge \Vert u \Vert$<br> $ \Vert u \Vert = \dfrac{(x,y)}{ \Vert y \Vert}$<br> $\Vert x \Vert \Vert y \Vert \ge (x,y)$</li>
+<li>积分中<br> $[\int_{a}^{b}f(x)g(x)dx]^2\le \int_{a}^{b}f^2(x)dx\int_{a}^{b}g^2(x)dx $<br> 证明：<br> 令$F(x)=\int_{a}^{t}f^2(x)dx\int_{a}^{t}g^2(x)dx - [\int_{a}^{x}f(t)g(t)dx]^2$<br> $F’(x)=f^2(x)\int_{a}^{x}g^2(t)dx+g^2(x)\int_{a}^{x}f^2(t)dx-2f(x)g(x)\int_{a}^{x}f(t)g(t)dx$<br> $=\int_{a}^{x}[f^2(x)g^2(t)+g^2(x)f^2(t)-2f(x)g(x)f(t)g(t)]dx$<br> $=\int_{a}^{x}[f(x)g(t)-g(x)f(t)]^2dt\ge 0$<br> 故$F(x)$在$x\ge a$上单增，所以$F(x)\ge F(a)=0$，所以$F(b)\ge F(a) = 0$<br> 即$[\int_{a}^{b}f(x)g(x)dx]^2\le \int_{a}^{b}f^2(x)dx\int_{a}^{b}g^2(x)dx $</li>
+</ol>
 
       
     </div>
@@ -598,7 +602,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -609,7 +613,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -704,7 +708,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#x-n-前-n-项和"><span class="nav-number">1.</span> <span class="nav-text">$x^n$ 前$n$项和</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#x-n-前-n-项和"><span class="nav-number">1.</span> <span class="nav-text">$x^n$ 前$n$项和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cauchy-Schwarz不等式"><span class="nav-number">2.</span> <span class="nav-text">Cauchy-Schwarz不等式</span></a></li></ol></div>
             
 
           </div>
@@ -751,7 +755,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共74.7k字</span>
+  <span class="post-count">博客全站共76.2k字</span>
 </div>
 
         
