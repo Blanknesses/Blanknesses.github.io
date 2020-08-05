@@ -1,6 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Deepin 20.0 配置Hyperledger Fabric SDK Java环境</title>
+    <url>/2020/08/05/HyperledgerFabricSDK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Hyperledger-Fabric-SDK-Java"><a href="#Hyperledger-Fabric-SDK-Java" class="headerlink" title="Hyperledger Fabric SDK Java"></a>Hyperledger Fabric SDK Java</h1><p><a href="https://github.com/IBM/blockchain-application-using-fabric-java-sdk" target="_blank" rel="noopener">Hyperledger Fabric SDK Java Github库</a><br>配置Hyperledger Fabric分布式账本解决方案平台，需要安装以下4个组件</p>
+<ul>
+<li><a href="https://www.docker.com/get-started" target="_blank" rel="noopener">Docker</a></li>
+<li><a href="https://docs.docker.com/compose/" target="_blank" rel="noopener">Docker Compose</a></li>
+<li><a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank" rel="noopener">Java</a></li>
+<li><a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">Maven</a></li>
+</ul>
+<h1 id="Deepin-安装Docker"><a href="#Deepin-安装Docker" class="headerlink" title="Deepin 安装Docker"></a>Deepin 安装Docker</h1><p>由于Deepin是基于debian的unstable版本开发，而docker官方源并没有支持debian的unstable版本，故使用docker官方教程安装不成功<br>参考<a href="https://wiki.deepin.org/wiki/Docker" target="_blank" rel="noopener">Deepin社区</a> Docker教程进行安装</p>
+<ol>
+<li><p>旧版本卸载（首次安装跳过）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get remove docker.io docker-engine</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装密钥管理与下载相关的工具</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 密钥管理（add-apt-repository ca-certificates 等）与下载（curl 等）相关的工具</span><br><span class="line">sudo apt-get install apt-transport-https ca-certificates curl python-software-properties software-properties-common</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载并安装密钥<br>使用国内源</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/debian/gpg | sudo apt-key add -</span><br><span class="line">// 官方源，能否成功可能需要看运气。</span><br><span class="line">// curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看密钥是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-key fingerprint 0EBFCD88</span><br></pre></td></tr></table></figure>
+
+<p> 安装成功后显示</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pub   rsa4096 2017-02-22 [SCEA]</span><br><span class="line">  9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88</span><br><span class="line">uid           [ 未知 ] Docker Release (CE deb) &lt;docker@docker.com&gt;</span><br><span class="line">sub   rsa4096 2017-02-22 [S]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在source.list中添加docker-ce软件源（deepin 20.0添加下面这个即可）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/debian stretch stable&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新仓库</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装docker-ce</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看版本验证安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h1><p>这里用pip3安装docker compose，绝对不要用pip，会报错</p>
+<ol>
+<li><p>因为deepin默认版本为Python 2.7，所以先将默认Python版本更换为Python3（deepin 20.0自带python 3）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p> 在bashrc中添加如下语句</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alias python=&apos;python3&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认版本切换成功后，安装pip3</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install python3-pip</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用pip3安装docker compose</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo pip3 install docker-compose</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><strong>使用pip安装docker-compose的错误</strong></p>
+<ul>
+<li><p>ImportError: No module named ssl_match_hostname<br>  网上博客提供的解决方法是<br>  将python2.7 下backports包整个复制到docker下transport文件夹中</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 路径仅供参考</span><br><span class="line">cp -r /usr/local/lib/python2.7/dist-packages/backports /usr/local/lib/python2.7/dist-packages/docker/transport</span><br></pre></td></tr></table></figure>
+
+<p>  <strong>注：在deepin 20.0上尝试无效，仍然报错，用pip3安装解决</strong></p>
+</li>
+<li><p>启动时报错：Couldn’t connect to Docker daemon at http+docker://localhost - is it running?<br>  在设置区块链网络时，使用如下指令时报错</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">./build.sh</span><br></pre></td></tr></table></figure>
+
+<p>  权限问题，使用sudo ./build.sh执行</p>
+</li>
+</ul>
+<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><p><strong>使用jdk 1.8</strong><br>否则在创建并初始化频道，部署并实例化链代码时，会报非法反射</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">WARNING: An illegal reflective access operation has occurred</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<p>这里使用openjdk1.8</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
+
+<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><p>可以参考<a href="https://wiki.deepin.org/wiki/Deepin%E4%B8%8Bjava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2#MAVEN.E5.AE.89.E8.A3.85" target="_blank" rel="noopener">Deepin社区</a> 进行安装配置<br>下面介绍使用IDEA自带openjdk14.0.2以及maven3进行配置</p>
+<ol>
+<li><p>修改profile</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 路径仅供参考</span><br><span class="line"># Maven config</span><br><span class="line">export JAVA_HOME=/home/nozomi/.jdks/openjdk-14.0.2</span><br><span class="line">export MAVEN_HOME=/home/nozomi/idea-IU-202.6397.94/plugins/maven/lib/maven3</span><br><span class="line">export PATH=$&#123;PATH&#125;:$&#123;JAVA_HOME&#125;/bin:$&#123;MAVEN_HOME&#125;/bin</span><br></pre></td></tr></table></figure>
+
+<p> 保存退出后更新配置</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置命令连接符</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 路径仅供参考</span><br><span class="line">sudo update-alternatives --install /usr/bin/mvn mvn /home/nozomi/idea-IU-202.6397.94/plugins/maven/lib/maven3/bin/mvn 1000</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><strong>安装配置Maven的错误</strong><br>提示mvn无权限，使用sudo后提示mvn未找到命令<br>给所有用户添加权限解决</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 路径仅供参考</span><br><span class="line">chmod a+x /home/nozomi/idea-IU-202.6397.94/plugins/maven/lib/maven3/bin/mvn</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置执行Hyperledger-Fabric-SDK遇到的错误"><a href="#配置执行Hyperledger-Fabric-SDK遇到的错误" class="headerlink" title="配置执行Hyperledger Fabric SDK遇到的错误"></a>配置执行Hyperledger Fabric SDK遇到的错误</h1><ul>
+<li><p>./build.sh<br>  在docker-compose错误中解决，使用sudo ./build.sh</p>
+</li>
+<li><p>部署实例化代码时</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Apr 23, 2018 10:25:22 AM org.example.client.ChannelClient instantiateChainCode</span><br><span class="line">  INFO: Instantiating Chaincode ID fabcar on channel mychannel</span><br></pre></td></tr></table></figure>
+
+<p>  执行到此处卡住不动，结束执行，重新执行解决，原因未知</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Blockchain</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Blockchain</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机网络</title>
     <url>/2020/04/16/ComputerNetworking/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="高级计算机网络"><a href="#高级计算机网络" class="headerlink" title="高级计算机网络"></a>高级计算机网络</h1><h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><h3 id="电路交换与分组交换"><a href="#电路交换与分组交换" class="headerlink" title="电路交换与分组交换"></a>电路交换与分组交换</h3><p><strong>电路交换（Circuit Switching）</strong></p>
@@ -363,8 +475,8 @@
         <category>Course</category>
       </categories>
       <tags>
-        <tag>Network</tag>
         <tag>Course</tag>
+        <tag>Network</tag>
       </tags>
   </entry>
   <entry>
@@ -372,7 +484,6 @@
     <url>/2020/04/12/RegularExpression/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><style>
     th{text-align: center}
-    td{text-align: center}
 </style>
 
 <h1 id="相关类"><a href="#相关类" class="headerlink" title="相关类"></a>相关类</h1><p>Java正则表达式的典型使用为：</p>
@@ -1536,8 +1647,8 @@ $\dfrac{f''(x^{*})}{2f'(x^{*})}=\dfrac{1}{3}=0.666667$
         <category>Java</category>
       </categories>
       <tags>
-        <tag>Course</tag>
         <tag>Math</tag>
+        <tag>Course</tag>
         <tag>Java</tag>
       </tags>
   </entry>
@@ -2742,8 +2853,8 @@ $D=\{\overline{h}||\lambda_j( \overline{h})| < 1 \quad j=1,2,\cdots,k\}$
         <category>Course</category>
       </categories>
       <tags>
-        <tag>Course</tag>
         <tag>Math</tag>
+        <tag>Course</tag>
       </tags>
   </entry>
   <entry>
@@ -4734,8 +4845,8 @@ $$
         <category>Course</category>
       </categories>
       <tags>
-        <tag>Course</tag>
         <tag>Math</tag>
+        <tag>Course</tag>
       </tags>
   </entry>
   <entry>
@@ -6420,8 +6531,8 @@ $$
         <category>Course</category>
       </categories>
       <tags>
-        <tag>Course</tag>
         <tag>Math</tag>
+        <tag>Course</tag>
       </tags>
   </entry>
   <entry>
