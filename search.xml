@@ -1,6 +1,1133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>最优化方法（1-2）</title>
+    <url>/2020/09/25/OptimizationMethod/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最优化问题简写为：</p>
+
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &f(x)\\
+\rm s.t. &g_i(x) \le 0\quad i=1,2,\cdots,m\\ 
+&h_i(x)=0 \quad i = m+1,\cdots,p
+\end{cases}\qquad\qquad (2-1)
+\end{aligned}
+$$
+
+<p>可行集/容许集$R = \{ x|g_i(x) \le 0\quad i=1,2,\cdots,m; h_i(x)=0 \quad i = m+1,\cdots,p\}$</p>
+<p><strong>注：</strong> $f\in C^2$表示$f$具有2阶连续偏导数，$R^n$表示$n$维欧式空间</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><strong>定义2.1</strong> 若有$x^*\in R$，使得$\forall x\in R$，均有$f(x^*) \le f(x)$，则称$x^*$为问题（2-1）的可行集或容许集，称$x\in R$为（2-1）的可行解或容许解</p>
+<p><strong>定理2.1</strong> 设$f(x), g_i(x), i=1,2,\cdots.m,h_i(x),i=m+1,\cdots,p$在$R^n$上连续，则问题（2-1）的可行集为闭集，他的全局最优解集合亦为闭集</p>
+<p><strong>定理2.2</strong> （一阶必要条件） 设函数$f(x)\in C^1$定义在$\Omega \subset R^n$上，$x^*$是$\Omega$的一个内点，若$x^*$为$f(x)$的一个极小点，则$\nabla f(x^*)=0$</p>
+<p>最优化问题分类</p>
+<ul>
+<li>线性规划（LP）</li>
+<li>二次规划（QP）</li>
+<li>非线性规划（NLP）</li>
+<li>整数规划（IP）</li>
+<li>几何规划</li>
+<li>多目标规划</li>
+</ul>
+<h2 id="凸集，凸优化及凸规划"><a href="#凸集，凸优化及凸规划" class="headerlink" title="凸集，凸优化及凸规划"></a>凸集，凸优化及凸规划</h2><p><strong>定义3.1</strong> 设$\Omega \subset R^n$，如果对于任意的点$x, y\in \Omega$，连接点$x,y$的线段上的一切点都在$\Omega$中，即对于$0\le \mu \le 1$的一切$\mu$，总有$\mu x+(1-\mu)y\in \Omega$，则称$\Omega$为一个凸集</p>
+<p><strong>定义3.2</strong> 设实数$a_i \ge 0(i=1,2,\cdots,p),\sum\limits_{i=1}^p a_i = 1, x^{(i)}\in R^n(i=1,2,\cdots,p)$，则称$x=\sum\limits_{i=1}^p a_ix^{(i)}$为点$x^{(1)}，x^{(2)},\cdots,x^{(p)}$的一个凸组合</p>
+<p><strong>定理3.1</strong> 集合$\Omega \subset R^n$为凸集的充要条件是：点$x^{(i)}\in \Omega\quad (i=1,2,\cdots,p)$的任意凸组合仍包含在$\Omega$中</p>
+<p><strong>定理3.2</strong> 任意一组凸集的交集仍为凸集</p>
+<p><strong>定义3.3</strong> 包含集合$\Omega \subset R^n$的所有凸集的交集称为$\Omega$的包，记为$Co(\Omega)$或$H(\Omega)$</p>
+<p><strong>定义3.4</strong> 设$\Omega \subset R^n$，如果对于任何$x\in \Omega$及所有的$\alpha\ge 0$，都有$\alpha x\in \Omega$，则称集合$\Omega$为一个锥。一个同时为凸集的锥，称为凸锥</p>
+<p><strong>定义3.5</strong> 设$f(x)$是定义在非空凸集$\Omega \subset R^n$上的函数，若对任意$x,y\in \Omega$，不等式<br>$$<br>f(\lambda x + (1-\lambda)y)\le \lambda f(x) + (1-\lambda)f(y)\qquad\qquad (3-1)<br>$$<br>对于$0\le \lambda\le 1$中的一切$\lambda$都成立，则称$f(x)$为$\Omega$上的凸函数</p>
+<p>若对于$0\le \lambda\le 1$中的一切$\lambda$和$x\not= y(x,y\in \Omega)$，都有<br>$$<br>f(\lambda x + (1-\lambda)y)&lt; \lambda f(x) + (1-\lambda)f(y)\qquad\qquad (3-2)<br>$$<br>成立，则称$f(x)$为$\Omega$上的严格凸函数</p>
+<p><strong>定理3.3</strong> 设$f_1(x),f_2(x)$是凸集$\Omega\subset R^n$上的凸函数，则$f_1(x)+f_2(x)$在$\Omega$上也是凸的</p>
+<p><strong>定理3.4</strong> 设$f(x)$是凸集$\Omega\subset R^n$上的凸函数，则对任意常数$a&gt;0$，函数$af(x)$也是凸的</p>
+<p><strong>定理3.5</strong> 设$f(x)$是凸集$\Omega \subset R^n$上的凸函数，则对任意一个实数$c$，水平集</p>
+$$
+\Omega_c=\{x| x\in \Omega,f(x)\le c\}
+$$
+<p>是凸集</p>
+<p><strong>定理3.5 推论</strong> 设$f_i(x)(i=1,2,\cdots,p)$为凸集$\Omega\subset R^n$上的凸函数，$c_i(i=1,2,\cdots,p)$为实常数，则$\Omega$中同时满足$f_1(x)\le c_1,f_2(x)\le c_2,\cdots,f_p(x)\le c_p$的点所构成的集合$\Omega_c$为凸集</p>
+<p><strong>定理3.6</strong> 定义在凸集$\Omega \subset R^n$上的可微函数$f(x)$为凸函数的充要条件是：对于所有的$x,y\in \Omega$都有<br>$$<br>f(y)\ge f(x)+(\nabla f(x))^T(y-x)\qquad\qquad (3-3)<br>$$<br><strong>定理3.7</strong> 设$\Omega\subset R^n$为含有内点的凸集，$f(x)\in C^2$，则$f$在$\Omega$上为凸函数的充要条件是：$f(x)$的$Hesse$矩阵$F(x)=\nabla^2 f(x)$在整个$\Omega$上式半正定的</p>
+<p><strong>定理3.8</strong> 设$\Omega \subset R^n$为非空开凸集，$f\in C^2$，若$\nabla^2f(x)$在$\Omega$上处处正定，则$f(x)$是$\Omega$上的严格凸函数</p>
+<p><strong>定义3.6</strong>  规划问题</p>
+
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &f(x)\\
+\rm s.t. &g_i(x) \le 0\quad i=1,2,\cdots,l\qquad\qquad (3-8)\\ 
+\end{cases}
+\end{aligned}
+$$
+<p>若$f(x),g_i(x)(i=1,2,\cdots,l)$均为可行集$R$上的凸函数，则称这样的问题为凸规划问题</p>
+<p><strong>定理3.9</strong> 凸规划问题（3-8）的可行集$R$是凸集</p>
+<p><strong>定理3.10</strong> 对于凸规划问题（3-8），目标函数$f(x)$的任一局部极小点都是$f(x)$在非空可行集$R$上的全局极小点</p>
+<p><strong>定理3.11</strong> 对于凸规划问题（3-8），若$f(x)$在非空可行集$R$上是严格凸函数，则问题（3-8）的全局极小点唯一</p>
+<h2 id="拟凸函数，伪凸函数"><a href="#拟凸函数，伪凸函数" class="headerlink" title="拟凸函数，伪凸函数"></a>拟凸函数，伪凸函数</h2><p><strong>定义3.7</strong> 设$\Omega\subset R^n$为非空凸集，$f:\Omega\rightarrow R^1$，若$\forall x,y\in\Omega$，均有</p>
+$$
+f(\lambda x + (1-\lambda)y)\le \max\{f(x),f(y)\},\forall\lambda\in(0,1)
+$$
+<p>成立，则称$f(x)$在$\Omega$上为拟凸函数</p>
+<p>若$\forall x,y\in\Omega,f(x)\not=f(y)$，均有</p>
+$$
+f(\lambda x + (1-\lambda)y)< \max\{f(x),f(y)\},\forall\lambda\in(0,1)
+$$
+<p>成立，则称$f(x)$在$\Omega$上为严格拟凸函数</p>
+<p><strong>注：严格拟凸函数不一定是拟凸函数，凸函数必为拟凸函数</strong></p>
+<p><strong>定理3.12</strong> 设$\Omega\subset R^n$为非空凸集，$f:\Omega\rightarrow R^1$，则$f$是$\Omega$上的拟凸函数的充要条件是：$\forall c\in R^1$，水平集$H_c(f)=\{x|x\in \Omega,f(x)\le c\}$是凸集</p>
+<p><strong>定理3.13</strong> 设$\Omega\subset R^n$为非空凸集，$f:\Omega\rightarrow R^1$为可微函数，则$f$是$\Omega$上的拟凸函数的充要条件是，若</p>
+<p>$f(x^{(1)})\le f(x^{(2)}),\forall x^{(1)},x^{(2)}\in\Omega$则$\nabla f(x^{(2)}))(x^{(1)}-x^{(2)})\le c$</p>
+<p><strong>定义3.8</strong> 设$\Omega\subset R^n$为非空开凸集，$f:\Omega\rightarrow R^1$为可微函数，如果对于<br>$$<br>\nabla f(x^{(1)})^T(x^{(1)}-x^{(2)})\le 0,\quad \forall x^{(1)},x^{(2)}\in \Omega<br>$$<br>必有$f(x^{(1)})\le f(x^{(2)})$，则称$f(x)$是$\Omega$上的伪凸函数</p>
+<p>在上述条件下，若$x^{(1)}\not=x^{(2)}$，必有$f(x^{(1)})&lt; f(x^{(2)})$，则称$f(x)$是$\Omega$上的严格伪凸函数</p>
+<p><strong>定理3.14</strong> 设$\Omega\subset R^n$为非空凸集，$f:\Omega\rightarrow R^1$为可微函数，若$f$是$\Omega$上的伪凸函数，则$f$是$\Omega$上的严格拟凸函数和拟凸函数</p>
+<h2 id="广义凸规划"><a href="#广义凸规划" class="headerlink" title="广义凸规划"></a>广义凸规划</h2><p><strong>定理3.15</strong> 设（3-8）的可行集$R$是凸集，$f(x)$是$R$上的严格拟凸函数，则广义凸规划（3-8）的任一局部最优解$x^*$也是它的全局最优解</p>
+<p><strong>定理3.16</strong> 设（3-8）的可行集$R$是开凸集，$f(x)$是$R$上的伪凸函数，$x^<em>\in R$，若$\nabla f(x^</em>)=0$，则$x^*$是（3-8）的全局最优解</p>
+<h1 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h1><p>标准形式的线性规划问题</p>
+
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &c^Tx\\
+\rm s.t. &Ax=b,x\ge0 \qquad\qquad(1-2)
+\end{cases}
+\end{aligned}
+$$
+<p>展开为：</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &y=\sum\limits_{i=1}^m c_ix_i\\
+\rm s.t. &\sum\limits_{j=1}^n a_{ij}x_j\quad i=1,2,\cdots,m\\
+&x_j\ge0\quad j=1,2,\cdots,n
+\end{cases}
+\end{aligned}
+$$
+<p>其中，变量个数$n$称为线性规划的维数，等式约束方程数目$m$称为线性规划的阶数，$m&lt;n$</p>
+<p>满足约束条件的点$x=(x_1,x_2,\cdots,x_n)$称为可行解</p>
+<p>设$A$的秩为$m$，则可从$A$的$n$列中选出$m$列，使它们线性无关，令$B=(a_1,a_2,\cdots,a_m)$，使得方程$Bx_B=b$有唯一解$x_B=B^{-1}b$，令$x^T=(x_B^T,0^T)$</p>
+<p>称$B$为基底，$x$为关于基底$B$的基本解，当基本解中有一个或一个以上的基本变量$x_i=0$时，称这个解为退化的基本解</p>
+<p>当一个可行解$x$又是基本解时，称它为基本可行解，若它是退化的，称为退化的基本可行解</p>
+<p>一个基本可行解$x$是一个不超过$m$个正$x_i$的可行解，而一个非退化的基本可行解$x$是恰有$m$个正$x_i$的可行解</p>
+<p>一个$m$阶，$n$维的线性规划问题，其基本可行解个数不超过$C_{n}^m$</p>
+<h2 id="基本定理"><a href="#基本定理" class="headerlink" title="基本定理"></a>基本定理</h2><p><strong>定义2.1</strong> 称$H^+=\{x|x\in R^n,c^Tx\ge b\}$为正闭半空间，$H^-=\{x|x\in R^n ,c^Tx\le b\}$为负闭半空间。$H^+,H^-$统称为闭半空间</p>
+<p><strong>定义2.2</strong> 有限个闭半空间的交集称为多面凸集，亦即集合$S=\{x|Ax\le b\}$（其中$A=(a_{ij})_{m\times n}$）称为多面凸集或凸多胞形</p>
+<p><strong>定义2.3</strong> 有界且非空的多面凸集称为多面凸体或凸多面体</p>
+<p><strong>定义2.4</strong> 设$S$为凸集，$x\in S$，若对于$x$找不到$x_1,x_2\in S(x_1\not= x_2)$，使$x=ax_1+(1-a)x_2(0&lt;a&lt;1)$成立，则称$x$为凸集$S$的极点，或顶点</p>
+<p><strong>定理2.1</strong> 设$A=(a_{ij})_{m\times n}$，其秩为$m$，且<br>$m&lt;n,x=(x_1,x_2,\cdots,x_n)^T,b=(b_1,b_2,\cdots,b_m)^T$，则矢量$x$为凸集</p>
+$$
+R=\{x|Ax=b,x\ge 0\}\qquad\qquad (2-1)
+$$
+<p>的一个极点的充要条件是$x$为<br>$$<br>Ax=b,\quad x\ge 0\qquad\qquad(2-2)<br>$$<br>的一个基本可行解</p>
+<p><strong>定理2.2</strong> 设给定的线性规划问题形如（1-2）</p>
+<ul>
+<li>若（1-2）有可行解，则其必有基本可行解</li>
+<li>若（1-2）有最优可行解，则必有最优基本可行解</li>
+</ul>
+<p>即若（1-2）有最优解，则一定在可行集的极点上达到</p>
+<p><strong>定理2.2 推论1</strong> 若由（1-2）确定的可行集$R=\{x|Ax=b,x\ge 0\}$是非空的，则它至少有一个极点</p>
+<p><strong>定理2.2 推论2</strong> 如果一个线性规划问题（1-2）存在有限的最优解，则至少存在一个是可行集$R$的极点的有限最优解</p>
+<p><strong>定理2.2 推论3</strong> 对应于（1-2）的可行集$R$至多具有有限多个极点</p>
+<h2 id="化为标准形式"><a href="#化为标准形式" class="headerlink" title="化为标准形式"></a>化为标准形式</h2><p>如果在一个线性规划问题中，有一部分变量不要求取非负值，则这些变量就称为自由变量，可有两种方式化为标准形式</p>
+<ul>
+<li><p>令$x_i=u_i-v_i,u_i,v_i\ge0$</p>
+</li>
+<li><p>从约束方程之一解出$x_i$，代入其他的约束方程和目标函数，则问题转化为$n-1$个变量和$m-1$个约束的LP问题</p>
+</li>
+</ul>
+<h2 id="单纯形法"><a href="#单纯形法" class="headerlink" title="单纯形法"></a>单纯形法</h2><p>基本思想：使由LP问题的一个基本可行解（极点）转移到另一个基本可行解，目标函数值是减小的</p>
+<p>约束方程的规范形式</p>
+$$
+\begin{aligned}
+\begin{cases}
+x_1\qquad \qquad \qquad +y_{1\cdot {m+1}}x_{m+1}+\cdots+y_{1n}x_n=y_{10}\\
+\qquad x_2\qquad \qquad +y_{2\cdot {m+1}}x_{m+1}+\cdots+y_{2n}x_n=y_{20}\\
+\qquad\qquad\ddots\qquad\qquad\vdots\\
+\qquad \qquad \qquad x_m +y_{m\cdot {m+1}}x_{m+1}+\cdots+y_{mn}x_n=y_{m0}\\
+\end{cases}
+\end{aligned}
+$$
+<p>简写为：<br>$$<br>x_i+\sum\limits_{j=m+1}^n y_{ij}x_j=y_{i0},i=1,2,\cdots,m<br>$$<br>对应的基本解为<br>$$<br>x=(y_{10},y_{20},\cdots,y_{m0},0,\cdots,0)<br>$$<br>令$x_B=(x_1,x_2,\cdots,x_m)^T,x_N=(x_{m+1},\cdots,x_n)^T$</p>
+<p>规范形式可写为</p>
+$$
+\begin{aligned}
+\quad[I_m,N]
+\begin{bmatrix}
+x_B\\x_N
+\end{bmatrix}
+=y_0\quad
+\end{aligned}
+$$
+<p>基本解转换</p>
+<p>将基本变量$x_p$用非基本变量$x_q$代替，$1\le p\le m, y_{pq}\not= 0$，新约束方程组系数为</p>
+$$
+\begin{aligned}
+\begin{cases}
+y_{ij}^{'}=y_{ij}-\dfrac{y_{pj}}{y_{pq}} y_{iq},i\not =p\\
+y_{pj}^{'}=\dfrac{y_{pj}}{y_{pq}}
+\end{cases}
+\end{aligned}
+$$
+
+<p>$y_{pq}$为主元</p>
+<p>为保证基本解的可行性，需确定离基矢量</p>
+<p>假设进基矢量为$a_k$</p>
+<p>则离基矢量为$\min\limits_{1\le i < k} \{ \dfrac{y_{i0}}{y_{ik}}|y_{ik} > 0 \}$</p>
+<p>其中$y_{i0}$是基本解的基本变量，$y_{ik}$是约束方程组系数</p>
+<p><strong>定理3.1</strong> 已知一个非退化的基本可行解，其目标函数值为$z_0$，假定对于某一个$j$，有$c_j-z_j&lt;0$，那么存在一个可行解，使其对应的目标函数值$z&lt;z_0$。如果能用非基矢量$a_j$代替原基中的某一矢量$a_r$，而产生的一个新的基本可行解，则这个新的解将使$z&lt;z_0$。如果不能用$a_j$来代替而产生的一个基本可行解，则可行集$R$是无界的，而且目标函数值可以任意的小</p>
+<p><strong>定理3.2</strong> 如果某一个基本可行解，对所有的$j$，都有$c_j-z_j\ge 0$，那么这个解就是最优解</p>
+<p>称$c_j-z_j=r_j$为相对成本系数或检验数</p>
+<p>单纯形法计算步骤</p>
+<ul>
+<li><p>把一般LP问题化为标准形式</p>
+$$
+  \begin{aligned}
+  \begin{cases}
+  \min \quad &c^Tx\\
+  \rm s.t. &Ax=b\\&x\ge0
+  \end{cases}
+  \end{aligned}
+  $$
+</li>
+<li><p>建立初始单纯形表</p>
+<table>
+<thead>
+<tr>
+<th align="center">基矢量</th>
+<th align="center">$a_1$</th>
+<th align="center">$a_2$</th>
+<th align="center">$\cdots$</th>
+<th align="center">$a_n$</th>
+<th align="center">b</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$a_{n-m +1}$</td>
+<td align="center">$y_{11}$</td>
+<td align="center">$y_{12}$</td>
+<td align="center"></td>
+<td align="center">$y_{1n}$</td>
+<td align="center">$y_{10}$</td>
+</tr>
+<tr>
+<td align="center">$a_{n-m+2}$</td>
+<td align="center">$y_{21}$</td>
+<td align="center">$y_{22}$</td>
+<td align="center"></td>
+<td align="center">$y_{2n}$</td>
+<td align="center">$y_{20}$</td>
+</tr>
+<tr>
+<td align="center">$\vdots$</td>
+<td align="center">$\vdots$</td>
+<td align="center">$\vdots$</td>
+<td align="center"></td>
+<td align="center">$\vdots$</td>
+<td align="center">$\vdots$</td>
+</tr>
+<tr>
+<td align="center">$a_n$</td>
+<td align="center">$y_{m1}$</td>
+<td align="center">$y_{m2}$</td>
+<td align="center">$\cdots$</td>
+<td align="center">$y_{mn}$</td>
+<td align="center">$y_{m0}$</td>
+</tr>
+<tr>
+<td align="center">检验数</td>
+<td align="center">$c_1$</td>
+<td align="center">$c_2$</td>
+<td align="center">$\cdots$</td>
+<td align="center">0</td>
+<td align="center">$-z_0$</td>
+</tr>
+</tbody></table>
+$$
+  \begin{aligned}
+  \begin{cases}
+  c=[c_1,c_2,\cdots,c_m,0,\cdots,0]^T\\
+  x=[x_1,x_2,\cdots,x_m,0,\cdots,0]^T\\
+  z_0=c^Tx\quad or \quad c_B^Tx_B
+  \end{cases}
+  \end{aligned}
+  $$
+</li>
+<li><p>若所有检验数$c_j-z_j=r_j\ge0$，得到一个最优解，否则继续</p>
+<p>非基矢量计算检验数</p>
+<p>$c_j\in c$，$c_B^T$与对应$a_j$的列相乘获得$z_j$</p>
+<p>$c_B^T$是基矢量$x_B$对应$c$中系数组成的集合</p>
+</li>
+<li><p>当有多个$r_j&lt;0$时，通常选择$\min\{r_j|r_j<0\}=r_k$的$a_k$为进基矢量< p>
+</0\}=r_k$的$a_k$为进基矢量<></p></li>
+<li><p>对所有的$y_{ik}&gt;0$，计算$\min\limits_{1 \le i < k}\{\dfrac{y_{i0}}{y_{ik}}|y_{ik}>0\}$，继续，若所有的$y_{ik} \le 0$，则LP问题的可行集$R$无界，且目标函数无界，结束</p>
+</li>
+<li><p>进行$Gauss$消元，获取新的基本可行解，回到检验数继续</p>
+</li>
+</ul>
+<h2 id="确定初始基本可行解"><a href="#确定初始基本可行解" class="headerlink" title="确定初始基本可行解"></a>确定初始基本可行解</h2><h3 id="大M法"><a href="#大M法" class="headerlink" title="大M法"></a>大M法</h3><p>LP问题标准形式</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &c^Tx\\
+\rm s.t. &Ax=b\qquad\qquad (4-1)\\
+&x\ge0
+\end{cases}
+\end{aligned}
+$$
+<p>为获得一个初始基本可行解，引入人工变量$y_1,y_2,\cdots,y_m$，令$y=[y_1,y_2,\cdots,y_m]^T$</p>
+<p>考察另一个LP问题</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &c^Tx + ME^Ty\\
+\rm s.t. &Ax + y=b\qquad\qquad (4-2)\\
+&x\ge0,y\ge0
+\end{cases}
+\end{aligned}
+$$
+<p>其中$M&gt;0$是一个充分大的数，$E=[1,1,\cdots,1]^T\in R^m$</p>
+<p><strong>定理4.1</strong> 设$\begin{aligned}
+\begin{bmatrix}
+x^*\\y^*
+\end{bmatrix}
+\end{aligned}$是问题（4-2）的最优解，若$y^*=0$，则$x^*$是问题（4-1）的最优解；若$y^*\not=0$，则问题（4-1）没有可行解。反之，若$x^*$是问题（4-1）的最优解，则$\begin{aligned}
+\begin{bmatrix}
+x^*\\0
+\end{bmatrix}
+\end{aligned}$是问题（4-2）的最优解</p>
+<h3 id="二阶段法"><a href="#二阶段法" class="headerlink" title="二阶段法"></a>二阶段法</h3><p>设要求解的LP问题为（4-1），引入人工变量$y_1,y_2,\cdots,y_m$，令$y=[y_1,y_2,\cdots,y_m]^T$</p>
+<p>构造一个辅助的LP问题</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &z=\sum\limits_{i=1}^m y_i\\
+\rm s.t. &Ax + y=b\qquad\qquad (4-5)\\
+&x\ge0,y\ge0
+\end{cases}
+\end{aligned}
+$$
+<p><strong>定理4.2</strong> 若问题（4-5）的最优基本可行解为$\begin{aligned}
+\begin{bmatrix}
+x^*\\0
+\end{bmatrix}
+\end{aligned}$，则$x^*$为问题（4-1）的一个基本可行解；若问题（4-5）的最优基本可行解为$\begin{aligned}
+\begin{bmatrix}
+x^*\\y^*
+\end{bmatrix}
+\end{aligned}$，且$y^*\not=0$，则问题（4-1）没有可行解</p>
+<p>求解步骤为：</p>
+<ul>
+<li><p>求解辅助LP问题，使用单纯形法</p>
+</li>
+<li><p>若找到最优基本可行解为$\begin{aligned}
+  \begin{bmatrix}
+  x^*\\0
+  \end{bmatrix}
+  \end{aligned}$，继续</p>
+</li>
+<li><p>将辅助LP问题的单纯形表中人工变量所在列移除，重新计算$r_j,z_0$</p>
+</li>
+<li><p>利用移除后的单纯形表进行迭代获取最优解</p>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>若系数矩阵为方阵，直接添加人工变量使用单纯形法求解，系数矩阵$A_{m\times n},m&lt;n$时，若存在单个未知量$x_i$在某个约束方程中存在，使用大M法，否则使用二阶段法</p>
+<h2 id="单纯形法矩阵形式"><a href="#单纯形法矩阵形式" class="headerlink" title="单纯形法矩阵形式"></a>单纯形法矩阵形式</h2><p>对于LP问题（4-1），设其中矩阵$A$的秩$r(A)=m&lt;n,b\ge0$</p>
+<p>设$B$为基，由$A$的前$m$列组成，把$A,x,c$分块为</p>
+$A=(B,N),x=\begin{bmatrix}
+x^*\\y^*
+\end{bmatrix},c=\begin{bmatrix}c_B\\c_N\end{bmatrix}$
+
+<p>于是问题（4-1）可写成</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &z=c_B^Tx_B+c_N^Tx_N\\
+\rm s.t. &Bx_B+Nx_N=b\qquad\qquad (4-6)\\
+&x_B,x_N\ge0
+\end{cases}
+\end{aligned}
+$$
+<p>令$x_N=0$，则得$x_B=B^{-1}b$，于是得到与基$B$对应的基本可行解（假设可行）$x^{(0)}=\begin{bmatrix}
+x^*\\0
+\end{bmatrix}=\begin{bmatrix}
+B^{-1}b\\0
+\end{bmatrix}$</p>
+<p>对应的目标函数值为$z_0=c_B^Tx_B=c_B^TB^{-1}b$</p>
+<p>对任意的$x_N$，有$x_B=B^{-1}b-B^{-1}Nx_N$</p>
+<p>对应的目标函数值为$z=c_B^Tx_B=c_B^TB^{-1}b+(c_N^T-c_B^TB^{-1}N)x_N=z_0+r_N^Tx_N$</p>
+<p>其中$r_N^T=c_N^T-c_B^TB^{-1}N=c_N^T-\pi^TN$</p>
+<p>其中$\pi^T=c_B^TB^{-1}$称为<strong>单纯形乘子矢量</strong></p>
+<p>$r_N$是与非基变量对应的检验数构成的矢量，$r_B$表示与基变量对应的检验数构成的矢量，$r_B=0$</p>
+<p>称$r=\begin{bmatrix}
+r_B\\r_N
+\end{bmatrix}$为<strong>相对成本矢量或检验矢量</strong></p>
+<p>与基$B$对应的矩阵形式单纯形表可写成​</p>
+$$
+\begin{aligned}
+T(B)=\begin{bmatrix}
+I_m&&B^{-1}N&&B^{-1}b\\
+0&&c_N^T-c_B^TB^{-1}N&&-c_B^TB^{-1}b
+\end{bmatrix}
+\end{aligned}
+$$
+<p>更一般的写为</p>
+$$
+\begin{aligned}
+T(B)=\begin{bmatrix}
+B^{-1}A&&B^{-1}b\\
+c_N^T-c_B^TB^{-1}A&&-c_B^TB^{-1}b
+\end{bmatrix}
+\end{aligned}
+$$
+<p>检验矢量$r^T=c_N^T-c_B^TB^{-1}A=c^T-\pi^TA$</p>
+<h2 id="修正单纯形法"><a href="#修正单纯形法" class="headerlink" title="修正单纯形法"></a>修正单纯形法</h2><p>节约存储，通常使用在计算机计算中，手算无优势，使用上面矩阵形式计算</p>
+<h2 id="退化与循环"><a href="#退化与循环" class="headerlink" title="退化与循环"></a>退化与循环</h2><p>避免迭代过程出现循环，有如下三种方法</p>
+<ul>
+<li>摄动法</li>
+<li>字典序法</li>
+<li>Bland法<ul>
+<li>若$\min\{i|r_i<0\}=k$，选择$y_k$为进基矢量< li>
+<li>若$\min\{\dfrac{y_{i0}}{y_{ik}}|y_{ik}>0\}=\dfrac{y_{i0}}{y_{ik}}$，则选择$y_{ik}$为主元，$y_i$为离基矢量</li>
+</0\}=k$，选择$y_k$为进基矢量<></li></ul>
+</li>
+</ul>
+<h2 id="对偶LP与对偶单纯形法"><a href="#对偶LP与对偶单纯形法" class="headerlink" title="对偶LP与对偶单纯形法"></a>对偶LP与对偶单纯形法</h2><h3 id="对偶LP问题"><a href="#对偶LP问题" class="headerlink" title="对偶LP问题"></a>对偶LP问题</h3><p>设有LP问题</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &f(x)=c^Tx\\
+\rm s.t. &Ax\ge b\qquad\qquad(5-1)\\
+&x\ge0 
+\end{cases}
+\end{aligned}
+$$
+
+<p>其对偶LP问题定义为</p>
+$$
+\begin{aligned}
+\begin{cases}
+\max \quad &g(\lambda)=b^T\lambda\\
+\rm s.t. &\lambda^TA\le c^T\qquad\qquad(5-2)\\
+&\lambda\ge0 
+\end{cases}
+\end{aligned}
+$$
+<p>其中$A=(a_{ij})_{m\times n},x,c\in R^n,b,\lambda\in R^m$</p>
+<p>由原始规划转换成对偶规划步骤</p>
+<ul>
+<li>交换常矢量$c,b$的位置，变矢量$x$用$\lambda$替换</li>
+<li>改变约束不等式的不等号方向，min为大于等于（原始），max为小于等于（对偶）</li>
+<li>把min改成max</li>
+<li>交换$A$与变矢量的位置，并按需要做适当的转置</li>
+</ul>
+<h3 id="对偶定理"><a href="#对偶定理" class="headerlink" title="对偶定理"></a>对偶定理</h3><p>标准LP问题形式</p>
+$$
+\begin{aligned}
+&\begin{cases}
+\min \quad&c^Tx\\
+\rm s.t. & Ax= b\qquad\qquad(5-3)\\
+&x\ge0 
+\end{cases}\\
+\Rightarrow
+&\begin{cases}
+\min \quad &c^Tx\\
+\rm s.t. &
+\begin{bmatrix}
+A\\-A
+\end{bmatrix}
+x\ge
+\begin{bmatrix}
+b\\-b
+\end{bmatrix}\\
+&x\ge0 
+\end{cases}\\
+\Rightarrow
+&\begin{cases}
+\max \quad &(u^T,v^T)
+\begin{bmatrix}
+b\\-b
+\end{bmatrix}\\
+\rm s.t. &
+[u^T,v^T]
+\begin{bmatrix}
+A\\-A
+\end{bmatrix}
+\le
+ c^T\\
+&u\ge 0,v\ge0 
+\end{cases}\\
+\Rightarrow
+&\begin{cases}
+\max \quad &(u^T-v^T)b\\
+\rm s.t. &
+(u^T-v^T)A
+\le
+ c^T\\
+&u\ge 0,v\ge0 
+\end{cases}\\
+\end{aligned}
+$$
+<p>其对偶形式</p>
+$$
+\begin{aligned}
+\begin{cases}
+\max \quad &w^Tb\\
+\rm s.t. &w^TA\le c^T\qquad\qquad(5-4)\\
+
+\end{cases}
+\end{aligned}
+$$
+<p>其中$w=u-v$</p>
+<p><strong>引理 1</strong>  若$x$和$w$分别是（5-3），（5-4）的可行解，则$c^Tx\ge w^Tb$</p>
+<p><strong>推论</strong> 设$x^*,w^*$分别是（5-3），（5-4）的可行解，且$c^Tx^*=w^{*T}b$，则$x^*,w^*$分别是（5-3），（5-4）的最优解</p>
+<p><strong>线性规划的对偶定理</strong> 若（5-3）或（5-4）二者有一个有有限的最优解，则另一个也有有限的最优解，而且二者的目标函数值相同。若任一个问题的目标函数值无界，则另一个问题没有可行解</p>
+<p>设$x^*$是（5-3）的最优基本可行解，$B$为对应的最优基，则校验矢量$r$应满足</p>
+$$
+r^T=c^T-\pi^TA\ge0\qquad\qquad (5-6)\\
+$$
+<p>其中$\pi=c^T_BB^{-1}$，单纯形矢量乘子矢量，参见单纯形法矩阵形式</p>
+<h3 id="对偶单纯形法"><a href="#对偶单纯形法" class="headerlink" title="对偶单纯形法"></a>对偶单纯形法</h3><p><strong>定理5.1</strong> 设$x$为（5-3）的任一基本解，对应的基为$B$，令$w^T=c_B^TB^{-1}$。若$x,w$分别是（5-3）和（5-4）的可行解，则$x,w$也分别是（5-3）和（5-4）的最优解</p>
+<p><strong>定义5.1</strong> 若$x$是（5-3）的一个基本解（设对应的基为$B$），且它对应的检验矢量$r\ge 0$（即$w=\pi=(c_B^TB^{-1})^T$为（5-4）的可行解），则称$x$为（5-3）的对偶可行解或正则解</p>
+<p><strong>基本思想</strong></p>
+<p>从原始问题（5-3）的一个对偶可行的基本解开始，逐次迭代，保持对偶可行性的条件下，逐步使原始问题（5-3）的基本解$x$的不可行性消失（即使$x\ge 0$），直到获得（5-3）的一个基本可行解为止，而它即为原始问题的最优解</p>
+<p><strong>计算步骤</strong></p>
+<ul>
+<li><p>把一般的LP问题化为（5-3）形式，不要求$b\ge0$</p>
+</li>
+<li><p>列出初始单纯形表，求出（5-3）的一个对偶可行的基本解$x=\begin{bmatrix}x_B\\0\end{bmatrix}$</p>
+</li>
+<li><p>若$x_B\ge0$，则现行解为最优解，计算结束，否则$x_B\not\ge0$，令$x_{B_i}=\min\{x_{B_j}|j=1,2,\cdots,m\}$，由此确定$a_{B_i}$为离基矢量</p>
+</li>
+<li><p>用$y_{ij}$表示单纯形表中第$B_i$行的各个元素，若所有的$y_{ij}\ge0(j=1,1,\cdots,n)$，则对偶问题（5-4）的目标无上界，原始问题（5-3）没有可行解，否则必有某个$j$使$y_{ij}&lt;0$，令</p>
+$$
+  \epsilon=\min\limits_{1\le j\le n}\{\dfrac{z_j-c_j}{y_{ij}}|y_{ij}<0\}=\dfrac{z_k-c_k}{y_{ik}} $$ <p>其中<br>$$<br>\begin{aligned}<br>&amp;z_j=w^Ta_j,j=1,2,\cdots,n\<br>&amp;w^T=c_B^TB^{-1}<br>\end{aligned}<br>$$<br>决定$a_k$为进基矢量，$y_{ik}$为主元素<p></p>
+</0\}=\dfrac{z_k-c_k}{y_{ik}}></li>
+<li><p>用$a_k$代替$a_{B_i}$形成一个新基，再用这个新基来确定相应的对偶可行的基本解，然后返回第三步</p>
+</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>原始问题使用单纯形法求解，先计算进基矢量，在离基矢量，对偶单纯形法中，先确定离基矢量，再确定进基矢量</p>
+]]></content>
+      <categories>
+        <category>Course</category>
+      </categories>
+      <tags>
+        <tag>Math</tag>
+        <tag>Course</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最优化方法（3-4）</title>
+    <url>/2020/09/25/OptimizationMethod1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="无约束优化方法"><a href="#无约束优化方法" class="headerlink" title="无约束优化方法"></a>无约束优化方法</h1><h2 id="下降递推算法"><a href="#下降递推算法" class="headerlink" title="下降递推算法"></a>下降递推算法</h2><p>最优化算法的迭代过程一般分为如下四步：</p>
+<ul>
+<li>选择初始点$x^{(0)}$</li>
+<li>如果$x^{(k)}$已求得，且$x^{(k)}$不是极小点，设法选取一个方向$s^{(k)}$，使目标函数$f(x)$沿$s^{(k)}$是下降的，至少是不增的，$s^{(k)}$称为搜索方向</li>
+<li>在方向$s^{(k)}$确定以后，在射线$x^{(k)}+\lambda s^{(k)}(\lambda\ge0)$上选取适当的步长$\lambda_K$，使$f(x^{(k)}+\lambda_k s^{(k)})\le f(x^{(k)})$，如此确定出下一个点$x^{(k+1)}=x^{(k)}+\lambda_k s^{(k)}$（在多数算法中，$\lambda_k$的选取是使$f(x)$的值下降最多，即沿射线$x^{(k)}+\lambda s^{(k)}$求$f(x)$的极小值，这是关于单变量$\lambda$的函数求极小的问题）。这种确定步长的方法称为<strong>一维搜索或线搜索</strong></li>
+<li>检验所得的新点$x^{(k+1)}$是否为极小点，或满足精度要求的近似极小点</li>
+</ul>
+<p><strong>定义1.1</strong> 设$x^*$为问题$\min f(x),x\in R^n$的最优解，由算法$A$产生的序列${x^{(k)}}$收敛于$x^*$，即</p>
+$$
+\lim_{k\rightarrow+\infty} x^{(k)}=x^*\qquad\qquad (1-3)
+$$
+
+
+<p>${x^{(k)}}$若存在一个与$k$无关的常数$\beta\in(0,1)$，某个正整数$k_0$，使当$k&gt;k_0$时</p>
+$$
+\Vert x^{(k+1)}-x^*\Vert\le \beta \Vert x^{(k)}-x^*\Vert\qquad\qquad(1-4)
+$$
+<p>成立，则称序列${x^{(k)}}$为线性收敛，线性收敛速度相当于响应的等比序列的收敛速度</p>
+$$
+\Vert x^{(k)}-x^*\Vert\le \beta \Vert x^{(k-1)}-x^*\Vert\le\beta^2 \Vert x^{(k-2)}-x^*\Vert\le\cdots\le\beta^k \Vert x^{(0)}-x^*\Vert
+$$
+
+
+<p><strong>定义1.2</strong> 设由算法$A$产生的序列${x^{(k)}}$收敛于最优解$x^*$，如果存在一个与$k$无关的常数$\beta&gt;0$和$\alpha&gt;1$，某个正整数$k_0$，使当$k&gt;k_0$时，</p>
+$$
+\Vert x^{(k+1)}-x^*\Vert\le \beta \Vert x^{(k)}-x^*\Vert^\alpha\qquad\qquad(1-5)
+$$
+<p>成立，则称序列${x^{(k)}}$的收敛阶为$\alpha$，或称序列${x^{(k)}}$是$\alpha$阶收敛</p>
+<p>当$\alpha=2$时，称序列${x^{(k)}}$是二阶收敛的</p>
+<p>当$1&lt;\alpha&lt;2$时，称序列${x^{(k)}}$是超线性收敛的</p>
+<p>迭代终止条件</p>
+<ul>
+<li>$\Vert x^{(k+1)}-x^*\Vert\le \epsilon$</li>
+<li>$| f(x^{(k+1)})-f(x^{(k)})|\le \epsilon$</li>
+</ul>
+<h2 id="一维搜索"><a href="#一维搜索" class="headerlink" title="一维搜索"></a>一维搜索</h2><p>精确一维搜索方法，可以分为两类</p>
+<ul>
+<li><p>不用导数的方法</p>
+<p>0.618法，分数法，“成功-失败”法</p>
+</li>
+<li><p>使用导数的方法</p>
+<p>$Newton$法，抛物线法，三次插值法</p>
+</li>
+</ul>
+<h2 id="Newton法"><a href="#Newton法" class="headerlink" title="Newton法"></a>Newton法</h2><p><strong>基本思想</strong></p>
+<p>用$\varphi(x)$在已知点$x_0$处的二阶$Taylor$展开式来近似代替$\varphi(x)$，即取$\varphi(x)\approx g(x)$，其中<br>$$<br>g(x)=\varphi(x_0)+\varphi^{‘}(x_0)(x-x_0)+\dfrac{1}{2}\varphi^{‘’}(x_0)(x-x_0)^2<br>$$<br>用$g(x)$的极小点$\hat x$作为$\varphi(x)$的近似极小点</p>
+<p>由于$g^{‘}(x)=\varphi^{‘}(x_0)+\varphi^{‘’}(x_0)(x-x_0)=0$</p>
+<p>$x_1=x_0-\dfrac{\varphi^{‘}(x_0)}{\varphi^{‘’}(x_0)}$</p>
+<p>迭代通式为$x_{k+1}=x_k-\dfrac{\varphi^{‘}(x_k)}{\varphi^{‘’}(x_k)}\quad k=1,2,\cdots$</p>
+<p><strong>注</strong> $Newton$法产生的序列即使收敛，其极限也不一定是$f(x)$的极小点，只能保证它是$f(x)$的驻点，驻点可能是极小点，也可能是极大点，也可能是两者都不是</p>
+<h2 id="抛物线法"><a href="#抛物线法" class="headerlink" title="抛物线法"></a>抛物线法</h2><p><strong>基本思想</strong></p>
+<p>利用$f(x)$在三个点$x_0,x_1,x_2$处的函数值来构造一个二次函数$y=g(x)=a_0+a_1x+a_2x^2$，使其满足</p>
+$$
+\begin{aligned}
+\begin{cases}
+y_1=g(x_0)=f(x_0)\\
+y_2=g(x_1)=f(x_1)\qquad\qquad(2-4)\\
+y_3=g(x_2)=f(x_2)
+\end{cases}
+\end{aligned}
+$$
+<p>则$g^{‘}(x)=a_1+2a_2x$。令$g^{‘}(x)=0$得</p>
+<p>$\overline{x}=-\dfrac{a_1}{2a_2}$</p>
+<p>根据（2-4）计算出$a_1,a_2$即可</p>
+<p><strong>注</strong> </p>
+<ul>
+<li><p>通常假设$f(x)\in C^1,x_1&lt;x_0&lt;x_2,f(x_0)&lt;f(x_1),f(x_0)&lt;f(x_2)$，可证$a_2&gt;0$，因而求得的$\overline x$确是$g(x)$的极小点，且$\overline x\in [x_1,x_2]$</p>
+</li>
+<li><p>迭代结束准则</p>
+<ul>
+<li>$|f(\overline x)-f(x_0)|&lt;\epsilon$</li>
+<li>$|x_0-\overline x|&lt;\epsilon$</li>
+<li>$|f(\overline x)-g(\overline x)|&lt;\epsilon$</li>
+</ul>
+</li>
+</ul>
+<h2 id="三次插值法"><a href="#三次插值法" class="headerlink" title="三次插值法"></a>三次插值法</h2><p><strong>基本思想</strong></p>
+<p>用$a,b$两点出的函数值$f(a),f(b)$和导数值$f^{‘}(a),f^{‘}(b)$来构造三次插值多项式，并以$g(x)$的极小点作为$f(x)$的近似极小点，一般情况下，三次插值法比抛物线法收敛速度快</p>
+<p>为保证$f(x)$的极小点$x^*\in[a,b]$，假定$f(x)\in C^1$</p>
+<p>$a&lt;b,f^{‘}(a)&lt;0,f^{‘}(b)&gt;0$</p>
+<p>设插值多项式为</p>
+<p>$g(x)=\alpha(x-a)^3+\beta(x-a)^2+\gamma(x-a)+\delta$</p>
+<p>根据插值条件有</p>
+$\begin{cases}
+\delta = f(a)\\
+\gamma = f^{'}(a)\\
+\alpha(b-a)^3+\beta(b-a)^2+\gamma(b-a)+\delta = f(b)\\
+3\alpha(b-a)^2+2\beta(b-a)+\gamma=f^{'}(b)
+\end{cases}$
+
+
+
+<p>求$f(x)$的近似极小点</p>
+<p>$g^{‘}(x)=3\alpha(x-a)^2+2\beta(x-a)+\gamma$</p>
+<p>令$g^{‘}(x)=0$</p>
+<ul>
+<li><p>当$\alpha=0$时</p>
+<p>$\hat x=a-\dfrac{\gamma}{2\beta}$</p>
+</li>
+<li><p>当$\alpha \not=0$时</p>
+<p>$\hat x=a+\dfrac{-\beta\pm\sqrt{\beta^2-3\alpha \gamma}}{3\alpha}$</p>
+<p>为保证所求根为$g(x)$的极小点，在该点还需满足</p>
+<p>$g^{‘’}(x)=6\alpha(x-a)+2\beta&gt;0$</p>
+<p>$\Rightarrow \pm 2\sqrt{\beta^2-3\alpha \gamma}&gt;0$</p>
+<p>$\Rightarrow\hat x=a+\dfrac{-\beta+\sqrt{\beta^2-3\alpha \gamma}}{3\alpha}=a-\dfrac{\gamma}{\beta+\sqrt{\beta^2-3\alpha\gamma}}$</p>
+</li>
+</ul>
+<p>  $\alpha(b-a)^3+\beta(b-a)^2+\gamma(b-a)+\delta = f(b)\Rightarrow \alpha(b-a)^2+\beta(b-a)=\dfrac{f(b)-\delta}{b-a}-\gamma$</p>
+<p>  $3\alpha(b-a)^2+2\beta(b-a)+\gamma=f^{‘}(b)\Rightarrow 3\alpha(b-a)^2+2\beta(b-a)=f^{‘}(b)-\gamma $</p>
+<p>  令$u=\dfrac{f(b)-\delta}{b-a}-\gamma,v=f^{‘}(b)-\gamma$</p>
+<p>  $\Rightarrow \beta = \dfrac{3u-v}{b-a},\alpha=\dfrac{v-2u}{(b-a)^2}$</p>
+<p>  将$\alpha,\beta,\gamma$代入$\hat x$</p>
+<p>  若$|f^{‘}(\hat x)|&lt;\epsilon$，终止迭代，否则当$f^{‘}(\hat x)&gt;0$时，用$\hat x$代替$b$，否则代替$a$</p>
+<h2 id="平分法"><a href="#平分法" class="headerlink" title="平分法"></a>平分法</h2><p><strong>基本思想</strong></p>
+<p>类似二分法求零点，平分法求导函数零点</p>
+<h2 id="“成功-失败”法"><a href="#“成功-失败”法" class="headerlink" title="“成功-失败”法"></a>“成功-失败”法</h2><p><strong>基本步骤</strong></p>
+<ul>
+<li><p>取定初始点$x_0\in R$，搜索步长$h&gt;0$及精度$\epsilon&gt;0$</p>
+</li>
+<li><p>计算$x_1=x_0+h,f(x_1)$</p>
+</li>
+<li><p>若$f(x_1)&lt;f(x_0)$，搜索成功，用$x_1$代替$x_0$。$2h$代替$h$，继续搜索</p>
+<p>若$f(x_1)\ge f(x_0)$，搜索失败，若$|h|&lt;\epsilon$，取$x^*=x_0$，计算结束，否则用$-\dfrac{h}{4}$代替$h$，继续搜索</p>
+</li>
+</ul>
+<h2 id="0-618法"><a href="#0-618法" class="headerlink" title="0.618法"></a>0.618法</h2><p>一维搜索问题</p>
+$\begin{cases}\min &\varphi(\lambda)\\\rm s.t. &a_1 < \lambda < b_1\end{cases}$
+
+<p>其中$\varphi(\lambda)$为凸函数或拟凸函数</p>
+<p>设$\epsilon&gt;0，\alpha=0.618$</p>
+<p><strong>计算步骤</strong></p>
+<ul>
+<li><p>计算</p>
+$\begin{aligned}&\lambda_1=a_1+(1-\alpha)(b_1-a_1),\varphi(\lambda)\\&\mu_1=a_1+\alpha(b_1-a_1),\varphi(\mu_1)\end{aligned}$
+</li>
+<li><p>若$b_k-a_k&gt;\epsilon$，则计算结束，最优解$\lambda^*\in[a_k,b_k]$</p>
+<ul>
+<li><p>若$\varphi(\lambda_k)&gt;\varphi(\mu_k)$</p>
+<p>令$a_{k+1}=\lambda_k,b_{k+1}=b_k,\lambda_{k+1}=\mu_k,\mu_{k+1}=a_{k+1}+\alpha(b_{k+1}-a_{k+1})$，继续</p>
+</li>
+<li><p>若$\varphi(\lambda_k)\le\varphi(\mu_k)$</p>
+<p>令$a_{k+1}=a_k,b_{k+1}=\mu_k,\mu_{k+1}=\lambda_k,\lambda_{k+1}=a_{k+1}+(1-\alpha)(b_{k+1}-a_{k+1})$，继续</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>本质是平分法变种</strong></p>
+<h2 id="初始搜索区间和初始点确定"><a href="#初始搜索区间和初始点确定" class="headerlink" title="初始搜索区间和初始点确定"></a>初始搜索区间和初始点确定</h2><ul>
+<li>选定初始点的一个估计值$t_0$，初始步长$h&gt;0$，计算$\varphi(t_0)$</li>
+<li>令$t_2=t_0+h$，计算$\varphi(t_2)$</li>
+<li>若$\varphi(t_2)&gt;\varphi(t_0)$，令$h=-h$</li>
+<li>令$t_1=t_0+h$，计算$\varphi(t_1)$</li>
+<li>若$\varphi(t_1)\le \varphi(t_0)$，令$h=2h,t_2=t_0,t_0=t_1$，迭代4，若$\varphi(t_1)&gt;\varphi(t_0)$，下6</li>
+<li>令$a=\min(t_1,t_2),b=\max(t_1,t_2),t_0=\dfrac{a+b}{2}$，结束</li>
+</ul>
+<h2 id="不精确一维搜索"><a href="#不精确一维搜索" class="headerlink" title="不精确一维搜索"></a>不精确一维搜索</h2><p>针对$\min \varphi(\lambda)=f(x^{(k)}+\lambda s^{(k)})$</p>
+<p>常用$Wolfe-Powell$准则</p>
+<p>对给定的常数$c_1,c_2,0&lt;c_1&lt;c_2&lt;1$，要求$\lambda_k$满足</p>
+<ul>
+<li>$f(x^{(k)})-f(x^{(k+1)})\ge -c_1\lambda_k\nabla f(x^{(k)})^Ts^{(k)}$</li>
+<li>$\nabla f(x^{(k+1)})^Ts^{(k)}\ge c_2 \nabla f(x^{(k)})^Ts^{(k)}$</li>
+</ul>
+<p><strong>常取$c_1=0.1,c_2=0.5$</strong></p>
+<p><strong>计算步骤</strong></p>
+<ul>
+<li><p>给定$c_1\in(0,1),c_2\in(c_1,1)$，令$a=0,b=-\infty,\lambda=1,j=0$</p>
+</li>
+<li><p>令$x^{(k+1)}=x^{k}+\lambda s^{(k)}$，计算$f_{k+1},g_{k+1}$，若$\lambda$满足条件，令$\lambda_k=\lambda$，计算结束</p>
+<p>否则令$j=j+1$</p>
+<ul>
+<li><p>$\lambda$不满足条件1</p>
+<p>令$b=\lambda,\lambda=\dfrac{\lambda+a}{2}$，继续</p>
+</li>
+<li><p>$\lambda$满足条件1不满足条件2</p>
+<p>令$a=\lambda,\lambda=\min{2\lambda,\dfrac{\lambda+b}{2}}$，继续</p>
+<p><strong>注</strong> 放大缩小的系数可以改成$0&lt;\beta_1&lt;1,\beta_2&gt;1$</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>二次插值法（略）</p>
+<h2 id="多变量函数极值基本下降法"><a href="#多变量函数极值基本下降法" class="headerlink" title="多变量函数极值基本下降法"></a>多变量函数极值基本下降法</h2><h2 id="最速下降法"><a href="#最速下降法" class="headerlink" title="最速下降法"></a>最速下降法</h2><p><strong>迭代步骤</strong></p>
+<ul>
+<li>给定初始点$x^{(0)}$，精度$\epsilon&gt;0$，令$k=0$</li>
+<li>计算$\nabla f(x^{(k)})$</li>
+<li>若$\Vert \nabla f(x^{(k)})\Vert&lt;\epsilon$，则迭代结束，取$x^*=x^{(k)}$，否则向下继续</li>
+<li>使用精确一维搜索求$\varphi(\lambda)=f(x^{(k)}-\lambda \nabla f(x^{(k)}))$的一个极小点$\lambda_k$，使$f(x^{(k)}-\lambda_k \nabla f(x^{(k)}))&lt;f(x^{(k)})$</li>
+<li>令$x^{(k+1)}=x^{(k)}-\lambda_k\nabla f(x^{(k)}),k=k+1$，返回2</li>
+</ul>
+<h2 id="Newton法-1"><a href="#Newton法-1" class="headerlink" title="Newton法"></a>Newton法</h2><p>同一维搜索部分</p>
+<p>$x^{(k+1)}=x^{(k)}-(\nabla^2f(x^{(k)}))^{-1}\nabla f(x^{(k)})$</p>
+<p>迭代终止条件$\Vert\nabla f(x^{(k)})\Vert&lt;\epsilon$，下同</p>
+<h2 id="阻尼Newton法"><a href="#阻尼Newton法" class="headerlink" title="阻尼Newton法"></a>阻尼Newton法</h2><p>在Newton法中，步长$\lambda_k$总为1</p>
+<p>阻尼Newton法中，每步迭代沿方向$s^{(k)}=-(\nabla^2f(x^{(k)})^{-1}\nabla f(x^{(k)})$进行一维搜索来决定$\lambda_k$</p>
+<p>即取$\lambda_k$使$f(x^{(k)}+\lambda_k s^{(k)})=\min\limits_{\lambda\ge 0}f(x^{(k)}+\lambda s^{(k)})\qquad\qquad(4-3)$</p>
+<p>$x^{(k+1)}=x^{(k)}-\lambda_k(\nabla^2f(x^{(k)}))^{-1}\nabla f(x^{(k)})$</p>
+<h2 id="共轭方向法与共轭梯度法"><a href="#共轭方向法与共轭梯度法" class="headerlink" title="共轭方向法与共轭梯度法"></a>共轭方向法与共轭梯度法</h2><p><strong>定义4.1</strong> 设$A$为$n$阶对称矩阵，$p,q$为$n$维列向量，若$p^TAq=0$，则称$p,q$为$A-$正交，或关于$A-$共轭。如果对于有限个向量$p_1,p_2,\cdots,p_m$，有$p_i^TAp_j=0(i\not=j,j=1,2,\cdots,m)$成立，则称这个向量组为$A-$正交（或共轭）向量组，也称它们是一组$A$共轭方向</p>
+<p><strong>定理4.1</strong> 设$V$为$n$维欧式空间，向量$p_i\in V(i=1,2,\cdots,n)$是线性无关的，$q\in V$，若$q$与$p_1,p_2,\cdots,p_n$都正交，则$q=0$</p>
+<p><strong>定理4.2</strong> 设$A$为$n$阶正定矩阵，$p_1,p_2,\cdots,p_n$为$A-$共轭的$n$维非零向量组，这次向量组必为线性无关的</p>
+<p>$n$元二次函数无约束优化问题</p>
+<p>$\min f(x)=c+b^Tx+\dfrac{1}{2}x^THx$</p>
+<p>其中$c$为常数，$x,b$为$n$维列向量，$H$为$n$阶对称正定矩阵。</p>
+<p>这时$\nabla f(x)=b+Hx,\nabla^2 f(x)=H$，$f(x)$有唯一的极小点</p>
+<p>在极小点$x^*$处，$\nabla f(x^*)=b+Hx^*=0$，则$x^*=-H^{-1}b$</p>
+<p><strong>定理4.3</strong> 设$H$为$n$阶对称正定矩阵，$s^{(0)},s^{(1)},\cdots,s^{(n-1)}\in R^n$是一组$H$共轭方向，对上述无约束优化问题，若从任一初始点$x^{(0)}\in R^n$出发，依次沿方向$s^{(0)},s^{(1)},\cdots,s^{(n-1)}$进行精确一维搜索，则至多经过$n$次迭代，即可求得$f(x)$的最小点</p>
+<h3 id="共轭方向生成"><a href="#共轭方向生成" class="headerlink" title="共轭方向生成"></a>共轭方向生成</h3><ul>
+<li><p>任给初始点$x^{(0)}$，令$s^{(0)}=-\nabla f(x^{(0)})$，代入到（4-3）中，确定$\lambda_0$</p>
+</li>
+<li><p>令$x^{(1)}=x^{(0)}+\lambda_0 s^{(0)},s^{(1)}=-\nabla f(x^{(1)})+\mu_{10}s^{(0)}$，其中$\mu_{10}$为待定系数，使$s^{(0)},s^{(1)}$是$H$共轭的</p>
+<p>故$\mu_{10}=\dfrac{(\nabla f(x^1))^THs^{(0)}}{(s^{(0)})^THs^{(0)}}$</p>
+</li>
+<li><p>将$\mu_{10}$代入$s^{(1)}$表达式，求出搜索方向$s^{(1)}$</p>
+</li>
+<li><p>令$x^{(2)}=x^{(1)}+\lambda_1s^{(1)},s^{(2)}=-\nabla f(x^{(2)})+\mu_{20}s^{(0)}+\mu_{21}s^{(1)}$其中$\mu_{20},\mu_{21}$为待定系数，使$s^{(2)},s^{(1)},s^{(0)}$是$H$共轭的</p>
+</li>
+<li><p>$\cdots\cdots$</p>
+</li>
+</ul>
+<h3 id="共轭梯度法"><a href="#共轭梯度法" class="headerlink" title="共轭梯度法"></a>共轭梯度法</h3><p><strong>计算步骤</strong> </p>
+<ul>
+<li><p>给定初始点$x^{(0)}$及精度$\epsilon&gt;0$</p>
+</li>
+<li><p>计算$g_0=\nabla f(x^{0})$，令$s^{(0)}=-g_0,k=0$</p>
+</li>
+<li><p>求$\min\limits_{\lambda\ge 0} f(x^{(k)}+\lambda s^{(k)})$决定$\lambda_k$，计算</p>
+<p>$x^{(k+1)}=x^{(k)}+\lambda_k s^{(k)},g_{k+1}=\nabla f(x^{(k+1)})$</p>
+</li>
+<li><p>若$\Vert g_{k+1}\Vert&lt;\epsilon$，迭代结束，否则向下继续</p>
+</li>
+<li><p>若$k&lt;n-1$，计算$\mu_{k+1}=\dfrac{\Vert g_{k+1}\Vert^2}{\Vert g_k\Vert^2},s^{(k+1)}=-g_{k+1}+\mu_{l+1}s^{(k)}$，令$k=k+1$转回3</p>
+<p>若$k=n-1$，令$x^{(0)}=x^{(n)}$，转回2</p>
+<p>$n$为维数，即共轭方向个数</p>
+</li>
+</ul>
+<h2 id="变尺度法"><a href="#变尺度法" class="headerlink" title="变尺度法"></a>变尺度法</h2><h3 id="对称秩1算法"><a href="#对称秩1算法" class="headerlink" title="对称秩1算法"></a>对称秩1算法</h3><p>略</p>
+<h3 id="DFP算法"><a href="#DFP算法" class="headerlink" title="DFP算法"></a>DFP算法</h3><p>是一种秩2对称算法</p>
+<p><strong>计算步骤</strong></p>
+<ul>
+<li><p>给定初始$x^{(0)}$，计算精度$\epsilon&gt;0$和初始矩阵$H_0=I$，令$k=0$</p>
+</li>
+<li><p>计算$s^{(k)}=-H_kg_k$，沿$s^{(k)}$进行精确一维搜索，求出步长$\lambda_k$，使</p>
+<p>$f(x^{(k)}+\lambda_k s^{(k)})=\min\limits_{\lambda\ge 0} f(x^{(k)}+\lambda s^{(k)})$</p>
+<p>令$x^{(k+1)}=x^{(k)}+\lambda_k s^{(k)}$</p>
+</li>
+<li><p>若$\Vert g_{k+1}\Vert&lt;\epsilon$，则取$x^*=x^{(k+1)}$，计算结束</p>
+<p>否则，计算$H_{k+1}$</p>
+<p>$H_{K+1}=H_K+\dfrac{\Delta x_k\Delta x_k^T}{\Delta x_k^T\Delta g_k}-\dfrac{H_k\Delta g_k(H_k\Delta g_k)^T}{\Delta g_k^TH_k\Delta g_k}$</p>
+<p>若$k\not= n-1$，则令$k=k+1$，继续</p>
+<p>若$k=n-1$，则$x^{(0)}=x^{(k+1)},k=0$，继续</p>
+<p><strong>注</strong> $\Delta x_k = x_{k+1}-x_k$</p>
+</li>
+</ul>
+<h3 id="吴桂变尺度法"><a href="#吴桂变尺度法" class="headerlink" title="吴桂变尺度法"></a>吴桂变尺度法</h3><p>略</p>
+<h3 id="Huang类算法"><a href="#Huang类算法" class="headerlink" title="Huang类算法"></a>Huang类算法</h3><p>略</p>
+<h3 id="自调节变尺度算法类"><a href="#自调节变尺度算法类" class="headerlink" title="自调节变尺度算法类"></a>自调节变尺度算法类</h3><p>略</p>
+<h3 id="BFGS算法"><a href="#BFGS算法" class="headerlink" title="BFGS算法"></a>BFGS算法</h3><p>略</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>$Newton$法，阻尼$Newton$法以及共轭梯度法最大区别在于求$\lambda$处</p>
+<p>$Newton$法，$\lambda$恒为1</p>
+<p>最速下降法，$\varphi(\lambda)=f(x^{(k)}-\lambda \nabla f(x^{(k)}))$</p>
+<p>阻尼$Newton$法，$\min\limits_{\lambda\ge 0}f(x^{(k)}+\lambda s^{(k)}),s^{(k)}=-(\nabla^2f(x^{(k)})^{-1}\nabla f(x^{(k)})$</p>
+<p>共轭梯度法，$x^{(k+1)}=x^{(k)}+\lambda_k s^{(k)},s^{(k+1)}=-g_{k+1}+\mu_{l+1}s^{(k)},s^{(1)}=-g_0$</p>
+<h2 id="直接搜索法"><a href="#直接搜索法" class="headerlink" title="直接搜索法"></a>直接搜索法</h2><p>略</p>
+<h1 id="约束优化方法"><a href="#约束优化方法" class="headerlink" title="约束优化方法"></a>约束优化方法</h1><h2 id="Kuhn-Tucker条件"><a href="#Kuhn-Tucker条件" class="headerlink" title="Kuhn-Tucker条件"></a>Kuhn-Tucker条件</h2><p>一般约束优化问题为</p>
+$$
+\begin{aligned}
+&\begin{cases}
+\min &f(x)\\
+\rm s.t. &g_i(x)\le 0, i=1,2,\cdots,m\qquad\qquad(1-1)\\
+&h_j(x)=0,j=1,2,\cdots,p\\
+&x\in X\subset R^n
+\end{cases}\\
+&x=(x_1,x_2,\cdots,x_n)\\
+&S=\{x|x\in X,g_i(x)\le 0,i=1,2,\cdots,m,h_j(x)=0,j=1,2,\cdots,p\}\\
+&I(x^0)=\{i|g_i(x^0)=0,1\le i\le m\}
+\end{aligned}
+$$
+<p>当$i\in I(x^0)$时，对应的约束$g_i(x)\le 0$称为在$x^0$处的紧约束，或起作用约束，而$I(x^0)$称为$x^0$点紧约束指标集</p>
+<p><strong>定理1.1</strong> 最优性的一阶必要条件</p>
+<p>设$x^{*}$是问题（1-1）的一个可行解，$X\subset R^n$为非空开集，$f,g_i(i\in I(x^{*}))$在$x^{*}$可微，$g_i(i\not\in I(x^*))$在$x^{*}$点连续，$\nabla g_i(x^*),i\in I(x^*),\nabla h_j(x^*),j=1,2,\cdots,p$线性无关，若$x^{*}$是（1-1）的局部最优解，则有实数$u_i,v_j$（其中$i\in I(x^*),j=1,2,\cdots,p$）使得</p>
+$\nabla f(x^{*}) + \sum\limits_{i \in I} u_i \nabla g_i(x^{*}) + \sum\limits_{j = 1}^p v_j\nabla h_j(x^{*})=0\qquad u_i \ge 0,i \in I(x^{*})$
+
+<p>如果加上$i\in I$时，$g_i$在$x^*$点可微，则上述条件可改写为</p>
+$\nabla f(x^{*})+\sum\limits_{i = 1}^{m} u_i\nabla g_i(x^{*})+\sum\limits_{j = 1}^p v_j\nabla h_j(x^{*})=0\qquad u_i \ge 0,u_ig_i(x^{*}) = 0,i=1,2,\cdots,m$
+
+<p>上述条件称为$Kuhn-Tucker$最优性必要条件，满足条件的点称为$K-T$点</p>
+<p><strong>定理1.2</strong> 最优性的充分条件</p>
+<p>设$X\subset R^n$为非空开集，$x^*\in S$，在$x^*$，$K-T$条件成立，即存在数$u_i\ge 0(i\in I(x^*)),v_i(i=1,2,\cdots,p)$，使得</p>
+$\nabla f(x^*)+\sum\limits_{i\in I} u_i\nabla g_i(x^*)+\sum\limits_{j=1}^p v_j\nabla h_j(x^*)=0$
+
+<p>令$J={i|v_i&gt;0},K={i|v_i&lt;0}$，设$f$在$x^*$点伪凸，$g_i(i\in I)$在$x^*$点拟凸，$h_i(i\in J)$在$x^*$点拟凸，$h_i(i\in K)$在$x^*$点拟凹，则$x^*$是问题（1-1）的全局最优解</p>
+<h3 id="判断一个点是否是K-T点"><a href="#判断一个点是否是K-T点" class="headerlink" title="判断一个点是否是K-T点"></a>判断一个点是否是K-T点</h3><ul>
+<li><p>获取$x^*\in S$，是一个可行解</p>
+</li>
+<li><p>计算$\nabla f(x^*)$，根据</p>
+$\nabla f(x^*)+\sum\limits_{i\in I} u_i\nabla g_i(x^*)+\sum\limits_{j=1}^p v_j\nabla h_j(x^*)=0\qquad u_i\ge0,i\in I(x^*)$计算$u_i,v_j$，非紧约束对应的$u_i=0$
+</li>
+<li><p>若$u_i&gt;0$，且$f,g_i(i\in I)$在$x^*$拟凸，$h_i$根据对应$v_i$正负为拟凸/凹，则是K-T点</p>
+</li>
+</ul>
+<h2 id="惩罚函数法"><a href="#惩罚函数法" class="headerlink" title="惩罚函数法"></a>惩罚函数法</h2><p>在问题（1-1）中，定义$f,g_i,h_j\in C^1$</p>
+<p>针对上述定义乘法函数</p>
+<p>$F(x.M)=f(x)+Mp(x)$</p>
+<p>其中$M&gt;0$为常数，称为<strong>惩罚因子</strong>，$p(x)$是定义在$R^n$上的一个函数，称为<strong>惩罚项</strong>，满足</p>
+<ul>
+<li>$p(x)$连续</li>
+<li>对任意$x\in R^n$，有$p(x)\ge 0$</li>
+<li>当且仅当$x\in S$时，$p(x)=0$</li>
+</ul>
+<p>通常对等式约束，定义$g_j^+(x)=(h_j(x))^2,j=1,2,\cdots,p$</p>
+<p>对不等式约束，定义$g_{i+p}^+(x)=\begin{cases}0\quad &g_i(x)\le 0\\(g_i(x))^2&g_i(x)>0\end{cases}\quad i=1,2,\cdots,m$</p>
+<p>注：这里只惩罚紧约束的$g_i(x)$</p>
+<p>令$L=p+m$，于是惩罚函数为$F(x,M_k)=f(x)+M_k\sum\limits_{i=1}^Lg_i^+(x)$</p>
+<p>其中$M_k&gt;0,M_1&lt;M_2&lt;\cdots&lt;M_k&lt;\cdots,\lim\limits_{k\rightarrow\infty}M_k=+\infty$</p>
+<ul>
+<li>可微则连续</li>
+<li>$g_i^+&gt;0$</li>
+<li>$x\in S$，满足约束</li>
+</ul>
+<h3 id="SUMT外点法"><a href="#SUMT外点法" class="headerlink" title="SUMT外点法"></a>SUMT外点法</h3><p>计算步骤</p>
+<ul>
+<li><p>选取$M_1&gt;0$，精度$\epsilon&gt;0,c\ge2$，初始点$x^{(0)}$，令$k=1$</p>
+</li>
+<li><p>以$x^{(k-1)}$为初始点，求解无约束优化问题</p>
+<p>$\min F(x,M_k)=f(x)+M_k\sum\limits_{i=1}^L g_i^+(x)$</p>
+<p>设其最优解为$x^{(k)}=x(M_k)$</p>
+</li>
+<li><p>令</p>
+$\tau_1=\max\limits_{1\le i\le p}\{|h_j(x^{(k)})|\},\tau_2=\max\limits_{1\le i\le m}\{|g_i(x^{(k)})|\},\tau=\max\{\tau_1,\tau_2\}$
+</li>
+<li><p>若$\tau&lt;\epsilon$，迭代结束，取$x^*=x^{(k)}$，否则令$M_{k+1}=cM_k,k=k+1$，回到2</p>
+<p>结束条件也可为$M_kp(x^{(k)})&lt;\epsilon$</p>
+</li>
+</ul>
+<p><strong>收敛性分析</strong></p>
+<p>略</p>
+<p><strong>SUMT外点法手解</strong></p>
+<p>在上面步骤中，取$M\rightarrow +\infty$，将$M$作为未知数代入求$\nabla F,\nabla^2F$</p>
+<h2 id="碰壁函数法"><a href="#碰壁函数法" class="headerlink" title="碰壁函数法"></a>碰壁函数法</h2><p>$\rm intS$表示可行集$S$内部</p>
+<p>从一个可行点$x^{(0)}$出发，在可行点之间迭代。为使迭代点保持为可行点，在约束集$S$边界上建造一道围墙，阻挡迭代点列离开可行集</p>
+<p>碰壁项是定义于$\rm intS$上的一个函数$B(x)$，满足</p>
+<ul>
+<li>$B(x)$是连续的</li>
+<li>$B(x)\ge 0$</li>
+</ul>
+<ul>
+<li>当$x$趋近于$S$的边界时，$B(x)\to \infty$</li>
+</ul>
+<p>通常定义碰壁项为$B(x)=\sum\limits_{i=1}^mg_i^+(x)$</p>
+<p>$g_i^+(x)=-\dfrac{1}{g_i(x)}\quad or\quad g_i^+(x)=-\ln(-g_i(x))\quad i=1,2,\cdots,m$</p>
+<p>碰壁函数定义为$F(x,r_k)=f(x)+r_kB(x)$</p>
+<p>其中$r_k&gt;0,r_1&gt;r_2&gt;\cdots&gt;r_k&gt;\cdots,\lim\limits_{k\to +\infty}r_k=0$</p>
+<h3 id="SUMT内点法"><a href="#SUMT内点法" class="headerlink" title="SUMT内点法"></a>SUMT内点法</h3><p>计算步骤</p>
+<ul>
+<li><p>选取$r_1&gt;0$（如取$r_1=1$），$c\ge2$（一般取$c\in [2,50]$，常取$c\in [4,10]$），精度$\epsilon&gt;0$</p>
+</li>
+<li><p>求可行集$S$的一个内点$x^{(0)}\in \rm intS$，令$k=1$</p>
+</li>
+<li><p>以$x^{(k-1)}$为初始点，使用求解无约束优化问题的方法求解</p>
+ $\begin{cases}\min &F(x,r_k)=f(x)+r_kB(x)\\ \rm s.t.&x\in \rm intS\end{cases}$ 
+
+<p>设其最优解为$x^{(k)}=x(r_k)$</p>
+</li>
+<li><p>若$x^{(k)}$满足以下结束准则之一，结束迭代（常用第四个），否则取<br>$r_{k+1}&lt;r_k\quad (eg:r_{k+1}=\dfrac{r_k}{c})$，$k=k+1$继续迭代</p>
+<ul>
+<li>$\Vert x^{(k)}-x^{(k-1)}\Vert&lt;\epsilon$</li>
+<li>$|f(x^{(k)})-f(x^{(k-1)})|&lt;\epsilon$</li>
+<li>$\left\vert\dfrac{f(x^{(k)})-f(x^{(k-1)})}{f(x^{(k)})}\right\vert&lt;\epsilon$</li>
+<li>$r_kB(x^{(k)})&lt;\epsilon$</li>
+</ul>
+</li>
+</ul>
+<p><strong>收敛性分析</strong></p>
+<p>略</p>
+<p><strong>SUMT内点法手解</strong></p>
+<p>在上面步骤中，取$r\rightarrow 0$，将$r$作为未知数代入求$\nabla F,\nabla^2F$</p>
+<h2 id="可行方向法"><a href="#可行方向法" class="headerlink" title="可行方向法"></a>可行方向法</h2><p>非线性规划问题</p>
+$\begin{cases}\min &f(x)\\\rm s.t.&x\in \rm S\subset R^n\end{cases}\qquad\qquad(4-1)$
+
+<p><strong>定义</strong> 非零向量$d$称为在点$x\in S$的一个可行方向，如果存在一个数$\delta&gt;0$，使得对$\forall \lambda\in(0,\delta)$，都有$x+\lambda d\in S$。$d\not=0$称为在点$x\in S$的一个改进的可行方向，如果存在$\delta&gt;0$，使得对$\forall \lambda\in(0,\delta)$，都有$f(x+\lambda d)&lt;f(x)$，且$x+\lambda d\in S$</p>
+<p><strong>定理4.1</strong> 设$x$是问题</p>
+$\begin{cases}\min &f(x)\\\rm s.t.&Ax\le b\\&Ex=e\\&x\in \rm S^n\end{cases}\qquad\qquad(4-2)$
+
+<p>的一个可行解，假定$A_1x=b_1,A_2x&lt;b_2$，其中$A^T=(A_1^T,A_2^T),b^T=(b_1^T,b_2^T)$，$A$是$m\times n$矩阵，$E$是$l\times n$矩阵，$b\in R^m,e\in R^l$，则一个非零向量$d$是在$x$点的可行方向，当且仅当$A_1d\le 0,Ed=0$，如果$\nabla f(x)^T d&lt;0$，则$d$是一改进方向。其中$f(x)$在$x$点可微</p>
+<p><strong>定理4.2</strong>  设$x$是问题</p>
+$\begin{cases}\min &f(x)\\\rm s.t.&g_i(x)\le 0,i=1,2,\cdots,m\\&x\in \rm S^n\end{cases}\qquad\qquad(4-3)$
+
+<p>的一个可行解，令$S=\{x|x\in R^n,g_i(x)\le 0,i=1,\cdots,m\},I=\{i|g_i(x)=0\}$，即$I$是$x\in S$点紧约束的指标集，设$f,g_i(i\in I)$在$x$点可微，$g_o(i\not\in I)$在$x$点连续，如果$\nabla f(x)^Td&lt;0,\nabla g_i(x)^Td&lt;0(i\in I)$，则$d$是一改进的可行方向</p>
+<h3 id="Zoutendijk的可行方向法"><a href="#Zoutendijk的可行方向法" class="headerlink" title="Zoutendijk的可行方向法"></a>Zoutendijk的可行方向法</h3><ul>
+<li><p>线性约束的</p>
+<p>可通过求如下3个问题获取$d$</p>
+<ul>
+<li>$\begin{cases}\min &z=\nabla f(x)^Td\\\rm s.t.&A_1d\le 0\\&Ed=0\\&-1\le d_j\le1,j=1,2,\cdots,n\end{cases}$</li>
+<li>$\begin{cases}\min &z=\nabla f(x)^Td\\\rm s.t.&A_1d\le 0\\&Ed=0\\&d^Td\le1\end{cases}$</li>
+<li>$\begin{cases}\min &z=\nabla f(x)^Td\\\rm s.t.&A_1d\le 0\\&Ed=0\\&\nabla f(x)^Td\ge -1\end{cases}$
+
+</li>
+</ul>
+<p>其中$d=(d_1,d_2,\cdots,d_n)^T$，最后一个约束是为了保证解有界的规格化约束</p>
+<p>第二个问题的约束是<strong>二次</strong>的，可化简</p>
+<p>上述任一问题，$d=0$都是可行解，且目标函数值$z=0$，所以上述问题的最优目标函数值$z^*\le 0$</p>
+<p>若$z^*&lt;0,d\not = 0$，则$d$是一个改进的可行方向，而$z=0$当且仅当$x$是K-T点</p>
+<p><strong>计算方法</strong></p>
+<ul>
+<li><p>求（4-2）的一初始可行解$x^{(1)}$，令$k=1$</p>
+</li>
+<li><p>对于可行点$x^{(k)}$，设<br>$A_1x^{(k)}=b_1,A_2x^{(k)}&lt;b_2,A^T=(A^T_1,A_2^T),b^T=(b^T_1,b_2^T)$<br>求解问题1（2,3），得到最优解$d_k$，如果$\nabla f(x^{(k)})^T d_k=0$，计算结束，$x^{(k)}$是K-T点，否则继续</p>
+</li>
+<li><p>求解线搜索问题</p>
+$\begin{cases}\min &f(x^{(k)}+\lambda d_k)\\\rm s.t.&0\le \lambda\le \lambda_{max}\end{cases}$
+
+<p>其中</p>
+$\lambda_{max}=\begin{cases}\min \{\dfrac{\hat b_i}{\hat d_i}|\hat d_i>0\},if \quad\hat d\not\le0\\+\infty,if\quad \hat d\le 0\end{cases}$
+
+<p>$\hat b=b_2-A_2x^{(k)},\hat d=A_2d_k$</p>
+<p>设$\lambda_k$是最优解，令$x^{(k+1)}=x^{(k)}+\lambda_kd_k,k=k+1$，回到2</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>非线性不等式约束</p>
+<p>可通过如下方法求得$d$</p>
+ $\begin{cases}\min &z\\\rm s.t.&\nabla f(x)^Td-z\le 0\\&\nabla g_i(x)^Td-z\le0,i\in I(x)\\&-1\le d_j\le1,j=1,2,\cdots,n\end{cases}$ 
+
+<p>令$(\overline z,\overline d)$为最优解，有$\overline z\le 0$，若$\overline z&lt; 0$，则$\overline d$是一个改进的可行方向，否则，$x$是K-T点的充要条件为$\overline z=0$</p>
+<p><strong>计算方法</strong></p>
+<ul>
+<li><p>选取允许误差$\epsilon_1&gt;0,\epsilon_2&gt;0$，求一初始可行点$x^{(1)},k=1$</p>
+</li>
+<li><p>确定指标集$I(x^{(k)})={i|g_i(x^{(k)})=0}$</p>
+</li>
+<li><p>若$I(x^{(k)})=\emptyset,\Vert\nabla f(x^{(k)}\Vert\le \epsilon_1$，计算结束，取$x^*=x^{(k)}$</p>
+<p>若$I(x^{(k)})=\emptyset,\Vert\nabla f(x^{(k)}\Vert&gt; \epsilon_1$，转到6</p>
+<p>若$I(x^{(k)})\not=\emptyset$，转到4</p>
+</li>
+<li><p>令$x=x^{(k)}$，求$(\overline z_k,\overline d_k)$</p>
+</li>
+<li><p>若$|\overline z_k|&lt;\epsilon_2$，计算结束，否则令$d_k\overline d_k$，转到6</p>
+</li>
+<li><p>求解线搜索问题</p>
+$\begin{cases}\min &f(x^{(k)}+\lambda d_k)\\\rm s.t.&0\le \lambda\le \lambda_{max}\end{cases}$
+
+<p>的最优解$\lambda_k$，其中</p>
+$\lambda_{max}=\max\{\lambda|x^{(k)}+\lambda d_k\in S\}$，令$x^{(k+1)}=x^{(k)},k=k+1$，回到2
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="梯度投影法"><a href="#梯度投影法" class="headerlink" title="梯度投影法"></a>梯度投影法</h2><p>线性约束的优化问题</p>
+$\begin{cases}\min &f(x)\\\rm s.t.&Ax\le b\\&Ex=e\\\end{cases}$
+
+<p>其中$A_{m\times n},E_{l\times n},b\in R^m,e\in R^l,x\in R^n, f:R^n\to R,f\in C^1$，可行域为$\Omega$</p>
+<p><strong>基本思想</strong></p>
+<p>当迭代点$x^{(k)}$在可行域$\Omega$的内部时，取$d=-\nabla f(x^{(k)})$为迭代方向，当$x^{(k)}$在$\Omega$的边界上时，取$-\nabla f(x^{(k)})$在这些边界面的交集上的投影为迭代的方向</p>
+<p><strong>定义5.1</strong> 称$n\times n$矩阵$P$为投影矩阵，如果$P=P^T$，且$PP=P$</p>
+<p><strong>引理 1</strong> 设$P$为$n\times n$矩阵</p>
+<ul>
+<li><p>若$P$为投影矩阵，则$P$是半正定的</p>
+</li>
+<li><p>$P$是投影矩阵，当且仅当$I-P$是投影矩阵，其中$I$为$n$阶单位阵</p>
+</li>
+<li><p>设$P$是投影矩阵，令$Q=I-P$，则</p>
+$L=\{Px|x\in R^n\}$与$L^{\perp}=\{Qx|x\in R^n\}$为互相正交的线性子空间，并且任一点$x\in R^n$可唯一表示为
+
+<p>$x=p+q,p\in L,q\in L^{\perp}$</p>
+</li>
+</ul>
+<p><strong>引理 2</strong> 设$x$为上面优化问题的一个可行解，且使<br>$A_1x=b_1,A_2x&lt;b_2,A^T=(A_1^T,A_2^T),b^T=(b_1^T,b_2^T)$，设$f(x)$在$x$点可微，$M^T=(A_1^T,E^T)$满秩，则</p>
+<ul>
+<li>$P=I-M^T(MM^T)^{-1}M$为投影矩阵</li>
+<li>若$P\nabla f(x)\not=0$，则$d=-P\nabla f(x)$是$x$点的一个改进的可行方向</li>
+</ul>
+<p><strong>定理5.1</strong> 设$x$为上面优化问题的一个可行解，且使<br>$A_1x=b_1,A_2x&lt;b_2,A^T=(A_1^T,A_2^T),b^T=(b_1^T,b_2^T)$，$M^T=(A_1^T,E^T)$满秩，令</p>
+<p>$P=I-M^T(MM^T)^{-1}M,w=-(MM^T)^{-1}M\nabla f(x),w^T=(u^T,v^T)$，设<br>$P\nabla f(x)=0$</p>
+<ul>
+<li><p>若$u\ge 0$，则$x$是一个K-T点</p>
+</li>
+<li><p>若$u\not\ge 0$，令$u_j$是$u$的一个负分量，$\hat M^T=(\hat A_1^T,E^T)$，其中$\hat A_1$是由$\hat A_1$中去掉第$j$行后得到的矩阵，令</p>
+<p>$\hat P=\hat M^T(\hat M\hat M^T)^{-1}\hat M,d=-\hat P\nabla f(x)$</p>
+<p>则$d$是一个改进的可行方向</p>
+</li>
+</ul>
+<p><strong>计算方法</strong></p>
+<ul>
+<li><p>选取$x^{(1)}$为一个可行解，给定计算精度$\epsilon&gt;0$</p>
+</li>
+<li><p>计算$\nabla f(x^{(k)}),J_k=\{j|a_j^T x^{k}=B_j\}$（这里以及记录的是紧约束，与上面不同的是，将等式约束也算在内），若$\Vert \nabla f(x^{(k)}\Vert&lt;\epsilon$，则$x^{(k)}$是K-T点。计算结束，否则</p>
+<ul>
+<li>若$J_k=\emptyset$，令$P=I$</li>
+<li>若$J_k\not=\emptyset$，令$P=I-M_k^T(M_kM_k^T)^{-1}M_k$</li>
+</ul>
+</li>
+<li><p>若$P\nabla f(x^{(k)})\not=0$，令$d_k=-P\nabla f(x^{(k)})$</p>
+<p>若$P\nabla f(x^{(k)})=0$，令$w=-(MM^T)^{-1}M\nabla f(x)=\begin{bmatrix}u\\v\end{bmatrix}$</p>
+<ul>
+<li><p>若$u\ge 0$，则$x^{(k)}$为K-T点，计算结束</p>
+</li>
+<li><p>若$u$有某个分量$u_j&lt;0$，令$\hat M_k$是在$M_k$中去掉与$u_j$对应的第$j$行而得到的矩阵</p>
+<p>令$\hat P=I-\hat M_k^T(\hat M_k\hat M_k^T)^{-1}\hat M_k,d=-\hat P\nabla f(x^{(k)})$</p>
+</li>
+</ul>
+</li>
+<li><p>计算</p>
+$\lambda_M=\begin{cases}\min \left\{ \dfrac{B_i-a_i^Tx^{(k)}}{a_i^Td_k}|i\not\in J_k,a_i^Td_k>0 \right\}\\+\infty,if \forall i,a_i^Td_k\le 0\end{cases}$
+
+<p>设$\lambda$是线搜索问题</p>
+$\begin{cases}\min &f(x^{(k)}+\lambda d_k)\\\rm s.t.&0\le\lambda\le\lambda_M\end{cases}$
+
+<p>的解，令$x^{(k+1)}=x^{(x)}+\lambda d_k,k=k+1$</p>
+</li>
+</ul>
+<h2 id="既约梯度法"><a href="#既约梯度法" class="headerlink" title="既约梯度法"></a>既约梯度法</h2><p>略</p>
+<h2 id="乘子法"><a href="#乘子法" class="headerlink" title="乘子法"></a>乘子法</h2><h3 id="Hestenes乘子法"><a href="#Hestenes乘子法" class="headerlink" title="Hestenes乘子法"></a>Hestenes乘子法</h3><p>解决了惩罚函数法惩罚因子$M$越来越大时，惩罚目标函数$F(x,M)$的$Hesse$z阵越来越病态的问题</p>
+<p><strong>定理7.1</strong> 设$x^{(k)}$是无约束优化问题</p>
+<p>$\min \varphi(x,\mu^{(k)})=f(x)+\sum\limits_{j=1}^p\mu_j^{(k)}h_j(x)+\dfrac{c}{2}\sum\limits_{j=1}^p[h_j(x)]^2$</p>
+<p>的最优解，则$x^{(k)}$是问题</p>
+$\begin{cases}\min &f(x)\\\rm s.t.&h_i(x)=0,i=1,2,\cdots,p\end{cases}\qquad\qquad(7-1)$
+
+<p>的最优解，$\mu_1^{(k)},\mu_2^{(k)},\cdots,\mu_p^{(k)}$为其相应的$Lagrange$乘子的充要条件是</p>
+<p>$h_j(x^{(k)})=0(j=1,2,\cdots,p)$</p>
+<p><strong>迭代步骤</strong></p>
+<ul>
+<li><p>给定初始点$x^{(0)}$，初始乘子向量$\mu^{(1)}$（无其他信息，取0），计算精度$\epsilon&gt;0$，取$c&gt;0,0&lt;r&lt;1,\alpha&gt;0,k=1$</p>
+</li>
+<li><p>以$x^{(k-1)}$为初始点，求解$\min \varphi(x,\mu^{(k)})$，得解$x^{(k)}$，其中$\varphi(x,\mu)$由定理7.1问题确定</p>
+</li>
+<li><p>若$\Vert h(x^{(k)})\Vert&lt;\epsilon$，计算结束，取$x^{(k)}$为（7-1）最优解，否则计算$\beta=\dfrac{\Vert h(x^{(k)})\Vert}{\Vert h(x^{(k-1)})\Vert}$，若$\beta\le r$，继续，否则令$c=\alpha c$，继续</p>
+</li>
+<li><p>计算$\mu_j^{(k+1)}=\mu_j^{(k)}+ch_j(x^{(k)})(j=1,2,\cdots,p),k=k+1$</p>
+</li>
+</ul>
+<h2 id="二次逼近法"><a href="#二次逼近法" class="headerlink" title="二次逼近法"></a>二次逼近法</h2><p>二次规划（QP）</p>
+<p>二次规划指在变量$x_1,x_2,\cdots,x_n$的线性等式和线性不等式约束下，求二次函数$Q(x)$的极小值问题</p>
+$$
+\begin{cases}
+\min &Q(x)=\dfrac{1}{2}x^TGx+g^Tx\\
+\rm s.t.&a_i^Tx=b_i,i=1,2,\cdots,m\\
+&a_i^Tx\le b_i,i=m+1,\cdots,p
+\end{cases}\qquad\qquad(8-1)
+$$
+<p>其中$G$为$n$阶对称矩阵，$g,a_1,a_2,\cdots,a_p$均为$n$维列向量，假设$a_1,\cdots,a_m$线性无关。而$x=(x_1,x_2,\cdots,x_n)^T,b_1,b_2,\cdots,b_p$为已知常数，$m\le n,p\ge m$</p>
+<p><strong>定义</strong> 设$\overline x$是问题（8-1）的可行解，若某个$i\in{1,2,\cdots,p}$，使得$a_i^T\overline x=b_i$成立，则称它为$\overline x$点出的有效约束，称在$\overline x$点处所有有效约束的指标组成的集合$J=J(\overline x)=\{i|a_i^T\overline x=b_i\}$为$\overline x$点处的有效指标集，简称为$\overline x$处的有效集</p>
+<p><strong>有效集与上面紧约束集合定义类似，但是同时包含不等式约束与等式约束</strong></p>
+<h3 id="二次规划"><a href="#二次规划" class="headerlink" title="二次规划"></a>二次规划</h3><h4 id="正定二次规划"><a href="#正定二次规划" class="headerlink" title="正定二次规划"></a>正定二次规划</h4><p><strong>定理8.1</strong> 点$x^*$是正定二次规划问题（8-1）的严格整体解的充要条件是$x^*$是K-T点，即有乘子向量$\lambda^*=(\lambda_1^*,\cdots,\lambda_m^*,\cdots,\lambda_p^*)$，使得</p>
+$\begin{cases}
+Gx^*+g+\sum\limits_{i\in E}\lambda^*a_i+\sum\limits_{i\in J}\lambda_i^*a_i=0\\
+a_i^Tx-b_i=0,i\in E\\
+a_i^Tx-b_i\le0,i\in I\\
+\lambda_i^*\ge 0,i\in I\\
+\lambda_i^*=0,i\in I\backslash J^*(从I中去除J^*)
+\end{cases}$
+
+<p>K-T点$x^*$与其对应的乘子向量$\lambda^*$，称为问题（8-1）的K-T对</p>
+<p><strong>定理8.2</strong> 若正定QP问题（8-1）有可行解，则它必有最优解，且最优解唯一</p>
+<p><strong>定理8.3</strong> 设$x^*$是正定QP问题（8-1）的最优解，且在$x^*$点处的有效集为$J^*$，则$x^*$是如下等式约束问题的唯一解</p>
+$\begin{cases}
+\min &Q(x)=\dfrac{1}{2}x^TGx+g^Tx\\
+\rm s.t.&a_i^Tx=b_i,i\in J^*\\
+\end{cases}$
+
+
+
+<h4 id="仅含等式约束的正定二次规划"><a href="#仅含等式约束的正定二次规划" class="headerlink" title="仅含等式约束的正定二次规划"></a>仅含等式约束的正定二次规划</h4>$\begin{cases}
+\min &Q(x)=\dfrac{1}{2}x^TGx+g^Tx\\
+\rm s.t.&a_i^Tx=b_i,i\in E=\{1,2,\cdots,m\}\\
+\end{cases}$
+
+<p>设$a_1,a_2,\cdots,a_m$线性无关，$G$为$n$阶对称正定矩阵，$m\le n，A=(a_1,\cdots,a_m),B=(b_1,\cdots,b_m)^T$</p>
+<p><strong>定理8.4</strong> 在上述假设下，问题的K-T对$(x^*,\lambda^*)$是存在且唯一的，且$(x^*,\lambda^*)$为问题的K-T对的充要条件为他们满足</p>
+$\begin{bmatrix}G&&A\\A^T&&0\end{bmatrix}\begin{bmatrix}x\\\lambda\end{bmatrix}=\begin{bmatrix}-g\\b\end{bmatrix}$
+
+
+
+<h4 id="一般正定二次规划的有效集法"><a href="#一般正定二次规划的有效集法" class="headerlink" title="一般正定二次规划的有效集法"></a>一般正定二次规划的有效集法</h4><p><strong>计算步骤</strong></p>
+<ul>
+<li><p>选取问题（8-1）的初始可行点$x^{(1)}$，确定$x^{(1)}$点处的有效集$J_1$，使$a_i(i\in J_1)$线性无关，令$k=1$</p>
+</li>
+<li><p>求解仅含等式约束的正定二次规划问题，设其解为$d^{(k)}$</p>
+</li>
+<li><p>若$d^{(k)}=0$，则计算相应的乘子$\lambda_i^{(k)}(i\in J_k)$，到4，否则到5</p>
+</li>
+<li><p>若$\forall i\in J_k\cap I$，都有$\lambda^{(k)}\ge 0$，则$x^{(k)}$为问题（8-1）的最优解，计算结束</p>
+<p>否则求出$\lambda_q^{(k)}=\min\{\lambda_i^{(k)}|i\in J_k\cap I\}$，令$x^{(k+1)}=x^{(k)},J_{k+1}=J_k\backslash{q},k=k+1$，返回2</p>
+</li>
+<li><p>若$\overline x^{(k)}=x^{(k)}+d^{(k)}$满足$a_i^T x\le b_i,i\in I\backslash J_k$，则令$x^{(k+1)}=\overline x^{(k)}$，并求出$x^{(k+1)}$点处的有效集$J_{k+1}$，令$k=k+1$，返回2</p>
+<p>否则到6</p>
+</li>
+<li><p>计算步长$a_k=\min\left\{-\dfrac{a_i^Tx^{(k)}-b_i}{a_i^T d^{(k)}}|i\in I\backslash J_k,a_i^Td^{(k)}>0\right\}$</p>
+<p>令$x^{(k+1)}=x^{(k)}+a_kd^{(k)}$，并求$x^{(k+1)}$处的有效集$J_{k+1}，k=k+1$，返回2</p>
+</li>
+</ul>
+<h4 id="二次逼近法-1"><a href="#二次逼近法-1" class="headerlink" title="二次逼近法"></a>二次逼近法</h4>$\begin{cases}
+\min &f(x)\\
+\rm s.t.&c_i(x)=0,i\in E=\{1,2,\cdots,m\}\\
+&c_i(x)=0,i\in I=\{m+1,\cdots,p\}
+\end{cases}\qquad\qquad(8-14)$
+
+<p><strong>基本思想</strong></p>
+<p>将问题（8-14）转化为求解一些列二次规划子问题，因此也称为序列二次规划法，简写为SQP法</p>
+<p>略</p>
+]]></content>
+      <categories>
+        <category>Course</category>
+      </categories>
+      <tags>
+        <tag>Math</tag>
+        <tag>Course</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaSE - Thread</title>
     <url>/2020/09/15/JavaSEThread/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Java-SE基础"><a href="#Java-SE基础" class="headerlink" title="Java SE基础"></a>Java SE基础</h1><h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h3 id="进程三特性："><a href="#进程三特性：" class="headerlink" title="进程三特性："></a>进程三特性：</h3><ul>

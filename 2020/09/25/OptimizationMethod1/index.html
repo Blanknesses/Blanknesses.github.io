@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Math,Course,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="不断努力的Koo" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="最优化方法知识点归纳无约束优化方法与约束优化方法">
+<meta name="keywords" content="Math,Course">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最优化方法（3-4）">
+<meta property="og:url" content="http://yoursite.com/2020/09/25/OptimizationMethod1/index.html">
+<meta property="og:site_name" content="不断努力的Koo">
+<meta property="og:description" content="最优化方法知识点归纳无约束优化方法与约束优化方法">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-09-25T13:06:59.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="最优化方法（3-4）">
+<meta name="twitter:description" content="最优化方法知识点归纳无约束优化方法与约束优化方法">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/09/25/OptimizationMethod1/">
+
+
+
+
+
+  <title>最优化方法（3-4） | 不断努力的Koo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/Blanknesses" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不断努力的Koo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">为了心爱的Nozomi</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-playlist">
+          <a href="/playlist/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            歌单
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/25/OptimizationMethod1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Koo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不断努力的Koo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">最优化方法（3-4）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-25T19:24:44+08:00">
+                2020-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Course/" itemprop="url" rel="index">
+                    <span itemprop="name">Course</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  7.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  37
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  <center>最优化方法知识点归纳<br>无约束优化方法与约束优化方法</center>
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="无约束优化方法"><a href="#无约束优化方法" class="headerlink" title="无约束优化方法"></a>无约束优化方法</h1><h2 id="下降递推算法"><a href="#下降递推算法" class="headerlink" title="下降递推算法"></a>下降递推算法</h2><p>最优化算法的迭代过程一般分为如下四步：</p>
+<ul>
+<li>选择初始点$x^{(0)}$</li>
+<li>如果$x^{(k)}$已求得，且$x^{(k)}$不是极小点，设法选取一个方向$s^{(k)}$，使目标函数$f(x)$沿$s^{(k)}$是下降的，至少是不增的，$s^{(k)}$称为搜索方向</li>
+<li>在方向$s^{(k)}$确定以后，在射线$x^{(k)}+\lambda s^{(k)}(\lambda\ge0)$上选取适当的步长$\lambda_K$，使$f(x^{(k)}+\lambda_k s^{(k)})\le f(x^{(k)})$，如此确定出下一个点$x^{(k+1)}=x^{(k)}+\lambda_k s^{(k)}$（在多数算法中，$\lambda_k$的选取是使$f(x)$的值下降最多，即沿射线$x^{(k)}+\lambda s^{(k)}$求$f(x)$的极小值，这是关于单变量$\lambda$的函数求极小的问题）。这种确定步长的方法称为<strong>一维搜索或线搜索</strong></li>
+<li>检验所得的新点$x^{(k+1)}$是否为极小点，或满足精度要求的近似极小点</li>
+</ul>
+<p><strong>定义1.1</strong> 设$x^*$为问题$\min f(x),x\in R^n$的最优解，由算法$A$产生的序列${x^{(k)}}$收敛于$x^*$，即</p>
+$$
+\lim_{k\rightarrow+\infty} x^{(k)}=x^*\qquad\qquad (1-3)
+$$
+
+
+<p>${x^{(k)}}$若存在一个与$k$无关的常数$\beta\in(0,1)$，某个正整数$k_0$，使当$k&gt;k_0$时</p>
+$$
+\Vert x^{(k+1)}-x^*\Vert\le \beta \Vert x^{(k)}-x^*\Vert\qquad\qquad(1-4)
+$$
+<p>成立，则称序列${x^{(k)}}$为线性收敛，线性收敛速度相当于响应的等比序列的收敛速度</p>
+$$
+\Vert x^{(k)}-x^*\Vert\le \beta \Vert x^{(k-1)}-x^*\Vert\le\beta^2 \Vert x^{(k-2)}-x^*\Vert\le\cdots\le\beta^k \Vert x^{(0)}-x^*\Vert
+$$
+
+
+<p><strong>定义1.2</strong> 设由算法$A$产生的序列${x^{(k)}}$收敛于最优解$x^*$，如果存在一个与$k$无关的常数$\beta&gt;0$和$\alpha&gt;1$，某个正整数$k_0$，使当$k&gt;k_0$时，</p>
+$$
+\Vert x^{(k+1)}-x^*\Vert\le \beta \Vert x^{(k)}-x^*\Vert^\alpha\qquad\qquad(1-5)
+$$
+<p>成立，则称序列${x^{(k)}}$的收敛阶为$\alpha$，或称序列${x^{(k)}}$是$\alpha$阶收敛</p>
+<p>当$\alpha=2$时，称序列${x^{(k)}}$是二阶收敛的</p>
+<p>当$1&lt;\alpha&lt;2$时，称序列${x^{(k)}}$是超线性收敛的</p>
+<p>迭代终止条件</p>
+<ul>
+<li>$\Vert x^{(k+1)}-x^*\Vert\le \epsilon$</li>
+<li>$| f(x^{(k+1)})-f(x^{(k)})|\le \epsilon$</li>
+</ul>
+<h2 id="一维搜索"><a href="#一维搜索" class="headerlink" title="一维搜索"></a>一维搜索</h2><p>精确一维搜索方法，可以分为两类</p>
+<ul>
+<li><p>不用导数的方法</p>
+<p>0.618法，分数法，“成功-失败”法</p>
+</li>
+<li><p>使用导数的方法</p>
+<p>$Newton$法，抛物线法，三次插值法</p>
+</li>
+</ul>
+<h2 id="Newton法"><a href="#Newton法" class="headerlink" title="Newton法"></a>Newton法</h2><p><strong>基本思想</strong></p>
+<p>用$\varphi(x)$在已知点$x_0$处的二阶$Taylor$展开式来近似代替$\varphi(x)$，即取$\varphi(x)\approx g(x)$，其中<br>$$<br>g(x)=\varphi(x_0)+\varphi^{‘}(x_0)(x-x_0)+\dfrac{1}{2}\varphi^{‘’}(x_0)(x-x_0)^2<br>$$<br>用$g(x)$的极小点$\hat x$作为$\varphi(x)$的近似极小点</p>
+<p>由于$g^{‘}(x)=\varphi^{‘}(x_0)+\varphi^{‘’}(x_0)(x-x_0)=0$</p>
+<p>$x_1=x_0-\dfrac{\varphi^{‘}(x_0)}{\varphi^{‘’}(x_0)}$</p>
+<p>迭代通式为$x_{k+1}=x_k-\dfrac{\varphi^{‘}(x_k)}{\varphi^{‘’}(x_k)}\quad k=1,2,\cdots$</p>
+<p><strong>注</strong> $Newton$法产生的序列即使收敛，其极限也不一定是$f(x)$的极小点，只能保证它是$f(x)$的驻点，驻点可能是极小点，也可能是极大点，也可能是两者都不是</p>
+<h2 id="抛物线法"><a href="#抛物线法" class="headerlink" title="抛物线法"></a>抛物线法</h2><p><strong>基本思想</strong></p>
+<p>利用$f(x)$在三个点$x_0,x_1,x_2$处的函数值来构造一个二次函数$y=g(x)=a_0+a_1x+a_2x^2$，使其满足</p>
+$$
+\begin{aligned}
+\begin{cases}
+y_1=g(x_0)=f(x_0)\\
+y_2=g(x_1)=f(x_1)\qquad\qquad(2-4)\\
+y_3=g(x_2)=f(x_2)
+\end{cases}
+\end{aligned}
+$$
+<p>则$g^{‘}(x)=a_1+2a_2x$。令$g^{‘}(x)=0$得</p>
+<p>$\overline{x}=-\dfrac{a_1}{2a_2}$</p>
+<p>根据（2-4）计算出$a_1,a_2$即可</p>
+<p><strong>注</strong> </p>
+<ul>
+<li><p>通常假设$f(x)\in C^1,x_1&lt;x_0&lt;x_2,f(x_0)&lt;f(x_1),f(x_0)&lt;f(x_2)$，可证$a_2&gt;0$，因而求得的$\overline x$确是$g(x)$的极小点，且$\overline x\in [x_1,x_2]$</p>
+</li>
+<li><p>迭代结束准则</p>
+<ul>
+<li>$|f(\overline x)-f(x_0)|&lt;\epsilon$</li>
+<li>$|x_0-\overline x|&lt;\epsilon$</li>
+<li>$|f(\overline x)-g(\overline x)|&lt;\epsilon$</li>
+</ul>
+</li>
+</ul>
+<h2 id="三次插值法"><a href="#三次插值法" class="headerlink" title="三次插值法"></a>三次插值法</h2><p><strong>基本思想</strong></p>
+<p>用$a,b$两点出的函数值$f(a),f(b)$和导数值$f^{‘}(a),f^{‘}(b)$来构造三次插值多项式，并以$g(x)$的极小点作为$f(x)$的近似极小点，一般情况下，三次插值法比抛物线法收敛速度快</p>
+<p>为保证$f(x)$的极小点$x^*\in[a,b]$，假定$f(x)\in C^1$</p>
+<p>$a&lt;b,f^{‘}(a)&lt;0,f^{‘}(b)&gt;0$</p>
+<p>设插值多项式为</p>
+<p>$g(x)=\alpha(x-a)^3+\beta(x-a)^2+\gamma(x-a)+\delta$</p>
+<p>根据插值条件有</p>
+$\begin{cases}
+\delta = f(a)\\
+\gamma = f^{'}(a)\\
+\alpha(b-a)^3+\beta(b-a)^2+\gamma(b-a)+\delta = f(b)\\
+3\alpha(b-a)^2+2\beta(b-a)+\gamma=f^{'}(b)
+\end{cases}$
+
+
+
+<p>求$f(x)$的近似极小点</p>
+<p>$g^{‘}(x)=3\alpha(x-a)^2+2\beta(x-a)+\gamma$</p>
+<p>令$g^{‘}(x)=0$</p>
+<ul>
+<li><p>当$\alpha=0$时</p>
+<p>$\hat x=a-\dfrac{\gamma}{2\beta}$</p>
+</li>
+<li><p>当$\alpha \not=0$时</p>
+<p>$\hat x=a+\dfrac{-\beta\pm\sqrt{\beta^2-3\alpha \gamma}}{3\alpha}$</p>
+<p>为保证所求根为$g(x)$的极小点，在该点还需满足</p>
+<p>$g^{‘’}(x)=6\alpha(x-a)+2\beta&gt;0$</p>
+<p>$\Rightarrow \pm 2\sqrt{\beta^2-3\alpha \gamma}&gt;0$</p>
+<p>$\Rightarrow\hat x=a+\dfrac{-\beta+\sqrt{\beta^2-3\alpha \gamma}}{3\alpha}=a-\dfrac{\gamma}{\beta+\sqrt{\beta^2-3\alpha\gamma}}$</p>
+</li>
+</ul>
+<p>  $\alpha(b-a)^3+\beta(b-a)^2+\gamma(b-a)+\delta = f(b)\Rightarrow \alpha(b-a)^2+\beta(b-a)=\dfrac{f(b)-\delta}{b-a}-\gamma$</p>
+<p>  $3\alpha(b-a)^2+2\beta(b-a)+\gamma=f^{‘}(b)\Rightarrow 3\alpha(b-a)^2+2\beta(b-a)=f^{‘}(b)-\gamma $</p>
+<p>  令$u=\dfrac{f(b)-\delta}{b-a}-\gamma,v=f^{‘}(b)-\gamma$</p>
+<p>  $\Rightarrow \beta = \dfrac{3u-v}{b-a},\alpha=\dfrac{v-2u}{(b-a)^2}$</p>
+<p>  将$\alpha,\beta,\gamma$代入$\hat x$</p>
+<p>  若$|f^{‘}(\hat x)|&lt;\epsilon$，终止迭代，否则当$f^{‘}(\hat x)&gt;0$时，用$\hat x$代替$b$，否则代替$a$</p>
+<h2 id="平分法"><a href="#平分法" class="headerlink" title="平分法"></a>平分法</h2><p><strong>基本思想</strong></p>
+<p>类似二分法求零点，平分法求导函数零点</p>
+<h2 id="“成功-失败”法"><a href="#“成功-失败”法" class="headerlink" title="“成功-失败”法"></a>“成功-失败”法</h2><p><strong>基本步骤</strong></p>
+<ul>
+<li><p>取定初始点$x_0\in R$，搜索步长$h&gt;0$及精度$\epsilon&gt;0$</p>
+</li>
+<li><p>计算$x_1=x_0+h,f(x_1)$</p>
+</li>
+<li><p>若$f(x_1)&lt;f(x_0)$，搜索成功，用$x_1$代替$x_0$。$2h$代替$h$，继续搜索</p>
+<p>若$f(x_1)\ge f(x_0)$，搜索失败，若$|h|&lt;\epsilon$，取$x^*=x_0$，计算结束，否则用$-\dfrac{h}{4}$代替$h$，继续搜索</p>
+</li>
+</ul>
+<h2 id="0-618法"><a href="#0-618法" class="headerlink" title="0.618法"></a>0.618法</h2><p>一维搜索问题</p>
+$\begin{cases}\min &\varphi(\lambda)\\\rm s.t. &a_1 < \lambda < b_1\end{cases}$
+
+<p>其中$\varphi(\lambda)$为凸函数或拟凸函数</p>
+<p>设$\epsilon&gt;0，\alpha=0.618$</p>
+<p><strong>计算步骤</strong></p>
+<ul>
+<li><p>计算</p>
+$\begin{aligned}&\lambda_1=a_1+(1-\alpha)(b_1-a_1),\varphi(\lambda)\\&\mu_1=a_1+\alpha(b_1-a_1),\varphi(\mu_1)\end{aligned}$
+</li>
+<li><p>若$b_k-a_k&gt;\epsilon$，则计算结束，最优解$\lambda^*\in[a_k,b_k]$</p>
+<ul>
+<li><p>若$\varphi(\lambda_k)&gt;\varphi(\mu_k)$</p>
+<p>令$a_{k+1}=\lambda_k,b_{k+1}=b_k,\lambda_{k+1}=\mu_k,\mu_{k+1}=a_{k+1}+\alpha(b_{k+1}-a_{k+1})$，继续</p>
+</li>
+<li><p>若$\varphi(\lambda_k)\le\varphi(\mu_k)$</p>
+<p>令$a_{k+1}=a_k,b_{k+1}=\mu_k,\mu_{k+1}=\lambda_k,\lambda_{k+1}=a_{k+1}+(1-\alpha)(b_{k+1}-a_{k+1})$，继续</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>本质是平分法变种</strong></p>
+<h2 id="初始搜索区间和初始点确定"><a href="#初始搜索区间和初始点确定" class="headerlink" title="初始搜索区间和初始点确定"></a>初始搜索区间和初始点确定</h2><ul>
+<li>选定初始点的一个估计值$t_0$，初始步长$h&gt;0$，计算$\varphi(t_0)$</li>
+<li>令$t_2=t_0+h$，计算$\varphi(t_2)$</li>
+<li>若$\varphi(t_2)&gt;\varphi(t_0)$，令$h=-h$</li>
+<li>令$t_1=t_0+h$，计算$\varphi(t_1)$</li>
+<li>若$\varphi(t_1)\le \varphi(t_0)$，令$h=2h,t_2=t_0,t_0=t_1$，迭代4，若$\varphi(t_1)&gt;\varphi(t_0)$，下6</li>
+<li>令$a=\min(t_1,t_2),b=\max(t_1,t_2),t_0=\dfrac{a+b}{2}$，结束</li>
+</ul>
+<h2 id="不精确一维搜索"><a href="#不精确一维搜索" class="headerlink" title="不精确一维搜索"></a>不精确一维搜索</h2><p>针对$\min \varphi(\lambda)=f(x^{(k)}+\lambda s^{(k)})$</p>
+<p>常用$Wolfe-Powell$准则</p>
+<p>对给定的常数$c_1,c_2,0&lt;c_1&lt;c_2&lt;1$，要求$\lambda_k$满足</p>
+<ul>
+<li>$f(x^{(k)})-f(x^{(k+1)})\ge -c_1\lambda_k\nabla f(x^{(k)})^Ts^{(k)}$</li>
+<li>$\nabla f(x^{(k+1)})^Ts^{(k)}\ge c_2 \nabla f(x^{(k)})^Ts^{(k)}$</li>
+</ul>
+<p><strong>常取$c_1=0.1,c_2=0.5$</strong></p>
+<p><strong>计算步骤</strong></p>
+<ul>
+<li><p>给定$c_1\in(0,1),c_2\in(c_1,1)$，令$a=0,b=-\infty,\lambda=1,j=0$</p>
+</li>
+<li><p>令$x^{(k+1)}=x^{k}+\lambda s^{(k)}$，计算$f_{k+1},g_{k+1}$，若$\lambda$满足条件，令$\lambda_k=\lambda$，计算结束</p>
+<p>否则令$j=j+1$</p>
+<ul>
+<li><p>$\lambda$不满足条件1</p>
+<p>令$b=\lambda,\lambda=\dfrac{\lambda+a}{2}$，继续</p>
+</li>
+<li><p>$\lambda$满足条件1不满足条件2</p>
+<p>令$a=\lambda,\lambda=\min{2\lambda,\dfrac{\lambda+b}{2}}$，继续</p>
+<p><strong>注</strong> 放大缩小的系数可以改成$0&lt;\beta_1&lt;1,\beta_2&gt;1$</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>二次插值法（略）</p>
+<h2 id="多变量函数极值基本下降法"><a href="#多变量函数极值基本下降法" class="headerlink" title="多变量函数极值基本下降法"></a>多变量函数极值基本下降法</h2><h2 id="最速下降法"><a href="#最速下降法" class="headerlink" title="最速下降法"></a>最速下降法</h2><p><strong>迭代步骤</strong></p>
+<ul>
+<li>给定初始点$x^{(0)}$，精度$\epsilon&gt;0$，令$k=0$</li>
+<li>计算$\nabla f(x^{(k)})$</li>
+<li>若$\Vert \nabla f(x^{(k)})\Vert&lt;\epsilon$，则迭代结束，取$x^*=x^{(k)}$，否则向下继续</li>
+<li>使用精确一维搜索求$\varphi(\lambda)=f(x^{(k)}-\lambda \nabla f(x^{(k)}))$的一个极小点$\lambda_k$，使$f(x^{(k)}-\lambda_k \nabla f(x^{(k)}))&lt;f(x^{(k)})$</li>
+<li>令$x^{(k+1)}=x^{(k)}-\lambda_k\nabla f(x^{(k)}),k=k+1$，返回2</li>
+</ul>
+<h2 id="Newton法-1"><a href="#Newton法-1" class="headerlink" title="Newton法"></a>Newton法</h2><p>同一维搜索部分</p>
+<p>$x^{(k+1)}=x^{(k)}-(\nabla^2f(x^{(k)}))^{-1}\nabla f(x^{(k)})$</p>
+<p>迭代终止条件$\Vert\nabla f(x^{(k)})\Vert&lt;\epsilon$，下同</p>
+<h2 id="阻尼Newton法"><a href="#阻尼Newton法" class="headerlink" title="阻尼Newton法"></a>阻尼Newton法</h2><p>在Newton法中，步长$\lambda_k$总为1</p>
+<p>阻尼Newton法中，每步迭代沿方向$s^{(k)}=-(\nabla^2f(x^{(k)})^{-1}\nabla f(x^{(k)})$进行一维搜索来决定$\lambda_k$</p>
+<p>即取$\lambda_k$使$f(x^{(k)}+\lambda_k s^{(k)})=\min\limits_{\lambda\ge 0}f(x^{(k)}+\lambda s^{(k)})\qquad\qquad(4-3)$</p>
+<p>$x^{(k+1)}=x^{(k)}-\lambda_k(\nabla^2f(x^{(k)}))^{-1}\nabla f(x^{(k)})$</p>
+<h2 id="共轭方向法与共轭梯度法"><a href="#共轭方向法与共轭梯度法" class="headerlink" title="共轭方向法与共轭梯度法"></a>共轭方向法与共轭梯度法</h2><p><strong>定义4.1</strong> 设$A$为$n$阶对称矩阵，$p,q$为$n$维列向量，若$p^TAq=0$，则称$p,q$为$A-$正交，或关于$A-$共轭。如果对于有限个向量$p_1,p_2,\cdots,p_m$，有$p_i^TAp_j=0(i\not=j,j=1,2,\cdots,m)$成立，则称这个向量组为$A-$正交（或共轭）向量组，也称它们是一组$A$共轭方向</p>
+<p><strong>定理4.1</strong> 设$V$为$n$维欧式空间，向量$p_i\in V(i=1,2,\cdots,n)$是线性无关的，$q\in V$，若$q$与$p_1,p_2,\cdots,p_n$都正交，则$q=0$</p>
+<p><strong>定理4.2</strong> 设$A$为$n$阶正定矩阵，$p_1,p_2,\cdots,p_n$为$A-$共轭的$n$维非零向量组，这次向量组必为线性无关的</p>
+<p>$n$元二次函数无约束优化问题</p>
+<p>$\min f(x)=c+b^Tx+\dfrac{1}{2}x^THx$</p>
+<p>其中$c$为常数，$x,b$为$n$维列向量，$H$为$n$阶对称正定矩阵。</p>
+<p>这时$\nabla f(x)=b+Hx,\nabla^2 f(x)=H$，$f(x)$有唯一的极小点</p>
+<p>在极小点$x^*$处，$\nabla f(x^*)=b+Hx^*=0$，则$x^*=-H^{-1}b$</p>
+<p><strong>定理4.3</strong> 设$H$为$n$阶对称正定矩阵，$s^{(0)},s^{(1)},\cdots,s^{(n-1)}\in R^n$是一组$H$共轭方向，对上述无约束优化问题，若从任一初始点$x^{(0)}\in R^n$出发，依次沿方向$s^{(0)},s^{(1)},\cdots,s^{(n-1)}$进行精确一维搜索，则至多经过$n$次迭代，即可求得$f(x)$的最小点</p>
+<h3 id="共轭方向生成"><a href="#共轭方向生成" class="headerlink" title="共轭方向生成"></a>共轭方向生成</h3><ul>
+<li><p>任给初始点$x^{(0)}$，令$s^{(0)}=-\nabla f(x^{(0)})$，代入到（4-3）中，确定$\lambda_0$</p>
+</li>
+<li><p>令$x^{(1)}=x^{(0)}+\lambda_0 s^{(0)},s^{(1)}=-\nabla f(x^{(1)})+\mu_{10}s^{(0)}$，其中$\mu_{10}$为待定系数，使$s^{(0)},s^{(1)}$是$H$共轭的</p>
+<p>故$\mu_{10}=\dfrac{(\nabla f(x^1))^THs^{(0)}}{(s^{(0)})^THs^{(0)}}$</p>
+</li>
+<li><p>将$\mu_{10}$代入$s^{(1)}$表达式，求出搜索方向$s^{(1)}$</p>
+</li>
+<li><p>令$x^{(2)}=x^{(1)}+\lambda_1s^{(1)},s^{(2)}=-\nabla f(x^{(2)})+\mu_{20}s^{(0)}+\mu_{21}s^{(1)}$其中$\mu_{20},\mu_{21}$为待定系数，使$s^{(2)},s^{(1)},s^{(0)}$是$H$共轭的</p>
+</li>
+<li><p>$\cdots\cdots$</p>
+</li>
+</ul>
+<h3 id="共轭梯度法"><a href="#共轭梯度法" class="headerlink" title="共轭梯度法"></a>共轭梯度法</h3><p><strong>计算步骤</strong> </p>
+<ul>
+<li><p>给定初始点$x^{(0)}$及精度$\epsilon&gt;0$</p>
+</li>
+<li><p>计算$g_0=\nabla f(x^{0})$，令$s^{(0)}=-g_0,k=0$</p>
+</li>
+<li><p>求$\min\limits_{\lambda\ge 0} f(x^{(k)}+\lambda s^{(k)})$决定$\lambda_k$，计算</p>
+<p>$x^{(k+1)}=x^{(k)}+\lambda_k s^{(k)},g_{k+1}=\nabla f(x^{(k+1)})$</p>
+</li>
+<li><p>若$\Vert g_{k+1}\Vert&lt;\epsilon$，迭代结束，否则向下继续</p>
+</li>
+<li><p>若$k&lt;n-1$，计算$\mu_{k+1}=\dfrac{\Vert g_{k+1}\Vert^2}{\Vert g_k\Vert^2},s^{(k+1)}=-g_{k+1}+\mu_{l+1}s^{(k)}$，令$k=k+1$转回3</p>
+<p>若$k=n-1$，令$x^{(0)}=x^{(n)}$，转回2</p>
+<p>$n$为维数，即共轭方向个数</p>
+</li>
+</ul>
+<h2 id="变尺度法"><a href="#变尺度法" class="headerlink" title="变尺度法"></a>变尺度法</h2><h3 id="对称秩1算法"><a href="#对称秩1算法" class="headerlink" title="对称秩1算法"></a>对称秩1算法</h3><p>略</p>
+<h3 id="DFP算法"><a href="#DFP算法" class="headerlink" title="DFP算法"></a>DFP算法</h3><p>是一种秩2对称算法</p>
+<p><strong>计算步骤</strong></p>
+<ul>
+<li><p>给定初始$x^{(0)}$，计算精度$\epsilon&gt;0$和初始矩阵$H_0=I$，令$k=0$</p>
+</li>
+<li><p>计算$s^{(k)}=-H_kg_k$，沿$s^{(k)}$进行精确一维搜索，求出步长$\lambda_k$，使</p>
+<p>$f(x^{(k)}+\lambda_k s^{(k)})=\min\limits_{\lambda\ge 0} f(x^{(k)}+\lambda s^{(k)})$</p>
+<p>令$x^{(k+1)}=x^{(k)}+\lambda_k s^{(k)}$</p>
+</li>
+<li><p>若$\Vert g_{k+1}\Vert&lt;\epsilon$，则取$x^*=x^{(k+1)}$，计算结束</p>
+<p>否则，计算$H_{k+1}$</p>
+<p>$H_{K+1}=H_K+\dfrac{\Delta x_k\Delta x_k^T}{\Delta x_k^T\Delta g_k}-\dfrac{H_k\Delta g_k(H_k\Delta g_k)^T}{\Delta g_k^TH_k\Delta g_k}$</p>
+<p>若$k\not= n-1$，则令$k=k+1$，继续</p>
+<p>若$k=n-1$，则$x^{(0)}=x^{(k+1)},k=0$，继续</p>
+<p><strong>注</strong> $\Delta x_k = x_{k+1}-x_k$</p>
+</li>
+</ul>
+<h3 id="吴桂变尺度法"><a href="#吴桂变尺度法" class="headerlink" title="吴桂变尺度法"></a>吴桂变尺度法</h3><p>略</p>
+<h3 id="Huang类算法"><a href="#Huang类算法" class="headerlink" title="Huang类算法"></a>Huang类算法</h3><p>略</p>
+<h3 id="自调节变尺度算法类"><a href="#自调节变尺度算法类" class="headerlink" title="自调节变尺度算法类"></a>自调节变尺度算法类</h3><p>略</p>
+<h3 id="BFGS算法"><a href="#BFGS算法" class="headerlink" title="BFGS算法"></a>BFGS算法</h3><p>略</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>$Newton$法，阻尼$Newton$法以及共轭梯度法最大区别在于求$\lambda$处</p>
+<p>$Newton$法，$\lambda$恒为1</p>
+<p>最速下降法，$\varphi(\lambda)=f(x^{(k)}-\lambda \nabla f(x^{(k)}))$</p>
+<p>阻尼$Newton$法，$\min\limits_{\lambda\ge 0}f(x^{(k)}+\lambda s^{(k)}),s^{(k)}=-(\nabla^2f(x^{(k)})^{-1}\nabla f(x^{(k)})$</p>
+<p>共轭梯度法，$x^{(k+1)}=x^{(k)}+\lambda_k s^{(k)},s^{(k+1)}=-g_{k+1}+\mu_{l+1}s^{(k)},s^{(1)}=-g_0$</p>
+<h2 id="直接搜索法"><a href="#直接搜索法" class="headerlink" title="直接搜索法"></a>直接搜索法</h2><p>略</p>
+<h1 id="约束优化方法"><a href="#约束优化方法" class="headerlink" title="约束优化方法"></a>约束优化方法</h1><h2 id="Kuhn-Tucker条件"><a href="#Kuhn-Tucker条件" class="headerlink" title="Kuhn-Tucker条件"></a>Kuhn-Tucker条件</h2><p>一般约束优化问题为</p>
+$$
+\begin{aligned}
+&\begin{cases}
+\min &f(x)\\
+\rm s.t. &g_i(x)\le 0, i=1,2,\cdots,m\qquad\qquad(1-1)\\
+&h_j(x)=0,j=1,2,\cdots,p\\
+&x\in X\subset R^n
+\end{cases}\\
+&x=(x_1,x_2,\cdots,x_n)\\
+&S=\{x|x\in X,g_i(x)\le 0,i=1,2,\cdots,m,h_j(x)=0,j=1,2,\cdots,p\}\\
+&I(x^0)=\{i|g_i(x^0)=0,1\le i\le m\}
+\end{aligned}
+$$
+<p>当$i\in I(x^0)$时，对应的约束$g_i(x)\le 0$称为在$x^0$处的紧约束，或起作用约束，而$I(x^0)$称为$x^0$点紧约束指标集</p>
+<p><strong>定理1.1</strong> 最优性的一阶必要条件</p>
+<p>设$x^{*}$是问题（1-1）的一个可行解，$X\subset R^n$为非空开集，$f,g_i(i\in I(x^{*}))$在$x^{*}$可微，$g_i(i\not\in I(x^*))$在$x^{*}$点连续，$\nabla g_i(x^*),i\in I(x^*),\nabla h_j(x^*),j=1,2,\cdots,p$线性无关，若$x^{*}$是（1-1）的局部最优解，则有实数$u_i,v_j$（其中$i\in I(x^*),j=1,2,\cdots,p$）使得</p>
+$\nabla f(x^{*}) + \sum\limits_{i \in I} u_i \nabla g_i(x^{*}) + \sum\limits_{j = 1}^p v_j\nabla h_j(x^{*})=0\qquad u_i \ge 0,i \in I(x^{*})$
+
+<p>如果加上$i\in I$时，$g_i$在$x^*$点可微，则上述条件可改写为</p>
+$\nabla f(x^{*})+\sum\limits_{i = 1}^{m} u_i\nabla g_i(x^{*})+\sum\limits_{j = 1}^p v_j\nabla h_j(x^{*})=0\qquad u_i \ge 0,u_ig_i(x^{*}) = 0,i=1,2,\cdots,m$
+
+<p>上述条件称为$Kuhn-Tucker$最优性必要条件，满足条件的点称为$K-T$点</p>
+<p><strong>定理1.2</strong> 最优性的充分条件</p>
+<p>设$X\subset R^n$为非空开集，$x^*\in S$，在$x^*$，$K-T$条件成立，即存在数$u_i\ge 0(i\in I(x^*)),v_i(i=1,2,\cdots,p)$，使得</p>
+$\nabla f(x^*)+\sum\limits_{i\in I} u_i\nabla g_i(x^*)+\sum\limits_{j=1}^p v_j\nabla h_j(x^*)=0$
+
+<p>令$J={i|v_i&gt;0},K={i|v_i&lt;0}$，设$f$在$x^*$点伪凸，$g_i(i\in I)$在$x^*$点拟凸，$h_i(i\in J)$在$x^*$点拟凸，$h_i(i\in K)$在$x^*$点拟凹，则$x^*$是问题（1-1）的全局最优解</p>
+<h3 id="判断一个点是否是K-T点"><a href="#判断一个点是否是K-T点" class="headerlink" title="判断一个点是否是K-T点"></a>判断一个点是否是K-T点</h3><ul>
+<li><p>获取$x^*\in S$，是一个可行解</p>
+</li>
+<li><p>计算$\nabla f(x^*)$，根据</p>
+$\nabla f(x^*)+\sum\limits_{i\in I} u_i\nabla g_i(x^*)+\sum\limits_{j=1}^p v_j\nabla h_j(x^*)=0\qquad u_i\ge0,i\in I(x^*)$计算$u_i,v_j$，非紧约束对应的$u_i=0$
+</li>
+<li><p>若$u_i&gt;0$，且$f,g_i(i\in I)$在$x^*$拟凸，$h_i$根据对应$v_i$正负为拟凸/凹，则是K-T点</p>
+</li>
+</ul>
+<h2 id="惩罚函数法"><a href="#惩罚函数法" class="headerlink" title="惩罚函数法"></a>惩罚函数法</h2><p>在问题（1-1）中，定义$f,g_i,h_j\in C^1$</p>
+<p>针对上述定义乘法函数</p>
+<p>$F(x.M)=f(x)+Mp(x)$</p>
+<p>其中$M&gt;0$为常数，称为<strong>惩罚因子</strong>，$p(x)$是定义在$R^n$上的一个函数，称为<strong>惩罚项</strong>，满足</p>
+<ul>
+<li>$p(x)$连续</li>
+<li>对任意$x\in R^n$，有$p(x)\ge 0$</li>
+<li>当且仅当$x\in S$时，$p(x)=0$</li>
+</ul>
+<p>通常对等式约束，定义$g_j^+(x)=(h_j(x))^2,j=1,2,\cdots,p$</p>
+<p>对不等式约束，定义$g_{i+p}^+(x)=\begin{cases}0\quad &g_i(x)\le 0\\(g_i(x))^2&g_i(x)>0\end{cases}\quad i=1,2,\cdots,m$</p>
+<p>注：这里只惩罚紧约束的$g_i(x)$</p>
+<p>令$L=p+m$，于是惩罚函数为$F(x,M_k)=f(x)+M_k\sum\limits_{i=1}^Lg_i^+(x)$</p>
+<p>其中$M_k&gt;0,M_1&lt;M_2&lt;\cdots&lt;M_k&lt;\cdots,\lim\limits_{k\rightarrow\infty}M_k=+\infty$</p>
+<ul>
+<li>可微则连续</li>
+<li>$g_i^+&gt;0$</li>
+<li>$x\in S$，满足约束</li>
+</ul>
+<h3 id="SUMT外点法"><a href="#SUMT外点法" class="headerlink" title="SUMT外点法"></a>SUMT外点法</h3><p>计算步骤</p>
+<ul>
+<li><p>选取$M_1&gt;0$，精度$\epsilon&gt;0,c\ge2$，初始点$x^{(0)}$，令$k=1$</p>
+</li>
+<li><p>以$x^{(k-1)}$为初始点，求解无约束优化问题</p>
+<p>$\min F(x,M_k)=f(x)+M_k\sum\limits_{i=1}^L g_i^+(x)$</p>
+<p>设其最优解为$x^{(k)}=x(M_k)$</p>
+</li>
+<li><p>令</p>
+$\tau_1=\max\limits_{1\le i\le p}\{|h_j(x^{(k)})|\},\tau_2=\max\limits_{1\le i\le m}\{|g_i(x^{(k)})|\},\tau=\max\{\tau_1,\tau_2\}$
+</li>
+<li><p>若$\tau&lt;\epsilon$，迭代结束，取$x^*=x^{(k)}$，否则令$M_{k+1}=cM_k,k=k+1$，回到2</p>
+<p>结束条件也可为$M_kp(x^{(k)})&lt;\epsilon$</p>
+</li>
+</ul>
+<p><strong>收敛性分析</strong></p>
+<p>略</p>
+<p><strong>SUMT外点法手解</strong></p>
+<p>在上面步骤中，取$M\rightarrow +\infty$，将$M$作为未知数代入求$\nabla F,\nabla^2F$</p>
+<h2 id="碰壁函数法"><a href="#碰壁函数法" class="headerlink" title="碰壁函数法"></a>碰壁函数法</h2><p>$\rm intS$表示可行集$S$内部</p>
+<p>从一个可行点$x^{(0)}$出发，在可行点之间迭代。为使迭代点保持为可行点，在约束集$S$边界上建造一道围墙，阻挡迭代点列离开可行集</p>
+<p>碰壁项是定义于$\rm intS$上的一个函数$B(x)$，满足</p>
+<ul>
+<li>$B(x)$是连续的</li>
+<li>$B(x)\ge 0$</li>
+</ul>
+<ul>
+<li>当$x$趋近于$S$的边界时，$B(x)\to \infty$</li>
+</ul>
+<p>通常定义碰壁项为$B(x)=\sum\limits_{i=1}^mg_i^+(x)$</p>
+<p>$g_i^+(x)=-\dfrac{1}{g_i(x)}\quad or\quad g_i^+(x)=-\ln(-g_i(x))\quad i=1,2,\cdots,m$</p>
+<p>碰壁函数定义为$F(x,r_k)=f(x)+r_kB(x)$</p>
+<p>其中$r_k&gt;0,r_1&gt;r_2&gt;\cdots&gt;r_k&gt;\cdots,\lim\limits_{k\to +\infty}r_k=0$</p>
+<h3 id="SUMT内点法"><a href="#SUMT内点法" class="headerlink" title="SUMT内点法"></a>SUMT内点法</h3><p>计算步骤</p>
+<ul>
+<li><p>选取$r_1&gt;0$（如取$r_1=1$），$c\ge2$（一般取$c\in [2,50]$，常取$c\in [4,10]$），精度$\epsilon&gt;0$</p>
+</li>
+<li><p>求可行集$S$的一个内点$x^{(0)}\in \rm intS$，令$k=1$</p>
+</li>
+<li><p>以$x^{(k-1)}$为初始点，使用求解无约束优化问题的方法求解</p>
+ $\begin{cases}\min &F(x,r_k)=f(x)+r_kB(x)\\ \rm s.t.&x\in \rm intS\end{cases}$ 
+
+<p>设其最优解为$x^{(k)}=x(r_k)$</p>
+</li>
+<li><p>若$x^{(k)}$满足以下结束准则之一，结束迭代（常用第四个），否则取<br>$r_{k+1}&lt;r_k\quad (eg:r_{k+1}=\dfrac{r_k}{c})$，$k=k+1$继续迭代</p>
+<ul>
+<li>$\Vert x^{(k)}-x^{(k-1)}\Vert&lt;\epsilon$</li>
+<li>$|f(x^{(k)})-f(x^{(k-1)})|&lt;\epsilon$</li>
+<li>$\left\vert\dfrac{f(x^{(k)})-f(x^{(k-1)})}{f(x^{(k)})}\right\vert&lt;\epsilon$</li>
+<li>$r_kB(x^{(k)})&lt;\epsilon$</li>
+</ul>
+</li>
+</ul>
+<p><strong>收敛性分析</strong></p>
+<p>略</p>
+<p><strong>SUMT内点法手解</strong></p>
+<p>在上面步骤中，取$r\rightarrow 0$，将$r$作为未知数代入求$\nabla F,\nabla^2F$</p>
+<h2 id="可行方向法"><a href="#可行方向法" class="headerlink" title="可行方向法"></a>可行方向法</h2><p>非线性规划问题</p>
+$\begin{cases}\min &f(x)\\\rm s.t.&x\in \rm S\subset R^n\end{cases}\qquad\qquad(4-1)$
+
+<p><strong>定义</strong> 非零向量$d$称为在点$x\in S$的一个可行方向，如果存在一个数$\delta&gt;0$，使得对$\forall \lambda\in(0,\delta)$，都有$x+\lambda d\in S$。$d\not=0$称为在点$x\in S$的一个改进的可行方向，如果存在$\delta&gt;0$，使得对$\forall \lambda\in(0,\delta)$，都有$f(x+\lambda d)&lt;f(x)$，且$x+\lambda d\in S$</p>
+<p><strong>定理4.1</strong> 设$x$是问题</p>
+$\begin{cases}\min &f(x)\\\rm s.t.&Ax\le b\\&Ex=e\\&x\in \rm S^n\end{cases}\qquad\qquad(4-2)$
+
+<p>的一个可行解，假定$A_1x=b_1,A_2x&lt;b_2$，其中$A^T=(A_1^T,A_2^T),b^T=(b_1^T,b_2^T)$，$A$是$m\times n$矩阵，$E$是$l\times n$矩阵，$b\in R^m,e\in R^l$，则一个非零向量$d$是在$x$点的可行方向，当且仅当$A_1d\le 0,Ed=0$，如果$\nabla f(x)^T d&lt;0$，则$d$是一改进方向。其中$f(x)$在$x$点可微</p>
+<p><strong>定理4.2</strong>  设$x$是问题</p>
+$\begin{cases}\min &f(x)\\\rm s.t.&g_i(x)\le 0,i=1,2,\cdots,m\\&x\in \rm S^n\end{cases}\qquad\qquad(4-3)$
+
+<p>的一个可行解，令$S=\{x|x\in R^n,g_i(x)\le 0,i=1,\cdots,m\},I=\{i|g_i(x)=0\}$，即$I$是$x\in S$点紧约束的指标集，设$f,g_i(i\in I)$在$x$点可微，$g_o(i\not\in I)$在$x$点连续，如果$\nabla f(x)^Td&lt;0,\nabla g_i(x)^Td&lt;0(i\in I)$，则$d$是一改进的可行方向</p>
+<h3 id="Zoutendijk的可行方向法"><a href="#Zoutendijk的可行方向法" class="headerlink" title="Zoutendijk的可行方向法"></a>Zoutendijk的可行方向法</h3><ul>
+<li><p>线性约束的</p>
+<p>可通过求如下3个问题获取$d$</p>
+<ul>
+<li>$\begin{cases}\min &z=\nabla f(x)^Td\\\rm s.t.&A_1d\le 0\\&Ed=0\\&-1\le d_j\le1,j=1,2,\cdots,n\end{cases}$</li>
+<li>$\begin{cases}\min &z=\nabla f(x)^Td\\\rm s.t.&A_1d\le 0\\&Ed=0\\&d^Td\le1\end{cases}$</li>
+<li>$\begin{cases}\min &z=\nabla f(x)^Td\\\rm s.t.&A_1d\le 0\\&Ed=0\\&\nabla f(x)^Td\ge -1\end{cases}$
+
+</li>
+</ul>
+<p>其中$d=(d_1,d_2,\cdots,d_n)^T$，最后一个约束是为了保证解有界的规格化约束</p>
+<p>第二个问题的约束是<strong>二次</strong>的，可化简</p>
+<p>上述任一问题，$d=0$都是可行解，且目标函数值$z=0$，所以上述问题的最优目标函数值$z^*\le 0$</p>
+<p>若$z^*&lt;0,d\not = 0$，则$d$是一个改进的可行方向，而$z=0$当且仅当$x$是K-T点</p>
+<p><strong>计算方法</strong></p>
+<ul>
+<li><p>求（4-2）的一初始可行解$x^{(1)}$，令$k=1$</p>
+</li>
+<li><p>对于可行点$x^{(k)}$，设<br>$A_1x^{(k)}=b_1,A_2x^{(k)}&lt;b_2,A^T=(A^T_1,A_2^T),b^T=(b^T_1,b_2^T)$<br>求解问题1（2,3），得到最优解$d_k$，如果$\nabla f(x^{(k)})^T d_k=0$，计算结束，$x^{(k)}$是K-T点，否则继续</p>
+</li>
+<li><p>求解线搜索问题</p>
+$\begin{cases}\min &f(x^{(k)}+\lambda d_k)\\\rm s.t.&0\le \lambda\le \lambda_{max}\end{cases}$
+
+<p>其中</p>
+$\lambda_{max}=\begin{cases}\min \{\dfrac{\hat b_i}{\hat d_i}|\hat d_i>0\},if \quad\hat d\not\le0\\+\infty,if\quad \hat d\le 0\end{cases}$
+
+<p>$\hat b=b_2-A_2x^{(k)},\hat d=A_2d_k$</p>
+<p>设$\lambda_k$是最优解，令$x^{(k+1)}=x^{(k)}+\lambda_kd_k,k=k+1$，回到2</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>非线性不等式约束</p>
+<p>可通过如下方法求得$d$</p>
+ $\begin{cases}\min &z\\\rm s.t.&\nabla f(x)^Td-z\le 0\\&\nabla g_i(x)^Td-z\le0,i\in I(x)\\&-1\le d_j\le1,j=1,2,\cdots,n\end{cases}$ 
+
+<p>令$(\overline z,\overline d)$为最优解，有$\overline z\le 0$，若$\overline z&lt; 0$，则$\overline d$是一个改进的可行方向，否则，$x$是K-T点的充要条件为$\overline z=0$</p>
+<p><strong>计算方法</strong></p>
+<ul>
+<li><p>选取允许误差$\epsilon_1&gt;0,\epsilon_2&gt;0$，求一初始可行点$x^{(1)},k=1$</p>
+</li>
+<li><p>确定指标集$I(x^{(k)})={i|g_i(x^{(k)})=0}$</p>
+</li>
+<li><p>若$I(x^{(k)})=\emptyset,\Vert\nabla f(x^{(k)}\Vert\le \epsilon_1$，计算结束，取$x^*=x^{(k)}$</p>
+<p>若$I(x^{(k)})=\emptyset,\Vert\nabla f(x^{(k)}\Vert&gt; \epsilon_1$，转到6</p>
+<p>若$I(x^{(k)})\not=\emptyset$，转到4</p>
+</li>
+<li><p>令$x=x^{(k)}$，求$(\overline z_k,\overline d_k)$</p>
+</li>
+<li><p>若$|\overline z_k|&lt;\epsilon_2$，计算结束，否则令$d_k\overline d_k$，转到6</p>
+</li>
+<li><p>求解线搜索问题</p>
+$\begin{cases}\min &f(x^{(k)}+\lambda d_k)\\\rm s.t.&0\le \lambda\le \lambda_{max}\end{cases}$
+
+<p>的最优解$\lambda_k$，其中</p>
+$\lambda_{max}=\max\{\lambda|x^{(k)}+\lambda d_k\in S\}$，令$x^{(k+1)}=x^{(k)},k=k+1$，回到2
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="梯度投影法"><a href="#梯度投影法" class="headerlink" title="梯度投影法"></a>梯度投影法</h2><p>线性约束的优化问题</p>
+$\begin{cases}\min &f(x)\\\rm s.t.&Ax\le b\\&Ex=e\\\end{cases}$
+
+<p>其中$A_{m\times n},E_{l\times n},b\in R^m,e\in R^l,x\in R^n, f:R^n\to R,f\in C^1$，可行域为$\Omega$</p>
+<p><strong>基本思想</strong></p>
+<p>当迭代点$x^{(k)}$在可行域$\Omega$的内部时，取$d=-\nabla f(x^{(k)})$为迭代方向，当$x^{(k)}$在$\Omega$的边界上时，取$-\nabla f(x^{(k)})$在这些边界面的交集上的投影为迭代的方向</p>
+<p><strong>定义5.1</strong> 称$n\times n$矩阵$P$为投影矩阵，如果$P=P^T$，且$PP=P$</p>
+<p><strong>引理 1</strong> 设$P$为$n\times n$矩阵</p>
+<ul>
+<li><p>若$P$为投影矩阵，则$P$是半正定的</p>
+</li>
+<li><p>$P$是投影矩阵，当且仅当$I-P$是投影矩阵，其中$I$为$n$阶单位阵</p>
+</li>
+<li><p>设$P$是投影矩阵，令$Q=I-P$，则</p>
+$L=\{Px|x\in R^n\}$与$L^{\perp}=\{Qx|x\in R^n\}$为互相正交的线性子空间，并且任一点$x\in R^n$可唯一表示为
+
+<p>$x=p+q,p\in L,q\in L^{\perp}$</p>
+</li>
+</ul>
+<p><strong>引理 2</strong> 设$x$为上面优化问题的一个可行解，且使<br>$A_1x=b_1,A_2x&lt;b_2,A^T=(A_1^T,A_2^T),b^T=(b_1^T,b_2^T)$，设$f(x)$在$x$点可微，$M^T=(A_1^T,E^T)$满秩，则</p>
+<ul>
+<li>$P=I-M^T(MM^T)^{-1}M$为投影矩阵</li>
+<li>若$P\nabla f(x)\not=0$，则$d=-P\nabla f(x)$是$x$点的一个改进的可行方向</li>
+</ul>
+<p><strong>定理5.1</strong> 设$x$为上面优化问题的一个可行解，且使<br>$A_1x=b_1,A_2x&lt;b_2,A^T=(A_1^T,A_2^T),b^T=(b_1^T,b_2^T)$，$M^T=(A_1^T,E^T)$满秩，令</p>
+<p>$P=I-M^T(MM^T)^{-1}M,w=-(MM^T)^{-1}M\nabla f(x),w^T=(u^T,v^T)$，设<br>$P\nabla f(x)=0$</p>
+<ul>
+<li><p>若$u\ge 0$，则$x$是一个K-T点</p>
+</li>
+<li><p>若$u\not\ge 0$，令$u_j$是$u$的一个负分量，$\hat M^T=(\hat A_1^T,E^T)$，其中$\hat A_1$是由$\hat A_1$中去掉第$j$行后得到的矩阵，令</p>
+<p>$\hat P=\hat M^T(\hat M\hat M^T)^{-1}\hat M,d=-\hat P\nabla f(x)$</p>
+<p>则$d$是一个改进的可行方向</p>
+</li>
+</ul>
+<p><strong>计算方法</strong></p>
+<ul>
+<li><p>选取$x^{(1)}$为一个可行解，给定计算精度$\epsilon&gt;0$</p>
+</li>
+<li><p>计算$\nabla f(x^{(k)}),J_k=\{j|a_j^T x^{k}=B_j\}$（这里以及记录的是紧约束，与上面不同的是，将等式约束也算在内），若$\Vert \nabla f(x^{(k)}\Vert&lt;\epsilon$，则$x^{(k)}$是K-T点。计算结束，否则</p>
+<ul>
+<li>若$J_k=\emptyset$，令$P=I$</li>
+<li>若$J_k\not=\emptyset$，令$P=I-M_k^T(M_kM_k^T)^{-1}M_k$</li>
+</ul>
+</li>
+<li><p>若$P\nabla f(x^{(k)})\not=0$，令$d_k=-P\nabla f(x^{(k)})$</p>
+<p>若$P\nabla f(x^{(k)})=0$，令$w=-(MM^T)^{-1}M\nabla f(x)=\begin{bmatrix}u\\v\end{bmatrix}$</p>
+<ul>
+<li><p>若$u\ge 0$，则$x^{(k)}$为K-T点，计算结束</p>
+</li>
+<li><p>若$u$有某个分量$u_j&lt;0$，令$\hat M_k$是在$M_k$中去掉与$u_j$对应的第$j$行而得到的矩阵</p>
+<p>令$\hat P=I-\hat M_k^T(\hat M_k\hat M_k^T)^{-1}\hat M_k,d=-\hat P\nabla f(x^{(k)})$</p>
+</li>
+</ul>
+</li>
+<li><p>计算</p>
+$\lambda_M=\begin{cases}\min \left\{ \dfrac{B_i-a_i^Tx^{(k)}}{a_i^Td_k}|i\not\in J_k,a_i^Td_k>0 \right\}\\+\infty,if \forall i,a_i^Td_k\le 0\end{cases}$
+
+<p>设$\lambda$是线搜索问题</p>
+$\begin{cases}\min &f(x^{(k)}+\lambda d_k)\\\rm s.t.&0\le\lambda\le\lambda_M\end{cases}$
+
+<p>的解，令$x^{(k+1)}=x^{(x)}+\lambda d_k,k=k+1$</p>
+</li>
+</ul>
+<h2 id="既约梯度法"><a href="#既约梯度法" class="headerlink" title="既约梯度法"></a>既约梯度法</h2><p>略</p>
+<h2 id="乘子法"><a href="#乘子法" class="headerlink" title="乘子法"></a>乘子法</h2><h3 id="Hestenes乘子法"><a href="#Hestenes乘子法" class="headerlink" title="Hestenes乘子法"></a>Hestenes乘子法</h3><p>解决了惩罚函数法惩罚因子$M$越来越大时，惩罚目标函数$F(x,M)$的$Hesse$z阵越来越病态的问题</p>
+<p><strong>定理7.1</strong> 设$x^{(k)}$是无约束优化问题</p>
+<p>$\min \varphi(x,\mu^{(k)})=f(x)+\sum\limits_{j=1}^p\mu_j^{(k)}h_j(x)+\dfrac{c}{2}\sum\limits_{j=1}^p[h_j(x)]^2$</p>
+<p>的最优解，则$x^{(k)}$是问题</p>
+$\begin{cases}\min &f(x)\\\rm s.t.&h_i(x)=0,i=1,2,\cdots,p\end{cases}\qquad\qquad(7-1)$
+
+<p>的最优解，$\mu_1^{(k)},\mu_2^{(k)},\cdots,\mu_p^{(k)}$为其相应的$Lagrange$乘子的充要条件是</p>
+<p>$h_j(x^{(k)})=0(j=1,2,\cdots,p)$</p>
+<p><strong>迭代步骤</strong></p>
+<ul>
+<li><p>给定初始点$x^{(0)}$，初始乘子向量$\mu^{(1)}$（无其他信息，取0），计算精度$\epsilon&gt;0$，取$c&gt;0,0&lt;r&lt;1,\alpha&gt;0,k=1$</p>
+</li>
+<li><p>以$x^{(k-1)}$为初始点，求解$\min \varphi(x,\mu^{(k)})$，得解$x^{(k)}$，其中$\varphi(x,\mu)$由定理7.1问题确定</p>
+</li>
+<li><p>若$\Vert h(x^{(k)})\Vert&lt;\epsilon$，计算结束，取$x^{(k)}$为（7-1）最优解，否则计算$\beta=\dfrac{\Vert h(x^{(k)})\Vert}{\Vert h(x^{(k-1)})\Vert}$，若$\beta\le r$，继续，否则令$c=\alpha c$，继续</p>
+</li>
+<li><p>计算$\mu_j^{(k+1)}=\mu_j^{(k)}+ch_j(x^{(k)})(j=1,2,\cdots,p),k=k+1$</p>
+</li>
+</ul>
+<h2 id="二次逼近法"><a href="#二次逼近法" class="headerlink" title="二次逼近法"></a>二次逼近法</h2><p>二次规划（QP）</p>
+<p>二次规划指在变量$x_1,x_2,\cdots,x_n$的线性等式和线性不等式约束下，求二次函数$Q(x)$的极小值问题</p>
+$$
+\begin{cases}
+\min &Q(x)=\dfrac{1}{2}x^TGx+g^Tx\\
+\rm s.t.&a_i^Tx=b_i,i=1,2,\cdots,m\\
+&a_i^Tx\le b_i,i=m+1,\cdots,p
+\end{cases}\qquad\qquad(8-1)
+$$
+<p>其中$G$为$n$阶对称矩阵，$g,a_1,a_2,\cdots,a_p$均为$n$维列向量，假设$a_1,\cdots,a_m$线性无关。而$x=(x_1,x_2,\cdots,x_n)^T,b_1,b_2,\cdots,b_p$为已知常数，$m\le n,p\ge m$</p>
+<p><strong>定义</strong> 设$\overline x$是问题（8-1）的可行解，若某个$i\in{1,2,\cdots,p}$，使得$a_i^T\overline x=b_i$成立，则称它为$\overline x$点出的有效约束，称在$\overline x$点处所有有效约束的指标组成的集合$J=J(\overline x)=\{i|a_i^T\overline x=b_i\}$为$\overline x$点处的有效指标集，简称为$\overline x$处的有效集</p>
+<p><strong>有效集与上面紧约束集合定义类似，但是同时包含不等式约束与等式约束</strong></p>
+<h3 id="二次规划"><a href="#二次规划" class="headerlink" title="二次规划"></a>二次规划</h3><h4 id="正定二次规划"><a href="#正定二次规划" class="headerlink" title="正定二次规划"></a>正定二次规划</h4><p><strong>定理8.1</strong> 点$x^*$是正定二次规划问题（8-1）的严格整体解的充要条件是$x^*$是K-T点，即有乘子向量$\lambda^*=(\lambda_1^*,\cdots,\lambda_m^*,\cdots,\lambda_p^*)$，使得</p>
+$\begin{cases}
+Gx^*+g+\sum\limits_{i\in E}\lambda^*a_i+\sum\limits_{i\in J}\lambda_i^*a_i=0\\
+a_i^Tx-b_i=0,i\in E\\
+a_i^Tx-b_i\le0,i\in I\\
+\lambda_i^*\ge 0,i\in I\\
+\lambda_i^*=0,i\in I\backslash J^*(从I中去除J^*)
+\end{cases}$
+
+<p>K-T点$x^*$与其对应的乘子向量$\lambda^*$，称为问题（8-1）的K-T对</p>
+<p><strong>定理8.2</strong> 若正定QP问题（8-1）有可行解，则它必有最优解，且最优解唯一</p>
+<p><strong>定理8.3</strong> 设$x^*$是正定QP问题（8-1）的最优解，且在$x^*$点处的有效集为$J^*$，则$x^*$是如下等式约束问题的唯一解</p>
+$\begin{cases}
+\min &Q(x)=\dfrac{1}{2}x^TGx+g^Tx\\
+\rm s.t.&a_i^Tx=b_i,i\in J^*\\
+\end{cases}$
+
+
+
+<h4 id="仅含等式约束的正定二次规划"><a href="#仅含等式约束的正定二次规划" class="headerlink" title="仅含等式约束的正定二次规划"></a>仅含等式约束的正定二次规划</h4>$\begin{cases}
+\min &Q(x)=\dfrac{1}{2}x^TGx+g^Tx\\
+\rm s.t.&a_i^Tx=b_i,i\in E=\{1,2,\cdots,m\}\\
+\end{cases}$
+
+<p>设$a_1,a_2,\cdots,a_m$线性无关，$G$为$n$阶对称正定矩阵，$m\le n，A=(a_1,\cdots,a_m),B=(b_1,\cdots,b_m)^T$</p>
+<p><strong>定理8.4</strong> 在上述假设下，问题的K-T对$(x^*,\lambda^*)$是存在且唯一的，且$(x^*,\lambda^*)$为问题的K-T对的充要条件为他们满足</p>
+$\begin{bmatrix}G&&A\\A^T&&0\end{bmatrix}\begin{bmatrix}x\\\lambda\end{bmatrix}=\begin{bmatrix}-g\\b\end{bmatrix}$
+
+
+
+<h4 id="一般正定二次规划的有效集法"><a href="#一般正定二次规划的有效集法" class="headerlink" title="一般正定二次规划的有效集法"></a>一般正定二次规划的有效集法</h4><p><strong>计算步骤</strong></p>
+<ul>
+<li><p>选取问题（8-1）的初始可行点$x^{(1)}$，确定$x^{(1)}$点处的有效集$J_1$，使$a_i(i\in J_1)$线性无关，令$k=1$</p>
+</li>
+<li><p>求解仅含等式约束的正定二次规划问题，设其解为$d^{(k)}$</p>
+</li>
+<li><p>若$d^{(k)}=0$，则计算相应的乘子$\lambda_i^{(k)}(i\in J_k)$，到4，否则到5</p>
+</li>
+<li><p>若$\forall i\in J_k\cap I$，都有$\lambda^{(k)}\ge 0$，则$x^{(k)}$为问题（8-1）的最优解，计算结束</p>
+<p>否则求出$\lambda_q^{(k)}=\min\{\lambda_i^{(k)}|i\in J_k\cap I\}$，令$x^{(k+1)}=x^{(k)},J_{k+1}=J_k\backslash{q},k=k+1$，返回2</p>
+</li>
+<li><p>若$\overline x^{(k)}=x^{(k)}+d^{(k)}$满足$a_i^T x\le b_i,i\in I\backslash J_k$，则令$x^{(k+1)}=\overline x^{(k)}$，并求出$x^{(k+1)}$点处的有效集$J_{k+1}$，令$k=k+1$，返回2</p>
+<p>否则到6</p>
+</li>
+<li><p>计算步长$a_k=\min\left\{-\dfrac{a_i^Tx^{(k)}-b_i}{a_i^T d^{(k)}}|i\in I\backslash J_k,a_i^Td^{(k)}>0\right\}$</p>
+<p>令$x^{(k+1)}=x^{(k)}+a_kd^{(k)}$，并求$x^{(k+1)}$处的有效集$J_{k+1}，k=k+1$，返回2</p>
+</li>
+</ul>
+<h4 id="二次逼近法-1"><a href="#二次逼近法-1" class="headerlink" title="二次逼近法"></a>二次逼近法</h4>$\begin{cases}
+\min &f(x)\\
+\rm s.t.&c_i(x)=0,i\in E=\{1,2,\cdots,m\}\\
+&c_i(x)=0,i\in I=\{m+1,\cdots,p\}
+\end{cases}\qquad\qquad(8-14)$
+
+<p><strong>基本思想</strong></p>
+<p>将问题（8-14）转化为求解一些列二次规划子问题，因此也称为序列二次规划法，简写为SQP法</p>
+<p>略</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-gittip"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Math/" rel="tag"># Math</a>
+          
+            <a href="/tags/Course/" rel="tag"># Course</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/09/15/JavaSEThread/" rel="next" title="JavaSE - Thread">
+                <i class="fa fa-chevron-left"></i> JavaSE - Thread
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/25/OptimizationMethod/" rel="prev" title="最优化方法（1-2）">
+                最优化方法（1-2） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+   <div id="gitalk-container"></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+      
+        
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Koo">
+            
+              <p class="site-author-name" itemprop="name">Koo</p>
+              <p class="site-description motion-element" itemprop="description">I will not change no matter how U change</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Blanknesses" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:814161593@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+            <div>
+              <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="210" height="110" src="//music.163.com/outchain/player?type=2&id=3932159&auto=1&height=66"></iframe>
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/docs/" title="Hexo" target="_blank">Hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/getting-started.html" title="Next" target="_blank">Next</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md" title="Programming-Book" target="_blank">Programming-Book</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#无约束优化方法"><span class="nav-number">1.</span> <span class="nav-text">无约束优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下降递推算法"><span class="nav-number">1.1.</span> <span class="nav-text">下降递推算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一维搜索"><span class="nav-number">1.2.</span> <span class="nav-text">一维搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newton法"><span class="nav-number">1.3.</span> <span class="nav-text">Newton法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抛物线法"><span class="nav-number">1.4.</span> <span class="nav-text">抛物线法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次插值法"><span class="nav-number">1.5.</span> <span class="nav-text">三次插值法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平分法"><span class="nav-number">1.6.</span> <span class="nav-text">平分法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“成功-失败”法"><span class="nav-number">1.7.</span> <span class="nav-text">“成功-失败”法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-618法"><span class="nav-number">1.8.</span> <span class="nav-text">0.618法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始搜索区间和初始点确定"><span class="nav-number">1.9.</span> <span class="nav-text">初始搜索区间和初始点确定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不精确一维搜索"><span class="nav-number">1.10.</span> <span class="nav-text">不精确一维搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多变量函数极值基本下降法"><span class="nav-number">1.11.</span> <span class="nav-text">多变量函数极值基本下降法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最速下降法"><span class="nav-number">1.12.</span> <span class="nav-text">最速下降法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newton法-1"><span class="nav-number">1.13.</span> <span class="nav-text">Newton法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻尼Newton法"><span class="nav-number">1.14.</span> <span class="nav-text">阻尼Newton法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共轭方向法与共轭梯度法"><span class="nav-number">1.15.</span> <span class="nav-text">共轭方向法与共轭梯度法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#共轭方向生成"><span class="nav-number">1.15.1.</span> <span class="nav-text">共轭方向生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共轭梯度法"><span class="nav-number">1.15.2.</span> <span class="nav-text">共轭梯度法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变尺度法"><span class="nav-number">1.16.</span> <span class="nav-text">变尺度法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对称秩1算法"><span class="nav-number">1.16.1.</span> <span class="nav-text">对称秩1算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DFP算法"><span class="nav-number">1.16.2.</span> <span class="nav-text">DFP算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#吴桂变尺度法"><span class="nav-number">1.16.3.</span> <span class="nav-text">吴桂变尺度法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Huang类算法"><span class="nav-number">1.16.4.</span> <span class="nav-text">Huang类算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自调节变尺度算法类"><span class="nav-number">1.16.5.</span> <span class="nav-text">自调节变尺度算法类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFGS算法"><span class="nav-number">1.16.6.</span> <span class="nav-text">BFGS算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.16.7.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接搜索法"><span class="nav-number">1.17.</span> <span class="nav-text">直接搜索法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#约束优化方法"><span class="nav-number">2.</span> <span class="nav-text">约束优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kuhn-Tucker条件"><span class="nav-number">2.1.</span> <span class="nav-text">Kuhn-Tucker条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#判断一个点是否是K-T点"><span class="nav-number">2.1.1.</span> <span class="nav-text">判断一个点是否是K-T点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#惩罚函数法"><span class="nav-number">2.2.</span> <span class="nav-text">惩罚函数法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SUMT外点法"><span class="nav-number">2.2.1.</span> <span class="nav-text">SUMT外点法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#碰壁函数法"><span class="nav-number">2.3.</span> <span class="nav-text">碰壁函数法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SUMT内点法"><span class="nav-number">2.3.1.</span> <span class="nav-text">SUMT内点法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可行方向法"><span class="nav-number">2.4.</span> <span class="nav-text">可行方向法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Zoutendijk的可行方向法"><span class="nav-number">2.4.1.</span> <span class="nav-text">Zoutendijk的可行方向法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度投影法"><span class="nav-number">2.5.</span> <span class="nav-text">梯度投影法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#既约梯度法"><span class="nav-number">2.6.</span> <span class="nav-text">既约梯度法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#乘子法"><span class="nav-number">2.7.</span> <span class="nav-text">乘子法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hestenes乘子法"><span class="nav-number">2.7.1.</span> <span class="nav-text">Hestenes乘子法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二次逼近法"><span class="nav-number">2.8.</span> <span class="nav-text">二次逼近法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二次规划"><span class="nav-number">2.8.1.</span> <span class="nav-text">二次规划</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正定二次规划"><span class="nav-number">2.8.1.1.</span> <span class="nav-text">正定二次规划</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#仅含等式约束的正定二次规划"><span class="nav-number">2.8.1.2.</span> <span class="nav-text">仅含等式约束的正定二次规划</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一般正定二次规划的有效集法"><span class="nav-number">2.8.1.3.</span> <span class="nav-text">一般正定二次规划的有效集法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二次逼近法-1"><span class="nav-number">2.8.1.4.</span> <span class="nav-text">二次逼近法</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Koo</span>
+
+  
+</div>
+
+
+<div class="powered-by">
+<span id="busuanzi_container_site_uv">
+  本站总访问量<span id="busuanzi_value_site_uv"></span>次
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共97.6k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </span></div>
+    </div></footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="source/js/src/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '671a74b29bdf6595353a',
+          clientSecret: '16404a140b737832473e48993cc3f5ac257621b2',
+          repo: 'blanknesses.github.io',
+          owner: 'Blanknesses',
+          admin: ['Blanknesses'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+    <!-- 代码块复制功能 -->
+    <script type="text/javascript" src="/js/src/clipboard.js"></script>
+    <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>

@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Math,">
+  <meta name="keywords" content="Math,Course,">
 
 
 
@@ -98,18 +98,18 @@
 
 
 
-<meta name="description" content="一些不常用证明">
-<meta name="keywords" content="Math">
+<meta name="description" content="最优化方法知识点归纳凸集凸函数与线性规划">
+<meta name="keywords" content="Math,Course">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一些小证明">
-<meta property="og:url" content="http://yoursite.com/2019/10/20/Math/index.html">
+<meta property="og:title" content="最优化方法（1-2）">
+<meta property="og:url" content="http://yoursite.com/2020/09/25/OptimizationMethod/index.html">
 <meta property="og:site_name" content="不断努力的Koo">
-<meta property="og:description" content="一些不常用证明">
+<meta property="og:description" content="最优化方法知识点归纳凸集凸函数与线性规划">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-24T08:16:28.097Z">
+<meta property="og:updated_time" content="2020-09-25T12:08:06.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一些小证明">
-<meta name="twitter:description" content="一些不常用证明">
+<meta name="twitter:title" content="最优化方法（1-2）">
+<meta name="twitter:description" content="最优化方法知识点归纳凸集凸函数与线性规划">
 
 
 
@@ -139,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/20/Math/">
+  <link rel="canonical" href="http://yoursite.com/2020/09/25/OptimizationMethod/">
 
 
 
 
 
-  <title>一些小证明 | 不断努力的Koo</title>
+  <title>最优化方法（1-2） | 不断努力的Koo</title>
   
 
 
@@ -336,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/20/Math/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/25/OptimizationMethod/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Koo">
@@ -353,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一些小证明</h1>
+          <h1 class="post-title" itemprop="name headline">最优化方法（1-2）</h1>
         
 
         <div class="post-meta">
@@ -365,8 +365,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-20T17:20:47+08:00">
-                2019-10-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-25T19:24:44+08:00">
+                2020-09-25
               </time>
             
 
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  388
+                  4.4k
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  20
                 </span>
               
             </div>
@@ -443,7 +443,7 @@
 
           
               <div class="post-description">
-                  <center>一些不常用证明</center>
+                  <center>最优化方法知识点归纳<br>凸集凸函数与线性规划</center>
               </div>
           
 
@@ -460,12 +460,506 @@
       
 
       
-        <h1 id="x-n-前-n-项和"><a href="#x-n-前-n-项和" class="headerlink" title="$x^n$ 前$n$项和"></a>$x^n$ 前$n$项和</h1><p>$x^n$前$n$项和由$(x + 1)^{n+1} - (x - 1)^{n+1}$求得<br>$x$的前$n$项和:n<br>$(x + 1)^2 - (x - 1)^2 = 4x$<br>$((x-1) + 1)^2 - ((x-1) - 1)^2 = 4(x-1)$<br>$…$<br>$2^2 = 4$<br>$(x + 1)^2 + ((x-1) - 1)^2 - 1^2 - 0^2 = 4Sn \Rightarrow Sn = \dfrac{x(x+1)}{2}$</p>
-<p>$x^2$的前$n$项和:<br>$(x + 1)^3 - (x - 1)^3 = 6x^2 + 2$<br>$((x - 1) + 1)^3 - ((x -1) - 1)^3 = 6(x-1)^2 + 2$<br>$…$<br>$2^3 = 8$<br>$(x + 1)^3 + ((x - 1) + 1)^3 - 1^3 - 0^3 = 6Sn + 2x \Rightarrow Sn = \dfrac{2x^3+3x^2+x}{6}$</p>
-<h1 id="Cauchy-Schwarz不等式"><a href="#Cauchy-Schwarz不等式" class="headerlink" title="Cauchy-Schwarz不等式"></a>Cauchy-Schwarz不等式</h1><ol>
-<li>向量空间中<br> $\vert (x,y) \vert =|x^Ty|\le \Vert x\Vert\Vert y\Vert$<br> 证明：<br> 将向量$x$在水平方向$u$和竖直方向$v$分解<br> $x=u+v$<br> $u=ky$<br> $\Vert x \Vert^2 = (x,x) = (u,u)+2(u,v)+(v,v)$<br> $ \Vert x \Vert \ge \Vert u \Vert$<br> $ \Vert u \Vert = \dfrac{(x,y)}{ \Vert y \Vert}$<br> $\Vert x \Vert \Vert y \Vert \ge (x,y)$</li>
-<li>积分中<br> $[\int_{a}^{b}f(x)g(x)dx]^2\le \int_{a}^{b}f^2(x)dx\int_{a}^{b}g^2(x)dx $<br> 证明：<br> 令$F(x)=\int_{a}^{t}f^2(x)dx\int_{a}^{t}g^2(x)dx - [\int_{a}^{x}f(t)g(t)dx]^2$<br> $F’(x)=f^2(x)\int_{a}^{x}g^2(t)dx+g^2(x)\int_{a}^{x}f^2(t)dx-2f(x)g(x)\int_{a}^{x}f(t)g(t)dx$<br> $=\int_{a}^{x}[f^2(x)g^2(t)+g^2(x)f^2(t)-2f(x)g(x)f(t)g(t)]dx$<br> $=\int_{a}^{x}[f(x)g(t)-g(x)f(t)]^2dt\ge 0$<br> 故$F(x)$在$x\ge a$上单增，所以$F(x)\ge F(a)=0$，所以$F(b)\ge F(a) = 0$<br> 即$[\int_{a}^{b}f(x)g(x)dx]^2\le \int_{a}^{b}f^2(x)dx\int_{a}^{b}g^2(x)dx $</li>
-</ol>
+        <p>最优化问题简写为：</p>
+
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &f(x)\\
+\rm s.t. &g_i(x) \le 0\quad i=1,2,\cdots,m\\ 
+&h_i(x)=0 \quad i = m+1,\cdots,p
+\end{cases}\qquad\qquad (2-1)
+\end{aligned}
+$$
+
+<p>可行集/容许集$R = \{ x|g_i(x) \le 0\quad i=1,2,\cdots,m; h_i(x)=0 \quad i = m+1,\cdots,p\}$</p>
+<p><strong>注：</strong> $f\in C^2$表示$f$具有2阶连续偏导数，$R^n$表示$n$维欧式空间</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><strong>定义2.1</strong> 若有$x^*\in R$，使得$\forall x\in R$，均有$f(x^*) \le f(x)$，则称$x^*$为问题（2-1）的可行集或容许集，称$x\in R$为（2-1）的可行解或容许解</p>
+<p><strong>定理2.1</strong> 设$f(x), g_i(x), i=1,2,\cdots.m,h_i(x),i=m+1,\cdots,p$在$R^n$上连续，则问题（2-1）的可行集为闭集，他的全局最优解集合亦为闭集</p>
+<p><strong>定理2.2</strong> （一阶必要条件） 设函数$f(x)\in C^1$定义在$\Omega \subset R^n$上，$x^*$是$\Omega$的一个内点，若$x^*$为$f(x)$的一个极小点，则$\nabla f(x^*)=0$</p>
+<p>最优化问题分类</p>
+<ul>
+<li>线性规划（LP）</li>
+<li>二次规划（QP）</li>
+<li>非线性规划（NLP）</li>
+<li>整数规划（IP）</li>
+<li>几何规划</li>
+<li>多目标规划</li>
+</ul>
+<h2 id="凸集，凸优化及凸规划"><a href="#凸集，凸优化及凸规划" class="headerlink" title="凸集，凸优化及凸规划"></a>凸集，凸优化及凸规划</h2><p><strong>定义3.1</strong> 设$\Omega \subset R^n$，如果对于任意的点$x, y\in \Omega$，连接点$x,y$的线段上的一切点都在$\Omega$中，即对于$0\le \mu \le 1$的一切$\mu$，总有$\mu x+(1-\mu)y\in \Omega$，则称$\Omega$为一个凸集</p>
+<p><strong>定义3.2</strong> 设实数$a_i \ge 0(i=1,2,\cdots,p),\sum\limits_{i=1}^p a_i = 1, x^{(i)}\in R^n(i=1,2,\cdots,p)$，则称$x=\sum\limits_{i=1}^p a_ix^{(i)}$为点$x^{(1)}，x^{(2)},\cdots,x^{(p)}$的一个凸组合</p>
+<p><strong>定理3.1</strong> 集合$\Omega \subset R^n$为凸集的充要条件是：点$x^{(i)}\in \Omega\quad (i=1,2,\cdots,p)$的任意凸组合仍包含在$\Omega$中</p>
+<p><strong>定理3.2</strong> 任意一组凸集的交集仍为凸集</p>
+<p><strong>定义3.3</strong> 包含集合$\Omega \subset R^n$的所有凸集的交集称为$\Omega$的包，记为$Co(\Omega)$或$H(\Omega)$</p>
+<p><strong>定义3.4</strong> 设$\Omega \subset R^n$，如果对于任何$x\in \Omega$及所有的$\alpha\ge 0$，都有$\alpha x\in \Omega$，则称集合$\Omega$为一个锥。一个同时为凸集的锥，称为凸锥</p>
+<p><strong>定义3.5</strong> 设$f(x)$是定义在非空凸集$\Omega \subset R^n$上的函数，若对任意$x,y\in \Omega$，不等式<br>$$<br>f(\lambda x + (1-\lambda)y)\le \lambda f(x) + (1-\lambda)f(y)\qquad\qquad (3-1)<br>$$<br>对于$0\le \lambda\le 1$中的一切$\lambda$都成立，则称$f(x)$为$\Omega$上的凸函数</p>
+<p>若对于$0\le \lambda\le 1$中的一切$\lambda$和$x\not= y(x,y\in \Omega)$，都有<br>$$<br>f(\lambda x + (1-\lambda)y)&lt; \lambda f(x) + (1-\lambda)f(y)\qquad\qquad (3-2)<br>$$<br>成立，则称$f(x)$为$\Omega$上的严格凸函数</p>
+<p><strong>定理3.3</strong> 设$f_1(x),f_2(x)$是凸集$\Omega\subset R^n$上的凸函数，则$f_1(x)+f_2(x)$在$\Omega$上也是凸的</p>
+<p><strong>定理3.4</strong> 设$f(x)$是凸集$\Omega\subset R^n$上的凸函数，则对任意常数$a&gt;0$，函数$af(x)$也是凸的</p>
+<p><strong>定理3.5</strong> 设$f(x)$是凸集$\Omega \subset R^n$上的凸函数，则对任意一个实数$c$，水平集</p>
+$$
+\Omega_c=\{x| x\in \Omega,f(x)\le c\}
+$$
+<p>是凸集</p>
+<p><strong>定理3.5 推论</strong> 设$f_i(x)(i=1,2,\cdots,p)$为凸集$\Omega\subset R^n$上的凸函数，$c_i(i=1,2,\cdots,p)$为实常数，则$\Omega$中同时满足$f_1(x)\le c_1,f_2(x)\le c_2,\cdots,f_p(x)\le c_p$的点所构成的集合$\Omega_c$为凸集</p>
+<p><strong>定理3.6</strong> 定义在凸集$\Omega \subset R^n$上的可微函数$f(x)$为凸函数的充要条件是：对于所有的$x,y\in \Omega$都有<br>$$<br>f(y)\ge f(x)+(\nabla f(x))^T(y-x)\qquad\qquad (3-3)<br>$$<br><strong>定理3.7</strong> 设$\Omega\subset R^n$为含有内点的凸集，$f(x)\in C^2$，则$f$在$\Omega$上为凸函数的充要条件是：$f(x)$的$Hesse$矩阵$F(x)=\nabla^2 f(x)$在整个$\Omega$上式半正定的</p>
+<p><strong>定理3.8</strong> 设$\Omega \subset R^n$为非空开凸集，$f\in C^2$，若$\nabla^2f(x)$在$\Omega$上处处正定，则$f(x)$是$\Omega$上的严格凸函数</p>
+<p><strong>定义3.6</strong>  规划问题</p>
+
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &f(x)\\
+\rm s.t. &g_i(x) \le 0\quad i=1,2,\cdots,l\qquad\qquad (3-8)\\ 
+\end{cases}
+\end{aligned}
+$$
+<p>若$f(x),g_i(x)(i=1,2,\cdots,l)$均为可行集$R$上的凸函数，则称这样的问题为凸规划问题</p>
+<p><strong>定理3.9</strong> 凸规划问题（3-8）的可行集$R$是凸集</p>
+<p><strong>定理3.10</strong> 对于凸规划问题（3-8），目标函数$f(x)$的任一局部极小点都是$f(x)$在非空可行集$R$上的全局极小点</p>
+<p><strong>定理3.11</strong> 对于凸规划问题（3-8），若$f(x)$在非空可行集$R$上是严格凸函数，则问题（3-8）的全局极小点唯一</p>
+<h2 id="拟凸函数，伪凸函数"><a href="#拟凸函数，伪凸函数" class="headerlink" title="拟凸函数，伪凸函数"></a>拟凸函数，伪凸函数</h2><p><strong>定义3.7</strong> 设$\Omega\subset R^n$为非空凸集，$f:\Omega\rightarrow R^1$，若$\forall x,y\in\Omega$，均有</p>
+$$
+f(\lambda x + (1-\lambda)y)\le \max\{f(x),f(y)\},\forall\lambda\in(0,1)
+$$
+<p>成立，则称$f(x)$在$\Omega$上为拟凸函数</p>
+<p>若$\forall x,y\in\Omega,f(x)\not=f(y)$，均有</p>
+$$
+f(\lambda x + (1-\lambda)y)< \max\{f(x),f(y)\},\forall\lambda\in(0,1)
+$$
+<p>成立，则称$f(x)$在$\Omega$上为严格拟凸函数</p>
+<p><strong>注：严格拟凸函数不一定是拟凸函数，凸函数必为拟凸函数</strong></p>
+<p><strong>定理3.12</strong> 设$\Omega\subset R^n$为非空凸集，$f:\Omega\rightarrow R^1$，则$f$是$\Omega$上的拟凸函数的充要条件是：$\forall c\in R^1$，水平集$H_c(f)=\{x|x\in \Omega,f(x)\le c\}$是凸集</p>
+<p><strong>定理3.13</strong> 设$\Omega\subset R^n$为非空凸集，$f:\Omega\rightarrow R^1$为可微函数，则$f$是$\Omega$上的拟凸函数的充要条件是，若</p>
+<p>$f(x^{(1)})\le f(x^{(2)}),\forall x^{(1)},x^{(2)}\in\Omega$则$\nabla f(x^{(2)}))(x^{(1)}-x^{(2)})\le c$</p>
+<p><strong>定义3.8</strong> 设$\Omega\subset R^n$为非空开凸集，$f:\Omega\rightarrow R^1$为可微函数，如果对于<br>$$<br>\nabla f(x^{(1)})^T(x^{(1)}-x^{(2)})\le 0,\quad \forall x^{(1)},x^{(2)}\in \Omega<br>$$<br>必有$f(x^{(1)})\le f(x^{(2)})$，则称$f(x)$是$\Omega$上的伪凸函数</p>
+<p>在上述条件下，若$x^{(1)}\not=x^{(2)}$，必有$f(x^{(1)})&lt; f(x^{(2)})$，则称$f(x)$是$\Omega$上的严格伪凸函数</p>
+<p><strong>定理3.14</strong> 设$\Omega\subset R^n$为非空凸集，$f:\Omega\rightarrow R^1$为可微函数，若$f$是$\Omega$上的伪凸函数，则$f$是$\Omega$上的严格拟凸函数和拟凸函数</p>
+<h2 id="广义凸规划"><a href="#广义凸规划" class="headerlink" title="广义凸规划"></a>广义凸规划</h2><p><strong>定理3.15</strong> 设（3-8）的可行集$R$是凸集，$f(x)$是$R$上的严格拟凸函数，则广义凸规划（3-8）的任一局部最优解$x^*$也是它的全局最优解</p>
+<p><strong>定理3.16</strong> 设（3-8）的可行集$R$是开凸集，$f(x)$是$R$上的伪凸函数，$x^<em>\in R$，若$\nabla f(x^</em>)=0$，则$x^*$是（3-8）的全局最优解</p>
+<h1 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h1><p>标准形式的线性规划问题</p>
+
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &c^Tx\\
+\rm s.t. &Ax=b,x\ge0 \qquad\qquad(1-2)
+\end{cases}
+\end{aligned}
+$$
+<p>展开为：</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &y=\sum\limits_{i=1}^m c_ix_i\\
+\rm s.t. &\sum\limits_{j=1}^n a_{ij}x_j\quad i=1,2,\cdots,m\\
+&x_j\ge0\quad j=1,2,\cdots,n
+\end{cases}
+\end{aligned}
+$$
+<p>其中，变量个数$n$称为线性规划的维数，等式约束方程数目$m$称为线性规划的阶数，$m&lt;n$</p>
+<p>满足约束条件的点$x=(x_1,x_2,\cdots,x_n)$称为可行解</p>
+<p>设$A$的秩为$m$，则可从$A$的$n$列中选出$m$列，使它们线性无关，令$B=(a_1,a_2,\cdots,a_m)$，使得方程$Bx_B=b$有唯一解$x_B=B^{-1}b$，令$x^T=(x_B^T,0^T)$</p>
+<p>称$B$为基底，$x$为关于基底$B$的基本解，当基本解中有一个或一个以上的基本变量$x_i=0$时，称这个解为退化的基本解</p>
+<p>当一个可行解$x$又是基本解时，称它为基本可行解，若它是退化的，称为退化的基本可行解</p>
+<p>一个基本可行解$x$是一个不超过$m$个正$x_i$的可行解，而一个非退化的基本可行解$x$是恰有$m$个正$x_i$的可行解</p>
+<p>一个$m$阶，$n$维的线性规划问题，其基本可行解个数不超过$C_{n}^m$</p>
+<h2 id="基本定理"><a href="#基本定理" class="headerlink" title="基本定理"></a>基本定理</h2><p><strong>定义2.1</strong> 称$H^+=\{x|x\in R^n,c^Tx\ge b\}$为正闭半空间，$H^-=\{x|x\in R^n ,c^Tx\le b\}$为负闭半空间。$H^+,H^-$统称为闭半空间</p>
+<p><strong>定义2.2</strong> 有限个闭半空间的交集称为多面凸集，亦即集合$S=\{x|Ax\le b\}$（其中$A=(a_{ij})_{m\times n}$）称为多面凸集或凸多胞形</p>
+<p><strong>定义2.3</strong> 有界且非空的多面凸集称为多面凸体或凸多面体</p>
+<p><strong>定义2.4</strong> 设$S$为凸集，$x\in S$，若对于$x$找不到$x_1,x_2\in S(x_1\not= x_2)$，使$x=ax_1+(1-a)x_2(0&lt;a&lt;1)$成立，则称$x$为凸集$S$的极点，或顶点</p>
+<p><strong>定理2.1</strong> 设$A=(a_{ij})_{m\times n}$，其秩为$m$，且<br>$m&lt;n,x=(x_1,x_2,\cdots,x_n)^T,b=(b_1,b_2,\cdots,b_m)^T$，则矢量$x$为凸集</p>
+$$
+R=\{x|Ax=b,x\ge 0\}\qquad\qquad (2-1)
+$$
+<p>的一个极点的充要条件是$x$为<br>$$<br>Ax=b,\quad x\ge 0\qquad\qquad(2-2)<br>$$<br>的一个基本可行解</p>
+<p><strong>定理2.2</strong> 设给定的线性规划问题形如（1-2）</p>
+<ul>
+<li>若（1-2）有可行解，则其必有基本可行解</li>
+<li>若（1-2）有最优可行解，则必有最优基本可行解</li>
+</ul>
+<p>即若（1-2）有最优解，则一定在可行集的极点上达到</p>
+<p><strong>定理2.2 推论1</strong> 若由（1-2）确定的可行集$R=\{x|Ax=b,x\ge 0\}$是非空的，则它至少有一个极点</p>
+<p><strong>定理2.2 推论2</strong> 如果一个线性规划问题（1-2）存在有限的最优解，则至少存在一个是可行集$R$的极点的有限最优解</p>
+<p><strong>定理2.2 推论3</strong> 对应于（1-2）的可行集$R$至多具有有限多个极点</p>
+<h2 id="化为标准形式"><a href="#化为标准形式" class="headerlink" title="化为标准形式"></a>化为标准形式</h2><p>如果在一个线性规划问题中，有一部分变量不要求取非负值，则这些变量就称为自由变量，可有两种方式化为标准形式</p>
+<ul>
+<li><p>令$x_i=u_i-v_i,u_i,v_i\ge0$</p>
+</li>
+<li><p>从约束方程之一解出$x_i$，代入其他的约束方程和目标函数，则问题转化为$n-1$个变量和$m-1$个约束的LP问题</p>
+</li>
+</ul>
+<h2 id="单纯形法"><a href="#单纯形法" class="headerlink" title="单纯形法"></a>单纯形法</h2><p>基本思想：使由LP问题的一个基本可行解（极点）转移到另一个基本可行解，目标函数值是减小的</p>
+<p>约束方程的规范形式</p>
+$$
+\begin{aligned}
+\begin{cases}
+x_1\qquad \qquad \qquad +y_{1\cdot {m+1}}x_{m+1}+\cdots+y_{1n}x_n=y_{10}\\
+\qquad x_2\qquad \qquad +y_{2\cdot {m+1}}x_{m+1}+\cdots+y_{2n}x_n=y_{20}\\
+\qquad\qquad\ddots\qquad\qquad\vdots\\
+\qquad \qquad \qquad x_m +y_{m\cdot {m+1}}x_{m+1}+\cdots+y_{mn}x_n=y_{m0}\\
+\end{cases}
+\end{aligned}
+$$
+<p>简写为：<br>$$<br>x_i+\sum\limits_{j=m+1}^n y_{ij}x_j=y_{i0},i=1,2,\cdots,m<br>$$<br>对应的基本解为<br>$$<br>x=(y_{10},y_{20},\cdots,y_{m0},0,\cdots,0)<br>$$<br>令$x_B=(x_1,x_2,\cdots,x_m)^T,x_N=(x_{m+1},\cdots,x_n)^T$</p>
+<p>规范形式可写为</p>
+$$
+\begin{aligned}
+\quad[I_m,N]
+\begin{bmatrix}
+x_B\\x_N
+\end{bmatrix}
+=y_0\quad
+\end{aligned}
+$$
+<p>基本解转换</p>
+<p>将基本变量$x_p$用非基本变量$x_q$代替，$1\le p\le m, y_{pq}\not= 0$，新约束方程组系数为</p>
+$$
+\begin{aligned}
+\begin{cases}
+y_{ij}^{'}=y_{ij}-\dfrac{y_{pj}}{y_{pq}} y_{iq},i\not =p\\
+y_{pj}^{'}=\dfrac{y_{pj}}{y_{pq}}
+\end{cases}
+\end{aligned}
+$$
+
+<p>$y_{pq}$为主元</p>
+<p>为保证基本解的可行性，需确定离基矢量</p>
+<p>假设进基矢量为$a_k$</p>
+<p>则离基矢量为$\min\limits_{1\le i < k} \{ \dfrac{y_{i0}}{y_{ik}}|y_{ik} > 0 \}$</p>
+<p>其中$y_{i0}$是基本解的基本变量，$y_{ik}$是约束方程组系数</p>
+<p><strong>定理3.1</strong> 已知一个非退化的基本可行解，其目标函数值为$z_0$，假定对于某一个$j$，有$c_j-z_j&lt;0$，那么存在一个可行解，使其对应的目标函数值$z&lt;z_0$。如果能用非基矢量$a_j$代替原基中的某一矢量$a_r$，而产生的一个新的基本可行解，则这个新的解将使$z&lt;z_0$。如果不能用$a_j$来代替而产生的一个基本可行解，则可行集$R$是无界的，而且目标函数值可以任意的小</p>
+<p><strong>定理3.2</strong> 如果某一个基本可行解，对所有的$j$，都有$c_j-z_j\ge 0$，那么这个解就是最优解</p>
+<p>称$c_j-z_j=r_j$为相对成本系数或检验数</p>
+<p>单纯形法计算步骤</p>
+<ul>
+<li><p>把一般LP问题化为标准形式</p>
+$$
+  \begin{aligned}
+  \begin{cases}
+  \min \quad &c^Tx\\
+  \rm s.t. &Ax=b\\&x\ge0
+  \end{cases}
+  \end{aligned}
+  $$
+</li>
+<li><p>建立初始单纯形表</p>
+<table>
+<thead>
+<tr>
+<th align="center">基矢量</th>
+<th align="center">$a_1$</th>
+<th align="center">$a_2$</th>
+<th align="center">$\cdots$</th>
+<th align="center">$a_n$</th>
+<th align="center">b</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$a_{n-m +1}$</td>
+<td align="center">$y_{11}$</td>
+<td align="center">$y_{12}$</td>
+<td align="center"></td>
+<td align="center">$y_{1n}$</td>
+<td align="center">$y_{10}$</td>
+</tr>
+<tr>
+<td align="center">$a_{n-m+2}$</td>
+<td align="center">$y_{21}$</td>
+<td align="center">$y_{22}$</td>
+<td align="center"></td>
+<td align="center">$y_{2n}$</td>
+<td align="center">$y_{20}$</td>
+</tr>
+<tr>
+<td align="center">$\vdots$</td>
+<td align="center">$\vdots$</td>
+<td align="center">$\vdots$</td>
+<td align="center"></td>
+<td align="center">$\vdots$</td>
+<td align="center">$\vdots$</td>
+</tr>
+<tr>
+<td align="center">$a_n$</td>
+<td align="center">$y_{m1}$</td>
+<td align="center">$y_{m2}$</td>
+<td align="center">$\cdots$</td>
+<td align="center">$y_{mn}$</td>
+<td align="center">$y_{m0}$</td>
+</tr>
+<tr>
+<td align="center">检验数</td>
+<td align="center">$c_1$</td>
+<td align="center">$c_2$</td>
+<td align="center">$\cdots$</td>
+<td align="center">0</td>
+<td align="center">$-z_0$</td>
+</tr>
+</tbody></table>
+$$
+  \begin{aligned}
+  \begin{cases}
+  c=[c_1,c_2,\cdots,c_m,0,\cdots,0]^T\\
+  x=[x_1,x_2,\cdots,x_m,0,\cdots,0]^T\\
+  z_0=c^Tx\quad or \quad c_B^Tx_B
+  \end{cases}
+  \end{aligned}
+  $$
+</li>
+<li><p>若所有检验数$c_j-z_j=r_j\ge0$，得到一个最优解，否则继续</p>
+<p>非基矢量计算检验数</p>
+<p>$c_j\in c$，$c_B^T$与对应$a_j$的列相乘获得$z_j$</p>
+<p>$c_B^T$是基矢量$x_B$对应$c$中系数组成的集合</p>
+</li>
+<li><p>当有多个$r_j&lt;0$时，通常选择$\min\{r_j|r_j<0\}=r_k$的$a_k$为进基矢量< p>
+</0\}=r_k$的$a_k$为进基矢量<></p></li>
+<li><p>对所有的$y_{ik}&gt;0$，计算$\min\limits_{1 \le i < k}\{\dfrac{y_{i0}}{y_{ik}}|y_{ik}>0\}$，继续，若所有的$y_{ik} \le 0$，则LP问题的可行集$R$无界，且目标函数无界，结束</p>
+</li>
+<li><p>进行$Gauss$消元，获取新的基本可行解，回到检验数继续</p>
+</li>
+</ul>
+<h2 id="确定初始基本可行解"><a href="#确定初始基本可行解" class="headerlink" title="确定初始基本可行解"></a>确定初始基本可行解</h2><h3 id="大M法"><a href="#大M法" class="headerlink" title="大M法"></a>大M法</h3><p>LP问题标准形式</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &c^Tx\\
+\rm s.t. &Ax=b\qquad\qquad (4-1)\\
+&x\ge0
+\end{cases}
+\end{aligned}
+$$
+<p>为获得一个初始基本可行解，引入人工变量$y_1,y_2,\cdots,y_m$，令$y=[y_1,y_2,\cdots,y_m]^T$</p>
+<p>考察另一个LP问题</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &c^Tx + ME^Ty\\
+\rm s.t. &Ax + y=b\qquad\qquad (4-2)\\
+&x\ge0,y\ge0
+\end{cases}
+\end{aligned}
+$$
+<p>其中$M&gt;0$是一个充分大的数，$E=[1,1,\cdots,1]^T\in R^m$</p>
+<p><strong>定理4.1</strong> 设$\begin{aligned}
+\begin{bmatrix}
+x^*\\y^*
+\end{bmatrix}
+\end{aligned}$是问题（4-2）的最优解，若$y^*=0$，则$x^*$是问题（4-1）的最优解；若$y^*\not=0$，则问题（4-1）没有可行解。反之，若$x^*$是问题（4-1）的最优解，则$\begin{aligned}
+\begin{bmatrix}
+x^*\\0
+\end{bmatrix}
+\end{aligned}$是问题（4-2）的最优解</p>
+<h3 id="二阶段法"><a href="#二阶段法" class="headerlink" title="二阶段法"></a>二阶段法</h3><p>设要求解的LP问题为（4-1），引入人工变量$y_1,y_2,\cdots,y_m$，令$y=[y_1,y_2,\cdots,y_m]^T$</p>
+<p>构造一个辅助的LP问题</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &z=\sum\limits_{i=1}^m y_i\\
+\rm s.t. &Ax + y=b\qquad\qquad (4-5)\\
+&x\ge0,y\ge0
+\end{cases}
+\end{aligned}
+$$
+<p><strong>定理4.2</strong> 若问题（4-5）的最优基本可行解为$\begin{aligned}
+\begin{bmatrix}
+x^*\\0
+\end{bmatrix}
+\end{aligned}$，则$x^*$为问题（4-1）的一个基本可行解；若问题（4-5）的最优基本可行解为$\begin{aligned}
+\begin{bmatrix}
+x^*\\y^*
+\end{bmatrix}
+\end{aligned}$，且$y^*\not=0$，则问题（4-1）没有可行解</p>
+<p>求解步骤为：</p>
+<ul>
+<li><p>求解辅助LP问题，使用单纯形法</p>
+</li>
+<li><p>若找到最优基本可行解为$\begin{aligned}
+  \begin{bmatrix}
+  x^*\\0
+  \end{bmatrix}
+  \end{aligned}$，继续</p>
+</li>
+<li><p>将辅助LP问题的单纯形表中人工变量所在列移除，重新计算$r_j,z_0$</p>
+</li>
+<li><p>利用移除后的单纯形表进行迭代获取最优解</p>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>若系数矩阵为方阵，直接添加人工变量使用单纯形法求解，系数矩阵$A_{m\times n},m&lt;n$时，若存在单个未知量$x_i$在某个约束方程中存在，使用大M法，否则使用二阶段法</p>
+<h2 id="单纯形法矩阵形式"><a href="#单纯形法矩阵形式" class="headerlink" title="单纯形法矩阵形式"></a>单纯形法矩阵形式</h2><p>对于LP问题（4-1），设其中矩阵$A$的秩$r(A)=m&lt;n,b\ge0$</p>
+<p>设$B$为基，由$A$的前$m$列组成，把$A,x,c$分块为</p>
+$A=(B,N),x=\begin{bmatrix}
+x^*\\y^*
+\end{bmatrix},c=\begin{bmatrix}c_B\\c_N\end{bmatrix}$
+
+<p>于是问题（4-1）可写成</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &z=c_B^Tx_B+c_N^Tx_N\\
+\rm s.t. &Bx_B+Nx_N=b\qquad\qquad (4-6)\\
+&x_B,x_N\ge0
+\end{cases}
+\end{aligned}
+$$
+<p>令$x_N=0$，则得$x_B=B^{-1}b$，于是得到与基$B$对应的基本可行解（假设可行）$x^{(0)}=\begin{bmatrix}
+x^*\\0
+\end{bmatrix}=\begin{bmatrix}
+B^{-1}b\\0
+\end{bmatrix}$</p>
+<p>对应的目标函数值为$z_0=c_B^Tx_B=c_B^TB^{-1}b$</p>
+<p>对任意的$x_N$，有$x_B=B^{-1}b-B^{-1}Nx_N$</p>
+<p>对应的目标函数值为$z=c_B^Tx_B=c_B^TB^{-1}b+(c_N^T-c_B^TB^{-1}N)x_N=z_0+r_N^Tx_N$</p>
+<p>其中$r_N^T=c_N^T-c_B^TB^{-1}N=c_N^T-\pi^TN$</p>
+<p>其中$\pi^T=c_B^TB^{-1}$称为<strong>单纯形乘子矢量</strong></p>
+<p>$r_N$是与非基变量对应的检验数构成的矢量，$r_B$表示与基变量对应的检验数构成的矢量，$r_B=0$</p>
+<p>称$r=\begin{bmatrix}
+r_B\\r_N
+\end{bmatrix}$为<strong>相对成本矢量或检验矢量</strong></p>
+<p>与基$B$对应的矩阵形式单纯形表可写成​</p>
+$$
+\begin{aligned}
+T(B)=\begin{bmatrix}
+I_m&&B^{-1}N&&B^{-1}b\\
+0&&c_N^T-c_B^TB^{-1}N&&-c_B^TB^{-1}b
+\end{bmatrix}
+\end{aligned}
+$$
+<p>更一般的写为</p>
+$$
+\begin{aligned}
+T(B)=\begin{bmatrix}
+B^{-1}A&&B^{-1}b\\
+c_N^T-c_B^TB^{-1}A&&-c_B^TB^{-1}b
+\end{bmatrix}
+\end{aligned}
+$$
+<p>检验矢量$r^T=c_N^T-c_B^TB^{-1}A=c^T-\pi^TA$</p>
+<h2 id="修正单纯形法"><a href="#修正单纯形法" class="headerlink" title="修正单纯形法"></a>修正单纯形法</h2><p>节约存储，通常使用在计算机计算中，手算无优势，使用上面矩阵形式计算</p>
+<h2 id="退化与循环"><a href="#退化与循环" class="headerlink" title="退化与循环"></a>退化与循环</h2><p>避免迭代过程出现循环，有如下三种方法</p>
+<ul>
+<li>摄动法</li>
+<li>字典序法</li>
+<li>Bland法<ul>
+<li>若$\min\{i|r_i<0\}=k$，选择$y_k$为进基矢量< li>
+<li>若$\min\{\dfrac{y_{i0}}{y_{ik}}|y_{ik}>0\}=\dfrac{y_{i0}}{y_{ik}}$，则选择$y_{ik}$为主元，$y_i$为离基矢量</li>
+</0\}=k$，选择$y_k$为进基矢量<></li></ul>
+</li>
+</ul>
+<h2 id="对偶LP与对偶单纯形法"><a href="#对偶LP与对偶单纯形法" class="headerlink" title="对偶LP与对偶单纯形法"></a>对偶LP与对偶单纯形法</h2><h3 id="对偶LP问题"><a href="#对偶LP问题" class="headerlink" title="对偶LP问题"></a>对偶LP问题</h3><p>设有LP问题</p>
+$$
+\begin{aligned}
+\begin{cases}
+\min \quad &f(x)=c^Tx\\
+\rm s.t. &Ax\ge b\qquad\qquad(5-1)\\
+&x\ge0 
+\end{cases}
+\end{aligned}
+$$
+
+<p>其对偶LP问题定义为</p>
+$$
+\begin{aligned}
+\begin{cases}
+\max \quad &g(\lambda)=b^T\lambda\\
+\rm s.t. &\lambda^TA\le c^T\qquad\qquad(5-2)\\
+&\lambda\ge0 
+\end{cases}
+\end{aligned}
+$$
+<p>其中$A=(a_{ij})_{m\times n},x,c\in R^n,b,\lambda\in R^m$</p>
+<p>由原始规划转换成对偶规划步骤</p>
+<ul>
+<li>交换常矢量$c,b$的位置，变矢量$x$用$\lambda$替换</li>
+<li>改变约束不等式的不等号方向，min为大于等于（原始），max为小于等于（对偶）</li>
+<li>把min改成max</li>
+<li>交换$A$与变矢量的位置，并按需要做适当的转置</li>
+</ul>
+<h3 id="对偶定理"><a href="#对偶定理" class="headerlink" title="对偶定理"></a>对偶定理</h3><p>标准LP问题形式</p>
+$$
+\begin{aligned}
+&\begin{cases}
+\min \quad&c^Tx\\
+\rm s.t. & Ax= b\qquad\qquad(5-3)\\
+&x\ge0 
+\end{cases}\\
+\Rightarrow
+&\begin{cases}
+\min \quad &c^Tx\\
+\rm s.t. &
+\begin{bmatrix}
+A\\-A
+\end{bmatrix}
+x\ge
+\begin{bmatrix}
+b\\-b
+\end{bmatrix}\\
+&x\ge0 
+\end{cases}\\
+\Rightarrow
+&\begin{cases}
+\max \quad &(u^T,v^T)
+\begin{bmatrix}
+b\\-b
+\end{bmatrix}\\
+\rm s.t. &
+[u^T,v^T]
+\begin{bmatrix}
+A\\-A
+\end{bmatrix}
+\le
+ c^T\\
+&u\ge 0,v\ge0 
+\end{cases}\\
+\Rightarrow
+&\begin{cases}
+\max \quad &(u^T-v^T)b\\
+\rm s.t. &
+(u^T-v^T)A
+\le
+ c^T\\
+&u\ge 0,v\ge0 
+\end{cases}\\
+\end{aligned}
+$$
+<p>其对偶形式</p>
+$$
+\begin{aligned}
+\begin{cases}
+\max \quad &w^Tb\\
+\rm s.t. &w^TA\le c^T\qquad\qquad(5-4)\\
+
+\end{cases}
+\end{aligned}
+$$
+<p>其中$w=u-v$</p>
+<p><strong>引理 1</strong>  若$x$和$w$分别是（5-3），（5-4）的可行解，则$c^Tx\ge w^Tb$</p>
+<p><strong>推论</strong> 设$x^*,w^*$分别是（5-3），（5-4）的可行解，且$c^Tx^*=w^{*T}b$，则$x^*,w^*$分别是（5-3），（5-4）的最优解</p>
+<p><strong>线性规划的对偶定理</strong> 若（5-3）或（5-4）二者有一个有有限的最优解，则另一个也有有限的最优解，而且二者的目标函数值相同。若任一个问题的目标函数值无界，则另一个问题没有可行解</p>
+<p>设$x^*$是（5-3）的最优基本可行解，$B$为对应的最优基，则校验矢量$r$应满足</p>
+$$
+r^T=c^T-\pi^TA\ge0\qquad\qquad (5-6)\\
+$$
+<p>其中$\pi=c^T_BB^{-1}$，单纯形矢量乘子矢量，参见单纯形法矩阵形式</p>
+<h3 id="对偶单纯形法"><a href="#对偶单纯形法" class="headerlink" title="对偶单纯形法"></a>对偶单纯形法</h3><p><strong>定理5.1</strong> 设$x$为（5-3）的任一基本解，对应的基为$B$，令$w^T=c_B^TB^{-1}$。若$x,w$分别是（5-3）和（5-4）的可行解，则$x,w$也分别是（5-3）和（5-4）的最优解</p>
+<p><strong>定义5.1</strong> 若$x$是（5-3）的一个基本解（设对应的基为$B$），且它对应的检验矢量$r\ge 0$（即$w=\pi=(c_B^TB^{-1})^T$为（5-4）的可行解），则称$x$为（5-3）的对偶可行解或正则解</p>
+<p><strong>基本思想</strong></p>
+<p>从原始问题（5-3）的一个对偶可行的基本解开始，逐次迭代，保持对偶可行性的条件下，逐步使原始问题（5-3）的基本解$x$的不可行性消失（即使$x\ge 0$），直到获得（5-3）的一个基本可行解为止，而它即为原始问题的最优解</p>
+<p><strong>计算步骤</strong></p>
+<ul>
+<li><p>把一般的LP问题化为（5-3）形式，不要求$b\ge0$</p>
+</li>
+<li><p>列出初始单纯形表，求出（5-3）的一个对偶可行的基本解$x=\begin{bmatrix}x_B\\0\end{bmatrix}$</p>
+</li>
+<li><p>若$x_B\ge0$，则现行解为最优解，计算结束，否则$x_B\not\ge0$，令$x_{B_i}=\min\{x_{B_j}|j=1,2,\cdots,m\}$，由此确定$a_{B_i}$为离基矢量</p>
+</li>
+<li><p>用$y_{ij}$表示单纯形表中第$B_i$行的各个元素，若所有的$y_{ij}\ge0(j=1,1,\cdots,n)$，则对偶问题（5-4）的目标无上界，原始问题（5-3）没有可行解，否则必有某个$j$使$y_{ij}&lt;0$，令</p>
+$$
+  \epsilon=\min\limits_{1\le j\le n}\{\dfrac{z_j-c_j}{y_{ij}}|y_{ij}<0\}=\dfrac{z_k-c_k}{y_{ik}} $$ <p>其中<br>$$<br>\begin{aligned}<br>&amp;z_j=w^Ta_j,j=1,2,\cdots,n\<br>&amp;w^T=c_B^TB^{-1}<br>\end{aligned}<br>$$<br>决定$a_k$为进基矢量，$y_{ik}$为主元素<p></p>
+</0\}=\dfrac{z_k-c_k}{y_{ik}}></li>
+<li><p>用$a_k$代替$a_{B_i}$形成一个新基，再用这个新基来确定相应的对偶可行的基本解，然后返回第三步</p>
+</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>原始问题使用单纯形法求解，先计算进基矢量，在离基矢量，对偶单纯形法中，先确定离基矢量，再确定进基矢量</p>
 
       
     </div>
@@ -496,6 +990,8 @@
           
             <a href="/tags/Math/" rel="tag"># Math</a>
           
+            <a href="/tags/Course/" rel="tag"># Course</a>
+          
         </div>
       
 
@@ -507,8 +1003,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/19/LeTaX/" rel="next" title="LaTeX">
-                <i class="fa fa-chevron-left"></i> LaTeX
+              <a href="/2020/09/25/OptimizationMethod1/" rel="next" title="最优化方法（3-4）">
+                <i class="fa fa-chevron-left"></i> 最优化方法（3-4）
               </a>
             
           </div>
@@ -516,10 +1012,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/28/TridiumNiagara/" rel="prev" title="TridiumNiagara">
-                TridiumNiagara <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -708,7 +1200,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#x-n-前-n-项和"><span class="nav-number">1.</span> <span class="nav-text">$x^n$ 前$n$项和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cauchy-Schwarz不等式"><span class="nav-number">2.</span> <span class="nav-text">Cauchy-Schwarz不等式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#凸集，凸优化及凸规划"><span class="nav-number">1.1.</span> <span class="nav-text">凸集，凸优化及凸规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拟凸函数，伪凸函数"><span class="nav-number">1.2.</span> <span class="nav-text">拟凸函数，伪凸函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广义凸规划"><span class="nav-number">1.3.</span> <span class="nav-text">广义凸规划</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性规划"><span class="nav-number">2.</span> <span class="nav-text">线性规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本定理"><span class="nav-number">2.1.</span> <span class="nav-text">基本定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#化为标准形式"><span class="nav-number">2.2.</span> <span class="nav-text">化为标准形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单纯形法"><span class="nav-number">2.3.</span> <span class="nav-text">单纯形法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确定初始基本可行解"><span class="nav-number">2.4.</span> <span class="nav-text">确定初始基本可行解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#大M法"><span class="nav-number">2.4.1.</span> <span class="nav-text">大M法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二阶段法"><span class="nav-number">2.4.2.</span> <span class="nav-text">二阶段法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.4.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单纯形法矩阵形式"><span class="nav-number">2.5.</span> <span class="nav-text">单纯形法矩阵形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正单纯形法"><span class="nav-number">2.6.</span> <span class="nav-text">修正单纯形法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#退化与循环"><span class="nav-number">2.7.</span> <span class="nav-text">退化与循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对偶LP与对偶单纯形法"><span class="nav-number">2.8.</span> <span class="nav-text">对偶LP与对偶单纯形法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对偶LP问题"><span class="nav-number">2.8.1.</span> <span class="nav-text">对偶LP问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对偶定理"><span class="nav-number">2.8.2.</span> <span class="nav-text">对偶定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对偶单纯形法"><span class="nav-number">2.8.3.</span> <span class="nav-text">对偶单纯形法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">2.8.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
