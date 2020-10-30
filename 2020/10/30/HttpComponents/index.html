@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="J2EE,">
 
 
 
@@ -98,14 +98,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="歌单">
-<meta property="og:url" content="http://yoursite.com/playlist/index.html">
+<meta name="description" content="利用HttpComponents模拟登录，处理登录后重定向，获取Cookie">
+<meta name="keywords" content="J2EE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HttpComponents相关">
+<meta property="og:url" content="http://yoursite.com/2020/10/30/HttpComponents/index.html">
 <meta property="og:site_name" content="不断努力的Koo">
+<meta property="og:description" content="利用HttpComponents模拟登录，处理登录后重定向，获取Cookie">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-17T18:04:57.483Z">
+<meta property="og:updated_time" content="2020-10-30T14:06:18.146Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="歌单">
+<meta name="twitter:title" content="HttpComponents相关">
+<meta name="twitter:description" content="利用HttpComponents模拟登录，处理登录后重定向，获取Cookie">
 
 
 
@@ -135,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/playlist/">
+  <link rel="canonical" href="http://yoursite.com/2020/10/30/HttpComponents/">
 
 
 
 
 
-  <title>歌单 | 不断努力的Koo</title>
+  <title>HttpComponents相关 | 不断努力的Koo</title>
   
 
 
@@ -151,9 +155,6 @@
 
 
 
-<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
-<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -333,34 +334,243 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/30/HttpComponents/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Koo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不断努力的Koo">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">歌单</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">HttpComponents相关</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-30T21:35:42+08:00">
+                2020-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-    <div id="aplayer-DdCOsUdz" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="541932067" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"></div>
-        
-      </div>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/J2EE/" itemprop="url" rel="index">
+                    <span itemprop="name">J2EE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  317
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  <center>利用HttpComponents模拟登录，处理登录后重定向，获取Cookie</center>
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="构造URI"><a href="#构造URI" class="headerlink" title="构造URI"></a>构造URI</h1><p>使用URIBuilder进行构造</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">URI uri = <span class="keyword">new</span> URIBuilder()</span><br><span class="line">        .setScheme(<span class="string">"http"</span>)</span><br><span class="line">        .setPath(path)</span><br><span class="line">        .setHost(host)</span><br><span class="line">        .setParameter(<span class="string">"accept"</span>, <span class="string">"*/*"</span>)</span><br><span class="line">        .setParameter(<span class="string">"connection"</span>, <span class="string">"Keep-Alive"</span>)</span><br><span class="line">        .setParameter(<span class="string">"user-agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0"</span>)</span><br><span class="line">        .setCustomQuery(query)</span><br><span class="line">        .build();</span><br></pre></td></tr></table></figure>
+
+<h1 id="HttpClient处理"><a href="#HttpClient处理" class="headerlink" title="HttpClient处理"></a>HttpClient处理</h1><h2 id="处理重定向"><a href="#处理重定向" class="headerlink" title="处理重定向"></a>处理重定向</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LaxRedirectStrategy redirectStrategy = <span class="keyword">new</span> LaxRedirectStrategy();</span><br><span class="line">CloseableHttpClient httpClient = HttpClients.custom()</span><br><span class="line">        .setRedirectStrategy(redirectStrategy)</span><br><span class="line">        .build();</span><br></pre></td></tr></table></figure>
+
+<h2 id="携带CookieStore"><a href="#携带CookieStore" class="headerlink" title="携带CookieStore"></a>携带CookieStore</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">httpClient = HttpClients.custom()</span><br><span class="line">        .setDefaultCookieStore(cookieStore)</span><br><span class="line">        .build();</span><br></pre></td></tr></table></figure>
+
+<h1 id="设置请求属性"><a href="#设置请求属性" class="headerlink" title="设置请求属性"></a>设置请求属性</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RequestConfig requestConfig = RequestConfig.custom()</span><br><span class="line">        .setConnectTimeout(<span class="number">10</span>* <span class="number">1000</span>)</span><br><span class="line">        .setSocketTimeout(<span class="number">10</span> * <span class="number">1000</span>)</span><br><span class="line">        .setProxy(proxy)</span><br><span class="line">        .build();</span><br></pre></td></tr></table></figure>
+
+<h1 id="构造请求"><a href="#构造请求" class="headerlink" title="构造请求"></a>构造请求</h1><h2 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HttpPost post = <span class="keyword">new</span> HttpPost(uri);</span><br><span class="line">post.setConfig(requestConfig);</span><br><span class="line">CloseableHttpResponse response = httpClient.execute(post);</span><br></pre></td></tr></table></figure>
+
+<h2 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HttpGet get = <span class="keyword">new</span> HttpGet(path);</span><br><span class="line">get.setHeader(<span class="string">"Accept-Language"</span>, <span class="string">"zh-CN"</span>);</span><br><span class="line">get.setHeader(<span class="string">"Charset"</span>, <span class="string">"UTF-8"</span>);</span><br><span class="line">get.setHeader(<span class="string">"Connection"</span>, <span class="string">"Keep-Alive"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>或者使用URIBuilder</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HttpGet get = <span class="keyword">new</span> HttpGet(uri);</span><br><span class="line">get.setConfig(requestConfig);</span><br><span class="line">CloseableHttpResponse response = httpClient.execute(get);</span><br></pre></td></tr></table></figure>
+
+<h1 id="实例，模拟登录获取Cookie"><a href="#实例，模拟登录获取Cookie" class="headerlink" title="实例，模拟登录获取Cookie"></a>实例，模拟登录获取Cookie</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> CookieStore <span class="title">test</span> <span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        LaxRedirectStrategy redirectStrategy = <span class="keyword">new</span> LaxRedirectStrategy();</span><br><span class="line">        CloseableHttpClient httpClient = HttpClients.custom()</span><br><span class="line">                .setRedirectStrategy(redirectStrategy)</span><br><span class="line">                .build();</span><br><span class="line">                </span><br><span class="line">        URI uri = <span class="keyword">new</span> URIBuilder()</span><br><span class="line">                .setScheme(<span class="string">"http"</span>)</span><br><span class="line">                .setPath(path)</span><br><span class="line">                .setHost(host)</span><br><span class="line">                .setParameter(<span class="string">"accept"</span>, <span class="string">"*/*"</span>)</span><br><span class="line">                .setParameter(<span class="string">"connection"</span>, <span class="string">"Keep-Alive"</span>)</span><br><span class="line">                .setParameter(<span class="string">"user-agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0"</span>)</span><br><span class="line">                .setCustomQuery(<span class="string">"username=admin&amp;password=123456"</span>)</span><br><span class="line">                .build();</span><br><span class="line">                </span><br><span class="line">        HttpPost post = <span class="keyword">new</span> HttpPost(uri);</span><br><span class="line">        HttpClientContext context = HttpClientContext.create();</span><br><span class="line"></span><br><span class="line">        CloseableHttpResponse response = httpClient.execute(post, context);</span><br><span class="line">        System.out.println(response);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历Cookie</span></span><br><span class="line">        <span class="comment">/*List&lt;Cookie&gt; cookies = context.getCookieStore().getCookies();</span></span><br><span class="line"><span class="comment">        for (Cookie cookie: cookies)&#123;</span></span><br><span class="line"><span class="comment">            System.out.println(cookie);</span></span><br><span class="line"><span class="comment">        &#125;*/</span>   </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> context.getCookieStore();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (URISyntaxException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ClientProtocolException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取Cookie"><a href="#获取Cookie" class="headerlink" title="获取Cookie"></a>获取Cookie</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HttpClientContext context = HttpClientContext.create();</span><br><span class="line">CookieStore cookieStore = context.getCookieStore();</span><br></pre></td></tr></table></figure>
+
+<p>HttpClientContext 可以从response中获取如CookieStore，重定向地址，缓存，HTTP路由等信息</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-gittip"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/J2EE/" rel="tag"># J2EE</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/10/24/leetcode/" rel="next" title="LeetCode">
+                <i class="fa fa-chevron-left"></i> LeetCode
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -369,6 +579,9 @@
 
 
           
+
+  
+   <div id="gitalk-container"></div>
 
   
 
@@ -394,8 +607,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -512,6 +734,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构造URI"><span class="nav-number">1.</span> <span class="nav-text">构造URI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HttpClient处理"><span class="nav-number">2.</span> <span class="nav-text">HttpClient处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#处理重定向"><span class="nav-number">2.1.</span> <span class="nav-text">处理重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#携带CookieStore"><span class="nav-number">2.2.</span> <span class="nav-text">携带CookieStore</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置请求属性"><span class="nav-number">3.</span> <span class="nav-text">设置请求属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造请求"><span class="nav-number">4.</span> <span class="nav-text">构造请求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#POST"><span class="nav-number">4.1.</span> <span class="nav-text">POST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GET"><span class="nav-number">4.2.</span> <span class="nav-text">GET</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实例，模拟登录获取Cookie"><span class="nav-number">5.</span> <span class="nav-text">实例，模拟登录获取Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取Cookie"><span class="nav-number">5.1.</span> <span class="nav-text">获取Cookie</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
